@@ -241,6 +241,13 @@ html.lenis {
   }
 }
 
+/* На мобильных: картинка сверху, текст снизу */
+@media (max-width: 768px) {
+  .carousel-image-container--mobile-first {
+    order: -1;
+  }
+}
+
 .carousel-content {
   position: relative;
 }
@@ -383,6 +390,13 @@ html.lenis {
   justify-content: center;
 }
 
+@media (max-width: 1024px) {
+  .carousel-image-container {
+    min-height: 400px;
+    max-width: 100%;
+  }
+}
+
 .carousel-image-frame {
   position: relative;
   width: 100%;
@@ -504,7 +518,7 @@ html.lenis {
   
   .carousel-inner {
     padding: 0 16px;
-    gap: 30px;
+    gap: 24px;
   }
   
   .carousel-content-inner {
@@ -521,8 +535,14 @@ html.lenis {
     margin-bottom: 24px;
   }
   
+  /* Компактная картинка на мобильных */
   .carousel-image-container {
-    height: 300px !important;
+    height: 250px !important;
+    max-height: 250px;
+  }
+  
+  .carousel-image-frame {
+    height: 100%;
   }
   
   .carousel-progress-bar {

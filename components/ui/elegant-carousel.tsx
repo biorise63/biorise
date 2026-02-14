@@ -400,7 +400,33 @@ export default function ElegantCarousel() {
         />
 
         <div className="carousel-inner">
-          {/* Left: Text Content */}
+          {/* Image - First on mobile, Second on desktop */}
+          <div className="carousel-image-container carousel-image-container--mobile-first">
+          <div
+            className={`carousel-image-frame ${isTransitioning ? 'transitioning' : 'visible'}`}
+          >
+            <Image
+              src={currentSlide.imageUrl}
+              alt={currentSlide.title}
+              width={500}
+              height={700}
+              className="carousel-image"
+              style={{ objectFit: 'contain' }}
+            />
+            <div
+              className="carousel-image-overlay"
+              style={{
+                background: `linear-gradient(135deg, ${currentSlide.accent}22 0%, transparent 50%)`,
+              }}
+            />
+          </div>
+
+            {/* Decorative frame corner */}
+            <div className="carousel-frame-corner carousel-frame-corner--tl" style={{ borderColor: currentSlide.accent }} />
+            <div className="carousel-frame-corner carousel-frame-corner--br" style={{ borderColor: currentSlide.accent }} />
+          </div>
+
+          {/* Text Content - Second on mobile, First on desktop */}
           <div className="carousel-content">
             <div className="carousel-content-inner">
             {/* Collection number */}
@@ -464,32 +490,6 @@ export default function ElegantCarousel() {
               </button>
             </div>
             </div>
-          </div>
-
-          {/* Right: Image */}
-          <div className="carousel-image-container">
-          <div
-            className={`carousel-image-frame ${isTransitioning ? 'transitioning' : 'visible'}`}
-          >
-            <Image
-              src={currentSlide.imageUrl}
-              alt={currentSlide.title}
-              width={500}
-              height={700}
-              className="carousel-image"
-              style={{ objectFit: 'contain' }}
-            />
-            <div
-              className="carousel-image-overlay"
-              style={{
-                background: `linear-gradient(135deg, ${currentSlide.accent}22 0%, transparent 50%)`,
-              }}
-            />
-          </div>
-
-            {/* Decorative frame corner */}
-            <div className="carousel-frame-corner carousel-frame-corner--tl" style={{ borderColor: currentSlide.accent }} />
-            <div className="carousel-frame-corner carousel-frame-corner--br" style={{ borderColor: currentSlide.accent }} />
           </div>
         </div>
 
