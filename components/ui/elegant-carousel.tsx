@@ -461,33 +461,36 @@ export default function ElegantCarousel() {
               {currentSlide.description}
             </p>
 
-            {/* Price */}
-            <div className={`carousel-price ${isTransitioning ? 'transitioning' : 'visible'}`}>
-              <span className="text-2xl font-semibold" style={{ color: currentSlide.accent }}>
-                {currentSlide.price}
-              </span>
-            </div>
+            {/* Price and Navigation - Together on mobile */}
+            <div className="carousel-price-nav-wrapper">
+              {/* Price */}
+              <div className={`carousel-price ${isTransitioning ? 'transitioning' : 'visible'}`}>
+                <span className="text-2xl font-semibold" style={{ color: currentSlide.accent }}>
+                  {currentSlide.price}
+                </span>
+              </div>
 
-            {/* Navigation Arrows */}
-            <div className="carousel-nav-arrows">
-              <button
-                onClick={goPrev}
-                className="carousel-arrow-btn"
-                aria-label="Previous slide"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={goNext}
-                className="carousel-arrow-btn"
-                aria-label="Next slide"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
+              {/* Navigation Arrows */}
+              <div className="carousel-nav-arrows">
+                <button
+                  onClick={goPrev}
+                  className="carousel-arrow-btn"
+                  aria-label="Previous slide"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={goNext}
+                  className="carousel-arrow-btn"
+                  aria-label="Next slide"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
             </div>
           </div>

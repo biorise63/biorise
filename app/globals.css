@@ -386,8 +386,23 @@ html.lenis {
   transform: translateY(0);
 }
 
+.carousel-price-nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .carousel-price-nav-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
 .carousel-price {
-  margin-bottom: 24px;
+  margin-bottom: 0;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
@@ -396,6 +411,10 @@ html.lenis {
 @media (min-width: 1024px) {
   .carousel-price {
     margin-bottom: 30px;
+  }
+  
+  .carousel-price-nav-wrapper {
+    flex-direction: column;
   }
 }
 
