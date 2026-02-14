@@ -37,7 +37,7 @@ export default function Doctors() {
           </p>
         </motion.div>
 
-        <AnimatedTestimonials testimonials={doctors} autoplay={true} />
+        <AnimatedTestimonials testimonials={doctors} autoplay={false} />
       </div>
     </section>
   )

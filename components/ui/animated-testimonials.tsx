@@ -50,7 +50,7 @@ export const AnimatedTestimonials = ({
   return (
     <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8", className)}>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
-        <div>
+        <div className="relative z-0">
           <div className="relative h-64 sm:h-80 w-full">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
@@ -68,7 +68,7 @@ export const AnimatedTestimonials = ({
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : randomRotateY(),
                     zIndex: isActive(index)
-                      ? 999
+                      ? 10
                       : testimonials.length + 2 - index,
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
