@@ -1,0 +1,512 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Фирменные шрифты */
+/* Если файлы шрифтов добавлены, они загрузятся автоматически */
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/CeraPro-Regular.woff2') format('woff2'),
+       url('/fonts/CeraPro-Regular.woff') format('woff'),
+       url('/fonts/CeraPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyr';
+  src: url('/fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'),
+       url('/fonts/HelveticaNeueCyr-Roman.woff') format('woff'),
+       url('/fonts/HelveticaNeueCyr-Roman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback: если файлы не найдены, используем системные шрифты */
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: 'CeraPro';
+    src: local('Arial'), local('Helvetica');
+  }
+  
+  @font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: local('Helvetica Neue'), local('Arial');
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'HelveticaNeueCyr', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #373737;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'HelveticaNeueCyr', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5E6F52;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7F8F70;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Premium shadows */
+.shadow-premium {
+  box-shadow: 0 4px 20px rgba(94, 111, 82, 0.08);
+}
+
+.shadow-premium-hover {
+  box-shadow: 0 8px 30px rgba(94, 111, 82, 0.12);
+}
+
+/* Section spacing */
+.section-spacing {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 80px 0;
+  }
+}
+
+/* Hero zoom animation */
+.hero-zoom {
+  animation: heroZoom 20s ease-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Elegant Carousel Categories */
+.carousel-wrapper-full {
+  width: 100%;
+}
+
+.carousel-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 0 24px;
+}
+
+.carousel-category-btn {
+  padding: 10px 24px;
+  border: 1px solid rgba(94, 111, 82, 0.2);
+  background: white;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: 'CeraPro', sans-serif;
+  color: #5E6F52;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.carousel-category-btn:hover {
+  border-color: #5E6F52;
+  background: #F3EFE6;
+}
+
+.carousel-category-btn.active {
+  background: #5E6F52;
+  color: white;
+  border-color: #5E6F52;
+}
+
+@media (max-width: 768px) {
+  .carousel-categories {
+    gap: 8px;
+    padding: 0 16px;
+  }
+  
+  .carousel-category-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Elegant Carousel Styles */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.carousel-bg-wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.8s ease;
+}
+
+.carousel-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .carousel-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.carousel-content {
+  position: relative;
+}
+
+.carousel-content-inner {
+  max-width: 500px;
+}
+
+.carousel-collection-num {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.carousel-collection-num.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-num-line {
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.carousel-num-text {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5E6F52;
+  font-family: 'CeraPro', sans-serif;
+}
+
+.carousel-title {
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 300;
+  margin-bottom: 16px;
+  color: #373737;
+  font-family: 'HelveticaNeueCyr', sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+}
+
+.carousel-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 36px;
+  }
+}
+
+.carousel-subtitle {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-family: 'CeraPro', sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.carousel-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #373737;
+  margin-bottom: 32px;
+  opacity: 0.8;
+  font-family: 'HelveticaNeueCyr', sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+}
+
+.carousel-description.visible {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+.carousel-price {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+.carousel-price.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-nav-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.carousel-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(94, 111, 82, 0.2);
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #5E6F52;
+}
+
+.carousel-arrow-btn:hover {
+  border-color: #5E6F52;
+  background: #5E6F52;
+  color: white;
+  transform: scale(1.05);
+}
+
+.carousel-image-container {
+  position: relative;
+  min-height: 600px;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.carousel-image-frame.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.carousel-image-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.carousel-frame-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid;
+  z-index: 2;
+}
+
+.carousel-frame-corner--tl {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.carousel-frame-corner--br {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+}
+
+.carousel-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  padding: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.carousel-progress-item {
+  flex: 0 0 auto;
+  min-width: 120px;
+  max-width: 200px;
+  cursor: pointer;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.carousel-progress-track {
+  height: 2px;
+  background: rgba(94, 111, 82, 0.1);
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-progress-fill {
+  height: 100%;
+  background: #5E6F52;
+  transition: width 0.05s linear;
+}
+
+.carousel-progress-item.active .carousel-progress-track {
+  background: rgba(94, 111, 82, 0.2);
+}
+
+.carousel-progress-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5E6F52;
+  opacity: 0.6;
+  font-family: 'CeraPro', sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-progress-item.active .carousel-progress-label {
+  opacity: 1;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    min-height: 500px;
+    padding: 40px 0;
+  }
+  
+  .carousel-progress-bar {
+    padding: 16px;
+    gap: 4px;
+  }
+  
+  .carousel-progress-item {
+    min-width: 80px;
+    max-width: 120px;
+  }
+  
+  .carousel-progress-label {
+    font-size: 10px;
+  }
+}

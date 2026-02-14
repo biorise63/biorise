@@ -1,0 +1,7 @@
+# Файлы, которые не нужны для деплоя
+node_modules
+.next
+out
+.DS_Store
+*.log
+.env*.local
