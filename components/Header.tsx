@@ -36,6 +36,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -65,30 +66,37 @@ export default function Header() {
     <>
       {/* Top Bar with Location and Clinic Selection - Fixed, separate from Hero */}
       <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-olive-primary/10" style={{ backgroundColor: 'rgba(94, 111, 82, 0.5)' }}>
-        <div className="container mx-auto px-6 py-2">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-6 flex-wrap">
+        <div className="container mx-auto px-4 sm:px-6 py-2">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-4 md:gap-6 flex-wrap min-w-0 flex-1">
               {/* City */}
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-white font-menu font-medium">Самара</span>
+                <span className="text-white font-menu font-medium text-xs sm:text-sm">Самара</span>
               </div>
 
               {/* Clinic Address Dropdown */}
-              <div className="relative" ref={dropdownRef}>
+              <div className="relative flex-shrink-0" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors font-menu"
+                  className="flex items-center gap-1 sm:gap-2 text-white hover:text-white/80 transition-colors font-menu text-xs sm:text-sm"
                 >
-                  <span className="text-sm text-white/80">Адреса клиник:</span>
-                  <span className="text-white font-medium">
-                    {selectedClinic ? selectedClinic.address : 'Выбрать адрес'}
+                  <span className="hidden sm:inline text-white/80">Адреса клиник:</span>
+                  <span className="text-white font-medium truncate max-w-[120px] sm:max-w-none">
+                    {selectedClinic ? (
+                      <>
+                        <span className="hidden sm:inline">{selectedClinic.address}</span>
+                        <span className="sm:hidden">{selectedClinic.address.split(',')[0]}</span>
+                      </>
+                    ) : (
+                      'Выбрать адрес'
+                    )}
                   </span>
                   <svg
-                    className={`w-4 h-4 text-white transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                    className={`w-3 h-3 sm:w-4 sm:h-4 text-white transition-transform flex-shrink-0 ${isDropdownOpen ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -99,12 +107,12 @@ export default function Header() {
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-premium border border-olive-primary/10 min-w-[300px] z-50">
+                  <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-premium border border-olive-primary/10 min-w-[280px] sm:min-w-[300px] max-w-[90vw] z-50">
                     {clinics.map((clinic) => (
                       <button
                         key={clinic.id}
                         onClick={() => handleClinicSelect(clinic)}
-                        className="w-full text-left px-4 py-3 hover:bg-beige-background transition-colors border-b border-olive-primary/5 last:border-b-0"
+                        className="w-full text-left px-4 py-3 hover:bg-beige-background transition-colors border-b border-olive-primary/5 last:border-b-0 text-sm sm:text-base"
                       >
                         <div className="text-olive-primary font-medium">{clinic.address}</div>
                       </button>
@@ -113,9 +121,9 @@ export default function Header() {
                 )}
               </div>
 
-              {/* Selected Clinic Info */}
+              {/* Selected Clinic Info - Hidden on mobile, shown on tablet+ */}
               {selectedClinic && (
-                <div className="flex items-center gap-6 flex-wrap">
+                <div className="hidden md:flex items-center gap-4 lg:gap-6 flex-wrap">
                   {/* Hours */}
                   <div className="flex items-center gap-2">
                     <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +140,7 @@ export default function Header() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <span>{selectedClinic.phone}</span>
+                    <span className="text-sm sm:text-base">{selectedClinic.phone}</span>
                   </a>
                 </div>
               )}
@@ -150,30 +158,98 @@ export default function Header() {
           scrolled ? 'bg-white/98 backdrop-blur-sm shadow-premium' : 'bg-white/95 backdrop-blur-sm'
         }`}
       >
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <Logo />
-            <nav className="hidden md:flex items-center space-x-8 font-menu">
-              <a href="#services" className="text-olive-primary hover:text-olive-light transition-colors">
+            <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 font-menu">
+              <a href="#services" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Капельницы
               </a>
-              <a href="#why-us" className="text-olive-primary hover:text-olive-light transition-colors">
+              <a href="#why-us" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 О нас
               </a>
-              <a href="#gallery" className="text-olive-primary hover:text-olive-light transition-colors">
+              <a href="#gallery" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Акции
               </a>
-              <a href="#doctors" className="text-olive-primary hover:text-olive-light transition-colors">
+              <a href="#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Врачи
               </a>
               <a
                 href="#booking"
-                className="bg-olive-primary text-white px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium"
+                className="bg-olive-primary text-white px-4 lg:px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium text-sm lg:text-base"
               >
                 Записаться
               </a>
             </nav>
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-olive-primary p-2"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+          
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <motion.nav
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-4 pb-4 border-t border-olive-primary/10 pt-4"
+            >
+              <div className="flex flex-col space-y-4 font-menu">
+                <a
+                  href="#services"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  Капельницы
+                </a>
+                <a
+                  href="#why-us"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  О нас
+                </a>
+                <a
+                  href="#gallery"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  Акции
+                </a>
+                <a
+                  href="#doctors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  Врачи
+                </a>
+                <a
+                  href="#booking"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="bg-olive-primary text-white px-6 py-3 rounded-full hover:bg-olive-light transition-all shadow-premium text-center mt-2"
+                >
+                  Записаться
+                </a>
+              </div>
+            </motion.nav>
+          )}
         </div>
       </motion.header>
     </>

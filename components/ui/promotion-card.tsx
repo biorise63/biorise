@@ -41,7 +41,7 @@ export function PromotionCard({
         'bg-gradient-to-b from-white to-beige-background/50',
         'p-6 text-start',
         'hover:from-white hover:to-beige-background',
-        'max-w-[400px] sm:max-w-[400px]',
+        'max-w-[320px] sm:max-w-[400px]',
         'transition-all duration-300 shadow-premium hover:shadow-premium-hover',
         className
       )}
@@ -68,7 +68,7 @@ export function PromotionCard({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-2xl font-heading text-olive-primary mb-3"
+        className="text-xl sm:text-2xl font-heading text-olive-primary mb-3"
       >
         {title}
       </motion.h3>

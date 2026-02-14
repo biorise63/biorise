@@ -14,7 +14,7 @@ export default function WhyUs() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
             О клинике
           </h2>
         </motion.div>
@@ -36,7 +36,7 @@ export default function WhyUs() {
               Перед началом процедур специалист собирает подробный анамнез, оценивает возможные противопоказания и подробно объясняет принцип действия назначенных препаратов. При необходимости пациенты могут сдать лабораторные анализы или пройти комплексный чек-ап организма для точного определения дефицитов витаминов и микроэлементов и составления персональной программы восстановления.
             </p>
 
-            <h3 className="text-2xl md:text-3xl font-heading text-olive-primary mb-4 mt-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-olive-primary mb-4 mt-8">
               Мы предлагаем:
             </h3>
             

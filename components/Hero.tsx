@@ -55,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-heading text-black mb-6 font-light leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-black mb-4 sm:mb-6 font-light leading-tight"
           >
             Клиника капельниц BIORISE в Самаре
           </motion.h1>
@@ -63,7 +63,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-lg md:text-xl text-black/90 mb-8 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-8 leading-relaxed"
           >
             Внутривенная терапия и инфузионная капельная терапия под контролем врача. Подбор состава по анализам и жалобам. Комплексный чек-ап организма.
           </motion.p>
@@ -96,13 +96,13 @@ export default function Hero() {
           >
             <a
               href="#booking"
-              className="bg-olive-primary text-white px-10 py-4 rounded-full text-lg hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center"
+              className="bg-olive-primary text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center"
             >
               Записаться на капельницу
             </a>
             <a
               href="#services"
-              className="bg-white/95 text-olive-primary px-10 py-4 rounded-full text-lg hover:bg-white transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center border-2 border-olive-primary"
+              className="bg-white/95 text-olive-primary px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-white transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center border-2 border-olive-primary"
             >
               Подобрать капельницу
             </a>

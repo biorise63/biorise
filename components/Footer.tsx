@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-heading mb-4">Контакты</h3>
+            <h3 className="text-lg sm:text-xl font-heading mb-4">Контакты</h3>
             <p className="text-white/80 text-sm mb-2">443068, Самара, ул. 27, д. 1</p>
             <p className="text-white/80 text-sm mb-2">
               <a href="tel:+79967499747" className="hover:text-white transition-colors cursor-pointer inline-flex items-center gap-2">
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-heading mb-4">Режим работы</h3>
+            <h3 className="text-lg sm:text-xl font-heading mb-4">Режим работы</h3>
             <p className="text-white/80 text-sm mb-2">Ежедневно: 8:00 - 20:00</p>
           </div>
         </div>

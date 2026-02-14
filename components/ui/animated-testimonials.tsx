@@ -48,10 +48,10 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-8", className)}>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8", className)}>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-64 sm:h-80 w-full">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -120,13 +120,13 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-heading text-olive-primary font-bold mb-2">
+            <h3 className="text-xl sm:text-2xl font-heading text-olive-primary font-bold mb-2">
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-olive-primary/70 mb-4">
+            <p className="text-xs sm:text-sm text-olive-primary/70 mb-4">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-lg text-olive-primary/80 mt-4 leading-relaxed">
+            <motion.p className="text-base sm:text-lg text-olive-primary/80 mt-4 leading-relaxed">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}

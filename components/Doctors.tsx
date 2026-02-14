@@ -29,10 +29,10 @@ export default function Doctors() {
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
             Наши врачи
           </h2>
-          <p className="text-lg text-olive-primary/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-olive-primary/70 max-w-2xl mx-auto">
             Профессионалы с многолетним опытом в области внутривенной терапии
           </p>
         </motion.div>

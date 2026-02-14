@@ -14,7 +14,7 @@ export default function PopularDrips() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-olive-primary mb-4 font-light" style={{ fontSize: '2.75rem' }}>
+          <h2 className="font-heading text-olive-primary mb-4 font-light text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem]">
             Индивидуальный подбор программы для вашего здоровья
           </h2>
         </motion.div>

@@ -37,10 +37,10 @@ export default function BookingForm() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
             Онлайн-запись
           </h2>
-          <p className="text-lg text-olive-primary/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-olive-primary/70 max-w-2xl mx-auto">
             Заполните форму, и мы свяжемся с вами для подтверждения записи
           </p>
         </motion.div>
@@ -52,7 +52,7 @@ export default function BookingForm() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl mx-auto"
         >
-          <form onSubmit={handleSubmit} className="bg-beige-background rounded-2xl p-8 md:p-12 shadow-premium">
+          <form onSubmit={handleSubmit} className="bg-beige-background rounded-2xl p-6 sm:p-8 md:p-12 shadow-premium">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="name" className="block text-olive-primary mb-2 font-medium">

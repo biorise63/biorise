@@ -131,7 +131,13 @@ html.lenis {
 
 @media (max-width: 768px) {
   .section-spacing {
-    padding: 80px 0;
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-spacing {
+    padding: 40px 0;
   }
 }
 
@@ -493,7 +499,30 @@ html.lenis {
 @media (max-width: 768px) {
   .carousel-wrapper {
     min-height: 500px;
-    padding: 40px 0;
+    padding: 30px 0;
+  }
+  
+  .carousel-inner {
+    padding: 0 16px;
+    gap: 30px;
+  }
+  
+  .carousel-content-inner {
+    max-width: 100%;
+  }
+  
+  .carousel-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  .carousel-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  
+  .carousel-image-container {
+    height: 300px !important;
   }
   
   .carousel-progress-bar {
