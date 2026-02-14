@@ -421,9 +421,9 @@ export default function ElegantCarousel() {
             />
           </div>
 
-            {/* Decorative frame corner */}
-            <div className="carousel-frame-corner carousel-frame-corner--tl" style={{ borderColor: currentSlide.accent }} />
-            <div className="carousel-frame-corner carousel-frame-corner--br" style={{ borderColor: currentSlide.accent }} />
+            {/* Decorative frame corner - Hidden on mobile */}
+            <div className="hidden sm:block carousel-frame-corner carousel-frame-corner--tl" style={{ borderColor: currentSlide.accent }} />
+            <div className="hidden sm:block carousel-frame-corner carousel-frame-corner--br" style={{ borderColor: currentSlide.accent }} />
           </div>
 
           {/* Text Content - Second on mobile, First on desktop */}

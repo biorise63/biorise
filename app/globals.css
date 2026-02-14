@@ -587,13 +587,18 @@ html.lenis {
   
   /* Компактная картинка на мобильных */
   .carousel-image-container {
-    height: 200px !important;
-    max-height: 200px;
-    min-height: 200px !important;
+    height: 150px !important;
+    max-height: 150px;
+    min-height: 150px !important;
   }
   
   .carousel-image-frame {
     height: 100%;
+  }
+  
+  /* Скрыть декоративные уголки на мобильных */
+  .carousel-frame-corner {
+    display: none;
   }
   
   .carousel-progress-bar {
