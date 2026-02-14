@@ -165,8 +165,14 @@ html.lenis {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 0 24px;
+}
+
+@media (min-width: 1024px) {
+  .carousel-categories {
+    margin-bottom: 30px;
+  }
 }
 
 .carousel-category-btn {
@@ -210,8 +216,15 @@ html.lenis {
   position: relative;
   width: 100%;
   min-height: 600px;
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .carousel-wrapper {
+    padding: 30px 0;
+    min-height: 550px;
+  }
 }
 
 .carousel-bg-wash {
@@ -230,8 +243,14 @@ html.lenis {
   padding: 0 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .carousel-inner {
+    gap: 50px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -260,10 +279,16 @@ html.lenis {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+@media (min-width: 1024px) {
+  .carousel-collection-num {
+    margin-bottom: 24px;
+  }
 }
 
 .carousel-collection-num.visible {
@@ -287,15 +312,22 @@ html.lenis {
 }
 
 .carousel-title {
-  font-size: 56px;
+  font-size: 48px;
   line-height: 1.1;
   font-weight: 300;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: #373737;
   font-family: 'HelveticaNeueCyr', sans-serif;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+}
+
+@media (min-width: 1280px) {
+  .carousel-title {
+    font-size: 56px;
+    margin-bottom: 16px;
+  }
 }
 
 .carousel-title.visible {
@@ -313,11 +345,17 @@ html.lenis {
   font-size: 14px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   font-family: 'CeraPro', sans-serif;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+@media (min-width: 1024px) {
+  .carousel-subtitle {
+    margin-bottom: 20px;
+  }
 }
 
 .carousel-subtitle.visible {
@@ -329,12 +367,18 @@ html.lenis {
   font-size: 16px;
   line-height: 1.7;
   color: #373737;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   opacity: 0.8;
   font-family: 'HelveticaNeueCyr', sans-serif;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .carousel-description {
+    margin-bottom: 24px;
+  }
 }
 
 .carousel-description.visible {
@@ -343,10 +387,16 @@ html.lenis {
 }
 
 .carousel-price {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+@media (min-width: 1024px) {
+  .carousel-price {
+    margin-bottom: 30px;
+  }
 }
 
 .carousel-price.visible {
@@ -382,7 +432,7 @@ html.lenis {
 
 .carousel-image-container {
   position: relative;
-  min-height: 600px;
+  min-height: 500px;
   max-width: 500px;
   margin: 0 auto;
   display: flex;
@@ -537,8 +587,9 @@ html.lenis {
   
   /* Компактная картинка на мобильных */
   .carousel-image-container {
-    height: 250px !important;
-    max-height: 250px;
+    height: 200px !important;
+    max-height: 200px;
+    min-height: 200px !important;
   }
   
   .carousel-image-frame {
