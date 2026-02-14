@@ -649,6 +649,10 @@ html.lenis {
   .carousel-progress-bar {
     padding: 16px;
     gap: 4px;
+    bottom: auto;
+    top: 100%;
+    margin-top: 24px;
+    position: relative;
   }
   
   .carousel-progress-item {
