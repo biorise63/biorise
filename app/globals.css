@@ -516,6 +516,17 @@ html.lenis {
   z-index: 2;
 }
 
+@media (min-width: 1024px) {
+  .carousel-progress-bar {
+    left: auto;
+    right: 0;
+    width: 50%;
+    justify-content: flex-start;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 .carousel-progress-item {
   flex: 0 0 auto;
   min-width: 120px;
