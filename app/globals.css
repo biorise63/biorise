@@ -598,22 +598,28 @@ html.lenis {
   
   /* Миниатюрная картинка на мобильных */
   .carousel-image-container {
-    height: 100px !important;
-    max-height: 100px;
-    min-height: 100px !important;
+    height: 120px !important;
+    max-height: 120px;
+    min-height: 120px !important;
     max-width: 120px !important;
     margin: 0 auto 16px auto;
+    padding: 8px;
+    box-sizing: border-box;
   }
   
   .carousel-image-frame {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .carousel-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    object-position: center top;
   }
   
   /* Скрыть декоративные уголки на мобильных */
