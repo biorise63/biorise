@@ -13,11 +13,48 @@ export default function BookingForm() {
     time: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Здесь будет отправка формы
-    console.log('Form submitted:', formData)
-    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus('success')
+        // Очистка формы
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          service: '',
+          date: '',
+          time: '',
+        })
+        alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      } else {
+        setSubmitStatus('error')
+        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.')
+      }
+    } catch (error) {
+      console.error('Ошибка отправки формы:', error)
+      setSubmitStatus('error')
+      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -148,9 +185,14 @@ export default function BookingForm() {
             </div>
             <button
               type="submit"
-              className="w-full bg-olive-primary text-white px-8 py-4 rounded-full text-lg hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 font-medium"
+              disabled={isSubmitting}
+              className={`w-full px-8 py-4 rounded-full text-lg transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 font-medium ${
+                isSubmitting
+                  ? 'bg-olive-primary/50 text-white cursor-not-allowed'
+                  : 'bg-olive-primary text-white hover:bg-olive-light'
+              }`}
             >
-              Отправить заявку
+              {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
             </button>
           </form>
         </motion.div>

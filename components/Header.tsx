@@ -155,6 +155,9 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Logo />
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 font-menu">
+              <a href="#" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+                Главная
+              </a>
               <a href="#services" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Капельницы
               </a>
@@ -205,6 +208,13 @@ export default function Header() {
               className="md:hidden mt-4 pb-4 border-t border-olive-primary/10 pt-4"
             >
               <div className="flex flex-col space-y-4 font-menu">
+                <a
+                  href="#"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  Главная
+                </a>
                 <a
                   href="#services"
                   onClick={() => setIsMobileMenuOpen(false)}
