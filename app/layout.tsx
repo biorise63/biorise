@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     ],
     apple: '/favicon-96x96.png',
   },
+  other: {
+    'yandex-verification': 'ff70510bc15914e1',
+  },
 }
 
 export default function RootLayout({
