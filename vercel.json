@@ -1,4 +1,21 @@
 {
   "cleanUrls": false,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/yandex_ff70510bc15914e1.html",
+      "destination": "/yandex_ff70510bc15914e1.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/yandex_ff70510bc15914e1.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=UTF-8"
+        }
+      ]
+    }
+  ]
 }
