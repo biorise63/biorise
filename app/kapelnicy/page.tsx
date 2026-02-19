@@ -233,7 +233,6 @@ function loadPriceMap() {
 }
 
 function pickPriceDuration(
-    // Используем Python для чтения cp1251, так как Node.js не поддерживает эту кодировку
     const pythonScript = `
 import csv
 import json
