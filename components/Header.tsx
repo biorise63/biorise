@@ -187,11 +187,7 @@ export default function Header() {
                   </svg>
                 </button>
                 {isServicesOpen && (
-                  <div
-                    className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-40"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
-                  >
+                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-40">
                     <Link
                       href="/drips"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg"
