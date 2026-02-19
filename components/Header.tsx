@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Logo from './Logo'
 
@@ -38,9 +37,7 @@ export default function Header() {
   const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const servicesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,9 +51,6 @@ export default function Header() {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false)
-      }
-      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -161,43 +155,12 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Logo />
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 font-menu">
-              <Link href="/" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+              <a href="#" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Главная
-              </Link>
-
-              {/* Услуги с подменю */}
-              <div
-                className="relative"
-                ref={servicesRef}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <button
-                  onClick={() => setIsServicesOpen((prev) => !prev)}
-                  className="flex items-center gap-1 text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base"
-                >
-                  Услуги
-                  <svg
-                    className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isServicesOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-40">
-                    <Link
-                      href="/drips"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg"
-                    >
-                      Капельницы
-                    </Link>
-                  </div>
-                )}
-              </div>
-
+              </a>
+              <a href="#services" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+                Капельницы
+              </a>
               <a href="#why-us" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 О нас
               </a>
@@ -252,16 +215,13 @@ export default function Header() {
                 >
                   Главная
                 </a>
-                <div className="flex flex-col gap-2">
-                  <span className="text-olive-primary font-semibold">Услуги</span>
-                  <Link
-                    href="/drips"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
-                  >
-                    Капельницы
-                  </Link>
-                </div>
+                <a
+                  href="#services"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  Капельницы
+                </a>
                 <a
                   href="#why-us"
                   onClick={() => setIsMobileMenuOpen(false)}
