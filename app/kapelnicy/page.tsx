@@ -156,6 +156,47 @@ function ensureDir(dir: string) {
 
 function loadPriceMap() {
   const map: Record<string, { price?: string; duration?: string }> = {}
+  
+  // СНАЧАЛА загружаем длительности из текстового файла
+  if (fs.existsSync(durationTxt)) {
+    try {
+      const txtContent = fs.readFileSync(durationTxt, 'utf-8')
+      const lines = txtContent.split(/\r?\n/).map(l => l.trim()).filter(Boolean)
+      const durationHeaderIdx = lines.findIndex(l => l.toLowerCase().includes('длительность'))
+      
+      if (durationHeaderIdx !== -1) {
+        const names = lines.slice(0, durationHeaderIdx).filter(l => l && l !== 'Название')
+        const durations = lines.slice(durationHeaderIdx + 1).filter(l => l && /^\d+$/.test(l))
+        
+        for (let i = 0; i < names.length && i < durations.length; i++) {
+          const name = names[i]
+          const dur = durations[i]
+          if (!name || !dur) continue
+          
+          const duration = dur !== '0' ? `${dur} мин` : undefined
+          const slug = slugify(name)
+          
+          // Добавляем по разным ключам
+          map[name] = { duration }
+          map[name.toLowerCase()] = { duration }
+          map[slug] = { duration }
+          
+          // Также добавляем через обратный маппинг (находим displayName по priceName)
+          for (const [displayName, priceName] of Object.entries(nameToPriceName)) {
+            if (priceName === name || priceName.toLowerCase() === name.toLowerCase()) {
+              map[displayName] = { duration }
+              map[displayName.toLowerCase()] = { duration }
+              map[slugify(displayName)] = { duration }
+            }
+          }
+        }
+      }
+    } catch (e) {
+      // Ignore errors reading duration file
+    }
+  }
+  
+  // ПОТОМ дополняем ценами из CSV
   if (!fs.existsSync(priceCsv)) return map
   
   try {
@@ -219,60 +260,15 @@ except Exception as e:
     
     const parsed = JSON.parse(output.trim())
     
-    // Конвертируем в нужный формат
+    // Конвертируем в нужный формат и дополняем map (сохраняя уже загруженные длительности)
     for (const [key, value] of Object.entries(parsed)) {
       const entry = value as { price?: string; duration?: string }
       const formattedPrice = entry.price ? entry.price.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽' : undefined
-      const duration = entry.duration ? `${entry.duration} мин` : undefined
-      map[key] = { price: formattedPrice, duration }
-    }
-    
-    // Дополняем длительностями из текстового файла, если они отсутствуют
-    if (fs.existsSync(durationTxt)) {
-      try {
-        const txtContent = fs.readFileSync(durationTxt, 'utf-8')
-        const lines = txtContent.split(/\r?\n/).map(l => l.trim()).filter(Boolean)
-        const durationHeaderIdx = lines.findIndex(l => l.toLowerCase().includes('длительность'))
-        
-        if (durationHeaderIdx !== -1) {
-          const names = lines.slice(0, durationHeaderIdx).filter(l => l && l !== 'Название')
-          const durations = lines.slice(durationHeaderIdx + 1).filter(l => l && /^\d+$/.test(l))
-          
-          for (let i = 0; i < names.length && i < durations.length; i++) {
-            const name = names[i]
-            const dur = durations[i]
-            if (!name || !dur) continue
-            
-            const slug = slugify(name)
-            const duration = dur !== '0' ? `${dur} мин` : undefined
-            
-            // Добавляем по разным ключам для надежности
-            const keys = [
-              name,
-              name.toLowerCase(),
-              slug,
-            ]
-            
-            // Также добавляем через обратный маппинг (находим displayName по priceName)
-            for (const [displayName, priceName] of Object.entries(nameToPriceName)) {
-              if (priceName === name || priceName.toLowerCase() === name.toLowerCase()) {
-                keys.push(displayName)
-                keys.push(displayName.toLowerCase())
-                keys.push(slugify(displayName))
-              }
-            }
-            
-            for (const key of keys) {
-              if (map[key]) {
-                map[key].duration = duration
-              } else {
-                map[key] = { duration }
-              }
-            }
-          }
-        }
-      } catch (e) {
-        // Ignore errors reading duration file
+      const existing = map[key] || {}
+      map[key] = { 
+        ...existing,
+        price: formattedPrice || existing.price,
+        duration: existing.duration || (entry.duration ? `${entry.duration} мин` : undefined)
       }
     }
   } catch (e) {
