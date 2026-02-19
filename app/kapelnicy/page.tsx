@@ -492,7 +492,18 @@ function parseInfusion(
   const sections = parseSections(lines)
 
   let imageUrl: string | undefined
-  if (entry.images && entry.images.length > 0) {
+  // Сначала проверяем, есть ли уже изображение в public/kapelnicy по slug
+  const possibleExtensions = ['.png', '.jpg', '.jpeg', '.webp']
+  for (const ext of possibleExtensions) {
+    const existingImage = path.join(publicDir, `${entry.slug}${ext}`)
+    if (fs.existsSync(existingImage)) {
+      imageUrl = `/kapelnicy/${entry.slug}${ext}`
+      break
+    }
+  }
+  
+  // Если не нашли, пытаемся скопировать из imagesDir
+  if (!imageUrl && entry.images && entry.images.length > 0) {
     const src = path.join(imagesDir, entry.images[0])
     if (fs.existsSync(src)) {
       ensureDir(publicDir)
