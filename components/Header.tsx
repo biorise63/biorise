@@ -167,7 +167,7 @@ export default function Header() {
 
               {/* Услуги с подменю */}
               <div
-                className="relative"
+                className="relative pb-2"
                 ref={servicesRef}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -188,7 +188,7 @@ export default function Header() {
                 </button>
                 {isServicesOpen && (
                   <div
-                    className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-40"
+                    className="absolute left-0 top-full mt-0 w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-40 pt-2"
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
