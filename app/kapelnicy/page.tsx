@@ -544,9 +544,21 @@ export const metadata = {
   description: 'Категории капельниц BIORISE: иммунитет, детокс, сердце, спорт, красота и другое.',
 }
 
+// Кешируем данные на уровне модуля, чтобы не парсить каждый раз
+let cachedIndex: IndexEntry[] | null = null
+let cachedPriceMap: Record<string, { price?: string; duration?: string }> | null = null
+
 export default function KapelnicyPage() {
-  const index = loadIndex()
-  const priceMap = loadPriceMap()
+  // Парсим только один раз, затем используем кеш
+  if (!cachedIndex) {
+    cachedIndex = loadIndex()
+  }
+  if (!cachedPriceMap) {
+    cachedPriceMap = loadPriceMap()
+  }
+  
+  const index = cachedIndex
+  const priceMap = cachedPriceMap
 
   // Если данных нет, возвращаем пустую страницу с сообщением
   if (index.length === 0) {
