@@ -145,7 +145,10 @@ const codexDir = fs.existsSync(codexDirLocal) ? codexDirLocal : codexDirRepo
 const imagesDir = path.join(codexDir, 'images')
 const publicDir = path.join(projectRoot, 'public', 'kapelnicy')
 const priceCsv = path.resolve(projectRoot, '..', 'ПРАЙС услуги', 'Прайс Капельницы.csv')
-const durationTxt = '/Users/macbook/Downloads/Telegram Desktop/test_image (2).txt'
+// Пробуем сначала локальный файл, потом файл в репозитории
+const durationTxtLocal = '/Users/macbook/Downloads/Telegram Desktop/test_image (2).txt'
+const durationTxtRepo = path.join(projectRoot, 'data', 'kapelnicy', 'durations.txt')
+const durationTxt = fs.existsSync(durationTxtLocal) ? durationTxtLocal : durationTxtRepo
 
 function ensureDir(dir: string) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
@@ -243,18 +246,28 @@ except Exception as e:
             const slug = slugify(name)
             const duration = dur !== '0' ? `${dur} мин` : undefined
             
-            // Если уже есть запись, обновляем длительность
-            if (map[name]) {
-              map[name].duration = duration
-            } else if (map[name.toLowerCase()]) {
-              map[name.toLowerCase()].duration = duration
-            } else if (map[slug]) {
-              map[slug].duration = duration
-            } else {
-              // Создаем новую запись только с длительностью
-              map[name] = { duration }
-              map[name.toLowerCase()] = { duration }
-              map[slug] = { duration }
+            // Добавляем по разным ключам для надежности
+            const keys = [
+              name,
+              name.toLowerCase(),
+              slug,
+            ]
+            
+            // Также добавляем через обратный маппинг (находим displayName по priceName)
+            for (const [displayName, priceName] of Object.entries(nameToPriceName)) {
+              if (priceName === name || priceName.toLowerCase() === name.toLowerCase()) {
+                keys.push(displayName)
+                keys.push(displayName.toLowerCase())
+                keys.push(slugify(displayName))
+              }
+            }
+            
+            for (const key of keys) {
+              if (map[key]) {
+                map[key].duration = duration
+              } else {
+                map[key] = { duration }
+              }
             }
           }
         }
