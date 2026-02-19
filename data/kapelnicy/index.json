@@ -1,0 +1,525 @@
+[
+  {
+    "num": 1,
+    "slug": "detoks-standart",
+    "title": "Капельница детокс стандарт",
+    "url": "https://biorise.ru/catalog/detoks-standart/",
+    "txt_file": "01_detoks-standart.txt",
+    "images": [
+      "01_detoks-standart_01.png"
+    ]
+  },
+  {
+    "num": 2,
+    "slug": "energiya",
+    "title": "Капельница Энергия+",
+    "url": "https://biorise.ru/catalog/energiya/",
+    "txt_file": "02_energiya.txt",
+    "images": [
+      "02_energiya_01.png",
+      "02_energiya_03.jpg",
+      "02_energiya_04.png"
+    ]
+  },
+  {
+    "num": 3,
+    "slug": "antistress",
+    "title": "Капельница Антистресс+",
+    "url": "https://biorise.ru/catalog/antistress/",
+    "txt_file": "03_antistress.txt",
+    "images": [
+      "03_antistress_01.png",
+      "03_antistress_03.webp",
+      "03_antistress_04.png"
+    ]
+  },
+  {
+    "num": 4,
+    "slug": "immuno-support",
+    "title": "Капельница Иммуносуппорт",
+    "url": "https://biorise.ru/catalog/immuno-support/",
+    "txt_file": "04_immuno-support.txt",
+    "images": [
+      "04_immuno-support_01.png",
+      "04_immuno-support_03.webp",
+      "04_immuno-support_04.png"
+    ]
+  },
+  {
+    "num": 5,
+    "slug": "posle-vecherinki",
+    "title": "Капельница После вечеринки",
+    "url": "https://biorise.ru/catalog/posle-vecherinki/",
+    "txt_file": "05_posle-vecherinki.txt",
+    "images": [
+      "05_posle-vecherinki_01.png",
+      "05_posle-vecherinki_03.webp",
+      "05_posle-vecherinki_04.png"
+    ]
+  },
+  {
+    "num": 6,
+    "slug": "detoksikatsiya",
+    "title": "Капельница Детоксикация",
+    "url": "https://biorise.ru/catalog/detoksikatsiya/",
+    "txt_file": "06_detoksikatsiya.txt",
+    "images": [
+      "06_detoksikatsiya_01.png",
+      "06_detoksikatsiya_03.jpg",
+      "06_detoksikatsiya_04.png"
+    ]
+  },
+  {
+    "num": 7,
+    "slug": "antimigren",
+    "title": "Капельница Антимигрень",
+    "url": "https://biorise.ru/catalog/antimigren/",
+    "txt_file": "07_antimigren.txt",
+    "images": [
+      "07_antimigren_01.png",
+      "07_antimigren_03.webp",
+      "07_antimigren_04.png"
+    ]
+  },
+  {
+    "num": 8,
+    "slug": "antivirus",
+    "title": "Капельница Антивирус",
+    "url": "https://biorise.ru/catalog/antivirus/",
+    "txt_file": "08_antivirus.txt",
+    "images": [
+      "08_antivirus_01.png",
+      "08_antivirus_03.webp",
+      "08_antivirus_04.png"
+    ]
+  },
+  {
+    "num": 9,
+    "slug": "postkovid",
+    "title": "Капельница Постковид",
+    "url": "https://biorise.ru/catalog/postkovid/",
+    "txt_file": "09_postkovid.txt",
+    "images": [
+      "09_postkovid_01.png",
+      "09_postkovid_03.jpg",
+      "09_postkovid_04.png"
+    ]
+  },
+  {
+    "num": 10,
+    "slug": "vosstanovlenie-obonyaniya",
+    "title": "Капельница Восстановление обоняния",
+    "url": "https://biorise.ru/catalog/vosstanovlenie-obonyaniya/",
+    "txt_file": "10_vosstanovlenie-obonyaniya.txt",
+    "images": [
+      "10_vosstanovlenie-obonyaniya_01.png",
+      "10_vosstanovlenie-obonyaniya_03.webp",
+      "10_vosstanovlenie-obonyaniya_04.png"
+    ]
+  },
+  {
+    "num": 11,
+    "slug": "antigistaminnaya",
+    "title": "Капельница Антигистаминная",
+    "url": "https://biorise.ru/catalog/antigistaminnaya/",
+    "txt_file": "11_antigistaminnaya.txt",
+    "images": [
+      "11_antigistaminnaya_01.png",
+      "11_antigistaminnaya_03.jpg",
+      "11_antigistaminnaya_04.png"
+    ]
+  },
+  {
+    "num": 12,
+    "slug": "barhatnaya-kozha",
+    "title": "Капельница Бархатная кожа",
+    "url": "https://biorise.ru/catalog/barhatnaya-kozha/",
+    "txt_file": "12_barhatnaya-kozha.txt",
+    "images": [
+      "12_barhatnaya-kozha_01.png",
+      "12_barhatnaya-kozha_03.webp",
+      "12_barhatnaya-kozha_04.png"
+    ]
+  },
+  {
+    "num": 13,
+    "slug": "gipertonicheskiy-kriz",
+    "title": "Капельница Гипертонический криз",
+    "url": "https://biorise.ru/catalog/gipertonicheskiy-kriz/",
+    "txt_file": "13_gipertonicheskiy-kriz.txt",
+    "images": [
+      "13_gipertonicheskiy-kriz_01.png",
+      "13_gipertonicheskiy-kriz_03.webp",
+      "13_gipertonicheskiy-kriz_04.png"
+    ]
+  },
+  {
+    "num": 14,
+    "slug": "zdorovye-sosudy",
+    "title": "Капельница Здоровые сосуды",
+    "url": "https://biorise.ru/catalog/zdorovye-sosudy/",
+    "txt_file": "14_zdorovye-sosudy.txt",
+    "images": [
+      "14_zdorovye-sosudy_01.png",
+      "14_zdorovye-sosudy_03.webp",
+      "14_zdorovye-sosudy_04.png"
+    ]
+  },
+  {
+    "num": 15,
+    "slug": "sport-kardio",
+    "title": "Капельница спорт кардио",
+    "url": "https://biorise.ru/catalog/sport-kardio/",
+    "txt_file": "15_sport-kardio.txt",
+    "images": [
+      "15_sport-kardio_01.png",
+      "15_sport-kardio_03.webp",
+      "15_sport-kardio_04.png"
+    ]
+  },
+  {
+    "num": 16,
+    "slug": "sport-silovaya",
+    "title": "Капельница спорт силовая",
+    "url": "https://biorise.ru/catalog/sport-silovaya/",
+    "txt_file": "16_sport-silovaya.txt",
+    "images": [
+      "16_sport-silovaya_01.png",
+      "16_sport-silovaya_03.webp",
+      "16_sport-silovaya_04.png"
+    ]
+  },
+  {
+    "num": 17,
+    "slug": "sahar-v-norme",
+    "title": "Капельница сахар в норме",
+    "url": "https://biorise.ru/catalog/sahar-v-norme/",
+    "txt_file": "17_sahar-v-norme.txt",
+    "images": [
+      "17_sahar-v-norme_01.png",
+      "17_sahar-v-norme_03.webp",
+      "17_sahar-v-norme_04.png"
+    ]
+  },
+  {
+    "num": 18,
+    "slug": "net-holesterinu",
+    "title": "Капельница Нет холестерину",
+    "url": "https://biorise.ru/catalog/net-holesterinu/",
+    "txt_file": "18_net-holesterinu.txt",
+    "images": [
+      "18_net-holesterinu_01.png",
+      "18_net-holesterinu_03.webp",
+      "18_net-holesterinu_04.png"
+    ]
+  },
+  {
+    "num": 19,
+    "slug": "polovaya-sistema",
+    "title": "Капельница половая система",
+    "url": "https://biorise.ru/catalog/polovaya-sistema/",
+    "txt_file": "19_polovaya-sistema.txt",
+    "images": [
+      "19_polovaya-sistema_01.png",
+      "19_polovaya-sistema_03.webp",
+      "19_polovaya-sistema_04.png"
+    ]
+  },
+  {
+    "num": 20,
+    "slug": "muzhskoe-zdorove",
+    "title": "Капельница Мужское здоровье",
+    "url": "https://biorise.ru/catalog/muzhskoe-zdorove/",
+    "txt_file": "20_muzhskoe-zdorove.txt",
+    "images": [
+      "20_muzhskoe-zdorove_01.png",
+      "20_muzhskoe-zdorove_03.webp",
+      "20_muzhskoe-zdorove_04.png"
+    ]
+  },
+  {
+    "num": 21,
+    "slug": "mame-mozhno",
+    "title": "Капельница Маме можно",
+    "url": "https://biorise.ru/catalog/mame-mozhno/",
+    "txt_file": "21_mame-mozhno.txt",
+    "images": [
+      "21_mame-mozhno_01.png",
+      "21_mame-mozhno_03.webp",
+      "21_mame-mozhno_04.png"
+    ]
+  },
+  {
+    "num": 22,
+    "slug": "podgotovka-k-beremennosti",
+    "title": "Капельница Подготовка к беременности",
+    "url": "https://biorise.ru/catalog/podgotovka-k-beremennosti/",
+    "txt_file": "22_podgotovka-k-beremennosti.txt",
+    "images": [
+      "22_podgotovka-k-beremennosti_01.png",
+      "22_podgotovka-k-beremennosti_03.webp",
+      "22_podgotovka-k-beremennosti_04.png"
+    ]
+  },
+  {
+    "num": 23,
+    "slug": "protein-bust",
+    "title": "Капельница Протеин буст",
+    "url": "https://biorise.ru/catalog/protein-bust/",
+    "txt_file": "23_protein-bust.txt",
+    "images": [
+      "23_protein-bust_01.png",
+      "23_protein-bust_03.webp",
+      "23_protein-bust_04.png"
+    ]
+  },
+  {
+    "num": 24,
+    "slug": "vitaminnaya",
+    "title": "Капельница Витаминная",
+    "url": "https://biorise.ru/catalog/vitaminnaya/",
+    "txt_file": "24_vitaminnaya.txt",
+    "images": [
+      "24_vitaminnaya_01.png",
+      "24_vitaminnaya_03.jpg",
+      "24_vitaminnaya_04.png"
+    ]
+  },
+  {
+    "num": 25,
+    "slug": "breynstorm",
+    "title": "Капельница Брейнсторм",
+    "url": "https://biorise.ru/catalog/breynstorm/",
+    "txt_file": "25_breynstorm.txt",
+    "images": [
+      "25_breynstorm_01.png",
+      "25_breynstorm_03.webp",
+      "25_breynstorm_04.png"
+    ]
+  },
+  {
+    "num": 26,
+    "slug": "dzhetlag",
+    "title": "Капельница Джетлаг",
+    "url": "https://biorise.ru/catalog/dzhetlag/",
+    "txt_file": "26_dzhetlag.txt",
+    "images": [
+      "26_dzhetlag_01.png",
+      "26_dzhetlag_03.webp",
+      "26_dzhetlag_04.png"
+    ]
+  },
+  {
+    "num": 27,
+    "slug": "zhelezo-standart",
+    "title": "Капельница Железо стандарт",
+    "url": "https://biorise.ru/catalog/zhelezo-standart/",
+    "txt_file": "27_zhelezo-standart.txt",
+    "images": [
+      "27_zhelezo-standart_02.webp",
+      "27_zhelezo-standart_03.png"
+    ]
+  },
+  {
+    "num": 28,
+    "slug": "zhelezo-2-0",
+    "title": "Капельница Железо 2.0",
+    "url": "https://biorise.ru/catalog/zhelezo-2-0/",
+    "txt_file": "28_zhelezo-2-0.txt",
+    "images": [
+      "28_zhelezo-2-0_01.png",
+      "28_zhelezo-2-0_03.webp",
+      "28_zhelezo-2-0_04.png"
+    ]
+  },
+  {
+    "num": 29,
+    "slug": "zhkt-1",
+    "title": "Капельница ЖКТ 1",
+    "url": "https://biorise.ru/catalog/zhkt-1/",
+    "txt_file": "29_zhkt-1.txt",
+    "images": [
+      "29_zhkt-1_01.png",
+      "29_zhkt-1_03.webp",
+      "29_zhkt-1_04.png"
+    ]
+  },
+  {
+    "num": 30,
+    "slug": "zhkt-2",
+    "title": "Капельница ЖКТ 2",
+    "url": "https://biorise.ru/catalog/zhkt-2/",
+    "txt_file": "30_zhkt-2.txt",
+    "images": [
+      "30_zhkt-2_01.png",
+      "30_zhkt-2_03.webp",
+      "30_zhkt-2_04.png"
+    ]
+  },
+  {
+    "num": 31,
+    "slug": "predoperatsionnaya",
+    "title": "Капельница Предоперационная",
+    "url": "https://biorise.ru/catalog/predoperatsionnaya/",
+    "txt_file": "31_predoperatsionnaya.txt",
+    "images": [
+      "31_predoperatsionnaya_01.png",
+      "31_predoperatsionnaya_03.webp",
+      "31_predoperatsionnaya_04.png"
+    ]
+  },
+  {
+    "num": 32,
+    "slug": "stomatologicheskaya-protivovospalitelnaya",
+    "title": "Капельница Стоматологическая противовоспалительная",
+    "url": "https://biorise.ru/catalog/stomatologicheskaya-protivovospalitelnaya/",
+    "txt_file": "32_stomatologicheskaya-protivovospalitelnaya.txt",
+    "images": [
+      "32_stomatologicheskaya-protivovospalitelnaya_01.png",
+      "32_stomatologicheskaya-protivovospalitelnaya_03.webp",
+      "32_stomatologicheskaya-protivovospalitelnaya_04.png"
+    ]
+  },
+  {
+    "num": 33,
+    "slug": "ginekologicheskaya-protivovospalitelnaya",
+    "title": "Капельница Гинекологическая противовоспалительная",
+    "url": "https://biorise.ru/catalog/ginekologicheskaya-protivovospalitelnaya/",
+    "txt_file": "33_ginekologicheskaya-protivovospalitelnaya.txt",
+    "images": [
+      "33_ginekologicheskaya-protivovospalitelnaya_01.png",
+      "33_ginekologicheskaya-protivovospalitelnaya_03.webp",
+      "33_ginekologicheskaya-protivovospalitelnaya_04.png"
+    ]
+  },
+  {
+    "num": 34,
+    "slug": "bronho-legochnaya-protivovospalitelnaya",
+    "title": "Капельница бронхо-легочная противовоспалительная",
+    "url": "https://biorise.ru/catalog/bronho-legochnaya-protivovospalitelnaya/",
+    "txt_file": "34_bronho-legochnaya-protivovospalitelnaya.txt",
+    "images": [
+      "34_bronho-legochnaya-protivovospalitelnaya_01.png",
+      "34_bronho-legochnaya-protivovospalitelnaya_03.webp",
+      "34_bronho-legochnaya-protivovospalitelnaya_04.png"
+    ]
+  },
+  {
+    "num": 35,
+    "slug": "sustavnaya-protivovospalitelnaya",
+    "title": "Капельница суставная противовоспалительная",
+    "url": "https://biorise.ru/catalog/sustavnaya-protivovospalitelnaya/",
+    "txt_file": "35_sustavnaya-protivovospalitelnaya.txt",
+    "images": [
+      "35_sustavnaya-protivovospalitelnaya_01.png",
+      "35_sustavnaya-protivovospalitelnaya_03.webp",
+      "35_sustavnaya-protivovospalitelnaya_04.png"
+    ]
+  },
+  {
+    "num": 36,
+    "slug": "antiammiak",
+    "title": "Капельница Антиаммиак",
+    "url": "https://biorise.ru/catalog/antiammiak/",
+    "txt_file": "36_antiammiak.txt",
+    "images": [
+      "36_antiammiak_01.png",
+      "36_antiammiak_03.webp",
+      "36_antiammiak_04.png"
+    ]
+  },
+  {
+    "num": 37,
+    "slug": "krasota-i-omolozhenie",
+    "title": "Капельница Красота и молодость",
+    "url": "https://biorise.ru/catalog/krasota-i-omolozhenie/",
+    "txt_file": "37_krasota-i-omolozhenie.txt",
+    "images": [
+      "37_krasota-i-omolozhenie_02.webp",
+      "37_krasota-i-omolozhenie_03.png"
+    ]
+  },
+  {
+    "num": 38,
+    "slug": "gustye-volosy",
+    "title": "Капельница Густые волосы",
+    "url": "https://biorise.ru/catalog/gustye-volosy/",
+    "txt_file": "38_gustye-volosy.txt",
+    "images": [
+      "38_gustye-volosy_01.png",
+      "38_gustye-volosy_03.webp",
+      "38_gustye-volosy_04.png"
+    ]
+  },
+  {
+    "num": 39,
+    "slug": "snizhenie-vesa",
+    "title": "Капельница Снижение веса",
+    "url": "https://biorise.ru/catalog/snizhenie-vesa/",
+    "txt_file": "39_snizhenie-vesa.txt",
+    "images": [
+      "39_snizhenie-vesa_01.png",
+      "39_snizhenie-vesa_03.jpg",
+      "39_snizhenie-vesa_04.png"
+    ]
+  },
+  {
+    "num": 40,
+    "slug": "laennek",
+    "title": "Капельница Лаеннек",
+    "url": "https://biorise.ru/catalog/laennek/",
+    "txt_file": "40_laennek.txt",
+    "images": [
+      "40_laennek_02.webp",
+      "40_laennek_03.png"
+    ]
+  },
+  {
+    "num": 41,
+    "slug": "antieydzh-premium",
+    "title": "Капельница Антиэйдж Премиум",
+    "url": "https://biorise.ru/catalog/antieydzh-premium/",
+    "txt_file": "41_antieydzh-premium.txt",
+    "images": [
+      "41_antieydzh-premium_01.png",
+      "41_antieydzh-premium_03.webp",
+      "41_antieydzh-premium_04.png"
+    ]
+  },
+  {
+    "num": 42,
+    "slug": "ayronmen",
+    "title": "Капельница Айронмен",
+    "url": "https://biorise.ru/catalog/ayronmen/",
+    "txt_file": "42_ayronmen.txt",
+    "images": [
+      "42_ayronmen_01.png",
+      "42_ayronmen_03.webp",
+      "42_ayronmen_04.png"
+    ]
+  },
+  {
+    "num": 43,
+    "slug": "multivitaminnaya",
+    "title": "Капельница Мультивитаминная",
+    "url": "https://biorise.ru/catalog/multivitaminnaya/",
+    "txt_file": "43_multivitaminnaya.txt",
+    "images": [
+      "43_multivitaminnaya_01.png",
+      "43_multivitaminnaya_03.jpg",
+      "43_multivitaminnaya_04.png"
+    ]
+  },
+  {
+    "num": 44,
+    "slug": "antiklimaks",
+    "title": "Капельница Антиклимакс",
+    "url": "https://biorise.ru/catalog/antiklimaks/",
+    "txt_file": "44_antiklimaks.txt",
+    "images": [
+      "44_antiklimaks_01.png",
+      "44_antiklimaks_03.webp",
+      "44_antiklimaks_04.png"
+    ]
+  }
+]

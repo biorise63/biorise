@@ -138,7 +138,10 @@ const slugify = (text: string) =>
     .replace(/^-+|-+$/g, '')
 
 const projectRoot = process.cwd()
-const codexDir = path.resolve(projectRoot, '..', 'капельницы codex')
+// Пробуем сначала локальную папку, потом папку в репозитории
+const codexDirLocal = path.resolve(projectRoot, '..', 'капельницы codex')
+const codexDirRepo = path.join(projectRoot, 'data', 'kapelnicy')
+const codexDir = fs.existsSync(codexDirLocal) ? codexDirLocal : codexDirRepo
 const imagesDir = path.join(codexDir, 'images')
 const publicDir = path.join(projectRoot, 'public', 'kapelnicy')
 const priceCsv = path.resolve(projectRoot, '..', 'ПРАЙС услуги', 'Прайс Капельницы.csv')
@@ -375,8 +378,18 @@ function pickPriceDuration(
 }
 
 function loadIndex(): IndexEntry[] {
-  const raw = fs.readFileSync(path.join(codexDir, 'index.json'), 'utf-8')
-  return JSON.parse(raw) as IndexEntry[]
+  const indexPath = path.join(codexDir, 'index.json')
+  if (!fs.existsSync(indexPath)) {
+    console.warn('Index file not found:', indexPath)
+    return []
+  }
+  try {
+    const raw = fs.readFileSync(indexPath, 'utf-8')
+    return JSON.parse(raw) as IndexEntry[]
+  } catch (e) {
+    console.error('Failed to load index:', e)
+    return []
+  }
 }
 
 const sectionMap: Record<string, keyof InfusionItem> = {
@@ -442,6 +455,16 @@ function parseInfusion(
   priceMap: Record<string, { price?: string; duration?: string }>
 ): InfusionItem {
   const txtPath = path.join(codexDir, entry.txt_file)
+  if (!fs.existsSync(txtPath)) {
+    console.warn('Text file not found:', txtPath)
+    return {
+      id: slugify(displayName),
+      title: displayName,
+      description: 'Описание скоро будет',
+      imageUrl: undefined,
+      details: '',
+    }
+  }
   const raw = fs.readFileSync(txtPath, 'utf-8')
   const blacklist = [
     'записаться на приём',
@@ -504,6 +527,21 @@ export const metadata = {
 export default function KapelnicyPage() {
   const index = loadIndex()
   const priceMap = loadPriceMap()
+
+  // Если данных нет, возвращаем пустую страницу с сообщением
+  if (index.length === 0) {
+    return (
+      <>
+        <Header />
+        <InfusionPageLayout sidebarCategories={[]}>
+          <div className="text-center py-20">
+            <p className="text-olive-primary/60 text-lg">Данные загружаются...</p>
+          </div>
+        </InfusionPageLayout>
+        <Footer />
+      </>
+    )
+  }
 
   const categories = categoriesConfig.map((cat) => {
     const items: InfusionItem[] = cat.items
