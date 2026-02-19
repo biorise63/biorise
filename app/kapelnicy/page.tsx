@@ -213,45 +213,26 @@ function ensureDir(dir: string) {
 function loadPriceMap() {
   const map: Record<string, { price?: string; duration?: string }> = {}
   
-  // СНАЧАЛА загружаем длительности из текстового файла
-  if (fs.existsSync(durationTxt)) {
-    try {
-      const txtContent = fs.readFileSync(durationTxt, 'utf-8')
-      const lines = txtContent.split(/\r?\n/).map(l => l.trim()).filter(Boolean)
-      const durationHeaderIdx = lines.findIndex(l => l.toLowerCase().includes('длительность'))
-      
-      if (durationHeaderIdx !== -1) {
-        const names = lines.slice(0, durationHeaderIdx).filter(l => l && l !== 'Название')
-        const durations = lines.slice(durationHeaderIdx + 1).filter(l => l && /^\d+$/.test(l))
-        
-        for (let i = 0; i < names.length && i < durations.length; i++) {
-          const name = names[i]
-          const dur = durations[i]
-          if (!name || !dur) continue
-          
-          const duration = dur !== '0' ? `${dur} мин` : undefined
-          const slug = slugify(name)
-          
-          // Добавляем по разным ключам
-          map[name] = { duration }
-          map[name.toLowerCase()] = { duration }
-          map[slug] = { duration }
-          
-          // Также добавляем через обратный маппинг (находим displayName по priceName)
-          for (const [displayName, priceName] of Object.entries(nameToPriceName)) {
-            if (priceName === name || priceName.toLowerCase() === name.toLowerCase()) {
-              map[displayName] = { duration }
-              map[displayName.toLowerCase()] = { duration }
-              map[slugify(displayName)] = { duration }
-            }
-          }
-        }
+  // Используем фиксированные значения из константы
+  for (const [name, data] of Object.entries(fixedPrices)) {
+    map[name] = { ...data }
+    map[name.toLowerCase()] = { ...data }
+    map[slugify(name)] = { ...data }
+    
+    // Также добавляем через обратный маппинг (находим displayName по priceName)
+    for (const [displayName, priceName] of Object.entries(nameToPriceName)) {
+      if (priceName === name || priceName.toLowerCase() === name.toLowerCase()) {
+        map[displayName] = { ...data }
+        map[displayName.toLowerCase()] = { ...data }
+        map[slugify(displayName)] = { ...data }
       }
-    } catch (e) {
-      // Ignore errors reading duration file
     }
   }
   
+  return map
+  
+  // Старый код для парсинга файлов (закомментирован, но оставлен для справки)
+  /*
   // ПОТОМ дополняем ценами из CSV
   if (!fs.existsSync(priceCsv)) return map
   
@@ -404,6 +385,7 @@ except Exception as e:
   
   return map
 }
+*/
 
 function pickPriceDuration(
   priceMap: Record<string, { price?: string; duration?: string }>,
