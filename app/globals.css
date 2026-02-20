@@ -957,3 +957,27 @@ html.lenis {
     gap: 24px;
   }
 }
+
+/* Dropdown menu fix - убираем зазор между кнопкой и подменю */
+.has-dropdown {
+  position: relative;
+}
+
+/* Невидимый мост между кнопкой и dropdown для предотвращения разрыва hover */
+.has-dropdown::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 45;
+}
+
+/* Dropdown позиционирование без зазора */
+.has-dropdown > div[class*="absolute"] {
+  top: calc(100% - 2px) !important;
+  margin-top: 0 !important;
+}
