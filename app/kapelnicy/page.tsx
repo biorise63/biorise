@@ -193,11 +193,22 @@ const slugify = (text: string) =>
     .replace(/[^\p{L}\p{N}]+/gu, '-')
     .replace(/^-+|-+$/g, '')
 
+const normalizeName = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/^[\d\s.]+/, '')
+    .replace(/\.txt$/i, '')
+    .replace(/[«»"“”]/g, '')
+    .trim()
+
 const projectRoot = process.cwd()
 // Пробуем сначала локальную папку, потом папку в репозитории
 const codexDirLocal = path.resolve(projectRoot, '..', 'капельницы codex')
 const codexDirRepo = path.join(projectRoot, 'data', 'kapelnicy')
 const codexDir = fs.existsSync(codexDirLocal) ? codexDirLocal : codexDirRepo
+const codex2DirLocal = path.resolve(projectRoot, '..', 'капельницы codex', 'капельницы codex2')
+const codex2DirRepo = path.join(projectRoot, 'data', 'kapelnicy2')
+const codex2Dir = fs.existsSync(codex2DirLocal) ? codex2DirLocal : codex2DirRepo
 const imagesDir = path.join(codexDir, 'images')
 const publicDir = path.join(projectRoot, 'public', 'kapelnicy')
 const priceCsv = path.resolve(projectRoot, '..', 'ПРАЙС услуги', 'Прайс Капельницы.csv')
@@ -208,6 +219,31 @@ const durationTxt = fs.existsSync(durationTxtLocal) ? durationTxtLocal : duratio
 
 function ensureDir(dir: string) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+}
+
+function findTxtFile(entry: IndexEntry, displayName: string): string | null {
+  const dirs = [codexDir, codex2Dir]
+  const candidates = []
+
+  if (entry.txt_file) {
+    for (const dir of dirs) {
+      const candidate = path.join(dir, entry.txt_file)
+      if (fs.existsSync(candidate)) return candidate
+    }
+  }
+
+  for (const dir of dirs) {
+    if (!fs.existsSync(dir)) continue
+    const files = fs.readdirSync(dir).filter((f) => f.toLowerCase().endsWith('.txt'))
+    for (const file of files) {
+      const base = normalizeName(file)
+      if (slugify(base) === slugify(displayName) || base.includes(normalizeName(displayName))) {
+        candidates.push(path.join(dir, file))
+      }
+    }
+  }
+
+  return candidates[0] || null
 }
 
 function loadPriceMap() {
@@ -346,15 +382,16 @@ function parseInfusion(
   displayName: string,
   priceMap: Record<string, { price?: string; duration?: string }>
 ): InfusionItem {
-  const txtPath = path.join(codexDir, entry.txt_file)
-  if (!fs.existsSync(txtPath)) {
-    console.warn('Text file not found:', txtPath)
+  const txtPath = findTxtFile(entry, displayName)
+  const priceInfo = pickPriceDuration(priceMap, displayName, entry.title, entry.slug)
+
+  if (!txtPath || !fs.existsSync(txtPath)) {
     return {
       id: slugify(displayName),
       title: displayName,
       description: 'Описание скоро будет',
-      imageUrl: undefined,
-      details: '',
+      price: priceInfo.price,
+      duration: priceInfo.duration,
     }
   }
   const raw = fs.readFileSync(txtPath, 'utf-8')
@@ -375,11 +412,8 @@ function parseInfusion(
       return !blacklist.some((b) => lower.includes(b))
     })
 
-  const priceLine = lines.find((l) => /\d[\d\s]*[₽Р]/.test(l))
-  const parsedPrice = priceLine ? priceLine.match(/\d[\d\s]*[₽Р]/)?.[0] : undefined
-
   const ignore = ['название:', 'ссылка:', 'главная', 'стоимость', 'время', 'описание', 'используем', 'действие', 'состав']
-  const desc = lines.find((l) => l.length > 15 && !ignore.some((k) => l.toLowerCase().startsWith(k)))
+  const desc = lines.find((l) => l.length > 5 && !ignore.some((k) => l.toLowerCase().startsWith(k)))
   const details = lines.join('\n')
   const sections = parseSections(lines)
 
@@ -414,7 +448,7 @@ function parseInfusion(
     id: slugify(displayName),
     title: displayName,
     description: desc || 'Описание скоро будет',
-    price: csvPrice || parsedPrice,
+    price: csvPrice,
     duration: csvDuration,
     imageUrl,
     details,

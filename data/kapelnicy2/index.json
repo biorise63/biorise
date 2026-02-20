@@ -1,0 +1,163 @@
+[
+  {
+    "num": 1,
+    "category": "Иммунитет и восстановление",
+    "name": "Капельница с витаминами",
+    "url": "https://biorise.ru/services/vitaminnaya/",
+    "file": "01. Капельница с витаминами.txt"
+  },
+  {
+    "num": 2,
+    "category": "Иммунитет и восстановление",
+    "name": "Капельница Коктейль Майерса",
+    "url": "https://biorise.ru/services/kapelnitsa-mayersa/",
+    "file": "02. Капельница Коктейль Майерса.txt"
+  },
+  {
+    "num": 3,
+    "category": "Иммунитет и восстановление",
+    "name": "Капельница при ОРВИ",
+    "url": "https://biorise.ru/services/orvi/",
+    "file": "03. Капельница при ОРВИ.txt"
+  },
+  {
+    "num": 4,
+    "category": "Иммунитет и восстановление",
+    "name": "Капельница после ковида",
+    "url": "https://biorise.ru/services/posle-covida/",
+    "file": "04. Капельница после ковида.txt"
+  },
+  {
+    "num": 5,
+    "category": "Детокс и печень",
+    "name": "Капельница «Детокс»",
+    "url": "https://biorise.ru/services/kapelnitsa-detoks/",
+    "file": "05. Капельница «Детокс».txt"
+  },
+  {
+    "num": 6,
+    "category": "Детокс и печень",
+    "name": "Капельница для печени",
+    "url": "https://biorise.ru/services/kapelnitsy-dlya-pecheni/",
+    "file": "06. Капельница для печени.txt"
+  },
+  {
+    "num": 7,
+    "category": "Детокс и печень",
+    "name": "Капельница при отравлении",
+    "url": "https://biorise.ru/services/kapelnitsa-pri-otravlenii/",
+    "file": "07. Капельница при отравлении.txt"
+  },
+  {
+    "num": 8,
+    "category": "Детокс и печень",
+    "name": "Капельница с Гептралом",
+    "url": "https://biorise.ru/services/kapelnitsa-geptral/",
+    "file": "08. Капельница с Гептралом.txt"
+  },
+  {
+    "num": 9,
+    "category": "Нервная система и мозг",
+    "name": "Капельница от стресса и нервов",
+    "url": "https://biorise.ru/services/kapelnitsa-ot-nervov/",
+    "file": "09. Капельница от стресса и нервов.txt"
+  },
+  {
+    "num": 10,
+    "category": "Нервная система и мозг",
+    "name": "Капельница для мозга",
+    "url": "https://biorise.ru/services/kapelnitsa-dlya-mozga/",
+    "file": "10. Капельница для мозга.txt"
+  },
+  {
+    "num": 11,
+    "category": "Сердце и сосуды",
+    "name": "Капельница для сердца",
+    "url": "https://biorise.ru/services/kapelnitsa-dlya-serdtsa/",
+    "file": "11. Капельница для сердца.txt"
+  },
+  {
+    "num": 12,
+    "category": "Сердце и сосуды",
+    "name": "Капельница для мозга",
+    "url": "https://biorise.ru/services/kapelnitsa-dlya-sosudov/",
+    "file": "12. Капельница для мозга.txt"
+  },
+  {
+    "num": 13,
+    "category": "Энергия и спорт",
+    "name": "Капельница для спортсменов",
+    "url": "https://biorise.ru/services/kapelnitsa-dlya-sportsmenov/",
+    "file": "13. Капельница для спортсменов.txt"
+  },
+  {
+    "num": 14,
+    "category": "Обмен веществ и вес",
+    "name": "Капельница для похудения",
+    "url": "https://biorise.ru/services/kapelnitsa-dlya-pohudeniya/",
+    "file": "14. Капельница для похудения.txt"
+  },
+  {
+    "num": 15,
+    "category": "Обмен веществ и вес",
+    "name": "Капельница при диабете",
+    "url": "https://biorise.ru/services/kapelnitsa-pri-diabete/",
+    "file": "15. Капельница при диабете.txt"
+  },
+  {
+    "num": 16,
+    "category": "Красота и Anti-Age",
+    "name": "Капельница «Золушка»",
+    "url": "https://biorise.ru/services/kapelnitsa-zolushka/",
+    "file": "16. Капельница «Золушка».txt"
+  },
+  {
+    "num": 17,
+    "category": "Красота и Anti-Age",
+    "name": "Капельница с глутатионом",
+    "url": "https://biorise.ru/services/glutation/",
+    "file": "17. Капельница с глутатионом.txt"
+  },
+  {
+    "num": 18,
+    "category": "Красота и Anti-Age",
+    "name": "Капельница с железом",
+    "url": "https://biorise.ru/services/jeleza-pri-anemii/",
+    "file": "18. Капельница с железом.txt"
+  },
+  {
+    "num": 19,
+    "category": "Беременность",
+    "name": "Капельница при беременности",
+    "url": "https://biorise.ru/services/kapelnitsa-pri-beremennosti/",
+    "file": "19. Капельница при беременности.txt"
+  },
+  {
+    "num": 20,
+    "category": "Аллергия",
+    "name": "Капельница при аллергии",
+    "url": "https://biorise.ru/services/kapelnitsa-pri-allergii/",
+    "file": "20. Капельница при аллергии.txt"
+  },
+  {
+    "num": 21,
+    "category": "Дополнительные капельницы",
+    "name": "Капельница с глюкозой",
+    "url": "https://biorise.ru/services/glukoza/",
+    "file": "21. Капельница с глюкозой.txt"
+  },
+  {
+    "num": 22,
+    "category": "Дополнительные капельницы",
+    "name": "Капельница Лаеннек",
+    "url": "https://biorise.ru/services/laennec/",
+    "file": "22. Капельница Лаеннек.txt"
+  },
+  {
+    "num": 23,
+    "category": "Дополнительные капельницы",
+    "name": "Капельница Феринжект",
+    "url": "https://biorise.ru/services/ferinject/",
+    "file": "23. Капельница Феринжект.txt"
+  }
+]
