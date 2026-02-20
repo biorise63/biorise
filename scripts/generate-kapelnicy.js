@@ -7,6 +7,39 @@ const dataDir2 = path.join(projectRoot, 'data', 'kapelnicy2')
 const outputPath = path.join(projectRoot, 'data', 'kapelnicy.generated.json')
 const publicDir = path.join(projectRoot, 'public', 'kapelnicy')
 
+// slug на сайте (должен совпадать с app/kapelnicy/page.tsx -> nameToSlug)
+const nameToSlug = {
+  'Капельница с витаминами': 'vitaminnaya',
+  'Капельница Коктейль Майерса': 'multivitaminnaya',
+  'Капельница при ОРВИ': 'antivirus',
+  'Капельница после ковида': 'postkovid',
+  'Капельница «Детокс»': 'detoks-standart',
+  'Капельница для печени': 'detoksikatsiya-pechen',
+  'Капельница при отравлении': 'detoksikatsiya-otravlenie',
+  'Капельница с Гептралом': 'detoksikatsiya-geptral',
+  'Капельница от стресса и нервов': 'antistress',
+  'Капельница для мозга': 'breynstorm',
+  'Капельница для сердца': 'zdorovye-sosudy',
+  'Капельница для спортсменов': 'sport-silovaya',
+  'Капельница для похудения': 'snizhenie-vesa',
+  'Капельница при диабете': 'sahar-v-norme',
+  'Капельница «Золушка»': 'krasota-i-omolozhenie',
+  'Капельница с глутатионом': 'antieydzh-premium',
+  'Капельница с железом': 'zhelezo-standart',
+  'Капельница при беременности': 'mame-mozhno',
+  'Капельница при аллергии': 'antigistaminnaya',
+  'Капельница с глюкозой': 'posle-vecherinki',
+  'Капельница Лаеннек': 'laennek',
+  'Капельница Феринжект': 'zhelezo-2-0',
+}
+
+// для новых уникальных карточек фото берём от базового slug
+const imageFallbackBySlug = {
+  'detoksikatsiya-pechen': 'detoksikatsiya',
+  'detoksikatsiya-otravlenie': 'detoksikatsiya',
+  'detoksikatsiya-geptral': 'detoksikatsiya',
+}
+
 const nameToPriceName = {
   'Капельница с витаминами': 'Витаминная',
   'Капельница Коктейль Майерса': 'Мультивитаминная',
@@ -120,23 +153,34 @@ function loadIndex(dir) {
 }
 
 function findTxtFile(entry, displayName) {
-  const dirs = [dataDir1, dataDir2]
-  if (entry.txt_file) {
-    for (const dir of dirs) {
-      const candidate = path.join(dir, entry.txt_file)
-      if (fs.existsSync(candidate)) return candidate
-    }
-  }
-  for (const dir of dirs) {
-    if (!fs.existsSync(dir)) continue
-    const files = fs.readdirSync(dir).filter((f) => f.toLowerCase().endsWith('.txt'))
+  // 1) СНАЧАЛА пытаемся найти по названию в kapelnicy2 (новые файлы)
+  if (displayName && fs.existsSync(dataDir2)) {
+    const files = fs.readdirSync(dataDir2).filter((f) => f.toLowerCase().endsWith('.txt'))
     for (const file of files) {
       const base = normalizeName(file)
       if (slugify(base) === slugify(displayName) || base.includes(normalizeName(displayName))) {
-        return path.join(dir, file)
+        return path.join(dataDir2, file)
       }
     }
   }
+
+  // 2) Потом по txt_file из старого индекса (kapelnicy)
+  if (entry && entry.txt_file) {
+    const candidate = path.join(dataDir1, entry.txt_file)
+    if (fs.existsSync(candidate)) return candidate
+  }
+
+  // 3) И в конце — поиск по названию в kapelnicy (старые файлы)
+  if (displayName && fs.existsSync(dataDir1)) {
+    const files = fs.readdirSync(dataDir1).filter((f) => f.toLowerCase().endsWith('.txt'))
+    for (const file of files) {
+      const base = normalizeName(file)
+      if (slugify(base) === slugify(displayName) || base.includes(normalizeName(displayName))) {
+        return path.join(dataDir1, file)
+      }
+    }
+  }
+
   return null
 }
 
@@ -172,18 +216,13 @@ function parseSections(lines) {
 }
 
 function pickPriceDuration(displayName, entryTitle, entrySlug) {
-  const keys = [displayName, entryTitle, entrySlug, slugify(displayName), slugify(entryTitle || '')]
-  const priceName = nameToPriceName[displayName]
-  if (priceName) keys.push(priceName, slugify(priceName))
-  for (const key of keys) {
-    if (fixedPrices[key]) return fixedPrices[key]
-    if (fixedPrices[key?.toString().replace(/-/g, ' ')]) return fixedPrices[key.toString().replace(/-/g, ' ')]
-  }
-  return {}
+  const priceName = nameToPriceName[displayName] || nameToPriceName[entryTitle] || displayName
+  return fixedPrices[priceName] || {}
 }
 
 function parseInfusion(entry) {
-  const displayName = entry.title || entry.slug || 'Капельница'
+  // На карточке показываем "маркетинговое" имя (как в списке категорий)
+  const displayName = entry.name || entry.title || entry.slug || 'Капельница'
   const txtPath = findTxtFile(entry, displayName)
   const priceInfo = pickPriceDuration(displayName, entry.title, entry.slug)
 
@@ -211,19 +250,28 @@ function parseInfusion(entry) {
     .filter(Boolean)
     .filter((l) => !blacklist.some((b) => l.toLowerCase().includes(b)))
 
-  const ignore = ['название:', 'ссылка:', 'главная', 'стоимость', 'время', 'описание', 'используем', 'действие', 'состав']
-  const desc = lines.find((l) => l.length > 5 && !ignore.some((k) => l.toLowerCase().startsWith(k))) || 'Описание скоро будет'
+  // краткое описание: берём строго из поля "краткое описание:"
+  const shortLine = lines.find((l) => l.toLowerCase().startsWith('краткое описание'))
+  const desc =
+    (shortLine && shortLine.split(':').slice(1).join(':').trim()) ||
+    'Описание скоро будет'
   const details = lines.join('\n')
   const sections = parseSections(lines)
 
   let imageUrl
   const possibleExtensions = ['.png', '.jpg', '.jpeg', '.webp']
-  for (const ext of possibleExtensions) {
-    const existing = path.join(publicDir, `${entry.slug}${ext}`)
-    if (fs.existsSync(existing)) {
-      imageUrl = `/kapelnicy/${entry.slug}${ext}`
-      break
+  const primarySlug = entry.slug || slugify(displayName)
+  const fallbackSlug = imageFallbackBySlug[primarySlug] || primarySlug
+  const candidates = [primarySlug, fallbackSlug]
+  for (const slug of candidates) {
+    for (const ext of possibleExtensions) {
+      const existing = path.join(publicDir, `${slug}${ext}`)
+      if (fs.existsSync(existing)) {
+        imageUrl = `/kapelnicy/${slug}${ext}`
+        break
+      }
     }
+    if (imageUrl) break
   }
 
   return {
@@ -241,12 +289,24 @@ function parseInfusion(entry) {
 function main() {
   const index1 = loadIndex(dataDir1)
   const index2 = loadIndex(dataDir2)
-  const all = [...index1, ...index2]
+  // в codex2 другой формат index.json: { name, file, category, url }
+  const allCodex2 = Array.isArray(index2) && index2.length && index2[0].file ? index2 : []
+  const allCodex1 = Array.isArray(index1) && index1.length && index1[0].txt_file ? index1 : []
   const map = {}
-  for (const entry of all) {
+  // 1) Генерим по codex2 — это источники "как на сайте"
+  for (const entry of allCodex2) {
+    const name = entry.name
+    const slug = nameToSlug[name] || slugify(name)
+    const filePath = path.join(dataDir2, entry.file)
+    const infusion = parseInfusion({ ...entry, slug, txt_file: entry.file })
+    infusion.title = name
+    map[slug] = infusion
+  }
+  // 2) Добираем оставшиеся из codex1 по slug (если вдруг чего-то нет в codex2)
+  for (const entry of allCodex1) {
     if (!entry || !entry.slug) continue
+    if (map[entry.slug]) continue
     const infusion = parseInfusion(entry)
-    // гарантируем, что title/description есть строками (JSON не хранит undefined)
     infusion.title = infusion.title || entry.title || entry.slug
     infusion.description = infusion.description || 'Описание скоро будет'
     map[entry.slug] = infusion

@@ -77,9 +77,9 @@ const nameToSlug: Record<string, string> = {
   'Капельница при ОРВИ': 'antivirus',
   'Капельница после ковида': 'postkovid',
   'Капельница «Детокс»': 'detoks-standart',
-  'Капельница для печени': 'detoksikatsiya',
-  'Капельница при отравлении': 'detoksikatsiya',
-  'Капельница с Гептралом': 'detoksikatsiya',
+  'Капельница для печени': 'detoksikatsiya-pechen',
+  'Капельница при отравлении': 'detoksikatsiya-otravlenie',
+  'Капельница с Гептралом': 'detoksikatsiya-geptral',
   'Капельница от стресса и нервов': 'antistress',
   'Капельница для мозга': 'breynstorm',
   'Капельница для сердца': 'zdorovye-sosudy',
@@ -133,6 +133,7 @@ export default function KapelnicyPage() {
         if (!base) return null
         return {
           ...base,
+          title: name,
           id: `${slugify(cat.title)}-${base.id}`,
         }
       })
