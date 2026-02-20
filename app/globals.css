@@ -104,6 +104,13 @@ body {
   align-items: stretch;
 }
 
+/* Desktop: keep exactly 2 cards per row so cards are as wide as possible */
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .infusion-card {
   min-height: 480px;
   height: 100%;
@@ -795,6 +802,12 @@ html.lenis {
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 32px;
   align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .infusion-card {
