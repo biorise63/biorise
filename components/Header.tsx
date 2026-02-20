@@ -166,7 +166,7 @@ export default function Header() {
               </Link>
 
               <div
-                className="relative"
+                className="relative has-dropdown"
                 ref={servicesRef}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -186,14 +186,10 @@ export default function Header() {
                   </svg>
                 </button>
                 {isServicesOpen && (
-                  <div
-                    className="absolute left-0 top-full mt-1 w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-40"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
-                  >
+                  <div className="absolute left-0 top-[calc(100%-2px)] w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-50">
                     <Link
                       href="/kapelnicy"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
                       Капельницы
                     </Link>
