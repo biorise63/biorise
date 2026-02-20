@@ -99,15 +99,14 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 32px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .infusion-card {
   min-height: 480px;
-  align-self: start;
-  height: auto;
+  height: 100%;
 }
 
 .infusion-card-image {
@@ -793,14 +792,14 @@ html.lenis {
 /* Kapelnicy cards layout and tabs */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 32px;
+  align-items: stretch;
 }
 
 .infusion-card {
   min-height: 480px;
-  align-self: start;
-  height: auto;
+  height: 100%;
 }
 
 .infusion-card-image {
@@ -851,7 +850,11 @@ html.lenis {
 .tabs-header {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 12px;
 }
 
@@ -859,6 +862,8 @@ html.lenis {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex: 0 0 auto;
+  white-space: nowrap;
   padding: 8px 12px;
   border-radius: 9999px;
   border: 1px solid rgba(94, 111, 82, 0.2);
@@ -882,6 +887,22 @@ html.lenis {
 .tab-icon {
   display: inline-flex;
   color: #5e6f52;
+}
+
+/* Hide scrollbar for tabs header (premium look) */
+.tabs-header::-webkit-scrollbar {
+  height: 0;
+}
+.tabs-header {
+  scrollbar-width: none;
+}
+
+/* Clamp short description so card heights are consistent */
+.infusion-card-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .tabs-content .tab-panel {

@@ -99,31 +99,32 @@ export default function InfusionCard({
         )}
       </div>
       <div className="infusion-card-body p-5 flex flex-col gap-3 flex-1">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-xl font-semibold text-olive-primary leading-tight flex-1">{title}</h3>
-          <div className="flex flex-col items-end gap-1 text-sm text-olive-primary/80 flex-shrink-0">
+        <h3 className="text-xl font-semibold text-olive-primary leading-tight">{title}</h3>
+        <p className="infusion-card-desc text-olive-primary/80 text-sm leading-relaxed">{description}</p>
+
+        {(price || duration) && (
+          <div className="infusion-card-meta flex items-center gap-4 flex-wrap text-sm text-olive-primary/80">
             {price && (
-              <div className="flex items-center gap-1.5">
+              <span className="infusion-chip">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <path d="M19 7H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z" />
                   <path d="M7 11h10" />
                   <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
                 </svg>
                 <span className="font-medium">{price}</span>
-              </div>
+              </span>
             )}
             {duration && (
-              <div className="flex items-center gap-1.5">
+              <span className="infusion-chip">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <path d="M12 6v6l3 3" />
                   <circle cx="12" cy="12" r="9" />
                 </svg>
                 <span className="font-medium">{duration}</span>
-              </div>
+              </span>
             )}
           </div>
-        </div>
-        <p className="text-olive-primary/80 text-sm leading-relaxed">{description}</p>
+        )}
 
         <div className="mt-auto flex items-center gap-3">
           <Link
