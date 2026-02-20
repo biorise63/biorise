@@ -99,7 +99,7 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 32px;
   align-items: stretch;
 }
@@ -848,28 +848,33 @@ html.lenis {
 }
 
 .tabs-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  display: flex;
   gap: 6px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
   margin-bottom: 12px;
 }
 
 .tab-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  gap: 4px;
+  flex: 1 1 0;
   min-width: 0;
   white-space: nowrap;
-  padding: 6px 6px;
-  font-size: 12px;
-  line-height: 1.1;
+  padding: 6px 8px;
   border-radius: 9999px;
   border: 1px solid rgba(94, 111, 82, 0.2);
   background: #fff;
   color: #2f3a2f;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tab-btn:hover {
@@ -884,13 +889,8 @@ html.lenis {
 }
 
 .tab-icon {
-  display: inline-flex;
+  display: none;
   color: #5e6f52;
-}
-
-.tab-icon svg {
-  width: 14px;
-  height: 14px;
 }
 
 /* Clamp short description so card heights are consistent */
