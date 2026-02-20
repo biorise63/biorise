@@ -99,7 +99,7 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 32px;
   align-items: stretch;
 }
@@ -849,28 +849,32 @@ html.lenis {
 
 .tabs-header {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
   margin-bottom: 12px;
 }
 
 .tab-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  flex: 0 0 auto;
+  gap: 4px;
+  flex: 1 1 0;
+  min-width: 0;
   white-space: nowrap;
-  padding: 8px 12px;
+  padding: 6px 8px;
   border-radius: 9999px;
   border: 1px solid rgba(94, 111, 82, 0.2);
   background: #fff;
   color: #2f3a2f;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tab-btn:hover {
@@ -885,16 +889,8 @@ html.lenis {
 }
 
 .tab-icon {
-  display: inline-flex;
+  display: none;
   color: #5e6f52;
-}
-
-/* Hide scrollbar for tabs header (premium look) */
-.tabs-header::-webkit-scrollbar {
-  height: 0;
-}
-.tabs-header {
-  scrollbar-width: none;
 }
 
 /* Clamp short description so card heights are consistent */

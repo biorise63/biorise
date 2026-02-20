@@ -23,7 +23,7 @@ export type InfusionCardProps = {
 const tabsOrder = [
   { key: 'indications', label: 'Показания', icon: 'heart' },
   { key: 'effect', label: 'Эффект', icon: 'sparkle' },
-  { key: 'contraindications', label: 'Противопоказания', icon: 'warn' },
+  { key: 'contraindications', label: 'Противоп.', icon: 'warn' },
   { key: 'composition', label: 'Состав', icon: 'lab' },
 ] as const
 
@@ -160,7 +160,7 @@ export default function InfusionCard({
                     onClick={() => setActiveTab(tab.key)}
                   >
                     <span className="tab-icon">{icons[tab.icon]}</span>
-                    {tab.label}
+                    <span className="tab-label">{tab.label}</span>
                   </button>
                 ))}
               </div>
