@@ -127,10 +127,10 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   <img
                     src={item.photo.url}
                     alt={item.photo.text}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-75"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
-                  <div className="absolute inset-0 flex flex-col justify-between bg-black/50 p-4 text-white">
+                  <div className="absolute inset-0 flex flex-col justify-between bg-black/65 p-4 text-white">
                     <div>
                       <h3 className="text-base font-semibold md:text-xl">{item.common}</h3>
                       <p className="text-xs italic opacity-90 md:text-sm">{item.binomial}</p>
