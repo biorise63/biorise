@@ -138,43 +138,43 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-75"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
-                  <div className="absolute inset-0 flex flex-col justify-between bg-black/65 p-4 md:p-5 text-white overflow-y-auto">
-                    <div className="space-y-2 md:space-y-3">
+                  <div className="absolute inset-0 flex flex-col justify-between bg-black/65 p-3 md:p-4 text-white">
+                    <div className="space-y-1.5 md:space-y-2">
                       <div>
-                        <h3 className="text-base md:text-lg font-semibold leading-tight mb-1">{item.common}</h3>
+                        <h3 className="text-sm md:text-base font-semibold leading-tight mb-0.5">{item.common}</h3>
                         {item.subtitle && (
-                          <p className="text-xs md:text-sm opacity-90 leading-snug">{item.subtitle}</p>
+                          <p className="text-[10px] md:text-xs opacity-90 leading-tight">{item.subtitle}</p>
                         )}
                       </div>
                       
                       {item.description && (
-                        <p className="text-xs md:text-sm leading-relaxed opacity-95">
+                        <p className="text-[10px] md:text-xs leading-tight opacity-95">
                           {item.description}
                         </p>
                       )}
 
                       {item.features && item.features.length > 0 && (
-                        <div className="space-y-1.5">
+                        <div className="space-y-1">
                           {item.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-start gap-2">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
+                            <div key={idx} className="flex items-start gap-1.5">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
                                 <polyline points="20 6 9 17 4 12" />
                               </svg>
-                              <span className="text-xs md:text-sm opacity-95">{feature}</span>
+                              <span className="text-[10px] md:text-xs opacity-95 leading-tight">{feature}</span>
                             </div>
                           ))}
                         </div>
                       )}
 
                       {item.prizes && item.prizes.length > 0 && (
-                        <div className="space-y-1.5">
+                        <div className="space-y-1">
                           {item.prizes.map((prize, idx) => (
-                            <div key={idx} className="flex items-start gap-2">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
+                            <div key={idx} className="flex items-start gap-1.5">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                 <polyline points="22 4 12 14.01 9 11.01" />
                               </svg>
-                              <span className="text-xs md:text-sm opacity-95">
+                              <span className="text-[10px] md:text-xs opacity-95 leading-tight">
                                 <span className="font-medium">{prize.place}</span> — {prize.text}
                               </span>
                             </div>
@@ -183,33 +183,33 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                       )}
 
                       {item.price && (
-                        <div className="pt-1 space-y-1">
+                        <div className="pt-0.5">
                           <div className="flex items-baseline gap-2">
-                            <span className="text-lg md:text-xl font-bold">{item.price.current}</span>
+                            <span className="text-base md:text-lg font-bold">{item.price.current}</span>
                             {item.price.old && (
-                              <span className="text-xs md:text-sm line-through opacity-60">{item.price.old}</span>
+                              <span className="text-[10px] md:text-xs line-through opacity-60">{item.price.old}</span>
                             )}
                           </div>
                         </div>
                       )}
 
                       {item.period && (
-                        <div className="flex items-center gap-2 pt-1">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 opacity-80">
+                        <div className="flex items-center gap-1.5 pt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 opacity-80">
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
                           </svg>
-                          <span className="text-xs md:text-sm opacity-90">{item.period}</span>
+                          <span className="text-[10px] md:text-xs opacity-90 leading-tight">{item.period}</span>
                         </div>
                       )}
                     </div>
 
-                    <div className="pt-3">
+                    <div className="pt-2">
                       <a
                         href={item.buttonHref || '#booking'}
                         target={(item.buttonHref || '').startsWith('http') ? '_blank' : undefined}
                         rel={(item.buttonHref || '').startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="block w-full rounded-full bg-olive-primary px-4 py-2.5 text-center text-xs font-medium text-white transition hover:bg-olive-light md:text-sm"
+                        className="block w-full rounded-full bg-olive-primary px-3 py-2 text-center text-[10px] font-medium text-white transition hover:bg-olive-light md:text-xs md:py-2.5"
                       >
                         {item.buttonText || 'Записаться'}
                       </a>
