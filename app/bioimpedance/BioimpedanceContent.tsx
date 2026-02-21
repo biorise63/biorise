@@ -7,13 +7,13 @@ export default function BioimpedanceContent() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-beige-background to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-beige-background to-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading text-olive-primary mb-6 font-light">
               Биоимпедансный анализ композитного состава тела
@@ -22,75 +22,10 @@ export default function BioimpedanceContent() {
               Метод оценки состава тела по электрическому сопротивлению тканей. Аппараты МЕДАСС применяются в клиниках, спортивной медицине и диетологии для быстрой и неинвазивной диагностики.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden shadow-premium">
-              <Image
-                src="/bioimpedance.png"
-                alt="Аппарат МЕДАСС для биоимпедансного анализа"
-                fill
-                className="object-contain bg-beige-background p-4"
-                priority
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* Principle Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="text-olive-primary">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light">
-                Принцип работы
-              </h2>
-            </div>
-            
-            <div className="space-y-6 text-olive-primary text-base md:text-lg leading-relaxed">
-              <p>
-                Через тело пропускается слабый безопасный переменный ток.
-              </p>
-              <p>
-                <strong className="font-semibold">Разные ткани проводят ток по-разному:</strong>
-              </p>
-              <ul className="space-y-3 ml-6">
-                <li className="flex items-start gap-3">
-                  <span className="text-olive-primary mt-1">•</span>
-                  <span><strong>мышечная ткань и жидкости</strong> - хорошо проводят</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-olive-primary mt-1">•</span>
-                  <span><strong>жировая ткань</strong> - оказывает большее сопротивление</span>
-                </li>
-              </ul>
-              <p>
-                На основе измерений рассчитываются показатели состава тела.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What Shows Section */}
+      {/* Principle Section - Premium Card */}
       <section className="py-16 bg-beige-background">
         <div className="container mx-auto px-6">
           <motion.div
@@ -98,9 +33,95 @@ export default function BioimpedanceContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-8">
+            {/* Premium Card Container */}
+            <div className="bg-white rounded-[20px] shadow-premium p-6 md:p-8 lg:p-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                {/* Image */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-beige-background"
+                >
+                  <Image
+                    src="/bioimpedance.png"
+                    alt="Аппарат МЕДАСС для биоимпедансного анализа"
+                    fill
+                    className="object-contain p-4"
+                    priority
+                  />
+                </motion.div>
+
+                {/* Content */}
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="text-olive-primary">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
+                        Принцип работы
+                      </h2>
+                      <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                        Как работает диагностика
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-5 text-olive-primary text-base md:text-lg leading-relaxed">
+                    <p>
+                      Через тело пропускается слабый безопасный переменный ток.
+                    </p>
+                    <div>
+                      <p className="font-semibold mb-4">Разные ткани проводят ток по-разному:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <div className="text-olive-primary mt-1 flex-shrink-0">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          </div>
+                          <span><strong>Мышцы и жидкости</strong> — хорошо проводят ток</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="text-olive-primary mt-1 flex-shrink-0">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          </div>
+                          <span><strong>Жировая ткань</strong> — оказывает большее сопротивление</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <p className="pt-2">
+                      На основе измерений рассчитываются показатели состава тела.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What Shows Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="flex items-center gap-4 mb-10">
               <div className="text-olive-primary">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -110,16 +131,17 @@ export default function BioimpedanceContent() {
                   <path d="M10 9H8" />
                 </svg>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light">
-                Что показывает анализ
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
+                  Что показывает анализ
+                </h2>
+                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                  Параметры, которые определяет аппарат МЕДАСС
+                </p>
+              </div>
             </div>
             
-            <p className="text-base md:text-lg text-olive-primary mb-6 leading-relaxed">
-              Аппарат МЕДАСС позволяет определить:
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {[
                 'общую массу тела',
                 'жировую массу и процент жира',
@@ -133,26 +155,26 @@ export default function BioimpedanceContent() {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-olive-primary/10"
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="flex items-start gap-3 bg-beige-background rounded-xl p-4 border border-olive-primary/5 hover:border-olive-primary/20 transition-colors"
                 >
-                  <div className="text-olive-primary mt-1 flex-shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="text-olive-primary mt-0.5 flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                   </div>
-                  <span className="text-olive-primary text-base md:text-lg">{item}</span>
+                  <span className="text-olive-primary text-base leading-relaxed">{item}</span>
                 </motion.div>
               ))}
             </div>
             
-            <div className="mt-8 p-6 bg-olive-primary/10 rounded-2xl border border-olive-primary/20">
+            <div className="bg-olive-primary/5 rounded-2xl p-6 md:p-8 border border-olive-primary/10">
               <p className="text-base md:text-lg text-olive-primary leading-relaxed">
-                <strong className="font-semibold">Фазовый угол</strong> - важный показатель состояния клеточных мембран и общего метаболического статуса.
+                <strong className="font-semibold">Фазовый угол</strong> — важный показатель состояния клеточных мембран и общего метаболического статуса.
               </p>
             </div>
           </motion.div>
@@ -160,28 +182,33 @@ export default function BioimpedanceContent() {
       </section>
 
       {/* Procedure Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-beige-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
               <div className="text-olive-primary">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light">
-                Как проходит процедура
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
+                  Как проходит процедура
+                </h2>
+                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                  Простой и комфортный процесс
+                </p>
+              </div>
             </div>
             
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {[
                 { step: '1', text: 'Пациент ложится на кушетку.' },
                 { step: '2', text: 'На кисть и стопу накладываются одноразовые электроды.' },
@@ -194,20 +221,26 @@ export default function BioimpedanceContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-4 bg-beige-background rounded-xl p-5"
+                  className="bg-white rounded-xl p-6 border border-olive-primary/10 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-olive-primary text-white flex items-center justify-center font-semibold">
-                    {item.step}
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-olive-primary text-white flex items-center justify-center font-semibold text-lg">
+                      {item.step}
+                    </div>
+                    <p className="text-olive-primary text-base md:text-lg leading-relaxed pt-2">
+                      {item.text}
+                    </p>
                   </div>
-                  <p className="text-olive-primary text-base md:text-lg leading-relaxed pt-2">
-                    {item.text}
-                  </p>
                 </motion.div>
               ))}
             </div>
             
-            <div className="mt-6 p-4 bg-olive-primary/5 rounded-xl border border-olive-primary/10">
-              <p className="text-base md:text-lg text-olive-primary leading-relaxed">
+            <div className="bg-white rounded-xl p-5 border border-olive-primary/10">
+              <p className="text-base md:text-lg text-olive-primary leading-relaxed flex items-center gap-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-olive-primary flex-shrink-0">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
                 Процедура безболезненна и безопасна.
               </p>
             </div>
@@ -216,31 +249,32 @@ export default function BioimpedanceContent() {
       </section>
 
       {/* Preparation Section */}
-      <section className="py-16 bg-beige-background">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
               <div className="text-olive-primary">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light">
-                Подготовка к исследованию
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
+                  Подготовка к исследованию
+                </h2>
+                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                  Рекомендации для точных результатов
+                </p>
+              </div>
             </div>
             
-            <p className="text-base md:text-lg text-olive-primary mb-6 leading-relaxed">
-              Для точности результатов рекомендуется:
-            </p>
-            
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 'не есть за 3-4 часа до процедуры',
                 'не употреблять алкоголь за сутки',
@@ -249,19 +283,19 @@ export default function BioimpedanceContent() {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-olive-primary/10"
+                  className="flex items-start gap-3 bg-beige-background rounded-xl p-5 border border-olive-primary/5 hover:border-olive-primary/20 transition-colors"
                 >
-                  <div className="text-olive-primary mt-1 flex-shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="text-olive-primary mt-0.5 flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
                   </div>
-                  <span className="text-olive-primary text-base md:text-lg">{item}</span>
+                  <span className="text-olive-primary text-base md:text-lg leading-relaxed">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -270,16 +304,16 @@ export default function BioimpedanceContent() {
       </section>
 
       {/* Who Benefits Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-beige-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
               <div className="text-olive-primary">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -288,12 +322,17 @@ export default function BioimpedanceContent() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light">
-                Кому особенно полезен
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
+                  Кому особенно полезен
+                </h2>
+                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                  Показания к проведению анализа
+                </p>
+              </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 'людям, снижающим или набирающим вес',
                 'спортсменам',
@@ -307,10 +346,10 @@ export default function BioimpedanceContent() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-beige-background rounded-xl p-5 border border-olive-primary/10"
+                  className="flex items-start gap-3 bg-white rounded-xl p-5 border border-olive-primary/10 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="text-olive-primary mt-1 flex-shrink-0">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="text-olive-primary mt-0.5 flex-shrink-0">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
@@ -324,16 +363,16 @@ export default function BioimpedanceContent() {
       </section>
 
       {/* Contraindications Section */}
-      <section className="py-16 bg-beige-background">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
               <div className="text-olive-primary">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 9v4" />
@@ -341,12 +380,17 @@ export default function BioimpedanceContent() {
                   <path d="m10.29 3.86-8.37 14.5A1 1 0 0 0 2.76 20h18.48a1 1 0 0 0 .84-1.64l-8.37-14.5a1 1 0 0 0-1.68 0Z" />
                 </svg>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light">
-                Противопоказания
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
+                  Противопоказания
+                </h2>
+                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                  Когда процедура не рекомендуется
+                </p>
+              </div>
             </div>
             
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 'наличие кардиостимулятора',
                 'беременность - по решению врача',
@@ -354,20 +398,20 @@ export default function BioimpedanceContent() {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-olive-primary/10"
+                  className="flex items-start gap-3 bg-beige-background rounded-xl p-5 border border-olive-primary/5"
                 >
-                  <div className="text-olive-primary mt-1 flex-shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="text-olive-primary mt-0.5 flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" />
                       <line x1="12" y1="8" x2="12" y2="12" />
                       <line x1="12" y1="16" x2="12.01" y2="16" />
                     </svg>
                   </div>
-                  <span className="text-olive-primary text-base md:text-lg">{item}</span>
+                  <span className="text-olive-primary text-base md:text-lg leading-relaxed">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -376,7 +420,7 @@ export default function BioimpedanceContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-beige-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
