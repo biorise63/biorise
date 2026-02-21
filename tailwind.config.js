@@ -19,7 +19,7 @@ module.exports = {
         white: '#FFFFFF',
       },
       fontFamily: {
-        menu: ['CeraPro', 'sans-serif'],
+        menu: ['HelveticaNeueCyr', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         body: ['HelveticaNeueCyr', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         heading: ['HelveticaNeueCyr', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
