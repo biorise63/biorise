@@ -186,12 +186,18 @@ export default function Header() {
                   </svg>
                 </button>
                 {isServicesOpen && (
-                  <div className="absolute left-0 top-[calc(100%-2px)] w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-50">
+                  <div className="absolute left-0 top-[calc(100%-2px)] w-64 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-50">
                     <Link
                       href="/kapelnicy"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
                       Капельницы
+                    </Link>
+                    <Link
+                      href="/bioimpedance"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      Биоимпедансный анализ композитного состава тела
                     </Link>
                   </div>
                 )}
@@ -259,6 +265,13 @@ export default function Header() {
                     className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
                   >
                     Капельницы
+                  </Link>
+                  <Link
+                    href="/bioimpedance"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
+                  >
+                    Биоимпедансный анализ
                   </Link>
                 </div>
                 <a
