@@ -50,7 +50,7 @@ export default function BioimpedanceContent() {
                     src="/bioimpedance.png"
                     alt="Аппарат МЕДАСС для биоимпедансного анализа"
                     fill
-                    className="object-contain p-4"
+                    className="object-contain p-4 rounded-[20px]"
                     priority
                   />
                 </motion.div>
