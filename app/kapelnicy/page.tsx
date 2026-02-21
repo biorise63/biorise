@@ -65,6 +65,11 @@ const categoriesConfig = [
     items: ['Капельница при аллергии'],
   },
   {
+    title: 'Половая система',
+    icon: 'heart',
+    items: ['Половая система', 'Мужское здоровье'],
+  },
+  {
     title: 'Дополнительные капельницы',
     icon: 'plus',
     items: ['Капельница с глюкозой', 'Капельница Лаеннек', 'Капельница Феринжект'],
@@ -92,6 +97,8 @@ const nameToSlug: Record<string, string> = {
   'Капельница с железом': 'zhelezo-standart',
   'Капельница при беременности': 'mame-mozhno',
   'Капельница при аллергии': 'antigistaminnaya',
+  'Половая система': 'polovaya-sistema',
+  'Мужское здоровье': 'muzhskoe-zdorove',
   'Капельница с глюкозой': 'posle-vecherinki',
   'Капельница Лаеннек': 'laennek',
   'Капельница Феринжект': 'zhelezo-2-0',

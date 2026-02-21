@@ -166,5 +166,19 @@
     "name": "Капельница Феринжект",
     "url": "https://biorise.ru/services/ferinject/",
     "file": "23. Капельница Феринжект.txt"
+  },
+  {
+    "num": 24,
+    "category": "Половая система",
+    "name": "Половая система",
+    "url": "https://biorise.ru/services/polovaya-sistema/",
+    "file": "Половая система.txt"
+  },
+  {
+    "num": 25,
+    "category": "Половая система",
+    "name": "Мужское здоровье",
+    "url": "https://biorise.ru/services/muzhskoe-zdorove/",
+    "file": "Мужское здоровье.txt"
   }
 ]
