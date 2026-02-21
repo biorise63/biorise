@@ -11,6 +11,7 @@ type Testimonial = {
   name: string;
   designation: string;
   src: string;
+  location?: string;
 };
 
 export const AnimatedTestimonials = ({
@@ -151,6 +152,16 @@ export const AnimatedTestimonials = ({
                 </motion.span>
               ))}
             </motion.p>
+            {testimonials[active].location && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.2 }}
+                className="text-sm text-olive-primary/60 mt-4"
+              >
+                {testimonials[active].location}
+              </motion.p>
+            )}
           </motion.div>
           <div className="flex gap-4 pt-6 md:pt-4">
             <button
