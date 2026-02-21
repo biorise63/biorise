@@ -30,6 +30,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     const [isScrolling, setIsScrolling] = useState(false)
     const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
     const animationFrameRef = useRef<number | null>(null)
+    const manualAnimationRef = useRef<number | null>(null)
+    const isManualAnimatingRef = useRef(false)
 
     useEffect(() => {
       const handleScroll = () => {
@@ -52,20 +54,48 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
 
     useEffect(() => {
       const autoRotate = () => {
-        if (!isScrolling) setRotation((prev) => prev + autoRotateSpeed)
+        if (!isScrolling && !isManualAnimatingRef.current) setRotation((prev) => prev + autoRotateSpeed)
         animationFrameRef.current = requestAnimationFrame(autoRotate)
       }
       animationFrameRef.current = requestAnimationFrame(autoRotate)
       return () => {
         if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current)
+        if (manualAnimationRef.current) cancelAnimationFrame(manualAnimationRef.current)
       }
     }, [isScrolling, autoRotateSpeed])
 
     if (!items.length) return null
 
     const anglePerItem = 360 / items.length
-    const rotateLeft = () => setRotation((prev) => prev + anglePerItem)
-    const rotateRight = () => setRotation((prev) => prev - anglePerItem)
+    const animateRotationTo = (target: number) => {
+      if (manualAnimationRef.current) cancelAnimationFrame(manualAnimationRef.current)
+      isManualAnimatingRef.current = true
+
+      const start = rotation
+      const delta = target - start
+      const duration = 450
+      const startTime = performance.now()
+
+      const easeInOutCubic = (t: number) =>
+        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+      const tick = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1)
+        const eased = easeInOutCubic(progress)
+        setRotation(start + delta * eased)
+        if (progress < 1) {
+          manualAnimationRef.current = requestAnimationFrame(tick)
+        } else {
+          isManualAnimatingRef.current = false
+          manualAnimationRef.current = null
+        }
+      }
+
+      manualAnimationRef.current = requestAnimationFrame(tick)
+    }
+
+    const rotateLeft = () => animateRotationTo(rotation + anglePerItem)
+    const rotateRight = () => animateRotationTo(rotation - anglePerItem)
 
     return (
       <div
