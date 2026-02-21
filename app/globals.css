@@ -1066,28 +1066,46 @@ html.lenis {
 
 .download-pdf-button .download-text {
   letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.download-pdf-button .download-arrow {
+  font-size: 18px;
+  line-height: 1;
 }
 
 @media (max-width: 768px) {
   .download-pdf-button {
     bottom: 16px;
     right: 16px;
-    padding: 14px;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    justify-content: center;
-    gap: 0;
+    padding: 12px 16px;
+    border-radius: 50px;
+    gap: 8px;
   }
   
   .download-pdf-button .download-text {
-    display: none;
+    font-size: 13px;
   }
   
   .download-pdf-button .download-icon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
   }
+  
+  .download-pdf-button .download-arrow {
+    font-size: 16px;
+  }
+}
+
+/* Catalog Button */
+.catalog-button {
+  top: calc(var(--header-height) + 16px);
+  left: 16px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
 }
 
 /* Dropdown позиционирование без зазора */
