@@ -459,7 +459,8 @@
     "title": "Спорт силовая",
     "description": "Описание скоро будет",
     "price": "6 000 ₽",
-    "duration": "60 мин"
+    "duration": "60 мин",
+    "imageUrl": "/kapelnicy/sport-silovaya.png"
   },
   "sport-kardio": {
     "id": "спорт-кардио",

@@ -275,6 +275,13 @@ function parseInfusion(entry) {
     }
     if (imageUrl) break
   }
+  // Debug: если slug есть, но изображение не найдено, попробуем напрямую
+  if (!imageUrl && entry.slug) {
+    const directPath = path.join(publicDir, `${entry.slug}.png`)
+    if (fs.existsSync(directPath)) {
+      imageUrl = `/kapelnicy/${entry.slug}.png`
+    }
+  }
 
   return {
     id: slugify(displayName),
@@ -301,6 +308,13 @@ function main() {
     const slug = nameToSlug[name] || slugify(name)
     const filePath = path.join(dataDir2, entry.file)
     const infusion = parseInfusion({ ...entry, slug, txt_file: entry.file })
+    // Убедимся, что slug передаётся правильно
+    if (!infusion.imageUrl && slug) {
+      const directPath = path.join(publicDir, `${slug}.png`)
+      if (fs.existsSync(directPath)) {
+        infusion.imageUrl = `/kapelnicy/${slug}.png`
+      }
+    }
     infusion.title = name
     map[slug] = infusion
   }
