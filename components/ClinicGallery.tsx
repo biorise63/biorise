@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { PromotionCard } from './ui/promotion-card'
 import { cn } from '@/lib/utils'
+import { getIcon } from './kapelnicy/icon-map'
 
 const promotions = [
   {
@@ -122,9 +123,14 @@ export default function ClinicGallery() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
-            Акции
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="text-olive-primary">
+              {getIcon('promotion')}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary font-light">
+              Акции
+            </h2>
+          </div>
         </motion.div>
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">

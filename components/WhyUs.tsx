@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { getIcon } from './kapelnicy/icon-map'
 
 export default function WhyUs() {
   return (
@@ -14,9 +15,14 @@ export default function WhyUs() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
-            О клинике
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="text-olive-primary">
+              {getIcon('clinic')}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary font-light">
+              О клинике
+            </h2>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">

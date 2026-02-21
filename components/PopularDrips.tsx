@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import ElegantCarousel from './ui/elegant-carousel'
+import { getIcon } from './kapelnicy/icon-map'
 
 export default function PopularDrips() {
   return (
@@ -14,9 +15,14 @@ export default function PopularDrips() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-olive-primary mb-4 font-light text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem]">
-            Индивидуальный подбор программы для вашего здоровья
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="text-olive-primary">
+              {getIcon('health')}
+            </div>
+            <h2 className="font-heading text-olive-primary font-light text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem]">
+              Индивидуальный подбор программы для вашего здоровья
+            </h2>
+          </div>
         </motion.div>
 
         <ElegantCarousel />
