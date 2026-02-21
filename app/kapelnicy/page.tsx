@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InfusionPageLayout from '@/components/kapelnicy/InfusionPageLayout'
 import CategorySection from '@/components/kapelnicy/CategorySection'
+import DownloadPdfButton from '@/components/kapelnicy/DownloadPdfButton'
 
 type InfusionItem = {
   id: string
@@ -169,6 +170,7 @@ export default function KapelnicyPage() {
         </div>
       </InfusionPageLayout>
       <Footer />
+      <DownloadPdfButton />
     </>
   )
 }
