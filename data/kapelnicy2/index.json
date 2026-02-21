@@ -180,5 +180,12 @@
     "name": "Мужское здоровье",
     "url": "https://biorise.ru/services/muzhskoe-zdorove/",
     "file": "Мужское здоровье.txt"
+  },
+  {
+    "num": 26,
+    "category": "Энергия и спорт",
+    "name": "Протеин буст",
+    "url": "https://biorise.ru/services/protein-bust/",
+    "file": "Протеин буст.txt"
   }
 ]
