@@ -1,114 +1,54 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { PromotionCard } from './ui/promotion-card'
-import { cn } from '@/lib/utils'
 import { getIcon } from './kapelnicy/icon-map'
+import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
-const promotions = [
+const galleryData: GalleryItem[] = [
   {
-    title: '🎉 Розыгрыш в честь открытия «Биорайз»!',
-    buttonText: 'Участвовать',
-    buttonHref: 'https://vk.ru/wall-233125534_24',
-    content: (
-      <div className="space-y-4 text-olive-primary">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-base leading-relaxed"
-        >
-          Сделайте репост до 11 марта и получите шанс бесплатно пройти чек-ап и курс капельниц.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, type: 'spring' }}
-          className="bg-olive-primary/10 rounded-xl p-4 border border-olive-primary/20"
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <motion.span
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              className="text-2xl"
-            >
-              🎁
-            </motion.span>
-            <span className="text-lg font-semibold">Призовой фонд — 250 000 ₽</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <motion.span
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
-              className="text-xl"
-            >
-              👥
-            </motion.span>
-            <span className="text-base">15 победителей</span>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="space-y-2 text-sm"
-        >
-          <div className="flex items-start gap-2">
-            <motion.span
-              animate={{ rotate: [0, 15, -15, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
-              className="text-lg"
-            >
-              🏆
-            </motion.span>
-            <span>Главные призы: консультации терапевта, комплексная диагностика и индивидуальные программы капельниц</span>
-          </div>
-          <div className="flex items-start gap-2">
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity, repeatDelay: 3 }}
-              className="text-lg"
-            >
-              💥
-            </motion.span>
-            <span>Скидки до 50% для участников</span>
-          </div>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-base font-medium mt-4"
-        >
-          Участвуйте и заботьтесь о здоровье вместе с «Биорайз»!
-        </motion.p>
-      </div>
-    ),
+    common: 'Розыгрыш в честь открытия',
+    binomial: 'Призовой фонд 250 000 ₽',
+    photo: {
+      url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=80',
+      text: 'Врач в светлой клинике',
+      by: 'BIORISE: репост и участие',
+    },
   },
   {
-    title: 'Акция на расширенный витаминный анализ крови',
-    description: 'Комплексный анализ витаминов и микроэлементов по выгодной цене',
-    features: [
-      'Витамин B9',
-      'Ферритин',
-      'Витамин D',
-      'Общий белок',
-      'Цинк',
-      'Железо',
-      'Магний',
-      'Кальций',
-    ],
-    price: '2 500 ₽',
-    oldPrice: '5 790 ₽',
-    buttonText: 'Записаться',
-    buttonHref: '#booking',
+    common: 'Расширенный витаминный анализ',
+    binomial: '2 500 ₽ вместо 5 790 ₽',
+    photo: {
+      url: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1200&auto=format&fit=crop&q=80',
+      text: 'Лабораторная диагностика',
+      by: 'Комплекс витаминов и микроэлементов',
+    },
+  },
+  {
+    common: 'Программа детокс',
+    binomial: 'Индивидуальные протоколы',
+    photo: {
+      url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&auto=format&fit=crop&q=80',
+      text: 'Капельница и мониторинг',
+      by: 'Под контролем врача',
+    },
+  },
+  {
+    common: 'Чек-ап перед курсом',
+    binomial: 'Точная диагностика дефицитов',
+    photo: {
+      url: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&auto=format&fit=crop&q=80',
+      text: 'Современная диагностика',
+      by: 'Персональный план восстановления',
+    },
+  },
+  {
+    common: 'Скидки для участников',
+    binomial: 'До 50% на отдельные программы',
+    photo: {
+      url: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1200&auto=format&fit=crop&q=80',
+      text: 'Премиальный медицинский сервис',
+      by: 'Акции и спецпредложения',
+    },
   },
 ]
 
@@ -133,34 +73,15 @@ export default function ClinicGallery() {
           </div>
         </motion.div>
 
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
-            {/* Первый набор - дублируем для бесконечного эффекта */}
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {[...Array(6)].map((_, setIndex) => (
-                promotions.map((promotion, i) => (
-                  <PromotionCard
-                    key={`set1-${setIndex}-${i}`}
-                    {...promotion}
-                  />
-                ))
-              ))}
+        <div className="relative h-[180vh] w-full">
+          <div className="sticky top-24 h-[78vh] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
+            <div className="absolute inset-x-0 top-6 z-10 px-6 text-center">
+              <p className="text-sm text-olive-primary/70 md:text-base">
+                Прокручивайте страницу — галерея акций вращается в 3D
+              </p>
             </div>
-            {/* Второй набор - идентичный первому для бесшовного перехода */}
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {[...Array(6)].map((_, setIndex) => (
-                promotions.map((promotion, i) => (
-                  <PromotionCard
-                    key={`set2-${setIndex}-${i}`}
-                    {...promotion}
-                  />
-                ))
-              ))}
-            </div>
+            <CircularGallery items={galleryData} radius={420} autoRotateSpeed={0.03} />
           </div>
-
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/4 sm:w-1/3 bg-gradient-to-r from-white sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/4 sm:w-1/3 bg-gradient-to-l from-white sm:block" />
         </div>
       </div>
     </section>
