@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InfusionPageLayout from '@/components/kapelnicy/InfusionPageLayout'
 import CategorySection from '@/components/kapelnicy/CategorySection'
+import KapelnicyPageClient from '@/components/kapelnicy/KapelnicyPageClient'
 import DownloadPdfButton from '@/components/kapelnicy/DownloadPdfButton'
 
 type InfusionItem = {
@@ -160,18 +161,7 @@ export default function KapelnicyPage() {
   }))
 
   return (
-    <>
-      <Header />
-      <InfusionPageLayout sidebarCategories={menu}>
-        <div className="space-y-12 sm:space-y-16">
-          {categories.map((cat) => (
-            <CategorySection key={cat.id} id={cat.id} title={cat.title} items={cat.items} icon={cat.icon} />
-          ))}
-        </div>
-      </InfusionPageLayout>
-      <Footer />
-      <DownloadPdfButton />
-    </>
+    <KapelnicyPageClient categories={categories} menu={menu} />
   )
 }
 

@@ -33,7 +33,11 @@ const clinics: ClinicAddress[] = [
   },
 ]
 
-export default function Header() {
+interface HeaderProps {
+  onOpenKapelnicyMenu?: () => void
+}
+
+export default function Header({ onOpenKapelnicyMenu }: HeaderProps = {}) {
   const [scrolled, setScrolled] = useState(false)
   const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -214,25 +218,45 @@ export default function Header() {
               </a>
             </nav>
             
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-olive-primary p-2"
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Mobile Menu Buttons */}
+            <div className="md:hidden flex items-center gap-2">
+              {/* Kapelnicy Menu Button */}
+              {onOpenKapelnicyMenu && (
+                <button
+                  onClick={onOpenKapelnicyMenu}
+                  className="text-olive-primary p-2"
+                  aria-label="Открыть каталог капельниц"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              )}
+              {/* Main Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-olive-primary p-2"
+                aria-label="Toggle menu"
               >
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {isMobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
           
           {/* Mobile Menu */}
