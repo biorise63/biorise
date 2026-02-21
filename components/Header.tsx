@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Logo from './Logo'
 import Link from 'next/link'
+import SlideTabs from './ui/slide-tabs'
 
 interface ClinicAddress {
   id: string
@@ -38,9 +39,7 @@ export default function Header() {
   const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const servicesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,9 +53,6 @@ export default function Header() {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false)
-      }
-      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -161,54 +157,18 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Logo />
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 font-menu">
-              <Link href="/" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
-                Главная
-              </Link>
-
-              <div
-                className="relative has-dropdown"
-                ref={servicesRef}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <button
-                  onClick={() => setIsServicesOpen((prev) => !prev)}
-                  className="flex items-center gap-1 text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base leading-none py-1"
-                >
-                  Услуги
-                  <svg
-                    className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isServicesOpen && (
-                  <div className="absolute left-0 top-[calc(100%-2px)] w-48 bg-white rounded-lg shadow-premium border border-olive-primary/10 z-50">
-                    <Link
-                      href="/kapelnicy"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
-                    >
-                      Капельницы
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <a href="#why-us" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
-                О нас
-              </a>
-              <a href="#gallery" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
-                Акции
-              </a>
-              <a href="#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
-                Врачи
-              </a>
+              <SlideTabs
+                items={[
+                  { label: 'Главная', href: '/' },
+                  { label: 'Капельницы', href: '/kapelnicy' },
+                  { label: 'О нас', href: '#why-us' },
+                  { label: 'Акции', href: '#gallery' },
+                  { label: 'Врачи', href: '#doctors' },
+                ]}
+              />
               <a
                 href="#booking"
-                className="bg-olive-primary text-white px-4 lg:px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium text-sm lg:text-base"
+                className="bg-olive-primary text-white px-4 lg:px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium text-sm lg:text-base ml-4"
               >
                 Записаться
               </a>
