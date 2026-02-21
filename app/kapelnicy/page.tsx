@@ -42,7 +42,7 @@ const categoriesConfig = [
   {
     title: 'Энергия и спорт',
     icon: 'bolt',
-    items: ['Спорт силовая'],
+    items: ['Спорт силовая', 'Спорт кардио'],
   },
   {
     title: 'Обмен веществ и вес',
@@ -84,6 +84,7 @@ const nameToSlug: Record<string, string> = {
   'Капельница для мозга': 'breynstorm',
   'Капельница для сердца': 'zdorovye-sosudy',
   'Спорт силовая': 'sport-silovaya',
+  'Спорт кардио': 'sport-kardio',
   'Капельница для похудения': 'snizhenie-vesa',
   'Капельница при диабете': 'sahar-v-norme',
   'Капельница «Золушка»': 'krasota-i-omolozhenie',

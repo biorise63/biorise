@@ -92,6 +92,13 @@
   },
   {
     "num": 14,
+    "category": "Энергия и спорт",
+    "name": "Спорт кардио",
+    "url": "https://biorise.ru/services/sport-kardio/",
+    "file": "Спорт кардио.txt"
+  },
+  {
+    "num": 15,
     "category": "Обмен веществ и вес",
     "name": "Капельница для похудения",
     "url": "https://biorise.ru/services/kapelnitsa-dlya-pohudeniya/",
