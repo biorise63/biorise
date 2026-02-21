@@ -44,15 +44,17 @@ export default function BioimpedanceContent() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-beige-background"
+                  className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-beige-background p-4"
                 >
-                  <Image
-                    src="/bioimpedance.png"
-                    alt="Аппарат МЕДАСС для биоимпедансного анализа"
-                    fill
-                    className="object-contain p-4 rounded-[20px]"
-                    priority
-                  />
+                  <div className="relative w-full h-full rounded-[16px] overflow-hidden">
+                    <Image
+                      src="/bioimpedance.png"
+                      alt="Аппарат МЕДАСС для биоимпедансного анализа"
+                      fill
+                      className="object-contain rounded-[16px]"
+                      priority
+                    />
+                  </div>
                 </motion.div>
 
                 {/* Content */}
