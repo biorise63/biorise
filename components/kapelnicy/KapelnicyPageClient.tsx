@@ -7,6 +7,7 @@ import InfusionPageLayout from '@/components/kapelnicy/InfusionPageLayout'
 import CategorySection from '@/components/kapelnicy/CategorySection'
 import OffCanvasMenu from '@/components/kapelnicy/OffCanvasMenu'
 import DownloadPdfButton from '@/components/kapelnicy/DownloadPdfButton'
+import CatalogButton from '@/components/kapelnicy/CatalogButton'
 
 type InfusionItem = {
   id: string
@@ -44,7 +45,8 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
 
   return (
     <>
-      <Header onOpenKapelnicyMenu={() => setIsOffCanvasOpen(true)} />
+      <Header />
+      <CatalogButton onClick={() => setIsOffCanvasOpen(true)} />
       <OffCanvasMenu isOpen={isOffCanvasOpen} onClose={() => setIsOffCanvasOpen(false)} categories={menu} />
       <InfusionPageLayout sidebarCategories={menu}>
         <div className="space-y-12 sm:space-y-16">
