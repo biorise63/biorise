@@ -6,8 +6,16 @@ const cn = (...classes: Array<string | undefined | null | false>) => classes.fil
 
 export interface GalleryItem {
   common: string
-  binomial: string
+  binomial?: string
   description?: string
+  subtitle?: string
+  price?: {
+    current: string
+    old?: string
+  }
+  period?: string
+  features?: string[]
+  prizes?: Array<{ place: string; text: string }>
   buttonText?: string
   buttonHref?: string
   photo: {
@@ -130,26 +138,81 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-75"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
-                  <div className="absolute inset-0 flex flex-col justify-between bg-black/65 p-4 text-white">
-                    <div>
-                      <h3 className="text-base font-semibold md:text-xl">{item.common}</h3>
-                      <p className="text-xs italic opacity-90 md:text-sm">{item.binomial}</p>
-                    </div>
-                    <div className="space-y-3">
+                  <div className="absolute inset-0 flex flex-col justify-between bg-black/65 p-4 md:p-5 text-white overflow-y-auto">
+                    <div className="space-y-2 md:space-y-3">
+                      <div>
+                        <h3 className="text-base md:text-lg font-semibold leading-tight mb-1">{item.common}</h3>
+                        {item.subtitle && (
+                          <p className="text-xs md:text-sm opacity-90 leading-snug">{item.subtitle}</p>
+                        )}
+                      </div>
+                      
                       {item.description && (
-                        <p className="text-xs leading-relaxed opacity-95 md:text-sm">
+                        <p className="text-xs md:text-sm leading-relaxed opacity-95">
                           {item.description}
                         </p>
                       )}
+
+                      {item.features && item.features.length > 0 && (
+                        <div className="space-y-1.5">
+                          {item.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-start gap-2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span className="text-xs md:text-sm opacity-95">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {item.prizes && item.prizes.length > 0 && (
+                        <div className="space-y-1.5">
+                          {item.prizes.map((prize, idx) => (
+                            <div key={idx} className="flex items-start gap-2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                              </svg>
+                              <span className="text-xs md:text-sm opacity-95">
+                                <span className="font-medium">{prize.place}</span> — {prize.text}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {item.price && (
+                        <div className="pt-1 space-y-1">
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-lg md:text-xl font-bold">{item.price.current}</span>
+                            {item.price.old && (
+                              <span className="text-xs md:text-sm line-through opacity-60">{item.price.old}</span>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {item.period && (
+                        <div className="flex items-center gap-2 pt-1">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 opacity-80">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                          </svg>
+                          <span className="text-xs md:text-sm opacity-90">{item.period}</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="pt-3">
                       <a
                         href={item.buttonHref || '#booking'}
                         target={(item.buttonHref || '').startsWith('http') ? '_blank' : undefined}
                         rel={(item.buttonHref || '').startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="inline-block rounded-full bg-olive-primary px-4 py-2 text-xs font-medium text-white transition hover:bg-olive-light md:text-sm"
+                        className="block w-full rounded-full bg-olive-primary px-4 py-2.5 text-center text-xs font-medium text-white transition hover:bg-olive-light md:text-sm"
                       >
-                        {item.buttonText || 'Участвовать'}
+                        {item.buttonText || 'Записаться'}
                       </a>
-                      <p className="text-[10px] opacity-80 md:text-xs">{item.photo.by}</p>
                     </div>
                   </div>
                 </div>

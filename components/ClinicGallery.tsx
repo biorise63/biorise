@@ -6,11 +6,21 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
-    common: 'Биоимпедансный анализ на «МЕДАСС»',
-    binomial: '✨ 800 ₽ вместо 1800 ₽ • 21.02–08.03',
+    common: 'Биоимпедансный анализ «МЕДАСС»',
+    subtitle: 'Диагностика состава тела за 10 минут',
     description:
-      'Узнайте состав тела: жир, мышцы, вода, скорость обмена и биологический возраст. После обследования — персональные рекомендации врача. Количество мест ограничено.',
-    buttonText: 'Участвовать',
+      'Определение жира, мышц, воды, метаболизма и биологического возраста с консультацией врача.',
+    features: [
+      'Индивидуальная расшифровка',
+      'Рекомендации специалиста',
+      'Современное оборудование',
+    ],
+    price: {
+      current: '800 ₽',
+      old: '1800 ₽',
+    },
+    period: '21.02–08.03',
+    buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
       url: '/promo-1.jpg',
@@ -20,9 +30,16 @@ const galleryData: GalleryItem[] = [
   },
   {
     common: 'Розыгрыш к открытию BIORISE',
-    binomial: 'Призы на 250 000 ₽ • Итоги 11 марта в 19:00',
+    subtitle: 'Призы и услуги на 250 000 ₽',
     description:
-      '15 победителей получат: 🏆 1 место — чек-ап, консультации и курс капельниц; 🥈 2 место — чек-ап и приём врача; 🥉 3–5 места — скидка 50%; 🎁 6–15 места — скидка 30%. Условия: подписка, репост, сообщение «+» в сообщество.',
+      '15 победителей получат медицинские услуги и индивидуальные программы восстановления.',
+    prizes: [
+      { place: '1 место', text: 'чек-ап + курс капельниц' },
+      { place: '2 место', text: 'чек-ап + консультация' },
+      { place: '3–5 места', text: 'скидка 50%' },
+      { place: '6–15 места', text: 'скидка 30%' },
+    ],
+    period: 'Итоги 11 марта, 19:00',
     buttonText: 'Участвовать',
     buttonHref: 'https://vk.ru/wall-233125534_24',
     photo: {
@@ -33,10 +50,23 @@ const galleryData: GalleryItem[] = [
   },
   {
     common: 'Чек-ап «Витаминный»',
-    binomial: '💥 2 500 ₽ вместо 5 790 ₽',
+    subtitle: 'Комплексная диагностика дефицитов',
     description:
-      'Включает: Витамин B9, Ферритин, Витамин D, Общий белок, Цинк, Железо, Магний, Кальций. Специальное предложение на февраль.',
-    buttonText: 'Участвовать',
+      'Анализ ключевых витаминов и микроэлементов для оценки состояния организма.',
+    features: [
+      'Витамин B9',
+      'Витамин D',
+      'Ферритин',
+      'Цинк, Магний',
+      'Железо, Кальций',
+      'Общий белок',
+    ],
+    price: {
+      current: '2 500 ₽',
+      old: '5 790 ₽',
+    },
+    period: 'Февраль',
+    buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
       url: '/promo-3.jpg',
@@ -69,11 +99,6 @@ export default function ClinicGallery() {
 
         <div className="relative w-full">
           <div className="relative h-[520px] md:h-[640px] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
-            <div className="absolute inset-x-0 top-4 z-10 px-6 text-center pointer-events-none">
-              <p className="text-sm text-olive-primary/80 md:text-base">
-                Листайте акции стрелками влево и вправо
-              </p>
-            </div>
             <CircularGallery items={galleryData} radius={380} />
           </div>
         </div>
