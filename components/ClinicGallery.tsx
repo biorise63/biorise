@@ -67,14 +67,14 @@ export default function ClinicGallery() {
           </div>
         </motion.div>
 
-        <div className="relative h-[180vh] w-full">
-          <div className="sticky top-24 h-[78vh] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
-            <div className="absolute inset-x-0 top-6 z-10 px-6 text-center">
-              <p className="text-sm text-olive-primary/70 md:text-base">
+        <div className="relative w-full">
+          <div className="relative h-[520px] md:h-[640px] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
+            <div className="absolute inset-x-0 top-4 z-10 px-6 text-center pointer-events-none">
+              <p className="text-sm text-olive-primary/80 md:text-base">
                 Листайте акции стрелками влево и вправо
               </p>
             </div>
-            <CircularGallery items={galleryData} radius={420} />
+            <CircularGallery items={galleryData} radius={380} />
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
         role="region"
         aria-label="Галерея акций BIORISE"
         className={cn('relative flex h-full w-full items-center justify-center', className)}
-        style={{ perspective: '2000px' }}
+        style={{ perspective: '2000px', touchAction: 'pan-y' }}
         {...props}
       >
         <button
