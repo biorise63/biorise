@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import SidebarMenu from './SidebarMenu'
+import MobileCategoryMenu from './MobileCategoryMenu'
 
 type MenuCategory = {
   id: string
@@ -17,6 +18,7 @@ export default function InfusionPageLayout({ sidebarCategories, children }: Infu
   return (
     <main className="kapelnicy-page min-h-screen bg-beige-background text-olive-primary">
       <div className="kapelnicy-container container mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+        <MobileCategoryMenu categories={sidebarCategories} />
         <div className="kapelnicy-layout">
           <SidebarMenu categories={sidebarCategories} />
           <div className="kapelnicy-content space-y-12">{children}</div>
