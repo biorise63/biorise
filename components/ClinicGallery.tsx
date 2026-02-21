@@ -8,6 +8,9 @@ const galleryData: GalleryItem[] = [
   {
     common: 'Розыгрыш в честь открытия',
     binomial: 'Призовой фонд 250 000 ₽',
+    description: 'Сделайте репост до 11 марта и получите шанс бесплатно пройти чек-ап и курс капельниц. Главные призы: консультации терапевта, комплексная диагностика и персональные программы восстановления.',
+    buttonText: 'Участвовать',
+    buttonHref: 'https://vk.ru/wall-233125534_24',
     photo: {
       url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=80',
       text: 'Врач в светлой клинике',
@@ -17,6 +20,9 @@ const galleryData: GalleryItem[] = [
   {
     common: 'Расширенный витаминный анализ',
     binomial: '2 500 ₽ вместо 5 790 ₽',
+    description: 'Комплексный анализ витаминов и микроэлементов: B9, ферритин, витамин D, общий белок, цинк, железо, магний и кальций. Подходит для точной диагностики дефицитов.',
+    buttonText: 'Участвовать',
+    buttonHref: '#booking',
     photo: {
       url: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1200&auto=format&fit=crop&q=80',
       text: 'Лабораторная диагностика',
@@ -26,6 +32,9 @@ const galleryData: GalleryItem[] = [
   {
     common: 'Программа детокс',
     binomial: 'Индивидуальные протоколы',
+    description: 'Программы детокса подбираются врачом по вашему состоянию и результатам анализов. Мягкое восстановление, поддержка печени и контроль динамики в процессе курса.',
+    buttonText: 'Участвовать',
+    buttonHref: '#booking',
     photo: {
       url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&auto=format&fit=crop&q=80',
       text: 'Капельница и мониторинг',
@@ -35,6 +44,9 @@ const galleryData: GalleryItem[] = [
   {
     common: 'Чек-ап перед курсом',
     binomial: 'Точная диагностика дефицитов',
+    description: 'Перед началом терапии можно пройти комплексный чек-ап для оценки текущего состояния организма и определения оптимального протокола инфузионной поддержки.',
+    buttonText: 'Участвовать',
+    buttonHref: '#booking',
     photo: {
       url: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&auto=format&fit=crop&q=80',
       text: 'Современная диагностика',
@@ -44,6 +56,9 @@ const galleryData: GalleryItem[] = [
   {
     common: 'Скидки для участников',
     binomial: 'До 50% на отдельные программы',
+    description: 'Для участников действуют специальные условия: скидки на консультации, диагностику и курсы капельниц. Уточняйте актуальные предложения у администратора клиники.',
+    buttonText: 'Участвовать',
+    buttonHref: '#booking',
     photo: {
       url: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1200&auto=format&fit=crop&q=80',
       text: 'Премиальный медицинский сервис',

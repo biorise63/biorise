@@ -7,6 +7,9 @@ const cn = (...classes: Array<string | undefined | null | false>) => classes.fil
 export interface GalleryItem {
   common: string
   binomial: string
+  description?: string
+  buttonText?: string
+  buttonHref?: string
   photo: {
     url: string
     text: string
@@ -61,6 +64,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     if (!items.length) return null
 
     const anglePerItem = 360 / items.length
+    const rotateLeft = () => setRotation((prev) => prev + anglePerItem)
+    const rotateRight = () => setRotation((prev) => prev - anglePerItem)
 
     return (
       <div
@@ -71,6 +76,26 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
         style={{ perspective: '2000px' }}
         {...props}
       >
+        <button
+          type="button"
+          aria-label="Прокрутить акции влево"
+          onClick={rotateLeft}
+          className="absolute left-3 z-20 rounded-full border border-olive-primary/30 bg-white/85 p-3 text-olive-primary shadow-premium transition hover:bg-white"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Прокрутить акции вправо"
+          onClick={rotateRight}
+          className="absolute right-3 z-20 rounded-full border border-olive-primary/30 bg-white/85 p-3 text-olive-primary shadow-premium transition hover:bg-white"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
         <div
           className="relative h-full w-full"
           style={{
@@ -104,10 +129,27 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
-                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/75 to-transparent p-4 text-white">
-                    <h3 className="text-base font-semibold md:text-xl">{item.common}</h3>
-                    <p className="text-xs italic opacity-90 md:text-sm">{item.binomial}</p>
-                    <p className="mt-2 text-[10px] opacity-80 md:text-xs">{item.photo.by}</p>
+                  <div className="absolute inset-0 flex flex-col justify-between bg-black/50 p-4 text-white">
+                    <div>
+                      <h3 className="text-base font-semibold md:text-xl">{item.common}</h3>
+                      <p className="text-xs italic opacity-90 md:text-sm">{item.binomial}</p>
+                    </div>
+                    <div className="space-y-3">
+                      {item.description && (
+                        <p className="text-xs leading-relaxed opacity-95 md:text-sm">
+                          {item.description}
+                        </p>
+                      )}
+                      <a
+                        href={item.buttonHref || '#booking'}
+                        target={(item.buttonHref || '').startsWith('http') ? '_blank' : undefined}
+                        rel={(item.buttonHref || '').startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="inline-block rounded-full bg-olive-primary px-4 py-2 text-xs font-medium text-white transition hover:bg-olive-light md:text-sm"
+                      >
+                        {item.buttonText || 'Участвовать'}
+                      </a>
+                      <p className="text-[10px] opacity-80 md:text-xs">{item.photo.by}</p>
+                    </div>
                   </div>
                 </div>
               </div>
