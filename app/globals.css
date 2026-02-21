@@ -1023,8 +1023,7 @@ html.lenis {
 .download-pdf-button {
   position: fixed;
   bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 24px;
   z-index: 100;
   display: inline-flex;
   align-items: center;
@@ -1048,11 +1047,11 @@ html.lenis {
 .download-pdf-button:hover {
   background: rgba(94, 111, 82, 1);
   box-shadow: 0 6px 24px rgba(94, 111, 82, 0.4);
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .download-pdf-button:active {
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
   box-shadow: 0 2px 8px rgba(94, 111, 82, 0.3);
 }
 
@@ -1072,6 +1071,7 @@ html.lenis {
 @media (max-width: 768px) {
   .download-pdf-button {
     bottom: 16px;
+    right: 16px;
     padding: 14px;
     border-radius: 50%;
     width: 56px;
