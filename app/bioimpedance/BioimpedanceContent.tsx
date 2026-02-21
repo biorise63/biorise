@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function BioimpedanceContent() {
@@ -47,12 +46,11 @@ export default function BioimpedanceContent() {
                   className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-beige-background p-4"
                 >
                   <div className="relative w-full h-full rounded-[16px] overflow-hidden">
-                    <Image
+                    <img
                       src="/bioimpedance.png"
                       alt="Аппарат МЕДАСС для биоимпедансного анализа"
-                      fill
-                      className="object-contain rounded-[16px]"
-                      priority
+                      className="w-full h-full object-cover"
+                      style={{ borderRadius: '16px', clipPath: 'inset(0 round 16px)' }}
                     />
                   </div>
                 </motion.div>
@@ -263,7 +261,8 @@ export default function BioimpedanceContent() {
             <div className="flex items-center gap-4 mb-10">
               <div className="text-olive-primary">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                  <path d="M9 2h6a2 2 0 0 1 2 2v16l-5-3-5 3V4a2 2 0 0 1 2-2Z" />
+                  <path d="m9 8 2 2 4-4" />
                 </svg>
               </div>
               <div>
