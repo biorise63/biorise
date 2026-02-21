@@ -92,10 +92,10 @@ export default function ClinicGallery() {
           <div className="sticky top-24 h-[78vh] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
             <div className="absolute inset-x-0 top-6 z-10 px-6 text-center">
               <p className="text-sm text-olive-primary/70 md:text-base">
-                Прокручивайте страницу — галерея акций вращается в 3D
+                Листайте акции стрелками влево и вправо
               </p>
             </div>
-            <CircularGallery items={galleryData} radius={420} autoRotateSpeed={0.03} />
+            <CircularGallery items={galleryData} radius={420} />
           </div>
         </div>
       </div>

@@ -21,48 +21,19 @@ export interface GalleryItem {
 interface CircularGalleryProps extends HTMLAttributes<HTMLDivElement> {
   items: GalleryItem[]
   radius?: number
-  autoRotateSpeed?: number
 }
 
 const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
-  ({ items, className, radius = 460, autoRotateSpeed = 0.02, ...props }, ref) => {
+  ({ items, className, radius = 460, ...props }, ref) => {
     const [rotation, setRotation] = useState(0)
-    const [isScrolling, setIsScrolling] = useState(false)
-    const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-    const animationFrameRef = useRef<number | null>(null)
     const manualAnimationRef = useRef<number | null>(null)
     const isManualAnimatingRef = useRef(false)
 
     useEffect(() => {
-      const handleScroll = () => {
-        setIsScrolling(true)
-        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
-
-        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
-        const scrollProgress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0
-        setRotation(scrollProgress * 360)
-
-        scrollTimeoutRef.current = setTimeout(() => setIsScrolling(false), 150)
-      }
-
-      window.addEventListener('scroll', handleScroll, { passive: true })
       return () => {
-        window.removeEventListener('scroll', handleScroll)
-        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
-      }
-    }, [])
-
-    useEffect(() => {
-      const autoRotate = () => {
-        if (!isScrolling && !isManualAnimatingRef.current) setRotation((prev) => prev + autoRotateSpeed)
-        animationFrameRef.current = requestAnimationFrame(autoRotate)
-      }
-      animationFrameRef.current = requestAnimationFrame(autoRotate)
-      return () => {
-        if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current)
         if (manualAnimationRef.current) cancelAnimationFrame(manualAnimationRef.current)
       }
-    }, [isScrolling, autoRotateSpeed])
+    }, [])
 
     if (!items.length) return null
 
