@@ -101,7 +101,7 @@ export default function Hero() {
               Записаться на капельницу
             </a>
             <a
-              href="#services"
+              href="https://biorise-clinic.ru/kapelnicy/"
               className="bg-white/95 text-olive-primary px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-white transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center border-2 border-olive-primary"
             >
               Подобрать капельницу
