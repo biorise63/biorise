@@ -1,20 +1,43 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+
+const clinicAddresses = [
+  'ул. Четаева, д. 14а',
+  '443068, Самара, ул. 27, д. 1',
+  '443068, Самара, ул. Примерная, д. 2',
+  '443068, Самара, пр-т Ленина, д. 10',
+]
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
-    service: '',
-    date: '',
-    time: '',
+    address: clinicAddresses[0],
   })
 
+  const [consent, setConsent] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [isAddressOpen, setIsAddressOpen] = useState(false)
+  const addressRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (addressRef.current && !addressRef.current.contains(event.target as Node)) {
+        setIsAddressOpen(false)
+      }
+    }
+
+    if (isAddressOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isAddressOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -38,11 +61,9 @@ export default function BookingForm() {
         setFormData({
           name: '',
           phone: '',
-          email: '',
-          service: '',
-          date: '',
-          time: '',
+          address: clinicAddresses[0],
         })
+        setConsent(true)
         alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
       } else {
         setSubmitStatus('error')
@@ -64,6 +85,14 @@ export default function BookingForm() {
     })
   }
 
+  const handleAddressSelect = (address: string) => {
+    setFormData({
+      ...formData,
+      address,
+    })
+    setIsAddressOpen(false)
+  }
+
   return (
     <section id="booking" className="section-spacing bg-white">
       <div className="container mx-auto px-6">
@@ -75,10 +104,10 @@ export default function BookingForm() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
-            Онлайн-запись
+            ОНЛАЙН ЗАПИСЬ
           </h2>
           <p className="text-base sm:text-lg text-olive-primary/70 max-w-2xl mx-auto">
-            Заполните форму, и мы свяжемся с вами для подтверждения записи
+            Оставьте свои данные и наши специалисты перезвонят вам, чтобы подобрать удобную дату и время приёма
           </p>
         </motion.div>
 
@@ -92,9 +121,6 @@ export default function BookingForm() {
           <form onSubmit={handleSubmit} className="bg-beige-background rounded-2xl p-6 sm:p-8 md:p-12 shadow-premium">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="name" className="block text-olive-primary mb-2 font-medium">
-                  Имя
-                </label>
                 <input
                   type="text"
                   id="name"
@@ -102,14 +128,11 @@ export default function BookingForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all"
-                  placeholder="Ваше имя"
+                  className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading"
+                  placeholder="Имя"
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-olive-primary mb-2 font-medium">
-                  Телефон
-                </label>
                 <input
                   type="tel"
                   id="phone"
@@ -117,82 +140,78 @@ export default function BookingForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all"
-                  placeholder="+7 (___) ___-__-__"
+                  className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading"
+                  placeholder="Телефон"
                 />
               </div>
             </div>
-            <div className="mb-6">
-              <label htmlFor="email" className="block text-olive-primary mb-2 font-medium">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all"
-                placeholder="your@email.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="service" className="block text-olive-primary mb-2 font-medium">
-                Услуга
-              </label>
-              <select
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all"
+            
+            <div className="mb-6 relative" ref={addressRef}>
+              <div
+                onClick={() => setIsAddressOpen(!isAddressOpen)}
+                className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading cursor-pointer flex items-center justify-between"
               >
-                <option value="">Выберите услугу</option>
-                <option value="detox">Детокс</option>
-                <option value="immuno">Иммуно суппорт</option>
-                <option value="energy">Энергия +</option>
-                <option value="beauty">Красота и омоложение</option>
-                <option value="consultation">Консультация</option>
-              </select>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div>
-                <label htmlFor="date" className="block text-olive-primary mb-2 font-medium">
-                  Дата
-                </label>
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all"
-                />
+                <span>{formData.address}</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`text-olive-primary transition-transform ${isAddressOpen ? 'rotate-180' : ''}`}
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </div>
-              <div>
-                <label htmlFor="time" className="block text-olive-primary mb-2 font-medium">
-                  Время
-                </label>
-                <input
-                  type="time"
-                  id="time"
-                  name="time"
-                  value={formData.time}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all"
-                />
-              </div>
+              {isAddressOpen && (
+                <div className="absolute z-10 w-full mt-1 bg-white border border-beige-accent rounded-lg shadow-premium overflow-hidden">
+                  {clinicAddresses.map((address, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => handleAddressSelect(address)}
+                      className={`w-full text-left px-4 py-3 hover:bg-beige-background transition-colors font-heading ${
+                        formData.address === address ? 'bg-beige-background text-olive-primary font-medium' : 'text-olive-primary'
+                      }`}
+                    >
+                      {address}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
+
+            <div className="mb-8">
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  required
+                  className="mt-1 w-5 h-5 rounded border-beige-accent text-olive-primary focus:ring-olive-primary focus:ring-2"
+                />
+                <span className="text-sm text-olive-primary font-heading leading-relaxed">
+                  Я подтверждаю, что ознакомлен и даю согласие на обработку персональных данных на условиях и для целей, определяемых{' '}
+                  <a href="/privacy" className="text-olive-primary underline hover:text-olive-light">
+                    Политикой конфиденциальности
+                  </a>
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
-              disabled={isSubmitting}
-              className={`w-full px-8 py-4 rounded-full text-lg transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 font-medium ${
-                isSubmitting
+              disabled={isSubmitting || !consent}
+              className={`w-full px-8 py-4 rounded-full text-lg transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 font-medium font-heading ${
+                isSubmitting || !consent
                   ? 'bg-olive-primary/50 text-white cursor-not-allowed'
                   : 'bg-olive-primary text-white hover:bg-olive-light'
               }`}
             >
-              {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+              {isSubmitting ? 'Отправка...' : 'Записаться на прием'}
             </button>
           </form>
         </motion.div>
