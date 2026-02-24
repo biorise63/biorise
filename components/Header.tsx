@@ -203,21 +203,21 @@ export default function Header() {
                 )}
               </div>
 
-              <a href="#why-us" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+              <Link href="/#why-us" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 О нас
-              </a>
-              <a href="#gallery" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+              </Link>
+              <Link href="/#gallery" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Акции
-              </a>
-              <a href="#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+              </Link>
+              <Link href="/#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Врачи
-              </a>
-              <a
-                href="#booking"
+              </Link>
+              <Link
+                href="/#booking"
                 className="bg-olive-primary text-white px-4 lg:px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium text-sm lg:text-base"
               >
                 Записаться
-              </a>
+              </Link>
             </nav>
             
             {/* Mobile Menu Button */}
@@ -274,34 +274,34 @@ export default function Header() {
                     Биоимпедансный анализ
                   </Link>
                 </div>
-                <a
-                  href="#why-us"
+                <Link
+                  href="/#why-us"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-olive-primary hover:text-olive-light transition-colors py-2"
                 >
                   О нас
-                </a>
-                <a
-                  href="#gallery"
+                </Link>
+                <Link
+                  href="/#gallery"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-olive-primary hover:text-olive-light transition-colors py-2"
                 >
                   Акции
-                </a>
-                <a
-                  href="#doctors"
+                </Link>
+                <Link
+                  href="/#doctors"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-olive-primary hover:text-olive-light transition-colors py-2"
                 >
                   Врачи
-                </a>
-                <a
-                  href="#booking"
+                </Link>
+                <Link
+                  href="/#booking"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="bg-olive-primary text-white px-6 py-3 rounded-full hover:bg-olive-light transition-all shadow-premium text-center mt-2"
                 >
                   Записаться
-                </a>
+                </Link>
               </div>
             </motion.nav>
           )}
