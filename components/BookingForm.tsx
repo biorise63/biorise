@@ -194,7 +194,7 @@ export default function BookingForm() {
                 />
                 <span className="text-sm text-olive-primary font-heading leading-relaxed">
                   Я подтверждаю, что ознакомлен и даю согласие на обработку персональных данных на условиях и для целей, определяемых{' '}
-                  <a href="/privacy" className="text-olive-primary underline hover:text-olive-light">
+                  <a href="https://biorise-clinic.ru/privacy/" className="text-olive-primary underline hover:text-olive-light">
                     Политикой конфиденциальности
                   </a>
                 </span>
