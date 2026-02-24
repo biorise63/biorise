@@ -17,7 +17,11 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg sm:text-xl font-heading mb-4">Контакты</h3>
-            <p className="text-white/80 text-sm mb-2">443068, Самара, ул. 27, д. 1</p>
+            <p className="text-white/80 text-sm mb-2">ООО "МК Клиники Будущего"</p>
+            <p className="text-white/80 text-sm mb-2">ИНН 6316291950</p>
+            <p className="text-white/80 text-sm mb-2">ОГРН 1256300013441</p>
+            <p className="text-white/80 text-sm mb-2">Юридический адрес</p>
+            <p className="text-white/80 text-sm mb-2">443045, Самарская область, г Самара, ул Дыбенко, д. 27 Б</p>
             <p className="text-white/80 text-sm mb-2">
               <a href="tel:+79967499747" className="hover:text-white transition-colors cursor-pointer inline-flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
