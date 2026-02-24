@@ -4,10 +4,9 @@ import { motion } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 
 const clinicAddresses = [
-  'ул. Четаева, д. 14а',
-  '443068, Самара, ул. 27, д. 1',
-  '443068, Самара, ул. Примерная, д. 2',
-  '443068, Самара, пр-т Ленина, д. 10',
+  'Дыбенко 27Б',
+  'Стара Загора 48',
+  'Молодежная 18',
 ]
 
 export default function BookingForm() {
