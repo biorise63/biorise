@@ -11,8 +11,13 @@ export default function Footer() {
             <div className="mb-4">
               <Logo variant="white" />
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-white/80 text-sm leading-relaxed mb-4">
               Премиальная клиника внутривенной терапии в Самаре. Индивидуальный подход к каждому пациенту.
+            </p>
+            <p className="text-white/80 text-sm">
+              <a href="/privacy" className="hover:text-white transition-colors underline">
+                Политика конфиденциальности
+              </a>
             </p>
           </div>
           <div>
