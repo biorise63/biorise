@@ -41,18 +41,18 @@ export default function Footer() {
                   href="https://t.me/biorise_smr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-[#0088cc] transition-colors"
                   aria-label="Telegram"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c.169 1.858.896 6.424 1.262 8.5.14.78.21 1.33.18 1.54-.06.38-.21.51-.345.52-.285.02-.5-.19-.99-.67-2.75-2.44-3.84-3.38-4.08-3.17-.18.15-.28.9-.41 1.32-.23.75-.48 1.5-.7 1.93-.27.54-.54.73-.88.75-.73.04-1.28-.48-1.99-.94-.78-.5-1.22-.78-1.97-1.25-.84-.52-.3-.81.19-1.27.13-.12 2.35-2.16 2.4-2.34.01-.03.02-.15-.06-.21-.08-.07-.19-.04-.27-.03-.11.02-1.82 1.16-5.14 3.41-.49.33-.93.49-1.33.48-.44-.01-1.29-.25-1.92-.46-.77-.26-1.38-.4-1.33-.85.03-.22.4-.87 1.12-1.68 3.9-3.66 8.14-7.65 10.6-9.95.49-.46.93-.69 1.32-.66.34.02.88.18 1.28.68.09.12.07.14-.05.23z"/>
                   </svg>
                 </a>
                 <a
                   href="https://vk.ru/biorise63"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-[#0077FF] transition-colors"
                   aria-label="ВКонтакте"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ export default function Footer() {
                   href="https://www.instagram.com/biorise_samara"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-[#E4405F] transition-colors"
                   aria-label="Instagram"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
