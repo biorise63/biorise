@@ -1,7 +1,6 @@
  'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
 
 export type InfusionCardProps = {
@@ -18,6 +17,7 @@ export type InfusionCardProps = {
   composition?: string[]
   isOpen?: boolean
   onToggle?: () => void
+  onBook?: () => void
 }
 
 const tabsOrder = [
@@ -70,6 +70,7 @@ export default function InfusionCard({
   composition,
   isOpen = false,
   onToggle,
+  onBook,
 }: InfusionCardProps) {
   const [activeTab, setActiveTab] = useState<'indications' | 'effect' | 'contraindications' | 'composition'>('indications')
 
@@ -127,12 +128,19 @@ export default function InfusionCard({
         )}
 
         <div className="mt-auto flex items-center gap-3">
-          <Link
-            href="/#booking"
-            className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-olive-primary text-white text-sm font-medium hover:bg-olive-light transition-colors"
+          <button
+            type="button"
+            onClick={() => {
+              if (onBook) {
+                onBook()
+              } else if (typeof window !== 'undefined') {
+                window.open('https://klientiks.ru/app2/biorise-clinic', '_blank', 'noopener,noreferrer')
+              }
+            }}
+            className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-olive-primary text-white text-sm font-medium hover:bg-olive-light transition-colors jsClientix_openWidget"
           >
             Записаться
-          </Link>
+          </button>
           {moreText && (
             <button
               type="button"

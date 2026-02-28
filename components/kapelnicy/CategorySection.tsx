@@ -9,9 +9,10 @@ type CategorySectionProps = {
   title: string
   items: InfusionCardProps[]
   icon?: string
+  onBook?: () => void
 }
 
-export default function CategorySection({ id, title, items, icon }: CategorySectionProps) {
+export default function CategorySection({ id, title, items, icon, onBook }: CategorySectionProps) {
   const [openId, setOpenId] = useState<string | null>(null)
 
   const handleToggle = (cardId: string) => {
@@ -31,6 +32,7 @@ export default function CategorySection({ id, title, items, icon }: CategorySect
             {...item}
             isOpen={openId === item.id}
             onToggle={() => handleToggle(item.id)}
+            onBook={onBook}
           />
         ))}
       </div>
