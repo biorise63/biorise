@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
+import { BookingModalProvider } from '@/components/BookingModalProvider'
 
 export const metadata: Metadata = {
   title: 'BIORISE Самара - Клиника внутривенной терапии',
@@ -26,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <BookingModalProvider>
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
+        </BookingModalProvider>
         
         {/* Яндекс.Метрика - невидимый счетчик */}
         <Script

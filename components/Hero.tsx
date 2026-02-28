@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useBookingModal } from './BookingModalProvider'
 
 const features = [
   {
@@ -22,6 +23,8 @@ const features = [
 ]
 
 export default function Hero() {
+  const { openBookingModal } = useBookingModal()
+  
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ marginTop: '80px' }}>
       {/* Background Video */}
@@ -94,12 +97,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.1 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a
-              href="#booking"
+            <button
+              onClick={openBookingModal}
               className="bg-olive-primary text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center"
             >
               Записаться на капельницу
-            </a>
+            </button>
             <a
               href="https://biorise-clinic.ru/kapelnicy/"
               className="bg-white/95 text-olive-primary px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-white transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center border-2 border-olive-primary"

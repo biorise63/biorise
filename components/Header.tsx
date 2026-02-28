@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Logo from './Logo'
 import Link from 'next/link'
+import { useBookingModal } from './BookingModalProvider'
 
 interface ClinicAddress {
   id: string
@@ -41,6 +42,7 @@ export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
+  const { openBookingModal } = useBookingModal()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -212,12 +214,12 @@ export default function Header() {
               <Link href="/#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Врачи
               </Link>
-              <Link
-                href="/#booking"
+              <button
+                onClick={openBookingModal}
                 className="bg-olive-primary text-white px-4 lg:px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium text-sm lg:text-base"
               >
                 Записаться
-              </Link>
+              </button>
             </nav>
             
             {/* Social Media Links */}
@@ -332,13 +334,15 @@ export default function Header() {
                 >
                   Врачи
                 </Link>
-                <Link
-                  href="/#booking"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="bg-olive-primary text-white px-6 py-3 rounded-full hover:bg-olive-light transition-all shadow-premium text-center mt-2"
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    openBookingModal()
+                  }}
+                  className="bg-olive-primary text-white px-6 py-3 rounded-full hover:bg-olive-light transition-all shadow-premium text-center mt-2 w-full"
                 >
                   Записаться
-                </Link>
+                </button>
                 
                 {/* Social Media Links - Mobile */}
                 <div className="flex items-center gap-4 mt-4 pt-4 border-t border-olive-primary/10">

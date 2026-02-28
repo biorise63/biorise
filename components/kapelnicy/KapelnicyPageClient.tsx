@@ -8,7 +8,7 @@ import CategorySection from '@/components/kapelnicy/CategorySection'
 import OffCanvasMenu from '@/components/kapelnicy/OffCanvasMenu'
 import DownloadPdfButton from '@/components/kapelnicy/DownloadPdfButton'
 import CatalogButton from '@/components/kapelnicy/CatalogButton'
-import BookingModal from '@/components/kapelnicy/BookingModal'
+import { useBookingModal } from '@/components/BookingModalProvider'
 
 type InfusionItem = {
   id: string
@@ -43,11 +43,7 @@ interface KapelnicyPageClientProps {
 
 export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageClientProps) {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false)
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
-
-  const handleOpenBooking = () => {
-    setIsBookingModalOpen(true)
-  }
+  const { openBookingModal } = useBookingModal()
 
   return (
     <>
@@ -57,13 +53,12 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
       <InfusionPageLayout sidebarCategories={menu}>
         <div className="space-y-12 sm:space-y-16">
           {categories.map((cat) => (
-            <CategorySection key={cat.id} id={cat.id} title={cat.title} items={cat.items} icon={cat.icon} onBook={handleOpenBooking} />
+            <CategorySection key={cat.id} id={cat.id} title={cat.title} items={cat.items} icon={cat.icon} onBook={openBookingModal} />
           ))}
         </div>
       </InfusionPageLayout>
       <Footer />
       <DownloadPdfButton />
-      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </>
   )
 }

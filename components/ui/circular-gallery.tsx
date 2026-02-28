@@ -1,6 +1,7 @@
 'use client'
 
 import React, { HTMLAttributes, useEffect, useRef, useState } from 'react'
+import { useBookingModal } from '@/components/BookingModalProvider'
 
 const cn = (...classes: Array<string | undefined | null | false>) => classes.filter(Boolean).join(' ')
 
@@ -36,6 +37,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     const [rotation, setRotation] = useState(0)
     const manualAnimationRef = useRef<number | null>(null)
     const isManualAnimatingRef = useRef(false)
+    const { openBookingModal } = useBookingModal()
 
     useEffect(() => {
       return () => {
@@ -205,14 +207,23 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     </div>
 
                     <div className="pt-2">
-                      <a
-                        href={item.buttonHref || '#booking'}
-                        target={(item.buttonHref || '').startsWith('http') ? '_blank' : undefined}
-                        rel={(item.buttonHref || '').startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="block w-full rounded-full bg-olive-primary px-3 py-2 text-center text-[10px] font-medium text-white transition hover:bg-olive-light md:text-xs md:py-2.5"
-                      >
-                        {item.buttonText || 'Записаться'}
-                      </a>
+                      {!item.buttonHref || item.buttonHref === '#booking' || (!item.buttonHref.startsWith('http') && !item.buttonHref.startsWith('/')) ? (
+                        <button
+                          onClick={openBookingModal}
+                          className="block w-full rounded-full bg-olive-primary px-3 py-2 text-center text-[10px] font-medium text-white transition hover:bg-olive-light md:text-xs md:py-2.5"
+                        >
+                          {item.buttonText || 'Записаться'}
+                        </button>
+                      ) : (
+                        <a
+                          href={item.buttonHref}
+                          target={item.buttonHref.startsWith('http') ? '_blank' : undefined}
+                          rel={item.buttonHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="block w-full rounded-full bg-olive-primary px-3 py-2 text-center text-[10px] font-medium text-white transition hover:bg-olive-light md:text-xs md:py-2.5"
+                        >
+                          {item.buttonText || 'Записаться'}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
