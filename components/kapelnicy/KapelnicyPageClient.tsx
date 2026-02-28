@@ -97,7 +97,7 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
       }
     }
 
-    window.open('https://klientiks.ru/app2/biorise-clinic', '_blank', 'noopener,noreferrer')
+    window.location.href = 'https://klientiks.ru/app2/biorise-clinic'
   }
 
   return (

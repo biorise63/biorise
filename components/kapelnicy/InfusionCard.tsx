@@ -134,7 +134,7 @@ export default function InfusionCard({
               if (onBook) {
                 onBook()
               } else if (typeof window !== 'undefined') {
-                window.open('https://klientiks.ru/app2/biorise-clinic', '_blank', 'noopener,noreferrer')
+                window.location.href = 'https://klientiks.ru/app2/biorise-clinic'
               }
             }}
             className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-olive-primary text-white text-sm font-medium hover:bg-olive-light transition-colors jsClientix_openWidget"
