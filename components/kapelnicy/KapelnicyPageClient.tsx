@@ -87,9 +87,17 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
   }, [])
 
   const handleOpenBooking = () => {
-    if (!isWidgetReady && typeof window !== 'undefined') {
-      window.open('https://klientiks.ru/app2/biorise-clinic', '_blank', 'noopener,noreferrer')
+    if (typeof window === 'undefined') return
+
+    if (isWidgetReady) {
+      const btn = document.getElementById('clientixAppointmentButton')
+      if (btn) {
+        btn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))
+        return
+      }
     }
+
+    window.open('https://klientiks.ru/app2/biorise-clinic', '_blank', 'noopener,noreferrer')
   }
 
   return (
