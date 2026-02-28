@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InfusionPageLayout from '@/components/kapelnicy/InfusionPageLayout'
@@ -42,62 +42,11 @@ interface KapelnicyPageClientProps {
 
 export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageClientProps) {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false)
-  const [isWidgetReady, setIsWidgetReady] = useState(false)
-  const widgetInitRef = useRef(false)
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || widgetInitRef.current) return
-    widgetInitRef.current = true
-
-    const hideStyleId = 'clientix-widget-hide-button'
-    if (!document.getElementById(hideStyleId)) {
-      const styleEl = document.createElement('style')
-      styleEl.id = hideStyleId
-      styleEl.innerHTML = '#clientixAppointmentButton{display:none!important;}'
-      document.head.appendChild(styleEl)
-    }
-
-    const initWidget = () => {
-      const clientix = (window as any).clientixWidget
-      if (!clientix?.load) return
-      clientix.load({
-        baseUrl: 'https://klientiks.ru',
-        alias: '/app2/biorise-clinic',
-        text: 'Записаться онлайн',
-        color: '#d9b9a5',
-        color2: 'white',
-        border: '1px solid #d9b9a5',
-        borderRadius: '0 8px 8px 8px',
-        develop: false,
-        log: false,
-      })
-      setTimeout(() => setIsWidgetReady(true), 500)
-    }
-
-    if ((window as any).clientixWidget) {
-      initWidget()
-      return
-    }
-
-    const script = document.createElement('script')
-    script.src = 'https://klientiks.ru/js/online/clientixWidget.js'
-    script.async = true
-    script.onload = () => initWidget()
-    document.body.appendChild(script)
-  }, [])
 
   const handleOpenBooking = () => {
-    if (typeof window === 'undefined') return
-
-    if (isWidgetReady) {
-      const btn = document.getElementById('clientixAppointmentButton')
-      if (btn) {
-        btn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))
-        return
-      }
+    if (typeof window !== 'undefined') {
+      window.location.href = '/kapelnicy/form'
     }
-
-    window.location.href = 'https://klientiks.ru/app2/biorise-clinic'
   }
 
   return (
