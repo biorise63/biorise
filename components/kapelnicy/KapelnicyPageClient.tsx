@@ -8,6 +8,7 @@ import CategorySection from '@/components/kapelnicy/CategorySection'
 import OffCanvasMenu from '@/components/kapelnicy/OffCanvasMenu'
 import DownloadPdfButton from '@/components/kapelnicy/DownloadPdfButton'
 import CatalogButton from '@/components/kapelnicy/CatalogButton'
+import BookingModal from '@/components/kapelnicy/BookingModal'
 
 type InfusionItem = {
   id: string
@@ -42,11 +43,10 @@ interface KapelnicyPageClientProps {
 
 export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageClientProps) {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false)
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
   const handleOpenBooking = () => {
-    if (typeof window !== 'undefined') {
-      window.location.href = '/kapelnicy/form'
-    }
+    setIsBookingModalOpen(true)
   }
 
   return (
@@ -63,6 +63,7 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
       </InfusionPageLayout>
       <Footer />
       <DownloadPdfButton />
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </>
   )
 }
