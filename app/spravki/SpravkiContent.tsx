@@ -118,7 +118,7 @@ export default function SpravkiContent() {
   const { openBookingModal } = useBookingModal()
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
