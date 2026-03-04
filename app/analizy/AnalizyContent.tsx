@@ -165,21 +165,21 @@ export default function AnalizyContent() {
               <motion.img
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                src="/clinic/photo_2.jpg"
+                src="/analizy/analizy-1.jpg"
                 alt="Лабораторная диагностика"
                 className="rounded-2xl object-cover h-44 sm:h-56 w-full shadow-premium"
               />
               <motion.img
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                src="/clinic/photo_5.jpg"
+                src="/analizy/analizy-2.jpg"
                 alt="Пробирки для анализов"
                 className="rounded-2xl object-cover h-44 sm:h-56 w-full shadow-premium"
               />
               <motion.img
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                src="/clinic/photo_7.jpg"
+                src="/analizy/analizy-3.jpg"
                 alt="Забор крови"
                 className="rounded-2xl object-cover h-52 sm:h-64 w-full shadow-premium col-span-2"
               />
