@@ -12,9 +12,10 @@ interface SlideData {
   category: string;
 }
 
-type Category = 'recovery' | 'beauty' | 'women' | 'sport' | 'health' | 'wellness';
+type Category = 'popular' | 'recovery' | 'beauty' | 'women' | 'sport' | 'health' | 'wellness';
 
 const categories: { id: Category; name: string }[] = [
+  { id: 'popular', name: 'Популярные' },
   { id: 'recovery', name: 'Восстановление' },
   { id: 'beauty', name: 'Красота' },
   { id: 'women', name: 'Женское здоровье' },
@@ -24,6 +25,51 @@ const categories: { id: Category; name: string }[] = [
 ];
 
 const allSlides: SlideData[] = [
+  {
+    title: 'Железо стандарт',
+    subtitle: 'Восполнение железа',
+    description: 'Поддержка кроветворной системы и энергии при дефиците железа.',
+    accent: '#5E6F52',
+    imageUrl: '/drips/iron.png',
+    price: 'от 2 800 ₽',
+    category: 'popular',
+  },
+  {
+    title: 'Энергия',
+    subtitle: 'Быстрый заряд сил',
+    description: 'Повышение тонуса и работоспособности, поддержка после нагрузок.',
+    accent: '#7F8F70',
+    imageUrl: '/drips/energy.png',
+    price: 'от 2 800 ₽',
+    category: 'popular',
+  },
+  {
+    title: 'Детокс',
+    subtitle: 'Мягкое очищение',
+    description: 'Помогает выводить токсины и поддерживать естественные детокс-процессы.',
+    accent: '#5E6F52',
+    imageUrl: '/drips/detox.png',
+    price: 'от 2 500 ₽',
+    category: 'popular',
+  },
+  {
+    title: 'Золушка',
+    subtitle: 'Сияние и Anti-Age',
+    description: 'Поддержка кожи и общего тонуса, заметное обновление и свежий вид.',
+    accent: '#7F8F70',
+    imageUrl: '/drips/beauty.png',
+    price: 'от 4 000 ₽',
+    category: 'popular',
+  },
+  {
+    title: 'Витаминная',
+    subtitle: 'Комплекс витаминов',
+    description: 'Восполнение ключевых витаминов и микроэлементов для поддержки иммунитета.',
+    accent: '#5E6F52',
+    imageUrl: '/drips/vitamins.png',
+    price: 'от 3 000 ₽',
+    category: 'popular',
+  },
   {
     title: 'Детокс',
     subtitle: 'Очищение организма',
@@ -252,7 +298,7 @@ const allSlides: SlideData[] = [
 ];
 
 export default function ElegantCarousel() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('recovery');
+  const [selectedCategory, setSelectedCategory] = useState<Category>('popular');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
