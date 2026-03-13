@@ -44,7 +44,7 @@ export default function BookingForm() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/booking', {
+      const response = await fetch('/api/online-booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

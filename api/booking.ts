@@ -32,6 +32,7 @@ interface BookingRequest {
   service: string
   date: string
   time: string
+  address?: string
 }
 
 interface KlientiksResponse {
@@ -191,9 +192,19 @@ async function sendTelegramNotification(data: BookingRequest, clientId?: string)
     consultation: 'Консультация',
   }
 
-  const serviceName = serviceMapping[data.service] || data.service
+  const serviceName = data.service ? (serviceMapping[data.service] || data.service) : 'Не указана'
 
-  const message = `
+  const hasAddressOnly = !!data.address && !data.service && !data.date && !data.time
+
+  const message = hasAddressOnly
+    ? `
+🆕 <b>Новая онлайн-запись</b>
+
+👤 <b>Имя:</b> ${data.name}
+📞 <b>Телефон:</b> ${data.phone}
+📍 <b>Адрес клиники:</b> ${data.address}
+  `.trim()
+    : `
 🆕 <b>Новая заявка с сайта</b>
 
 👤 <b>Клиент:</b> ${data.name}
@@ -217,6 +228,16 @@ ${clientId ? `🆔 <b>ID в CRM:</b> ${clientId}` : ''}
         chat_id: TELEGRAM_CHAT_ID,
         text: message,
         parse_mode: 'HTML',
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: 'Просмотрено',
+                callback_data: 'booking_viewed',
+              },
+            ],
+          ],
+        },
       }),
     })
 
@@ -294,18 +315,49 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    const data: BookingRequest = req.body
+    const data = req.body as Partial<BookingRequest> & { address?: string }
 
-    // Валидация обязательных полей
-    if (!data.name || !data.phone || !data.service || !data.date || !data.time) {
+    const isSimpleOnlineBooking = !!data.address && !data.service && !data.date && !data.time
+
+    if (isSimpleOnlineBooking) {
+      if (!data.name || !data.phone || !data.address) {
+        return res.status(400).json({
+          success: false,
+          message: 'Не все обязательные поля заполнены',
+        })
+      }
+
+      await sendTelegramNotification(
+        {
+          name: data.name,
+          phone: data.phone,
+          email: data.email || '',
+          service: '',
+          date: '',
+          time: '',
+          address: data.address,
+        },
+        undefined
+      )
+
+      return res.status(200).json({
+        success: true,
+        message: 'Заявка успешно отправлена',
+      })
+    }
+
+    const fullData: BookingRequest = data as BookingRequest
+
+    // Валидация обязательных полей для полной заявки
+    if (!fullData.name || !fullData.phone || !fullData.service || !fullData.date || !fullData.time) {
       return res.status(400).json({
         success: false,
         message: 'Не все обязательные поля заполнены',
       })
     }
 
-    // Обработка заявки
-    const result = await handleBookingRequest(data)
+    // Обработка заявки через CRM
+    const result = await handleBookingRequest(fullData)
 
     return res.status(200).json(result)
   } catch (error) {
