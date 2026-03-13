@@ -3,7 +3,7 @@
  * CommonJS для Vercel.
  */
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8778719074:AAE2Heu3T6n3k70IudhohTIYLPxOwDHeG6I'
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8675366445:AAED3QxCJJqgaB_0UxL_lcsJOEUGgs748qQ'
 
 module.exports = async function (req, res) {
   if (req.method !== 'POST') {

@@ -3,8 +3,8 @@
  * CommonJS — без ESM, чтобы Vercel не падал на "Unexpected token 'export'".
  */
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8778719074:AAE2Heu3T6n3k70IudhohTIYLPxOwDHeG6I'
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '8282266025'
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8675366445:AAED3QxCJJqgaB_0UxL_lcsJOEUGgs748qQ'
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '8200845208'
 
 module.exports = async function (req, res) {
   if (req.method !== 'POST') {
