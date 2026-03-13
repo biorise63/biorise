@@ -6,7 +6,7 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
-    common: '8 марта',
+    common: 'Золушка с глутатионом, чек-апы',
     subtitle: 'Курс «Золушка с глутатионом» + чек-апы и консультации',
     description: 'Омоложение, детокс и сияние кожи. Праздничные скидки на капельницы и чек-апы.',
     features: [
@@ -15,12 +15,12 @@ const galleryData: GalleryItem[] = [
       'Чек-ап «Хроническая усталость»: 9 500 ₽ вместо 14 900 ₽',
       'Консультация терапевта или диетолога: скидка 50% (1 100 ₽)',
     ],
-    period: '01.08–08.03',
+    period: 'до 30 апреля 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
       url: '/promo-4.png',
-      text: 'Весенняя акция 8 марта',
+      text: 'Золушка с глутатионом, чек-апы',
       by: 'Праздничное предложение',
     },
   },
@@ -38,7 +38,7 @@ const galleryData: GalleryItem[] = [
       current: '800 ₽',
       old: '1800 ₽',
     },
-    period: '21.02–08.03',
+    period: 'до 30 апреля 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
@@ -84,7 +84,7 @@ const galleryData: GalleryItem[] = [
       current: '2 500 ₽',
       old: '5 790 ₽',
     },
-    period: 'Февраль',
+    period: 'до 30 апреля 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
