@@ -312,7 +312,7 @@ async function handleBookingRequest(data: BookingRequest): Promise<{
 /**
  * Vercel Serverless Function Handler
  */
-export default async function handler(req: any, res: any) {
+async function handler(req: any, res: any) {
   // Разрешаем только POST запросы
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Метод не разрешен' })
@@ -372,3 +372,7 @@ export default async function handler(req: any, res: any) {
     })
   }
 }
+
+// Экспорт для Vercel Serverless Function в CommonJS
+module.exports = handler
+

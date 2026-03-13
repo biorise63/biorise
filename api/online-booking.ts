@@ -9,7 +9,7 @@ interface OnlineBookingRequest {
   address: string
 }
 
-export default async function handler(req: any, res: any) {
+async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Метод не разрешен' })
   }
@@ -91,4 +91,8 @@ export default async function handler(req: any, res: any) {
     })
   }
 }
+
+// Для Vercel Serverless Function в режиме CommonJS
+// избегаем ES-модулей и используем module.exports
+module.exports = handler
 

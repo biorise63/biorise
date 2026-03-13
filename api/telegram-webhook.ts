@@ -4,7 +4,7 @@
  * и удаления кнопки из сообщения.
  */
 
-export default async function handler(req: any, res: any) {
+async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, description: 'Method not allowed' })
   }
@@ -73,4 +73,7 @@ export default async function handler(req: any, res: any) {
     return res.status(500).json({ ok: false, description: 'Internal error' })
   }
 }
+
+// Экспорт для Vercel Serverless Function в CommonJS
+module.exports = handler
 
