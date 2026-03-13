@@ -1,5 +1,3 @@
-export {}
-
 /**
  * Простой эндпоинт для блока "ОНЛАЙН ЗАПИСЬ" на главной.
  * НЕ трогает CRM, только шлёт уведомление в Telegram.
@@ -11,7 +9,7 @@ interface OnlineBookingRequest {
   address: string
 }
 
-async function handler(req: any, res: any) {
+export default async function onlineBookingHandler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Метод не разрешен' })
   }
@@ -93,8 +91,4 @@ async function handler(req: any, res: any) {
     })
   }
 }
-
-// Для Vercel Serverless Function в режиме CommonJS
-// избегаем ES-модулей и используем module.exports
-module.exports = handler
 

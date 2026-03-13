@@ -1,5 +1,3 @@
-export {}
-
 /**
  * Vercel Serverless Function для обработки заявок с сайта
  * Интегрирует с Клиентикс CRM и отправляет уведомления в Telegram
@@ -314,7 +312,7 @@ async function handleBookingRequest(data: BookingRequest): Promise<{
 /**
  * Vercel Serverless Function Handler
  */
-async function handler(req: any, res: any) {
+export default async function bookingHandler(req: any, res: any) {
   // Разрешаем только POST запросы
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Метод не разрешен' })
@@ -374,7 +372,4 @@ async function handler(req: any, res: any) {
     })
   }
 }
-
-// Экспорт для Vercel Serverless Function в CommonJS
-module.exports = handler
 

@@ -1,12 +1,10 @@
-export {}
-
 /**
  * Вебхук для Telegram бота.
  * Используется для обработки нажатия inline-кнопки "Просмотрено"
  * и удаления кнопки из сообщения.
  */
 
-async function handler(req: any, res: any) {
+export default async function telegramWebhookHandler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, description: 'Method not allowed' })
   }
@@ -75,7 +73,4 @@ async function handler(req: any, res: any) {
     return res.status(500).json({ ok: false, description: 'Internal error' })
   }
 }
-
-// Экспорт для Vercel Serverless Function в CommonJS
-module.exports = handler
 
