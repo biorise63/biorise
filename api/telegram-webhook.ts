@@ -9,7 +9,8 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ ok: false, description: 'Method not allowed' })
   }
 
-  const { TELEGRAM_BOT_TOKEN } = process.env
+  const envToken = process.env.TELEGRAM_BOT_TOKEN
+  const TELEGRAM_BOT_TOKEN = envToken || '8778719074:AAE2Heu3T6n3k70IudhohTIYLPxOwDHeG6I'
 
   if (!TELEGRAM_BOT_TOKEN) {
     console.error('TELEGRAM_BOT_TOKEN не настроен')

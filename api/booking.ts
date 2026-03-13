@@ -177,7 +177,11 @@ async function addVisitToKlientiks(
  * Отправка уведомления в Telegram
  */
 async function sendTelegramNotification(data: BookingRequest, clientId?: string): Promise<void> {
-  const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env
+  const envToken = process.env.TELEGRAM_BOT_TOKEN
+  const envChatId = process.env.TELEGRAM_CHAT_ID
+
+  const TELEGRAM_BOT_TOKEN = envToken || '8778719074:AAE2Heu3T6n3k70IudhohTIYLPxOwDHeG6I'
+  const TELEGRAM_CHAT_ID = envChatId || '8282266025'
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     console.warn('Telegram credentials не настроены, пропускаем отправку')
