@@ -1,3 +1,5 @@
+export {}
+
 /**
  * Vercel Serverless Function для обработки заявок с сайта
  * Интегрирует с Клиентикс CRM и отправляет уведомления в Telegram
