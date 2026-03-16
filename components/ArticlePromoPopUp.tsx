@@ -93,8 +93,8 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Image — компактная высота, чтобы форма помещалась на 1366×768 */}
-            <div className="relative w-full h-32 sm:h-36 bg-beige-background shrink-0 overflow-hidden rounded-t-[16px]">
+            {/* Image */}
+            <div className="relative w-full aspect-[2/1] bg-beige-background shrink-0 overflow-hidden rounded-t-[16px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={coverImage}
