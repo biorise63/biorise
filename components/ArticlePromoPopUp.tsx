@@ -93,8 +93,8 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Image */}
-            <div className="relative w-full aspect-[2/1] bg-beige-background shrink-0 overflow-hidden rounded-t-[16px]">
+            {/* Image — компактная высота, чтобы форма помещалась на 1366×768 */}
+            <div className="relative w-full h-32 sm:h-36 bg-beige-background shrink-0 overflow-hidden rounded-t-[16px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={coverImage}
@@ -124,15 +124,13 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
               </button>
             </div>
 
-            {/* Content */}
-            <div className="p-5 sm:p-6 overflow-y-auto flex-1">
-              <h2 id="promo-popup-title" className="text-xl sm:text-2xl font-heading text-olive-primary font-medium mb-2">
+            {/* Content — прокручиваемый контейнер: min-h-0 для flex, overflow-y: auto для тачпада/колеса */}
+            <div className="p-4 sm:p-5 flex-1 min-h-0 overflow-y-auto overscroll-contain">
+              <h2 id="promo-popup-title" className="text-lg sm:text-xl font-heading text-olive-primary font-medium mb-1">
                 Скидка 20% на капельницы для спортсменов
               </h2>
-              <p className="text-olive-primary/80 text-sm sm:text-base mb-6">
-                До <strong>25.03.2026</strong> действует специальное предложение.
-                <br />
-                Используйте промокод <strong>АТЛЕТ</strong>.
+              <p className="text-olive-primary/80 text-xs sm:text-sm mb-4">
+                До <strong>25.03.2026</strong> — промокод <strong>АТЛЕТ</strong>.
               </p>
               <BookingFormFields
                 defaultPromoCode="АТЛЕТ"

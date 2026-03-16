@@ -76,14 +76,16 @@ export default function BookingFormFields({
     setIsAddressOpen(false)
   }
 
-  const inputClass =
-    'w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading'
-  const selectClass =
-    'w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary cursor-pointer flex items-center justify-between font-heading'
+  const inputClass = compact
+    ? 'w-full h-10 px-3 py-2 rounded-lg border border-beige-accent bg-white text-olive-primary text-sm focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading'
+    : 'w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading'
+  const selectClass = compact
+    ? 'w-full h-10 px-3 py-2 rounded-lg border border-beige-accent bg-white text-olive-primary text-sm focus:outline-none focus:ring-2 focus:ring-olive-primary cursor-pointer flex items-center justify-between font-heading'
+    : 'w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary cursor-pointer flex items-center justify-between font-heading'
 
   return (
     <form onSubmit={handleSubmit} className={className}>
-      <div className={`grid gap-4 ${compact ? '' : 'grid-cols-1 md:grid-cols-2 gap-6 mb-6'}`}>
+      <div className={`grid ${compact ? 'gap-2 mb-2' : 'gap-4 grid-cols-1 md:grid-cols-2 gap-6 mb-6'}`}>
         <div>
           <input
             type="text"
@@ -110,7 +112,7 @@ export default function BookingFormFields({
         </div>
       </div>
 
-      <div className="mt-5 mb-4">
+      <div className={compact ? 'mt-2 mb-2' : 'mt-5 mb-4'}>
         <input
           type="text"
           id="popup-promoCode"
@@ -122,20 +124,20 @@ export default function BookingFormFields({
         />
       </div>
 
-      <div className="mb-4 relative" ref={addressRef}>
+      <div className={compact ? 'mb-2 relative' : 'mb-4 relative'} ref={addressRef}>
         <div
           onClick={() => setIsAddressOpen(!isAddressOpen)}
           className={`${selectClass} ${isAddressOpen ? 'ring-2 ring-olive-primary' : ''}`}
         >
-          <span>{formData.address}</span>
+          <span className="truncate">{formData.address}</span>
           <svg
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className={`text-olive-primary transition-transform ${isAddressOpen ? 'rotate-180' : ''}`}
+            className={`shrink-0 text-olive-primary transition-transform ${isAddressOpen ? 'rotate-180' : ''}`}
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
@@ -147,7 +149,7 @@ export default function BookingFormFields({
                 key={addr}
                 type="button"
                 onClick={() => handleAddressSelect(addr)}
-                className={`w-full text-left px-4 py-3 hover:bg-beige-background transition-colors font-heading ${
+                className={`w-full text-left px-3 py-2 text-sm hover:bg-beige-background transition-colors font-heading ${
                   formData.address === addr ? 'bg-beige-background text-olive-primary font-medium' : 'text-olive-primary'
                 }`}
               >
@@ -158,16 +160,16 @@ export default function BookingFormFields({
         )}
       </div>
 
-      <div className="mb-6">
-        <label className="flex items-start gap-3 cursor-pointer">
+      <div className={compact ? 'mb-3' : 'mb-6'}>
+        <label className={`flex cursor-pointer ${compact ? 'items-center gap-2' : 'items-start gap-3'}`}>
           <input
             type="checkbox"
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
             required
-            className="mt-1 w-5 h-5 rounded border-beige-accent text-olive-primary focus:ring-olive-primary focus:ring-2"
+            className={compact ? 'w-4 h-4 shrink-0 rounded border-beige-accent text-olive-primary focus:ring-olive-primary focus:ring-2' : 'mt-1 w-5 h-5 rounded border-beige-accent text-olive-primary focus:ring-olive-primary focus:ring-2'}
           />
-          <span className="text-sm text-olive-primary font-heading leading-relaxed">
+          <span className={compact ? 'text-[11px] sm:text-xs text-olive-primary font-heading leading-tight' : 'text-sm text-olive-primary font-heading leading-relaxed'}>
             Я подтверждаю согласие на обработку персональных данных в соответствии с{' '}
             <a href="https://biorise-clinic.ru/privacy/" className="text-olive-primary underline hover:text-olive-light">
               Политикой конфиденциальности
@@ -179,7 +181,9 @@ export default function BookingFormFields({
       <button
         type="submit"
         disabled={isSubmitting || !consent}
-        className={`w-full px-6 py-3 rounded-full text-base font-medium font-heading transition-all ${
+        className={`w-full rounded-full font-medium font-heading transition-all ${
+          compact ? 'h-10 px-4 text-sm' : 'px-6 py-3 text-base'
+        } ${
           isSubmitting || !consent
             ? 'bg-olive-primary/50 text-white cursor-not-allowed'
             : 'bg-olive-primary text-white hover:bg-olive-light'
