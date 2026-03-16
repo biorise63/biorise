@@ -60,10 +60,10 @@ export default function RootLayout({
           </div>
         </noscript>
 
-        {/* Top.Mail.Ru counter */}
+        {/* Top.Mail.Ru counter — грузим до интерактива, попадает в <head> */}
         <Script
           id="top-mail-ru"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               var _tmr = window._tmr || (window._tmr = []);
