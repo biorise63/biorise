@@ -133,7 +133,7 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
                     <path d="M7 7h.01" />
                   </svg>
                 </span>
-                <h2 id="promo-popup-title" className="text-xl sm:text-2xl font-heading text-olive-primary font-medium">
+                <h2 id="promo-popup-title" className="text-base sm:text-lg font-heading text-olive-primary font-medium">
                   Скидка 20% на капельницы для спортсменов
                 </h2>
               </div>
