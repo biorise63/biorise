@@ -97,12 +97,28 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
             {/* Онлайн-запись со скидкой в конце статьи */}
             <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-olive-primary/10 shadow-premium">
-              <p className="text-olive-primary font-medium mb-1">
-                Скидка 20% на капельницы для спортсменов
-              </p>
-              <p className="text-olive-primary/70 text-sm mb-6">
-                До <strong>25.03.2026</strong> действует специальное предложение. Используйте промокод <strong>АТЛЕТ</strong>.
-              </p>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="flex shrink-0 w-10 h-10 rounded-xl bg-olive-primary/10 flex items-center justify-center text-olive-primary" aria-hidden>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2H2v10l9.3 9.3a2.4 2.4 0 0 0 3.4 0l6.3-6.3a2.4 2.4 0 0 0 0-3.4L12 2Z" />
+                    <path d="M7 7h.01" />
+                  </svg>
+                </span>
+                <h2 className="text-xl sm:text-2xl font-heading text-olive-primary font-medium">
+                  Скидка 20% на капельницы для спортсменов
+                </h2>
+              </div>
+              <div className="flex items-start gap-3 text-olive-primary/70 text-sm mb-6">
+                <span className="flex shrink-0 w-8 h-8 rounded-lg bg-olive-primary/5 flex items-center justify-center text-olive-primary/80" aria-hidden>
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                  </svg>
+                </span>
+                <p>
+                  До <strong>25.03.2026</strong> действует специальное предложение. Используйте промокод <strong>АТЛЕТ</strong>.
+                </p>
+              </div>
               <BookingFormFields
                 defaultPromoCode="АТЛЕТ"
                 submitButtonText="Записаться"
