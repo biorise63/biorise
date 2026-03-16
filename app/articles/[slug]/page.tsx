@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/articles'
+import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
@@ -109,6 +110,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </article>
+
+      <ArticlePromoPopUp coverImage={article.coverImage} />
 
       <Footer />
     </main>
