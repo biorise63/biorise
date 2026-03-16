@@ -223,6 +223,9 @@ export default function Header() {
               <Link href="/#gallery" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Акции
               </Link>
+              <Link href="/articles" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+                Статьи
+              </Link>
               <Link href="/#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Врачи
               </Link>
@@ -363,6 +366,13 @@ export default function Header() {
                   className="text-olive-primary hover:text-olive-light transition-colors py-2"
                 >
                   Акции
+                </Link>
+                <Link
+                  href="/articles"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
+                >
+                  Статьи
                 </Link>
                 <Link
                   href="/#doctors"
