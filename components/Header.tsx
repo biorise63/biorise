@@ -269,6 +269,21 @@ export default function Header() {
                   <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0-2A7.5 7.5 0 0 0 0 7.5v9A7.5 7.5 0 0 0 7.5 24h9A7.5 7.5 0 0 0 24 16.5v-9A7.5 7.5 0 0 0 16.5 0Zm12 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
                 </svg>
               </a>
+              <a
+                href="https://max.ru/join/Gpyg9NQKBcX0qF1kzBQ370763KR744lBw_hKHAEfLdY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#4C6FFF] transition-colors"
+                aria-label="Мессенджер MAX"
+              >
+                <svg className="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="6" fill="currentColor" opacity="0.12" />
+                  <path
+                    d="M7 17V7h2.2l2.3 4.1L13.8 7H16v10h-2v-5.2l-2 3.4h-.1l-2-3.4V17H7Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
             </div>
             
             {/* Mobile Menu Button */}
@@ -403,6 +418,21 @@ export default function Header() {
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0-2A7.5 7.5 0 0 0 0 7.5v9A7.5 7.5 0 0 0 7.5 24h9A7.5 7.5 0 0 0 24 16.5v-9A7.5 7.5 0 0 0 16.5 0Zm12 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://max.ru/join/Gpyg9NQKBcX0qF1kzBQ370763KR744lBw_hKHAEfLdY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-[#4C6FFF] transition-colors"
+                    aria-label="Мессенджер MAX"
+                  >
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="6" fill="currentColor" opacity="0.12" />
+                      <path
+                        d="M7 17V7h2.2l2.3 4.1L13.8 7H16v10h-2v-5.2l-2 3.4h-.1l-2-3.4V17H7Z"
+                        fill="currentColor"
+                      />
                     </svg>
                   </a>
                 </div>
