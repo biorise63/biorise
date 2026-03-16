@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/articles'
 import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
+import BookingFormFields from '@/components/BookingFormFields'
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
@@ -94,18 +95,19 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               })}
             </div>
 
-            {/* CTA внизу вместо сайдбара */}
-            <div className="mt-14 p-6 rounded-2xl bg-white border border-olive-primary/10">
-              <p className="text-olive-primary font-medium mb-1">Записаться на приём</p>
-              <p className="text-olive-primary/70 text-sm mb-4">
-                Подберём программу капельниц или чек-ап — оставьте заявку, администратор свяжется с вами.
+            {/* Онлайн-запись со скидкой в конце статьи */}
+            <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-olive-primary/10 shadow-premium">
+              <p className="text-olive-primary font-medium mb-1">
+                Скидка 20% на капельницы для спортсменов
               </p>
-              <Link
-                href="/#booking"
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-olive-primary text-white text-sm hover:bg-olive-light transition-colors"
-              >
-                Оставить заявку
-              </Link>
+              <p className="text-olive-primary/70 text-sm mb-6">
+                До <strong>25.03.2026</strong> действует специальное предложение. Используйте промокод <strong>АТЛЕТ</strong>.
+              </p>
+              <BookingFormFields
+                defaultPromoCode="АТЛЕТ"
+                submitButtonText="Записаться"
+                compact
+              />
             </div>
           </div>
         </div>
