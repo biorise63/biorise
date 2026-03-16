@@ -45,8 +45,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </Link>
           </div>
 
-          {/* Обложка на всю ширину, как в Дзене */}
-          <div className="w-full aspect-[16/9] sm:aspect-[2/1] bg-white mb-8">
+          {/* Обложка на всю ширину, как в Дзене, с закруглёнными краями */}
+          <div className="w-full aspect-[16/9] sm:aspect-[2/1] bg-white mb-8 rounded-3xl overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={article.coverImage}
