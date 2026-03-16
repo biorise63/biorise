@@ -14,7 +14,7 @@ export const articles: Article[] = [
     title: 'БАДы или капельницы?',
     excerpt:
       'Что помогает спортсменам быстрее восстановиться после тренировок — разбираем, что дают БАДы и когда используют капельницы.',
-    coverImage: '/articles/bady-ili-kapelnicy.png',
+    coverImage: '/articles/XXXL-23.webp',
     publishedAt: '2026-03-16',
     tags: ['IV-терапия', 'Витамины', 'Дефициты'],
     // Заполним текстом после извлечения из .pages
