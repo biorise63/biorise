@@ -26,13 +26,19 @@ module.exports = async function (req, res) {
       })
     }
 
-    const message = [
+    const lines = [
       '🆕 <b>Новая онлайн-запись</b>',
       '',
       '👤 <b>Имя:</b> ' + data.name,
       '📞 <b>Телефон:</b> ' + data.phone,
       '📍 <b>Адрес клиники:</b> ' + data.address,
-    ].join('\n')
+    ]
+
+    if (data.promoCode) {
+      lines.push('🎟 <b>Промокод:</b> ' + data.promoCode)
+    }
+
+    const message = lines.join('\n')
 
     const url = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage'
 

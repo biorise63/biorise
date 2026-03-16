@@ -14,6 +14,7 @@ export default function BookingForm() {
     name: '',
     phone: '',
     address: clinicAddresses[0],
+    promoCode: '',
   })
 
   const [consent, setConsent] = useState(true)
@@ -62,6 +63,7 @@ export default function BookingForm() {
         name: '',
         phone: '',
         address: clinicAddresses[0],
+        promoCode: '',
       })
       setConsent(true)
       alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
@@ -141,6 +143,18 @@ export default function BookingForm() {
                   placeholder="Телефон"
                 />
               </div>
+            </div>
+
+            <div className="mb-6">
+              <input
+                type="text"
+                id="promoCode"
+                name="promoCode"
+                value={formData.promoCode}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-beige-accent bg-white text-olive-primary focus:outline-none focus:ring-2 focus:ring-olive-primary focus:border-transparent transition-all font-heading"
+                placeholder="Промокод (необязательно)"
+              />
             </div>
             
             <div className="mb-6 relative" ref={addressRef}>
