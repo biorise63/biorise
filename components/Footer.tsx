@@ -74,16 +74,10 @@ export default function Footer() {
                   href="https://max.ru/join/Gpyg9NQKBcX0qF1kzBQ370763KR744lBw_hKHAEfLdY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/80 hover:text-[#4C6FFF] transition-colors"
+                  className="block w-6 h-6"
                   aria-label="Мессенджер MAX"
                 >
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="6" fill="currentColor" opacity="0.12" />
-                    <path
-                      d="M7 17V7h2.2l2.3 4.1L13.8 7H16v10h-2v-5.2l-2 3.4h-.1l-2-3.4V17H7Z"
-                      fill="currentColor"
-                    />
-                  </svg>
+                  <img src="/max.svg" alt="Мессенджер MAX" className="w-6 h-6 rounded-lg shadow-sm" />
                 </a>
               </div>
             </div>
