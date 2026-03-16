@@ -110,7 +110,7 @@ export default function BookingFormFields({
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mt-5 mb-4">
         <input
           type="text"
           id="popup-promoCode"
