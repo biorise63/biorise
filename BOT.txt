@@ -1,0 +1,151 @@
+BIORISE Telegram Bot - Functional Spec
+======================================
+
+This document describes how the site's Telegram bot currently works:
+- Online booking form submission -> sendMessage to Telegram admin
+- Inline button "Просмотрено" -> handled by webhook; removes the button
+- Where to change logic and what payloads look like
+
+NOTE ON SECRETS
+----------------
+Telegram bot token and chat_id are configured via environment variables in production.
+In code there are also fallback values (for convenience). If you are modifying this bot,
+prefer updating env vars in Vercel and do not hardcode new secrets in the repo.
+
+
+1) HTTP ENDPOINTS
+------------------
+
+1.1 POST /api/online-booking
+File: api/online-booking.js
+
+Purpose:
+Receives booking form data from the frontend and sends a formatted message to the
+Telegram chat using Telegram API method sendMessage.
+
+Required body fields (validation):
+  - name      (string, required)
+  - phone     (string, required)
+  - address   (string, required)
+
+Optional body field:
+  - promoCode (string, optional)
+
+Telegram message content:
+  "🆕 Новая онлайн-запись"
+  "👤 Имя: <name>"
+  "📞 Телефон: <phone>"
+  "📍 Адрес клиники: <address>"
+  if promoCode is non-empty:
+    "🎟 Промокод: <promoCode>"
+
+Message formatting:
+  - parse_mode: HTML
+  - inline keyboard is attached:
+      button text: "Просмотрено"
+      callback_data: "booking_viewed"
+
+Inline keyboard behavior:
+  The message is sent with reply_markup.inline_keyboard:
+    [[ { text: 'Просмотрено', callback_data: 'booking_viewed' } ]]
+
+Response behavior:
+  - Returns HTTP 200 with:
+      { success: true, message: 'Заявка успешно отправлена' }
+  - Even if Telegram API request fails, the endpoint still responds with success=true.
+    This is intentional so that the user form does not show errors.
+
+Frontend caller:
+  - Main page form component: components/BookingForm.tsx
+  - The form submits via fetch('/api/online-booking', { method: 'POST', body: JSON.stringify(formData) })
+
+
+1.2 POST /api/telegram-webhook
+File: api/telegram-webhook.js
+
+Purpose:
+Telegram sends updates here (webhook). This endpoint processes callback_query
+for the inline button "Просмотрено" and removes the button from the already sent message.
+
+Processing logic:
+  - If req.method !== 'POST' -> 405
+  - If update.callback_query is missing -> return { ok: true }
+  - Only handles callback.data === 'booking_viewed'
+  - Requires callback.message to exist.
+
+Telegram actions performed:
+  1) answerCallbackQuery
+     - callback_query_id: callback.id
+     - text: 'Отмечено как просмотренное'
+     - show_alert: false
+  2) editMessageReplyMarkup
+     - chat_id: callback.message.chat.id
+     - message_id: callback.message.message_id
+     - reply_markup: { inline_keyboard: [] }
+
+Effect:
+  The inline button disappears after pressing it (because the inline keyboard becomes empty).
+
+
+2) WEBHOOK URL (TRAILING SLASH IMPORTANT)
+----------------------------------------
+Vercel routing previously required the webhook to be registered with a trailing slash.
+If Telegram webhook is not firing correctly, ensure the webhook URL is exactly:
+
+  https://<your-vercel-project-domain>/api/telegram-webhook/
+
+(Note the ending '/'.)
+
+
+3) END-TO-END FLOW SUMMARY
+----------------------------
+1) User fills booking form on the main page (fields: name, phone, address, promoCode if present)
+2) Frontend POSTs JSON to /api/online-booking
+3) /api/online-booking builds an HTML message (includes promoCode if non-empty)
+4) /api/online-booking calls Telegram Bot API:
+     POST https://api.telegram.org/bot<TOKEN>/sendMessage
+5) Admin sees the message with inline button "Просмотрено"
+6) Admin taps "Просмотрено"
+7) Telegram calls POST /api/telegram-webhook with an update containing callback_query
+8) /api/telegram-webhook:
+     - answerCallbackQuery (optional toast text)
+     - editMessageReplyMarkup with empty inline_keyboard
+9) Button is removed from the message.
+
+
+4) WHERE TO MODIFY BEHAVIOR
+-----------------------------
+To change message format / add fields:
+  - api/online-booking.js
+  - components/BookingForm.tsx (payload fields)
+  - also BookingFormFields is used by promo UI (if relevant for data shape)
+
+To change inline button text or callback_data:
+  - api/online-booking.js (reply_markup.inline_keyboard)
+  - api/telegram-webhook.js (callback.data matching)
+
+To change webhook handling (e.g., log more, add different actions):
+  - api/telegram-webhook.js
+
+
+5) QUICK TESTING (DEVELOPER NOTES)
+-----------------------------------
+Local/manual testing can be done by calling:
+
+1) Online booking endpoint with sample payload:
+   POST /api/online-booking
+   {
+     "name": "Иван",
+     "phone": "+7 999 123-45-67",
+     "address": "г. Самара ул. ...",
+     "promoCode": "АТЛЕТ"
+   }
+
+2) Webhook endpoint:
+   Use Telegram's real callback_query events (recommended).
+   The webhook expects a Telegram update JSON with callback_query.
+
+For webhook registration from Telegram Bot API:
+  - call setWebhook with the full URL including trailing slash as described above.
+  - exact call depends on your Telegram tooling; this repo does not include a script for it.
+
