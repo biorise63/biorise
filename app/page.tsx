@@ -6,6 +6,7 @@ import Doctors from '@/components/Doctors'
 import ClinicGallery from '@/components/ClinicGallery'
 import BookingForm from '@/components/BookingForm'
 import Footer from '@/components/Footer'
+import VkContestPopup from '@/components/VkContestPopup'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <ClinicGallery />
       <BookingForm />
       <Footer />
+      <VkContestPopup />
     </main>
   )
 }
