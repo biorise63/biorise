@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { IconBrandVk } from '@tabler/icons-react'
 
 const STORAGE_KEY = 'biorise_vk_contest_popup_closed_v1'
 const CONTEST_URL = 'https://vk.com/wall-233125534_102'
@@ -67,7 +66,11 @@ export default function VkContestPopup() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
-              <IconBrandVk className="h-3.5 w-3.5" stroke={1.8} aria-hidden="true" />
+              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#2787F5] shadow-[0_2px_8px_rgba(39,135,245,0.45)]" aria-hidden="true">
+                <svg viewBox="0 0 16 16" className="h-2.5 w-2.5 fill-white">
+                  <path d="M16.531 3.159h-1.331c-.4 0-.52.189-.619.4 0 0-.676 1.636-1.636 2.697-.31.31-.45.409-.619.409-.084 0-.211-.099-.211-.38V3.669c0-.338-.097-.49-.38-.49H9.64c-.21 0-.337.157-.337.304 0 .318.477.39.527 1.29v1.944c0 .425-.076.502-.246.502-.45 0-1.543-1.643-2.194-3.522-.127-.367-.255-.516-.658-.516H5.4c-.45 0-.54.21-.54.4 0 .338.45 2.013 2.099 4.229 1.099 1.514 2.648 2.333 4.06 2.333.848 0 .952-.187.952-.51V8.47c0-.37.079-.445.34-.445.192 0 .523.094 1.29.833.878.879 1.022 1.272 1.515 1.272h1.33c.38 0 .57-.187.46-.556-.12-.367-.546-.9-1.113-1.536-.31-.366-.775-.762-.916-.958-.195-.253-.141-.366 0-.591 0 0 1.62-2.279 1.788-3.056.084-.366 0-.563-.352-.563z" />
+                </svg>
+              </span>
               <span>конкурс</span>
             </div>
           </div>
