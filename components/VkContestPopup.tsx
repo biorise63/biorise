@@ -63,7 +63,6 @@ export default function VkContestPopup() {
               src="/promo/vk-contest-main.jpg"
               alt="Конкурс BIORISE во ВКонтакте"
               className="h-full w-full object-cover"
-              style={{ animation: 'heroZoom 16s ease-in-out infinite alternate' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-4 rounded-full border border-white/35 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
@@ -73,13 +72,12 @@ export default function VkContestPopup() {
 
           <div className="relative p-5 sm:p-7 md:p-8">
             <div className="mb-4 inline-flex items-center rounded-full border border-[#7b8f5d]/20 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#4f5e3b]">
-              Премиальное предложение
+              Разыгрываем курс красоты!
             </div>
 
             <h2
               id="vk-contest-popup-title"
-              className="text-[28px] leading-[1.08] text-[#334129] sm:text-[34px]"
-              style={{ fontFamily: 'Georgia, Times New Roman, serif', fontWeight: 700 }}
+              className="font-heading text-[28px] font-bold leading-[1.08] text-[#334129] sm:text-[34px]"
             >
               Участвуйте в конкурсе
               <br />
