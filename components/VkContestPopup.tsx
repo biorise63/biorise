@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { IconBrandVk } from '@tabler/icons-react'
 
 const STORAGE_KEY = 'biorise_vk_contest_popup_closed_v1'
 const CONTEST_URL = 'https://vk.com/wall-233125534_102'
@@ -65,8 +66,9 @@ export default function VkContestPopup() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
-            <div className="absolute bottom-4 left-4 rounded-full border border-white/35 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
-              VK конкурс
+            <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
+              <IconBrandVk className="h-3.5 w-3.5" stroke={1.8} aria-hidden="true" />
+              <span>конкурс</span>
             </div>
           </div>
 
