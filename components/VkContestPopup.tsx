@@ -28,14 +28,32 @@ export default function VkContestPopup() {
     }
   }
 
+  useEffect(() => {
+    if (!isOpen || typeof document === 'undefined') return
+
+    const prevBodyOverflow = document.body.style.overflow
+    const prevHtmlOverflow = document.documentElement.style.overflow
+    document.body.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = prevBodyOverflow
+      document.documentElement.style.overflow = prevHtmlOverflow
+    }
+  }, [isOpen])
+
   if (!isMounted || !isOpen) return null
 
   return (
     <div
-      className="fixed inset-0 z-[120] flex items-end justify-center p-3 sm:items-center sm:p-6"
+      className="fixed inset-0 z-[120] flex items-start justify-center overflow-y-auto p-3 sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="vk-contest-popup-title"
+      style={{
+        paddingTop: 'max(env(safe-area-inset-top), 12px)',
+        paddingBottom: 'max(env(safe-area-inset-bottom), 12px)',
+      }}
     >
       <div
         className="absolute inset-0 bg-black/45 backdrop-blur-[2px] animate-popup-fade-in"
@@ -44,7 +62,7 @@ export default function VkContestPopup() {
       />
 
       <div
-        className="relative w-full max-w-[860px] overflow-hidden rounded-[22px] border border-white/35 bg-[#f5ede0] shadow-[0_24px_70px_rgba(17,18,16,0.32)] animate-popup-scale-in"
+        className="relative w-full max-w-[860px] max-h-[calc(100dvh-24px)] overflow-auto rounded-[22px] border border-white/35 bg-[#f5ede0] shadow-[0_24px_70px_rgba(17,18,16,0.32)] animate-popup-scale-in sm:max-h-[calc(100dvh-48px)]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
