@@ -132,7 +132,7 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
                   </svg>
                 </span>
                 <p>
-                  До <strong>25.03.2026</strong> — промокод <strong>АТЛЕТ</strong>.
+                  До <strong>01.04.2026</strong> — промокод <strong>АТЛЕТ</strong>.
                 </p>
               </div>
               <BookingFormFields
