@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import BookingFormFields from './BookingFormFields'
 
 const SESSION_KEY = 'biorise_article_promo_dismissed'
@@ -13,21 +13,9 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
   const [visible, setVisible] = useState(false)
   const [minimized, setMinimized] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const hasShownRef = useRef(false)
 
   const markDismissed = useCallback(() => {
     if (typeof sessionStorage !== 'undefined') sessionStorage.setItem(SESSION_KEY, '1')
-  }, [])
-
-  const checkScroll = useCallback(() => {
-    if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(SESSION_KEY) === '1') return
-    if (hasShownRef.current) return
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement
-    const ratio = scrollHeight > clientHeight ? scrollTop / (scrollHeight - clientHeight) : 1
-    if (ratio >= 0.4) {
-      hasShownRef.current = true
-      setVisible(true)
-    }
   }, [])
 
   useEffect(() => {
@@ -36,10 +24,9 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
 
   useEffect(() => {
     if (!mounted) return
-    window.addEventListener('scroll', checkScroll, { passive: true })
-    checkScroll()
-    return () => window.removeEventListener('scroll', checkScroll)
-  }, [mounted, checkScroll])
+    if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(SESSION_KEY) === '1') return
+    setVisible(true)
+  }, [mounted])
 
   const handleClose = () => {
     setVisible(false)
