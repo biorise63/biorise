@@ -57,7 +57,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         {/* Iframe container */}
         <div className="flex-1 overflow-hidden">
           <iframe
-            src="https://klientiks.ru/app2/biorise-clinic"
+            src="https://klientiks.ru/app/united/BIORISE"
             className="w-full h-full border-0"
             title="Форма онлайн записи"
             allow="fullscreen"

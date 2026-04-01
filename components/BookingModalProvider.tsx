@@ -10,7 +10,7 @@ interface BookingModalContextType {
 }
 
 const BookingModalContext = createContext<BookingModalContextType | undefined>(undefined)
-const KLIENTIKS_BOOKING_URL = 'https://klientiks.ru/app2/biorise-clinic'
+const KLIENTIKS_BOOKING_URL = 'https://klientiks.ru/app/united/BIORISE'
 
 function isIosSafariBrowser() {
   if (typeof window === 'undefined') return false
