@@ -4,7 +4,7 @@
  */
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8675366445:AAED3QxCJJqgaB_0UxL_lcsJOEUGgs748qQ'
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7360264895'
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '8200845208'
 
 module.exports = async function (req, res) {
   if (req.method !== 'POST') {

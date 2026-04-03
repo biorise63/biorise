@@ -181,7 +181,7 @@ async function sendTelegramNotification(data: BookingRequest, clientId?: string)
   const envChatId = process.env.TELEGRAM_CHAT_ID
 
   const TELEGRAM_BOT_TOKEN = envToken || '8675366445:AAED3QxCJJqgaB_0UxL_lcsJOEUGgs748qQ'
-  const TELEGRAM_CHAT_ID = envChatId || '7360264895'
+  const TELEGRAM_CHAT_ID = envChatId || '8200845208'
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     console.warn('Telegram credentials не настроены, пропускаем отправку')
