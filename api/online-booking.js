@@ -5,6 +5,7 @@
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8675366445:AAED3QxCJJqgaB_0UxL_lcsJOEUGgs748qQ'
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '8200845208'
+const TECH_MESSAGE = 'Свяжитесь, пожалуйста, с нами самостоятельно: на данный момент проводятся технические работы на сайте.'
 
 module.exports = async function (req, res) {
   if (req.method !== 'POST') {
@@ -13,7 +14,7 @@ module.exports = async function (req, res) {
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     console.error('Telegram credentials не настроены')
-    return res.status(500).json({ success: false, message: 'Telegram не настроен' })
+    return res.status(503).json({ success: false, message: TECH_MESSAGE })
   }
 
   try {
@@ -61,20 +62,16 @@ module.exports = async function (req, res) {
       if (!response.ok) {
         const errorText = await response.text()
         console.error('Telegram API ошибка:', response.status, errorText)
+        return res.status(502).json({ success: false, message: TECH_MESSAGE })
       }
     } catch (err) {
       console.error('Ошибка отправки запроса в Telegram:', err)
+      return res.status(502).json({ success: false, message: TECH_MESSAGE })
     }
 
-    return res.status(200).json({
-      success: true,
-      message: 'Заявка успешно отправлена',
-    })
+    return res.status(200).json({ success: true, message: 'Заявка успешно отправлена' })
   } catch (error) {
     console.error('Ошибка обработки онлайн-записи:', error)
-    return res.status(200).json({
-      success: true,
-      message: 'Заявка успешно отправлена',
-    })
+    return res.status(500).json({ success: false, message: TECH_MESSAGE })
   }
 }

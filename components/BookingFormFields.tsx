@@ -21,6 +21,7 @@ export default function BookingFormFields({
   className = '',
   compact = false,
 }: BookingFormFieldsProps) {
+  const TECH_MESSAGE = 'Свяжитесь, пожалуйста, с нами самостоятельно: на данный момент проводятся технические работы на сайте.'
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -55,13 +56,18 @@ export default function BookingFormFields({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
-      await response.json()
-      setFormData({ name: '', phone: '', address: clinicAddresses[0], promoCode: defaultPromoCode })
-      setConsent(true)
-      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      const result = await response.json()
+
+      if (response.ok && result?.success) {
+        setFormData({ name: '', phone: '', address: clinicAddresses[0], promoCode: defaultPromoCode })
+        setConsent(true)
+        alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      } else {
+        alert(result?.message || TECH_MESSAGE)
+      }
     } catch (error) {
       console.error('Ошибка отправки формы:', error)
-      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      alert(TECH_MESSAGE)
     } finally {
       setIsSubmitting(false)
     }

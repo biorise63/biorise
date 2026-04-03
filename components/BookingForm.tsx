@@ -10,6 +10,7 @@ const clinicAddresses = [
 ]
 
 export default function BookingForm() {
+  const TECH_MESSAGE = 'Свяжитесь, пожалуйста, с нами самостоятельно: на данный момент проводятся технические работы на сайте.'
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -57,21 +58,24 @@ export default function BookingForm() {
 
       console.log('Online booking result:', result)
 
-      // В любом случае считаем для пользователя, что заявка отправлена
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        phone: '',
-        address: clinicAddresses[0],
-        promoCode: '',
-      })
-      setConsent(true)
-      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      if (response.ok && result?.success) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          phone: '',
+          address: clinicAddresses[0],
+          promoCode: '',
+        })
+        setConsent(true)
+        alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      } else {
+        setSubmitStatus('error')
+        alert(result?.message || TECH_MESSAGE)
+      }
     } catch (error) {
       console.error('Ошибка отправки формы:', error)
-      // Даже если произошла ошибка на клиенте, не пугаем пользователя
-      setSubmitStatus('success')
-      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+      setSubmitStatus('error')
+      alert(TECH_MESSAGE)
     } finally {
       setIsSubmitting(false)
     }
