@@ -5,7 +5,7 @@ import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import { BookingModalProvider } from '@/components/BookingModalProvider'
 
 export const metadata: Metadata = {
-  title: 'BIORISE Самара - Клиника внутривенной терапии',
+  title: 'BIORISE - Клиника капельниц в Самаре',
   description:
     'Клиника капельниц BIORISE в Самаре. Витаминные, детокс и восстановительные капельницы под контролем врача. Индивидуальный подбор IV-терапии, анализы и чек-ап организма.',
   keywords: [
