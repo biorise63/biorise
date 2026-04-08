@@ -273,7 +273,7 @@ export default function Header() {
                 </svg>
               </a>
               <a
-                href="https://max.ru/join/Gpyg9NQKBcX0qF1kzBQ370763KR744lBw_hKHAEfLdY"
+                href="https://max.ru/join/I8dvtxIVQ_gEOELaXkiwDZPefgBrLT6ojztVLP17oiQ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#4C6FFF] transition-colors"
@@ -427,7 +427,7 @@ export default function Header() {
                     </svg>
                   </a>
                   <a
-                    href="https://max.ru/join/Gpyg9NQKBcX0qF1kzBQ370763KR744lBw_hKHAEfLdY"
+                    href="https://max.ru/join/I8dvtxIVQ_gEOELaXkiwDZPefgBrLT6ojztVLP17oiQ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-[#4C6FFF] transition-colors"

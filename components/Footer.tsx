@@ -71,7 +71,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://max.ru/join/Gpyg9NQKBcX0qF1kzBQ370763KR744lBw_hKHAEfLdY"
+                  href="https://max.ru/join/I8dvtxIVQ_gEOELaXkiwDZPefgBrLT6ojztVLP17oiQ"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-white transition-colors"
