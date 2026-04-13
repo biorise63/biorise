@@ -52,9 +52,6 @@ export default function Reviews() {
               Отзывы
             </h2>
           </div>
-          <p className="text-base sm:text-lg text-olive-primary/70 max-w-2xl mx-auto">
-            Реальные отзывы клиентов BIORISE на Яндекс Картах и 2ГИС
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8">
