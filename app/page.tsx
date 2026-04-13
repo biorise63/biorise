@@ -5,6 +5,7 @@ import WhyUs from '@/components/WhyUs'
 import Doctors from '@/components/Doctors'
 import ClinicGallery from '@/components/ClinicGallery'
 import BookingForm from '@/components/BookingForm'
+import Reviews from '@/components/Reviews'
 import Footer from '@/components/Footer'
 import VkContestPopup from '@/components/VkContestPopup'
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Doctors />
       <ClinicGallery />
       <BookingForm />
+      <Reviews />
       <Footer />
       <VkContestPopup />
     </main>
