@@ -67,6 +67,39 @@ export default function Doctors() {
         </motion.div>
 
         <AnimatedTestimonials testimonials={doctors} autoplay={false} />
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-10"
+        >
+          <div className="text-center mb-4">
+            <h3 className="text-xl sm:text-2xl font-heading text-olive-primary">
+              Отзывы на Яндекс Картах
+            </h3>
+          </div>
+
+          <div className="max-w-[560px] mx-auto">
+            <div className="w-full h-[680px] sm:h-[760px] overflow-hidden relative rounded-xl">
+              <iframe
+                title="Отзывы о клинике BIORISE на Яндекс Картах"
+                className="w-full h-full border border-[#e6e6e6] rounded-lg box-border"
+                src="https://yandex.ru/maps-reviews-widget/49644656538?comments"
+              />
+              <a
+                href="https://yandex.com/maps/org/biorayz/49644656538/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-2 left-0 w-full px-4 text-center overflow-hidden text-ellipsis whitespace-nowrap text-[10px] text-[#b3b3b3]"
+                style={{ fontFamily: 'YS Text, sans-serif' }}
+              >
+                Биорайз на карте Самары — Яндекс Карты
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
