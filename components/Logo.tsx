@@ -29,7 +29,7 @@ export default function Logo({ variant = 'default' }: LogoProps) {
         <span className={`text-xl md:text-2xl font-menu ${textColor} font-semibold leading-tight tracking-tight`}>
           БИОРАЙЗ
         </span>
-        <span className={`text-xs md:text-sm font-body ${subtextColor} leading-tight`}>
+        <span className={`text-[11px] md:text-xs font-body ${subtextColor} leading-tight`}>
           клиника восстановительной медицины
         </span>
       </div>
