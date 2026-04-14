@@ -86,7 +86,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg sm:text-xl font-heading mb-4">Режим работы</h3>
-            <p className="text-white/80 text-sm mb-2">Ежедневно: 8:00 - 20:00</p>
+            <p className="text-white/80 text-sm mb-2">Будни: 8:00 - 19:00, сб: 8:00 - 15:00, вс: выходной</p>
           </div>
         </div>
         <div className="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
