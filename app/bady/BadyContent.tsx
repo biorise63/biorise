@@ -171,9 +171,6 @@ export default function BadyContent() {
             variants={sectionVariants}
             className="mx-auto max-w-4xl text-center"
           >
-            <span className="inline-flex items-center rounded-full border border-olive-primary/20 bg-white/70 px-4 py-1 text-xs font-menu uppercase tracking-[0.16em] text-olive-primary">
-              Каталог BIORISE
-            </span>
             <h1 className="mt-4 text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl md:text-6xl">
               БАДЫ
             </h1>
@@ -207,10 +204,6 @@ export default function BadyContent() {
             <h2 className="text-2xl font-heading text-olive-primary sm:text-3xl">
               Подборка БАДов BIORISE
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-olive-primary/75 sm:text-base">
-              Формулировки преимуществ, формы выпуска и составы на этой странице собраны из каталога
-              <span className="font-medium"> «БАДы BIORISE_compressed.pdf»</span>.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
