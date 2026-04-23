@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react'
 
 const STORAGE_KEY = 'biorise_vk_contest_popup_closed_v1'
 const CONTEST_URL = 'https://vk.com/wall-233125534_102'
+const VK_CONTEST_POPUP_ENABLED = false
 
 export default function VkContestPopup() {
   const [isOpen, setIsOpen] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    if (!VK_CONTEST_POPUP_ENABLED) return
     setIsMounted(true)
     if (typeof window === 'undefined') return
     if (localStorage.getItem(STORAGE_KEY) === '1') return
@@ -42,7 +44,7 @@ export default function VkContestPopup() {
     }
   }, [isOpen])
 
-  if (!isMounted || !isOpen) return null
+  if (!VK_CONTEST_POPUP_ENABLED || !isMounted || !isOpen) return null
 
   return (
     <div

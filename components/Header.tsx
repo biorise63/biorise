@@ -196,6 +196,12 @@ export default function Header() {
                       Капельницы
                     </Link>
                     <Link
+                      href="/bady"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      БАДЫ
+                    </Link>
+                    <Link
                       href="/bioimpedance"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -340,6 +346,13 @@ export default function Header() {
                     className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
                   >
                     Биоимпедансный анализ
+                  </Link>
+                  <Link
+                    href="/bady"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
+                  >
+                    БАДЫ
                   </Link>
                   <Link
                     href="/spravki"
