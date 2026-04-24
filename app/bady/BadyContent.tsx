@@ -159,7 +159,7 @@ const sectionVariants = {
 export default function BadyContent() {
   return (
     <main className="bg-[#f8f4ec]">
-      <section className="section-spacing pt-24 sm:pt-28 lg:pt-32">
+      <section className="section-spacing pt-32 sm:pt-36 lg:pt-40">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -183,15 +183,15 @@ export default function BadyContent() {
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
                 className="group overflow-hidden rounded-2xl border border-olive-primary/10 bg-white shadow-[0_10px_25px_rgba(36,48,25,0.09)] transition-all hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(36,48,25,0.16)]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative h-60 overflow-hidden bg-[#f5efe3] sm:h-64">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.01]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                   <div className="absolute left-4 top-4 rounded-full border border-white/40 bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
                     {item.name}
                   </div>
