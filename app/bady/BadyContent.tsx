@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 type Supplement = {
@@ -160,38 +159,6 @@ const sectionVariants = {
 export default function BadyContent() {
   return (
     <main className="bg-[#f8f4ec]">
-      <section className="relative overflow-hidden border-b border-olive-primary/10 bg-gradient-to-b from-[#ece4d6] to-[#f8f4ec] pt-36 pb-14 sm:pb-16">
-        <div className="pointer-events-none absolute -top-20 right-[-120px] h-72 w-72 rounded-full bg-olive-primary/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 left-[-100px] h-72 w-72 rounded-full bg-[#dbcaae]/55 blur-3xl" />
-
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={sectionVariants}
-            className="mx-auto max-w-4xl text-center"
-          >
-            <h1 className="mt-4 text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl md:text-6xl">
-              БАДЫ
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-olive-primary/80 sm:text-lg">
-              Подбор нутрицевтиков в премиальном формате BIORISE: актуальные комплексы для энергии, кожи, сна, костной и сердечно-сосудистой поддержки.
-            </p>
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/#booking"
-                className="rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white shadow-premium transition-all hover:-translate-y-0.5 hover:bg-olive-light"
-              >
-                Записаться на консультацию
-              </Link>
-              <span className="rounded-full border border-olive-primary/15 bg-white/70 px-4 py-3 text-xs text-olive-primary/80 sm:text-sm">
-                9 актуальных позиций
-              </span>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <section className="section-spacing pt-12 sm:pt-14">
         <div className="container mx-auto px-6">
           <motion.div
