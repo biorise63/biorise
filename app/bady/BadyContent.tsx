@@ -159,7 +159,7 @@ const sectionVariants = {
 export default function BadyContent() {
   return (
     <main className="bg-[#f8f4ec]">
-      <section className="section-spacing pt-12 sm:pt-14">
+      <section className="section-spacing pt-24 sm:pt-28 lg:pt-32">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
