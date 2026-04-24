@@ -97,8 +97,9 @@ export const ExpandingCards = React.forwardRef<
             src={item.imgSrc}
             alt={item.title}
             className={cn(
-              "absolute inset-0 h-full w-full object-contain p-4",
+              "absolute inset-0 h-full w-full object-cover p-0",
               "transition-all duration-300 ease-out",
+              "group-data-[active=true]:object-contain group-data-[active=true]:p-4",
               "group-data-[active=true]:scale-100 group-data-[active=true]:grayscale-0",
               "scale-105 grayscale-[15%]",
             )}
