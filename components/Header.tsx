@@ -202,6 +202,12 @@ export default function Header() {
                       БАДЫ
                     </Link>
                     <Link
+                      href="/apparatnyy-massazh"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      Аппаратный массаж
+                    </Link>
+                    <Link
                       href="/bioimpedance"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -353,6 +359,13 @@ export default function Header() {
                     className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
                   >
                     БАДЫ
+                  </Link>
+                  <Link
+                    href="/apparatnyy-massazh"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
+                  >
+                    Аппаратный массаж
                   </Link>
                   <Link
                     href="/spravki"
