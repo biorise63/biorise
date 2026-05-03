@@ -208,6 +208,12 @@ export default function Header() {
                       Аппаратный массаж
                     </Link>
                     <Link
+                      href="/lazernaya-epilyatsiya"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      Лазерная эпиляция
+                    </Link>
+                    <Link
                       href="/bioimpedance"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -366,6 +372,13 @@ export default function Header() {
                     className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
                   >
                     Аппаратный массаж
+                  </Link>
+                  <Link
+                    href="/lazernaya-epilyatsiya"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
+                  >
+                    Лазерная эпиляция
                   </Link>
                   <Link
                     href="/spravki"
