@@ -27,7 +27,7 @@ export default function FloatingCallButton() {
   }, [isOpen])
 
   return (
-    <div ref={rootRef} className="fixed bottom-5 right-4 z-[85] sm:bottom-6 sm:right-6">
+    <div ref={rootRef} className="fixed bottom-5 left-4 z-[85] sm:bottom-6 sm:left-6">
       <div
         className={`mb-3 w-[260px] origin-bottom-right rounded-2xl border border-olive-primary/20 bg-white/95 p-4 shadow-[0_12px_32px_rgba(36,48,25,0.22)] backdrop-blur transition-all duration-200 ${
           isOpen
