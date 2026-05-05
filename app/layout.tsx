@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import { BookingModalProvider } from '@/components/BookingModalProvider'
+import FloatingCallButton from '@/components/FloatingCallButton'
 
 export const metadata: Metadata = {
   title: 'BIORISE - Клиника капельниц в Самаре',
@@ -43,6 +44,7 @@ export default function RootLayout({
           <SmoothScrollProvider>
             {children}
           </SmoothScrollProvider>
+          <FloatingCallButton />
         </BookingModalProvider>
         
         {/* Яндекс.Метрика - невидимый счетчик */}
