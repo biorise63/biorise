@@ -19,6 +19,11 @@ export default function Footer() {
                 Политика конфиденциальности
               </a>
             </p>
+            <p className="text-white/80 text-sm mt-2">
+              <a href="/cookie-policy" className="hover:text-white transition-colors underline">
+                Политика обработки cookie
+              </a>
+            </p>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl font-heading mb-4">Контакты</h3>

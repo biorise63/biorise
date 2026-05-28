@@ -4,6 +4,7 @@ import './globals.css'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import { BookingModalProvider } from '@/components/BookingModalProvider'
 import FloatingCallButton from '@/components/FloatingCallButton'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
 
 export const metadata: Metadata = {
   title: 'BIORISE - Клиника капельниц в Самаре',
@@ -45,8 +46,9 @@ export default function RootLayout({
             {children}
           </SmoothScrollProvider>
           <FloatingCallButton />
+          <CookieConsentBanner />
         </BookingModalProvider>
-        
+
         {/* Яндекс.Метрика - невидимый счетчик */}
         <Script
           id="yandex-metrika"
@@ -74,7 +76,7 @@ export default function RootLayout({
           </div>
         </noscript>
 
-        {/* Top.Mail.Ru counter — грузим до интерактива, попадает в <head> */}
+        {/* Top.Mail.Ru counter */}
         <Script
           id="top-mail-ru"
           strategy="beforeInteractive"
