@@ -209,14 +209,18 @@ export default function ExitIntentOffersPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[140] flex items-end justify-center bg-black/45 p-3 sm:items-center sm:p-5"
+      className="fixed inset-0 z-[140] flex items-center justify-center overflow-y-auto bg-black/45 p-3 sm:p-5"
       role="dialog"
       aria-modal="true"
       aria-labelledby="exit-intent-popup-title"
+      style={{
+        paddingTop: 'max(env(safe-area-inset-top), 12px)',
+        paddingBottom: 'max(env(safe-area-inset-bottom), 12px)',
+      }}
     >
       <div className="absolute inset-0" onClick={closePopup} aria-hidden="true" />
 
-      <div className="relative w-full max-w-[760px] overflow-hidden rounded-[20px] border border-white/40 bg-[#f3efe6] shadow-[0_18px_44px_rgba(23,30,18,0.28)] animate-popup-scale-in">
+      <div className="relative my-1 w-full max-w-[760px] max-h-[calc(100dvh-24px)] overflow-auto rounded-[20px] border border-white/40 bg-[#f3efe6] shadow-[0_18px_44px_rgba(23,30,18,0.28)] animate-popup-scale-in sm:max-h-[calc(100dvh-40px)]">
         <button
           type="button"
           onClick={closePopup}
@@ -232,7 +236,7 @@ export default function ExitIntentOffersPopup() {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div className="relative min-h-[200px] sm:min-h-[240px] md:min-h-[420px]">
+          <div className="relative min-h-[180px] sm:min-h-[240px] md:min-h-[420px]">
             <div
               className="flex h-full w-full transition-transform duration-300 ease-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -240,7 +244,7 @@ export default function ExitIntentOffersPopup() {
               {SLIDES.map((slide) => (
                 <div key={slide.id} className="relative h-full min-w-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={slide.imageSrc} alt={slide.title} className="h-full w-full object-cover" />
+                  <img src={slide.imageSrc} alt={slide.title} className="h-full w-full object-cover object-top" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
                 </div>
               ))}
