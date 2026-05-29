@@ -4,13 +4,13 @@ import { useEffect, useRef, useState, type TouchEventHandler } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 const PHONE_HREF = 'tel:+79967499747'
-const SESSION_KEY = 'biorise_exit_popup_seen_session_v1'
-const CLOSED_UNTIL_KEY = 'biorise_exit_popup_closed_until_v1'
+const SESSION_KEY = 'biorise_exit_popup_seen_session_v2'
+const CLOSED_UNTIL_KEY = 'biorise_exit_popup_closed_until_v2'
 
 const COOLDOWN_MS = 24 * 60 * 60 * 1000
-const VIEW_THRESHOLD = 0.45
-const MIN_UP_DISTANCE = 180
-const INTENT_TOP_PX = 140
+const VIEW_THRESHOLD = 0.4
+const MIN_UP_DISTANCE = 120
+const INTENT_TOP_PX = 260
 const SWIPE_MIN_DISTANCE = 42
 
 const SLIDES = [
@@ -44,6 +44,11 @@ function isCooldownActive() {
   return closedUntil > Date.now()
 }
 
+function isPopupTestMode() {
+  if (typeof window === 'undefined') return false
+  return new URLSearchParams(window.location.search).get('popup_test') === '1'
+}
+
 export default function ExitIntentOffersPopup() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -62,8 +67,8 @@ export default function ExitIntentOffersPopup() {
 
   const openPopup = () => {
     if (typeof window === 'undefined') return
-    if (sessionStorage.getItem(SESSION_KEY) === '1') return
-    if (isCooldownActive()) return
+    if (!isPopupTestMode() && sessionStorage.getItem(SESSION_KEY) === '1') return
+    if (!isPopupTestMode() && isCooldownActive()) return
 
     setIsOpen(true)
     sessionStorage.setItem(SESSION_KEY, '1')
@@ -72,17 +77,30 @@ export default function ExitIntentOffersPopup() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if (isCooldownActive()) return
-    if (sessionStorage.getItem(SESSION_KEY) === '1') return
+    const isTestMode = isPopupTestMode()
+    if (!isTestMode && isCooldownActive()) return
+    if (!isTestMode && sessionStorage.getItem(SESSION_KEY) === '1') return
 
     lastScrollYRef.current = window.scrollY
     maxScrollYRef.current = window.scrollY
+
+    if (isTestMode) {
+      const timer = window.setTimeout(() => openPopup(), 250)
+      return () => window.clearTimeout(timer)
+    }
 
     const onMouseOut = (event: MouseEvent) => {
       if (!isDesktop()) return
       if (!viewedEnoughRef.current || !eligibleUpwardIntentRef.current) return
       if (event.clientY > 8) return
       if (event.relatedTarget !== null) return
+      openPopup()
+    }
+
+    const onMouseLeave = (event: MouseEvent) => {
+      if (!isDesktop()) return
+      if (!viewedEnoughRef.current || !eligibleUpwardIntentRef.current) return
+      if (event.clientY > 8) return
       openPopup()
     }
 
@@ -148,10 +166,12 @@ export default function ExitIntentOffersPopup() {
 
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('mouseout', onMouseOut)
+    document.addEventListener('mouseleave', onMouseLeave)
 
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('mouseout', onMouseOut)
+      document.removeEventListener('mouseleave', onMouseLeave)
     }
   }, [isOpen])
 
