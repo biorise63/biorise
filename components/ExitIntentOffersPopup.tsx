@@ -239,7 +239,7 @@ export default function ExitIntentOffersPopup() {
     >
       <div className="absolute inset-0" onClick={closePopup} aria-hidden="true" />
 
-      <div className="relative h-[80dvh] w-full max-w-[760px] overflow-hidden rounded-[20px] border border-white/40 bg-[#f3efe6] shadow-[0_18px_44px_rgba(23,30,18,0.28)] animate-popup-scale-in sm:h-[78dvh] sm:max-h-[720px]">
+      <div className="relative w-[96vw] max-w-[1180px] max-h-[calc(100dvh-24px)] overflow-hidden rounded-[20px] border border-white/40 bg-[#f3efe6] shadow-[0_18px_44px_rgba(23,30,18,0.28)] animate-popup-scale-in">
         <button
           type="button"
           onClick={closePopup}
@@ -249,26 +249,9 @@ export default function ExitIntentOffersPopup() {
           <X className="h-5 w-5" />
         </button>
 
-        <button
-          type="button"
-          onClick={goPrev}
-          className="absolute left-2 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/55 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/45 sm:left-3 sm:h-11 sm:w-11"
-          aria-label="Предыдущий слайд"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button
-          type="button"
-          onClick={goNext}
-          className="absolute right-2 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/55 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/45 sm:right-3 sm:h-11 sm:w-11"
-          aria-label="Следующий слайд"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
-
-        <div className="flex h-full flex-col">
+        <div className="flex max-h-[calc(100dvh-24px)] flex-col">
           <div
-            className="relative min-h-0 flex-1 overflow-hidden"
+            className="relative h-[52dvh] min-h-[250px] max-h-[68dvh] overflow-hidden bg-[#ece7de] sm:h-[58dvh] lg:h-[62dvh]"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
@@ -278,16 +261,33 @@ export default function ExitIntentOffersPopup() {
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {SLIDES.map((slide, index) => (
-                <div key={slide.id} className="relative h-full min-w-full">
+                <div key={slide.id} className="relative flex h-full min-w-full items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={slide.imageSrc}
                     alt={`Акция ${index + 1}`}
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-contain"
                   />
                 </div>
               ))}
             </div>
+
+            <button
+              type="button"
+              onClick={goPrev}
+              className="absolute left-2 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/55 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/45 sm:left-3 sm:h-11 sm:w-11"
+              aria-label="Предыдущий слайд"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              type="button"
+              onClick={goNext}
+              className="absolute right-2 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/55 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-black/45 sm:right-3 sm:h-11 sm:w-11"
+              aria-label="Следующий слайд"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
           </div>
 
           <div className="shrink-0 bg-[#f3efe6] px-4 pb-4 pt-3 sm:px-6 sm:pb-5 sm:pt-4">
