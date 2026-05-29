@@ -7,7 +7,7 @@ import ClinicGallery from '@/components/ClinicGallery'
 import BookingForm from '@/components/BookingForm'
 import Reviews from '@/components/Reviews'
 import Footer from '@/components/Footer'
-import VkContestPopup from '@/components/VkContestPopup'
+import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       <BookingForm />
       <Reviews />
       <Footer />
-      <VkContestPopup />
+      <ExitIntentOffersPopup />
     </main>
   )
 }
