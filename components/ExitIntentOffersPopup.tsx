@@ -4,7 +4,6 @@ import { useEffect, useRef, useState, type TouchEventHandler } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 const PHONE_HREF = 'tel:+79967499747'
-const SESSION_KEY = 'biorise_exit_popup_seen_session_v2'
 const CLOSED_UNTIL_KEY = 'biorise_exit_popup_closed_until_v2'
 
 const COOLDOWN_MS = 24 * 60 * 60 * 1000
@@ -44,11 +43,6 @@ function isCooldownActive() {
   return closedUntil > Date.now()
 }
 
-function isPopupTestMode() {
-  if (typeof window === 'undefined') return false
-  return new URLSearchParams(window.location.search).get('popup_test') === '1'
-}
-
 export default function ExitIntentOffersPopup() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -67,27 +61,19 @@ export default function ExitIntentOffersPopup() {
 
   const openPopup = () => {
     if (typeof window === 'undefined') return
-    if (!isPopupTestMode() && sessionStorage.getItem(SESSION_KEY) === '1') return
-    if (!isPopupTestMode() && isCooldownActive()) return
+    if (isCooldownActive()) return
 
     setIsOpen(true)
-    sessionStorage.setItem(SESSION_KEY, '1')
+    localStorage.setItem(CLOSED_UNTIL_KEY, String(Date.now() + COOLDOWN_MS))
     reachGoal('popup_open')
   }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    const isTestMode = isPopupTestMode()
-    if (!isTestMode && isCooldownActive()) return
-    if (!isTestMode && sessionStorage.getItem(SESSION_KEY) === '1') return
+    if (isCooldownActive()) return
 
     lastScrollYRef.current = window.scrollY
     maxScrollYRef.current = window.scrollY
-
-    if (isTestMode) {
-      const timer = window.setTimeout(() => openPopup(), 250)
-      return () => window.clearTimeout(timer)
-    }
 
     const onMouseOut = (event: MouseEvent) => {
       if (!isDesktop()) return
@@ -188,10 +174,6 @@ export default function ExitIntentOffersPopup() {
 
   const closePopup = () => {
     setIsOpen(false)
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(CLOSED_UNTIL_KEY, String(Date.now() + COOLDOWN_MS))
-      sessionStorage.setItem(SESSION_KEY, '1')
-    }
     reachGoal('popup_close')
   }
 
@@ -301,7 +283,7 @@ export default function ExitIntentOffersPopup() {
             <a
               href={PHONE_HREF}
               onClick={() => reachGoal('popup_zvonok')}
-              className="mx-auto mt-3 inline-flex w-full max-w-[360px] items-center justify-center rounded-[14px] bg-olive-primary px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-olive-light"
+              className="mx-auto mt-3 inline-flex w-full max-w-[360px] items-center justify-center rounded-[14px] bg-olive-primary px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-olive-light lg:w-[360px]"
             >
               Получить консультацию
             </a>
