@@ -239,7 +239,7 @@ export default function ExitIntentOffersPopup() {
     >
       <div className="absolute inset-0" onClick={closePopup} aria-hidden="true" />
 
-      <div className="relative w-[96vw] max-w-[1180px] max-h-[calc(100dvh-24px)] overflow-hidden rounded-[20px] border border-white/40 bg-[#f3efe6] shadow-[0_18px_44px_rgba(23,30,18,0.28)] animate-popup-scale-in">
+      <div className="relative w-[94vw] max-w-[560px] max-h-[calc(100dvh-24px)] overflow-hidden rounded-[20px] border border-white/40 bg-[#f3efe6] shadow-[0_18px_44px_rgba(23,30,18,0.28)] animate-popup-scale-in">
         <button
           type="button"
           onClick={closePopup}
@@ -251,7 +251,7 @@ export default function ExitIntentOffersPopup() {
 
         <div className="flex max-h-[calc(100dvh-24px)] flex-col">
           <div
-            className="relative h-[52dvh] min-h-[250px] max-h-[68dvh] overflow-hidden bg-[#ece7de] sm:h-[58dvh] lg:h-[62dvh]"
+            className="relative h-[56dvh] min-h-[280px] max-h-[70dvh] overflow-hidden bg-[#ece7de] sm:h-[58dvh] lg:h-[60dvh]"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
