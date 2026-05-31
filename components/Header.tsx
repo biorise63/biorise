@@ -36,7 +36,7 @@ const clinics: ClinicAddress[] = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(null)
+  const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(clinics[0] ?? null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
