@@ -20,6 +20,14 @@ const features = [
     ),
     text: 'Официальные препараты с регистрацией Минздрава РФ',
   },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 11l9-7 9 7M5 10.5V20h14v-9.5M9 20v-6h6v6" />
+      </svg>
+    ),
+    text: 'Выезд медсестры на дом по Самаре',
+  },
 ]
 
 export default function Hero() {
