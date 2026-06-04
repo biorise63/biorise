@@ -52,6 +52,17 @@ export default function Reviews() {
               Отзывы
             </h2>
           </div>
+          <p className="text-base sm:text-lg text-olive-secondary/80">
+            Все наши отзывы можно посмотреть по{' '}
+            <a
+              href="http://biorise-reviews.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-olive-primary font-medium underline underline-offset-4 hover:text-olive-light transition-colors"
+            >
+              ссылке
+            </a>
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8">
