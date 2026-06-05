@@ -176,10 +176,6 @@ export default function InfusionDetailPage({ params }: PageProps) {
                     <strong className="mt-1 block text-2xl text-olive-primary">{infusion.duration}</strong>
                   </div>
                 )}
-                <div className="rounded-2xl bg-white/85 px-5 py-4 shadow-premium">
-                  <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary/50">Контроль</span>
-                  <strong className="mt-1 block text-2xl text-olive-primary">врач</strong>
-                </div>
               </div>
 
               <div className="mt-8">
