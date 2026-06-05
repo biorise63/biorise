@@ -6,30 +6,6 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
-    common: '100 капельниц «ДЕТОКС+»',
-    subtitle: 'Всего 1 500 ₽ вместо 4 500 ₽',
-    description:
-      'Верни ясность в голове и легкость в теле. Всего за 60 минут — твой организм скажет спасибо.',
-    features: [
-      'Ясность в голове',
-      'Легкость в теле',
-      'Всего 60 минут',
-      'Мягкая детокс-поддержка',
-    ],
-    price: {
-      current: '1 500 ₽',
-      old: '4 500 ₽',
-    },
-    period: 'Успей забрать свою порцию чистоты до конца месяца',
-    buttonText: 'Записаться',
-    buttonHref: '#booking',
-    photo: {
-      url: '/drips/detox.png',
-      text: 'Капельница ДЕТОКС+',
-      by: 'Спеццена месяца',
-    },
-  },
-  {
     common: 'Чек-ап «Витаминный»',
     subtitle: 'Комплексная диагностика дефицитов',
     description:

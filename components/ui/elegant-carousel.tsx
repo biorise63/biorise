@@ -31,7 +31,7 @@ const allSlides: SlideData[] = [
     description: 'Поддержка кроветворной системы и энергии при дефиците железа.',
     accent: '#5E6F52',
     imageUrl: '/drips/iron.png',
-    price: 'от 2 800 ₽',
+    price: 'от 4 500 ₽',
     category: 'popular',
   },
   {
@@ -40,7 +40,7 @@ const allSlides: SlideData[] = [
     description: 'Повышение тонуса и работоспособности, поддержка после нагрузок.',
     accent: '#7F8F70',
     imageUrl: '/drips/energy.png',
-    price: 'от 2 800 ₽',
+    price: 'от 3 900 ₽',
     category: 'popular',
   },
   {
@@ -49,7 +49,7 @@ const allSlides: SlideData[] = [
     description: 'Помогает выводить токсины и поддерживать естественные детокс-процессы.',
     accent: '#5E6F52',
     imageUrl: '/drips/detox.png',
-    price: 'от 2 500 ₽',
+    price: 'от 3 950 ₽',
     category: 'popular',
   },
   {
@@ -67,7 +67,7 @@ const allSlides: SlideData[] = [
     description: 'Восполнение ключевых витаминов и микроэлементов для поддержки иммунитета.',
     accent: '#5E6F52',
     imageUrl: '/drips/vitamins.png',
-    price: 'от 3 000 ₽',
+    price: 'от 4 500 ₽',
     category: 'popular',
   },
   {
@@ -76,7 +76,7 @@ const allSlides: SlideData[] = [
     description: 'Очищение организма от токсинов и шлаков. Восстановление естественных процессов детоксикации.',
     accent: '#5E6F52',
     imageUrl: '/drips/detox.png',
-    price: 'от 2 500 ₽',
+    price: 'от 3 950 ₽',
     category: 'recovery',
   },
   {
@@ -112,7 +112,7 @@ const allSlides: SlideData[] = [
     description: 'Повышение жизненного тонуса и энергии. Восстановление работоспособности.',
     accent: '#5E6F52',
     imageUrl: '/drips/energy.png',
-    price: 'от 2 800 ₽',
+    price: 'от 3 900 ₽',
     category: 'wellness',
   },
   {
@@ -166,7 +166,7 @@ const allSlides: SlideData[] = [
     description: 'Восполнение дефицита железа в организме. Поддержка кроветворной системы.',
     accent: '#5E6F52',
     imageUrl: '/drips/iron.png',
-    price: 'от 2 800 ₽',
+    price: 'от 4 500 ₽',
     category: 'health',
   },
   {
@@ -265,7 +265,7 @@ const allSlides: SlideData[] = [
     description: 'Комплексная витаминная поддержка организма. Восполнение всех необходимых витаминов и минералов.',
     accent: '#7F8F70',
     imageUrl: '/drips/vitamins.png',
-    price: 'от 3 000 ₽',
+    price: 'от 4 500 ₽',
     category: 'wellness',
   },
   {

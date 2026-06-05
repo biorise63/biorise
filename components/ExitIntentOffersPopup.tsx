@@ -13,7 +13,6 @@ const INTENT_TOP_PX = 260
 const SWIPE_MIN_DISTANCE = 42
 
 const SLIDES = [
-  { id: 'drips-1', imageSrc: '/promo/exit-offers/drips-1.jpg' },
   { id: 'drips-2', imageSrc: '/promo/exit-offers/drips-2.jpg' },
   { id: 'drips-3', imageSrc: '/promo/exit-offers/drips-3.jpg' },
   { id: 'checkups-1', imageSrc: '/promo/exit-offers/checkups-1.jpg' },
