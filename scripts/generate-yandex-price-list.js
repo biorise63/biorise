@@ -137,7 +137,7 @@ Object.entries(infusions).forEach(([slug, infusion]) => {
   const inStock = 'Да'
   const quantity = '' // Оставляем пустым для услуг
   const unit = '' // Оставляем пустым для услуг
-  const link = `https://biorise-clinic.ru/kapelnicy#${slug}`
+  const link = `https://biorise-clinic.ru/kapelnicy/${slug}/`
 
   rows.push([
     category,

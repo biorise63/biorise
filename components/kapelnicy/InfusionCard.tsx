@@ -1,10 +1,12 @@
  'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export type InfusionCardProps = {
   id: string
+  slug?: string
   title: string
   description: string
   price?: string
@@ -58,6 +60,7 @@ const icons: Record<string, JSX.Element> = {
 
 export default function InfusionCard({
   id,
+  slug,
   title,
   description,
   price,
@@ -75,6 +78,7 @@ export default function InfusionCard({
   const [activeTab, setActiveTab] = useState<'indications' | 'effect' | 'contraindications' | 'composition'>('indications')
 
   const moreText = details || description
+  const detailHref = slug ? `/kapelnicy/${slug}/` : undefined
 
   const tabContent: Record<string, string[] | undefined> = {
     indications,
@@ -141,7 +145,16 @@ export default function InfusionCard({
           >
             Записаться
           </button>
-          {moreText && (
+          {moreText && detailHref && (
+            <Link
+              href={detailHref}
+              className="btn-more inline-flex items-center gap-1 text-olive-primary font-medium text-sm transition-all duration-300"
+            >
+              Подробнее
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+          )}
+          {moreText && !detailHref && (
             <button
               type="button"
               onClick={onToggle}
@@ -207,4 +220,3 @@ export default function InfusionCard({
     </div>
   )
 }
-

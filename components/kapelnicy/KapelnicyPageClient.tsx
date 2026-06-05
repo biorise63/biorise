@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InfusionPageLayout from '@/components/kapelnicy/InfusionPageLayout'
@@ -13,6 +13,7 @@ import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
 type InfusionItem = {
   id: string
+  slug?: string
   title: string
   description: string
   price?: string
@@ -45,6 +46,20 @@ interface KapelnicyPageClientProps {
 export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageClientProps) {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false)
   const { openBookingModal } = useBookingModal()
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const focus = params.get('focus')
+    if (!focus) return
+
+    const timer = window.setTimeout(() => {
+      const target = document.getElementById(focus)
+      target?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      window.history.replaceState(null, '', '/kapelnicy/')
+    }, 250)
+
+    return () => window.clearTimeout(timer)
+  }, [])
 
   return (
     <>
