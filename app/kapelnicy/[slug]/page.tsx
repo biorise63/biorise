@@ -23,10 +23,30 @@ export function generateMetadata({ params }: PageProps) {
 
   const title = `${infusion.title} в Самаре | BIORISE`
   const description = `${infusion.description.slice(0, 145)}${infusion.description.length > 145 ? '...' : ''}`
+  const keywords = Array.from(
+    new Set(
+      [
+        infusion.title,
+        `${infusion.title} Самара`,
+        `${infusion.title} в Самаре`,
+        `капельница ${infusion.title}`,
+        `капельница ${infusion.title} Самара`,
+        infusion.categoryTitle,
+        infusion.categoryTitle ? `${infusion.categoryTitle} Самара` : undefined,
+        'капельницы Самара',
+        'капельницы в Самаре',
+        'IV терапия Самара',
+        'инфузионная терапия Самара',
+        'BIORISE',
+        'БИОРАЙЗ',
+      ].filter(Boolean) as string[],
+    ),
+  )
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: `${SITE_URL}/kapelnicy/${infusion.slug}/`,
     },
