@@ -229,7 +229,7 @@ export default function Header() {
                       href="/analizy"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
-                      Анализы
+                      Анализы и ЧЕК-АПЫ
                     </Link>
                   </div>
                 )}
@@ -392,7 +392,7 @@ export default function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="pl-3 text-olive-primary hover:text-olive-light transition-colors py-1"
                   >
-                    Анализы
+                    Анализы и ЧЕК-АПЫ
                   </Link>
                 </div>
                 <Link
