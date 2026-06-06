@@ -68,6 +68,25 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
       <OffCanvasMenu isOpen={isOffCanvasOpen} onClose={() => setIsOffCanvasOpen(false)} categories={menu} />
       <InfusionPageLayout sidebarCategories={menu}>
         <div className="space-y-12 sm:space-y-16">
+          <section className="relative overflow-hidden rounded-[28px] border border-olive-primary/10 bg-white/80 p-5 shadow-premium sm:p-7">
+            <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-olive-primary/10 blur-3xl" />
+            <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/50">Выезд на дом</p>
+                <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">
+                  Капельница в комфортных условиях
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-olive-primary/70 sm:text-base">
+                  Врач может приехать к вам домой по Самаре: оценить состояние, уточнить противопоказания и подобрать состав процедуры.
+                </p>
+              </div>
+              <div className="rounded-3xl bg-olive-primary px-5 py-4 text-white shadow-premium sm:px-6">
+                <span className="block text-xs uppercase tracking-[0.14em] text-white/60">Стоимость выезда</span>
+                <strong className="mt-1 block text-2xl sm:text-3xl">2 500 ₽</strong>
+                <span className="mt-1 block text-sm text-white/75">+ стоимость выбранной капельницы</span>
+              </div>
+            </div>
+          </section>
           {categories.map((cat) => (
             <CategorySection key={cat.id} id={cat.id} title={cat.title} items={cat.items} icon={cat.icon} onBook={openBookingModal} />
           ))}
