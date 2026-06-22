@@ -9,7 +9,7 @@ import OffCanvasMenu from '@/components/kapelnicy/OffCanvasMenu'
 import DownloadPdfButton from '@/components/kapelnicy/DownloadPdfButton'
 import CatalogButton from '@/components/kapelnicy/CatalogButton'
 import { useBookingModal } from '@/components/BookingModalProvider'
-import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
+// import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
 type InfusionItem = {
   id: string
@@ -94,7 +94,7 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
       </InfusionPageLayout>
       <Footer />
       <DownloadPdfButton />
-      <ExitIntentOffersPopup />
+      {/* <ExitIntentOffersPopup /> */}
     </>
   )
 }

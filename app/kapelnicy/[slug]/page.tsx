@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
+// import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 import InfusionDetailActions from '@/components/kapelnicy/InfusionDetailActions'
 import { getInfusionBySlug, getUniqueInfusions } from '@/lib/kapelnicy'
 
@@ -230,7 +230,7 @@ export default function InfusionDetailPage({ params }: PageProps) {
         </section>
       </main>
       <Footer />
-      <ExitIntentOffersPopup />
+      {/* <ExitIntentOffersPopup /> */}
     </>
   )
 }

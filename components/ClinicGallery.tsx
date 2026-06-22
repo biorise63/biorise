@@ -22,7 +22,7 @@ const galleryData: GalleryItem[] = [
       current: '3 500 ₽',
       old: '5 790 ₽',
     },
-    period: 'до 1 июня 2026',
+    period: 'до 1 июля 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
@@ -46,6 +46,7 @@ const galleryData: GalleryItem[] = [
       current: '3 333 ₽',
       old: '8 565 ₽',
     },
+    period: 'до 30 сентября 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
@@ -67,6 +68,7 @@ const galleryData: GalleryItem[] = [
       current: '5 555 ₽',
       old: '17 130 ₽',
     },
+    period: 'до 30 сентября 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {

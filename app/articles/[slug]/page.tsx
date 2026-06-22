@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/articles'
-import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
+// import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
 import BookingFormFields from '@/components/BookingFormFields'
 
 export function generateStaticParams() {
@@ -129,7 +129,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </article>
 
-      <ArticlePromoPopUp coverImage={article.coverImage} />
+      {/* <ArticlePromoPopUp coverImage={article.coverImage} /> */}
 
       <Footer />
     </main>

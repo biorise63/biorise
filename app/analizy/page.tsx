@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
+// import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 import AnalizyContent from './AnalizyContent'
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function AnalizyPage() {
       <Header />
       <AnalizyContent />
       <Footer />
-      <ExitIntentOffersPopup />
+      {/* <ExitIntentOffersPopup /> */}
     </main>
   )
 }
