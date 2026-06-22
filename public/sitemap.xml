@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://biorise-clinic.ru/ruchnoy-massazh</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://biorise-clinic.ru/lazernaya-epilyatsiya</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
