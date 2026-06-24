@@ -6,30 +6,6 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
-    common: 'Витамин D 300 000 МЕ',
-    subtitle: 'Один укол для поддержки организма',
-    description:
-      'При усталости, слабости, частых простудах и признаках дефицита витамина D.',
-    features: [
-      'Поддержка иммунитета',
-      'Больше энергии и сил',
-      'Крепкие кости и мышцы',
-      'Кожа, волосы и ногти',
-    ],
-    price: {
-      current: '1 900 ₽',
-    },
-    period: 'до 1 июля 2026',
-    buttonText: 'Записаться',
-    buttonHref: '#booking',
-    photo: {
-      url: '/promo-vitamin-d-shot.jpg',
-      text: 'Укол витамина D',
-      pos: 'center 42%',
-      by: 'Внутримышечно',
-    },
-  },
-  {
     common: 'Чек-ап «Витаминный»',
     subtitle: 'Комплексная диагностика дефицитов',
     description:

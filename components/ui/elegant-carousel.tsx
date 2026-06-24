@@ -26,6 +26,15 @@ const categories: { id: Category; name: string }[] = [
 
 const allSlides: SlideData[] = [
   {
+    title: 'Витамин D 300 000 МЕ',
+    subtitle: 'Один укол для поддержки организма',
+    description: 'Поддержка иммунитета, энергии, костей и мышц при дефиците витамина D.',
+    accent: '#C79B43',
+    imageUrl: '/promo-vitamin-d-shot.jpg',
+    price: '1 900 ₽',
+    category: 'popular',
+  },
+  {
     title: 'Железо стандарт',
     subtitle: 'Восполнение железа',
     description: 'Поддержка кроветворной системы и энергии при дефиците железа.',
