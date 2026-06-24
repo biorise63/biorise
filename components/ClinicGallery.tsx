@@ -6,6 +6,30 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
+    common: 'Детский чек-ап',
+    subtitle: 'Комплексная проверка здоровья ребёнка',
+    description:
+      'Помогает выявить дефициты, оценить иммунитет и заметить скрытые нарушения здоровья.',
+    features: [
+      'Общий анализ крови и ферритин',
+      'Витамины D, B12 и фолиевая кислота',
+      'Цинк, медь и общий белок',
+      'Аллергии и паразитарные инфекции',
+    ],
+    price: {
+      current: '4 290 ₽',
+      old: '7 175 ₽',
+    },
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/promo-children-checkup.jpg',
+      text: 'Детский чек-ап',
+      pos: 'center 38%',
+      by: 'Профилактическое обследование',
+    },
+  },
+  {
     common: 'Чек-ап «Забота о родителях»',
     subtitle: 'Комплексное обследование старшего поколения',
     description:
