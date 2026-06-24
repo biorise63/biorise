@@ -6,6 +6,31 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
+    common: 'Чек-ап «Забота о родителях»',
+    subtitle: 'Комплексное обследование старшего поколения',
+    description:
+      'Помогает оценить состояние организма и выявить возможные риски на ранней стадии.',
+    features: [
+      'Сердечно-сосудистые риски',
+      'Печень и обмен веществ',
+      'Витамин D и общий белок',
+      'Общий анализ крови и СРБ',
+    ],
+    price: {
+      current: '3 999 ₽',
+      old: '8 770 ₽',
+    },
+    period: 'до 1 сентября 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/promo-care-for-parents.jpg',
+      text: 'Чек-ап Забота о родителях',
+      pos: 'center 38%',
+      by: 'Забота о здоровье близких',
+    },
+  },
+  {
     common: 'Чек-ап «Витаминный»',
     subtitle: 'Комплексная диагностика дефицитов',
     description:
