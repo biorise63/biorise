@@ -26,6 +26,15 @@ const categories: { id: Category; name: string }[] = [
 
 const allSlides: SlideData[] = [
   {
+    title: 'Терзапатид 10 мг',
+    subtitle: 'Поддержка снижения веса',
+    description: 'Контроль аппетита и обмена веществ. Терапия проводится только по назначению врача.',
+    accent: '#8A6A3D',
+    imageUrl: '/promo-terzapatid.jpg',
+    price: '5 500 ₽',
+    category: 'popular',
+  },
+  {
     title: 'Витамин D 300 000 МЕ',
     subtitle: 'Один укол для поддержки организма',
     description: 'Поддержка иммунитета, энергии, костей и мышц при дефиците витамина D.',
