@@ -19,6 +19,7 @@ const galleryData: GalleryItem[] = [
     ],
     price: {
       current: '2 200 ₽',
+      old: '5 800 ₽',
     },
     period: 'до 30 июля 2026',
     buttonText: 'Записаться',
