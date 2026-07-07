@@ -6,6 +6,31 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
+    common: 'Чек-ап «Диагностика дефицита железа»',
+    subtitle: 'Комплексная оценка железа и витаминов B',
+    description:
+      'Помогает выявить скрытый дефицит железа, анемию и причины усталости.',
+    features: [
+      'Клинический анализ крови с СОЭ',
+      'Ферритин, железо и трансферрин',
+      'ОЖСС и ЛЖСС',
+      'Витамины B12 и B9',
+      'Результаты через 1–2 дня',
+    ],
+    price: {
+      current: '2 200 ₽',
+    },
+    period: 'до 30 июля 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/promo-iron-deficiency-checkup.jpg',
+      text: 'Диагностика дефицита железа',
+      pos: 'center 45%',
+      by: 'Чек-ап железа',
+    },
+  },
+  {
     common: 'Детский чек-ап',
     subtitle: 'Комплексная проверка здоровья ребёнка',
     description:
