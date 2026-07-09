@@ -154,9 +154,10 @@ export default function Header() {
       <div className="fixed left-0 right-0 top-[64px] z-[45] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm sm:top-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex min-h-10 flex-wrap items-center justify-center gap-2 py-2 text-center text-[11px] font-medium leading-tight text-olive-primary sm:text-sm">
-            <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/80 text-olive-primary shadow-sm">
+            <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/80 text-[#b48a3c] shadow-sm">
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6M9 10h.01M12 10h.01M15 10h.01" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v3M12 17v3M4 12h3M17 12h3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M17.66 6.34l-2.12 2.12M8.46 15.54l-2.12 2.12" />
+                <circle cx="12" cy="12" r="2.5" strokeWidth={2} />
               </svg>
             </span>
             <span>
