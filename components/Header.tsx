@@ -151,7 +151,7 @@ export default function Header() {
       </div>
 
       {/* Opening Announcement */}
-      <div className="fixed left-0 right-0 top-[52px] z-[45] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm sm:top-10">
+      <div className="fixed left-0 right-0 top-10 z-[45] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex min-h-8 flex-wrap items-center justify-center gap-1.5 py-1.5 text-center text-[10px] font-medium leading-tight text-olive-primary sm:min-h-10 sm:gap-2 sm:py-2 sm:text-sm">
             <span className="hidden h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/80 text-[#b48a3c] shadow-sm sm:inline-flex">
