@@ -52,7 +52,7 @@ html, body {
 }
 
 :root {
-  --header-height: 220px;
+  --header-height: 176px;
 }
 
 @media (min-width: 640px) {
