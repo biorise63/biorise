@@ -34,7 +34,7 @@ export default function Hero() {
   const { openBookingModal } = useBookingModal()
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ marginTop: '80px' }}>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ marginTop: 'var(--header-height)' }}>
       {/* Background Video */}
       <div className="absolute inset-0">
         <video

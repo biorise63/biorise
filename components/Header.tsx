@@ -150,12 +150,40 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Opening Announcement */}
+      <div className="fixed left-0 right-0 top-[64px] z-[45] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm sm:top-10">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex min-h-10 flex-wrap items-center justify-center gap-2 py-2 text-center text-[11px] font-medium leading-tight text-olive-primary sm:text-sm">
+            <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/80 text-olive-primary shadow-sm">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6M9 10h.01M12 10h.01M15 10h.01" />
+              </svg>
+            </span>
+            <span>
+              <strong className="font-semibold">25 июля</strong> — открытие новой клиники «Биорайз» ул. Молодежная, 18.
+            </span>
+            <a
+              href="https://vk.ru/biorise63"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-semibold text-olive-primary shadow-sm transition hover:bg-white sm:text-xs"
+              aria-label="Акции в честь открытия во ВКонтакте"
+            >
+              <svg className="h-4 w-4 text-[#0077FF]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm5.893 16.07h-1.32c-.493 0-.646-.399-1.54-1.3-.78-.77-1.125-.87-1.32-.87-.267 0-.344.077-.344.45v1.54c0 .32-.103.492-.95.492-1.4 0-2.958-1.507-4.224-4.312-1.709-3.556-2.026-4.95-2.026-5.212 0-.23.09-.45.84-.45h1.32c.38 0 .52.18.664.58.72 2.1 1.93 4.073 2.394 4.073.19 0 .28-.09.28-.57V8.45c-.06-1.01-.6-1.1-.6-1.46 0-.17.14-.34.35-.34h2.07c.44 0 .6.19.6.6v3.58c0 .34.15.46.24.46.19 0 .35-.12.69-.46.97-1.08 1.67-2.77 1.67-2.77.12-.28.33-.43.62-.43h1.32c.44 0 .53.22.44.52-.18.81-1.94 3.33-1.94 3.33-.16.26-.23.39 0 .65.17.2.72.7 1.07 1.13.66.75 1.16 1.38 1.29 1.81.14.43-.09.65-.55.65Z" />
+              </svg>
+              <span>Акции в честь открытия</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Main Header */}
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-        className={`fixed top-10 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-[140px] left-0 right-0 z-40 transition-all duration-300 sm:top-[80px] ${
           scrolled ? 'bg-white/98 backdrop-blur-sm shadow-premium' : 'bg-white/95 backdrop-blur-sm'
         }`}
       >
