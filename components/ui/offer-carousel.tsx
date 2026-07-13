@@ -4,7 +4,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, Tag } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight, Tag } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 type Category = 'popular' | 'recovery' | 'beauty' | 'women' | 'sport' | 'health' | 'wellness'
@@ -526,13 +526,6 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
         <div className="pointer-events-none absolute bottom-[-100px] left-[-60px] h-56 w-56 rounded-full bg-[#d8cab3]/45 blur-3xl" />
 
         <div className="relative z-[1] mb-5 flex flex-col gap-3 sm:mb-6 sm:gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <div className="mb-1 inline-flex items-center gap-2 rounded-full border border-olive-primary/10 bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-olive-primary/60 sm:mb-3 sm:text-[11px] sm:tracking-[0.16em]">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>IV Therapy BIORISE</span>
-            </div>
-          </div>
-
           <div className="hidden items-center gap-3 lg:flex">
             <button
               type="button"

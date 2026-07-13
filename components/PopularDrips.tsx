@@ -23,10 +23,6 @@ export default function PopularDrips() {
               Индивидуальный подбор программы для вашего здоровья
             </h2>
           </div>
-          <p className="mx-auto max-w-3xl text-sm leading-7 text-olive-primary/72 sm:text-base">
-            Витрина капельниц BIORISE с быстрым переходом на отдельные страницы программ.
-            Можно выбрать направление и открыть нужную инфузию без длинного скролла по каталогу.
-          </p>
         </motion.div>
 
         <OfferCarousel />
