@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import ElegantCarousel from './ui/elegant-carousel'
+import { OfferCarousel } from './ui/offer-carousel'
 import { getIcon } from './kapelnicy/icon-map'
 
 export default function PopularDrips() {
@@ -13,9 +13,9 @@ export default function PopularDrips() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-10 text-center sm:mb-14"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="mb-4 flex items-center justify-center gap-3">
             <div className="text-olive-primary">
               {getIcon('health')}
             </div>
@@ -23,9 +23,13 @@ export default function PopularDrips() {
               Индивидуальный подбор программы для вашего здоровья
             </h2>
           </div>
+          <p className="mx-auto max-w-3xl text-sm leading-7 text-olive-primary/72 sm:text-base">
+            Витрина капельниц BIORISE с быстрым переходом на отдельные страницы программ.
+            Можно выбрать направление и открыть нужную инфузию без длинного скролла по каталогу.
+          </p>
         </motion.div>
 
-        <ElegantCarousel />
+        <OfferCarousel />
       </div>
     </section>
   )
