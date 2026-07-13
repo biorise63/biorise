@@ -42,7 +42,7 @@ const defaultBrand = {
 const offers: Offer[] = [
   {
     id: 'terzapatid',
-    imageSrc: '/promo-terzapatid.jpg',
+    imageSrc: '/promo-transparent/promo-terzapatid-cutout.png',
     imageAlt: 'Терзапатид 10 мг',
     tag: 'Популярное',
     title: 'Терзапатид 10 мг',
@@ -55,7 +55,7 @@ const offers: Offer[] = [
   },
   {
     id: 'vitamin-d-shot',
-    imageSrc: '/promo-vitamin-d-shot.jpg',
+    imageSrc: '/promo-transparent/promo-vitamin-d-shot-cutout.png',
     imageAlt: 'Витамин D 300 000 МЕ',
     tag: 'Популярное',
     title: 'Витамин D 300 000 МЕ',
