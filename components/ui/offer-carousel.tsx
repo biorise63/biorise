@@ -42,7 +42,7 @@ const defaultBrand = {
 const offers: Offer[] = [
   {
     id: 'terzapatid',
-    imageSrc: '/promo-transparent/promo-terzapatid-cutout.png',
+    imageSrc: '/optimized/promo-transparent/promo-terzapatid-cutout.webp',
     imageAlt: 'Терзапатид 10 мг',
     tag: 'Популярное',
     title: 'Терзапатид 10 мг',
@@ -55,7 +55,7 @@ const offers: Offer[] = [
   },
   {
     id: 'vitamin-d-shot',
-    imageSrc: '/promo-transparent/promo-vitamin-d-shot-cutout.png',
+    imageSrc: '/optimized/promo-transparent/promo-vitamin-d-shot-cutout.webp',
     imageAlt: 'Витамин D 300 000 МЕ',
     tag: 'Популярное',
     title: 'Витамин D 300 000 МЕ',
@@ -68,7 +68,7 @@ const offers: Offer[] = [
   },
   {
     id: 'zhelezo-standart',
-    imageSrc: '/drips/iron.png',
+    imageSrc: '/optimized/drips/iron.webp',
     imageAlt: 'Железо стандарт',
     tag: 'Популярное',
     title: 'Железо стандарт',
@@ -81,7 +81,7 @@ const offers: Offer[] = [
   },
   {
     id: 'energiya',
-    imageSrc: '/drips/energy.png',
+    imageSrc: '/optimized/drips/energy.webp',
     imageAlt: 'Энергия',
     tag: 'Популярное',
     title: 'Энергия',
@@ -94,7 +94,7 @@ const offers: Offer[] = [
   },
   {
     id: 'detoks-standart-popular',
-    imageSrc: '/drips/detox.png',
+    imageSrc: '/optimized/drips/detox.webp',
     imageAlt: 'Детокс',
     tag: 'Популярное',
     title: 'Детокс',
@@ -107,7 +107,7 @@ const offers: Offer[] = [
   },
   {
     id: 'zolushka-popular',
-    imageSrc: '/drips/beauty.png',
+    imageSrc: '/optimized/drips/beauty.webp',
     imageAlt: 'Золушка',
     tag: 'Популярное',
     title: 'Золушка',
@@ -120,7 +120,7 @@ const offers: Offer[] = [
   },
   {
     id: 'vitaminnaya-popular',
-    imageSrc: '/drips/vitamins.png',
+    imageSrc: '/optimized/drips/vitamins.webp',
     imageAlt: 'Витаминная',
     tag: 'Популярное',
     title: 'Витаминная',
@@ -133,7 +133,7 @@ const offers: Offer[] = [
   },
   {
     id: 'detoks-standart',
-    imageSrc: '/drips/detox.png',
+    imageSrc: '/optimized/drips/detox.webp',
     imageAlt: 'Детокс',
     tag: 'Восстановление',
     title: 'Детокс',
@@ -146,7 +146,7 @@ const offers: Offer[] = [
   },
   {
     id: 'posle-vecherinki',
-    imageSrc: '/drips/after-party.png',
+    imageSrc: '/optimized/drips/after-party.webp',
     imageAlt: 'После вечеринки',
     tag: 'Восстановление',
     title: 'После вечеринки',
@@ -159,7 +159,7 @@ const offers: Offer[] = [
   },
   {
     id: 'jetlag',
-    imageSrc: '/drips/jetlag.png',
+    imageSrc: '/optimized/drips/jetlag.webp',
     imageAlt: 'Джетлаг',
     tag: 'Восстановление',
     title: 'Джетлаг',
@@ -172,7 +172,7 @@ const offers: Offer[] = [
   },
   {
     id: 'postkovid',
-    imageSrc: '/drips/postcovid.png',
+    imageSrc: '/optimized/drips/postcovid.webp',
     imageAlt: 'Постковид',
     tag: 'Восстановление',
     title: 'Постковид',
@@ -185,7 +185,7 @@ const offers: Offer[] = [
   },
   {
     id: 'krasota-i-omolozhenie',
-    imageSrc: '/drips/beauty.png',
+    imageSrc: '/optimized/drips/beauty.webp',
     imageAlt: 'Красота и омоложение',
     tag: 'Красота',
     title: 'Красота и омоложение',
@@ -198,7 +198,7 @@ const offers: Offer[] = [
   },
   {
     id: 'gustye-volosy',
-    imageSrc: '/drips/hair.png',
+    imageSrc: '/optimized/drips/hair.webp',
     imageAlt: 'Густые волосы',
     tag: 'Красота',
     title: 'Густые волосы',
@@ -211,7 +211,7 @@ const offers: Offer[] = [
   },
   {
     id: 'laennek',
-    imageSrc: '/drips/laennec.png',
+    imageSrc: '/optimized/drips/laennec.webp',
     imageAlt: 'Лаеннек',
     tag: 'Красота',
     title: 'Лаеннек',
@@ -224,7 +224,7 @@ const offers: Offer[] = [
   },
   {
     id: 'antieydzh-premium',
-    imageSrc: '/drips/antiage.png',
+    imageSrc: '/optimized/drips/antiage.webp',
     imageAlt: 'Антиэйдж премиум',
     tag: 'Красота',
     title: 'Антиэйдж премиум',
@@ -237,7 +237,7 @@ const offers: Offer[] = [
   },
   {
     id: 'polovaya-sistema',
-    imageSrc: '/drips/reproductive.png',
+    imageSrc: '/optimized/drips/reproductive.webp',
     imageAlt: 'Половая система',
     tag: 'Женское здоровье',
     title: 'Половая система',
@@ -250,7 +250,7 @@ const offers: Offer[] = [
   },
   {
     id: 'mame-mozhno',
-    imageSrc: '/drips/mom.png',
+    imageSrc: '/optimized/drips/mom.webp',
     imageAlt: 'Маме можно',
     tag: 'Женское здоровье',
     title: 'Маме можно',
@@ -263,7 +263,7 @@ const offers: Offer[] = [
   },
   {
     id: 'podgotovka-k-beremennosti',
-    imageSrc: '/drips/pregnancy.png',
+    imageSrc: '/optimized/drips/pregnancy.webp',
     imageAlt: 'Подготовка к беременности',
     tag: 'Женское здоровье',
     title: 'Подготовка к беременности',
@@ -276,7 +276,7 @@ const offers: Offer[] = [
   },
   {
     id: 'antiklimaks',
-    imageSrc: '/drips/menopause.png',
+    imageSrc: '/optimized/drips/menopause.webp',
     imageAlt: 'Анти Климакс',
     tag: 'Женское здоровье',
     title: 'Анти Климакс',
@@ -289,7 +289,7 @@ const offers: Offer[] = [
   },
   {
     id: 'sport-standart',
-    imageSrc: '/drips/sport.png',
+    imageSrc: '/optimized/drips/sport.webp',
     imageAlt: 'Спорт стандарт',
     tag: 'Спорт',
     title: 'Спорт стандарт',
@@ -302,7 +302,7 @@ const offers: Offer[] = [
   },
   {
     id: 'protein-bust',
-    imageSrc: '/drips/protein.png',
+    imageSrc: '/optimized/drips/protein.webp',
     imageAlt: 'Протеин буст',
     tag: 'Спорт',
     title: 'Протеин буст',
@@ -315,7 +315,7 @@ const offers: Offer[] = [
   },
   {
     id: 'ayronmen',
-    imageSrc: '/drips/ironman.png',
+    imageSrc: '/optimized/drips/ironman.webp',
     imageAlt: 'Айронмен',
     tag: 'Спорт',
     title: 'Айронмен',
@@ -328,7 +328,7 @@ const offers: Offer[] = [
   },
   {
     id: 'zdorovye-sosudy',
-    imageSrc: '/drips/vessels.png',
+    imageSrc: '/optimized/drips/vessels.webp',
     imageAlt: 'Здоровые сосуды',
     tag: 'Здоровье',
     title: 'Здоровые сосуды',
@@ -341,7 +341,7 @@ const offers: Offer[] = [
   },
   {
     id: 'immuno-suppert',
-    imageSrc: '/drips/immuno.png',
+    imageSrc: '/optimized/drips/immuno.webp',
     imageAlt: 'Иммуно суппорт',
     tag: 'Здоровье',
     title: 'Иммуно суппорт',
@@ -354,7 +354,7 @@ const offers: Offer[] = [
   },
   {
     id: 'sahar-v-norme',
-    imageSrc: '/drips/sugar.png',
+    imageSrc: '/optimized/drips/sugar.webp',
     imageAlt: 'Сахар в норме',
     tag: 'Здоровье',
     title: 'Сахар в норме',
@@ -367,7 +367,7 @@ const offers: Offer[] = [
   },
   {
     id: 'breynstorm',
-    imageSrc: '/drips/brainstorm.png',
+    imageSrc: '/optimized/drips/brainstorm.webp',
     imageAlt: 'Брейнсторм',
     tag: 'Wellness',
     title: 'Брейнсторм',
@@ -380,7 +380,7 @@ const offers: Offer[] = [
   },
   {
     id: 'antistress',
-    imageSrc: '/drips/antistress.png',
+    imageSrc: '/optimized/drips/antistress.webp',
     imageAlt: 'Антистресс+',
     tag: 'Wellness',
     title: 'Антистресс+',
@@ -393,7 +393,7 @@ const offers: Offer[] = [
   },
   {
     id: 'mnogokomponentnaya-vitaminnaya',
-    imageSrc: '/drips/vitamins.png',
+    imageSrc: '/optimized/drips/vitamins.webp',
     imageAlt: 'Много-компонентная витаминная',
     tag: 'Wellness',
     title: 'Много-компонентная витаминная',
@@ -406,7 +406,7 @@ const offers: Offer[] = [
   },
   {
     id: 'snizhenie-vesa',
-    imageSrc: '/drips/weight.png',
+    imageSrc: '/optimized/drips/weight.webp',
     imageAlt: 'Снижение веса',
     tag: 'Wellness',
     title: 'Снижение веса',

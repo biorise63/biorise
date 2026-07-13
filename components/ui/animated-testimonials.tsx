@@ -90,6 +90,8 @@ export const AnimatedTestimonials = ({
                     alt={testimonial.name}
                     width={500}
                     height={500}
+                    sizes="(max-width: 768px) calc(100vw - 48px), 500px"
+                    loading={isActive(index) ? "eager" : "lazy"}
                     draggable={false}
                     className={cn(
                       "h-full w-full rounded-3xl object-cover shadow-premium",

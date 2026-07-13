@@ -137,6 +137,9 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   <img
                     src={item.photo.url}
                     alt={item.photo.text}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority={i === 0 ? 'high' : 'low'}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-75"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />

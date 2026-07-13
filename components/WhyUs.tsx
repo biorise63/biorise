@@ -76,9 +76,10 @@ export default function WhyUs() {
           >
             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-premium">
               <Image
-                src="/clinic-about.jpg"
+                src="/optimized/promo/clinic-about.webp"
                 alt="Интерьер клиники BIORISE"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

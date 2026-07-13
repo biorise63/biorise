@@ -25,7 +25,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-iron-deficiency-checkup.jpg',
+      url: '/optimized/promo/promo-iron-deficiency-checkup.webp',
       text: 'Диагностика дефицита железа',
       pos: 'center 45%',
       by: 'Чек-ап железа',
@@ -49,7 +49,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-children-checkup.jpg',
+      url: '/optimized/promo/promo-children-checkup.webp',
       text: 'Детский чек-ап',
       pos: 'center 38%',
       by: 'Профилактическое обследование',
@@ -74,7 +74,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-care-for-parents.jpg',
+      url: '/optimized/promo/promo-care-for-parents.webp',
       text: 'Чек-ап Забота о родителях',
       pos: 'center 38%',
       by: 'Забота о здоровье близких',
@@ -101,7 +101,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-3.jpg',
+      url: '/optimized/promo/promo-3.webp',
       text: 'Чек-ап витаминный',
       by: 'Спецпредложение февраля',
     },
@@ -125,7 +125,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-checkup-man-woman.jpg',
+      url: '/optimized/promo/promo-checkup-man-woman.webp',
       text: 'Женское и мужское здоровье',
       by: 'Выгода — 5 232 ₽',
     },
@@ -147,7 +147,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-couple-checkup.jpg',
+      url: '/optimized/promo/promo-couple-checkup.webp',
       text: 'Парное посещение',
       by: 'Выгода — 11 575 ₽',
     },

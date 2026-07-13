@@ -1,6 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useEffect, useMemo, useState } from 'react'
 import { useBookingModal } from './BookingModalProvider'
 
 const features = [
@@ -32,33 +34,73 @@ const features = [
 
 export default function Hero() {
   const { openBookingModal } = useBookingModal()
+  const [videoSrc, setVideoSrc] = useState<string | null>(null)
+  const [videoReady, setVideoReady] = useState(false)
+
+  const shouldReduceMotion = useMemo(() => {
+    if (typeof window === 'undefined') return false
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (shouldReduceMotion) return
+
+    const nav = navigator as Navigator & {
+      connection?: { saveData?: boolean }
+    }
+
+    if (nav.connection?.saveData) return
+
+    const pickSource = () =>
+      window.matchMedia('(max-width: 767px)').matches
+        ? '/optimized/video/hero-mobile-480p.mp4'
+        : '/optimized/video/hero-desktop-720p.mp4'
+
+    const activate = () => {
+      setVideoReady(false)
+      setVideoSrc(pickSource())
+    }
+
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(activate, { timeout: 3000 })
+      return () => window.cancelIdleCallback(id)
+    }
+
+    const timer = setTimeout(activate, 2500)
+    return () => clearTimeout(timer)
+  }, [shouldReduceMotion])
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ marginTop: 'var(--header-height)' }}>
-      {/* Background Video */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/video/hero-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            objectPosition: 'center bottom',
-          }}
-        >
-          <source
-            src="/video/hero-mobile-480p.mp4"
-            type="video/mp4"
-            media="(max-width: 767px)"
+        <Image
+          src="/optimized/video/hero-poster.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: 'center bottom' }}
+        />
+
+        {videoSrc && (
+          <video
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            onLoadedData={() => setVideoReady(true)}
+            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
+            style={{
+              objectPosition: 'center bottom',
+              opacity: videoReady ? 1 : 0,
+            }}
           />
-          <source
-            src="/video/hero-desktop-720p.mp4"
-            type="video/mp4"
-          />
-        </video>
+        )}
       </div>
 
       {/* Overlay */}

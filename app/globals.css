@@ -2,40 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Фирменные шрифты */
-/* Если файлы шрифтов добавлены, они загрузятся автоматически */
-@font-face {
-  font-family: 'CeraPro';
-  src: url('/fonts/CeraPro-Regular.woff2') format('woff2'),
-       url('/fonts/CeraPro-Regular.woff') format('woff'),
-       url('/fonts/CeraPro-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'HelveticaNeueCyr';
-  src: url('/fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'),
-       url('/fonts/HelveticaNeueCyr-Roman.woff') format('woff'),
-       url('/fonts/HelveticaNeueCyr-Roman.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Fallback: если файлы не найдены, используем системные шрифты */
-@supports not (font-variation-settings: normal) {
-  @font-face {
-    font-family: 'CeraPro';
-    src: local('Arial'), local('Helvetica');
-  }
-  
-  @font-face {
-    font-family: 'HelveticaNeueCyr';
-    src: local('Helvetica Neue'), local('Arial');
-  }
-}
+/* Локальные файлы фирменных шрифтов сейчас не поставляются вместе с сайтом.
+   Используем системные аналоги без сетевых запросов и 404-ошибок. */
 
 * {
   margin: 0;
