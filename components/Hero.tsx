@@ -42,12 +42,22 @@ export default function Hero() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/video/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectPosition: 'center bottom',
           }}
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source
+            src="/video/hero-mobile-480p.mp4"
+            type="video/mp4"
+            media="(max-width: 767px)"
+          />
+          <source
+            src="/video/hero-desktop-720p.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
 
