@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
 import { useBookingModal } from './BookingModalProvider'
 
@@ -72,7 +71,14 @@ export default function Hero() {
   }, [shouldReduceMotion])
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ marginTop: 'var(--header-height)' }}>
+    <section
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{
+        marginTop: 'var(--header-height)',
+        height: 'calc(100svh - var(--header-height))',
+        minHeight: 'calc(100svh - var(--header-height))',
+      }}
+    >
       <div className="absolute inset-0">
         <Image
           src="/optimized/video/hero-poster.webp"
@@ -93,7 +99,7 @@ export default function Hero() {
             muted
             playsInline
             preload="none"
-            onLoadedData={() => setVideoReady(true)}
+            onCanPlay={() => setVideoReady(true)}
             className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
             style={{
               objectPosition: 'center bottom',
@@ -108,36 +114,20 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-          className="max-w-4xl"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+        <div className="max-w-4xl">
+          <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-black mb-4 sm:mb-6 font-light leading-tight"
           >
             Клиника капельниц BIORISE в Самаре
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+          </h1>
+          <p
             className="text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-8 leading-relaxed"
           >
             Внутривенная терапия и инфузионная капельная терапия под контролем врача. Подбор состава по анализам и жалобам. Комплексный чек-ап организма.
-          </motion.p>
+          </p>
 
           {/* Features with icons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="space-y-4 mb-10"
-          >
+          <div className="space-y-4 mb-10">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="text-olive-primary flex-shrink-0 mt-1">
@@ -148,15 +138,10 @@ export default function Hero() {
                 </p>
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={openBookingModal}
               className="bg-olive-primary text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 text-center"
@@ -169,8 +154,8 @@ export default function Hero() {
             >
               Подобрать капельницу
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )
