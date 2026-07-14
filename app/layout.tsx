@@ -40,9 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <head>
-        <script src="https://ai-up.ru/fn/pixel?p=1782740995" async></script>
-      </head>
+      <head />
       <body>
         <BookingModalProvider>
           <SmoothScrollProvider>
