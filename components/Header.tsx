@@ -288,9 +288,6 @@ export default function Header() {
               <Link href="/#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Врачи
               </Link>
-              <Link href="/#reviews" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
-                Отзывы
-              </Link>
               <button
                 onClick={openBookingModal}
                 className="bg-olive-primary text-white px-4 lg:px-6 py-2 rounded-full hover:bg-olive-light transition-all shadow-premium text-sm lg:text-base"
@@ -470,13 +467,6 @@ export default function Header() {
                   className="text-olive-primary hover:text-olive-light transition-colors py-2"
                 >
                   Врачи
-                </Link>
-                <Link
-                  href="/#reviews"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-olive-primary hover:text-olive-light transition-colors py-2"
-                >
-                  Отзывы
                 </Link>
                 <button
                   onClick={() => {

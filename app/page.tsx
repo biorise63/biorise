@@ -5,7 +5,6 @@ import WhyUs from '@/components/WhyUs'
 import Doctors from '@/components/Doctors'
 import ClinicGallery from '@/components/ClinicGallery'
 import BookingForm from '@/components/BookingForm'
-import Reviews from '@/components/Reviews'
 import Footer from '@/components/Footer'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
@@ -19,7 +18,6 @@ export default function Home() {
       <Doctors />
       <ClinicGallery />
       <BookingForm />
-      <Reviews />
       <Footer />
       {/* <ExitIntentOffersPopup /> */}
     </main>
