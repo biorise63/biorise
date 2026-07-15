@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { articles } from '@/lib/articles'
 
@@ -16,6 +17,12 @@ export default function ArticlesPage() {
 
       <section className="pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <Breadcrumbs
+            items={[
+              { name: 'Главная', href: '/' },
+              { name: 'Статьи', href: '/articles/' },
+            ]}
+          />
           <h1 className="text-2xl sm:text-3xl font-heading text-olive-primary font-light mb-1">
             Статьи
           </h1>

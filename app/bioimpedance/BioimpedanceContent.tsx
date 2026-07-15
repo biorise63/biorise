@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function BioimpedanceContent() {
   return (
@@ -8,6 +9,12 @@ export default function BioimpedanceContent() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-beige-background to-white">
         <div className="container mx-auto px-6">
+          <Breadcrumbs
+            items={[
+              { name: 'Главная', href: '/' },
+              { name: 'Биоимпедансный анализ', href: '/bioimpedance/' },
+            ]}
+          />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

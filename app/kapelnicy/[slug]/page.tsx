@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
@@ -150,6 +151,13 @@ export default function InfusionDetailPage({ params }: PageProps) {
         <section className="container mx-auto px-4 pb-12 sm:px-6 sm:pb-16">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.75fr)] lg:items-center">
             <div>
+              <Breadcrumbs
+                items={[
+                  { name: 'Главная', href: '/' },
+                  { name: 'Капельницы', href: '/kapelnicy/' },
+                  { name: infusion.title, href: `/kapelnicy/${infusion.slug}/` },
+                ]}
+              />
               <Link href="/kapelnicy/" className="mb-6 inline-flex text-sm font-semibold text-olive-primary/65 transition-colors hover:text-olive-primary">
                 ← Все капельницы
               </Link>

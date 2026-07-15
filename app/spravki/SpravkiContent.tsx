@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { useBookingModal } from '@/components/BookingModalProvider'
 
 const spravkiData = [
@@ -120,6 +121,12 @@ export default function SpravkiContent() {
   return (
     <div className="pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6">
+        <Breadcrumbs
+          items={[
+            { name: 'Главная', href: '/' },
+            { name: 'Медицинские справки', href: '/spravki/' },
+          ]}
+        />
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

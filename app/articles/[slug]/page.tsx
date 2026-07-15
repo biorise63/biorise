@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/articles'
 // import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
@@ -18,6 +19,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <Header />
         <section className="pt-32 pb-16">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <Breadcrumbs
+              items={[
+                { name: 'Главная', href: '/' },
+                { name: 'Статьи', href: '/articles/' },
+              ]}
+              className="justify-center"
+            />
             <h1 className="text-2xl font-heading text-olive-primary mb-3">Статья не найдена</h1>
             <Link href="/articles" className="text-olive-primary underline hover:text-olive-light">
               Вернуться к статьям
@@ -36,6 +44,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <article className="pt-24 sm:pt-28 pb-16">
         <div className="max-w-4xl mx-auto">
           <div className="px-4 sm:px-6 mb-4">
+            <Breadcrumbs
+              items={[
+                { name: 'Главная', href: '/' },
+                { name: 'Статьи', href: '/articles/' },
+                { name: article.title, href: `/articles/${article.slug}/` },
+              ]}
+            />
             <Link
               href="/articles"
               className="inline-flex items-center gap-2 text-sm text-olive-primary/70 hover:text-olive-primary transition-colors"

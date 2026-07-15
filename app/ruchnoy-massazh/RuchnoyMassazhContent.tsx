@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { useBookingModal } from '@/components/BookingModalProvider'
 
 const singleSessions = [
@@ -140,6 +141,12 @@ export default function RuchnoyMassazhContent() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
       <div className="container mx-auto px-4 sm:px-6">
+        <Breadcrumbs
+          items={[
+            { name: 'Главная', href: '/' },
+            { name: 'Ручной массаж', href: '/ruchnoy-massazh/' },
+          ]}
+        />
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

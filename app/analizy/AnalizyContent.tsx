@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { useBookingModal } from '@/components/BookingModalProvider'
 
 const analysisCategories = [
@@ -117,6 +118,12 @@ export default function AnalizyContent() {
   return (
     <div className="pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6">
+        <Breadcrumbs
+          items={[
+            { name: 'Главная', href: '/' },
+            { name: 'Анализы и чек-апы', href: '/analizy/' },
+          ]}
+        />
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

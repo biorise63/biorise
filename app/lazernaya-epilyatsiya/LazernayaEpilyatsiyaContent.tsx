@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { useBookingModal } from '@/components/BookingModalProvider'
 import { CheckCircle2, Droplets, Leaf, ShieldCheck, Sparkles } from 'lucide-react'
 
@@ -49,6 +50,12 @@ export default function LazernayaEpilyatsiyaContent() {
   return (
     <div className="pb-20 pt-32 sm:pt-36">
       <div className="container mx-auto px-4 sm:px-6">
+        <Breadcrumbs
+          items={[
+            { name: 'Главная', href: '/' },
+            { name: 'Лазерная эпиляция', href: '/lazernaya-epilyatsiya/' },
+          ]}
+        />
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

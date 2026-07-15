@@ -10,6 +10,7 @@ import {
   Sparkles,
   Zap,
 } from 'lucide-react'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { CardItem, ExpandingCards } from '@/components/ui/expanding-cards'
 
 const supplements: CardItem[] = [
@@ -102,6 +103,13 @@ export default function BadyContent() {
       <section className="pb-14 pt-[calc(var(--header-height)+90px)] sm:pb-16 sm:pt-[calc(var(--header-height)+96px)] lg:pb-20 lg:pt-[calc(var(--header-height)+88px)]">
         <div className="container mx-auto px-6">
           <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-10">
+            <Breadcrumbs
+              items={[
+                { name: 'Главная', href: '/' },
+                { name: 'БАДЫ', href: '/bady/' },
+              ]}
+              className="justify-center"
+            />
             <h1 className="text-3xl font-heading font-light text-olive-primary sm:text-4xl md:text-5xl">
               БАДЫ BIORISE
             </h1>

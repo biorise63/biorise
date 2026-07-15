@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
   title: 'Политика обработки cookie | BIORISE',
@@ -13,6 +14,12 @@ export default function CookiePolicyPage() {
       <Header />
       <main className="min-h-screen bg-white pb-16 pt-32">
         <div className="container mx-auto max-w-4xl px-6">
+          <Breadcrumbs
+            items={[
+              { name: 'Главная', href: '/' },
+              { name: 'Политика cookie', href: '/cookie-policy/' },
+            ]}
+          />
           <h1 className="mb-8 text-3xl font-heading font-light text-olive-primary sm:text-4xl md:text-5xl">
             Политика обработки cookie
           </h1>
@@ -107,4 +114,3 @@ export default function CookiePolicyPage() {
     </>
   )
 }
-

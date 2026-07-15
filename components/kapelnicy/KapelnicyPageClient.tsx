@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InfusionPageLayout from '@/components/kapelnicy/InfusionPageLayout'
@@ -68,6 +69,12 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
       <OffCanvasMenu isOpen={isOffCanvasOpen} onClose={() => setIsOffCanvasOpen(false)} categories={menu} />
       <InfusionPageLayout sidebarCategories={menu}>
         <div className="space-y-12 sm:space-y-16">
+          <Breadcrumbs
+            items={[
+              { name: 'Главная', href: '/' },
+              { name: 'Капельницы', href: '/kapelnicy/' },
+            ]}
+          />
           <section className="relative overflow-hidden rounded-[28px] border border-olive-primary/10 bg-white/80 p-5 shadow-premium sm:p-7">
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-olive-primary/10 blur-3xl" />
             <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

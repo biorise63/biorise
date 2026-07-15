@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
   title: 'Политика конфиденциальности | BIORISE',
@@ -12,6 +13,12 @@ export default function PrivacyPage() {
       <Header />
       <main className="min-h-screen bg-white pt-32 pb-16">
         <div className="container mx-auto px-6 max-w-4xl">
+          <Breadcrumbs
+            items={[
+              { name: 'Главная', href: '/' },
+              { name: 'Политика конфиденциальности', href: '/privacy/' },
+            ]}
+          />
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary mb-8 font-light">
             Политика конфиденциальности
           </h1>
