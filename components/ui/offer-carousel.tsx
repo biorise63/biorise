@@ -430,7 +430,7 @@ function OfferCard({ offer }: { offer: Offer }) {
     >
       <Link
         href={offer.href}
-        className="group relative flex h-[368px] w-[248px] shrink-0 overflow-hidden rounded-[24px] border border-olive-primary/10 bg-white shadow-[0_20px_48px_rgba(79,93,60,0.10)] transition-transform duration-300 hover:-translate-y-1 sm:h-[432px] sm:w-[312px] sm:rounded-[28px]"
+        className="group relative flex h-[368px] w-[248px] shrink-0 overflow-hidden rounded-[24px] border border-olive-primary/10 bg-white transition-transform duration-300 hover:-translate-y-1 sm:h-[432px] sm:w-[312px] sm:rounded-[28px]"
       >
         <div className="absolute inset-x-0 top-0 h-[44%] overflow-hidden sm:h-[50%]">
           <Image
