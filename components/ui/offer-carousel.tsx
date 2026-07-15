@@ -430,7 +430,7 @@ function OfferCard({ offer }: { offer: Offer }) {
     >
       <Link
         href={offer.href}
-        className="group relative flex h-[368px] w-[248px] shrink-0 overflow-hidden rounded-[24px] border border-olive-primary/10 bg-[#f4efe6] shadow-[0_20px_48px_rgba(79,93,60,0.10)] transition-transform duration-300 hover:-translate-y-1 sm:h-[432px] sm:w-[312px] sm:rounded-[28px]"
+        className="group relative flex h-[368px] w-[248px] shrink-0 overflow-hidden rounded-[24px] border border-olive-primary/10 bg-white shadow-[0_20px_48px_rgba(79,93,60,0.10)] transition-transform duration-300 hover:-translate-y-1 sm:h-[432px] sm:w-[312px] sm:rounded-[28px]"
       >
         <div className="absolute inset-x-0 top-0 h-[44%] overflow-hidden sm:h-[50%]">
           <Image
@@ -440,10 +440,10 @@ function OfferCard({ offer }: { offer: Offer }) {
             sizes="(max-width: 640px) 248px, 312px"
             className="object-contain scale-[0.86] object-center transition-transform duration-700 group-hover:scale-[0.9] sm:object-contain sm:scale-[0.84] sm:group-hover:scale-[0.88]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#f4efe6] via-[#f4efe6]/10 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/10 to-black/10" />
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex h-[60%] flex-col justify-between rounded-t-[24px] bg-[linear-gradient(180deg,rgba(244,239,230,0.92)_0%,#f4efe6_18%,#ffffff_100%)] px-4 pb-5 pt-4 sm:h-[54%] sm:rounded-t-[30px] sm:p-5">
+        <div className="absolute bottom-0 left-0 right-0 flex h-[60%] flex-col justify-between rounded-t-[24px] bg-white px-4 pb-5 pt-4 sm:h-[54%] sm:rounded-t-[30px] sm:p-5">
           <div className="space-y-2.5 sm:space-y-3">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-olive-primary/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-olive-primary/70 sm:gap-2 sm:px-3 sm:text-[11px] sm:tracking-[0.14em]">
               <Tag className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
@@ -514,17 +514,14 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
     }, [])
 
     return (
-      <div
-        ref={ref}
-        className={cn(
-          'relative overflow-hidden rounded-[28px] border border-olive-primary/10 bg-[linear-gradient(180deg,#ffffff_0%,#f6f1e8_100%)] px-3 py-5 shadow-[0_30px_80px_rgba(79,93,60,0.10)] sm:rounded-[36px] sm:px-6 sm:py-7 lg:px-8',
+        <div
+          ref={ref}
+          className={cn(
+          'relative overflow-hidden rounded-[28px] border border-olive-primary/10 bg-white px-3 py-5 shadow-[0_30px_80px_rgba(79,93,60,0.10)] sm:rounded-[36px] sm:px-6 sm:py-7 lg:px-8',
           className,
         )}
         {...props}
       >
-        <div className="pointer-events-none absolute right-[-72px] top-[-72px] h-48 w-48 rounded-full bg-olive-primary/8 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-100px] left-[-60px] h-56 w-56 rounded-full bg-[#d8cab3]/45 blur-3xl" />
-
         <div className="relative z-[1] mb-5 flex flex-col gap-3 sm:mb-6 sm:gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="hidden items-center gap-3 lg:flex">
             <button
