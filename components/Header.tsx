@@ -387,9 +387,9 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className={`md:hidden overflow-y-auto overscroll-contain bg-white/98 px-1 pb-5 pt-4 shadow-premium ${
+              className={`md:hidden overflow-y-auto overscroll-contain bg-[#f4efe6] px-1 pb-5 pt-4 shadow-premium ${
                 isHomePage
-                  ? 'fixed inset-x-4 top-20 z-[119] max-h-[calc(100vh-96px)] rounded-2xl border border-olive-primary/10'
+                  ? 'fixed inset-x-4 top-24 z-[119] max-h-[calc(100vh-112px)] rounded-2xl border border-olive-primary/10'
                   : 'relative z-[101] mt-4 max-h-[calc(100vh-160px)] rounded-b-2xl border-t border-olive-primary/10'
               }`}
             >
@@ -554,7 +554,7 @@ export default function Header() {
       {isHomePage && (
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="fixed right-4 top-4 z-[120] inline-flex h-12 w-12 items-center justify-center rounded-full border border-olive-primary/10 bg-white/96 text-olive-primary shadow-premium backdrop-blur-sm md:hidden"
+          className="fixed right-4 top-7 z-[120] inline-flex h-12 w-12 items-center justify-center rounded-full border border-olive-primary/10 bg-[#f4efe6] text-olive-primary shadow-premium backdrop-blur-sm md:hidden"
           aria-label={isMobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
         >
           <svg
