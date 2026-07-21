@@ -36,6 +36,12 @@ body {
   overflow-x: hidden;
 }
 
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
 /* Kapelnicy layout spacing */
 .kapelnicy-page {
   padding-top: var(--header-height);
