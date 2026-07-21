@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Logo from './Logo'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useBookingModal } from './BookingModalProvider'
 
 interface ClinicAddress {
@@ -35,6 +36,7 @@ const clinics: ClinicAddress[] = [
 ]
 
 export default function Header() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(clinics[0] ?? null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -43,6 +45,7 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
   const { openBookingModal } = useBookingModal()
+  const isHomePage = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +76,12 @@ export default function Header() {
   return (
     <>
       {/* Top Bar with Location and Clinic Selection - Fixed, separate from Hero */}
-      <div className="fixed top-0 left-0 right-0 z-[110] backdrop-blur-sm border-b border-olive-primary/10" style={{ backgroundColor: 'rgba(94, 111, 82, 0.5)' }}>
+      <div
+        className={`left-0 right-0 z-[110] border-b border-olive-primary/10 backdrop-blur-sm ${
+          isHomePage ? 'relative sm:fixed sm:top-0' : 'fixed top-0'
+        }`}
+        style={{ backgroundColor: 'rgba(94, 111, 82, 0.5)' }}
+      >
         <div className="container mx-auto px-4 sm:px-6 py-2">
           <div className="flex items-center justify-between gap-2 sm:gap-4">
             <div className="flex items-center gap-2 sm:gap-4 md:gap-6 flex-wrap min-w-0 flex-1">
@@ -151,7 +159,11 @@ export default function Header() {
       </div>
 
       {/* Opening Announcement */}
-      <div className="fixed left-0 right-0 top-10 z-[105] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm">
+      <div
+        className={`left-0 right-0 z-[105] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm ${
+          isHomePage ? 'relative sm:fixed sm:top-10' : 'fixed top-10'
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex min-h-8 flex-wrap items-center justify-center gap-1.5 py-1.5 text-center text-[10px] font-medium leading-tight text-olive-primary sm:min-h-10 sm:gap-2 sm:py-2 sm:text-sm">
             <span className="hidden h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/80 text-[#b48a3c] shadow-sm sm:inline-flex">
@@ -190,7 +202,9 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-        className={`fixed top-[98px] left-0 right-0 z-[100] transition-all duration-300 sm:top-[80px] ${
+        className={`left-0 right-0 z-[100] transition-all duration-300 ${
+          isHomePage ? 'relative sm:fixed sm:top-[80px]' : 'fixed top-[98px] sm:top-[80px]'
+        } ${
           scrolled ? 'bg-white/98 backdrop-blur-sm shadow-premium' : 'bg-white/95 backdrop-blur-sm'
         }`}
       >
@@ -345,24 +359,26 @@ export default function Header() {
             </div>
             
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-olive-primary p-2"
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {!isHomePage && (
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden text-olive-primary p-2"
+                aria-label="Toggle menu"
               >
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {isMobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            )}
           </div>
           
           {/* Mobile Menu */}
@@ -371,7 +387,11 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="relative z-[101] md:hidden mt-4 max-h-[calc(100vh-160px)] overflow-y-auto overscroll-contain rounded-b-2xl border-t border-olive-primary/10 bg-white/98 px-1 pb-5 pt-4 shadow-premium"
+              className={`md:hidden overflow-y-auto overscroll-contain bg-white/98 px-1 pb-5 pt-4 shadow-premium ${
+                isHomePage
+                  ? 'fixed inset-x-4 top-20 z-[119] max-h-[calc(100vh-96px)] rounded-2xl border border-olive-primary/10'
+                  : 'relative z-[101] mt-4 max-h-[calc(100vh-160px)] rounded-b-2xl border-t border-olive-primary/10'
+              }`}
             >
               <div className="flex flex-col space-y-4 font-menu">
                 <Link
@@ -530,6 +550,27 @@ export default function Header() {
           )}
         </div>
       </motion.header>
+
+      {isHomePage && (
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="fixed right-4 top-4 z-[120] inline-flex h-12 w-12 items-center justify-center rounded-full border border-olive-primary/10 bg-white/96 text-olive-primary shadow-premium backdrop-blur-sm md:hidden"
+          aria-label={isMobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      )}
     </>
   )
 }
