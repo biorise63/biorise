@@ -1090,7 +1090,7 @@ html.lenis {
 
 /* Catalog Button */
 .catalog-button {
-  top: calc(env(safe-area-inset-top, 0px) + 82px);
+  top: calc(env(safe-area-inset-top, 0px) + 188px);
   left: 16px;
   min-height: 48px;
   max-width: calc(100vw - 88px);
@@ -1105,7 +1105,7 @@ html.lenis {
 
 @media (max-width: 420px) {
   .catalog-button {
-    top: calc(env(safe-area-inset-top, 0px) + 78px);
+    top: calc(env(safe-area-inset-top, 0px) + 180px);
     left: 12px;
     max-width: calc(100vw - 80px);
     padding-left: 14px;
