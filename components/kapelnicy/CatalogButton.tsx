@@ -8,7 +8,7 @@ export default function CatalogButton({ onClick }: CatalogButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="catalog-button fixed z-40 inline-flex items-center gap-2 rounded-full bg-olive-primary px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-olive-light md:hidden"
+      className="inline-flex items-center gap-2 rounded-full bg-olive-primary px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-olive-light md:hidden"
       aria-label="Открыть каталог капельниц"
     >
       <svg

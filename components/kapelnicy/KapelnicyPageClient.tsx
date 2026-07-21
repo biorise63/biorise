@@ -65,10 +65,12 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
   return (
     <>
       <Header />
-      <CatalogButton onClick={() => setIsOffCanvasOpen(true)} />
       <OffCanvasMenu isOpen={isOffCanvasOpen} onClose={() => setIsOffCanvasOpen(false)} categories={menu} />
       <InfusionPageLayout sidebarCategories={menu}>
         <div className="space-y-12 sm:space-y-16">
+          <div className="pt-2 sm:hidden">
+            <CatalogButton onClick={() => setIsOffCanvasOpen(true)} />
+          </div>
           <Breadcrumbs
             items={[
               { name: 'Главная', href: '/' },

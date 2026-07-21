@@ -1088,32 +1088,6 @@ html.lenis {
   
 }
 
-/* Catalog Button */
-.catalog-button {
-  top: calc(env(safe-area-inset-top, 0px) + 188px);
-  left: 16px;
-  min-height: 48px;
-  max-width: calc(100vw - 88px);
-  background: rgba(94, 111, 82, 0.7) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.catalog-button:hover {
-  background: rgba(94, 111, 82, 0.85) !important;
-}
-
-@media (max-width: 420px) {
-  .catalog-button {
-    top: calc(env(safe-area-inset-top, 0px) + 180px);
-    left: 12px;
-    max-width: calc(100vw - 80px);
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: 13px;
-  }
-}
-
 /* Dropdown позиционирование без зазора */
 .has-dropdown > div[class*="absolute"] {
   top: calc(100% - 2px) !important;
