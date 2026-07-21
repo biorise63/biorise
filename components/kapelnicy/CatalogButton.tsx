@@ -8,12 +8,12 @@ export default function CatalogButton({ onClick }: CatalogButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="md:hidden fixed z-40 bg-olive-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-olive-light transition-all catalog-button"
+      className="catalog-button fixed z-40 inline-flex items-center gap-2 rounded-full bg-olive-primary px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-olive-light md:hidden"
       aria-label="Открыть каталог капельниц"
     >
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -23,6 +23,7 @@ export default function CatalogButton({ onClick }: CatalogButtonProps) {
       >
         <path d="M4 6h16M4 12h16M4 18h16" />
       </svg>
+      <span>Каталог капельниц</span>
     </button>
   )
 }

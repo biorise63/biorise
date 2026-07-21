@@ -47,6 +47,8 @@ export default function Header() {
   const servicesRef = useRef<HTMLDivElement>(null)
   const { openBookingModal } = useBookingModal()
   const isHomePage = pathname === '/'
+  const isKapelnicyPage = pathname === '/kapelnicy' || pathname.startsWith('/kapelnicy/')
+  const useRelativeMobileHeader = isHomePage || isKapelnicyPage
 
   useEffect(() => {
     const handleScroll = () => {
@@ -135,7 +137,7 @@ export default function Header() {
       {/* Top Bar with Location and Clinic Selection - Fixed, separate from Hero */}
       <div
         className={`left-0 right-0 z-[110] border-b border-olive-primary/10 backdrop-blur-sm ${
-          isHomePage ? 'relative sm:fixed sm:top-0' : 'fixed top-0'
+          useRelativeMobileHeader ? 'relative sm:fixed sm:top-0' : 'fixed top-0'
         }`}
         style={{ backgroundColor: 'rgba(94, 111, 82, 0.5)' }}
       >
@@ -218,7 +220,7 @@ export default function Header() {
       {/* Opening Announcement */}
       <div
         className={`left-0 right-0 z-[105] border-b border-olive-primary/10 bg-[#f4efe6]/95 backdrop-blur-sm ${
-          isHomePage ? 'relative sm:fixed sm:top-10' : 'fixed top-10'
+          useRelativeMobileHeader ? 'relative sm:fixed sm:top-10' : 'fixed top-10'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
@@ -260,7 +262,7 @@ export default function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
         className={`left-0 right-0 z-[100] transition-all duration-300 ${
-          isHomePage ? 'relative sm:fixed sm:top-[80px]' : 'fixed top-[98px] sm:top-[80px]'
+          useRelativeMobileHeader ? 'relative sm:fixed sm:top-[80px]' : 'fixed top-[98px] sm:top-[80px]'
         } ${
           scrolled ? 'bg-white/98 backdrop-blur-sm shadow-premium' : 'bg-white/95 backdrop-blur-sm'
         }`}
@@ -416,7 +418,7 @@ export default function Header() {
             </div>
             
             {/* Mobile Menu Button */}
-            {!isHomePage && (
+            {!useRelativeMobileHeader && (
               <button
                 onClick={toggleMobileMenu}
                 className="md:hidden p-2 text-olive-primary"
@@ -440,7 +442,7 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {(isHomePage || isMobileMenuOpen) && (
+      {(useRelativeMobileHeader || isMobileMenuOpen) && (
         <button
           onClick={toggleMobileMenu}
           className="fixed right-4 z-[210] inline-flex h-12 w-12 items-center justify-center rounded-full border border-olive-primary/10 bg-[#f4efe6] text-olive-primary shadow-premium backdrop-blur-sm md:hidden"

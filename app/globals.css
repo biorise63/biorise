@@ -140,10 +140,10 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .kapelnicy-page {
-    padding-top: calc(var(--header-height) - 20px);
+    padding-top: 0;
   }
   .kapelnicy-container {
-    padding-top: 16px;
+    padding-top: 8px;
   }
   .kapelnicy-layout {
     display: block;
@@ -1090,11 +1090,10 @@ html.lenis {
 
 /* Catalog Button */
 .catalog-button {
-  top: calc(var(--header-height) + 16px);
+  top: calc(env(safe-area-inset-top, 0px) + 82px);
   left: 16px;
-  width: 48px;
-  height: 48px;
-  padding: 0;
+  min-height: 48px;
+  max-width: calc(100vw - 88px);
   background: rgba(94, 111, 82, 0.7) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -1102,6 +1101,17 @@ html.lenis {
 
 .catalog-button:hover {
   background: rgba(94, 111, 82, 0.85) !important;
+}
+
+@media (max-width: 420px) {
+  .catalog-button {
+    top: calc(env(safe-area-inset-top, 0px) + 78px);
+    left: 12px;
+    max-width: calc(100vw - 80px);
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 13px;
+  }
 }
 
 /* Dropdown позиционирование без зазора */

@@ -70,7 +70,7 @@ export default function OffCanvasMenu({ isOpen, onClose, categories }: OffCanvas
       <aside className="off-canvas-sidebar">
         {/* Header with close button */}
         <div className="off-canvas-header">
-          <h2 className="off-canvas-title">Категории капельниц</h2>
+          <h2 className="off-canvas-title">Каталог капельниц</h2>
           <button
             onClick={onClose}
             className="off-canvas-close"
