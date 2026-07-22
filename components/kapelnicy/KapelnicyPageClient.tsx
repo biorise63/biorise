@@ -84,8 +84,7 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-olive-primary/10 blur-3xl" />
             <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/50">Каталог BIORISE</p>
-                <p className="mt-2 mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/50">Выезд на дом</p>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/50">Выезд на дом</p>
                 <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">
                   Капельница в комфортных условиях
                 </h2>
