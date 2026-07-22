@@ -110,16 +110,8 @@ export default function HomeInfusionsPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="https://klientiks.ru/app/united/BIORISE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-olive-primary px-6 py-3 text-base font-medium text-white shadow-premium transition-colors hover:bg-olive-light"
-                >
-                  Записаться на выезд
-                </a>
-                <a
                   href="tel:+79967499747"
-                  className="inline-flex items-center justify-center rounded-full border border-olive-primary/20 bg-white px-6 py-3 text-base font-medium text-olive-primary transition-colors hover:bg-beige-background"
+                  className="inline-flex items-center justify-center rounded-full bg-olive-primary px-6 py-3 text-base font-medium text-white shadow-premium transition-colors hover:bg-olive-light"
                 >
                   Позвонить врачу
                 </a>
@@ -241,12 +233,10 @@ export default function HomeInfusionsPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://klientiks.ru/app/united/BIORISE"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+79967499747"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-medium text-olive-primary transition-colors hover:bg-white/90"
               >
-                Оставить заявку
+                Позвонить врачу
               </a>
               <Link
                 href="/kapelnicy/"
