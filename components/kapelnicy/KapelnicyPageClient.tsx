@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -91,6 +92,12 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
                 <p className="mt-3 text-sm leading-relaxed text-olive-primary/70 sm:text-base">
                   Врач может приехать к вам домой по Самаре: оценить состояние, уточнить противопоказания и подобрать состав процедуры.
                 </p>
+                <Link
+                  href="/kapelnicy/na-domu/"
+                  className="mt-4 inline-flex items-center text-sm font-semibold text-olive-primary transition-colors hover:text-olive-light"
+                >
+                  Подробнее о капельницах на дому →
+                </Link>
               </div>
               <div className="rounded-3xl bg-olive-primary px-5 py-4 text-white shadow-premium sm:px-6">
                 <span className="block text-xs uppercase tracking-[0.14em] text-white/60">Стоимость выезда</span>
