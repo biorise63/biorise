@@ -169,15 +169,19 @@ export const AnimatedTestimonials = ({
             <button
               onClick={handlePrev}
               aria-label="Показать предыдущего врача"
+              type="button"
               className="h-7 w-7 rounded-full bg-beige-background hover:bg-olive-primary/20 flex items-center justify-center group/button transition-colors"
             >
+              <span className="sr-only">Показать предыдущего врача</span>
               <IconArrowLeft className="h-5 w-5 text-olive-primary group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Показать следующего врача"
+              type="button"
               className="h-7 w-7 rounded-full bg-beige-background hover:bg-olive-primary/20 flex items-center justify-center group/button transition-colors"
             >
+              <span className="sr-only">Показать следующего врача</span>
               <IconArrowRight className="h-5 w-5 text-olive-primary group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
           </div>
