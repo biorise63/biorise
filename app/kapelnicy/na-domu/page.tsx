@@ -130,7 +130,7 @@ export default function HomeInfusionsPage() {
                 </div>
                 <div className="rounded-2xl bg-beige-background/80 p-4">
                   <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary/50">Программ в каталоге</span>
-                  <strong className="mt-2 block text-2xl text-olive-primary">{totalPrograms}</strong>
+                  <strong className="mt-2 block text-2xl text-olive-primary">более 26</strong>
                   <span className="mt-1 block text-sm text-olive-primary/68">Ниже собран весь каталог BIORISE с перелинковкой</span>
                 </div>
               </div>
