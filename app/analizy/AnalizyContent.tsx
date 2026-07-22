@@ -7,17 +7,17 @@ import { useBookingModal } from '@/components/BookingModalProvider'
 const analysisCategories = [
   {
     title: 'Витаминный чек-ап',
-    description: 'Оценка уровня витаминов и микроэлементов при усталости, снижении иммунитета и повышенных нагрузках.',
+    description: 'Показывает, хватает ли вам витаминов и микроэлементов, когда силы на нуле или иммунитет просел.',
     icon: 'spark',
   },
   {
     title: 'Гормональный профиль',
-    description: 'Контроль гормонального фона для диагностики причин колебаний веса, настроения и самочувствия.',
+    description: 'Помогает разобраться с весом, циклом, настроением и скачками энергии.',
     icon: 'hormone',
   },
   {
     title: 'Базовый check-up',
-    description: 'Популярные базовые исследования для профилактического контроля здоровья и раннего выявления рисков.',
+    description: 'Набор анализов для ежегодной проверки без лишних исследований.',
     icon: 'shield',
   },
 ]
@@ -138,8 +138,8 @@ export default function AnalizyContent() {
               <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-heading font-light text-olive-primary leading-tight">
                 Анализы и check-up программы
               </h1>
-              <p className="mt-5 text-lg text-olive-primary/80 max-w-xl leading-relaxed">
-                Современная лабораторная диагностика с быстрыми сроками и понятной интерпретацией. Выбрали самые востребованные анализы и комплексные профили.
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-olive-primary/80">
+                Сдайте анализы без лишних назначений. Мы собрали исследования и чек-апы, с которых пациенты чаще всего начинают проверку здоровья.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <button
@@ -220,7 +220,7 @@ export default function AnalizyContent() {
             <div className="flex items-end justify-between gap-4 mb-5">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-heading text-olive-primary">Популярные чек-апы</h2>
-                <p className="text-olive-primary/70 text-sm sm:text-base mt-1">Готовые комплексы исследований для частых жизненных запросов.</p>
+                <p className="mt-1 text-sm text-olive-primary/70 sm:text-base">Комплексы, которые пациенты выбирают чаще всего.</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -251,7 +251,7 @@ export default function AnalizyContent() {
           <div className="bg-white rounded-3xl border border-olive-primary/20 shadow-premium overflow-hidden">
             <div className="bg-gradient-to-r from-olive-primary/10 to-olive-primary/5 border-b border-olive-primary/20 p-5 sm:p-6">
               <h2 className="text-2xl sm:text-3xl font-heading text-olive-primary mb-2">Базовые популярные анализы</h2>
-              <p className="text-olive-primary/70 text-sm sm:text-base">Часто назначаемые исследования для первичной оценки состояния здоровья.</p>
+              <p className="text-sm text-olive-primary/70 sm:text-base">Анализы, с которых чаще всего начинают проверку.</p>
             </div>
             <div className="divide-y divide-olive-primary/10">
               {basicAnalyses.map((item, index) => (

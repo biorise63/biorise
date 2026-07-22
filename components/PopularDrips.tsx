@@ -20,7 +20,7 @@ export default function PopularDrips() {
               {getIcon('health')}
             </div>
             <h2 className="font-heading text-olive-primary font-light text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem]">
-              Индивидуальный подбор программы для вашего здоровья
+              Подбор капельницы под вашу задачу
             </h2>
           </div>
         </motion.div>

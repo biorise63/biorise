@@ -9,19 +9,19 @@ import { CheckCircle2, Droplets, Leaf, ShieldCheck, Sparkles } from 'lucide-reac
 const benefits = [
   {
     icon: Sparkles,
-    text: 'Эффективное удаление нежелательных волос',
+    text: 'Волосы уходят курсом без бритья через день',
   },
   {
     icon: Leaf,
-    text: 'Безболезненная процедура и комфорт',
+    text: 'Кожа переносит процедуру спокойно',
   },
   {
     icon: Droplets,
-    text: 'Длительный результат после курса процедур',
+    text: 'Результат держится дольше, чем после воска или станка',
   },
   {
     icon: ShieldCheck,
-    text: 'Индивидуальный подход и безопасное оборудование',
+    text: 'Специалист подбирает параметры под фототип и зону',
   },
 ]
 
@@ -166,9 +166,7 @@ export default function LazernayaEpilyatsiyaContent() {
           <div className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-olive-primary" />
             <p className="text-sm leading-relaxed text-olive-primary/80 sm:text-base">
-              Мы выбираем главное — безопасность и здоровье наших пациентов.
-              Перед курсом специалист подбирает параметры процедуры
-              индивидуально по фототипу кожи и зоне обработки.
+              Перед курсом специалист оценивает фототип кожи, зону обработки и противопоказания. Поэтому процедура проходит предсказуемо и без лишнего риска.
             </p>
           </div>
         </motion.section>

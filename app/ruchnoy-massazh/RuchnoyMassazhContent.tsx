@@ -51,17 +51,17 @@ const benefits = [
 const massageTypes = [
   {
     title: 'Медицинский массаж',
-    text: 'Подходит при мышечном напряжении, дискомфорте в спине, шее и плечевом поясе. Специалист работает с зонами перегрузки аккуратно и последовательно.',
+    text: 'Подходит при напряжении, боли в спине, шее и плечах. Специалист работает с зонами перегрузки без спешки и лишней силы.',
     icon: 'medical',
   },
   {
     title: 'Восстановительный массаж',
-    text: 'Помогает вернуть ощущение легкости после стресса, сидячей работы, тренировок и общей усталости.',
+    text: 'Помогает прийти в себя после стресса, сидячей работы, тренировок и тяжёлой недели.',
     icon: 'recovery',
   },
   {
     title: 'Антицеллюлитный массаж',
-    text: 'Направлен на улучшение микроциркуляции, тонуса кожи и качества тканей. Хорошо работает курсом.',
+    text: 'Работает с микроциркуляцией, плотностью тканей и рельефом кожи. Лучший результат даёт курс.',
     icon: 'body',
   },
 ]
@@ -165,7 +165,7 @@ export default function RuchnoyMassazhContent() {
                 Ручной массаж в Самаре
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-olive-primary/78 sm:text-xl">
-                Профессиональный подход к вашему здоровью и комфорту: мягкая работа с напряжением, мышечными зажимами, усталостью и качеством тканей.
+                Снимаем мышечное напряжение, работаем со спиной, шеей, отёчностью и усталостью. Формат сеанса специалист подбирает под вашу задачу.
               </p>
 
               <div className="mt-7 grid gap-3 sm:grid-cols-3">
@@ -205,9 +205,9 @@ export default function RuchnoyMassazhContent() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-olive-primary/45 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/35 bg-white/80 p-4 text-olive-primary shadow-premium backdrop-blur-md sm:left-auto sm:w-[320px]">
-                <p className="text-sm font-semibold">Курс подбирается индивидуально</p>
+                <p className="text-sm font-semibold">Курс без шаблона</p>
                 <p className="mt-1 text-sm leading-relaxed text-olive-primary/70">
-                  Интенсивность, длительность и зоны работы специалист определяет после консультации.
+                  Зоны, темп и глубину проработки специалист определяет после короткой консультации.
                 </p>
               </div>
             </div>
@@ -262,9 +262,9 @@ export default function RuchnoyMassazhContent() {
             <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
             <div className="relative">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/55">Подход BIORISE</p>
-              <h2 className="mt-3 text-3xl font-heading font-light sm:text-4xl">Не просто расслабление</h2>
+              <h2 className="mt-3 text-3xl font-heading font-light sm:text-4xl">Массаж как часть восстановления</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78">
-                Ручной массаж в клинике BIORISE рассматривается как часть восстановительной медицины: специалист учитывает жалобы, образ жизни, уровень нагрузки и противопоказания. Такой подход особенно важен при болях в спине, мышечных зажимах, отёчности и снижении общего тонуса.
+                В BIORISE массаж не сводят к расслаблению. Специалист смотрит на жалобы, образ жизни, нагрузку и противопоказания, а потом собирает схему сеансов под вас. Такой подход помогает при боли в спине, мышечных зажимах, отёчности и постоянной усталости.
               </p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {['Спина и шейно-воротниковая зона', 'Общий массаж тела', 'Антицеллюлитные протоколы', 'Курсовое восстановление'].map((item) => (
@@ -291,7 +291,7 @@ export default function RuchnoyMassazhContent() {
               <h2 className="mt-3 text-3xl font-heading font-light text-olive-primary sm:text-4xl">Разовые сеансы</h2>
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-olive-primary/68">
-              Выберите длительность под задачу: короткий восстановительный сеанс, полноценная работа с несколькими зонами или глубокий расширенный протокол.
+              Можно взять короткий сеанс на одну зону или длинный формат, если нужна плотная работа со спиной и телом.
             </p>
           </div>
 

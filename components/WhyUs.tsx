@@ -35,11 +35,11 @@ export default function WhyUs() {
             className="space-y-6 flex flex-col"
           >
             <p className="text-base md:text-lg leading-relaxed text-olive-primary">
-              BIORISE в Самаре — лицензированная клиника внутривенной инфузионной терапии и капельниц. Мы проводим процедуры в формате современной IV-терапии: витаминные инфузии для восполнения дефицитов, детокс-программы для поддержки печени и общего очищения организма, курсы для укрепления иммунитета и восстановления после ОРВИ, а также решения при стрессе, хронической усталости и повышенных физических нагрузках. Состав капельниц подбирается врачом-терапевтом индивидуально с учетом состояния здоровья и результатов анализов.
+              BIORISE в Самаре работает с IV-терапией, капельницами, анализами и чек-апами. Врач подбирает состав под вашу задачу: закрыть дефициты, восстановиться после болезни, снять последствия стресса, поддержать печень или вернуть тонус после нагрузок.
             </p>
-            
+
             <p className="text-base md:text-lg leading-relaxed text-olive-primary">
-              Перед началом процедур специалист собирает подробный анамнез, оценивает возможные противопоказания и подробно объясняет принцип действия назначенных препаратов. При необходимости пациенты могут сдать лабораторные анализы или пройти комплексный чек-ап организма для точного определения дефицитов витаминов и микроэлементов и составления персональной программы восстановления.
+              Перед процедурой врач собирает анамнез, проверяет противопоказания и объясняет, зачем нужен каждый препарат. Если нужно, вы сдаёте анализы и получаете схему курса по результатам, а не по шаблону.
             </p>
 
             <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-olive-primary mb-4 mt-8">
@@ -49,19 +49,19 @@ export default function WhyUs() {
             <ul className="list-none space-y-3">
               <li className="flex items-start gap-3">
                 <span className="text-olive-primary mt-1">•</span>
-                <span className="text-base md:text-lg leading-relaxed text-olive-primary">витаминные и детокс-капельницы под различные цели и состояния;</span>
+                <span className="text-base md:text-lg leading-relaxed text-olive-primary">капельницы под дефициты, восстановление и детокс;</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-olive-primary mt-1">•</span>
-                <span className="text-base md:text-lg leading-relaxed text-olive-primary">современные протоколы IV-терапии и внутривенных инфузий;</span>
+                <span className="text-base md:text-lg leading-relaxed text-olive-primary">врачебный подбор состава и контроль процедуры;</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-olive-primary mt-1">•</span>
-                <span className="text-base md:text-lg leading-relaxed text-olive-primary">комфортные кабинеты с удобными креслами для процедур;</span>
+                <span className="text-base md:text-lg leading-relaxed text-olive-primary">спокойные кабинеты с удобными креслами;</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-olive-primary mt-1">•</span>
-                <span className="text-base md:text-lg leading-relaxed text-olive-primary">удобную запись на капельницы онлайн и по телефону.</span>
+                <span className="text-base md:text-lg leading-relaxed text-olive-primary">запись онлайн и по телефону без долгого ожидания.</span>
               </li>
             </ul>
           </motion.div>

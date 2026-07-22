@@ -61,8 +61,8 @@ export default function Doctors() {
               Наши врачи
             </h2>
           </div>
-          <p className="text-base sm:text-lg text-olive-primary/70 max-w-2xl mx-auto">
-            Профессионалы с многолетним опытом в области внутривенной терапии
+          <p className="mx-auto max-w-2xl text-base text-olive-primary/70 sm:text-lg">
+            Врачи и специалисты, которые ведут пациентов BIORISE
           </p>
         </motion.div>
 
