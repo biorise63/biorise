@@ -464,100 +464,96 @@ export default function Header() {
         </button>
       )}
 
-      <div
-        className={`fixed inset-0 z-[200] transition-opacity duration-300 md:hidden ${
-          isMobileMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-        }`}
-        aria-hidden={!isMobileMenuOpen}
-      >
-        <button
-          type="button"
-          aria-label="Закрыть меню"
-          className="absolute inset-0 bg-black/28 backdrop-blur-[2px]"
-          onClick={closeMobileMenu}
-        />
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[200] opacity-100 transition-opacity duration-300 md:hidden">
+          <button
+            type="button"
+            aria-label="Закрыть меню"
+            className="absolute inset-0 bg-black/28 backdrop-blur-[2px]"
+            onClick={closeMobileMenu}
+          />
 
-        <nav
-          className={`absolute inset-0 flex h-[100dvh] w-full flex-col overflow-hidden bg-[#f4efe6] text-olive-primary transition-transform duration-300 ${
-            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-3'
-          }`}
-          style={{
-            paddingTop: 'calc(env(safe-area-inset-top, 0px) + 88px)',
-            paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 24px)',
-          }}
-        >
-          <div className="flex items-center justify-between px-4 pb-4 sm:px-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/55">Меню</p>
-              <p className="mt-1 text-lg font-medium text-olive-primary">BIORISE</p>
-            </div>
-            <button
-              type="button"
-              onClick={closeMobileMenu}
-              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-olive-primary/10 bg-white/70 px-3 text-olive-primary"
-              aria-label="Закрыть меню"
-            >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain px-4 sm:px-6">
-            <div className="flex flex-col space-y-3 font-menu">
-              <Link href="/" onClick={closeMobileMenu} className={mobileLinkClass}>
-                Главная
-              </Link>
-
-              <div className="rounded-2xl border border-olive-primary/10 bg-white/45 p-2">
-                <span className="px-3 pb-2 pt-1 text-sm font-semibold text-olive-primary">Услуги</span>
-                <div className="mt-1 flex flex-col gap-1">
-                  <Link href="/kapelnicy" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы</Link>
-                  <Link href="/bioimpedance" onClick={closeMobileMenu} className={mobileLinkClass}>Биоимпедансный анализ</Link>
-                  <Link href="/bady" onClick={closeMobileMenu} className={mobileLinkClass}>БАДЫ</Link>
-                  <Link href="/apparatnyy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Аппаратный массаж</Link>
-                  <Link href="/ruchnoy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Ручной массаж</Link>
-                  <Link href="/lazernaya-epilyatsiya" onClick={closeMobileMenu} className={mobileLinkClass}>Лазерная эпиляция</Link>
-                  <Link href="/spravki" onClick={closeMobileMenu} className={mobileLinkClass}>Справки</Link>
-                  <Link href="/analizy" onClick={closeMobileMenu} className={mobileLinkClass}>Анализы и ЧЕК-АПЫ</Link>
-                </div>
+          <nav
+            className="absolute inset-0 flex h-[100dvh] w-full translate-y-0 flex-col overflow-hidden bg-[#f4efe6] text-olive-primary transition-transform duration-300"
+            aria-label="Мобильное меню"
+            style={{
+              paddingTop: 'calc(env(safe-area-inset-top, 0px) + 88px)',
+              paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 24px)',
+            }}
+          >
+            <div className="flex items-center justify-between px-4 pb-4 sm:px-6">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/55">Меню</p>
+                <p className="mt-1 text-lg font-medium text-olive-primary">BIORISE</p>
               </div>
-
-              <Link href="/#why-us" onClick={closeMobileMenu} className={mobileLinkClass}>О нас</Link>
-              <Link href="/#gallery" onClick={closeMobileMenu} className={mobileLinkClass}>Акции</Link>
-              <Link href="/articles" onClick={closeMobileMenu} className={mobileLinkClass}>Статьи</Link>
-              <Link href="/#doctors" onClick={closeMobileMenu} className={mobileLinkClass}>Врачи</Link>
-
               <button
-                onClick={() => {
-                  closeMobileMenu()
-                  openBookingModal()
-                }}
-                className="mt-2 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-olive-primary px-6 py-3 text-center text-base text-white transition-colors hover:bg-olive-light"
+                type="button"
+                onClick={closeMobileMenu}
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-olive-primary/10 bg-white/70 px-3 text-olive-primary"
+                aria-label="Закрыть меню"
               >
-                Записаться
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
+            </div>
 
-              <div className="mt-4 border-t border-olive-primary/10 pt-4">
-                <div className="flex items-center gap-4">
-                  <a href="https://t.me/biorise_smr" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#0088cc]" aria-label="Telegram">
-                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.665 3.447 17.03 19.139c-.26 1.176-.944 1.466-1.911.912l-5.278-3.897-2.548 2.453c-.283.283-.52.52-1.07.52l.383-5.436 9.9-8.94c.43-.382-.093-.594-.67-.212L5.58 11.82.314 10.17c-1.15-.36-1.176-1.15.24-1.7L19.067 2.04c.944-.34 1.77.212 1.599 1.407Z" /></svg>
-                  </a>
-                  <a href="https://vk.ru/biorise63" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#0077FF]" aria-label="ВКонтакте">
-                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm5.893 16.07h-1.32c-.493 0-.646-.399-1.54-1.3-.78-.77-1.125-.87-1.32-.87-.267 0-.344.077-.344.45v1.54c0 .32-.103.492-.95.492-1.4 0-2.958-1.507-4.224-4.312-1.709-3.556-2.026-4.95-2.026-5.212 0-.23.09-.45.84-.45h1.32c.38 0 .52.18.664.58.72 2.1 1.93 4.073 2.394 4.073.19 0 .28-.09.28-.57V8.45c-.06-1.01-.6-1.1-.6-1.46 0-.17.14-.34.35-.34h2.07c.44 0 .6.19.6.6v3.58c0 .34.15.46.24.46.19 0 .35-.12.69-.46.97-1.08 1.67-2.77 1.67-2.77.12-.28.33-.43.62-.43h1.32c.44 0 .53.22.44.52-.18.81-1.94 3.33-1.94 3.33-.16.26-.23.39 0 .65.17.2.72.7 1.07 1.13.66.75 1.16 1.38 1.29 1.81.14.43-.09.65-.55.65Z" /></svg>
-                  </a>
-                  <a href="https://www.instagram.com/biorise_samara" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#E4405F]" aria-label="Instagram">
-                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0-2A7.5 7.5 0 0 0 0 7.5v9A7.5 7.5 0 0 0 7.5 24h9A7.5 7.5 0 0 0 24 16.5v-9A7.5 7.5 0 0 0 16.5 0Zm12 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" /></svg>
-                  </a>
-                  <a href="https://max.ru/join/I8dvtxIVQ_gEOELaXkiwDZPefgBrLT6ojztVLP17oiQ" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#4C6FFF]" aria-label="Мессенджер MAX">
-                    <svg className="h-6 w-6" viewBox="0 0 720 720" aria-hidden="true" fill="currentColor"><path d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z" /></svg>
-                  </a>
+            <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain px-4 sm:px-6">
+              <div className="flex flex-col space-y-3 font-menu">
+                <Link href="/" onClick={closeMobileMenu} className={mobileLinkClass}>
+                  Главная
+                </Link>
+
+                <div className="rounded-2xl border border-olive-primary/10 bg-white/45 p-2">
+                  <span className="px-3 pb-2 pt-1 text-sm font-semibold text-olive-primary">Услуги</span>
+                  <div className="mt-1 flex flex-col gap-1">
+                    <Link href="/kapelnicy" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы</Link>
+                    <Link href="/bioimpedance" onClick={closeMobileMenu} className={mobileLinkClass}>Биоимпедансный анализ</Link>
+                    <Link href="/bady" onClick={closeMobileMenu} className={mobileLinkClass}>БАДЫ</Link>
+                    <Link href="/apparatnyy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Аппаратный массаж</Link>
+                    <Link href="/ruchnoy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Ручной массаж</Link>
+                    <Link href="/lazernaya-epilyatsiya" onClick={closeMobileMenu} className={mobileLinkClass}>Лазерная эпиляция</Link>
+                    <Link href="/spravki" onClick={closeMobileMenu} className={mobileLinkClass}>Справки</Link>
+                    <Link href="/analizy" onClick={closeMobileMenu} className={mobileLinkClass}>Анализы и ЧЕК-АПЫ</Link>
+                  </div>
+                </div>
+
+                <Link href="/#why-us" onClick={closeMobileMenu} className={mobileLinkClass}>О нас</Link>
+                <Link href="/#gallery" onClick={closeMobileMenu} className={mobileLinkClass}>Акции</Link>
+                <Link href="/articles" onClick={closeMobileMenu} className={mobileLinkClass}>Статьи</Link>
+                <Link href="/#doctors" onClick={closeMobileMenu} className={mobileLinkClass}>Врачи</Link>
+
+                <button
+                  onClick={() => {
+                    closeMobileMenu()
+                    openBookingModal()
+                  }}
+                  className="mt-2 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-olive-primary px-6 py-3 text-center text-base text-white transition-colors hover:bg-olive-light"
+                >
+                  Записаться
+                </button>
+
+                <div className="mt-4 border-t border-olive-primary/10 pt-4">
+                  <div className="flex items-center gap-4">
+                    <a href="https://t.me/biorise_smr" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#0088cc]" aria-label="Telegram">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.665 3.447 17.03 19.139c-.26 1.176-.944 1.466-1.911.912l-5.278-3.897-2.548 2.453c-.283.283-.52.52-1.07.52l.383-5.436 9.9-8.94c.43-.382-.093-.594-.67-.212L5.58 11.82.314 10.17c-1.15-.36-1.176-1.15.24-1.7L19.067 2.04c.944-.34 1.77.212 1.599 1.407Z" /></svg>
+                    </a>
+                    <a href="https://vk.ru/biorise63" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#0077FF]" aria-label="ВКонтакте">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm5.893 16.07h-1.32c-.493 0-.646-.399-1.54-1.3-.78-.77-1.125-.87-1.32-.87-.267 0-.344.077-.344.45v1.54c0 .32-.103.492-.95.492-1.4 0-2.958-1.507-4.224-4.312-1.709-3.556-2.026-4.95-2.026-5.212 0-.23.09-.45.84-.45h1.32c.38 0 .52.18.664.58.72 2.1 1.93 4.073 2.394 4.073.19 0 .28-.09.28-.57V8.45c-.06-1.01-.6-1.1-.6-1.46 0-.17.14-.34.35-.34h2.07c.44 0 .6.19.6.6v3.58c0 .34.15.46.24.46.19 0 .35-.12.69-.46.97-1.08 1.67-2.77 1.67-2.77.12-.28.33-.43.62-.43h1.32c.44 0 .53.22.44.52-.18.81-1.94 3.33-1.94 3.33-.16.26-.23.39 0 .65.17.2.72.7 1.07 1.13.66.75 1.16 1.38 1.29 1.81.14.43-.09.65-.55.65Z" /></svg>
+                    </a>
+                    <a href="https://www.instagram.com/biorise_samara" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#E4405F]" aria-label="Instagram">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0-2A7.5 7.5 0 0 0 0 7.5v9A7.5 7.5 0 0 0 7.5 24h9A7.5 7.5 0 0 0 24 16.5v-9A7.5 7.5 0 0 0 16.5 0Zm12 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" /></svg>
+                    </a>
+                    <a href="https://max.ru/join/I8dvtxIVQ_gEOELaXkiwDZPefgBrLT6ojztVLP17oiQ" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/60 text-gray-600 transition-colors hover:text-[#4C6FFF]" aria-label="Мессенджер MAX">
+                      <svg className="h-6 w-6" viewBox="0 0 720 720" aria-hidden="true" fill="currentColor"><path d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z" /></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </nav>
-      </div>
+          </nav>
+        </div>
+      )}
     </>
   )
 }
