@@ -86,7 +86,10 @@ export default function HomeInfusionsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-beige-background pb-20 pt-32 text-olive-primary sm:pt-36">
+      <main
+        className="min-h-screen bg-beige-background pb-20 text-olive-primary"
+        style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+      >
         <section className="container mx-auto px-4 sm:px-6">
           <Breadcrumbs
             items={[

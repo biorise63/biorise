@@ -7,7 +7,10 @@ export default function BioimpedanceContent() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-beige-background to-white">
+      <section
+        className="pb-20 bg-gradient-to-b from-beige-background to-white"
+        style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+      >
         <div className="container mx-auto px-6">
           <Breadcrumbs
             items={[

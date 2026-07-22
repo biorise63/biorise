@@ -11,7 +11,10 @@ export default function PrivacyPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white pt-32 pb-16">
+      <main
+        className="min-h-screen bg-white pb-16"
+        style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+      >
         <div className="container mx-auto px-6 max-w-4xl">
           <Breadcrumbs
             items={[

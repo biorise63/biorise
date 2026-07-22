@@ -145,7 +145,10 @@ export default function InfusionDetailPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-beige-background pt-6 text-olive-primary sm:pt-32">
+      <main
+        className="min-h-screen bg-beige-background text-olive-primary"
+        style={{ paddingTop: 'calc(var(--header-height) + 1rem)' }}
+      >
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
         <section className="container mx-auto px-4 pb-12 sm:px-6 sm:pb-16">

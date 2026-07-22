@@ -119,7 +119,10 @@ export default function SpravkiContent() {
   const { openBookingModal } = useBookingModal()
 
   return (
-    <div className="pt-32 pb-20">
+    <div
+      className="pb-20"
+      style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+    >
       <div className="container mx-auto px-4 sm:px-6">
         <Breadcrumbs
           items={[

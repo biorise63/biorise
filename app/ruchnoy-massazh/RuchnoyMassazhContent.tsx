@@ -137,7 +137,10 @@ export default function RuchnoyMassazhContent() {
   }
 
   return (
-    <div className="overflow-hidden bg-beige-background pb-20 pt-28 text-olive-primary sm:pt-32">
+    <div
+      className="overflow-hidden bg-beige-background pb-20 text-olive-primary"
+      style={{ paddingTop: 'calc(var(--header-height) + 1.25rem)' }}
+    >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
       <div className="container mx-auto px-4 sm:px-6">

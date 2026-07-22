@@ -12,7 +12,10 @@ export default function CookiePolicyPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white pb-16 pt-32">
+      <main
+        className="min-h-screen bg-white pb-16"
+        style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+      >
         <div className="container mx-auto max-w-4xl px-6">
           <Breadcrumbs
             items={[
