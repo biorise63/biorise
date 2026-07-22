@@ -176,7 +176,7 @@ export default function ClinicGallery() {
         </motion.div>
 
         <div className="relative w-full">
-          <div className="relative h-[520px] md:h-[640px] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
+          <div className="relative min-h-[470px] md:h-[640px] overflow-hidden rounded-3xl border border-olive-primary/15 bg-beige-background/60">
             <CircularGallery items={galleryData} radius={380} />
           </div>
         </div>
