@@ -116,6 +116,61 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               })}
             </div>
 
+            <section className="mt-12 rounded-2xl border border-olive-primary/10 bg-white p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-heading text-olive-primary font-medium">
+                Что ещё посмотреть по теме
+              </h2>
+              <p className="mt-3 text-olive-primary/72 text-sm sm:text-base leading-relaxed">
+                Если вы выбираете формат восстановления, изучите каталог{' '}
+                <Link
+                  href="/kapelnicy/"
+                  className="font-medium text-olive-primary underline underline-offset-4 hover:text-olive-light"
+                >
+                  капельниц BIORISE
+                </Link>{' '}
+                и раздел{' '}
+                <Link
+                  href="/bady/"
+                  className="font-medium text-olive-primary underline underline-offset-4 hover:text-olive-light"
+                >
+                  БАДЫ
+                </Link>
+                . Так проще сравнить варианты поддержки организма и понять, что подходит именно под вашу задачу.
+              </p>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <Link
+                  href="/kapelnicy/"
+                  className="group rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-5 transition-colors hover:border-olive-primary/20 hover:bg-beige-background"
+                >
+                  <span className="text-xs uppercase tracking-[0.14em] text-olive-primary/48">
+                    Основной раздел
+                  </span>
+                  <h3 className="mt-2 text-lg font-heading text-olive-primary font-medium group-hover:text-olive-light">
+                    Капельницы в Самаре
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-olive-primary/72">
+                    Витаминные, восстановительные, детокс и другие программы с подбором состава врачом.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/bady/"
+                  className="group rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-5 transition-colors hover:border-olive-primary/20 hover:bg-beige-background"
+                >
+                  <span className="text-xs uppercase tracking-[0.14em] text-olive-primary/48">
+                    Дополнительный раздел
+                  </span>
+                  <h3 className="mt-2 text-lg font-heading text-olive-primary font-medium group-hover:text-olive-light">
+                    БАДЫ BIORISE
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-olive-primary/72">
+                    Подбор нутрицевтиков для энергии, дефицитов, восстановления, кожи и общего тонуса.
+                  </p>
+                </Link>
+              </div>
+            </section>
+
             {/* Онлайн-запись со скидкой в конце статьи */}
             <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-olive-primary/10 shadow-premium">
               <div className="flex items-center gap-3 mb-2">
