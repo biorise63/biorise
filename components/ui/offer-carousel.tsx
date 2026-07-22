@@ -638,29 +638,10 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
           ))}
         </div>
 
-        <div className="relative z-[1] mt-2 flex items-center justify-center gap-3 lg:hidden">
-          <button
-            type="button"
-            onClick={(event) => {
-              event.preventDefault()
-              scroll('left')
-            }}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-olive-primary/12 bg-white text-olive-primary transition-colors hover:bg-olive-primary hover:text-white"
-            aria-label="Прокрутить влево"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={(event) => {
-              event.preventDefault()
-              scroll('right')
-            }}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-olive-primary/12 bg-white text-olive-primary transition-colors hover:bg-olive-primary hover:text-white"
-            aria-label="Прокрутить вправо"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+        <div className="relative z-[1] mt-2 flex items-center justify-center lg:hidden">
+          <p className="text-center text-xs text-olive-primary/55">
+            Листайте карточки свайпом
+          </p>
         </div>
       </div>
     )
