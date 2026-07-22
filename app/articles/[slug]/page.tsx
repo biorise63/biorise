@@ -17,7 +17,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     return (
       <main className="min-h-screen bg-[#f5f5f0]">
         <Header />
-        <section className="pt-32 pb-16">
+        <section
+          className="pb-16"
+          style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+        >
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <Breadcrumbs
               items={[
@@ -41,7 +44,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     <main className="min-h-screen bg-[#f5f5f0]">
       <Header />
 
-      <article className="pt-24 sm:pt-28 pb-16">
+      <article
+        className="pb-16"
+        style={{ paddingTop: 'calc(var(--header-height) + 1rem)' }}
+      >
         <div className="max-w-4xl mx-auto">
           <div className="px-4 sm:px-6 mb-4">
             <Breadcrumbs

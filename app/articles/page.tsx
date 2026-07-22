@@ -15,7 +15,10 @@ export default function ArticlesPage() {
     <main className="min-h-screen bg-[#f5f5f0]">
       <Header />
 
-      <section className="pt-32 pb-20">
+      <section
+        className="pb-20"
+        style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Breadcrumbs
             items={[
