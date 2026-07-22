@@ -5,22 +5,22 @@ import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { getInfusionCategories } from '@/lib/kapelnicy'
 
-const pageTitle = 'Капельницы на дому в Самаре | BIORISE'
+const pageTitle = 'Капельница на дому в Самаре — выезд медсестры | BIORISE'
 const pageDescription =
-  'Капельницы на дому в Самаре: детокс, восстановление после алкоголя, витаминные программы, поддержка при слабости, обезвоживании и головной боли. Врач оценивает состояние, подбирает состав и решает, какую капельницу можно поставить дома.'
+  'Капельница на дому в Самаре с выездом медицинской сестры BIORISE. Врач оценивает состояние, подбирает состав и решает, какую программу можно безопасно провести дома.'
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: [
-    'капельницы на дому самара',
     'капельница на дому самара',
+    'капельницы на дому самара',
     'капельницы на дому в самаре',
-    'вывод из запоя самара на дому',
-    'детокс капельница на дому самара',
-    'витаминные капельницы на дому самара',
+    'поставить капельницу на дому самара',
+    'капельницы с выездом на дом самара',
     'капельница от головной боли на дому самара',
     'медсестра на дом капельницы самара',
+    'витаминные капельницы на дому самара',
   ],
   alternates: {
     canonical: 'https://biorise-clinic.ru/kapelnicy/na-domu/',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: 'https://biorise-clinic.ru/hero-bg.jpg',
         width: 1200,
         height: 630,
-        alt: 'Капельницы на дому в Самаре BIORISE',
+        alt: 'Капельница на дому в Самаре BIORISE',
       },
     ],
   },
@@ -102,7 +102,7 @@ export default function HomeInfusionsPage() {
                 Выезд по Самаре
               </p>
               <h1 className="text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl lg:text-6xl">
-                Капельницы на дому в Самаре
+                Капельница на дому в Самаре
               </h1>
               <p className="mt-5 max-w-3xl text-lg leading-relaxed text-olive-primary/78 sm:text-xl">
                 Врач приезжает на дом, оценивает состояние и решает, какую капельницу можно поставить дома. Этот формат выбирают при выводе из запоя, детоксе, головной боли, слабости, обезвоживании, восстановлении после болезни и курсе витаминных капельниц.
