@@ -35,7 +35,6 @@ export default function Hero() {
   const { openBookingModal } = useBookingModal()
   const [videoSrc, setVideoSrc] = useState<string | null>(null)
   const [videoReady, setVideoReady] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
 
   const shouldReduceMotion = useMemo(() => {
     if (typeof window === 'undefined') return false
@@ -71,30 +70,8 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [shouldReduceMotion])
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-
-    const media = window.matchMedia('(max-width: 639px)')
-    const update = () => setIsMobile(media.matches)
-
-    update()
-    media.addEventListener('change', update)
-    return () => media.removeEventListener('change', update)
-  }, [])
-
   return (
-    <section
-      className="relative flex items-center justify-center overflow-hidden py-14 sm:py-0"
-      style={
-        isMobile
-          ? undefined
-          : {
-              marginTop: 'var(--header-height)',
-              height: 'calc(100svh - var(--header-height))',
-              minHeight: 'calc(100svh - var(--header-height))',
-            }
-      }
-    >
+    <section className="hero-section relative flex items-center justify-center overflow-hidden py-14 sm:py-0">
       <div className="absolute inset-0">
         <Image
           src="/optimized/video/hero-poster.webp"

@@ -42,6 +42,18 @@ body.menu-open {
   overscroll-behavior: none;
 }
 
+.hero-section {
+  min-height: 640px;
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    margin-top: var(--header-height);
+    height: calc(100svh - var(--header-height));
+    min-height: calc(100svh - var(--header-height));
+  }
+}
+
 /* Kapelnicy layout spacing */
 .kapelnicy-page {
   padding-top: var(--header-height);
