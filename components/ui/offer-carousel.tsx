@@ -517,22 +517,9 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
       })
     }, [selectedCategory])
 
-    const scrollToCard = React.useCallback((index: number) => {
+    const getClosestCardIndex = React.useCallback(() => {
       const container = scrollContainerRef.current
-      const card = cardRefs.current[index]
-
-      if (!container || !card) return
-
-      setActiveCardIndex(index)
-      container.scrollTo({
-        left: card.offsetLeft,
-        behavior: 'smooth',
-      })
-    }, [])
-
-    const updateActiveCard = React.useCallback(() => {
-      const container = scrollContainerRef.current
-      if (!container || !cardRefs.current.length) return
+      if (!container || !cardRefs.current.length) return 0
 
       const currentScroll = container.scrollLeft
       let closestIndex = 0
@@ -547,19 +534,37 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
         }
       })
 
-      setActiveCardIndex(closestIndex)
+      return closestIndex
     }, [])
+
+    const scrollToCard = React.useCallback((index: number) => {
+      const card = cardRefs.current[index]
+
+      if (!card) return
+
+      setActiveCardIndex(index)
+      card.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      })
+    }, [])
+
+    const updateActiveCard = React.useCallback(() => {
+      setActiveCardIndex(getClosestCardIndex())
+    }, [getClosestCardIndex])
 
     const scroll = React.useCallback((direction: 'left' | 'right') => {
       if (!filteredOffers.length) return
 
+      const currentIndex = getClosestCardIndex()
       const nextIndex =
         direction === 'left'
-          ? Math.max(activeCardIndex - 1, 0)
-          : Math.min(activeCardIndex + 1, filteredOffers.length - 1)
+          ? Math.max(currentIndex - 1, 0)
+          : Math.min(currentIndex + 1, filteredOffers.length - 1)
 
       scrollToCard(nextIndex)
-    }, [activeCardIndex, filteredOffers.length, scrollToCard])
+    }, [filteredOffers.length, getClosestCardIndex, scrollToCard])
 
     return (
         <div
@@ -574,7 +579,10 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
           <div className="hidden items-center gap-3 lg:flex">
             <button
               type="button"
-              onClick={() => scroll('left')}
+              onClick={(event) => {
+                event.preventDefault()
+                scroll('left')
+              }}
               className="flex h-11 w-11 items-center justify-center rounded-full border border-olive-primary/12 bg-white text-olive-primary transition-colors hover:bg-olive-primary hover:text-white"
               aria-label="Прокрутить влево"
             >
@@ -582,7 +590,10 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
             </button>
             <button
               type="button"
-              onClick={() => scroll('right')}
+              onClick={(event) => {
+                event.preventDefault()
+                scroll('right')
+              }}
               className="flex h-11 w-11 items-center justify-center rounded-full border border-olive-primary/12 bg-white text-olive-primary transition-colors hover:bg-olive-primary hover:text-white"
               aria-label="Прокрутить вправо"
             >
@@ -630,7 +641,10 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
         <div className="relative z-[1] mt-2 flex items-center justify-center gap-3 lg:hidden">
           <button
             type="button"
-            onClick={() => scroll('left')}
+            onClick={(event) => {
+              event.preventDefault()
+              scroll('left')
+            }}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-olive-primary/12 bg-white text-olive-primary transition-colors hover:bg-olive-primary hover:text-white"
             aria-label="Прокрутить влево"
           >
@@ -638,7 +652,10 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
           </button>
           <button
             type="button"
-            onClick={() => scroll('right')}
+            onClick={(event) => {
+              event.preventDefault()
+              scroll('right')
+            }}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-olive-primary/12 bg-white text-olive-primary transition-colors hover:bg-olive-primary hover:text-white"
             aria-label="Прокрутить вправо"
           >
