@@ -426,7 +426,6 @@ function OfferCard({ offer }: { offer: Offer }) {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: 'easeOut' }}
-      className="snap-start"
     >
       <Link
         href={offer.href}
@@ -497,21 +496,70 @@ export interface OfferCarouselProps extends React.HTMLAttributes<HTMLDivElement>
 const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
   ({ className, defaultCategory = 'popular', ...props }, ref) => {
     const [selectedCategory, setSelectedCategory] = React.useState<Category>(defaultCategory)
+    const [activeCardIndex, setActiveCardIndex] = React.useState(0)
     const scrollContainerRef = React.useRef<HTMLDivElement>(null)
+    const cardRefs = React.useRef<Array<HTMLDivElement | null>>([])
 
     const filteredOffers = React.useMemo(
       () => offers.filter((offer) => offer.category === selectedCategory),
       [selectedCategory],
     )
 
-    const scroll = React.useCallback((direction: 'left' | 'right') => {
-      if (!scrollContainerRef.current) return
-      const scrollAmount = Math.max(scrollContainerRef.current.clientWidth * 0.82, 260)
-      scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+    React.useEffect(() => {
+      setActiveCardIndex(0)
+      cardRefs.current = []
+
+      const container = scrollContainerRef.current
+      if (!container) return
+
+      requestAnimationFrame(() => {
+        container.scrollTo({ left: 0, behavior: 'auto' })
+      })
+    }, [selectedCategory])
+
+    const scrollToCard = React.useCallback((index: number) => {
+      const container = scrollContainerRef.current
+      const card = cardRefs.current[index]
+
+      if (!container || !card) return
+
+      setActiveCardIndex(index)
+      container.scrollTo({
+        left: card.offsetLeft,
         behavior: 'smooth',
       })
     }, [])
+
+    const updateActiveCard = React.useCallback(() => {
+      const container = scrollContainerRef.current
+      if (!container || !cardRefs.current.length) return
+
+      const currentScroll = container.scrollLeft
+      let closestIndex = 0
+      let closestDistance = Number.POSITIVE_INFINITY
+
+      cardRefs.current.forEach((card, index) => {
+        if (!card) return
+        const distance = Math.abs(card.offsetLeft - currentScroll)
+        if (distance < closestDistance) {
+          closestDistance = distance
+          closestIndex = index
+        }
+      })
+
+      setActiveCardIndex(closestIndex)
+    }, [])
+
+    const scroll = React.useCallback((direction: 'left' | 'right') => {
+      if (!filteredOffers.length) return
+
+      const nextIndex =
+        direction === 'left'
+          ? Math.max(activeCardIndex - 1, 0)
+          : Math.min(activeCardIndex + 1, filteredOffers.length - 1)
+
+      scrollToCard(nextIndex)
+    }, [activeCardIndex, filteredOffers.length, scrollToCard])
 
     return (
         <div
@@ -564,9 +612,18 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
         <div
           ref={scrollContainerRef}
           className="relative z-[1] flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-5"
+          onScroll={updateActiveCard}
         >
-          {filteredOffers.map((offer) => (
-            <OfferCard key={offer.id} offer={offer} />
+          {filteredOffers.map((offer, index) => (
+            <div
+              key={offer.id}
+              ref={(node) => {
+                cardRefs.current[index] = node
+              }}
+              className="snap-start"
+            >
+              <OfferCard offer={offer} />
+            </div>
           ))}
         </div>
 
