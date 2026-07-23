@@ -236,9 +236,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="px-4 sm:px-6 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs text-olive-primary/50 mb-4">
-              <span>{article.publishedAt}</span>
-              <span className="w-0.5 h-0.5 rounded-full bg-olive-primary/40" />
+            <div className="mb-4 text-xs text-olive-primary/50">
               <span>4–6 мин</span>
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading text-olive-primary font-medium leading-tight mb-4">
@@ -258,9 +256,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               ))}
             </div>
 
-            <section className="mb-10 grid gap-6 sm:grid-cols-[minmax(0,220px)_minmax(0,1fr)] sm:items-start">
-              <div className="w-full max-w-[220px] mx-auto sm:mx-0">
-                <div className="aspect-[4/5] overflow-hidden rounded-[28px] border border-olive-primary/10 bg-white shadow-[0_18px_36px_rgba(77,91,53,0.08)]">
+            <section className="mb-8 grid gap-5 sm:grid-cols-[minmax(0,180px)_minmax(0,1fr)] sm:gap-6 sm:items-start">
+              <div className="w-full max-w-[180px] mx-auto sm:mx-0">
+                <div className="aspect-[4/5] overflow-hidden rounded-[24px] border border-olive-primary/10 bg-white shadow-[0_14px_28px_rgba(77,91,53,0.08)]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={article.coverImage}
@@ -271,7 +269,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
 
-              <div className="space-y-5 text-olive-primary/90 text-base leading-relaxed">
+              <div className="space-y-4 text-olive-primary/90 text-base leading-relaxed">
                 {introBlocks.map((block, idx) => {
                   if (block.type === 'paragraph') {
                     return <p key={idx}>{renderInlineContent(block.text)}</p>
