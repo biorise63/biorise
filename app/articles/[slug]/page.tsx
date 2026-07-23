@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
+import { FileText } from 'lucide-react'
 import { articles, getArticleBySlug } from '@/lib/articles'
 // import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
 
@@ -171,6 +172,29 @@ function parseContentBlocks(content: string[]): ContentBlock[] {
   return blocks
 }
 
+function hashString(value: string) {
+  let hash = 0
+
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0
+  }
+
+  return hash
+}
+
+function getRelatedArticles(currentSlug: string) {
+  const otherArticles = articles.filter((item) => item.slug !== currentSlug)
+  const seed = hashString(currentSlug)
+
+  return [...otherArticles]
+    .sort((left, right) => {
+      const leftScore = hashString(`${seed}-${left.slug}`)
+      const rightScore = hashString(`${seed}-${right.slug}`)
+      return leftScore - rightScore
+    })
+    .slice(0, 3)
+}
+
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug)
 
@@ -203,6 +227,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   const contentBlocks = parseContentBlocks(article.content)
   const imageAlt = article.imageAlt || article.h1 || article.title
+  const relatedArticles = getRelatedArticles(article.slug)
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
@@ -312,60 +337,35 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               })}
             </div>
 
-            <section className="mt-12 rounded-2xl border border-olive-primary/10 bg-white p-6 sm:p-8">
-              <h2 className="text-xl sm:text-2xl font-heading text-olive-primary font-medium">
-                Что ещё посмотреть по теме
-              </h2>
-              <p className="mt-3 text-olive-primary/72 text-sm sm:text-base leading-relaxed">
-                Если вы выбираете формат восстановления, изучите каталог{' '}
-                <Link
-                  href="/kapelnicy/"
-                  className="font-medium text-olive-primary underline underline-offset-4 hover:text-olive-light"
-                >
-                  капельниц BIORISE
-                </Link>{' '}
-                и раздел{' '}
-                <Link
-                  href="/bady/"
-                  className="font-medium text-olive-primary underline underline-offset-4 hover:text-olive-light"
-                >
-                  БАДЫ
-                </Link>
-                . Так проще сравнить варианты поддержки организма и понять, что подходит именно под вашу задачу.
-              </p>
+            {relatedArticles.length ? (
+              <section className="mt-12 border-t border-olive-primary/10 pt-6">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-olive-primary/8 text-olive-primary">
+                    <FileText className="h-4.5 w-4.5" strokeWidth={1.8} aria-hidden="true" />
+                  </div>
+                  <h2 className="text-lg sm:text-xl font-heading text-olive-primary font-medium">
+                    Что ещё посмотреть по теме
+                  </h2>
+                </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <Link
-                  href="/kapelnicy/"
-                  className="group rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-5 transition-colors hover:border-olive-primary/20 hover:bg-beige-background"
-                >
-                  <span className="text-xs uppercase tracking-[0.14em] text-olive-primary/48">
-                    Основной раздел
-                  </span>
-                  <h3 className="mt-2 text-lg font-heading text-olive-primary font-medium group-hover:text-olive-light">
-                    Капельницы в Самаре
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-olive-primary/72">
-                    Витаминные, восстановительные, детокс и другие программы с подбором состава врачом.
-                  </p>
-                </Link>
-
-                <Link
-                  href="/bady/"
-                  className="group rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-5 transition-colors hover:border-olive-primary/20 hover:bg-beige-background"
-                >
-                  <span className="text-xs uppercase tracking-[0.14em] text-olive-primary/48">
-                    Дополнительный раздел
-                  </span>
-                  <h3 className="mt-2 text-lg font-heading text-olive-primary font-medium group-hover:text-olive-light">
-                    БАДЫ BIORISE
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-olive-primary/72">
-                    Подбор нутрицевтиков для энергии, дефицитов, восстановления, кожи и общего тонуса.
-                  </p>
-                </Link>
-              </div>
-            </section>
+                <div className="mt-4 space-y-3">
+                  {relatedArticles.map((relatedArticle) => (
+                    <Link
+                      key={relatedArticle.slug}
+                      href={`/articles/${relatedArticle.slug}/`}
+                      className="group block rounded-2xl border border-olive-primary/10 bg-white/65 px-4 py-3 transition-colors hover:border-olive-primary/20 hover:bg-white"
+                    >
+                      <div className="text-base font-medium text-olive-primary transition-colors group-hover:text-olive-light">
+                        {relatedArticle.h1 || relatedArticle.title}
+                      </div>
+                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">
+                        {relatedArticle.excerpt}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
           </div>
         </div>
