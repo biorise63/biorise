@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -7,6 +8,162 @@ import { articles, getArticleBySlug } from '@/lib/articles'
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const article = getArticleBySlug(params.slug)
+
+  if (!article) {
+    return {
+      title: 'Статья не найдена | BIORISE',
+      description: 'Статья не найдена.',
+    }
+  }
+
+  const title = article.seoTitle || `${article.title} | BIORISE`
+  const description = article.description || article.excerpt
+  const url = `https://biorise-clinic.ru/articles/${article.slug}/`
+  const image = article.coverImage.startsWith('http')
+    ? article.coverImage
+    : `https://biorise-clinic.ru${article.coverImage}`
+
+  return {
+    title,
+    description,
+    keywords: article.tags,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'BIORISE',
+      locale: 'ru_RU',
+      type: 'article',
+      publishedTime: article.publishedAt,
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+    },
+  }
+}
+
+function renderInlineContent(text: string) {
+  const tokens: Array<
+    | { type: 'text'; value: string }
+    | { type: 'link'; label: string; href: string }
+  > = []
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      tokens.push({ type: 'text', value: text.slice(lastIndex, match.index) })
+    }
+    tokens.push({ type: 'link', label: match[1], href: match[2] })
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) {
+    tokens.push({ type: 'text', value: text.slice(lastIndex) })
+  }
+
+  return tokens.map((token, index) => {
+    if (token.type === 'link') {
+      const isInternal = token.href.startsWith('/')
+      if (isInternal) {
+        return (
+          <Link
+            key={`${token.href}-${index}`}
+            href={token.href}
+            className="font-medium text-olive-primary underline underline-offset-4 hover:text-olive-light"
+          >
+            {token.label}
+          </Link>
+        )
+      }
+
+      return (
+        <a
+          key={`${token.href}-${index}`}
+          href={token.href}
+          target="_blank"
+          rel="noreferrer"
+          className="font-medium text-olive-primary underline underline-offset-4 hover:text-olive-light"
+        >
+          {token.label}
+        </a>
+      )
+    }
+
+    return <span key={`text-${index}`}>{token.value}</span>
+  })
+}
+
+type ContentBlock =
+  | { type: 'h2'; text: string }
+  | { type: 'h3'; text: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'ordered-list'; items: string[] }
+  | { type: 'paragraph'; text: string }
+
+function parseContentBlocks(content: string[]): ContentBlock[] {
+  const blocks: ContentBlock[] = []
+  let index = 0
+
+  while (index < content.length) {
+    const line = content[index]
+
+    if (/^##\s/.test(line)) {
+      blocks.push({ type: 'h2', text: line.replace(/^##\s+/, '') })
+      index += 1
+      continue
+    }
+
+    if (/^###\s/.test(line)) {
+      blocks.push({ type: 'h3', text: line.replace(/^###\s+/, '') })
+      index += 1
+      continue
+    }
+
+    if (/^-\s/.test(line)) {
+      const items: string[] = []
+      while (index < content.length && /^-\s/.test(content[index])) {
+        items.push(content[index].replace(/^-\s+/, ''))
+        index += 1
+      }
+      blocks.push({ type: 'list', items })
+      continue
+    }
+
+    if (/^\d+\.\s/.test(line)) {
+      const items: string[] = []
+      while (index < content.length && /^\d+\.\s/.test(content[index])) {
+        items.push(content[index].replace(/^\d+\.\s+/, ''))
+        index += 1
+      }
+      blocks.push({ type: 'ordered-list', items })
+      continue
+    }
+
+    blocks.push({ type: 'paragraph', text: line })
+    index += 1
+  }
+
+  return blocks
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
@@ -85,7 +242,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <span>4–6 мин</span>
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading text-olive-primary font-medium leading-tight mb-4">
-              {article.title}
+              {article.h1 || article.title}
             </h1>
             <p className="text-olive-primary/70 text-base sm:text-lg leading-relaxed mb-6">
               {article.excerpt}
@@ -103,15 +260,48 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
             {/* Текст статьи — одна колонка, как в Дзене */}
             <div className="prose prose-olive max-w-none text-olive-primary/90 text-base leading-relaxed space-y-5">
-              {article.content.map((p, idx) => {
-                if (/^\d+\.\s/.test(p)) {
+              {parseContentBlocks(article.content).map((block, idx) => {
+                if (block.type === 'h2') {
                   return (
                     <h2 key={idx} className="text-xl font-heading text-olive-primary mt-8 mb-3 font-medium">
-                      {p}
+                      {block.text}
                     </h2>
                   )
                 }
-                return <p key={idx} className="mb-0">{p}</p>
+
+                if (block.type === 'h3') {
+                  return (
+                    <h3 key={idx} className="text-lg font-heading text-olive-primary mt-6 mb-2 font-medium">
+                      {block.text}
+                    </h3>
+                  )
+                }
+
+                if (block.type === 'list') {
+                  return (
+                    <ul key={idx} className="mb-0 list-disc space-y-2 pl-5 text-olive-primary/90">
+                      {block.items.map((item, itemIndex) => (
+                        <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
+                      ))}
+                    </ul>
+                  )
+                }
+
+                if (block.type === 'ordered-list') {
+                  return (
+                    <ol key={idx} className="mb-0 list-decimal space-y-2 pl-5 text-olive-primary/90">
+                      {block.items.map((item, itemIndex) => (
+                        <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
+                      ))}
+                    </ol>
+                  )
+                }
+
+                return (
+                  <p key={idx} className="mb-0">
+                    {renderInlineContent(block.text)}
+                  </p>
+                )
               })}
             </div>
 

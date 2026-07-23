@@ -11,7 +11,9 @@ export const metadata = {
 }
 
 export default function ArticlesPage() {
-  const timelineItems: TimelineItem[] = articles.map((article, index) => ({
+  const sortedArticles = [...articles].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+
+  const timelineItems: TimelineItem[] = sortedArticles.map((article, index) => ({
     title: article.title,
     description: article.excerpt,
     date: article.publishedAt,
