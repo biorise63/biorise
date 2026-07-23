@@ -3,6 +3,10 @@
   "trailingSlash": true,
   "rewrites": [
     {
+      "source": "/sitemap",
+      "destination": "/sitemap.xml"
+    },
+    {
       "source": "/yandex_ff70510bc15914e1.html",
       "destination": "/yandex_ff70510bc15914e1/"
     }
