@@ -258,12 +258,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
             <section className="mb-8 grid gap-5 sm:grid-cols-[minmax(0,180px)_minmax(0,1fr)] sm:gap-6 sm:items-start">
               <div className="w-full max-w-[180px] mx-auto sm:mx-0">
-                <div className="aspect-[4/5] overflow-hidden rounded-[24px] border border-olive-primary/10 bg-white shadow-[0_14px_28px_rgba(77,91,53,0.08)]">
+                <div className="aspect-[4/5]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={article.coverImage}
                     alt={imageAlt}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     loading="eager"
                   />
                 </div>
