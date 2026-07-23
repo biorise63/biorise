@@ -102,6 +102,7 @@ export function Timeline({ items, className }: TimelineProps) {
           {items.map((item, index) => {
             const config = getStatusConfig(item.status)
             const IconComponent = getStatusIcon(item.status)
+            const isLogoImage = item.image?.includes('logo')
             const cardBody = (
               <motion.div
                 className="flex-1 min-w-0"
@@ -228,7 +229,12 @@ export function Timeline({ items, className }: TimelineProps) {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="h-full w-full object-cover"
+                            className={cn(
+                              'h-full w-full',
+                              isLogoImage
+                                ? 'bg-white p-2 object-contain'
+                                : 'object-cover',
+                            )}
                             loading="lazy"
                           />
                         ) : (
