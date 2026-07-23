@@ -3,7 +3,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
-import { ClipboardList, FlaskConical, ShieldCheck } from 'lucide-react'
 import { articles, getArticleBySlug } from '@/lib/articles'
 // import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
 
@@ -65,12 +64,6 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     },
   }
 }
-
-const articleIcons = {
-  flask: FlaskConical,
-  shield: ShieldCheck,
-  clipboard: ClipboardList,
-} as const
 
 function renderInlineContent(text: string) {
   const tokens: Array<
@@ -259,32 +252,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 </span>
               ))}
             </div>
-
-            {article.featureCards?.length ? (
-              <section className="mb-8 grid gap-4 sm:grid-cols-3">
-                {article.featureCards.map((card) => {
-                  const Icon = articleIcons[card.icon]
-
-                  return (
-                    <article
-                      key={card.title}
-                      className="rounded-2xl border border-olive-primary/10 bg-white/70 p-5"
-                    >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-olive-primary/8 text-olive-primary">
-                        <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
-                      </div>
-                      <h2 className="mt-4 text-lg font-heading text-olive-primary font-medium">
-                        {card.title}
-                      </h2>
-                      <p className="mt-2 text-sm leading-relaxed text-olive-primary/72">
-                        {card.text}
-                      </p>
-                    </article>
-                  )
-                })}
-              </section>
-            ) : null}
-
             <div className="prose prose-olive max-w-none text-olive-primary/90 text-base leading-relaxed space-y-5">
               {article.coverImage ? (
                 <div className="mx-auto mb-5 w-full max-w-[180px] sm:float-left sm:mr-6 sm:mb-4 sm:ml-0">
