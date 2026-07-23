@@ -1,8 +1,8 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import Link from 'next/link'
 import { articles } from '@/lib/articles'
+import { Timeline, type TimelineItem } from '@/components/ui/modern-timeline'
 
 export const metadata = {
   title: 'Статьи | BIORISE',
@@ -11,6 +11,16 @@ export const metadata = {
 }
 
 export default function ArticlesPage() {
+  const timelineItems: TimelineItem[] = articles.map((article, index) => ({
+    title: article.title,
+    description: article.excerpt,
+    date: article.publishedAt,
+    image: article.coverImage,
+    category: article.tags[0] || 'BIORISE',
+    status: index === 0 ? 'current' : 'completed',
+    href: `/articles/${article.slug}/`,
+  }))
+
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
       <Header />
@@ -19,68 +29,72 @@ export default function ArticlesPage() {
         className="pb-20"
         style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <Breadcrumbs
             items={[
               { name: 'Главная', href: '/' },
               { name: 'Статьи', href: '/articles/' },
             ]}
           />
-          <h1 className="text-2xl sm:text-3xl font-heading text-olive-primary font-light mb-1">
-            Статьи
-          </h1>
-          <p className="text-olive-primary/60 text-sm sm:text-base">
-            Коротко и по делу: дефициты, восстановление, витаминные капельницы и IV-терапия.
-          </p>
         </div>
 
-        {/* Лента в стиле Дзен: вертикальный список карточек */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 mt-8 space-y-4">
-          {articles.map((article) => (
-            <Link
-              key={article.slug}
-              href={`/articles/${article.slug}`}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full bg-white rounded-2xl overflow-hidden border border-olive-primary/5 hover:border-olive-primary/15 hover:shadow-md transition-all duration-200 group"
-            >
-              <div className="sm:w-64 sm:min-w-[256px] sm:shrink-0 aspect-video sm:aspect-square bg-beige-background/50">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={article.coverImage}
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex-1 min-w-0 p-4 sm:p-5 sm:py-6 flex flex-col justify-center">
-                <div className="flex items-center gap-2 text-xs text-olive-primary/50 mb-2">
-                  <span>{article.publishedAt}</span>
-                  <span className="w-0.5 h-0.5 rounded-full bg-olive-primary/40" />
-                  <span>4–6 мин</span>
+        <div className="mx-auto mt-6 max-w-5xl px-4 sm:px-6">
+          <div className="relative overflow-hidden rounded-[34px] border border-olive-primary/10 bg-white/80 px-6 py-8 shadow-premium backdrop-blur-sm sm:px-8 sm:py-10 lg:px-10">
+            <div className="absolute -left-24 top-10 h-52 w-52 rounded-full bg-olive-primary/10 blur-3xl" />
+            <div className="absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-beige-accent/70 blur-3xl" />
+
+            <div className="relative">
+              <span className="inline-flex rounded-full border border-olive-primary/20 bg-beige-background/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/75">
+                Редакция BIORISE
+              </span>
+              <h1 className="mt-5 max-w-3xl text-3xl font-heading font-light leading-tight text-olive-primary sm:text-4xl lg:text-5xl">
+                Статьи о восстановлении, дефицитах и IV-терапии
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-olive-primary/72 sm:text-lg">
+                Собрали материалы, которые помогают спокойно разобраться в анализах, БАДах, капельницах и сценариях восстановления. Без перегруза, с понятной подачей и прямой связью с услугами BIORISE.
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-4">
+                  <span className="text-xs uppercase tracking-[0.12em] text-olive-primary/50">Материалов</span>
+                  <strong className="mt-2 block text-2xl font-medium text-olive-primary">{articles.length}</strong>
+                  <p className="mt-1 text-sm text-olive-primary/68">Уже опубликовано в разделе</p>
                 </div>
-                <h2 className="text-lg sm:text-xl font-heading text-olive-primary font-medium mb-2 group-hover:text-olive-light transition-colors line-clamp-2">
-                  {article.title}
+                <div className="rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-4">
+                  <span className="text-xs uppercase tracking-[0.12em] text-olive-primary/50">Основные темы</span>
+                  <strong className="mt-2 block text-2xl font-medium text-olive-primary">БАДЫ и капельницы</strong>
+                  <p className="mt-1 text-sm text-olive-primary/68">Разбираем решения под реальные задачи</p>
+                </div>
+                <div className="rounded-2xl border border-olive-primary/10 bg-beige-background/60 p-4">
+                  <span className="text-xs uppercase tracking-[0.12em] text-olive-primary/50">Формат</span>
+                  <strong className="mt-2 block text-2xl font-medium text-olive-primary">Коротко и по делу</strong>
+                  <p className="mt-1 text-sm text-olive-primary/68">Понятная подача без перегруза терминами</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          <Timeline items={timelineItems} />
+        </div>
+
+        <div className="mx-auto mt-4 max-w-5xl px-4 sm:px-6">
+          <div className="rounded-[30px] border border-olive-primary/10 bg-white/75 px-6 py-8 shadow-sm backdrop-blur-sm sm:px-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">
+                  Нужна статья под конкретную тему
                 </h2>
-                <p className="text-olive-primary/70 text-sm sm:text-base leading-relaxed line-clamp-2">
-                  {article.excerpt}
+                <p className="mt-3 text-sm leading-relaxed text-olive-primary/72 sm:text-base">
+                  Раздел будет расширяться: добавим материалы про дефициты, витамин D, железо, восстановление после нагрузок, анализы и сценарии IV-терапии.
                 </p>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {article.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs text-olive-primary/55 bg-olive-primary/5 px-2 py-0.5 rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
-              <div className="hidden sm:flex sm:items-center sm:pr-4 text-olive-primary/40 group-hover:text-olive-primary transition-colors">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 18 15 12 9 6" />
-                </svg>
+              <div className="rounded-2xl bg-beige-background/70 px-4 py-3 text-sm text-olive-primary/75">
+                Скоро добавим новые материалы о дефицитах, витаминах, анализах и программах восстановления.
               </div>
-            </Link>
-          ))}
+            </div>
+          </div>
         </div>
       </section>
 

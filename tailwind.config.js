@@ -8,6 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: '#5E6F52',
+        'primary-foreground': '#FFFFFF',
+        background: '#F3EFE6',
+        foreground: '#2F342C',
+        border: '#D9D2C4',
+        card: '#FFFCF7',
+        'card-foreground': '#2F342C',
+        muted: '#EEE7DB',
+        'muted-foreground': '#6F7568',
+        success: '#6B9A67',
+        warning: '#B08A4B',
         olive: {
           primary: '#5E6F52',
           light: '#7F8F70',
