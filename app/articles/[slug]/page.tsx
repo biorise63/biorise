@@ -198,13 +198,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   }
 
   const contentBlocks = parseContentBlocks(article.content)
-  const firstHeadingIndex = contentBlocks.findIndex(
-    (block) => block.type === 'h2' || block.type === 'h3'
-  )
-  const introBlocks =
-    firstHeadingIndex === -1 ? contentBlocks : contentBlocks.slice(0, firstHeadingIndex)
-  const remainingBlocks =
-    firstHeadingIndex === -1 ? [] : contentBlocks.slice(firstHeadingIndex)
   const imageAlt = article.imageAlt || article.h1 || article.title
 
   return (
@@ -256,8 +249,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               ))}
             </div>
 
-            <section className="mb-8 grid gap-5 sm:grid-cols-[minmax(0,180px)_minmax(0,1fr)] sm:gap-6 sm:items-start">
-              <div className="w-full max-w-[180px] mx-auto sm:mx-0">
+            <div className="prose prose-olive max-w-none text-olive-primary/90 text-base leading-relaxed space-y-5">
+              <div className="mx-auto mb-5 w-full max-w-[180px] sm:float-left sm:mr-6 sm:mb-4 sm:ml-0">
                 <div className="aspect-[4/5]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -269,41 +262,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
 
-              <div className="space-y-4 text-olive-primary/90 text-base leading-relaxed">
-                {introBlocks.map((block, idx) => {
-                  if (block.type === 'paragraph') {
-                    return <p key={idx}>{renderInlineContent(block.text)}</p>
-                  }
-
-                  if (block.type === 'list') {
-                    return (
-                      <ul key={idx} className="list-disc space-y-2 pl-5">
-                        {block.items.map((item, itemIndex) => (
-                          <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
-                        ))}
-                      </ul>
-                    )
-                  }
-
-                  if (block.type === 'ordered-list') {
-                    return (
-                      <ol key={idx} className="list-decimal space-y-2 pl-5">
-                        {block.items.map((item, itemIndex) => (
-                          <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
-                        ))}
-                      </ol>
-                    )
-                  }
-
-                  return (
-                    <p key={idx}>{renderInlineContent(block.text)}</p>
-                  )
-                })}
-              </div>
-            </section>
-
-            <div className="prose prose-olive max-w-none text-olive-primary/90 text-base leading-relaxed space-y-5">
-              {remainingBlocks.map((block, idx) => {
+              {contentBlocks.map((block, idx) => {
                 if (block.type === 'h2') {
                   return (
                     <h2 key={idx} className="text-xl font-heading text-olive-primary mt-8 mb-3 font-medium">
