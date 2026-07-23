@@ -6,6 +6,32 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
+    common: 'Подготовка к школе и детскому саду',
+    subtitle: 'Детский чек-ап перед новым учебным годом',
+    description:
+      'Помогает проверить здоровье ребенка перед школой, садом и стартом новых нагрузок.',
+    features: [
+      'Клинический анализ крови с лейкоформулой',
+      'Общий анализ мочи',
+      'Глюкоза крови',
+      'Кал на яйца гельминтов',
+      'Анализ на энтеробиоз',
+    ],
+    price: {
+      current: '1 490 ₽',
+      old: '2 200 ₽',
+    },
+    period: 'с 24 июля по 30 сентября 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/promo-school-checkup.jpg',
+      text: 'Подготовка к школе и детскому саду',
+      pos: 'center 34%',
+      by: 'Детский чек-ап',
+    },
+  },
+  {
     common: 'Чек-ап «Диагностика дефицита железа»',
     subtitle: 'Комплексная оценка железа и витаминов B',
     description:
