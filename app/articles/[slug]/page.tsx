@@ -115,8 +115,39 @@ function renderInlineContent(text: string) {
       )
     }
 
-    return <span key={`text-${index}`}>{token.value}</span>
+    return (
+      <span key={`text-${index}`}>
+        {renderStrongText(token.value)}
+      </span>
+    )
   })
+}
+
+function renderStrongText(text: string) {
+  const parts: React.ReactNode[] = []
+  const strongRegex = /\*\*([^*]+)\*\*/g
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+
+  while ((match = strongRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+
+    parts.push(
+      <strong key={`strong-${match.index}`} className="font-semibold text-olive-primary">
+        {match[1]}
+      </strong>,
+    )
+
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+
+  return parts.length ? parts : text
 }
 
 type ContentBlock =
