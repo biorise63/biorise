@@ -55,7 +55,7 @@ const offers: Offer[] = [
   },
   {
     id: 'vitamin-d-shot',
-    imageSrc: '/optimized/promo-transparent/promo-vitamin-d-shot-cutout.webp',
+    imageSrc: '/optimized/promo-transparent/cards/promo-vitamin-d-shot-card.webp',
     imageAlt: 'Витамин D 300 000 МЕ',
     tag: 'Популярное',
     title: 'Витамин D 300 000 МЕ',
@@ -81,7 +81,7 @@ const offers: Offer[] = [
   },
   {
     id: 'energiya',
-    imageSrc: '/optimized/drips/energy.webp',
+    imageSrc: '/optimized/drips/cards/energy-card.webp',
     imageAlt: 'Энергия',
     tag: 'Популярное',
     title: 'Энергия',
@@ -107,7 +107,7 @@ const offers: Offer[] = [
   },
   {
     id: 'zolushka-popular',
-    imageSrc: '/optimized/drips/beauty.webp',
+    imageSrc: '/optimized/drips/cards/beauty-card.webp',
     imageAlt: 'Золушка',
     tag: 'Популярное',
     title: 'Золушка',
@@ -120,7 +120,7 @@ const offers: Offer[] = [
   },
   {
     id: 'vitaminnaya-popular',
-    imageSrc: '/optimized/drips/vitamins.webp',
+    imageSrc: '/optimized/drips/cards/vitamins-card.webp',
     imageAlt: 'Витаминная',
     tag: 'Популярное',
     title: 'Витаминная',
@@ -185,7 +185,7 @@ const offers: Offer[] = [
   },
   {
     id: 'krasota-i-omolozhenie',
-    imageSrc: '/optimized/drips/beauty.webp',
+    imageSrc: '/optimized/drips/cards/beauty-card.webp',
     imageAlt: 'Красота и омоложение',
     tag: 'Красота',
     title: 'Красота и омоложение',
@@ -393,7 +393,7 @@ const offers: Offer[] = [
   },
   {
     id: 'mnogokomponentnaya-vitaminnaya',
-    imageSrc: '/optimized/drips/vitamins.webp',
+    imageSrc: '/optimized/drips/cards/vitamins-card.webp',
     imageAlt: 'Много-компонентная витаминная',
     tag: 'Wellness',
     title: 'Много-компонентная витаминная',
@@ -436,7 +436,7 @@ function OfferCard({ offer }: { offer: Offer }) {
             src={offer.imageSrc}
             alt={offer.imageAlt}
             fill
-            sizes="(max-width: 640px) 248px, 312px"
+            sizes="(max-width: 640px) 180px, 220px"
             className="object-contain scale-[0.86] object-center transition-transform duration-700 group-hover:scale-[0.9] sm:object-contain sm:scale-[0.84] sm:group-hover:scale-[0.88]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/10 to-black/10" />

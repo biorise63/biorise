@@ -25,7 +25,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/promo-school-checkup.jpg',
+      url: '/optimized/promo/gallery/promo-school-checkup.webp',
       text: 'Подготовка к школе и детскому саду',
       pos: 'center 34%',
       by: 'Детский чек-ап',
@@ -75,7 +75,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/optimized/promo/promo-children-checkup.webp',
+      url: '/optimized/promo/gallery/promo-children-checkup.webp',
       text: 'Детский чек-ап',
       pos: 'center 38%',
       by: 'Профилактическое обследование',
@@ -100,7 +100,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/optimized/promo/promo-care-for-parents.webp',
+      url: '/optimized/promo/gallery/promo-care-for-parents.webp',
       text: 'Чек-ап Забота о родителях',
       pos: 'center 38%',
       by: 'Забота о здоровье близких',
