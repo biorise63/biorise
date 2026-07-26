@@ -221,29 +221,32 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     </div>
                   )}
 
-                  {activeItem.price && (
-                    <div className="pt-1">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-lg font-bold">{activeItem.price.current}</span>
-                        {activeItem.price.old && (
-                          <span className="text-xs line-through opacity-60">{activeItem.price.old}</span>
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-                  {activeItem.period && (
-                    <div className="flex items-center gap-1.5 pt-1">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 opacity-80">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      <span className="text-xs leading-tight opacity-90">{activeItem.period}</span>
-                    </div>
-                  )}
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 pt-2">
+                  {(activeItem.price || activeItem.period) && (
+                    <div className="space-y-2 rounded-2xl bg-black/18 px-3 py-2.5 backdrop-blur-[1px]">
+                      {activeItem.price ? (
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-lg font-bold">{activeItem.price.current}</span>
+                          {activeItem.price.old ? (
+                            <span className="text-xs line-through opacity-60">{activeItem.price.old}</span>
+                          ) : null}
+                        </div>
+                      ) : null}
+
+                      {activeItem.period ? (
+                        <div className="flex items-center gap-1.5">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 opacity-80">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                          </svg>
+                          <span className="text-xs leading-tight opacity-90">{activeItem.period}</span>
+                        </div>
+                      ) : null}
+                    </div>
+                  )}
+
                   <GalleryActionButton item={activeItem} openBookingModal={openBookingModal} />
                   <div className="flex items-center justify-center gap-2">
                     {items.map((item, index) => (
