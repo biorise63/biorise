@@ -10,30 +10,6 @@ import { analysesFaq, analysisCategories, analysisSections, popularAnalyses } fr
 const PHONE_DISPLAY = '+7 996 749 97 47'
 const PHONE_HREF = 'tel:+79967499747'
 
-function HeroIllustration() {
-  return (
-    <svg viewBox="0 0 520 420" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="74" y="64" width="160" height="264" rx="28" stroke="currentColor" strokeWidth="2" />
-      <path d="M118 64V36h72v28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M106 152h96" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M106 188h96" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M106 224h68" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M154 148c24 34 36 61 36 82 0 23-16 40-36 40s-36-17-36-40c0-21 12-48 36-82Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="356" cy="118" r="66" stroke="currentColor" strokeWidth="2" />
-      <circle cx="356" cy="118" r="34" stroke="currentColor" strokeWidth="2" />
-      <circle cx="356" cy="118" r="8" fill="currentColor" />
-      <path d="M356 52V24M356 212v-28M290 118h-28M450 118h-28M308 70l-20-20M404 166l20 20M404 70l20-20M308 166l-20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M294 284c0-50 40-90 90-90s90 40 90 90" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="312" cy="284" r="8" fill="currentColor" />
-      <circle cx="356" cy="252" r="10" fill="currentColor" />
-      <circle cx="398" cy="298" r="8" fill="currentColor" />
-      <circle cx="442" cy="270" r="12" fill="currentColor" />
-      <path d="M312 284l44-32 42 46 44-28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M266 334c28-16 50-24 66-24 24 0 38 14 38 32 0 18-14 32-34 32-18 0-42-12-70-40Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 function SectionIcon({ name, className = 'h-6 w-6' }: { name: string; className?: string }) {
   const props = {
     className,
@@ -297,7 +273,7 @@ export default function AnalizyContent() {
           />
 
           <section className="mt-4 overflow-hidden rounded-[2rem] border border-olive-primary/10 bg-white">
-            <div className="grid min-h-[500px] gap-8 px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_460px] lg:items-center lg:gap-12 lg:px-12">
+            <div className="min-h-[500px] px-6 py-8 md:px-10 md:py-10 lg:px-12">
               <div className="max-w-[700px]">
                 <h1 className="text-[40px] font-light leading-[1.05] text-olive-primary sm:text-[44px] lg:text-[48px]">
                   Анализы в Самаре
@@ -320,10 +296,6 @@ export default function AnalizyContent() {
                     Check-up программы
                   </Link>
                 </div>
-              </div>
-
-              <div className="mx-auto flex h-full w-full max-w-[460px] items-center justify-center rounded-[2rem] bg-beige-background/80 p-6 text-olive-primary/70">
-                <HeroIllustration />
               </div>
             </div>
           </section>
