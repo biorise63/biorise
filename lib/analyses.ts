@@ -17,6 +17,12 @@ type GroupedItems = {
   items: AnalysisItem[]
 }
 
+type CategoryDefinition = {
+  title: string
+  icon: string
+  sectionMatchers: string[]
+}
+
 const analyses = analysesData.analyses as AnalysisItem[]
 const checkups = analysesData.checkups as AnalysisItem[]
 
@@ -44,11 +50,13 @@ function groupBySection(items: AnalysisItem[], key: 'section' | 'subsection'): G
     groups.set(title, current)
   }
 
-  return Array.from(groups.entries()).map(([title, groupedItems]) => ({
-    title,
-    slug: toSlug(title),
-    items: groupedItems,
-  }))
+  return Array.from(groups.entries())
+    .map(([title, groupedItems]) => ({
+      title,
+      slug: toSlug(title),
+      items: groupedItems.sort((a, b) => a.name.localeCompare(b.name, 'ru')),
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title, 'ru'))
 }
 
 function findAnalysis(code: string) {
@@ -64,42 +72,110 @@ export const allCheckups = checkups
 export const analysisSections = groupBySection(analyses, 'section')
 export const checkupSections = groupBySection(checkups, 'subsection')
 
+const categoryDefinitions: CategoryDefinition[] = [
+  {
+    title: 'Общеклинические',
+    icon: 'clinical',
+    sectionMatchers: ['ОБЩЕКЛИНИЧЕСКИЕ ИССЛЕДОВАНИЯ КРОВИ', 'ИССЛЕДОВАНИЯ МОЧИ', 'ИССЛЕДОВАНИЯ КАЛА'],
+  },
+  {
+    title: 'Биохимия',
+    icon: 'biochemistry',
+    sectionMatchers: ['БИОХИМИЧЕСКИЕ ИССЛЕДОВАНИЯ КРОВИ', 'МИКРОЭЛЕМЕНТЫ'],
+  },
+  {
+    title: 'Гормоны',
+    icon: 'hormones',
+    sectionMatchers: ['ОЦЕНКА ФУНКЦИИ ЭНДОКРИННОЙ СИСТЕМЫ'],
+  },
+  {
+    title: 'Иммунология',
+    icon: 'immunity',
+    sectionMatchers: ['ИММУНОГЕМАТОЛОГИЯ', 'ИММУНОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ', 'ДИАГНОСТИКА АУТОИММУННЫХ ЗАБОЛЕВАНИЙ'],
+  },
+  {
+    title: 'Генетика',
+    icon: 'genetics',
+    sectionMatchers: ['ЦИТОГЕНЕТИЧЕСКИЕ ИССЛЕДОВАНИЯ', 'ГЕНЕТИЧЕСКИЕ ПРЕДРАСПОЛОЖЕННОСТИ', 'НАСЛЕДСТВЕННЫЕ МОНОГЕННЫЕ ЗАБОЛЕВАНИЯ И СОСТОЯНИЯ'],
+  },
+  {
+    title: 'Аллергология',
+    icon: 'allergy',
+    sectionMatchers: ['АЛЛЕРГОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ'],
+  },
+  {
+    title: 'Инфекции',
+    icon: 'infections',
+    sectionMatchers: ['ДИАГНОСТИКА ИНФЕКЦИОННЫХ ЗАБОЛЕВАНИЙ', 'МИКРОБИОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ: НЕСПЕЦИФИЧЕСКИЕ ВОСПАЛИТЕЛЬНЫЕ ЗАБОЛЕВАНИЯ РАЗЛИЧНЫХ ЛОКАЛИЗАЦИЙ'],
+  },
+  {
+    title: 'Онкодиагностика',
+    icon: 'oncology',
+    sectionMatchers: ['ОНКОГЕНЕТИЧЕСКИЕ ИССЛЕДОВАНИЯ', 'ГИСТОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ', 'ЦИТОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ'],
+  },
+]
+
+export const analysisCategories = categoryDefinitions.map((category) => {
+  const matchedSections = analysisSections.filter((section) =>
+    category.sectionMatchers.includes(section.title),
+  )
+
+  return {
+    ...category,
+    count: matchedSections.reduce((sum, section) => sum + section.items.length, 0),
+    sectionSlugs: matchedSections.map((section) => section.slug),
+    sectionTitle: matchedSections[0]?.title ?? category.sectionMatchers[0],
+  }
+})
+
 export const popularAnalyses = [
   {
     code: '5',
     title: 'Общий анализ крови',
-    description: 'Базовый анализ для оценки воспаления, анемии и общего состояния организма.',
-    icon: 'blood',
+    description: 'Базовая оценка воспаления, анемии и общего состояния.',
+    icon: 'blood-drop',
   },
   {
     code: '116',
     title: 'Общий анализ мочи',
-    description: 'Часто нужен для скрининга почек, мочевыводящих путей и обменных нарушений.',
-    icon: 'urine',
+    description: 'Скрининг функции почек и мочевыводящих путей.',
+    icon: 'kidney',
   },
   {
     code: '51',
     title: 'Ферритин',
-    description: 'Помогает понять, есть ли дефицит железа и почему держится слабость.',
-    icon: 'iron',
+    description: 'Помогает оценить запасы железа и дефицитные состояния.',
+    icon: 'iron-cell',
   },
   {
     code: '56',
     title: 'ТТГ',
-    description: 'Один из самых частых анализов при жалобах на усталость, вес и перепады настроения.',
+    description: 'Частый анализ при жалобах на вес, сон и утомляемость.',
     icon: 'thyroid',
   },
   {
     code: '928',
     title: 'Витамин D',
-    description: 'Актуален при дефицитах, частых простудах, снижении энергии и болях в мышцах.',
-    icon: 'vitamin',
+    description: 'Актуален при дефицитах, слабости и частых простудах.',
+    icon: 'sun',
+  },
+  {
+    code: '16',
+    title: 'Глюкоза',
+    description: 'Базовый показатель углеводного обмена.',
+    icon: 'glucose',
   },
   {
     code: '1601ОСТ',
     title: 'Энтеробиоз',
-    description: 'Популярное исследование для детей перед садом, школой и справками.',
+    description: 'Часто нужен детям для справок в сад или школу.',
     icon: 'children',
+  },
+  {
+    code: '159ЯГ',
+    title: 'Яйца гельминтов',
+    description: 'Профильное исследование кала для детских справок.',
+    icon: 'shield-lab',
   },
 ].map((item) => {
   const analysis = findAnalysis(item.code)
@@ -110,6 +186,7 @@ export const popularAnalyses = [
     turnaround: analysis?.turnaround ?? 'По готовности лаборатории',
     code: analysis?.code ?? item.code,
     name: shortName(analysis?.name ?? item.title),
+    sectionSlug: analysis ? toSlug(analysis.section) : '',
   }
 })
 
@@ -124,7 +201,7 @@ export const featuredCheckups = [
     code: 'ОБС266',
     label: 'Женщинам',
     title: 'Профиль для женщин базовый 18+',
-    note: 'Базовый профилактический чек-ап без лишних исследований.',
+    note: 'Базовый профилактический check-up без лишних исследований.',
   },
   {
     code: 'ОБС276',
@@ -161,8 +238,25 @@ export const featuredCheckups = [
   }
 })
 
-export const analysesStats = {
-  analysesCount: allAnalyses.length,
-  checkupsCount: allCheckups.length,
-  sectionsCount: analysisSections.length,
-}
+export const analysesFaq = [
+  {
+    question: 'Можно ли сдать анализы без направления врача?',
+    answer:
+      'Да, большинство лабораторных исследований можно сдать самостоятельно. Если нужен подбор объема диагностики, врач клиники поможет выбрать нужные позиции без лишних анализов.',
+  },
+  {
+    question: 'Как быстро готовы результаты?',
+    answer:
+      'Срок зависит от конкретного исследования. Базовые анализы часто готовы быстро, а более редкие профили требуют больше времени. Точный срок указан в каталоге рядом с каждой позицией.',
+  },
+  {
+    question: 'Есть ли анализы для детей?',
+    answer:
+      'Да. В каталоге есть отдельные исследования и готовые программы для детей, включая анализы для справок в детский сад и школу.',
+  },
+  {
+    question: 'Где посмотреть check-up программы?',
+    answer:
+      'Для комплексных обследований мы вынесли отдельную страницу с check-up программами. Там удобнее выбрать готовый набор для женщин, мужчин, детей и профилактики.',
+  },
+]
