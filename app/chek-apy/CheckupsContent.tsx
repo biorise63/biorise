@@ -127,39 +127,6 @@ export default function CheckupsContent() {
             <h1 className="text-[38px] font-light leading-[1.05] text-olive-primary sm:text-[44px] lg:text-[48px]">
               Чек-ап организма в Самаре
             </h1>
-            <p className="mt-5 text-[17px] leading-[1.65] text-olive-primary/74 sm:text-[18px]">
-              Готовые программы помогают начать обследование без ручного подбора каждого анализа. На странице собраны основные профили BIORISE: базовые, расширенные, мужские, послеродовые и программы под конкретную задачу.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-3 md:grid-cols-3">
-            <div className="rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/55 px-4 py-4">
-              <div className="flex items-center gap-3 text-olive-primary">
-                <SectionIcon name="intro" />
-                <p className="text-sm font-medium">Готовый состав</p>
-              </div>
-              <p className="mt-3 text-sm leading-[1.65] text-olive-primary/70">
-                Вы видите логичные наборы анализов, а не длинный список без структуры.
-              </p>
-            </div>
-            <div className="rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/55 px-4 py-4">
-              <div className="flex items-center gap-3 text-olive-primary">
-                <SectionIcon name="analysis" />
-                <p className="text-sm font-medium">Без цены в каталоге</p>
-              </div>
-              <p className="mt-3 text-sm leading-[1.65] text-olive-primary/70">
-                Стоимость уточняйте у администратора. На этой странице мы показываем состав и направление программы.
-              </p>
-            </div>
-            <div className="rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/55 px-4 py-4">
-              <div className="flex items-center gap-3 text-olive-primary">
-                <SectionIcon name="phone" />
-                <p className="text-sm font-medium">Если нужен другой объем</p>
-              </div>
-              <p className="mt-3 text-sm leading-[1.65] text-olive-primary/70">
-                Можно взять готовый профиль за основу и уточнить состав при записи.
-              </p>
-            </div>
           </div>
         </section>
 
