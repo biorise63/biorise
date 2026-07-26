@@ -183,19 +183,13 @@ export default function CheckupsContent() {
                 Откройте полный каталог анализов BIORISE. Там собраны отдельные исследования с названиями, сроками и навигацией по разделам.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex w-full md:w-auto md:justify-end">
               <Link
                 href="/analizy/"
-                className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
+                className="inline-flex w-full items-center justify-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light md:w-auto"
               >
                 Перейти к анализам
               </Link>
-              <a
-                href="tel:+79967499747"
-                className="inline-flex items-center rounded-full border border-olive-primary/18 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-beige-background/70"
-              >
-                +7 996 749 97 47
-              </a>
             </div>
           </div>
         </section>

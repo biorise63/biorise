@@ -555,39 +555,6 @@ export default function AnalizyContent() {
             </div>
           </section>
 
-          <section className="mt-24 rounded-[2rem] border border-olive-primary/10 bg-white px-6 py-8 sm:px-8 md:px-10">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-[680px]">
-                <div className="flex items-center gap-3 text-olive-primary">
-                  <SectionIcon name="contact" className="h-7 w-7" />
-                  <h2 className="text-[32px] font-light leading-tight text-olive-primary">Контакты и запись</h2>
-                </div>
-                <p className="mt-4 text-[16px] leading-[1.6] text-olive-primary/78">
-                  Если вы уже знаете нужные исследования, можно записаться сразу. Если нужен подбор по жалобам, возрасту или результатам прошлых анализов, врач поможет собрать корректный объем диагностики.
-                </p>
-              </div>
-              <div className="flex flex-col items-start gap-3 sm:items-end">
-                <a href={PHONE_HREF} className="text-[28px] font-medium text-olive-primary transition-colors hover:text-olive-primary">
-                  {PHONE_DISPLAY}
-                </a>
-                <div className="flex flex-wrap gap-3 sm:justify-end">
-                  <button
-                    type="button"
-                    onClick={openBookingModal}
-                    className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
-                  >
-                    Записаться онлайн
-                  </button>
-                  <Link
-                    href="/chek-apy/"
-                    className="inline-flex items-center rounded-full border border-olive-primary/18 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-beige-background/70"
-                  >
-                    Открыть чек-ап программы
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
 
         <AnalysesFloatingActions />
