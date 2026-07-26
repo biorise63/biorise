@@ -273,7 +273,7 @@ export default function AnalizyContent() {
           />
 
           <section className="mt-4 overflow-hidden rounded-[2rem] border border-olive-primary/10 bg-white">
-            <div className="min-h-[500px] px-6 py-8 md:px-10 md:py-10 lg:px-12">
+            <div className="px-6 py-8 md:px-10 md:py-9 lg:px-12">
               <div className="max-w-[700px]">
                 <h1 className="text-[40px] font-light leading-[1.05] text-olive-primary sm:text-[44px] lg:text-[48px]">
                   Анализы в Самаре
