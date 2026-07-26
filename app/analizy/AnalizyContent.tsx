@@ -293,7 +293,7 @@ export default function AnalizyContent() {
                     href="/chek-apy/"
                     className="inline-flex items-center rounded-full border border-olive-primary/18 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-beige-background/70"
                   >
-                    Check-up программы
+                    Чек-ап программы
                   </Link>
                 </div>
               </div>
@@ -524,9 +524,9 @@ export default function AnalizyContent() {
           <section className="mt-24 rounded-[2rem] border border-olive-primary/10 bg-beige-background/70 px-6 py-8 sm:px-8 md:px-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[720px]">
-                <h2 className="text-[32px] font-light leading-tight text-olive-primary">Check-up программы</h2>
+                <h2 className="text-[32px] font-light leading-tight text-olive-primary">Чек-ап программы</h2>
                 <p className="mt-4 text-[16px] leading-[1.6] text-olive-primary/78">
-                  Если нужен готовый набор анализов без ручного подбора по одной позиции, откройте отдельную страницу с check-up программами для женщин, мужчин, детей, дефицитов и профилактических обследований.
+                  Если нужен готовый набор исследований, откройте страницу с чек-апами. Там собраны базовые, расширенные, мужские, послеродовые и профильные программы.
                 </p>
               </div>
               <div className="flex shrink-0 flex-wrap gap-3">
@@ -534,7 +534,7 @@ export default function AnalizyContent() {
                   href="/chek-apy/"
                   className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
                 >
-                  Открыть check-up программы
+                  Открыть чек-ап программы
                 </Link>
               </div>
             </div>
@@ -582,7 +582,7 @@ export default function AnalizyContent() {
                     href="/chek-apy/"
                     className="inline-flex items-center rounded-full border border-olive-primary/18 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-beige-background/70"
                   >
-                    Открыть check-up программы
+                    Открыть чек-ап программы
                   </Link>
                 </div>
               </div>
