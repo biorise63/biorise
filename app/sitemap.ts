@@ -13,6 +13,7 @@ const staticPages: Array<{
   { path: '/kapelnicy/', priority: 0.95, changeFrequency: 'weekly' },
   { path: '/kapelnicy/na-domu/', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/analizy/', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/chek-apy/', priority: 0.88, changeFrequency: 'weekly' },
   { path: '/bady/', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/articles/', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/apparatnyy-massazh/', priority: 0.8, changeFrequency: 'monthly' },

@@ -1,302 +1,251 @@
-'use client'
-
-import { motion } from 'framer-motion'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { useBookingModal } from '@/components/BookingModalProvider'
+import AnalysesFloatingActions from './AnalysesFloatingActions'
+import { analysesStats, analysisSections, popularAnalyses } from '@/lib/analyses'
 
-const analysisCategories = [
-  {
-    title: 'Витаминный чек-ап',
-    description: 'Показывает, хватает ли вам витаминов и микроэлементов, когда силы на нуле или иммунитет просел.',
-    icon: 'spark',
-  },
-  {
-    title: 'Гормональный профиль',
-    description: 'Помогает разобраться с весом, циклом, настроением и скачками энергии.',
-    icon: 'hormone',
-  },
-  {
-    title: 'Базовый check-up',
-    description: 'Набор анализов для ежегодной проверки без лишних исследований.',
-    icon: 'shield',
-  },
-]
+function AnalysisIcon({ icon }: { icon: string }) {
+  const common = 'h-5 w-5'
 
-const basicAnalyses = [
-  {
-    code: '5',
-    name: 'Общий анализ крови (ОАК)',
-    category: 'Базовые анализы',
-    turnaround: '1 к.д.',
-    price: '270 ₽',
-  },
-  {
-    code: '16',
-    name: 'Глюкоза',
-    category: 'Базовые анализы',
-    turnaround: '1 к.д.',
-    price: '190 ₽',
-  },
-  {
-    code: '51',
-    name: 'Ферритин',
-    category: 'Дефициты',
-    turnaround: '1 р.д.',
-    price: '520 ₽',
-  },
-  {
-    code: '56',
-    name: 'Тиреотропный гормон (ТТГ)',
-    category: 'Щитовидная железа',
-    turnaround: '1 к.д.',
-    price: '430 ₽',
-  },
-  {
-    code: '928',
-    name: '25-OH витамин D общий',
-    category: 'Витаминный статус',
-    turnaround: '1 к.д.',
-    price: '2 065 ₽',
-  },
-  {
-    code: '1317B12',
-    name: 'Активный витамин B12',
-    category: 'Витаминный статус',
-    turnaround: 'до 4 к.д.',
-    price: '1 520 ₽',
-  },
-]
-
-const popularCheckups = [
-  {
-    code: 'ОБС156',
-    name: 'Витамин D и минеральный обмен',
-    description: 'Комплекс для оценки витаминного статуса и минералов.',
-    price: '3 130 ₽',
-  },
-  {
-    code: 'ОБС103',
-    name: 'Гемостазиограмма (коагулограмма), скрининг',
-    description: 'Базовая проверка свертывающей системы крови.',
-    price: '1 000 ₽',
-  },
-  {
-    code: 'ОБС89',
-    name: 'Здоровый ребенок: комплекс 0-14 лет',
-    description: 'Базовый скрининг для оценки здоровья ребенка.',
-    price: '890 ₽',
-  },
-]
-
-function CategoryIcon({ icon }: { icon: string }) {
-  if (icon === 'spark') {
+  if (icon === 'blood') {
     return (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3 14.4 8.1 20 10.5l-5.1 2.4L12.5 18l-2.4-5.1L5 10.5l5.1-2.4L12 3Z" />
+      <svg className={common} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3c3.5 4.3 5.5 7.2 5.5 9.8A5.5 5.5 0 1 1 6.5 12.8C6.5 10.2 8.5 7.3 12 3Z" />
       </svg>
     )
   }
-  if (icon === 'hormone') {
+
+  if (icon === 'urine') {
     return (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 7a3 3 0 1 1 6 0v2.5a3.5 3.5 0 1 1-2 3.16V7a1 1 0 1 0-2 0v10a3 3 0 1 1-2-2.83V7Z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M14 14a3 3 0 1 1 6 0v3a3 3 0 1 1-2-2.83V14a1 1 0 1 0-2 0v.5" />
+      <svg className={common} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 3h6m-5 0v4m4-4v4m-6 3h8l1.2 8.1A2 2 0 0 1 15.2 20H8.8a2 2 0 0 1-1.98-1.9L8 10Z" />
       </svg>
     )
   }
+
+  if (icon === 'iron') {
+    return (
+      <svg className={common} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 4h8v5a4 4 0 1 1-8 0V4Zm4 9v7m-3-3h6" />
+      </svg>
+    )
+  }
+
+  if (icon === 'thyroid') {
+    return (
+      <svg className={common} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 4a2 2 0 1 1 4 0v4.5a4.5 4.5 0 1 1-4 0V4Z" />
+      </svg>
+    )
+  }
+
+  if (icon === 'vitamin') {
+    return (
+      <svg className={common} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 6h8l2 4-6 8-6-8 2-4Z" />
+      </svg>
+    )
+  }
+
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3 4 7v5c0 5 3.4 7.9 8 9 4.6-1.1 8-4 8-9V7l-8-4Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="m9 12 2 2 4-4" />
+    <svg className={common} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M7 5h10v3H7zM6 8h12l1 11H5L6 8Z" />
     </svg>
   )
 }
 
 export default function AnalizyContent() {
-  const { openBookingModal } = useBookingModal()
-
   return (
-    <div
-      className="pb-20"
-      style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}
-    >
+    <div className="pb-24" style={{ paddingTop: 'calc(var(--header-height) + 1.5rem)' }}>
       <div className="container mx-auto px-4 sm:px-6">
         <Breadcrumbs
           items={[
             { name: 'Главная', href: '/' },
-            { name: 'Анализы и чек-апы', href: '/analizy/' },
+            { name: 'Анализы', href: '/analizy/' },
           ]}
         />
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mb-12"
-        >
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-            <div>
-              <span className="inline-flex items-center rounded-full border border-olive-primary/20 bg-beige-background px-4 py-1.5 text-sm text-olive-primary/80">
-                Услуга BIORISE
+
+        <section className="mx-auto max-w-6xl rounded-[2rem] border border-olive-primary/12 bg-gradient-to-br from-beige-background via-white to-beige-background/60 px-6 py-8 shadow-[0_24px_60px_rgba(60,74,42,0.08)] sm:px-8 sm:py-10 lg:px-10">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center rounded-full border border-olive-primary/15 bg-white/80 px-4 py-1.5 text-sm text-olive-primary/80">
+                Лабораторная диагностика BIORISE
               </span>
-              <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-heading font-light text-olive-primary leading-tight">
-                Анализы и check-up программы
+              <h1 className="mt-5 text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl">
+                Анализы
               </h1>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-olive-primary/80">
-                Сдайте анализы без лишних назначений. Мы собрали исследования и чек-апы, с которых пациенты чаще всего начинают проверку здоровья.
+              <p className="mt-5 text-lg leading-relaxed text-olive-primary/80">
+                Сдайте анализы в Самаре без лишнего скролла по прайсу. На странице собраны популярные исследования, полный лабораторный каталог и отдельный переход к программам check-up, если нужен комплексный формат обследования.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <button
-                  onClick={openBookingModal}
-                  className="bg-olive-primary text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-0.5"
-                >
-                  Записаться онлайн
-                </button>
+              <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="/docs/prajs-analizy.csv"
-                  download="Прайс Анализы.csv"
-                  className="inline-flex items-center gap-2 border border-olive-primary/25 text-olive-primary px-6 py-3.5 rounded-full hover:bg-olive-primary/5 transition-colors"
+                  href="#analizy-table"
+                  className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m7 10 5 5 5-5" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15V3" />
-                  </svg>
-                  Скачать прайс
+                  Перейти к таблице
                 </a>
+                <Link
+                  href="/chek-apy/"
+                  className="inline-flex items-center rounded-full border border-olive-primary/20 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-white/80"
+                >
+                  Открыть чек-апы
+                </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <motion.img
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                src="/analizy/analizy-1.jpg"
-                alt="Лабораторная диагностика и анализы BIORISE Самара"
-                className="rounded-2xl object-cover h-44 sm:h-56 w-full shadow-premium"
-              />
-              <motion.img
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                src="/analizy/analizy-2.jpg"
-                alt="Пробирки для анализов и чек-апов BIORISE Самара"
-                className="rounded-2xl object-cover h-44 sm:h-56 w-full shadow-premium"
-              />
-              <motion.img
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                src="/analizy/analizy-3.jpg"
-                alt="Забор крови для анализов BIORISE Самара"
-                className="rounded-2xl object-cover h-52 sm:h-64 w-full shadow-premium col-span-2"
-              />
+
+            <div className="grid gap-3 sm:grid-cols-3 lg:min-w-[360px]">
+              <div className="rounded-2xl border border-olive-primary/12 bg-white/90 p-4">
+                <div className="text-2xl font-semibold text-olive-primary">{analysesStats.analysesCount}+</div>
+                <p className="mt-1 text-sm leading-relaxed text-olive-primary/70">исследований в общем каталоге</p>
+              </div>
+              <div className="rounded-2xl border border-olive-primary/12 bg-white/90 p-4">
+                <div className="text-2xl font-semibold text-olive-primary">{analysesStats.sectionsCount}</div>
+                <p className="mt-1 text-sm leading-relaxed text-olive-primary/70">профильных направлений лаборатории</p>
+              </div>
+              <div className="rounded-2xl border border-olive-primary/12 bg-white/90 p-4">
+                <div className="text-2xl font-semibold text-olive-primary">{analysesStats.checkupsCount}+</div>
+                <p className="mt-1 text-sm leading-relaxed text-olive-primary/70">готовых check-up программ</p>
+              </div>
             </div>
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mb-12"
-        >
-          <div className="grid md:grid-cols-3 gap-4">
-            {analysisCategories.map((item) => (
-              <div
-                key={item.title}
-                className="group rounded-2xl border border-olive-primary/15 bg-white p-6 shadow-sm hover:shadow-premium transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <div className="w-11 h-11 rounded-xl bg-olive-primary/10 text-olive-primary flex items-center justify-center mb-4 group-hover:bg-olive-primary group-hover:text-white transition-colors">
-                  <CategoryIcon icon={item.icon} />
+        <section className="mx-auto mt-10 max-w-6xl">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-olive-primary/45">Популярное</p>
+              <h2 className="mt-2 text-3xl font-heading font-light text-olive-primary">Анализы, которые выбирают чаще всего</h2>
+            </div>
+            <p className="max-w-xl text-sm leading-relaxed text-olive-primary/65 sm:text-right">
+              Общий анализ крови, моча, ферритин, гормоны щитовидной железы, витамин D и детские справочные исследования.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {popularAnalyses.map((item) => (
+              <article key={item.code} className="rounded-[1.75rem] border border-olive-primary/12 bg-white p-6 shadow-[0_14px_40px_rgba(51,64,35,0.06)] transition-transform duration-300 hover:-translate-y-1">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-beige-background text-olive-primary">
+                    <AnalysisIcon icon={item.icon} />
+                  </div>
+                  <span className="rounded-full bg-olive-primary/8 px-3 py-1 text-xs font-medium text-olive-primary/70">
+                    Код {item.code}
+                  </span>
                 </div>
-                <h3 className="text-xl font-heading text-olive-primary mb-2">{item.title}</h3>
-                <p className="text-olive-primary/75 text-sm leading-relaxed">{item.description}</p>
-              </div>
+                <h3 className="mt-5 text-xl font-semibold leading-snug text-olive-primary">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-olive-primary/72">{item.description}</p>
+                <div className="mt-5 flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-olive-primary/45">Срок</p>
+                    <p className="mt-1 text-sm font-medium text-olive-primary">{item.turnaround}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs uppercase tracking-[0.2em] text-olive-primary/45">Цена</p>
+                    <p className="mt-1 text-2xl font-semibold text-olive-primary">{item.price}</p>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mb-12"
-        >
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-end justify-between gap-4 mb-5">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-heading text-olive-primary">Популярные чек-апы</h2>
-                <p className="mt-1 text-sm text-olive-primary/70 sm:text-base">Комплексы, которые пациенты выбирают чаще всего.</p>
-              </div>
+        <section className="mx-auto mt-10 max-w-6xl rounded-[1.75rem] border border-olive-primary/12 bg-white p-6 shadow-[0_14px_40px_rgba(51,64,35,0.05)] sm:p-8">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-sm uppercase tracking-[0.24em] text-olive-primary/45">Отдельная страница</p>
+              <h2 className="mt-2 text-3xl font-heading font-light text-olive-primary">Нужен не один анализ, а программа обследования?</h2>
+              <p className="mt-3 text-base leading-relaxed text-olive-primary/72">
+                Для комплексных программ без ручного подбора по одному исследованию мы вынесли check-up направления в отдельный раздел. Там удобнее сравнивать готовые пакеты для женщин, мужчин, детей, дефицитов и профилактических обследований.
+              </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {popularCheckups.map((item, index) => (
-                <motion.div
-                  key={item.code}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.28 + index * 0.05 }}
-                  className="rounded-2xl border border-olive-primary/15 bg-white p-5 shadow-sm hover:shadow-premium transition-all duration-300 hover:-translate-y-0.5"
+            <div className="flex shrink-0">
+              <Link
+                href="/chek-apy/"
+                className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
+              >
+                Перейти к чек-апам
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="analizy-table" className="mx-auto mt-10 max-w-6xl">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-olive-primary/45">Полный прайс</p>
+              <h2 className="mt-2 text-3xl font-heading font-light text-olive-primary">Таблица анализов по разделам</h2>
+            </div>
+            <div className="flex max-w-2xl flex-wrap gap-2 sm:justify-end">
+              {analysisSections.map((section) => (
+                <a
+                  key={section.slug}
+                  href={`#section-${section.slug}`}
+                  className="rounded-full border border-olive-primary/15 px-3 py-1.5 text-xs font-medium text-olive-primary/75 transition-colors hover:bg-beige-background"
                 >
-                  <p className="text-xs text-olive-primary/60 mb-2">Код: {item.code}</p>
-                  <h3 className="text-base font-semibold text-olive-primary leading-snug mb-2">{item.name}</h3>
-                  <p className="text-sm text-olive-primary/75 leading-relaxed mb-4">{item.description}</p>
-                  <div className="text-xl font-bold text-olive-primary">{item.price}</div>
-                </motion.div>
+                  {section.title}
+                </a>
               ))}
             </div>
           </div>
-        </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="max-w-6xl mx-auto"
-        >
-          <div className="bg-white rounded-3xl border border-olive-primary/20 shadow-premium overflow-hidden">
-            <div className="bg-gradient-to-r from-olive-primary/10 to-olive-primary/5 border-b border-olive-primary/20 p-5 sm:p-6">
-              <h2 className="text-2xl sm:text-3xl font-heading text-olive-primary mb-2">Базовые популярные анализы</h2>
-              <p className="text-sm text-olive-primary/70 sm:text-base">Анализы, с которых чаще всего начинают проверку.</p>
-            </div>
-            <div className="divide-y divide-olive-primary/10">
-              {basicAnalyses.map((item, index) => (
-                <motion.div
-                  key={`${item.code}-${item.name}`}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.45, delay: 0.28 + index * 0.04 }}
-                  className="grid grid-cols-12 gap-4 px-5 py-5 sm:px-6 group hover:bg-olive-primary/5 transition-colors"
-                >
-                  <div className="col-span-12 md:col-span-6 lg:col-span-7">
-                    <p className="text-xs text-olive-primary/60 mb-1">Код: {item.code} • {item.category}</p>
-                    <h3 className="text-base sm:text-lg text-olive-primary font-semibold leading-snug group-hover:text-olive-light transition-colors">
-                      {item.name}
-                    </h3>
+          <div className="mt-6 space-y-5">
+            {analysisSections.map((section, index) => (
+              <details
+                key={section.slug}
+                id={`section-${section.slug}`}
+                className="overflow-hidden rounded-[1.5rem] border border-olive-primary/12 bg-white shadow-[0_10px_28px_rgba(51,64,35,0.05)]"
+                open={index < 2}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 bg-beige-background/70 px-5 py-4 text-left transition-colors hover:bg-beige-background sm:px-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-olive-primary sm:text-xl">{section.title}</h3>
+                    <p className="mt-1 text-sm text-olive-primary/65">{section.items.length} исследований в разделе</p>
                   </div>
-                  <div className="col-span-6 md:col-span-3 lg:col-span-2 flex items-center md:justify-center">
-                    <span className="text-sm sm:text-base text-olive-primary/80">{item.turnaround}</span>
-                  </div>
-                  <div className="col-span-6 md:col-span-3 lg:col-span-3 flex items-center justify-end md:justify-center">
-                    <span className="text-lg sm:text-xl text-olive-primary font-bold">{item.price}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  <span className="rounded-full border border-olive-primary/12 bg-white px-3 py-1 text-xs font-medium text-olive-primary/65">
+                    Открыть
+                  </span>
+                </summary>
+
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-left text-sm text-olive-primary/80">
+                    <thead className="border-b border-olive-primary/10 bg-white/90 text-xs uppercase tracking-[0.18em] text-olive-primary/50">
+                      <tr>
+                        <th className="px-5 py-4 font-medium sm:px-6">Наименование</th>
+                        <th className="px-5 py-4 font-medium">Биоматериал</th>
+                        <th className="px-5 py-4 font-medium">Срок</th>
+                        <th className="px-5 py-4 text-right font-medium sm:px-6">Цена</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.items.map((item) => (
+                        <tr key={`${section.slug}-${item.code}-${item.name}`} className="border-b border-olive-primary/8 last:border-b-0">
+                          <td className="px-5 py-4 align-top sm:px-6">
+                            <div className="text-xs uppercase tracking-[0.16em] text-olive-primary/38">Код {item.code}</div>
+                            <div className="mt-1 font-medium leading-relaxed text-olive-primary">{item.name}</div>
+                            {item.subsection && item.subsection !== section.title ? (
+                              <div className="mt-1 text-xs text-olive-primary/55">{item.subsection}</div>
+                            ) : null}
+                          </td>
+                          <td className="px-5 py-4 align-top text-olive-primary/70">
+                            {item.biomaterial || 'Уточняется'}
+                          </td>
+                          <td className="px-5 py-4 align-top text-olive-primary/70">
+                            {item.turnaround || 'По готовности лаборатории'}
+                          </td>
+                          <td className="px-5 py-4 text-right align-top font-semibold text-olive-primary sm:px-6">
+                            {item.price}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            ))}
           </div>
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 text-center"
-        >
-          <button
-            onClick={openBookingModal}
-            className="bg-olive-primary text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-olive-light transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1"
-          >
-            Записаться онлайн
-          </button>
-        </motion.section>
+        </section>
       </div>
+
+      <AnalysesFloatingActions />
     </div>
   )
 }

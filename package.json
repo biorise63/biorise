@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-kapelnicy.js && next build",
+    "build": "node scripts/generate-kapelnicy.js && node scripts/generate-analyses.js && next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
