@@ -13,23 +13,23 @@ const PHONE_HREF = 'tel:+79967499747'
 function HeroIllustration() {
   return (
     <svg viewBox="0 0 520 420" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="74" y="64" width="160" height="264" rx="28" stroke="#60A5FA" strokeWidth="2" />
-      <path d="M118 64V36h72v28" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M106 152h96" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" />
-      <path d="M106 188h96" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" />
-      <path d="M106 224h68" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" />
-      <path d="M154 148c24 34 36 61 36 82 0 23-16 40-36 40s-36-17-36-40c0-21 12-48 36-82Z" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="356" cy="118" r="66" stroke="#93C5FD" strokeWidth="2" />
-      <circle cx="356" cy="118" r="34" stroke="#2563EB" strokeWidth="2" />
-      <circle cx="356" cy="118" r="8" fill="#2563EB" />
-      <path d="M356 52V24M356 212v-28M290 118h-28M450 118h-28M308 70l-20-20M404 166l20 20M404 70l20-20M308 166l-20 20" stroke="#60A5FA" strokeWidth="2" strokeLinecap="round" />
-      <path d="M294 284c0-50 40-90 90-90s90 40 90 90" stroke="#DBEAFE" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="312" cy="284" r="8" fill="#0EA5E9" />
-      <circle cx="356" cy="252" r="10" fill="#2563EB" />
-      <circle cx="398" cy="298" r="8" fill="#38BDF8" />
-      <circle cx="442" cy="270" r="12" fill="#60A5FA" />
-      <path d="M312 284l44-32 42 46 44-28" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M266 334c28-16 50-24 66-24 24 0 38 14 38 32 0 18-14 32-34 32-18 0-42-12-70-40Z" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="74" y="64" width="160" height="264" rx="28" stroke="currentColor" strokeWidth="2" />
+      <path d="M118 64V36h72v28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M106 152h96" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M106 188h96" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M106 224h68" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M154 148c24 34 36 61 36 82 0 23-16 40-36 40s-36-17-36-40c0-21 12-48 36-82Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="356" cy="118" r="66" stroke="currentColor" strokeWidth="2" />
+      <circle cx="356" cy="118" r="34" stroke="currentColor" strokeWidth="2" />
+      <circle cx="356" cy="118" r="8" fill="currentColor" />
+      <path d="M356 52V24M356 212v-28M290 118h-28M450 118h-28M308 70l-20-20M404 166l20 20M404 70l20-20M308 166l-20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M294 284c0-50 40-90 90-90s90 40 90 90" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="312" cy="284" r="8" fill="currentColor" />
+      <circle cx="356" cy="252" r="10" fill="currentColor" />
+      <circle cx="398" cy="298" r="8" fill="currentColor" />
+      <circle cx="442" cy="270" r="12" fill="currentColor" />
+      <path d="M312 284l44-32 42 46 44-28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M266 334c28-16 50-24 66-24 24 0 38 14 38 32 0 18-14 32-34 32-18 0-42-12-70-40Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -266,42 +266,42 @@ export default function AnalizyContent() {
             ]}
           />
 
-          <section className="mt-4 overflow-hidden rounded-[2rem] border border-[#E5E7EB] bg-white">
+          <section className="mt-4 overflow-hidden rounded-[2rem] border border-olive-primary/10 bg-white">
             <div className="grid min-h-[500px] gap-8 px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_460px] lg:items-center lg:gap-12 lg:px-12">
               <div className="max-w-[700px]">
-                <h1 className="text-[40px] font-light leading-[1.05] text-[#0F172A] sm:text-[44px] lg:text-[48px]">
+                <h1 className="text-[40px] font-light leading-[1.05] text-olive-primary sm:text-[44px] lg:text-[48px]">
                   Анализы в Самаре
                 </h1>
-                <p className="mt-5 max-w-[620px] text-[17px] leading-[1.6] text-[#475569] sm:text-[18px]">
+                <p className="mt-5 max-w-[620px] text-[17px] leading-[1.6] text-olive-primary/78 sm:text-[18px]">
                   Лабораторные исследования для взрослых и детей. Более 2700 анализов с прозрачными ценами и быстрыми сроками выполнения.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <button
                     type="button"
                     onClick={focusSearch}
-                    className="inline-flex items-center rounded-full bg-[#2563EB] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1D4ED8]"
+                    className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
                   >
                     Найти анализ
                   </button>
                   <Link
                     href="/chek-apy/"
-                    className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-medium text-[#0F172A] transition-colors hover:bg-[#F8FAFC]"
+                    className="inline-flex items-center rounded-full border border-olive-primary/18 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-beige-background/70"
                   >
                     Check-up программы
                   </Link>
                 </div>
               </div>
 
-              <div className="mx-auto flex h-full w-full max-w-[460px] items-center justify-center rounded-[2rem] bg-[#F8FAFC] p-6">
+              <div className="mx-auto flex h-full w-full max-w-[460px] items-center justify-center rounded-[2rem] bg-beige-background/80 p-6 text-olive-primary/70">
                 <HeroIllustration />
               </div>
             </div>
           </section>
 
           <section id="analysis-search" className="mt-24">
-            <div className="rounded-[2rem] border border-[#E5E7EB] bg-[#F8FAFC] p-5 sm:p-6 md:p-8">
-              <div className="flex items-center gap-4 rounded-[1.5rem] border border-[#D7E3F8] bg-white px-5 py-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#EFF6FF] text-[#2563EB]">
+            <div className="rounded-[2rem] border border-olive-primary/10 bg-beige-background/70 p-5 sm:p-6 md:p-8">
+              <div className="flex items-center gap-4 rounded-[1.5rem] border border-olive-primary/12 bg-white px-5 py-4 shadow-premium">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-olive-primary/10 text-olive-primary">
                   <SectionIcon name="lab-search" className="h-6 w-6" />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -313,21 +313,21 @@ export default function AnalizyContent() {
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
                     placeholder="Введите название анализа..."
-                    className="w-full border-0 bg-transparent p-0 text-[18px] text-[#0F172A] outline-none placeholder:text-[#94A3B8]"
+                    className="w-full border-0 bg-transparent p-0 text-[18px] text-olive-primary outline-none placeholder:text-olive-primary/45"
                   />
                 </div>
                 {query ? (
                   <button
                     type="button"
                     onClick={() => setQuery('')}
-                    className="rounded-full px-3 py-2 text-sm text-[#2563EB] transition-colors hover:bg-[#EFF6FF]"
+                    className="rounded-full px-3 py-2 text-sm text-olive-primary transition-colors hover:bg-olive-primary/10"
                   >
                     Сбросить
                   </button>
                 ) : null}
               </div>
               {query ? (
-                <p className="mt-4 text-sm text-[#64748B]">
+                <p className="mt-4 text-sm text-olive-primary/68">
                   Найдено {resultsCount} {resultsCount === 1 ? 'позиция' : resultsCount < 5 ? 'позиции' : 'позиций'}.
                 </p>
               ) : null}
@@ -337,7 +337,7 @@ export default function AnalizyContent() {
           <section className="mt-24">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <h2 className="text-[32px] font-light leading-tight text-[#0F172A]">Популярные анализы</h2>
+                <h2 className="text-[32px] font-light leading-tight text-olive-primary">Популярные анализы</h2>
               </div>
             </div>
 
@@ -345,24 +345,24 @@ export default function AnalizyContent() {
               {popularAnalyses.map((item) => (
                 <article
                   key={item.code}
-                  className="rounded-[1.75rem] border border-[#E5E7EB] bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
+                  className="rounded-[1.75rem] border border-olive-primary/10 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-premium"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EFF6FF] text-[#2563EB]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-olive-primary/10 text-olive-primary">
                       <SectionIcon name={item.icon} />
                     </div>
-                    <span className="text-xs uppercase tracking-[0.18em] text-[#94A3B8]">{item.code}</span>
+                    <span className="text-xs uppercase tracking-[0.18em] text-olive-primary/45">{item.code}</span>
                   </div>
-                  <h3 className="mt-5 text-[20px] font-medium leading-snug text-[#0F172A]">{item.title}</h3>
-                  <p className="mt-3 text-[15px] leading-[1.6] text-[#64748B]">{item.description}</p>
+                  <h3 className="mt-5 text-[20px] font-medium leading-snug text-olive-primary">{item.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.6] text-olive-primary/68">{item.description}</p>
                   <div className="mt-5 flex items-end justify-between gap-3">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-[#94A3B8]">Срок</p>
-                      <p className="mt-1 text-sm text-[#334155]">{item.turnaround}</p>
+                      <p className="text-xs uppercase tracking-[0.18em] text-olive-primary/45">Срок</p>
+                      <p className="mt-1 text-sm text-olive-primary/72">{item.turnaround}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs uppercase tracking-[0.18em] text-[#94A3B8]">Цена</p>
-                      <p className="mt-1 text-[22px] font-medium text-[#0F172A]">{item.price}</p>
+                      <p className="text-xs uppercase tracking-[0.18em] text-olive-primary/45">Цена</p>
+                      <p className="mt-1 text-[22px] font-medium text-olive-primary">{item.price}</p>
                     </div>
                   </div>
                   <button
@@ -371,7 +371,7 @@ export default function AnalizyContent() {
                       setQuery(item.title)
                       document.getElementById('analyses-catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }}
-                    className="mt-5 inline-flex items-center rounded-full border border-[#BFDBFE] px-4 py-2 text-sm font-medium text-[#2563EB] transition-colors hover:bg-[#EFF6FF]"
+                    className="mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                   >
                     Подробнее
                   </button>
@@ -382,7 +382,7 @@ export default function AnalizyContent() {
 
           <section className="mt-24">
             <div>
-              <h2 className="text-[32px] font-light leading-tight text-[#0F172A]">Категории анализов</h2>
+              <h2 className="text-[32px] font-light leading-tight text-olive-primary">Категории анализов</h2>
             </div>
             <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {analysisCategories.map((category) => (
@@ -390,16 +390,16 @@ export default function AnalizyContent() {
                   key={category.title}
                   type="button"
                   onClick={() => openCategory(category.sectionSlugs)}
-                  className="group rounded-[1.5rem] border border-[#E5E7EB] bg-[#F8FAFC] p-6 text-left transition-all duration-200 hover:-translate-y-1 hover:border-[#BFDBFE] hover:bg-white hover:shadow-[0_18px_36px_rgba(15,23,42,0.06)]"
+                  className="group rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/70 p-6 text-left transition-all duration-200 hover:-translate-y-1 hover:border-olive-primary/18 hover:bg-white hover:shadow-premium"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0EA5E9] ring-1 ring-[#E0F2FE]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-olive-primary ring-1 ring-olive-primary/10">
                       <SectionIcon name={category.icon} />
                     </div>
-                    <span className="text-[#2563EB] transition-transform duration-200 group-hover:translate-x-1">↗</span>
+                    <span className="text-olive-primary transition-transform duration-200 group-hover:translate-x-1">↗</span>
                   </div>
-                  <h3 className="mt-5 text-[20px] font-medium text-[#0F172A]">{category.title}</h3>
-                  <p className="mt-2 text-sm text-[#64748B]">{category.count} исследований</p>
+                  <h3 className="mt-5 text-[20px] font-medium text-olive-primary">{category.title}</h3>
+                  <p className="mt-2 text-sm text-olive-primary/68">{category.count} исследований</p>
                 </button>
               ))}
             </div>
@@ -408,16 +408,16 @@ export default function AnalizyContent() {
           <section id="analyses-catalog" className="mt-24">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <h2 className="text-[32px] font-light leading-tight text-[#0F172A]">Каталог анализов</h2>
+                <h2 className="text-[32px] font-light leading-tight text-olive-primary">Каталог анализов</h2>
               </div>
-              <p className="max-w-[420px] text-sm leading-[1.6] text-[#64748B] sm:text-right">
+              <p className="max-w-[420px] text-sm leading-[1.6] text-olive-primary/68 sm:text-right">
                 Категории раскрываются отдельно. Если вы используете поиск, таблица покажет только подходящие позиции.
               </p>
             </div>
 
             <div className="mt-8 space-y-4">
               {filteredSections.length === 0 ? (
-                <div className="rounded-[1.5rem] border border-[#E5E7EB] bg-[#F8FAFC] px-6 py-8 text-[#475569]">
+                <div className="rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/70 px-6 py-8 text-olive-primary/78">
                   По запросу ничего не найдено. Попробуйте изменить формулировку или убрать часть слов.
                 </div>
               ) : (
@@ -425,17 +425,17 @@ export default function AnalizyContent() {
                   const isOpen = openSections.includes(section.slug)
 
                   return (
-                    <div key={section.slug} id={`section-${section.slug}`} className="overflow-hidden rounded-[1.5rem] border border-[#E5E7EB] bg-white">
+                    <div key={section.slug} id={`section-${section.slug}`} className="overflow-hidden rounded-[1.5rem] border border-olive-primary/10 bg-white">
                       <button
                         type="button"
                         onClick={() => toggleSection(section.slug)}
-                        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-[#F8FAFC] sm:px-6"
+                        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-beige-background/70 sm:px-6"
                       >
                         <div>
-                          <h3 className="text-[20px] font-medium text-[#0F172A]">{section.title}</h3>
-                          <p className="mt-1 text-sm text-[#64748B]">{section.items.length} позиций</p>
+                          <h3 className="text-[20px] font-medium text-olive-primary">{section.title}</h3>
+                          <p className="mt-1 text-sm text-olive-primary/68">{section.items.length} позиций</p>
                         </div>
-                        <span className={`text-[#2563EB] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
+                        <span className={`text-olive-primary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
                           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="m6 9 6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
@@ -443,9 +443,9 @@ export default function AnalizyContent() {
                       </button>
 
                       {isOpen ? (
-                        <div className="overflow-x-auto border-t border-[#E5E7EB]">
+                        <div className="overflow-x-auto border-t border-olive-primary/10">
                           <table className="min-w-full text-left">
-                            <thead className="bg-[#F8FAFC] text-xs uppercase tracking-[0.18em] text-[#94A3B8]">
+                            <thead className="bg-beige-background/70 text-xs uppercase tracking-[0.18em] text-olive-primary/45">
                               <tr>
                                 <th className="px-5 py-4 font-medium sm:px-6">Название</th>
                                 <th className="px-5 py-4 font-medium">Срок</th>
@@ -455,18 +455,18 @@ export default function AnalizyContent() {
                             </thead>
                             <tbody>
                               {section.items.map((item) => (
-                                <tr key={`${section.slug}-${item.code}-${item.name}`} className="border-t border-[#EEF2F7] align-top">
+                                <tr key={`${section.slug}-${item.code}-${item.name}`} className="border-t border-olive-primary/8 align-top">
                                   <td className="px-5 py-4 sm:px-6">
-                                    <div className="text-[11px] uppercase tracking-[0.16em] text-[#94A3B8]">Код {item.code}</div>
-                                    <div className="mt-1 text-[15px] leading-[1.6] text-[#0F172A]">{item.name}</div>
+                                    <div className="text-[11px] uppercase tracking-[0.16em] text-olive-primary/45">Код {item.code}</div>
+                                    <div className="mt-1 text-[15px] leading-[1.6] text-olive-primary">{item.name}</div>
                                   </td>
-                                  <td className="px-5 py-4 text-sm text-[#64748B]">{item.turnaround || 'По готовности лаборатории'}</td>
-                                  <td className="px-5 py-4 text-right text-[15px] font-medium text-[#0F172A]">{item.price}</td>
+                                  <td className="px-5 py-4 text-sm text-olive-primary/68">{item.turnaround || 'По готовности лаборатории'}</td>
+                                  <td className="px-5 py-4 text-right text-[15px] font-medium text-olive-primary">{item.price}</td>
                                   <td className="px-5 py-4 text-right sm:px-6">
                                     <button
                                       type="button"
                                       onClick={openBookingModal}
-                                      className="rounded-full border border-[#BFDBFE] px-4 py-2 text-sm font-medium text-[#2563EB] transition-colors hover:bg-[#EFF6FF]"
+                                      className="rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                                     >
                                       Записаться
                                     </button>
@@ -484,18 +484,18 @@ export default function AnalizyContent() {
             </div>
           </section>
 
-          <section className="mt-24 rounded-[2rem] border border-[#E5E7EB] bg-[#F8FAFC] px-6 py-8 sm:px-8 md:px-10">
+          <section className="mt-24 rounded-[2rem] border border-olive-primary/10 bg-beige-background/70 px-6 py-8 sm:px-8 md:px-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[720px]">
-                <h2 className="text-[32px] font-light leading-tight text-[#0F172A]">Check-up программы</h2>
-                <p className="mt-4 text-[16px] leading-[1.6] text-[#475569]">
+                <h2 className="text-[32px] font-light leading-tight text-olive-primary">Check-up программы</h2>
+                <p className="mt-4 text-[16px] leading-[1.6] text-olive-primary/78">
                   Если нужен готовый набор анализов без ручного подбора по одной позиции, откройте отдельную страницу с check-up программами для женщин, мужчин, детей, дефицитов и профилактических обследований.
                 </p>
               </div>
               <div className="flex shrink-0 flex-wrap gap-3">
                 <Link
                   href="/chek-apy/"
-                  className="inline-flex items-center rounded-full bg-[#2563EB] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1D4ED8]"
+                  className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
                 >
                   Открыть check-up программы
                 </Link>
@@ -504,46 +504,46 @@ export default function AnalizyContent() {
           </section>
 
           <section className="mt-24">
-            <div className="flex items-center gap-3 text-[#2563EB]">
+            <div className="flex items-center gap-3 text-olive-primary">
               <SectionIcon name="faq" className="h-7 w-7" />
-              <h2 className="text-[32px] font-light leading-tight text-[#0F172A]">FAQ</h2>
+              <h2 className="text-[32px] font-light leading-tight text-olive-primary">FAQ</h2>
             </div>
             <div className="mt-8 grid gap-4 lg:grid-cols-2">
               {analysesFaq.map((item) => (
-                <article key={item.question} className="rounded-[1.5rem] border border-[#E5E7EB] bg-white p-6">
-                  <h3 className="text-[20px] font-medium leading-snug text-[#0F172A]">{item.question}</h3>
-                  <p className="mt-3 text-[16px] leading-[1.6] text-[#475569]">{item.answer}</p>
+                <article key={item.question} className="rounded-[1.5rem] border border-olive-primary/10 bg-white p-6">
+                  <h3 className="text-[20px] font-medium leading-snug text-olive-primary">{item.question}</h3>
+                  <p className="mt-3 text-[16px] leading-[1.6] text-olive-primary/78">{item.answer}</p>
                 </article>
               ))}
             </div>
           </section>
 
-          <section className="mt-24 rounded-[2rem] border border-[#E5E7EB] bg-white px-6 py-8 sm:px-8 md:px-10">
+          <section className="mt-24 rounded-[2rem] border border-olive-primary/10 bg-white px-6 py-8 sm:px-8 md:px-10">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[680px]">
-                <div className="flex items-center gap-3 text-[#2563EB]">
+                <div className="flex items-center gap-3 text-olive-primary">
                   <SectionIcon name="contact" className="h-7 w-7" />
-                  <h2 className="text-[32px] font-light leading-tight text-[#0F172A]">Контакты и запись</h2>
+                  <h2 className="text-[32px] font-light leading-tight text-olive-primary">Контакты и запись</h2>
                 </div>
-                <p className="mt-4 text-[16px] leading-[1.6] text-[#475569]">
+                <p className="mt-4 text-[16px] leading-[1.6] text-olive-primary/78">
                   Если вы уже знаете нужные исследования, можно записаться сразу. Если нужен подбор по жалобам, возрасту или результатам прошлых анализов, врач поможет собрать корректный объем диагностики.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-3 sm:items-end">
-                <a href={PHONE_HREF} className="text-[28px] font-medium text-[#0F172A] transition-colors hover:text-[#2563EB]">
+                <a href={PHONE_HREF} className="text-[28px] font-medium text-olive-primary transition-colors hover:text-olive-primary">
                   {PHONE_DISPLAY}
                 </a>
                 <div className="flex flex-wrap gap-3 sm:justify-end">
                   <button
                     type="button"
                     onClick={openBookingModal}
-                    className="inline-flex items-center rounded-full bg-[#2563EB] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1D4ED8]"
+                    className="inline-flex items-center rounded-full bg-olive-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-olive-light"
                   >
                     Записаться онлайн
                   </button>
                   <Link
                     href="/chek-apy/"
-                    className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-medium text-[#0F172A] transition-colors hover:bg-[#F8FAFC]"
+                    className="inline-flex items-center rounded-full border border-olive-primary/18 px-6 py-3 text-sm font-medium text-olive-primary transition-colors hover:bg-beige-background/70"
                   >
                     Открыть check-up программы
                   </Link>
