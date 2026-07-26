@@ -2,6 +2,7 @@
 
 import React, { HTMLAttributes, useEffect, useRef, useState } from 'react'
 import { useBookingModal } from '@/components/BookingModalProvider'
+import { getSeoImageAlt } from '@/lib/seo-image-alt'
 
 const cn = (...classes: Array<string | undefined | null | false>) => classes.filter(Boolean).join(' ')
 
@@ -22,6 +23,7 @@ export interface GalleryItem {
   photo: {
     url: string
     text: string
+    alt?: string
     pos?: string
     by: string
   }
@@ -186,7 +188,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
             >
               <img
                 src={activeItem.photo.url}
-                alt={activeItem.photo.text}
+                alt={activeItem.photo.alt || getSeoImageAlt(activeItem.common)}
                 loading="lazy"
                 decoding="async"
                 fetchPriority={activeIndex === 0 ? 'high' : 'low'}
@@ -323,7 +325,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-olive-primary/20 bg-white/70 shadow-premium backdrop-blur-sm">
                   <img
                     src={item.photo.url}
-                    alt={item.photo.text}
+                    alt={item.photo.alt || getSeoImageAlt(item.common)}
                     loading="lazy"
                     decoding="async"
                     fetchPriority={i === 0 ? 'high' : 'low'}

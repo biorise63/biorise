@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight, Tag } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { getSeoImageAlt } from '@/lib/seo-image-alt'
 
 type Category = 'popular' | 'recovery' | 'beauty' | 'women' | 'sport' | 'health' | 'wellness'
 
@@ -434,7 +435,7 @@ function OfferCard({ offer }: { offer: Offer }) {
         <div className="absolute inset-x-0 top-0 h-[44%] overflow-hidden sm:h-[50%]">
           <Image
             src={offer.imageSrc}
-            alt={offer.imageAlt}
+            alt={getSeoImageAlt(offer.title)}
             fill
             sizes="(max-width: 640px) 180px, 220px"
             className="object-contain scale-[0.86] object-center transition-transform duration-700 group-hover:scale-[0.9] sm:object-contain sm:scale-[0.84] sm:group-hover:scale-[0.88]"

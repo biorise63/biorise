@@ -170,21 +170,21 @@ export default function AnalizyContent() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 src="/analizy/analizy-1.jpg"
-                alt="Лабораторная диагностика"
+                alt="Лабораторная диагностика и анализы BIORISE Самара"
                 className="rounded-2xl object-cover h-44 sm:h-56 w-full shadow-premium"
               />
               <motion.img
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 src="/analizy/analizy-2.jpg"
-                alt="Пробирки для анализов"
+                alt="Пробирки для анализов и чек-апов BIORISE Самара"
                 className="rounded-2xl object-cover h-44 sm:h-56 w-full shadow-premium"
               />
               <motion.img
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 src="/analizy/analizy-3.jpg"
-                alt="Забор крови"
+                alt="Забор крови для анализов BIORISE Самара"
                 className="rounded-2xl object-cover h-52 sm:h-64 w-full shadow-premium col-span-2"
               />
             </div>

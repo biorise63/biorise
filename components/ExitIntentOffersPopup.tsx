@@ -13,11 +13,11 @@ const INTENT_TOP_PX = 260
 const SWIPE_MIN_DISTANCE = 42
 
 const SLIDES = [
-  { id: 'drips-2', imageSrc: '/promo/exit-offers/drips-2.jpg' },
-  { id: 'drips-3', imageSrc: '/promo/exit-offers/drips-3.jpg' },
-  { id: 'checkups-1', imageSrc: '/promo/exit-offers/checkups-1.jpg' },
-  { id: 'checkups-2', imageSrc: '/promo/exit-offers/checkups-2.jpg' },
-  { id: 'checkups-3', imageSrc: '/promo/exit-offers/checkups-3.jpg' },
+  { id: 'drips-2', imageSrc: '/promo/exit-offers/drips-2.jpg', alt: 'Капельница антистресс BIORISE Самара' },
+  { id: 'drips-3', imageSrc: '/promo/exit-offers/drips-3.jpg', alt: 'Капельница для восстановления BIORISE Самара' },
+  { id: 'checkups-1', imageSrc: '/promo/exit-offers/checkups-1.jpg', alt: 'Чек-ап BIORISE Самара' },
+  { id: 'checkups-2', imageSrc: '/promo/exit-offers/checkups-2.jpg', alt: 'Анализы и чек-ап BIORISE Самара' },
+  { id: 'checkups-3', imageSrc: '/promo/exit-offers/checkups-3.jpg', alt: 'Комплексный чек-ап BIORISE Самара' },
 ] as const
 
 type YandexWindow = Window & {
@@ -246,7 +246,7 @@ export default function ExitIntentOffersPopup() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={slide.imageSrc}
-                    alt={`Акция ${index + 1}`}
+                    alt={slide.alt}
                     className="h-full w-full object-contain"
                   />
                 </div>

@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 import InfusionDetailActions from '@/components/kapelnicy/InfusionDetailActions'
 import { getInfusionBySlug, getUniqueInfusions } from '@/lib/kapelnicy'
+import { getSeoImageAlt } from '@/lib/seo-image-alt'
 
 interface PageProps {
   params: { slug: string }
@@ -198,7 +199,7 @@ export default function InfusionDetailPage({ params }: PageProps) {
               <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-olive-primary/10 blur-3xl" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-beige-background">
                 {infusion.imageUrl ? (
-                  <Image src={infusion.imageUrl} alt={infusion.title} fill className="object-contain p-5" sizes="(max-width: 1024px) 100vw, 520px" priority />
+                  <Image src={infusion.imageUrl} alt={getSeoImageAlt(infusion.title)} fill className="object-contain p-5" sizes="(max-width: 1024px) 100vw, 520px" priority />
                 ) : (
                   <div className="flex h-full items-center justify-center text-olive-primary/50">Изображение скоро появится</div>
                 )}

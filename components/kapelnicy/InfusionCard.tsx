@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { getSeoImageAlt } from '@/lib/seo-image-alt'
 
 export type InfusionCardProps = {
   id: string
@@ -98,7 +99,7 @@ export default function InfusionCard({
     >
       <div className="infusion-card-image relative w-full bg-beige-background">
         {imageUrl ? (
-          <Image src={imageUrl} alt={title} fill className="object-contain" sizes="(max-width: 768px) 100vw, 33vw" />
+          <Image src={imageUrl} alt={getSeoImageAlt(title)} fill className="object-contain" sizes="(max-width: 768px) 100vw, 33vw" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-olive-primary/50 text-sm">Нет фото</div>
         )}
