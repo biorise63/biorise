@@ -265,6 +265,18 @@ export default function Header() {
                       Капельницы
                     </Link>
                     <Link
+                      href="/analizy"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      Анализы
+                    </Link>
+                    <Link
+                      href="/chek-apy"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      Чек-апы
+                    </Link>
+                    <Link
                       href="/kapelnicy/na-domu"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -305,18 +317,6 @@ export default function Header() {
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
                       Справки
-                    </Link>
-                    <Link
-                      href="/analizy"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
-                    >
-                      Анализы
-                    </Link>
-                    <Link
-                      href="/chek-apy"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
-                    >
-                      Чек-апы
                     </Link>
                   </div>
                 )}
@@ -481,6 +481,8 @@ export default function Header() {
                   <span className="px-3 pb-2 pt-1 text-sm font-semibold text-olive-primary">Услуги</span>
                   <div className="mt-1 flex flex-col gap-1">
                     <Link href="/kapelnicy" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы</Link>
+                    <Link href="/analizy" onClick={closeMobileMenu} className={mobileLinkClass}>Анализы</Link>
+                    <Link href="/chek-apy" onClick={closeMobileMenu} className={mobileLinkClass}>Чек-апы</Link>
                     <Link href="/kapelnicy/na-domu" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы на дому</Link>
                     <Link href="/bioimpedance" onClick={closeMobileMenu} className={mobileLinkClass}>Биоимпедансный анализ</Link>
                     <Link href="/bady" onClick={closeMobileMenu} className={mobileLinkClass}>БАДЫ</Link>
@@ -488,8 +490,6 @@ export default function Header() {
                     <Link href="/ruchnoy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Ручной массаж</Link>
                     <Link href="/lazernaya-epilyatsiya" onClick={closeMobileMenu} className={mobileLinkClass}>Лазерная эпиляция</Link>
                     <Link href="/spravki" onClick={closeMobileMenu} className={mobileLinkClass}>Справки</Link>
-                    <Link href="/analizy" onClick={closeMobileMenu} className={mobileLinkClass}>Анализы</Link>
-                    <Link href="/chek-apy" onClick={closeMobileMenu} className={mobileLinkClass}>Чек-апы</Link>
                   </div>
                 </div>
 
