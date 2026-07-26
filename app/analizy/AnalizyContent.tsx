@@ -200,7 +200,16 @@ export default function AnalizyContent() {
       .map((section) => ({
         ...section,
         items: section.items.filter((item) => {
-          const haystack = [item.code, item.name, item.subsection, item.turnaround].join(' ').toLowerCase()
+          const haystack = [
+            item.code,
+            item.name,
+            item.section,
+            item.subsection,
+            item.biomaterial,
+            item.turnaround,
+          ]
+            .join(' ')
+            .toLowerCase()
           return haystack.includes(trimmedQuery)
         }),
       }))
@@ -209,6 +218,20 @@ export default function AnalizyContent() {
 
   const resultsCount = useMemo(
     () => filteredSections.reduce((sum, section) => sum + section.items.length, 0),
+    [filteredSections],
+  )
+
+  const quickResults = useMemo(
+    () =>
+      filteredSections
+        .flatMap((section) =>
+          section.items.map((item) => ({
+            ...item,
+            sectionSlug: section.slug,
+            sectionTitle: section.title,
+          })),
+        )
+        .slice(0, 8),
     [filteredSections],
   )
 
@@ -222,6 +245,13 @@ export default function AnalizyContent() {
     setOpenSections((prev) =>
       prev.includes(slug) ? prev.filter((item) => item !== slug) : [...prev, slug],
     )
+  }
+
+  const openSearchResult = (sectionSlug: string) => {
+    setOpenSections((prev) => (prev.includes(sectionSlug) ? prev : [...prev, sectionSlug]))
+    requestAnimationFrame(() => {
+      document.getElementById(`section-${sectionSlug}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
   }
 
   const openCategory = (slugs: string[]) => {
@@ -327,9 +357,44 @@ export default function AnalizyContent() {
                 ) : null}
               </div>
               {query ? (
-                <p className="mt-4 text-sm text-olive-primary/68">
-                  Найдено {resultsCount} {resultsCount === 1 ? 'позиция' : resultsCount < 5 ? 'позиции' : 'позиций'}.
-                </p>
+                <div className="mt-4">
+                  <p className="text-sm text-olive-primary/68">
+                    Найдено {resultsCount} {resultsCount === 1 ? 'позиция' : resultsCount < 5 ? 'позиции' : 'позиций'}.
+                  </p>
+
+                  {quickResults.length > 0 ? (
+                    <div className="mt-4 grid gap-3 md:grid-cols-2">
+                      {quickResults.map((item) => (
+                        <div
+                          key={`${item.sectionSlug}-${item.code}-${item.name}`}
+                          className="rounded-2xl border border-olive-primary/10 bg-white px-4 py-4"
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                              <p className="text-[11px] uppercase tracking-[0.16em] text-olive-primary/45">
+                                {item.sectionTitle}
+                              </p>
+                              <p className="mt-1 text-sm leading-relaxed text-olive-primary">
+                                {item.name}
+                              </p>
+                            </div>
+                            <div className="shrink-0 text-right">
+                              <p className="text-sm font-medium text-olive-primary">{item.price}</p>
+                              <p className="mt-1 text-xs text-olive-primary/55">{item.turnaround}</p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => openSearchResult(item.sectionSlug)}
+                            className="mt-3 inline-flex items-center rounded-full border border-olive-primary/18 px-3 py-1.5 text-xs font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                          >
+                            Показать в каталоге
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
               ) : null}
             </div>
           </section>
