@@ -5,7 +5,7 @@ import { getInfusionCategories } from '@/lib/kapelnicy'
 export const metadata: Metadata = {
   title: 'Капельницы в Самаре — виды и цены | BIORISE',
   description:
-    'Капельницы в Самаре в клинике BIORISE: витаминные, восстановительные, детокс и другие программы. Подбор состава врачом, актуальные цены, запись онлайн и выезд на дом.',
+    'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены, выезд на дом и онлайн-запись.',
   alternates: {
     canonical: 'https://biorise-clinic.ru/kapelnicy/',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'BIORISE',
     title: 'Капельницы в Самаре — виды и цены | BIORISE',
     description:
-      'Витаминные, восстановительные, детокс и другие капельницы в Самаре. Подбор программы врачом, актуальные цены, запись онлайн и выезд на дом.',
+      'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены и выезд на дом.',
     images: [
       {
         url: 'https://biorise-clinic.ru/hero-bg.jpg',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Капельницы в Самаре — виды и цены | BIORISE',
     description:
-      'Витаминные, восстановительные и детокс-капельницы в Самаре. Подбор врачом, цены и запись в клинику BIORISE.',
+      'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены и запись.',
     images: ['https://biorise-clinic.ru/hero-bg.jpg'],
   },
   robots: {

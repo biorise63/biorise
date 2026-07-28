@@ -5,7 +5,7 @@ import BadyContent from './BadyContent'
 export const metadata = {
   title: 'БАДЫ | BIORISE',
   description:
-    'Каталог БАДов BIORISE в Самаре: B-complex, Iron Chelate, Magnesium, Omega-3, Marine Collagen, Vitamin D3 + K2 и другие позиции с описанием состава и формы выпуска.',
+    'Каталог БАДов BIORISE в Самаре: состав, форма выпуска и ключевые свойства популярных позиций.',
 }
 
 export default function BadyPage() {

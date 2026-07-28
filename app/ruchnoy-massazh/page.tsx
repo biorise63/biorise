@@ -5,7 +5,7 @@ import RuchnoyMassazhContent from './RuchnoyMassazhContent'
 export const metadata = {
   title: 'Ручной массаж в Самаре | Медицинский массаж BIORISE',
   description:
-    'Ручной и медицинский массаж в Самаре в клинике BIORISE: расслабляющий, восстановительный, антицеллюлитный массаж, работа с мышечными зажимами и напряжением. Сеансы 60, 90 и 120 минут, абонементы со скидкой.',
+    'Ручной и медицинский массаж BIORISE в Самаре: расслабляющие, восстановительные и антицеллюлитные сеансы. Есть абонементы.',
   keywords: [
     'массаж в Самаре',
     'ручной массаж Самара',
@@ -23,7 +23,7 @@ export const metadata = {
   openGraph: {
     title: 'Ручной массаж в Самаре | BIORISE',
     description:
-      'Профессиональный ручной массаж в BIORISE: медицинский подход, комфортные сеансы и абонементы для курса восстановления.',
+      'Ручной и медицинский массаж BIORISE в Самаре: комфортные сеансы и абонементы для курса восстановления.',
     url: 'https://biorise-clinic.ru/ruchnoy-massazh',
     type: 'website',
     images: [{ url: 'https://biorise-clinic.ru/services/apparatnyy-massazh/massage-2.jpg' }],
