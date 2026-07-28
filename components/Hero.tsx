@@ -75,7 +75,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/optimized/video/hero-poster.webp"
-          alt=""
+          alt="Капельницы Самара"
           fill
           priority
           fetchPriority="high"
