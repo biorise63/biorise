@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { FileText } from 'lucide-react'
 import { articles, getArticleBySlug } from '@/lib/articles'
+import { formatArticleDate } from '@/lib/format-date'
 // import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
 
 export function generateStaticParams() {
@@ -259,6 +260,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const contentBlocks = parseContentBlocks(article.content)
   const imageAlt = article.imageAlt || article.h1 || article.title
   const relatedArticles = getRelatedArticles(article.slug)
+  const articleAuthor = 'Медицинская редакция BIORISE'
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
@@ -289,8 +291,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="px-4 sm:px-6 max-w-2xl">
-            <div className="mb-4 text-xs text-olive-primary/50">
+            <div className="mb-4 flex flex-wrap items-center gap-2 text-xs text-olive-primary/50">
+              <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt)}</time>
+              <span aria-hidden="true">•</span>
               <span>4–6 мин</span>
+              <span aria-hidden="true">•</span>
+              <span>{articleAuthor}</span>
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading text-olive-primary font-medium leading-tight mb-4">
               {article.h1 || article.title}
@@ -388,6 +394,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                     >
                       <div className="text-base font-medium text-olive-primary transition-colors group-hover:text-olive-light">
                         {relatedArticle.h1 || relatedArticle.title}
+                      </div>
+                      <div className="mt-1 text-xs text-olive-primary/45">
+                        <time dateTime={relatedArticle.publishedAt}>
+                          {formatArticleDate(relatedArticle.publishedAt)}
+                        </time>
                       </div>
                       <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">
                         {relatedArticle.excerpt}

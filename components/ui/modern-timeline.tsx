@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Card, CardContent } from "./card"
 import { Badge } from "./badge"
 import { CheckCircle, Clock, Circle, ArrowUpRight } from "lucide-react"
+import { formatArticleDate } from "@/lib/format-date"
 
 export interface TimelineItem {
   title: string
@@ -131,7 +132,7 @@ export function Timeline({ items, className }: TimelineProps) {
                           {item.category && item.date && (
                             <span className="h-1 w-1 rounded-full bg-muted-foreground" aria-hidden="true" />
                           )}
-                          {item.date && <time dateTime={item.date}>{item.date}</time>}
+                          {item.date && <time dateTime={item.date}>{formatArticleDate(item.date)}</time>}
                         </div>
                       </div>
 

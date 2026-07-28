@@ -16,6 +16,7 @@ export default function ArticlesPage() {
   const timelineItems: TimelineItem[] = sortedArticles.map((article, index) => ({
     title: article.title,
     description: article.excerpt,
+    date: article.publishedAt,
     image: '/logo-cube.png',
     category: article.tags[0] || 'BIORISE',
     status: index === 0 ? 'current' : 'completed',
