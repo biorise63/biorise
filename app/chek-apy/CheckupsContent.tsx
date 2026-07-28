@@ -2,6 +2,10 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { checkupPrograms } from '@/lib/checkups'
 
+function formatPrice(value: number) {
+  return `${value.toLocaleString('ru-RU')} ₽`
+}
+
 function SectionIcon({ name, className = 'h-5 w-5' }: { name: string; className?: string }) {
   const props = {
     className,
@@ -149,6 +153,21 @@ export default function CheckupsContent() {
                     <p className="mt-2 max-w-[700px] text-sm leading-[1.7] text-olive-primary/70 sm:text-[15px]">
                       {program.summary}
                     </p>
+                    {program.price && (
+                      <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+                        <span className="text-[11px] uppercase tracking-[0.22em] text-olive-primary/45">
+                          Цена
+                        </span>
+                        {program.oldPrice && (
+                          <span className="text-sm text-olive-primary/35 line-through">
+                            {formatPrice(program.oldPrice)}
+                          </span>
+                        )}
+                        <span className="text-base font-medium text-olive-primary">
+                          {formatPrice(program.price)}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <span className="shrink-0 text-olive-primary/55">

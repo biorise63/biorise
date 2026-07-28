@@ -10,7 +10,7 @@ import Footer from '@/components/Footer'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
 export const metadata: Metadata = {
-  title: 'Капельницы в Самаре и на дому — цены | BIORISE',
+  title: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
   description:
     'Клиника капельниц BIORISE в Самаре. Подбор IV-терапии врачом, витаминные и восстановительные капельницы, анализы и чек-апы. Выезд медсестры на дом, цены и онлайн-запись.',
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'BIORISE Самара',
   ],
   openGraph: {
-    title: 'Капельницы в Самаре и на дому — цены | BIORISE',
+    title: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
     description:
       'Клиника капельниц BIORISE в Самаре. Подбор IV-терапии врачом, витаминные и восстановительные капельницы, анализы и чек-апы. Выезд медсестры на дом, цены и онлайн-запись.',
     url: 'https://biorise-clinic.ru/',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Капельницы в Самаре и на дому — цены | BIORISE',
+    title: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
     description:
       'Клиника капельниц BIORISE в Самаре. Подбор IV-терапии врачом, витаминные и восстановительные капельницы, анализы и чек-апы. Выезд медсестры на дом, цены и онлайн-запись.',
   },

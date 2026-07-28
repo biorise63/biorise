@@ -2,6 +2,8 @@ export type CheckupProgram = {
   slug: string
   title: string
   summary: string
+  price?: number
+  oldPrice?: number
   icon: 'baseline' | 'advanced' | 'vip' | 'mother' | 'iron' | 'sport' | 'detox' | 'weight' | 'energy' | 'age' | 'male'
   items: string[]
 }
@@ -11,6 +13,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'bazovyy',
     title: 'Чек-ап базовый',
     summary: 'Стартовый профиль для общей оценки состояния, щитовидной железы, углеводного обмена и запасов железа.',
+    price: 4377,
     icon: 'baseline',
     items: [
       'Клинический анализ крови с лейкоформулой и СОЭ',
@@ -28,6 +31,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'rasshirennyy',
     title: 'Чек-ап расширенный',
     summary: 'Расширяет базовый состав за счет липидного профиля, маркеров воспаления, витаминов группы B и гормональных показателей.',
+    price: 9173,
     icon: 'advanced',
     items: [
       'Клинический анализ крови с лейкоформулой и СОЭ',
@@ -48,6 +52,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'vip',
     title: 'VIP чек-ап',
     summary: 'Самый полный профиль в линейке: расширенная биохимия, гормоны, микроэлементы и показатели метаболического риска.',
+    price: 15575,
     icon: 'vip',
     items: [
       'Клинический анализ крови с лейкоформулой и СОЭ',
@@ -68,6 +73,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'posle-rodov',
     title: 'После родов',
     summary: 'Помогает проверить железо, гормональный фон, витамины и маркеры восстановления после беременности и родов.',
+    price: 7178,
     icon: 'mother',
     items: [
       'Биохимия: основной профиль',
@@ -86,6 +92,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'zheleznoe-zdorove',
     title: 'Железное здоровье',
     summary: 'Фокусируется на дефиците железа и сопутствующих показателях, которые влияют на переносимость нагрузки и самочувствие.',
+    price: 2930,
     icon: 'iron',
     items: [
       'Клинический анализ крови с лейкоформулой и СОЭ',
@@ -102,6 +109,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'dlya-sportsmenov',
     title: 'Для спортсменов',
     summary: 'Подходит тем, кто следит за восстановлением, уровнем энергии, гормональным профилем и метаболической нагрузкой.',
+    price: 6740,
     icon: 'sport',
     items: [
       'Биохимия: расширенный профиль',
@@ -117,6 +125,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'detoks-i-zhkt',
     title: 'Детокс и ЖКТ',
     summary: 'Собирает базовые исследования по печени, кишечнику, обмену железа и воспалительным маркерам.',
+    price: 2918,
     icon: 'detox',
     items: [
       'Клинический анализ крови с лейкоформулой и СОЭ',
@@ -132,6 +141,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'kontrol-vesa-i-metabolizm',
     title: 'Контроль веса и метаболизм',
     summary: 'Проверяет углеводный обмен, липидный профиль, гормоны щитовидной железы и показатели, связанные с набором веса.',
+    price: 4148,
     icon: 'weight',
     items: [
       'Глюкоза, инсулин',
@@ -148,6 +158,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'khronicheskaya-ustalost',
     title: 'Хроническая усталость и снижение энергии',
     summary: 'Помогает проверить частые причины усталости: дефициты, воспаление, нагрузку на печень и колебания гормонального фона.',
+    price: 7250,
     icon: 'energy',
     items: [
       'Биохимия: основной профиль',
@@ -166,6 +177,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'anti-age',
     title: 'Anti-age',
     summary: 'Расширенный возрастной профиль для оценки микроэлементов, липидного обмена, гормонов и воспалительных маркеров.',
+    price: 7445,
     icon: 'age',
     items: [
       'Тестостерон, эстрадиол, прогестерон',
@@ -182,6 +194,8 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'muzhskoe-zdorove-bazovyy',
     title: 'Мужское здоровье: базовый',
     summary: 'Базовая программа для оценки общего состояния, железа, витаминов и ключевых мужских гормонов.',
+    price: 3333,
+    oldPrice: 8565,
     icon: 'male',
     items: [
       'Биохимия: основной профиль',
@@ -196,6 +210,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'muzhskoe-zdorove-rasshirennyy',
     title: 'Мужское здоровье: расширенный',
     summary: 'Добавляет маркеры воспаления, обмена веществ и расширенный гормональный профиль.',
+    price: 15575,
     icon: 'male',
     items: [
       'Биохимия: основной профиль',
@@ -214,6 +229,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'muzhskoy-maksimum',
     title: 'Мужской максимум',
     summary: 'Самая полная мужская программа с гормонами, липидным профилем, витаминами, микроэлементами и ПСА.',
+    price: 20505,
     icon: 'male',
     items: [
       'Биохимия: основной профиль',
@@ -234,6 +250,7 @@ export const checkupPrograms: CheckupProgram[] = [
     slug: 'fitnes-i-energiya',
     title: 'Фитнес и энергия',
     summary: 'Проверяет показатели, которые часто влияют на выносливость, восстановление и переносимость тренировок.',
+    price: 7120,
     icon: 'sport',
     items: [
       'Клинический анализ крови с лейкоформулой и СОЭ',
