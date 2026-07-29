@@ -28,7 +28,9 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
+      // Keep both fields to match Schema.org examples and Yandex's documented checks.
       item: toAbsoluteUrl(item.href),
+      url: toAbsoluteUrl(item.href),
     })),
   }
 
