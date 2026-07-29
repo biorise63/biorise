@@ -406,7 +406,7 @@ export default function AnalizyContent() {
                   {item.code === '5' ? (
                     <Link
                       href={BLOOD_ANALYSIS_HREF}
-                      className="mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                      className="relative z-[90] mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                     >
                       Подробнее
                     </Link>
@@ -417,7 +417,7 @@ export default function AnalizyContent() {
                         setQuery(item.title)
                         document.getElementById('analyses-catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                       }}
-                      className="mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                      className="relative z-[90] mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                     >
                       Подробнее
                     </button>
@@ -513,7 +513,7 @@ export default function AnalizyContent() {
                                     {item.code === '5' ? (
                                       <Link
                                         href={BLOOD_ANALYSIS_HREF}
-                                        className="inline-flex rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                                        className="relative z-[90] inline-flex rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                                       >
                                         Подробнее
                                       </Link>
@@ -521,7 +521,7 @@ export default function AnalizyContent() {
                                       <button
                                         type="button"
                                         onClick={openBookingModal}
-                                        className="rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                                        className="relative z-[90] rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                                       >
                                         Записаться
                                       </button>
