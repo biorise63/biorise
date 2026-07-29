@@ -9,6 +9,7 @@ import { analysesFaq, analysisCategories, analysisSections, popularAnalyses } fr
 
 const PHONE_DISPLAY = '+7 996 749 97 47'
 const PHONE_HREF = 'tel:+79967499747'
+const BLOOD_ANALYSIS_HREF = '/analizy/analiz-krovi/'
 
 function SectionIcon({ name, className = 'h-6 w-6' }: { name: string; className?: string }) {
   const props = {
@@ -402,16 +403,25 @@ export default function AnalizyContent() {
                       <p className="mt-1 text-[22px] font-medium text-olive-primary">{item.price}</p>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setQuery(item.title)
-                      document.getElementById('analyses-catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    }}
-                    className="mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
-                  >
-                    Подробнее
-                  </button>
+                  {item.code === '5' ? (
+                    <Link
+                      href={BLOOD_ANALYSIS_HREF}
+                      className="mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                    >
+                      Подробнее
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setQuery(item.title)
+                        document.getElementById('analyses-catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }}
+                      className="mt-5 inline-flex items-center rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                    >
+                      Подробнее
+                    </button>
+                  )}
                 </article>
               ))}
             </div>
@@ -500,13 +510,22 @@ export default function AnalizyContent() {
                                   <td className="px-5 py-4 text-sm text-olive-primary/68">{item.turnaround || 'По готовности лаборатории'}</td>
                                   <td className="px-5 py-4 text-right text-[15px] font-medium text-olive-primary">{item.price}</td>
                                   <td className="px-5 py-4 text-right sm:px-6">
-                                    <button
-                                      type="button"
-                                      onClick={openBookingModal}
-                                      className="rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
-                                    >
-                                      Записаться
-                                    </button>
+                                    {item.code === '5' ? (
+                                      <Link
+                                        href={BLOOD_ANALYSIS_HREF}
+                                        className="inline-flex rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                                      >
+                                        Подробнее
+                                      </Link>
+                                    ) : (
+                                      <button
+                                        type="button"
+                                        onClick={openBookingModal}
+                                        className="rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
+                                      >
+                                        Записаться
+                                      </button>
+                                    )}
                                   </td>
                                 </tr>
                               ))}
