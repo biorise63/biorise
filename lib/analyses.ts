@@ -162,6 +162,7 @@ export const popularAnalyses: PopularAnalysisItem[] = [
     title: 'Общий анализ мочи',
     description: 'Скрининг функции почек и мочевыводящих путей.',
     icon: 'kidney',
+    href: '/analizy/analiz-mochi/',
   },
   {
     code: '51',
