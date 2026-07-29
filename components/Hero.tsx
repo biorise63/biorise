@@ -134,7 +134,7 @@ export default function Hero() {
 
           <div className="mb-5 sm:mb-6">
             <div className="border-y-2 border-black/10 py-3 sm:py-4">
-              <div className="grid grid-cols-3 divide-x divide-black/12 sm:flex sm:items-center sm:justify-start">
+              <div className="grid grid-cols-3 divide-x-2 divide-olive-primary/30 sm:flex sm:items-center sm:justify-start">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
