@@ -146,7 +146,7 @@ export default function Hero() {
                       ) : null}
                       <Link
                         href={link.href}
-                        className="inline-flex items-center whitespace-nowrap text-[15px] font-medium text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary hover:underline underline-offset-4 sm:text-[16px]"
+                        className="inline-flex items-center whitespace-nowrap border-b border-black/20 pb-1 text-[15px] font-medium text-olive-primary/72 transition-colors duration-200 hover:border-olive-primary/55 hover:text-olive-primary sm:text-[16px]"
                       >
                         {link.label}
                       </Link>
