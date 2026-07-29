@@ -23,6 +23,17 @@ type CategoryDefinition = {
   sectionMatchers: string[]
 }
 
+type PopularAnalysisItem = {
+  code: string
+  title: string
+  description: string
+  icon: string
+  href?: string
+  price?: string
+  turnaround?: string
+  showCode?: boolean
+}
+
 const analyses = analysesData.analyses as AnalysisItem[]
 const checkups = analysesData.checkups as AnalysisItem[]
 
@@ -128,12 +139,23 @@ export const analysisCategories = categoryDefinitions.map((category) => {
   }
 })
 
-export const popularAnalyses = [
+export const popularAnalyses: PopularAnalysisItem[] = [
   {
     code: '5',
     title: 'Общий анализ крови',
     description: 'Базовая оценка воспаления, анемии и общего состояния.',
     icon: 'blood-drop',
+    href: '/analizy/analiz-krovi/',
+  },
+  {
+    code: 'BIOHIM',
+    title: 'Биохимический анализ крови',
+    description: 'Показывает печень, почки, белковый и углеводный обмен.',
+    icon: 'biochemistry',
+    href: '/analizy/biohimicheskiy-analiz-krovi/',
+    price: 'Уточняйте',
+    turnaround: 'По составу',
+    showCode: false,
   },
   {
     code: '116',
@@ -182,8 +204,8 @@ export const popularAnalyses = [
 
   return {
     ...item,
-    price: analysis?.price ?? 'Уточняйте',
-    turnaround: analysis?.turnaround ?? 'По готовности лаборатории',
+    price: item.price ?? analysis?.price ?? 'Уточняйте',
+    turnaround: item.turnaround ?? analysis?.turnaround ?? 'По готовности лаборатории',
     code: analysis?.code ?? item.code,
     name: shortName(analysis?.name ?? item.title),
     sectionSlug: analysis ? toSlug(analysis.section) : '',
