@@ -139,7 +139,7 @@ export default function Hero() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex min-h-[44px] items-center justify-center px-1.5 text-center text-[10px] font-medium leading-[1.1] text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary sm:min-h-0 sm:justify-start sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap"
+                    className="flex min-h-[44px] min-w-0 items-center justify-center px-1 text-center text-[14px] font-medium leading-[1.15] text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary sm:min-h-0 sm:justify-start sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
