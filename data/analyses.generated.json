@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T18:44:19.030Z",
+  "generatedAt": "2026-07-29T11:04:26.651Z",
   "analyses": [
     {
       "code": "1515",
@@ -38,8 +38,8 @@
       "subsection": "Общеклинические исследования крови",
       "biomaterial": "Капиллярная кровь; Кровь",
       "turnaround": "1 к.д.",
-      "price": "600 ₽",
-      "priceValue": 600
+      "price": "270 ₽",
+      "priceValue": 270
     },
     {
       "code": "TRO",
@@ -128,8 +128,8 @@
       "subsection": "Общеклинические исследования крови",
       "biomaterial": "Капиллярная кровь",
       "turnaround": "",
-      "price": "600 ₽",
-      "priceValue": 600
+      "price": "270 ₽",
+      "priceValue": 270
     },
     {
       "code": "119КАП",
