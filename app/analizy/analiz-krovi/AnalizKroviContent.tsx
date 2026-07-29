@@ -24,7 +24,7 @@ const bloodFacts = [
   {
     icon: CalendarDays,
     title: 'Цена',
-    text: '270 ₽ за базовый анализ крови.',
+    text: '600 ₽ за базовый анализ крови.',
   },
 ]
 
