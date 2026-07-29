@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { ClipboardList, Droplets, FlaskConical } from 'lucide-react'
 import { useBookingModal } from './BookingModalProvider'
 
 const features = [
@@ -36,27 +34,20 @@ const features = [
 
 export default function Hero() {
   const { openBookingModal } = useBookingModal()
-  const pathname = usePathname()
   const [videoSrc, setVideoSrc] = useState<string | null>(null)
   const [videoReady, setVideoReady] = useState(false)
   const quickLinks = [
     {
       href: '/kapelnicy/',
       label: 'Капельницы',
-      icon: Droplets,
-      active: pathname === '/',
     },
     {
       href: '/chek-apy/',
       label: 'Чек-ап программы',
-      icon: ClipboardList,
-      active: false,
     },
     {
       href: '/analizy/',
       label: 'Анализы',
-      icon: FlaskConical,
-      active: false,
     },
   ]
 
@@ -144,45 +135,23 @@ export default function Hero() {
           <div className="mb-5 sm:mb-6">
             <div className="border-y border-black/10 py-3 sm:py-4">
               <div className="overflow-x-auto">
-                <div className="mx-auto flex w-max items-center justify-center px-1 sm:w-full sm:px-0">
-                  {quickLinks.map((link, index) => {
-                    const Icon = link.icon
-
-                    return (
-                      <div key={link.href} className="flex items-center">
-                        {index > 0 ? (
-                          <span
-                            aria-hidden="true"
-                            className="mx-2 h-7 w-px shrink-0 bg-black/12 sm:mx-4"
-                          />
-                        ) : null}
-                        <Link
-                          href={link.href}
-                          aria-current={link.active ? 'page' : undefined}
-                          className={[
-                            'group inline-flex items-center gap-3 rounded-full border px-4 py-2.5 text-sm font-medium transition-all duration-200 sm:px-5 sm:py-3',
-                            'shadow-[0_12px_24px_rgba(38,48,34,0.08),inset_0_1px_0_rgba(255,255,255,0.72)]',
-                            'hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(38,48,34,0.12),inset_0_1px_0_rgba(255,255,255,0.82)]',
-                            link.active
-                              ? 'border-olive-primary/25 bg-gradient-to-b from-white to-olive-primary/12 text-olive-primary'
-                              : 'border-white/80 bg-gradient-to-b from-white/95 to-beige-background text-olive-primary/85 hover:border-olive-primary/18 hover:bg-white hover:text-olive-primary',
-                          ].join(' ')}
-                        >
-                          <span
-                            className={[
-                              'flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-200',
-                              link.active
-                                ? 'bg-olive-primary/12 text-olive-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]'
-                                : 'bg-white/80 text-olive-primary/80 ring-1 ring-black/5 group-hover:bg-olive-primary/10 group-hover:text-olive-primary',
-                            ].join(' ')}
-                          >
-                            <Icon className="h-4 w-4" aria-hidden="true" />
-                          </span>
-                          <span className="whitespace-nowrap">{link.label}</span>
-                        </Link>
-                      </div>
-                    )
-                  })}
+                <div className="flex min-w-max items-center justify-start px-1 sm:px-0">
+                  {quickLinks.map((link, index) => (
+                    <div key={link.href} className="flex items-center">
+                      {index > 0 ? (
+                        <span
+                          aria-hidden="true"
+                          className="mx-3 h-4 w-px shrink-0 bg-black/12 sm:mx-4"
+                        />
+                      ) : null}
+                      <Link
+                        href={link.href}
+                        className="inline-flex items-center whitespace-nowrap text-[15px] font-medium text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary hover:underline underline-offset-4 sm:text-[16px]"
+                      >
+                        {link.label}
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
