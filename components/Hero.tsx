@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
 import { useBookingModal } from './BookingModalProvider'
@@ -35,6 +36,11 @@ export default function Hero() {
   const { openBookingModal } = useBookingModal()
   const [videoSrc, setVideoSrc] = useState<string | null>(null)
   const [videoReady, setVideoReady] = useState(false)
+  const quickLinks = [
+    { href: '/kapelnicy/', label: 'Капельницы' },
+    { href: '/chek-apy/', label: 'Чек-ап программы' },
+    { href: '/analizy/', label: 'Анализы' },
+  ]
 
   const shouldReduceMotion = useMemo(() => {
     if (typeof window === 'undefined') return false
@@ -116,10 +122,29 @@ export default function Hero() {
           >
             Капельницы в Самаре
           </h1>
+
+          <div className="mb-5 sm:mb-6">
+            <div className="flex items-center gap-3">
+              <hr className="hidden sm:block flex-1 border-black/12" aria-hidden="true" />
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center rounded-full border border-olive-primary/20 bg-white/85 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-white hover:border-olive-primary/35"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <hr className="hidden sm:block flex-1 border-black/12" aria-hidden="true" />
+            </div>
+          </div>
+
           <p
             className="text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-8 leading-relaxed"
           >
-            BIORISE - лидирующая клиника в сфере восстановления и проверки здоровья. Врач подбирает состав по анализам, жалобам и вашей задаче. На месте можно сдать анализы, пройти чек-ап и записаться на курс или выезд на дом.
+            BIORISE - клиника капельниц в Самаре, где доступны лабораторные анализы и чек-ап программы. Мы помогаем выявить дефициты, оценить состояние организма и подобрать индивидуальную программу восстановления.
           </p>
 
           {/* Features with icons */}
