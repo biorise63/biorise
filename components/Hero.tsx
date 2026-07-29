@@ -133,7 +133,7 @@ export default function Hero() {
           </h1>
 
           <div className="mb-5 sm:mb-6">
-            <div className="border-y border-black/10 py-3 sm:py-4">
+            <div className="border-t border-black/10 py-3 sm:py-4">
               <div className="overflow-x-auto">
                 <div className="flex min-w-max items-center justify-start px-1 sm:px-0">
                   {quickLinks.map((link, index) => (
@@ -141,12 +141,12 @@ export default function Hero() {
                       {index > 0 ? (
                         <span
                           aria-hidden="true"
-                          className="mx-3 h-4 w-px shrink-0 bg-black/12 sm:mx-4"
+                          className="mx-4 h-5 w-px shrink-0 bg-black/15 sm:mx-5"
                         />
                       ) : null}
                       <Link
                         href={link.href}
-                        className="inline-flex items-center whitespace-nowrap border-b border-black/20 pb-1 text-[15px] font-medium text-olive-primary/72 transition-colors duration-200 hover:border-olive-primary/55 hover:text-olive-primary sm:text-[16px]"
+                        className="inline-flex items-center whitespace-nowrap text-[15px] font-medium text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary sm:text-[16px]"
                       >
                         {link.label}
                       </Link>
