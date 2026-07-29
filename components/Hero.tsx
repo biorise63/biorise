@@ -123,9 +123,6 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6">
         <div className="max-w-4xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-black/60 sm:mb-4">
-            Клиника BIORISE
-          </p>
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-black mb-4 sm:mb-6 font-light leading-tight"
           >
