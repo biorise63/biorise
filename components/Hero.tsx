@@ -133,7 +133,7 @@ export default function Hero() {
           </h1>
 
           <div className="mb-5 sm:mb-6">
-            <div className="border-t border-black/10 py-3 sm:py-4">
+            <div className="border-y-2 border-[#D1D5DB] py-3 sm:py-4">
               <div className="overflow-x-auto">
                 <div className="flex min-w-max items-center justify-start px-1 sm:px-0">
                   {quickLinks.map((link, index) => (
