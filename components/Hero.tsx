@@ -134,25 +134,16 @@ export default function Hero() {
 
           <div className="mb-5 sm:mb-6">
             <div className="border-y-2 border-black/10 py-3 sm:py-4">
-              <div className="overflow-x-auto">
-                <div className="flex min-w-max items-center justify-start px-1 sm:px-0">
-                  {quickLinks.map((link, index) => (
-                    <div key={link.href} className="flex items-center">
-                      {index > 0 ? (
-                        <span
-                          aria-hidden="true"
-                          className="mx-4 h-5 w-px shrink-0 bg-black/12 sm:mx-5"
-                        />
-                      ) : null}
-                      <Link
-                        href={link.href}
-                        className="inline-flex items-center whitespace-nowrap text-[15px] font-medium text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary sm:text-[16px]"
-                      >
-                        {link.label}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-3 divide-x divide-black/12 sm:flex sm:items-center sm:justify-start">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex min-h-[44px] items-center justify-center px-1.5 text-center text-[10px] font-medium leading-[1.1] text-olive-primary/72 transition-colors duration-200 hover:text-olive-primary sm:min-h-0 sm:justify-start sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
