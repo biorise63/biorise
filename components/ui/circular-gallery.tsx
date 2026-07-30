@@ -168,7 +168,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
               aria-label={activeItem.common}
               className={cn(
                 'group relative mx-auto w-full overflow-hidden rounded-[24px] border border-olive-primary/20 bg-white/80 shadow-premium',
-                isMobileDenseCard ? 'h-[560px]' : 'h-[430px]'
+                'h-[430px]'
               )}
               onTouchStart={(event) => {
                 touchStartXRef.current = event.touches[0]?.clientX ?? null
@@ -202,9 +202,9 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
               />
               <div className={cn(
                 'absolute inset-0 flex flex-col justify-between bg-olive-primary/52 p-4 text-white font-heading',
-                isMobileDenseCard && 'p-3.5'
+                isMobileDenseCard && 'p-3'
               )}>
-                <div className={cn('space-y-2', isMobileDenseCard && 'space-y-1.5')}>
+                <div className={cn('space-y-2', isMobileDenseCard && 'space-y-1')}>
                   <div>
                     <h3 className="text-base font-semibold leading-tight">{activeItem.common}</h3>
                     {activeItem.subtitle && (
@@ -219,7 +219,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   )}
 
                   {activeItem.features && activeItem.features.length > 0 && (
-                    <div className={cn('space-y-1.5', isMobileDenseCard && 'space-y-1')}>
+                    <div className={cn('space-y-1.5', isMobileDenseCard && 'space-y-0.5')}>
                       {activeItem.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-1.5">
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
@@ -235,9 +235,12 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
 
                 </div>
 
-                <div className="space-y-3 pt-2">
+                <div className={cn('space-y-3 pt-2', isMobileDenseCard && 'space-y-2 pt-1')}>
                   {(activeItem.price || activeItem.period) && (
-                    <div className="space-y-2 rounded-2xl bg-black/18 px-3 py-2.5 backdrop-blur-[1px]">
+                    <div className={cn(
+                      'space-y-2 rounded-2xl bg-black/18 px-3 py-2.5 backdrop-blur-[1px]',
+                      isMobileDenseCard && 'space-y-1 px-2.5 py-2'
+                    )}>
                       {activeItem.price ? (
                         <div className="flex items-baseline gap-2">
                           <span className="text-lg font-bold">{activeItem.price.current}</span>
@@ -332,7 +335,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 aria-label={item.common}
                 className={cn(
                   'absolute left-1/2 top-1/2 h-[300px] w-[220px] md:w-[290px]',
-                  (item.features?.length ?? 0) > 6 ? 'md:h-[500px]' : 'md:h-[390px]'
+                  'md:h-[390px]'
                 )}
                 style={{
                   transform: `translate(-50%, -50%) rotateY(${itemAngle}deg) translateZ(${radius}px)`,
@@ -352,11 +355,11 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   />
                   <div className={cn(
                     'absolute inset-0 flex flex-col justify-between bg-olive-primary/50 p-3 text-white font-heading md:p-4',
-                    (item.features?.length ?? 0) > 6 && 'md:p-3.5'
+                    (item.features?.length ?? 0) > 6 && 'md:p-3'
                   )}>
                     <div className={cn(
                       'space-y-1.5 md:space-y-2',
-                      (item.features?.length ?? 0) > 6 && 'md:space-y-1.5'
+                      (item.features?.length ?? 0) > 6 && 'md:space-y-1'
                     )}>
                       <div>
                         <h3 className="text-sm md:text-base font-semibold leading-tight mb-0.5">{item.common}</h3>
@@ -377,7 +380,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                       {item.features && item.features.length > 0 && (
                         <div className={cn(
                           'space-y-1',
-                          (item.features?.length ?? 0) > 6 && 'md:space-y-0.5'
+                          (item.features?.length ?? 0) > 6 && 'md:space-y-0'
                         )}>
                           {item.features.map((feature, idx) => (
                             <div key={idx} className="flex items-start gap-1.5">
@@ -412,7 +415,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                       )}
 
                       {item.price && (
-                        <div className="pt-0.5">
+                        <div className={cn('pt-0.5', (item.features?.length ?? 0) > 6 && 'md:pt-0')}>
                           <div className="flex items-baseline gap-2">
                             <span className="text-base md:text-lg font-bold">{item.price.current}</span>
                             {item.price.old && (
@@ -423,7 +426,10 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                       )}
 
                       {item.period && (
-                        <div className="flex items-center gap-1.5 pt-0.5">
+                        <div className={cn(
+                          'flex items-center gap-1.5 pt-0.5',
+                          (item.features?.length ?? 0) > 6 && 'md:pt-0'
+                        )}>
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 opacity-80">
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
@@ -433,7 +439,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                       )}
                     </div>
 
-                    <div className="pt-2">
+                    <div className={cn('pt-2', (item.features?.length ?? 0) > 6 && 'md:pt-1')}>
                       <GalleryActionButton item={item} openBookingModal={openBookingModal} />
                     </div>
                   </div>
