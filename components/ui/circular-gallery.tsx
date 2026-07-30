@@ -129,6 +129,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
 
     if (isMobile) {
       const activeItem = items[activeIndex]
+      const mobileFeatureCount = activeItem.features?.length ?? 0
+      const isMobileDenseCard = mobileFeatureCount > 6
 
       return (
         <div
@@ -164,7 +166,10 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
             <div
               role="group"
               aria-label={activeItem.common}
-              className="group relative mx-auto h-[430px] w-full overflow-hidden rounded-[24px] border border-olive-primary/20 bg-white/80 shadow-premium"
+              className={cn(
+                'group relative mx-auto w-full overflow-hidden rounded-[24px] border border-olive-primary/20 bg-white/80 shadow-premium',
+                isMobileDenseCard ? 'h-[560px]' : 'h-[430px]'
+              )}
               onTouchStart={(event) => {
                 touchStartXRef.current = event.touches[0]?.clientX ?? null
               }}
@@ -195,8 +200,11 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 className="absolute inset-0 h-full w-full object-cover brightness-75"
                 style={{ objectPosition: activeItem.photo.pos || 'center' }}
               />
-              <div className="absolute inset-0 flex flex-col justify-between bg-olive-primary/52 p-4 text-white font-heading">
-                <div className="space-y-2">
+              <div className={cn(
+                'absolute inset-0 flex flex-col justify-between bg-olive-primary/52 p-4 text-white font-heading',
+                isMobileDenseCard && 'p-3.5'
+              )}>
+                <div className={cn('space-y-2', isMobileDenseCard && 'space-y-1.5')}>
                   <div>
                     <h3 className="text-base font-semibold leading-tight">{activeItem.common}</h3>
                     {activeItem.subtitle && (
@@ -205,17 +213,21 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   </div>
 
                   {activeItem.description && (
-                    <p className="text-xs leading-relaxed opacity-95">{activeItem.description}</p>
+                    <p className={cn('text-xs leading-relaxed opacity-95', isMobileDenseCard && 'text-[11px] leading-[1.3]')}>
+                      {activeItem.description}
+                    </p>
                   )}
 
                   {activeItem.features && activeItem.features.length > 0 && (
-                    <div className="space-y-1.5">
-                      {activeItem.features.slice(0, 4).map((feature, idx) => (
+                    <div className={cn('space-y-1.5', isMobileDenseCard && 'space-y-1')}>
+                      {activeItem.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-1.5">
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span className="text-xs leading-tight opacity-95">{feature}</span>
+                          <span className={cn('text-xs leading-tight opacity-95', isMobileDenseCard && 'text-[10.5px] leading-[1.2]')}>
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -318,7 +330,10 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 key={item.photo.url}
                 role="group"
                 aria-label={item.common}
-                className="absolute left-1/2 top-1/2 h-[300px] w-[220px] md:h-[390px] md:w-[290px]"
+                className={cn(
+                  'absolute left-1/2 top-1/2 h-[300px] w-[220px] md:w-[290px]',
+                  (item.features?.length ?? 0) > 6 ? 'md:h-[500px]' : 'md:h-[390px]'
+                )}
                 style={{
                   transform: `translate(-50%, -50%) rotateY(${itemAngle}deg) translateZ(${radius}px)`,
                   opacity,
@@ -335,8 +350,14 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-75"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
-                  <div className="absolute inset-0 flex flex-col justify-between bg-olive-primary/50 p-3 md:p-4 text-white font-heading">
-                    <div className="space-y-1.5 md:space-y-2">
+                  <div className={cn(
+                    'absolute inset-0 flex flex-col justify-between bg-olive-primary/50 p-3 text-white font-heading md:p-4',
+                    (item.features?.length ?? 0) > 6 && 'md:p-3.5'
+                  )}>
+                    <div className={cn(
+                      'space-y-1.5 md:space-y-2',
+                      (item.features?.length ?? 0) > 6 && 'md:space-y-1.5'
+                    )}>
                       <div>
                         <h3 className="text-sm md:text-base font-semibold leading-tight mb-0.5">{item.common}</h3>
                         {item.subtitle && (
@@ -345,19 +366,30 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                       </div>
                       
                       {item.description && (
-                        <p className="text-[10px] md:text-xs leading-tight opacity-95">
+                        <p className={cn(
+                          'text-[10px] leading-tight opacity-95 md:text-xs',
+                          (item.features?.length ?? 0) > 6 && 'md:text-[11px] md:leading-[1.25]'
+                        )}>
                           {item.description}
                         </p>
                       )}
 
                       {item.features && item.features.length > 0 && (
-                        <div className="space-y-1">
+                        <div className={cn(
+                          'space-y-1',
+                          (item.features?.length ?? 0) > 6 && 'md:space-y-0.5'
+                        )}>
                           {item.features.map((feature, idx) => (
                             <div key={idx} className="flex items-start gap-1.5">
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0 text-olive-primary">
                                 <polyline points="20 6 9 17 4 12" />
                               </svg>
-                              <span className="text-[10px] md:text-xs opacity-95 leading-tight">{feature}</span>
+                              <span className={cn(
+                                'text-[10px] leading-tight opacity-95 md:text-xs',
+                                (item.features?.length ?? 0) > 6 && 'md:text-[10.5px] md:leading-[1.15]'
+                              )}>
+                                {feature}
+                              </span>
                             </div>
                           ))}
                         </div>
