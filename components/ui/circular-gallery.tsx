@@ -94,6 +94,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     if (!items.length) return null
 
     const anglePerItem = 360 / items.length
+    const desktopRadius = Math.max(radius, items.length >= 9 ? 540 : radius)
     const showPrevious = () => setActiveIndex((prev) => (prev - 1 + items.length) % items.length)
     const showNext = () => setActiveIndex((prev) => (prev + 1) % items.length)
 
@@ -338,7 +339,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   'md:h-[390px]'
                 )}
                 style={{
-                  transform: `translate(-50%, -50%) rotateY(${itemAngle}deg) translateZ(${radius}px)`,
+                  transform: `translate(-50%, -50%) rotateY(${itemAngle}deg) translateZ(${desktopRadius}px)`,
                   opacity,
                   transition: 'opacity 0.3s linear',
                 }}
