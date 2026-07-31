@@ -10,6 +10,7 @@ import { analysesFaq, analysisCategories, analysisSections, popularAnalyses } fr
 const PHONE_DISPLAY = '+7 996 749 97 47'
 const PHONE_HREF = 'tel:+79967499747'
 const BLOOD_ANALYSIS_HREF = '/analizy/analiz-krovi/'
+const FERRITIN_HREF = '/analizy/ferritin/'
 
 function SectionIcon({ name, className = 'h-6 w-6' }: { name: string; className?: string }) {
   const props = {
@@ -518,9 +519,9 @@ export default function AnalizyContent() {
                                   <td className="px-5 py-4 text-sm text-olive-primary/68">{item.turnaround || 'По готовности лаборатории'}</td>
                                   <td className="px-5 py-4 text-right text-[15px] font-medium text-olive-primary">{item.price}</td>
                                   <td className="px-5 py-4 text-right sm:px-6">
-                                    {item.code === '5' ? (
+                                    {item.code === '5' || item.code === '51' ? (
                                       <Link
-                                        href={BLOOD_ANALYSIS_HREF}
+                                        href={item.code === '51' ? FERRITIN_HREF : BLOOD_ANALYSIS_HREF}
                                         className="relative z-[90] inline-flex rounded-full border border-olive-primary/18 px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
                                       >
                                         Подробнее

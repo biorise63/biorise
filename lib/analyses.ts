@@ -169,6 +169,7 @@ export const popularAnalyses: PopularAnalysisItem[] = [
     title: 'Ферритин',
     description: 'Помогает оценить запасы железа и дефицитные состояния.',
     icon: 'iron-cell',
+    href: '/analizy/ferritin/',
   },
   {
     code: '56',
