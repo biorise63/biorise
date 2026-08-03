@@ -3,7 +3,9 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
 import { getInfusionCategories } from '@/lib/kapelnicy'
+import { createItemListJsonLd, createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 const pageTitle = 'Капельница на дому в Самаре — выезд медсестры | BIORISE'
 const pageDescription =
@@ -82,9 +84,31 @@ export default function HomeInfusionsPage() {
     }))
     .filter((category) => category.items.length > 0)
   const totalPrograms = filteredCategories.reduce((sum, category) => sum + category.items.length, 0)
+  const infusions = filteredCategories.flatMap((category) => category.items)
+  const webPageJsonLd = createWebPageJsonLd({
+    url: '/kapelnicy/na-domu/',
+    name: 'Капельница на дому в Самаре',
+    description: pageDescription,
+  })
+  const serviceJsonLd = createServiceJsonLd({
+    url: '/kapelnicy/na-domu/',
+    name: 'Капельница на дому в Самаре',
+    description: pageDescription,
+    serviceType: 'Выезд медицинской сестры на дом',
+    price: '2 500 ₽',
+  })
+  const itemListJsonLd = createItemListJsonLd({
+    url: '/kapelnicy/na-domu/',
+    name: 'Капельницы BIORISE, доступные для подбора на дому',
+    items: infusions.map((item) => ({
+      url: `/kapelnicy/${item.slug}/`,
+      name: item.title,
+    })),
+  })
 
   return (
     <>
+      <JsonLd data={[webPageJsonLd, serviceJsonLd, itemListJsonLd]} />
       <Header />
       <main
         className="min-h-screen bg-beige-background pb-20 text-olive-primary"

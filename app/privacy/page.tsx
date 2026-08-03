@@ -1,6 +1,8 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
+import { createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata = {
   title: 'Политика конфиденциальности | BIORISE',
@@ -11,8 +13,15 @@ export const metadata = {
 }
 
 export default function PrivacyPage() {
+  const webPageJsonLd = createWebPageJsonLd({
+    url: '/privacy/',
+    name: 'Политика конфиденциальности',
+    description: 'Политика конфиденциальности клиники BIORISE',
+  })
+
   return (
     <>
+      <JsonLd data={webPageJsonLd} />
       <Header />
       <main
         className="min-h-screen bg-white pb-16"

@@ -3,8 +3,10 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
 import { articles } from '@/lib/articles'
 import { getUniqueInfusions } from '@/lib/kapelnicy'
+import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Карта сайта | BIORISE',
@@ -83,9 +85,26 @@ export default function HtmlSitemapPage() {
       title: item.h1 || item.title,
     }))
     .sort((left, right) => left.title.localeCompare(right.title, 'ru'))
+  const allLinks = [...mainPages, ...analysisPages, ...infusionPages, ...articlePages]
+  const collectionPageJsonLd = createWebPageJsonLd({
+    url: '/sitemap/',
+    name: 'Карта сайта',
+    description:
+      'Карта сайта BIORISE: основные разделы, капельницы, анализы, чек-апы и статьи.',
+    type: 'CollectionPage',
+  })
+  const itemListJsonLd = createItemListJsonLd({
+    url: '/sitemap/',
+    name: 'Все основные URL сайта BIORISE',
+    items: allLinks.map((item) => ({
+      url: item.href,
+      name: item.title,
+    })),
+  })
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
+      <JsonLd data={[collectionPageJsonLd, itemListJsonLd]} />
       <Header />
       <section
         className="pb-16"

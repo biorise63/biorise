@@ -4,10 +4,17 @@ import { notFound } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 import InfusionDetailActions from '@/components/kapelnicy/InfusionDetailActions'
 import { getInfusionBySlug, getUniqueInfusions } from '@/lib/kapelnicy'
 import { getSeoImageAlt } from '@/lib/seo-image-alt'
+import {
+  createImageObjectJsonLd,
+  createServiceJsonLd,
+  createWebPageJsonLd,
+  medicalClinicJsonLd,
+} from '@/lib/structured-data'
 
 interface PageProps {
   params: { slug: string }
@@ -122,16 +129,28 @@ export default function InfusionDetailPage({ params }: PageProps) {
   const infusion = getInfusionBySlug(params.slug)
   if (!infusion) notFound()
 
-  const jsonLd = {
+  const pageUrl = `${SITE_URL}/kapelnicy/${infusion.slug}/`
+  const imageAlt = getSeoImageAlt(infusion.title)
+  const webPageJsonLd = createWebPageJsonLd({
+    url: `/kapelnicy/${infusion.slug}/`,
+    name: `${infusion.title} в Самаре`,
+    description: infusion.description,
+  })
+  const serviceJsonLd = createServiceJsonLd({
+    url: `/kapelnicy/${infusion.slug}/`,
+    name: `${infusion.title} в Самаре`,
+    description: infusion.description,
+    serviceType: 'Инфузионная терапия',
+    price: infusion.price,
+  })
+  const procedureJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'MedicalProcedure',
+    '@id': `${pageUrl}#medical-procedure`,
     name: infusion.title,
     description: infusion.description,
     provider: {
-      '@type': 'MedicalClinic',
-      name: 'BIORISE',
-      address: 'Самара, ул. Дыбенко, 27Б',
-      telephone: '+79967499747',
+      '@id': 'https://biorise-clinic.ru/#medical-clinic',
     },
     offers: infusion.price
       ? {
@@ -142,16 +161,30 @@ export default function InfusionDetailPage({ params }: PageProps) {
         }
       : undefined,
   }
+  const imageObjectJsonLd = infusion.imageUrl
+    ? createImageObjectJsonLd({
+        url: infusion.imageUrl,
+        name: imageAlt,
+        caption: imageAlt,
+      })
+    : null
 
   return (
     <>
+      <JsonLd
+        data={[
+          medicalClinicJsonLd,
+          webPageJsonLd,
+          serviceJsonLd,
+          procedureJsonLd,
+          ...(imageObjectJsonLd ? [imageObjectJsonLd] : []),
+        ]}
+      />
       <Header />
       <main
         className="min-h-screen bg-beige-background text-olive-primary"
         style={{ paddingTop: 'calc(var(--header-height) + 1rem)' }}
       >
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
         <section className="container mx-auto px-4 pb-12 sm:px-6 sm:pb-16">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.75fr)] lg:items-center">
             <div>
@@ -199,7 +232,7 @@ export default function InfusionDetailPage({ params }: PageProps) {
               <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-olive-primary/10 blur-3xl" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-beige-background">
                 {infusion.imageUrl ? (
-                  <Image src={infusion.imageUrl} alt={getSeoImageAlt(infusion.title)} fill className="object-contain p-5" sizes="(max-width: 1024px) 100vw, 520px" priority />
+                  <Image src={infusion.imageUrl} alt={imageAlt} fill className="object-contain p-5" sizes="(max-width: 1024px) 100vw, 520px" priority />
                 ) : (
                   <div className="flex h-full items-center justify-center text-olive-primary/50">Изображение скоро появится</div>
                 )}

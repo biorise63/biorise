@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
 import BiohimicheskiyAnalizKroviContent from './BiohimicheskiyAnalizKroviContent'
+import { createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Биохимический анализ крови в Самаре | Клиника БИОРАЙЗ',
@@ -33,8 +35,23 @@ export const metadata: Metadata = {
 }
 
 export default function BiohimPage() {
+  const webPageJsonLd = createWebPageJsonLd({
+    url: '/analizy/biohimicheskiy-analiz-krovi/',
+    name: 'Биохимический анализ крови в Самаре',
+    description:
+      'Сдать биохимический анализ крови в БИОРАЙЗ можно без очередей. Врач подскажет, какие показатели нужны под вашу задачу, запись онлайн или по телефону.',
+  })
+  const serviceJsonLd = createServiceJsonLd({
+    url: '/analizy/biohimicheskiy-analiz-krovi/',
+    name: 'Биохимический анализ крови в Самаре',
+    description:
+      'Биохимический анализ крови в клинике БИОРАЙЗ в Самаре с подбором показателей под задачу.',
+    serviceType: 'Лабораторная диагностика',
+  })
+
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={[webPageJsonLd, serviceJsonLd]} />
       <Header />
       <BiohimicheskiyAnalizKroviContent />
       <Footer />

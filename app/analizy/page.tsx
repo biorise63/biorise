@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 import AnalizyContent from './AnalizyContent'
+import { popularAnalyses } from '@/lib/analyses'
+import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Анализы в Самаре: сдать анализы, цены, чек-апы | BIORISE',
@@ -40,8 +43,25 @@ export const metadata: Metadata = {
 }
 
 export default function AnalizyPage() {
+  const collectionPageJsonLd = createWebPageJsonLd({
+    url: '/analizy/',
+    name: 'Анализы в Самаре',
+    description:
+      'Анализы BIORISE в Самаре: кровь, гормоны, ферритин, витамины, биохимия и другие исследования. Удобная запись и консультация врача.',
+    type: 'CollectionPage',
+  })
+  const itemListJsonLd = createItemListJsonLd({
+    url: '/analizy/',
+    name: 'Популярные анализы BIORISE',
+    items: popularAnalyses.map((item) => ({
+      url: item.href || '/analizy/',
+      name: item.title,
+    })),
+  })
+
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={[collectionPageJsonLd, itemListJsonLd]} />
       <Header />
       <AnalizyContent />
       <Footer />

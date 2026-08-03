@@ -7,6 +7,15 @@ import Doctors from '@/components/Doctors'
 import ClinicGallery from '@/components/ClinicGallery'
 import BookingForm from '@/components/BookingForm'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
+import {
+  createItemListJsonLd,
+  createVideoObjectJsonLd,
+  createWebPageJsonLd,
+  medicalClinicJsonLd,
+  organizationJsonLd,
+  websiteJsonLd,
+} from '@/lib/structured-data'
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
 export const metadata: Metadata = {
@@ -45,8 +54,35 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+  const pageJsonLd = createWebPageJsonLd({
+    url: '/',
+    name: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
+    description:
+      'BIORISE в Самаре: капельницы, анализы и чек-апы под контролем врача. Подбор программы, выезд на дом, цены и онлайн-запись.',
+  })
+  const mainSectionsJsonLd = createItemListJsonLd({
+    url: '/',
+    name: 'Основные разделы BIORISE',
+    items: [
+      { url: '/kapelnicy/', name: 'Капельницы' },
+      { url: '/chek-apy/', name: 'Чек-ап программы' },
+      { url: '/analizy/', name: 'Анализы' },
+      { url: '/articles/', name: 'Статьи' },
+    ],
+  })
+
   return (
     <main className="min-h-screen">
+      <JsonLd
+        data={[
+          organizationJsonLd,
+          medicalClinicJsonLd,
+          websiteJsonLd,
+          pageJsonLd,
+          mainSectionsJsonLd,
+          createVideoObjectJsonLd(),
+        ]}
+      />
       <Header />
       <Hero />
       <PopularDrips />

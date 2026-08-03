@@ -1,6 +1,8 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
 import RuchnoyMassazhContent from './RuchnoyMassazhContent'
+import { createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata = {
   title: 'Ручной массаж в Самаре | Медицинский массаж BIORISE',
@@ -31,8 +33,23 @@ export const metadata = {
 }
 
 export default function RuchnoyMassazhPage() {
+  const webPageJsonLd = createWebPageJsonLd({
+    url: '/ruchnoy-massazh/',
+    name: 'Ручной массаж в Самаре',
+    description:
+      'Ручной и медицинский массаж BIORISE в Самаре: расслабляющие, восстановительные и антицеллюлитные сеансы. Есть абонементы.',
+  })
+  const serviceJsonLd = createServiceJsonLd({
+    url: '/ruchnoy-massazh/',
+    name: 'Ручной массаж в Самаре',
+    description:
+      'Ручной и медицинский массаж BIORISE в Самаре: расслабляющие, восстановительные и антицеллюлитные сеансы.',
+    serviceType: 'Медицинский массаж',
+  })
+
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={[webPageJsonLd, serviceJsonLd]} />
       <Header />
       <RuchnoyMassazhContent />
       <Footer />

@@ -75,6 +75,7 @@ export const ExpandingCards = React.forwardRef<
       {items.map((item, index) => (
         <li
           key={item.id}
+          id={String(item.id)}
           className={cn(
             "group relative min-h-0 min-w-0 cursor-pointer overflow-hidden rounded-2xl",
             "border border-olive-primary/20 bg-[#f3ede2] shadow-premium",

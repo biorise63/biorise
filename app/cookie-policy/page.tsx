@@ -1,6 +1,8 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
+import { createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata = {
   title: 'Политика обработки cookie | BIORISE',
@@ -12,8 +14,16 @@ export const metadata = {
 }
 
 export default function CookiePolicyPage() {
+  const webPageJsonLd = createWebPageJsonLd({
+    url: '/cookie-policy/',
+    name: 'Политика обработки cookie',
+    description:
+      'Информация об использовании файлов cookie и аналитических сервисов на сайте клиники BIORISE.',
+  })
+
   return (
     <>
+      <JsonLd data={webPageJsonLd} />
       <Header />
       <main
         className="min-h-screen bg-white pb-16"

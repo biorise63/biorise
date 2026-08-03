@@ -1,8 +1,10 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
 import { articles } from '@/lib/articles'
 import { Timeline, type TimelineItem } from '@/components/ui/modern-timeline'
+import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata = {
   title: 'Статьи | BIORISE',
@@ -24,6 +26,22 @@ export const metadata = {
 
 export default function ArticlesPage() {
   const sortedArticles = [...articles].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+  const articleItems = sortedArticles.map((article) => ({
+    url: `/articles/${article.slug}/`,
+    name: article.h1 || article.title,
+  }))
+  const collectionPageJsonLd = createWebPageJsonLd({
+    url: '/articles/',
+    name: 'Статьи BIORISE',
+    description:
+      'Полезные статьи о витаминных капельницах, IV-терапии, чек-апах и восстановлении здоровья от клиники BIORISE в Самаре.',
+    type: 'CollectionPage',
+  })
+  const articleListJsonLd = createItemListJsonLd({
+    url: '/articles/',
+    name: 'Статьи BIORISE',
+    items: articleItems,
+  })
 
   const timelineItems: TimelineItem[] = sortedArticles.map((article, index) => ({
     title: article.title,
@@ -37,6 +55,7 @@ export default function ArticlesPage() {
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
+      <JsonLd data={[collectionPageJsonLd, articleListJsonLd]} />
       <Header />
 
       <section

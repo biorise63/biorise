@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import KapelnicyPageClient from '@/components/kapelnicy/KapelnicyPageClient'
 import { getInfusionCategories } from '@/lib/kapelnicy'
+import JsonLd from '@/components/JsonLd'
+import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Капельницы в Самаре — виды и цены | BIORISE',
@@ -50,6 +52,7 @@ export const metadata: Metadata = {
 
 export default function KapelnicyPage() {
   const categories = getInfusionCategories()
+  const infusions = categories.flatMap((category) => category.items)
 
   const menu = categories.map((cat) => ({
     id: cat.id,
@@ -58,5 +61,26 @@ export default function KapelnicyPage() {
     items: cat.items.map((item) => ({ id: item.id, title: item.title })),
   }))
 
-  return <KapelnicyPageClient categories={categories} menu={menu} />
+  const collectionPageJsonLd = createWebPageJsonLd({
+    url: '/kapelnicy/',
+    name: 'Капельницы в Самаре: виды и цены',
+    description:
+      'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены, выезд на дом и онлайн-запись.',
+    type: 'CollectionPage',
+  })
+  const itemListJsonLd = createItemListJsonLd({
+    url: '/kapelnicy/',
+    name: 'Каталог капельниц BIORISE',
+    items: infusions.map((item) => ({
+      url: `/kapelnicy/${item.slug}/`,
+      name: item.title,
+    })),
+  })
+
+  return (
+    <>
+      <JsonLd data={[collectionPageJsonLd, itemListJsonLd]} />
+      <KapelnicyPageClient categories={categories} menu={menu} />
+    </>
+  )
 }

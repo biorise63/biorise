@@ -4,8 +4,15 @@ import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { FileText } from 'lucide-react'
+import JsonLd from '@/components/JsonLd'
 import { articles, getArticleBySlug } from '@/lib/articles'
 import { formatArticleDate } from '@/lib/format-date'
+import {
+  articleAuthorPersonJsonLd,
+  createBlogPostingJsonLd,
+  createImageObjectJsonLd,
+  createWebPageJsonLd,
+} from '@/lib/structured-data'
 // import ArticlePromoPopUp from '@/components/ArticlePromoPopUp'
 
 export function generateStaticParams() {
@@ -253,14 +260,6 @@ function extractFaqItems(content: string[]) {
   return items
 }
 
-function toAbsoluteSiteUrl(pathOrUrl: string) {
-  if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
-    return pathOrUrl
-  }
-
-  return `https://biorise-clinic.ru${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`
-}
-
 function hashString(value: string) {
   let hash = 0
 
@@ -318,34 +317,27 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const imageAlt = article.imageAlt || article.h1 || article.title
   const relatedArticles = getRelatedArticles(article.slug)
   const articleAuthor = 'Медицинская редакция BIORISE'
-  const articleUrl = `https://biorise-clinic.ru/articles/${article.slug}/`
+  const articlePath = `/articles/${article.slug}/`
   const faqItems = extractFaqItems(article.content)
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+  const webPageJsonLd = createWebPageJsonLd({
+    url: articlePath,
+    name: article.h1 || article.title,
+    description: article.description || article.excerpt,
+  })
+  const blogPostingJsonLd = createBlogPostingJsonLd({
+    url: articlePath,
     headline: article.h1 || article.title,
     description: article.description || article.excerpt,
-    datePublished: article.publishedAt,
-    dateModified: article.publishedAt,
-    author: {
-      '@type': 'Organization',
-      name: articleAuthor,
-      url: 'https://biorise-clinic.ru/',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'BIORISE',
-      url: 'https://biorise-clinic.ru/',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://biorise-clinic.ru/logo-cube.png',
-      },
-    },
-    mainEntityOfPage: articleUrl,
-    image: article.coverImage
-      ? toAbsoluteSiteUrl(article.coverImage)
-      : 'https://biorise-clinic.ru/logo-cube.png',
-  }
+    publishedAt: article.publishedAt,
+    image: article.coverImage,
+  })
+  const imageObjectJsonLd = article.coverImage
+    ? createImageObjectJsonLd({
+        url: article.coverImage,
+        name: imageAlt,
+        caption: imageAlt,
+      })
+    : null
   const faqJsonLd = faqItems.length
     ? {
         '@context': 'https://schema.org',
@@ -363,16 +355,15 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      <JsonLd
+        data={[
+          webPageJsonLd,
+          blogPostingJsonLd,
+          articleAuthorPersonJsonLd,
+          ...(imageObjectJsonLd ? [imageObjectJsonLd] : []),
+          ...(faqJsonLd ? [faqJsonLd] : []),
+        ]}
       />
-      {faqJsonLd ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
-      ) : null}
       <Header />
 
       <article
