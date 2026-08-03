@@ -204,6 +204,63 @@ function parseContentBlocks(content: string[]): ContentBlock[] {
   return blocks
 }
 
+function stripMarkdown(value: string) {
+  return value
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/^[-\d.\s]+/, '')
+    .trim()
+}
+
+function extractFaqItems(content: string[]) {
+  const faqStartIndex = content.findIndex((line) => /^##\s+FAQ$/i.test(line.trim()))
+
+  if (faqStartIndex === -1) {
+    return []
+  }
+
+  const items: Array<{ question: string; answer: string }> = []
+  let index = faqStartIndex + 1
+
+  while (index < content.length) {
+    const line = content[index]
+
+    if (/^##\s+/.test(line)) {
+      break
+    }
+
+    if (/^###\s+/.test(line)) {
+      const question = stripMarkdown(line.replace(/^###\s+/, ''))
+      const answerParts: string[] = []
+      index += 1
+
+      while (index < content.length && !/^###\s+/.test(content[index]) && !/^##\s+/.test(content[index])) {
+        const answerLine = stripMarkdown(content[index])
+        if (answerLine) answerParts.push(answerLine)
+        index += 1
+      }
+
+      if (question && answerParts.length) {
+        items.push({ question, answer: answerParts.join(' ') })
+      }
+
+      continue
+    }
+
+    index += 1
+  }
+
+  return items
+}
+
+function toAbsoluteSiteUrl(pathOrUrl: string) {
+  if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
+    return pathOrUrl
+  }
+
+  return `https://biorise-clinic.ru${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`
+}
+
 function hashString(value: string) {
   let hash = 0
 
@@ -261,9 +318,61 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const imageAlt = article.imageAlt || article.h1 || article.title
   const relatedArticles = getRelatedArticles(article.slug)
   const articleAuthor = 'Медицинская редакция BIORISE'
+  const articleUrl = `https://biorise-clinic.ru/articles/${article.slug}/`
+  const faqItems = extractFaqItems(article.content)
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.h1 || article.title,
+    description: article.description || article.excerpt,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    author: {
+      '@type': 'Organization',
+      name: articleAuthor,
+      url: 'https://biorise-clinic.ru/',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'BIORISE',
+      url: 'https://biorise-clinic.ru/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://biorise-clinic.ru/logo-cube.png',
+      },
+    },
+    mainEntityOfPage: articleUrl,
+    image: article.coverImage
+      ? toAbsoluteSiteUrl(article.coverImage)
+      : 'https://biorise-clinic.ru/logo-cube.png',
+  }
+  const faqJsonLd = faqItems.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      ) : null}
       <Header />
 
       <article

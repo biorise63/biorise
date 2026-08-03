@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Политика обработки cookie | BIORISE',
   description:
     'Информация об использовании файлов cookie и аналитических сервисов на сайте клиники BIORISE.',
+  alternates: {
+    canonical: 'https://biorise-clinic.ru/cookie-policy/',
+  },
 }
 
 export default function CookiePolicyPage() {

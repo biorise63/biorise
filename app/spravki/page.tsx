@@ -5,6 +5,9 @@ import SpravkiContent from './SpravkiContent'
 export const metadata = {
   title: 'Медицинские справки | BIORISE',
   description: 'Оформление медицинских справок в клинике BIORISE в Самаре. Быстро, официально, с доставкой.',
+  alternates: {
+    canonical: 'https://biorise-clinic.ru/spravki/',
+  },
 }
 
 export default function SpravkiPage() {

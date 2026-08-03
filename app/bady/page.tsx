@@ -6,6 +6,9 @@ export const metadata = {
   title: 'БАДЫ | BIORISE',
   description:
     'Каталог БАДов BIORISE в Самаре: состав, форма выпуска и ключевые свойства популярных позиций.',
+  alternates: {
+    canonical: 'https://biorise-clinic.ru/bady/',
+  },
 }
 
 export default function BadyPage() {

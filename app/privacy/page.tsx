@@ -5,6 +5,9 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata = {
   title: 'Политика конфиденциальности | BIORISE',
   description: 'Политика конфиденциальности клиники BIORISE',
+  alternates: {
+    canonical: 'https://biorise-clinic.ru/privacy/',
+  },
 }
 
 export default function PrivacyPage() {

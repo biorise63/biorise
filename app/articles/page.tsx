@@ -8,6 +8,18 @@ export const metadata = {
   title: 'Статьи | BIORISE',
   description:
     'Полезные статьи о витаминных капельницах, IV-терапии, чек-апах и восстановлении здоровья от клиники BIORISE в Самаре.',
+  alternates: {
+    canonical: 'https://biorise-clinic.ru/articles/',
+  },
+  openGraph: {
+    title: 'Статьи | BIORISE',
+    description:
+      'Полезные статьи о витаминных капельницах, IV-терапии, чек-апах и восстановлении здоровья от клиники BIORISE в Самаре.',
+    url: 'https://biorise-clinic.ru/articles/',
+    siteName: 'BIORISE',
+    locale: 'ru_RU',
+    type: 'website',
+  },
 }
 
 export default function ArticlesPage() {

@@ -9,7 +9,8 @@
     "lint": "next lint",
     "export": "next build",
     "generate-yandex-price": "node scripts/generate-yandex-price-list.js",
-    "article-planner": "node article-planner/server.js"
+    "article-planner": "node article-planner/server.js",
+    "indexnow": "node scripts/submit-indexnow.js"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.36.1",

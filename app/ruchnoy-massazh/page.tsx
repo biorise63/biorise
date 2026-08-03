@@ -18,13 +18,13 @@ export const metadata = {
     'БИОРАЙЗ массаж',
   ],
   alternates: {
-    canonical: 'https://biorise-clinic.ru/ruchnoy-massazh',
+    canonical: 'https://biorise-clinic.ru/ruchnoy-massazh/',
   },
   openGraph: {
     title: 'Ручной массаж в Самаре | BIORISE',
     description:
       'Ручной и медицинский массаж BIORISE в Самаре: комфортные сеансы и абонементы для курса восстановления.',
-    url: 'https://biorise-clinic.ru/ruchnoy-massazh',
+    url: 'https://biorise-clinic.ru/ruchnoy-massazh/',
     type: 'website',
     images: [{ url: 'https://biorise-clinic.ru/services/apparatnyy-massazh/massage-2.jpg' }],
   },

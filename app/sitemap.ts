@@ -21,6 +21,7 @@ const routeConfig: Record<
   '/chek-apy/': { priority: 0.88, changeFrequency: 'weekly' },
   '/bady/': { priority: 0.85, changeFrequency: 'weekly' },
   '/articles/': { priority: 0.85, changeFrequency: 'weekly' },
+  '/sitemap/': { priority: 0.65, changeFrequency: 'weekly' },
   '/apparatnyy-massazh/': { priority: 0.8, changeFrequency: 'monthly' },
   '/ruchnoy-massazh/': { priority: 0.8, changeFrequency: 'monthly' },
   '/lazernaya-epilyatsiya/': { priority: 0.8, changeFrequency: 'monthly' },

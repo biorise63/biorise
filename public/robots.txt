@@ -3,6 +3,13 @@ Allow: /
 
 Disallow: /api/
 Disallow: /_next/webpack-hmr
+Disallow: /*?*
+Disallow: /*utm_*
+Disallow: /*?from=
+Disallow: /*?focus=
+
+Clean-param: focus /kapelnicy/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&from /
 
 Host: biorise-clinic.ru
 Sitemap: https://biorise-clinic.ru/sitemap.xml

@@ -5,6 +5,9 @@ import BioimpedanceContent from './BioimpedanceContent'
 export const metadata = {
   title: 'Биоимпедансный анализ композитного состава тела | BIORISE',
   description: 'Биоимпедансный анализ состава тела на аппарате МЕДАСС. Быстрая и неинвазивная диагностика в клинике BIORISE в Самаре.',
+  alternates: {
+    canonical: 'https://biorise-clinic.ru/bioimpedance/',
+  },
 }
 
 export default function BioimpedancePage() {

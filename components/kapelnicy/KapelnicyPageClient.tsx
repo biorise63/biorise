@@ -51,13 +51,19 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
-    const focus = params.get('focus')
+    const queryFocus = params.get('focus')
+    const storedFocus = window.sessionStorage.getItem('biorise-focus-infusion')
+    const focus = queryFocus || storedFocus
     if (!focus) return
+
+    window.sessionStorage.removeItem('biorise-focus-infusion')
 
     const timer = window.setTimeout(() => {
       const target = document.getElementById(focus)
       target?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      window.history.replaceState(null, '', '/kapelnicy/')
+      if (queryFocus) {
+        window.history.replaceState(null, '', '/kapelnicy/')
+      }
     }, 250)
 
     return () => window.clearTimeout(timer)
