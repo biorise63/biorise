@@ -6,6 +6,33 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
+    common: 'T-SPOT.TB',
+    subtitle: 'Диагностика туберкулезной инфекции',
+    description:
+      'Современное исследование крови без кожных проб. Подходит взрослым и детям по назначению врача.',
+    features: [
+      'Высокоточная диагностика на ранней стадии',
+      'Без Манту и Диаскинтеста',
+      'При аллергических реакциях',
+      'Перед госпитализацией',
+      'Забор крови оплачивается отдельно - 180 ₽',
+    ],
+    price: {
+      current: '5 800 ₽',
+      old: '7 900 ₽',
+    },
+    period: 'до 31 августа 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/optimized/promo/promo-tspot.jpg',
+      text: 'T-SPOT.TB',
+      alt: 'T-SPOT диагностика туберкулезной инфекции в BIORISE Самара',
+      pos: 'center 45%',
+      by: 'Скидка до конца августа',
+    },
+  },
+  {
     common: 'Подготовка к школе и детскому саду',
     subtitle: 'Детский чек-ап перед новым учебным годом',
     description:
