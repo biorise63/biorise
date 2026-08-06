@@ -18,6 +18,7 @@ const routeConfig: Record<
   '/kapelnicy/': { priority: 0.95, changeFrequency: 'weekly' },
   '/kapelnicy/na-domu/': { priority: 0.9, changeFrequency: 'weekly' },
   '/analizy/': { priority: 0.9, changeFrequency: 'weekly' },
+  '/ekg/': { priority: 0.85, changeFrequency: 'weekly' },
   '/chek-apy/': { priority: 0.88, changeFrequency: 'weekly' },
   '/bady/': { priority: 0.85, changeFrequency: 'weekly' },
   '/articles/': { priority: 0.85, changeFrequency: 'weekly' },

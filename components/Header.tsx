@@ -271,6 +271,12 @@ export default function Header() {
                       Анализы
                     </Link>
                     <Link
+                      href="/ekg"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      ЭКГ
+                    </Link>
+                    <Link
                       href="/chek-apy"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -482,6 +488,7 @@ export default function Header() {
                   <div className="mt-1 flex flex-col gap-1">
                     <Link href="/kapelnicy" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы</Link>
                     <Link href="/analizy" onClick={closeMobileMenu} className={mobileLinkClass}>Анализы</Link>
+                    <Link href="/ekg" onClick={closeMobileMenu} className={mobileLinkClass}>ЭКГ</Link>
                     <Link href="/chek-apy" onClick={closeMobileMenu} className={mobileLinkClass}>Чек-апы</Link>
                     <Link href="/kapelnicy/na-domu" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы на дому</Link>
                     <Link href="/bioimpedance" onClick={closeMobileMenu} className={mobileLinkClass}>Биоимпедансный анализ</Link>

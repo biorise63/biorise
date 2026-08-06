@@ -26,6 +26,7 @@ const mainPages = [
   { href: '/kapelnicy/', title: 'Капельницы' },
   { href: '/kapelnicy/na-domu/', title: 'Капельницы на дому' },
   { href: '/analizy/', title: 'Анализы' },
+  { href: '/ekg/', title: 'ЭКГ' },
   { href: '/chek-apy/', title: 'Чек-апы' },
   { href: '/articles/', title: 'Статьи' },
   { href: '/bady/', title: 'БАДы' },
