@@ -6,7 +6,7 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
-    common: 'T-SPOT.TB',
+    common: 'T-SPOT',
     subtitle: 'Диагностика туберкулезной инфекции',
     description:
       'Современное исследование крови без кожных проб. Подходит взрослым и детям по назначению врача.',
@@ -26,7 +26,7 @@ const galleryData: GalleryItem[] = [
     buttonHref: '#booking',
     photo: {
       url: '/optimized/promo/promo-tspot.jpg',
-      text: 'T-SPOT.TB',
+      text: 'T-SPOT',
       alt: 'T-SPOT диагностика туберкулезной инфекции в BIORISE Самара',
       pos: 'center 45%',
       by: 'Скидка до конца августа',
