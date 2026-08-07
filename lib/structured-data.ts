@@ -225,6 +225,7 @@ export function createBlogPostingJsonLd({
   publishedAt,
   modifiedAt,
   image,
+  authorId,
 }: {
   url: string
   headline: string
@@ -232,6 +233,7 @@ export function createBlogPostingJsonLd({
   publishedAt: string
   modifiedAt?: string
   image?: string
+  authorId?: string
 }) {
   const absolutePageUrl = absoluteUrl(url)
   const imageUrl = image ? absoluteUrl(image) : `${SITE_URL}/logo-cube.png`
@@ -244,7 +246,9 @@ export function createBlogPostingJsonLd({
     description,
     datePublished: publishedAt,
     dateModified: modifiedAt || publishedAt,
-    author: { '@id': `${SITE_URL}/#medical-editorial-author` },
+    author: {
+      '@id': authorId ? `${SITE_URL}/#author-${authorId}` : `${SITE_URL}/#medical-editorial-author`,
+    },
     publisher: { '@id': `${SITE_URL}/#organization` },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -252,6 +256,25 @@ export function createBlogPostingJsonLd({
     },
     image: imageUrl,
     inLanguage: 'ru-RU',
+  }
+}
+
+export function createDoctorPersonJsonLd(author: {
+  id: string
+  name: string
+  role: string
+  avatar: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#author-${author.id}`,
+    name: author.name,
+    jobTitle: author.role,
+    image: absoluteUrl(author.avatar),
+    url: `${SITE_URL}/#doctors`,
+    worksFor: { '@id': `${SITE_URL}/#organization` },
+    affiliation: { '@id': `${SITE_URL}/#medical-clinic` },
   }
 }
 

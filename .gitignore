@@ -30,6 +30,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cowork ssh deploy key (never commit)
+.cowork-ssh/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

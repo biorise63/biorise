@@ -7,9 +7,11 @@ import { FileText } from 'lucide-react'
 import JsonLd from '@/components/JsonLd'
 import { articles, getArticleBySlug } from '@/lib/articles'
 import { formatArticleDate } from '@/lib/format-date'
+import { getAuthor } from '@/lib/authors'
 import {
   articleAuthorPersonJsonLd,
   createBlogPostingJsonLd,
+  createDoctorPersonJsonLd,
   createImageObjectJsonLd,
   createWebPageJsonLd,
 } from '@/lib/structured-data'
@@ -316,7 +318,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const contentBlocks = parseContentBlocks(article.content)
   const imageAlt = article.imageAlt || article.h1 || article.title
   const relatedArticles = getRelatedArticles(article.slug)
-  const articleAuthor = 'Медицинская редакция BIORISE'
+  const author = getAuthor(article.authorId)
   const articlePath = `/articles/${article.slug}/`
   const faqItems = extractFaqItems(article.content)
   const webPageJsonLd = createWebPageJsonLd({
@@ -330,7 +332,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     description: article.description || article.excerpt,
     publishedAt: article.publishedAt,
     image: article.coverImage,
+    authorId: article.authorId,
   })
+  const authorJsonLd = author ? createDoctorPersonJsonLd(author) : articleAuthorPersonJsonLd
   const imageObjectJsonLd = article.coverImage
     ? createImageObjectJsonLd({
         url: article.coverImage,
@@ -359,7 +363,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         data={[
           webPageJsonLd,
           blogPostingJsonLd,
-          articleAuthorPersonJsonLd,
+          authorJsonLd,
           ...(imageObjectJsonLd ? [imageObjectJsonLd] : []),
           ...(faqJsonLd ? [faqJsonLd] : []),
         ]}
@@ -395,8 +399,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt)}</time>
               <span aria-hidden="true">•</span>
               <span>4–6 мин</span>
-              <span aria-hidden="true">•</span>
-              <span>{articleAuthor}</span>
+              {!author && (
+                <>
+                  <span aria-hidden="true">•</span>
+                  <span>Медицинская редакция BIORISE</span>
+                </>
+              )}
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading text-olive-primary font-medium leading-tight mb-4">
               {article.h1 || article.title}
@@ -404,6 +412,22 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <p className="text-olive-primary/70 text-base sm:text-lg leading-relaxed mb-6">
               {article.excerpt}
             </p>
+            {author && (
+              <div className="mb-6 flex items-center gap-3 rounded-2xl border border-olive-primary/10 bg-white/60 p-3">
+                <img
+                  src={author.avatar}
+                  alt={author.name}
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <div>
+                  <div className="text-sm font-medium text-olive-primary">{author.name}</div>
+                  <div className="text-xs text-olive-primary/60">{author.role}</div>
+                </div>
+              </div>
+            )}
             <div className="flex flex-wrap gap-2 mb-10">
               {article.tags.map((tag) => (
                 <span

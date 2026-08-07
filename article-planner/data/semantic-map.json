@@ -1,0 +1,1205 @@
+{
+  "generatedAt": "2026-08-07T12:20:10.284Z",
+  "note": "Резерв content-map.json (500+ тем) в этот прогон не проверялся через Wordstat — обогащается по мере продвижения темы из резерва в очередь (экономия квоты).",
+  "clusters": [
+    {
+      "id": "chek-ap-posle-40",
+      "page": "/articles/chek-ap-posle-40/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "чек-ап после 40",
+      "wordstatDemand": 647,
+      "lsi": [
+        "чекап организма",
+        "чекап это",
+        "чекап что это",
+        "check up",
+        "чек ап после 40",
+        "чекап организма что это",
+        "чекап женское здоровье",
+        "чек ап для женщин после 40"
+      ],
+      "secondaryKeywords": [
+        "чек-ап 40",
+        "что проверить после 40",
+        "какие анализы сдать после 40"
+      ],
+      "gsc": {
+        "query": "да",
+        "impressions": 1,
+        "clicks": 0,
+        "avgPosition": 2,
+        "pages": [
+          "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "detskiy-chek-ap",
+      "page": "/articles/detskiy-chek-ap/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "детский чек-ап",
+      "wordstatDemand": 1094,
+      "lsi": [
+        "ээг ребенку",
+        "дети шпионов 4d",
+        "лоперамид детям с какого возраста",
+        "хаски дети",
+        "анализ на пол ребенка по крови",
+        "чек ап детский",
+        "как распознать аппендицит у ребенка",
+        "детский чек ап гемотест"
+      ],
+      "secondaryKeywords": [
+        "чек-ап для детей",
+        "чек-ап детский",
+        "что входит в детский чек-ап"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "chek-ap-dlya-muzhchin",
+      "page": "/articles/chek-ap-dlya-muzhchin/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "чек-ап для мужчин",
+      "wordstatDemand": 2160,
+      "lsi": [
+        "мужской торс",
+        "чек ап для мужчин",
+        "чек ап анализы для мужчин",
+        "чек ап для мужчин 40",
+        "кроссовки дизель мужские",
+        "чек ап организма для мужчин",
+        "очки версаче мужские",
+        "полный чек ап для мужчин"
+      ],
+      "secondaryKeywords": [
+        "мужской чек-ап",
+        "чек-ап мужской",
+        "чек-ап мужское здоровье"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "chek-ap-dlya-zhenshchin",
+      "page": "/articles/chek-ap-dlya-zhenshchin/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "чек-ап для женщин",
+      "wordstatDemand": 3951,
+      "lsi": [
+        "участницы женского стендапа",
+        "чек ап для женщин",
+        "женский чекап",
+        "женский экстаз",
+        "шанель аллюр женские",
+        "чек ап анализы для женщин",
+        "женский стендап афиша",
+        "check up перевод"
+      ],
+      "secondaryKeywords": [
+        "женский чек-ап",
+        "чек-ап женский",
+        "чек-ап анализы для женщин",
+        "чек-ап женское здоровье"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kakie-analizy-vkhodyat-v-chek-ap",
+      "page": "/articles/kakie-analizy-vkhodyat-v-chek-ap/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "какие анализы входят в чек-ап",
+      "wordstatDemand": 126,
+      "lsi": [
+        "исследование это",
+        "эгдс что это за обследование",
+        "центр лабораторной диагностики",
+        "эмнг что за обследование",
+        "аноскопия что это за обследование",
+        "какие анализы входят в чек ап"
+      ],
+      "secondaryKeywords": [
+        "что входит в чек-ап",
+        "чек-ап какие анализы",
+        "чек-ап организма анализы",
+        "анализы чек-ап",
+        "что входит в чек-ап организма"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "vitaminnye-kapelnitsy",
+      "page": "/articles/vitaminnye-kapelnitsy/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "витаминные капельницы",
+      "wordstatDemand": 3085,
+      "lsi": [
+        "мильгамма это витамин",
+        "витамин в13",
+        "пантотеновая кислота какой витамин",
+        "витамин р для чего",
+        "витамин а в уколах",
+        "пиридоксин это какой витамин для чего",
+        "витаминные капельницы для женщин",
+        "витаминный комплекс капельница"
+      ],
+      "secondaryKeywords": [
+        "витаминная капельница",
+        "что входит в витаминную капельницу",
+        "состав витаминной капельницы",
+        "витаминные капельницы для женщин"
+      ],
+      "gsc": {
+        "query": "когда нужны витаминные капельницы",
+        "impressions": 2,
+        "clicks": 0,
+        "avgPosition": 15,
+        "pages": [
+          "https://biorise-clinic.ru/articles/vitaminnye-kapelnitsy/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "posle-kapelnitsy-zheleza",
+      "page": "/articles/posle-kapelnitsy-zheleza/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "после капельницы железа",
+      "wordstatDemand": 5965,
+      "lsi": [
+        "реамберин капельница для чего назначают",
+        "звезды под капельницей",
+        "ремаксол капельница для чего назначают",
+        "через сколько после капельницы железа",
+        "почему после капельниц железа",
+        "пить ли железо после капельниц",
+        "можно ли пить после капельницы железа",
+        "что делать после капельницы железа"
+      ],
+      "secondaryKeywords": [
+        "капельница железа",
+        "анализ на ферритин",
+        "общий анализ крови"
+      ],
+      "gsc": {
+        "query": "после капельницы железа",
+        "impressions": 48,
+        "clicks": 0,
+        "avgPosition": 4.5,
+        "pages": [
+          "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-zheleza-pri-nizkom-ferritine",
+      "page": "/articles/kapelnitsa-zheleza-pri-nizkom-ferritine/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "капельница железа при низком ферритине",
+      "wordstatDemand": 2670,
+      "lsi": [
+        "ферритин это",
+        "пониженный ферритин",
+        "что такое ферритин в крови",
+        "как поднять ферритин в крови",
+        "капельницы железа при низком ферритине",
+        "гемоглобин и ферритин в чем отличие",
+        "ферритин 8 у женщины что это значит",
+        "капельницы железа при низком ферритине отзывы"
+      ],
+      "secondaryKeywords": [
+        "капельница железо ферритин",
+        "капельницы железа при низком ферритине",
+        "капельница при низком железе"
+      ],
+      "gsc": {
+        "query": "капельницы железа при низком ферритине",
+        "impressions": 4,
+        "clicks": 0,
+        "avgPosition": 5.3,
+        "pages": [
+          "https://biorise-clinic.ru/articles/kapelnitsa-zheleza-pri-nizkom-ferritine/",
+          "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-zheleza-pri-anemii",
+      "page": "/articles/kapelnitsa-zheleza-pri-anemii/",
+      "status": "idea",
+      "section": "средний",
+      "mainKeyword": "капельница железа при анемии",
+      "wordstatDemand": 3084,
+      "lsi": [
+        "онкология поджелудочной железы",
+        "аденокарцинома поджелудочной железы",
+        "онкомаркеры поджелудочной железы",
+        "онкология поджелудочной железы симптомы",
+        "капельница железа при анемии цена",
+        "аденокарцинома поджелудочной железы прогноз",
+        "капельница железа при анемии эффект",
+        "капельницы железа при анемии побочные"
+      ],
+      "secondaryKeywords": [
+        "капельница для гемоглобина",
+        "железо через капельницу"
+      ],
+      "gsc": {
+        "query": "железо через капельницу",
+        "impressions": 1,
+        "clicks": 0,
+        "avgPosition": 2,
+        "pages": [
+          "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-s-vitaminami-kogda-obsuzhdayut",
+      "page": "/articles/kapelnitsa-s-vitaminami-kogda-obsuzhdayut/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница с витаминами",
+      "wordstatDemand": 4802,
+      "lsi": [
+        "желтая капельница",
+        "витаминные капельницы",
+        "витаминные капли для глаз",
+        "железо для капельницы препараты",
+        "капельницы с витамином б",
+        "витамин с с глюкозой капельница",
+        "витаминные капельницы для женщин",
+        "какую капельницу с витаминами"
+      ],
+      "secondaryKeywords": [
+        "капельница с витаминами кому подходит",
+        "что проверить перед витаминной капельницей"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kokteyl-mayersa-komu-podkhodit",
+      "page": "/articles/kokteyl-mayersa-komu-podkhodit/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "коктейль майерса капельница",
+      "wordstatDemand": 179,
+      "lsi": [
+        "реамберин капельница для чего назначают",
+        "апероль шприц состав",
+        "пивной напиток мохито",
+        "цитофлавин внутривенно капельно",
+        "апероль шприц что это за напиток",
+        "коктейль майерса состав капельницы",
+        "коктейль майерса капельница состав дозировка",
+        "коктейль майерса капельница купить"
+      ],
+      "secondaryKeywords": [
+        "капельница коктейль майерса",
+        "кому подходит коктейль майерса",
+        "капельница майерса показания"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-pri-orvi-kogda-vrach-rassmatrivaet",
+      "page": "/articles/kapelnitsa-pri-orvi-kogda-vrach-rassmatrivaet/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница при орви",
+      "wordstatDemand": 421,
+      "lsi": [
+        "капельная система",
+        "противовирусные капли",
+        "капельное орошение",
+        "орвис рино капли",
+        "антивирусные препараты от простуды",
+        "капельницы при орви какие",
+        "капельница при орви взрослому",
+        "при орви капельницы ставят"
+      ],
+      "secondaryKeywords": [
+        "капельница при простуде",
+        "инфузия при орви",
+        "капельница при слабости после орви"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-posle-kovida-vosstanovlenie",
+      "page": "/articles/kapelnitsa-posle-kovida-vosstanovlenie/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница после ковида",
+      "wordstatDemand": 48,
+      "lsi": [
+        "ремаксол капельница для чего",
+        "магнезия капельница для чего",
+        "венофер капельница",
+        "глатион капельница для чего",
+        "капельницы после ковида",
+        "капельница после ковида для восстановления"
+      ],
+      "secondaryKeywords": [
+        "восстановление после ковида капельница",
+        "слабость после ковида капельница",
+        "постковид капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-detoks-kogda-obsuzhdayut",
+      "page": "/articles/kapelnitsa-detoks-kogda-obsuzhdayut/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница детокс",
+      "wordstatDemand": 3721,
+      "lsi": [
+        "как очистить организм от токсинов",
+        "как почистить организм от токсинов",
+        "детоксикация печени",
+        "откапать от алкоголя",
+        "детокс капельница на дому",
+        "детокс капельница состав",
+        "капельница после детокса",
+        "детокс капельница цена"
+      ],
+      "secondaryKeywords": [
+        "детокс капельница",
+        "когда делают детокс капельницу",
+        "кому подходит детокс капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-dlya-pecheni-kakie-analizy-sdat",
+      "page": "/articles/kapelnitsa-dlya-pecheni-kakie-analizy-sdat/",
+      "status": "on-hold",
+      "section": "средний",
+      "mainKeyword": "капельница для печени",
+      "wordstatDemand": 4459,
+      "lsi": [
+        "рецепт печенки",
+        "печенка рецепт",
+        "гептрал капельница для чего",
+        "гептрал капельно",
+        "гептрал внутривенно капельно",
+        "как капать гептрал",
+        "препараты для печени капельницы",
+        "какие капельницы для печени"
+      ],
+      "secondaryKeywords": [
+        "какие анализы сдать перед капельницей для печени",
+        "капельница для печени анализы",
+        "печень капельница показания"
+      ],
+      "gsc": {
+        "query": "капельница для печени название",
+        "impressions": 1,
+        "clicks": 0,
+        "avgPosition": 12,
+        "pages": [
+          "https://biorise-clinic.ru/articles/kapelnitsa-s-geptralom-dlya-chego-naznachayut/"
+        ]
+      },
+      "conflictsWith": [
+        "kapelnitsa-dlya-pecheni-dlya-chego-naznachayut"
+      ]
+    },
+    {
+      "id": "kapelnitsa-dlya-pecheni-dlya-chego-naznachayut",
+      "page": "/articles/kapelnitsa-dlya-pecheni-dlya-chego-naznachayut/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "капельница для печени",
+      "wordstatDemand": 4459,
+      "lsi": [
+        "рецепт печенки",
+        "печенка рецепт",
+        "гептрал капельница для чего",
+        "гептрал капельно",
+        "гептрал внутривенно капельно",
+        "как капать гептрал",
+        "препараты для печени капельницы",
+        "какие капельницы для печени"
+      ],
+      "secondaryKeywords": [
+        "капельница для печени что входит",
+        "капельница для печени состав",
+        "капельница для печени противопоказания"
+      ],
+      "gsc": null,
+      "conflictsWith": [
+        "kapelnitsa-dlya-pecheni-kakie-analizy-sdat"
+      ]
+    },
+    {
+      "id": "kapelnitsa-s-geptralom-dlya-chego-naznachayut",
+      "page": "/articles/kapelnitsa-s-geptralom-dlya-chego-naznachayut/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "капельница с гептралом",
+      "wordstatDemand": 1261,
+      "lsi": [
+        "гептрал от чего",
+        "гептрал уколы",
+        "капельница для печени",
+        "гепатоджект для кошек",
+        "гептор ампулы",
+        "гептор уколы",
+        "гепатоклин",
+        "капельница ремаксол с гептралом"
+      ],
+      "secondaryKeywords": [
+        "гептрал капельница",
+        "капельница с гептралом для чего назначают",
+        "капельница с гептралом показания"
+      ],
+      "gsc": {
+        "query": "гептрал капельница для чего назначают",
+        "impressions": 2,
+        "clicks": 0,
+        "avgPosition": 26,
+        "pages": [
+          "https://biorise-clinic.ru/articles/kapelnitsa-s-geptralom-dlya-chego-naznachayut/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-pri-otravlenii-kogda-nuzhna-podderzhka",
+      "page": "/articles/kapelnitsa-pri-otravlenii-kogda-nuzhna-podderzhka/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница при отравлении",
+      "wordstatDemand": 2673,
+      "lsi": [
+        "прокапаться от алкоголя",
+        "прокапать от алкоголя",
+        "капельница от интоксикации",
+        "что капают при алкогольной интоксикации",
+        "прокапывание от алкоголя",
+        "какие капельницы при отравлении",
+        "при отравлении ставят капельницу",
+        "какую капельницу ставят при отравлении"
+      ],
+      "secondaryKeywords": [
+        "капельница при пищевом отравлении",
+        "инфузия при отравлении",
+        "когда делают капельницу при отравлении"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-ot-stressa-kogda-mozhet-podoyti",
+      "page": "/articles/kapelnitsa-ot-stressa-kogda-mozhet-podoyti/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница от стресса и нервов",
+      "wordstatDemand": 165,
+      "lsi": [
+        "успокоительные таблетки для нервной системы",
+        "медитация для успокоения нервной",
+        "периферическая нервная система",
+        "медитация для успокоения нервной системы и психики",
+        "нервный срыв это",
+        "нервный срыв симптомы",
+        "признаки нервного срыва",
+        "капельницы от стресса и нервов"
+      ],
+      "secondaryKeywords": [
+        "капельница от стресса",
+        "капельница от нервов",
+        "капельница при тревожности"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-dlya-mozga-kakie-zhaloby-vazhny",
+      "page": "/articles/kapelnitsa-dlya-mozga-kakie-zhaloby-vazhny/",
+      "status": "brief",
+      "section": "средний",
+      "mainKeyword": "капельница для мозга",
+      "wordstatDemand": 2923,
+      "lsi": [
+        "капельницы для мозга",
+        "капельницы для мозгов",
+        "капельницы для головного мозга",
+        "капельницы для сосудов мозга",
+        "капельницы для сосудов головного мозга",
+        "цитофлавин внутривенно капельно",
+        "гептрал внутривенно капельно",
+        "капельница для мозга препарат"
+      ],
+      "secondaryKeywords": [
+        "капельница для мозга показания",
+        "капельница для концентрации",
+        "капельница при тумане в голове"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-dlya-serdtsa-chto-proverit",
+      "page": "/articles/kapelnitsa-dlya-serdtsa-chto-proverit/",
+      "status": "brief",
+      "section": "средний",
+      "mainKeyword": "капельница для сердца",
+      "wordstatDemand": 1450,
+      "lsi": [
+        "сердечные препараты",
+        "сердечные лекарства",
+        "сердечные капли",
+        "препараты при сердечной недостаточности",
+        "капельницы для сердца",
+        "капельницы для сердца и сосудов",
+        "для чего капают глюкозу внутривенно",
+        "какие капельницы для сердца"
+      ],
+      "secondaryKeywords": [
+        "капельница для сердца показания",
+        "что проверить перед капельницей для сердца",
+        "капельница для сосудов и сердца"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-dlya-pokhudeniya-kakie-analizy-nuzhny",
+      "page": "/articles/kapelnitsa-dlya-pokhudeniya-kakie-analizy-nuzhny/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница для похудения",
+      "wordstatDemand": 2531,
+      "lsi": [
+        "тело похудело песня",
+        "липолитики стройность",
+        "липолитик стройность купить",
+        "липолитик стройность в живот",
+        "на сколько калорий нужно питаться чтобы похудеть",
+        "как разогнать метаболизм чтобы похудеть",
+        "капельницы для похудения отзывы",
+        "капельница для похудения состав"
+      ],
+      "secondaryKeywords": [
+        "какие анализы сдать перед капельницей для похудения",
+        "капельница для похудения показания",
+        "инфузия для снижения веса"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-pri-diabete-pochemu-bez-analizov-nelzya",
+      "page": "/articles/kapelnitsa-pri-diabete-pochemu-bez-analizov-nelzya/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница при диабете",
+      "wordstatDemand": 1662,
+      "lsi": [
+        "помпа для диабетиков",
+        "мука для диабетиков",
+        "капельницы при диабете",
+        "хранение инсулина",
+        "помпа диабетическая",
+        "капельницы при сахарном диабете",
+        "шприц для диабетиков",
+        "капельницы при диабете 2"
+      ],
+      "secondaryKeywords": [
+        "капельница при сахарном диабете",
+        "инфузия при диабете",
+        "какие анализы нужны при диабете перед капельницей"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-zolushka-chto-vazhno-znat",
+      "page": "/articles/kapelnitsa-zolushka-chto-vazhno-znat/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "капельница золушка",
+      "wordstatDemand": 29971,
+      "lsi": [
+        "магнезия капельница",
+        "капельница золушка состав",
+        "капельница золушка отзывы",
+        "гептрал капельно",
+        "профиль капельник",
+        "капельница золушка цена",
+        "капельница золушка купить",
+        "дозировка капельницы золушка"
+      ],
+      "secondaryKeywords": [
+        "что важно знать о капельнице золушка",
+        "капельница золушка показания",
+        "капельница золушка кому подходит"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-s-glutationom-kogda-obsuzhdayut",
+      "page": "/articles/kapelnitsa-s-glutationom-kogda-obsuzhdayut/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница с глутатионом",
+      "wordstatDemand": 1650,
+      "lsi": [
+        "адреналин укол",
+        "капельницы с глутатионом",
+        "гептрал внутривенно капельно",
+        "гептрал для внутривенного введения",
+        "гептронг раствор для инъекций",
+        "капельницы с глутатионом отзывы",
+        "глутатион тиоктовая кислота витамин с капельница",
+        "альфа липоевая кислота в ампулах для инъекций"
+      ],
+      "secondaryKeywords": [
+        "глутатион капельница",
+        "капельница с глутатионом кому подходит",
+        "когда делают капельницу с глутатионом"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "glutationovye-kapelnitsy-dlya-zhenshchin",
+      "page": "/articles/glutationovye-kapelnitsy-dlya-zhenshchin/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "глутатион капельницы для женщин",
+      "wordstatDemand": 191,
+      "lsi": [
+        "тиоктовая кислота капельница",
+        "инозитол побочные эффекты у женщин",
+        "гептрал внутривенно капельно",
+        "золедроновая кислота побочные действия после капельницы",
+        "глутатион капельницы для чего женщинам",
+        "гептрал инструкция по применению уколы внутривенно капельно",
+        "капельницы глутатиона для чего назначают женщинам",
+        "как влияет инозитол на женский организм"
+      ],
+      "secondaryKeywords": [
+        "глутатионовые капельницы для женщин",
+        "капельница с глутатионом для женщин",
+        "глутатион для чего нужен женщинам"
+      ],
+      "gsc": {
+        "query": "глутатионовые капельницы",
+        "impressions": 1,
+        "clicks": 0,
+        "avgPosition": 5,
+        "pages": [
+          "https://biorise-clinic.ru/articles/glutationovye-kapelnitsy-dlya-zhenshchin/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-pri-beremennosti-kogda-rassmatrivayut",
+      "page": "/articles/kapelnitsa-pri-beremennosti-kogda-rassmatrivayut/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница при беременности",
+      "wordstatDemand": 6626,
+      "lsi": [
+        "клексан при беременности",
+        "капельницы при беременности",
+        "капельница в руке",
+        "клексан для беременных для чего",
+        "молитва беременной женщины",
+        "магнезия при беременности капельница для чего",
+        "капельницы железа при беременности",
+        "назначили капельницы при беременности"
+      ],
+      "secondaryKeywords": [
+        "когда назначают капельницу при беременности",
+        "инфузия при беременности",
+        "капельница беременным показания"
+      ],
+      "gsc": {
+        "query": "капельница при беременности",
+        "impressions": 1,
+        "clicks": 0,
+        "avgPosition": 10,
+        "pages": [
+          "https://biorise-clinic.ru/kapelnicy/mame-mozhno/"
+        ]
+      },
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-pri-allergii-kogda-mozhet-potrebovatsya",
+      "page": "/articles/kapelnitsa-pri-allergii-kogda-mozhet-potrebovatsya/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница при аллергии",
+      "wordstatDemand": 1208,
+      "lsi": [
+        "аллергический кашель",
+        "антигистаминные препараты при крапивнице",
+        "аллергическая крапивница фото",
+        "капли от аллергического насморка",
+        "пульмикорт при аллергическом кашле",
+        "какие капельницы при аллергии",
+        "при аллергии ставят капельницы",
+        "какие капельницы ставят при аллергии"
+      ],
+      "secondaryKeywords": [
+        "капельница от аллергии",
+        "когда нужна капельница при аллергии",
+        "аллергия инфузионная терапия"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-muzhskoe-zdorove-kakie-analizy-proveryayut",
+      "page": "/articles/kapelnitsa-muzhskoe-zdorove-kakie-analizy-proveryayut/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница мужское здоровье",
+      "wordstatDemand": 52,
+      "lsi": [
+        "предстательная железа у мужчин что это",
+        "цинк для чего нужен организму мужчины",
+        "где находится простата у мужчин",
+        "простатит у мужчин что это",
+        "уролог что лечит у мужчин",
+        "ликопин для чего нужен организму",
+        "капельницы мужское здоровье",
+        "капельница мужское здоровье состав"
+      ],
+      "secondaryKeywords": [
+        "мужское здоровье капельница",
+        "какие анализы перед капельницей мужское здоровье",
+        "капельница для мужчин анализы"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-polovaya-sistema-komu-mozhet-podoyti",
+      "page": "/articles/kapelnitsa-polovaya-sistema-komu-mozhet-podoyti/",
+      "status": "on-hold",
+      "section": "низкий",
+      "mainKeyword": "капельница половая система",
+      "wordstatDemand": 6,
+      "lsi": [
+        "как сделать капельный полив",
+        "как пользоваться капельной кофеваркой",
+        "капельная лента для полива",
+        "устройство капельного полива",
+        "капельный полив из пнд трубы",
+        "капельница половой системы"
+      ],
+      "secondaryKeywords": [
+        "половая система капельница",
+        "кому подходит капельница половая система",
+        "женское здоровье капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "sport-silovaya-kak-podbirayut-kapelnitsu",
+      "page": "/articles/sport-silovaya-kak-podbirayut-kapelnitsu/",
+      "status": "on-hold",
+      "section": "низкий",
+      "mainKeyword": "спорт силовая капельница",
+      "wordstatDemand": 0,
+      "lsi": [],
+      "secondaryKeywords": [
+        "капельница после силовых тренировок",
+        "восстановление после силовых нагрузок капельница",
+        "спорт силовая показания"
+      ],
+      "gsc": null,
+      "conflictsWith": [
+        "kapelnicy-dlya-sportsmenov"
+      ]
+    },
+    {
+      "id": "sport-kardio-kogda-obsuzhdayut-vosstanovlenie",
+      "page": "/articles/sport-kardio-kogda-obsuzhdayut-vosstanovlenie/",
+      "status": "on-hold",
+      "section": "низкий",
+      "mainKeyword": "спорт кардио капельница",
+      "wordstatDemand": 0,
+      "lsi": [],
+      "secondaryKeywords": [
+        "капельница после кардиотренировок",
+        "восстановление после кардионагрузок капельница",
+        "спорт кардио показания"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-energiya-kogda-snizhenie-resursa-trebuet-obsledovaniya",
+      "page": "/articles/kapelnitsa-energiya-kogda-snizhenie-resursa-trebuet-obsledovaniya/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница энергия",
+      "wordstatDemand": 1408,
+      "lsi": [
+        "капельница от интоксикации",
+        "глатион капельница для чего",
+        "капельница энергия состав",
+        "капельницы для энергии восстановления",
+        "капельницы для энергии восстановления сил",
+        "капельница для энергии и бодрости",
+        "капельница для сил и энергии",
+        "капельницы для энергии восстановления сил в организме"
+      ],
+      "secondaryKeywords": [
+        "капельница энергия показания",
+        "капельница от упадка сил",
+        "снижение энергии капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-immunosupport-kogda-obsuzhdayut",
+      "page": "/articles/kapelnitsa-immunosupport-kogda-obsuzhdayut/",
+      "status": "brief",
+      "section": "высокий",
+      "mainKeyword": "капельница для иммунитета",
+      "wordstatDemand": 1196,
+      "lsi": [
+        "иммуномодулятор",
+        "иммуноглобулин это",
+        "органы иммунной системы",
+        "иммунная тромбоцитопения",
+        "иммунотерапия при онкологии что это",
+        "иммуносупрессия это",
+        "капельницы для иммунитета взрослым",
+        "капельницы для поднятия иммунитета"
+      ],
+      "secondaryKeywords": [
+        "капельницы для иммунитета взрослым",
+        "капельницы для поднятия иммунитета",
+        "иммуносуппорт капельница",
+        "поддержка иммунитета капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-gustye-volosy-kakie-defitsity-isklyuchit",
+      "page": "/articles/kapelnitsa-gustye-volosy-kakie-defitsity-isklyuchit/",
+      "status": "brief",
+      "section": "средний",
+      "mainKeyword": "капельница густые волосы",
+      "wordstatDemand": 46,
+      "lsi": [
+        "hair x мезотерапия",
+        "мезотерапия волосистой части головы",
+        "аминокапроновая кислота раствор для инфузий",
+        "трихолакс для мезотерапии головы",
+        "плазмолифтинг волосистой части головы",
+        "капельница густые волосы купить"
+      ],
+      "secondaryKeywords": [
+        "какие дефициты проверить при выпадении волос",
+        "капельница для волос анализы",
+        "капельница густые волосы показания"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-barhatnaya-kozha-kogda-obsuzhdayut",
+      "page": "/articles/kapelnitsa-barhatnaya-kozha-kogda-obsuzhdayut/",
+      "status": "brief",
+      "section": "средний",
+      "mainKeyword": "капельница бархатная кожа",
+      "wordstatDemand": 21,
+      "lsi": [
+        "мазь от дерматита на руках",
+        "мелкоточечный кератолиз на стопах чем лечить",
+        "как ухаживать за кожаной сумкой",
+        "гель для душа с кислотами от кератоза",
+        "капельница бархатная кожа что это отзывы"
+      ],
+      "secondaryKeywords": [
+        "капельница для кожи показания",
+        "бархатная кожа капельница кому подходит",
+        "капельница для кожи анализы"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnicy-dlya-sportsmenov",
+      "page": "/articles/kapelnicy-dlya-sportsmenov/",
+      "status": "published",
+      "section": "средний",
+      "mainKeyword": "капельницы для спортсменов",
+      "wordstatDemand": 705,
+      "lsi": [
+        "наколенники для спорта",
+        "тренер по спортивной гимнастике",
+        "л карнитин инъекции",
+        "музыка для спортивной гимнастики",
+        "капельницы для спортсменов для восстановления",
+        "капельницы для спортсменов препараты",
+        "цитофлавин капельница для спортсменов",
+        "состав капельниц для спортсмена"
+      ],
+      "secondaryKeywords": [
+        "капельницы после тренировок",
+        "капельницы для восстановления спортсменов",
+        "спорт силовая капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": [
+        "sport-silovaya-kak-podbirayut-kapelnitsu"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "kapelnitsa-dlya-pecheni-kakie-analizy-sdat",
+      "conflictsWith": [
+        "kapelnitsa-dlya-pecheni-dlya-chego-naznachayut"
+      ]
+    },
+    {
+      "id": "kapelnitsa-dlya-pecheni-dlya-chego-naznachayut",
+      "conflictsWith": [
+        "kapelnitsa-dlya-pecheni-kakie-analizy-sdat"
+      ]
+    },
+    {
+      "id": "sport-silovaya-kak-podbirayut-kapelnitsu",
+      "conflictsWith": [
+        "kapelnicy-dlya-sportsmenov"
+      ]
+    },
+    {
+      "id": "kapelnicy-dlya-sportsmenov",
+      "conflictsWith": [
+        "sport-silovaya-kak-podbirayut-kapelnitsu"
+      ]
+    }
+  ],
+  "opportunities": [
+    {
+      "query": "побочные эффекты после капельницы с железом",
+      "impressions": 44,
+      "clicks": 0,
+      "avgPosition": 9.6,
+      "pages": [
+        "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+      ]
+    },
+    {
+      "query": "гептрал для чего",
+      "impressions": 40,
+      "clicks": 0,
+      "avgPosition": 9,
+      "pages": [
+        "https://biorise-clinic.ru/articles/kapelnitsa-s-geptralom-dlya-chego-naznachayut/"
+      ]
+    },
+    {
+      "query": "биорайз самара",
+      "impressions": 33,
+      "clicks": 7,
+      "avgPosition": 11.8,
+      "pages": [
+        "https://biorise-clinic.ru/",
+        "https://biorise-clinic.ru/kapelnicy/",
+        "https://biorise-clinic.ru/kapelnicy/antistress/",
+        "https://biorise-clinic.ru/kapelnicy/detoks-standart/",
+        "https://biorise-clinic.ru/kapelnicy/krasota-i-omolozhenie/",
+        "https://biorise-clinic.ru/kapelnicy/sport-silovaya/",
+        "https://biorise-clinic.ru/kapelnicy/zhelezo-standart/"
+      ]
+    },
+    {
+      "query": "капельницы самара",
+      "impressions": 30,
+      "clicks": 10,
+      "avgPosition": 11.1,
+      "pages": [
+        "https://biorise-clinic.ru/",
+        "https://biorise-clinic.ru/kapelnicy/"
+      ]
+    },
+    {
+      "query": "биорайз",
+      "impressions": 24,
+      "clicks": 2,
+      "avgPosition": 4.5,
+      "pages": [
+        "https://biorise-clinic.ru/"
+      ]
+    },
+    {
+      "query": "самочувствие после капельницы с железом",
+      "impressions": 24,
+      "clicks": 0,
+      "avgPosition": 5.6,
+      "pages": [
+        "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+      ]
+    },
+    {
+      "query": "ферритин капельница",
+      "impressions": 24,
+      "clicks": 0,
+      "avgPosition": 10.2,
+      "pages": [
+        "https://biorise-clinic.ru/articles/kapelnitsa-zheleza-pri-nizkom-ferritine/",
+        "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+      ]
+    },
+    {
+      "query": "капельница самара",
+      "impressions": 14,
+      "clicks": 0,
+      "avgPosition": 18.9,
+      "pages": [
+        "https://biorise-clinic.ru/",
+        "https://biorise-clinic.ru/kapelnicy/"
+      ]
+    },
+    {
+      "query": "biorise самара",
+      "impressions": 11,
+      "clicks": 1,
+      "avgPosition": 3,
+      "pages": [
+        "https://biorise-clinic.ru/",
+        "https://biorise-clinic.ru/kapelnicy/"
+      ]
+    },
+    {
+      "query": "капельница на дому самара",
+      "impressions": 9,
+      "clicks": 0,
+      "avgPosition": 19,
+      "pages": [
+        "https://biorise-clinic.ru/"
+      ]
+    },
+    {
+      "query": "biorise",
+      "impressions": 7,
+      "clicks": 0,
+      "avgPosition": 7.1,
+      "pages": [
+        "https://biorise-clinic.ru/"
+      ]
+    },
+    {
+      "query": "феринжект",
+      "impressions": 7,
+      "clicks": 0,
+      "avgPosition": 2.6,
+      "pages": [
+        "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+      ]
+    },
+    {
+      "query": "как быстро поднимается гемоглобин после капельницы",
+      "impressions": 6,
+      "clicks": 0,
+      "avgPosition": 4.7,
+      "pages": [
+        "https://biorise-clinic.ru/articles/posle-kapelnitsy-zheleza/"
+      ]
+    },
+    {
+      "query": "лечение гептралом",
+      "impressions": 6,
+      "clicks": 0,
+      "avgPosition": 8.8,
+      "pages": [
+        "https://biorise-clinic.ru/articles/kapelnitsa-s-geptralom-dlya-chego-naznachayut/"
+      ]
+    },
+    {
+      "query": "поставить капельницу самара",
+      "impressions": 6,
+      "clicks": 0,
+      "avgPosition": 27.5,
+      "pages": [
+        "https://biorise-clinic.ru/",
+        "https://biorise-clinic.ru/kapelnicy/"
+      ]
+    },
+    {
+      "query": "биорайс",
+      "impressions": 5,
+      "clicks": 0,
+      "avgPosition": 7.6,
+      "pages": [
+        "https://biorise-clinic.ru/"
+      ]
+    },
+    {
+      "query": "капельница при низком ферритине",
+      "impressions": 5,
+      "clicks": 0,
+      "avgPosition": 6,
+      "pages": [
+        "https://biorise-clinic.ru/articles/kapelnitsa-zheleza-pri-nizkom-ferritine/"
+      ]
+    },
+    {
+      "query": "капельницы для беременных",
+      "impressions": 5,
+      "clicks": 0,
+      "avgPosition": 9.6,
+      "pages": [
+        "https://biorise-clinic.ru/kapelnicy/mame-mozhno/"
+      ]
+    },
+    {
+      "query": "лицо корвизара",
+      "impressions": 5,
+      "clicks": 0,
+      "avgPosition": 29.4,
+      "pages": [
+        "https://biorise-clinic.ru/"
+      ]
+    },
+    {
+      "query": "терзапатид",
+      "impressions": 5,
+      "clicks": 0,
+      "avgPosition": 16.2,
+      "pages": [
+        "https://biorise-clinic.ru/"
+      ]
+    }
+  ]
+}
