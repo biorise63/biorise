@@ -190,6 +190,16 @@ export const popularAnalyses: PopularAnalysisItem[] = [
     icon: 'glucose',
   },
   {
+    code: 'TSPOT',
+    title: 'T-SPOT',
+    description: 'Диагностика туберкулёзной инфекции без кожных проб. Акция до 31 августа.',
+    icon: 'immunity',
+    href: '/analizy/t-spot/',
+    price: '5 800 ₽',
+    turnaround: 'Уточняйте при записи',
+    showCode: false,
+  },
+  {
     code: '1601ОСТ',
     title: 'Энтеробиоз',
     description: 'Часто нужен детям для справок в сад или школу.',

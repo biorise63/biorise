@@ -162,12 +162,14 @@ export function createServiceJsonLd({
   description,
   serviceType,
   price,
+  priceValidUntil,
 }: {
   url: string
   name: string
   description: string
   serviceType: string
   price?: string
+  priceValidUntil?: string
 }) {
   return {
     '@context': 'https://schema.org',
@@ -189,6 +191,7 @@ export function createServiceJsonLd({
           price: price.replace(/[^\d]/g, ''),
           availability: 'https://schema.org/InStock',
           url: absoluteUrl(url),
+          ...(priceValidUntil ? { priceValidUntil } : {}),
         }
       : undefined,
   }
