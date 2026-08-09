@@ -82,7 +82,7 @@ export default function LazernayaEpilyatsiyaContent() {
                       <span className="mt-0.5 inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-olive-primary/10 text-olive-primary">
                         <Icon className="h-4 w-4" />
                       </span>
-                      <span className="text-sm leading-relaxed text-olive-primary/85 sm:text-base">
+                      <span className="text-sm leading-relaxed text-olive-text sm:text-base">
                         {item.text}
                       </span>
                     </li>
@@ -145,7 +145,7 @@ export default function LazernayaEpilyatsiyaContent() {
                       <h3 className="text-2xl font-heading text-olive-primary">
                         {pkg.title}
                       </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/80 sm:text-base">
+                      <p className="mt-1 text-sm leading-relaxed text-olive-text sm:text-base">
                         {pkg.zones}
                       </p>
                     </div>
@@ -168,7 +168,7 @@ export default function LazernayaEpilyatsiyaContent() {
         >
           <div className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-olive-primary" />
-            <p className="text-sm leading-relaxed text-olive-primary/80 sm:text-base">
+            <p className="text-sm leading-relaxed text-olive-text sm:text-base">
               Перед курсом специалист оценивает фототип кожи, зону обработки и противопоказания. Поэтому процедура проходит предсказуемо и без лишнего риска.
             </p>
           </div>

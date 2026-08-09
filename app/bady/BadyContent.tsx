@@ -113,7 +113,7 @@ export default function BadyContent() {
             <h1 className="text-3xl font-heading font-light text-olive-primary sm:text-4xl md:text-5xl">
               БАДЫ BIORISE
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-olive-primary/75 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-olive-text sm:text-base">
               Современный каталог в формате интерактивных карточек.
               Выберите продукт, чтобы увидеть описание.
             </p>
@@ -124,7 +124,7 @@ export default function BadyContent() {
           </div>
 
           <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-olive-primary/15 bg-white/80 p-5 sm:p-7">
-            <p className="text-sm leading-relaxed text-olive-primary/75 sm:text-base">
+            <p className="text-sm leading-relaxed text-olive-text sm:text-base">
               БАДы не являются лекарственными средствами. Подбор, дозировку и
               сочетание определяет специалист BIORISE по результатам
               консультации и анализов.

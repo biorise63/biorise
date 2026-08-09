@@ -385,7 +385,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             />
             <Link
               href="/articles"
-              className="inline-flex items-center gap-2 text-sm text-olive-primary/70 hover:text-olive-primary transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-olive-text hover:text-olive-primary transition-colors"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 18 9 12 15 6" />
@@ -395,7 +395,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="px-4 sm:px-6 max-w-2xl">
-            <div className="mb-4 flex flex-wrap items-center gap-2 text-xs text-olive-primary/50">
+            <div className="mb-4 flex flex-wrap items-center gap-2 text-xs text-olive-primary">
               <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt)}</time>
               <span aria-hidden="true">•</span>
               <span>4–6 мин</span>
@@ -409,7 +409,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading text-olive-primary font-medium leading-tight mb-4">
               {article.h1 || article.title}
             </h1>
-            <p className="text-olive-primary/70 text-base sm:text-lg leading-relaxed mb-6">
+            <p className="text-olive-text text-base sm:text-lg leading-relaxed mb-6">
               {article.excerpt}
             </p>
             {author && (
@@ -424,7 +424,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 />
                 <div>
                   <div className="text-sm font-medium text-olive-primary">{author.name}</div>
-                  <div className="text-xs text-olive-primary/60">{author.role}</div>
+                  <div className="text-xs text-olive-primary">{author.role}</div>
                 </div>
               </div>
             )}
@@ -432,13 +432,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs text-olive-primary/60 bg-olive-primary/5 px-2.5 py-1 rounded"
+                  className="text-xs text-olive-primary bg-olive-primary/5 px-2.5 py-1 rounded"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <div className="prose prose-olive max-w-none text-olive-primary/90 text-base leading-relaxed space-y-5">
+            <div className="prose prose-olive max-w-none text-olive-text text-base leading-relaxed space-y-5">
               {article.coverImage ? (
                 <div className="mx-auto mb-5 w-full max-w-[180px] sm:float-left sm:mr-6 sm:mb-4 sm:ml-0">
                   <div className="aspect-[4/5]">
@@ -472,7 +472,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
                 if (block.type === 'list') {
                   return (
-                    <ul key={idx} className="mb-0 list-disc space-y-2 pl-5 text-olive-primary/90">
+                    <ul key={idx} className="mb-0 list-disc space-y-2 pl-5 text-olive-text">
                       {block.items.map((item, itemIndex) => (
                         <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
                       ))}
@@ -482,7 +482,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
                 if (block.type === 'ordered-list') {
                   return (
-                    <ol key={idx} className="mb-0 list-decimal space-y-2 pl-5 text-olive-primary/90">
+                    <ol key={idx} className="mb-0 list-decimal space-y-2 pl-5 text-olive-text">
                       {block.items.map((item, itemIndex) => (
                         <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
                       ))}
@@ -519,12 +519,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                       <div className="text-base font-medium text-olive-primary transition-colors group-hover:text-olive-light">
                         {relatedArticle.h1 || relatedArticle.title}
                       </div>
-                      <div className="mt-1 text-xs text-olive-primary/45">
+                      <div className="mt-1 text-xs text-olive-primary">
                         <time dateTime={relatedArticle.publishedAt}>
                           {formatArticleDate(relatedArticle.publishedAt)}
                         </time>
                       </div>
-                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">
+                      <p className="mt-1 text-sm leading-relaxed text-olive-primary">
                         {relatedArticle.excerpt}
                       </p>
                     </Link>

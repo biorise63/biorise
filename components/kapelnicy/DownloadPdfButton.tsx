@@ -1,9 +1,24 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { COOKIE_CONSENT_STORAGE_KEY } from '@/lib/cookie-consent'
 
 export default function DownloadPdfButton() {
   const [isHovered, setIsHovered] = useState(false)
+  // Пока баннер cookie не закрыт, кнопка перекрывает его "ОК" в углу экрана
+  // на мобильных — прячем до решения пользователя по cookie.
+  const [consentResolved, setConsentResolved] = useState(false)
+
+  useEffect(() => {
+    const syncConsent = () => {
+      const saved = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY)
+      setConsentResolved(saved === 'accepted' || saved === 'declined')
+    }
+
+    syncConsent()
+    window.addEventListener('cookie-consent-changed', syncConsent)
+    return () => window.removeEventListener('cookie-consent-changed', syncConsent)
+  }, [])
 
   const handleDownload = () => {
     const link = document.createElement('a')
@@ -14,13 +29,16 @@ export default function DownloadPdfButton() {
     document.body.removeChild(link)
   }
 
+  if (!consentResolved) return null
+
   return (
     <button
+      type="button"
       onClick={handleDownload}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="download-pdf-button"
-      aria-label="Скачать прайс-лист капельниц"
+      aria-label="Прайс капельниц, скачать PDF"
     >
       <svg
         width="20"

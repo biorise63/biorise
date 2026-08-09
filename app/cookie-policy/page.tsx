@@ -40,7 +40,7 @@ export default function CookiePolicyPage() {
             Политика обработки cookie
           </h1>
 
-          <div className="space-y-6 text-base leading-relaxed text-olive-primary/90">
+          <div className="space-y-6 text-base leading-relaxed text-olive-text">
             <section className="space-y-3">
               <h2 className="text-2xl font-heading text-olive-primary">
                 1. Общие положения

@@ -35,7 +35,7 @@ export default function FloatingCallButton() {
             : 'pointer-events-none translate-y-2 opacity-0'
         }`}
       >
-        <p className="text-xs uppercase tracking-[0.1em] text-olive-primary/65">
+        <p className="text-xs uppercase tracking-[0.1em] text-olive-primary">
           Связаться с клиникой
         </p>
         <a

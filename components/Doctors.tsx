@@ -61,7 +61,7 @@ export default function Doctors() {
               Наши врачи
             </h2>
           </div>
-          <p className="mx-auto max-w-2xl text-base text-olive-primary/70 sm:text-lg">
+          <p className="mx-auto max-w-2xl text-base text-olive-text sm:text-lg">
             Врачи и специалисты, которые ведут пациентов BIORISE
           </p>
         </motion.div>

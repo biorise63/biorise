@@ -161,22 +161,22 @@ export default function RuchnoyMassazhContent() {
 
           <div className="relative grid gap-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-stretch">
             <div className="p-6 sm:p-9 lg:p-12">
-              <span className="inline-flex rounded-full border border-olive-primary/20 bg-white/75 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/75">
+              <span className="inline-flex rounded-full border border-olive-primary/20 bg-white/75 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-olive-text">
                 Медицинский массаж
               </span>
               <h1 className="mt-5 max-w-3xl text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl lg:text-6xl">
                 Ручной массаж в Самаре
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-olive-primary/78 sm:text-xl">
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-olive-text sm:text-xl">
                 Снимаем мышечное напряжение, работаем со спиной, шеей, отёчностью и усталостью. Формат сеанса специалист подбирает под вашу задачу.
               </p>
 
               <div className="mt-7 grid gap-3 sm:grid-cols-3">
                 {singleSessions.map((session) => (
                   <div key={session.duration} className="rounded-2xl border border-white/70 bg-white/75 p-4 shadow-sm backdrop-blur-sm">
-                    <span className="text-xs uppercase tracking-[0.12em] text-olive-primary/50">Сеанс</span>
+                    <span className="text-xs uppercase tracking-[0.12em] text-olive-primary">Сеанс</span>
                     <strong className="mt-1 block text-2xl text-olive-primary">{session.duration} мин</strong>
-                    <span className="mt-1 block text-sm font-semibold text-olive-primary/70">{formatPrice(session.price)}</span>
+                    <span className="mt-1 block text-sm font-semibold text-olive-text">{formatPrice(session.price)}</span>
                   </div>
                 ))}
               </div>
@@ -209,7 +209,7 @@ export default function RuchnoyMassazhContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-olive-primary/45 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/35 bg-white/80 p-4 text-olive-primary shadow-premium backdrop-blur-md sm:left-auto sm:w-[320px]">
                 <p className="text-sm font-semibold">Курс без шаблона</p>
-                <p className="mt-1 text-sm leading-relaxed text-olive-primary/70">
+                <p className="mt-1 text-sm leading-relaxed text-olive-text">
                   Зоны, темп и глубину проработки специалист определяет после короткой консультации.
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function RuchnoyMassazhContent() {
                 <MassageIcon type={item.icon} />
               </div>
               <h2 className="text-2xl font-heading font-light text-olive-primary">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-olive-primary/72 sm:text-base">{item.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-olive-text sm:text-base">{item.text}</p>
             </article>
           ))}
         </motion.section>
@@ -243,11 +243,11 @@ export default function RuchnoyMassazhContent() {
             transition={{ duration: 0.7 }}
             className="rounded-[30px] border border-olive-primary/10 bg-white p-6 shadow-premium sm:p-8"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/50">Эффект курса</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Эффект курса</p>
             <h2 className="mt-3 text-3xl font-heading font-light text-olive-primary sm:text-4xl">Что даёт ручной массаж</h2>
             <div className="mt-6 space-y-4">
               {benefits.map((benefit) => (
-                <div key={benefit} className="flex gap-3 rounded-2xl bg-beige-background/75 p-4 text-olive-primary/78">
+                <div key={benefit} className="flex gap-3 rounded-2xl bg-beige-background/75 p-4 text-olive-text">
                   <span className="text-olive-primary"><CheckIcon /></span>
                   <span className="leading-relaxed">{benefit}</span>
                 </div>
@@ -290,10 +290,10 @@ export default function RuchnoyMassazhContent() {
         >
           <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/50">Стоимость</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Стоимость</p>
               <h2 className="mt-3 text-3xl font-heading font-light text-olive-primary sm:text-4xl">Разовые сеансы</h2>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-olive-primary/68">
+            <p className="max-w-xl text-sm leading-relaxed text-olive-primary">
               Можно взять короткий сеанс на одну зону или длинный формат, если нужна плотная работа со спиной и телом.
             </p>
           </div>
@@ -301,7 +301,7 @@ export default function RuchnoyMassazhContent() {
           <div className="grid gap-4 md:grid-cols-3">
             {singleSessions.map((session) => (
               <div key={session.duration} className="rounded-3xl border border-olive-primary/10 bg-beige-background/70 p-6">
-                <span className="text-sm text-olive-primary/55">{session.duration} минут</span>
+                <span className="text-sm text-olive-primary">{session.duration} минут</span>
                 <strong className="mt-2 block text-3xl text-olive-primary">{formatPrice(session.price)}</strong>
                 <button
                   onClick={openBookingModal}
@@ -323,10 +323,10 @@ export default function RuchnoyMassazhContent() {
         >
           <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/50">Абонементы</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Абонементы</p>
               <h2 className="mt-3 text-3xl font-heading font-light text-olive-primary sm:text-4xl">Курс массажа выгоднее</h2>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-olive-primary/68">
+            <p className="max-w-xl text-sm leading-relaxed text-olive-primary">
               Абонемент удобен, если цель требует регулярной работы: восстановление после нагрузки, антицеллюлитный курс, коррекция мышечных зажимов.
             </p>
           </div>
@@ -336,7 +336,7 @@ export default function RuchnoyMassazhContent() {
               <article key={pack.sessions} className="rounded-3xl border border-white/70 bg-white/85 p-5 shadow-sm">
                 <div className="mb-5 flex items-start justify-between gap-3">
                   <div>
-                    <span className="text-xs uppercase tracking-[0.13em] text-olive-primary/50">Абонемент</span>
+                    <span className="text-xs uppercase tracking-[0.13em] text-olive-primary">Абонемент</span>
                     <h3 className="mt-1 text-3xl font-heading font-light text-olive-primary">{pack.sessions} сеансов</h3>
                   </div>
                   <span className="rounded-full bg-olive-primary/10 px-3 py-1 text-xs font-semibold text-olive-primary">{pack.saving}</span>
@@ -349,7 +349,7 @@ export default function RuchnoyMassazhContent() {
                         <span className="font-medium text-olive-primary">{item.duration} мин</span>
                         <div className="text-right">
                           <span className="block text-lg font-semibold text-olive-primary">{formatPrice(item.price)}</span>
-                          <span className="text-xs text-olive-primary/45 line-through">{formatPrice(item.oldPrice)}</span>
+                          <span className="text-xs text-olive-primary line-through">{formatPrice(item.oldPrice)}</span>
                         </div>
                       </div>
                     </div>
@@ -378,9 +378,9 @@ export default function RuchnoyMassazhContent() {
             <div className="absolute inset-0 bg-gradient-to-t from-olive-primary/55 via-transparent to-transparent" />
           </div>
           <div className="rounded-[30px] border border-olive-primary/10 bg-white p-6 shadow-premium sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/50">Важно</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Важно</p>
             <h2 className="mt-3 text-3xl font-heading font-light text-olive-primary">Перед процедурой</h2>
-            <p className="mt-4 text-base leading-relaxed text-olive-primary/72">
+            <p className="mt-4 text-base leading-relaxed text-olive-text">
               Имеются противопоказания. Необходима консультация специалиста. Если есть хронические заболевания, выраженные боли, травмы, беременность или недавние операции, сообщите об этом до начала сеанса.
             </p>
             <button

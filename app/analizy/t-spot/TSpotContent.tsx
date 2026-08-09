@@ -78,7 +78,7 @@ export default function TSpotContent() {
             <div className="max-w-[760px]">
               <Link
                 href={ANALYSES_URL}
-                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary/68 transition-colors hover:text-olive-primary"
+                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary transition-colors hover:text-olive-primary"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 К анализам
@@ -92,14 +92,14 @@ export default function TSpotContent() {
                 T-spot в Самаре
               </h1>
 
-              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-primary/78 sm:text-[18px]">
+              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-text sm:text-[18px]">
                 T-SPOT — современное исследование крови для диагностики туберкулёзной инфекции без кожных проб. Подходит взрослым и детям по назначению врача.
               </p>
 
-              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-primary/74">
+              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-text">
                 До 31 августа анализ можно сдать по акционной цене{' '}
                 <span className="font-medium text-olive-primary">5 800 ₽</span> вместо{' '}
-                <span className="line-through text-olive-primary/50">7 900 ₽</span>. Забор крови оплачивается отдельно — 180 ₽.
+                <span className="line-through text-olive-primary">7 900 ₽</span>. Забор крови оплачивается отдельно — 180 ₽.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -131,7 +131,7 @@ export default function TSpotContent() {
                     </div>
                     <div>
                       <h2 className="text-lg font-medium text-olive-primary">{item.title}</h2>
-                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                     </div>
                   </div>
                 </article>
@@ -145,17 +145,17 @@ export default function TSpotContent() {
             <h2 className="text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Что показывает T-SPOT
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-5 text-[16px] leading-[1.7] text-olive-text">
               T-SPOT.TB — иммунологический анализ крови, который выявляет клетки иммунной системы, реагирующие на возбудителя туберкулёза. В отличие от кожных проб, результат не зависит от предыдущих прививок БЦЖ и не требует повторного визита для оценки реакции на коже.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               Решение о том, нужен ли именно этот анализ, принимает врач — на основании жалоб, контактов с больными туберкулёзом, планов по госпитализации или требований учебного заведения.
             </p>
 
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Когда назначают T-SPOT
             </h2>
-            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-primary/78">
+            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-text">
               {indications.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -164,17 +164,17 @@ export default function TSpotContent() {
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Чем T-SPOT отличается от Манту и Диаскинтеста
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-5 text-[16px] leading-[1.7] text-olive-text">
               Манту и Диаскинтест — кожные пробы: препарат вводят под кожу и через несколько дней оценивают реакцию визуально. T-SPOT работает иначе: это лабораторный анализ крови, результат которого не зависит от состояния кожи, аллергических реакций на компоненты пробы и не требует повторного визита на осмотр реакции.
             </p>
 
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Как проходит анализ
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-5 text-[16px] leading-[1.7] text-olive-text">
               Для исследования берут венозную кровь — процедура занимает несколько минут. Специальной подготовки обычно не требуется, но если вы принимаете препараты, влияющие на иммунитет, стоит сообщить об этом врачу заранее.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               Забор крови оплачивается отдельно от стоимости самого анализа. Точный срок готовности результата уточняйте при записи.
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function TSpotContent() {
               </h2>
             </div>
 
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               Записаться на T-SPOT можно онлайн или по телефону. Акционная цена действует до 31 августа 2026 года.
             </p>
 
@@ -216,7 +216,7 @@ export default function TSpotContent() {
                 </div>
                 <div>
                   <h3 className="text-base font-medium text-olive-primary">Важно</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-olive-primary/68">
+                  <p className="mt-2 text-sm leading-relaxed text-olive-primary">
                     Какой именно анализ нужен — T-SPOT, Манту или Диаскинтест — решает врач, исходя из ситуации, возраста и противопоказаний. Материал носит информационный характер и не заменяет консультацию врача.
                   </p>
                 </div>
@@ -231,7 +231,7 @@ export default function TSpotContent() {
                   className="block rounded-[1.25rem] border border-olive-primary/10 bg-white px-4 py-4 transition-colors hover:border-olive-primary/20 hover:bg-white/90"
                 >
                   <div className="text-base font-medium text-olive-primary">{item.title}</div>
-                  <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                 </Link>
               ))}
             </div>

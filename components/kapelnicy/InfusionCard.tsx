@@ -101,15 +101,15 @@ export default function InfusionCard({
         {imageUrl ? (
           <Image src={imageUrl} alt={getSeoImageAlt(title)} fill className="object-contain" sizes="(max-width: 768px) 100vw, 33vw" />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-olive-primary/50 text-sm">Нет фото</div>
+          <div className="w-full h-full flex items-center justify-center text-olive-primary text-sm">Нет фото</div>
         )}
       </div>
       <div className="infusion-card-body p-5 flex flex-col gap-3 flex-1">
         <h3 className="text-xl font-semibold text-olive-primary leading-tight">{title}</h3>
-        <p className="infusion-card-desc text-olive-primary/80 text-sm leading-relaxed">{description}</p>
+        <p className="infusion-card-desc text-olive-text text-sm leading-relaxed">{description}</p>
 
         {(price || duration) && (
-          <div className="infusion-card-meta flex items-center gap-4 flex-wrap text-sm text-olive-primary/80">
+          <div className="infusion-card-meta flex items-center gap-4 flex-wrap text-sm text-olive-text">
             {price && (
               <span className="infusion-chip">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -168,7 +168,7 @@ export default function InfusionCard({
         </div>
         {availableTabs.length > 0 && (
           <div
-            className={`infusion-card-details text-sm text-olive-primary/80 leading-relaxed transition-all duration-400 ${
+            className={`infusion-card-details text-sm text-olive-text leading-relaxed transition-all duration-400 ${
               isOpen ? 'max-h-[900px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
             }`}
             aria-hidden={!isOpen}
@@ -178,8 +178,10 @@ export default function InfusionCard({
                 {availableTabs.map((tab) => (
                   <button
                     key={tab.key}
+                    type="button"
                     className={`tab-btn ${activeTab === tab.key ? 'active' : ''}`}
                     onClick={() => setActiveTab(tab.key)}
+                    tabIndex={isOpen ? 0 : -1}
                   >
                     <span className="tab-icon">{icons[tab.icon]}</span>
                     {tab.label}

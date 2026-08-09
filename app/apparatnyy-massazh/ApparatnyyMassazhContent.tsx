@@ -59,7 +59,7 @@ export default function ApparatnyyMassazhContent() {
               <h1 className="mt-4 text-4xl font-heading font-light text-olive-primary sm:text-5xl md:text-6xl">
                 Аппаратный массаж
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-olive-primary/80 sm:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-olive-text sm:text-lg">
                 Аппаратный массаж помогает убрать отёчность, проработать проблемные зоны и вернуть телу тонус. Специалист подбирает курс под вашу задачу, а не по общей схеме.
               </p>
 
@@ -111,7 +111,7 @@ export default function ApparatnyyMassazhContent() {
               <h2 className="text-2xl font-heading text-olive-primary">
                 {item.title}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-olive-primary/75 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-olive-text sm:text-base">
                 {item.description}
               </p>
             </article>

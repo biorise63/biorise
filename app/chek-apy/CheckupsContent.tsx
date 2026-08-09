@@ -150,16 +150,16 @@ export default function CheckupsContent() {
                     <h2 className="text-[22px] font-medium leading-snug text-olive-primary sm:text-[24px]">
                       {program.title}
                     </h2>
-                    <p className="mt-2 max-w-[700px] text-sm leading-[1.7] text-olive-primary/70 sm:text-[15px]">
+                    <p className="mt-2 max-w-[700px] text-sm leading-[1.7] text-olive-text sm:text-[15px]">
                       {program.summary}
                     </p>
                     {program.price && (
                       <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-                        <span className="text-[11px] uppercase tracking-[0.22em] text-olive-primary/45">
+                        <span className="text-[11px] uppercase tracking-[0.22em] text-olive-primary">
                           Цена
                         </span>
                         {program.oldPrice && (
-                          <span className="text-sm text-olive-primary/35 line-through">
+                          <span className="text-sm text-olive-primary line-through">
                             {formatPrice(program.oldPrice)}
                           </span>
                         )}
@@ -170,7 +170,7 @@ export default function CheckupsContent() {
                     )}
                   </div>
                 </div>
-                <span className="shrink-0 text-olive-primary/55">
+                <span className="shrink-0 text-olive-primary">
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -178,13 +178,13 @@ export default function CheckupsContent() {
               </summary>
 
               <div className="border-t border-olive-primary/8 px-5 py-5 sm:px-6 sm:py-6">
-                <div className="flex items-center gap-2 text-sm font-medium text-olive-primary/72">
+                <div className="flex items-center gap-2 text-sm font-medium text-olive-text">
                   <SectionIcon name="analysis" className="h-4 w-4" />
                   Что входит в программу
                 </div>
                 <ul className="mt-4 grid gap-3 md:grid-cols-2">
                   {program.items.map((item) => (
-                    <li key={item} className="rounded-[1.25rem] border border-olive-primary/8 bg-beige-background/45 px-4 py-3 text-sm leading-[1.65] text-olive-primary/78">
+                    <li key={item} className="rounded-[1.25rem] border border-olive-primary/8 bg-beige-background/45 px-4 py-3 text-sm leading-[1.65] text-olive-text">
                       {item}
                     </li>
                   ))}
@@ -198,7 +198,7 @@ export default function CheckupsContent() {
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div className="max-w-[620px]">
               <h2 className="text-[24px] font-medium text-olive-primary sm:text-[28px]">Нужен не чек-ап, а отдельные анализы?</h2>
-              <p className="mt-3 text-sm leading-[1.7] text-olive-primary/72 sm:text-[15px]">
+              <p className="mt-3 text-sm leading-[1.7] text-olive-text sm:text-[15px]">
                 Откройте полный каталог анализов BIORISE. Там собраны отдельные исследования с названиями, сроками и навигацией по разделам.
               </p>
             </div>

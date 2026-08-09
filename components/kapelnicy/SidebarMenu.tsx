@@ -47,7 +47,7 @@ export default function SidebarMenu({ categories }: SidebarMenuProps) {
                   <button
                     key={item.id}
                     onClick={() => handleScroll(item.id)}
-                    className="text-left text-olive-primary/80 hover:text-olive-primary bg-olive-primary/0 hover:bg-olive-primary/5 rounded-lg px-2 py-2 transition-all"
+                    className="text-left text-olive-text hover:text-olive-primary bg-olive-primary/0 hover:bg-olive-primary/5 rounded-lg px-2 py-2 transition-all"
                   >
                     {item.title}
                   </button>

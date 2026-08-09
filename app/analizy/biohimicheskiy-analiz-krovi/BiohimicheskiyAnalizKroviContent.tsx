@@ -71,7 +71,7 @@ export default function BiohimicheskiyAnalizKroviContent() {
             <div className="max-w-[760px]">
               <Link
                 href={ANALYSES_URL}
-                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary/68 transition-colors hover:text-olive-primary"
+                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary transition-colors hover:text-olive-primary"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 К анализам
@@ -81,11 +81,11 @@ export default function BiohimicheskiyAnalizKroviContent() {
                 Биохимический анализ крови в Самаре
               </h1>
 
-              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-primary/78 sm:text-[18px]">
+              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-text sm:text-[18px]">
                 Сдать биохимический анализ крови в BIORISE можно без очередей. Врач подскажет, какие показатели нужны под вашу задачу.
               </p>
 
-              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-primary/74">
+              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-text">
                 Если жалобы связаны с усталостью, лишним весом или нагрузкой на печень, врач часто начинает с биохимии. Подробный разбор есть в статье про{' '}
                 <Link href={FATIGUE_ARTICLE_URL} className="font-medium text-olive-primary underline underline-offset-4 transition-colors hover:text-olive-light">
                   анализы при хронической усталости
@@ -122,7 +122,7 @@ export default function BiohimicheskiyAnalizKroviContent() {
                     </div>
                     <div>
                       <h2 className="text-lg font-medium text-olive-primary">{item.title}</h2>
-                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                     </div>
                   </div>
                 </article>
@@ -136,14 +136,14 @@ export default function BiohimicheskiyAnalizKroviContent() {
             <h2 className="text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Что обычно смотрят
             </h2>
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               В базовой биохимии врач чаще смотрит АЛТ, АСТ, билирубин, креатинин, мочевину, общий белок, глюкозу и липидный профиль.
             </p>
 
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Когда назначают
             </h2>
-            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-primary/78">
+            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-text">
               <li>При усталости и слабости.</li>
               <li>При жалобах на печень, почки или обмен веществ.</li>
               <li>Перед чек-апом и плановой проверкой здоровья.</li>
@@ -153,7 +153,7 @@ export default function BiohimicheskiyAnalizKroviContent() {
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Как подготовиться
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-5 text-[16px] leading-[1.7] text-olive-text">
               Обычно кровь сдают утром натощак. Воду пить можно. Если вы принимаете лекарства, скажите об этом врачу заранее.
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function BiohimicheskiyAnalizKroviContent() {
               </h2>
             </div>
 
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               Если вам нужен не один анализ, откройте каталог или соберите готовый чек-ап.
             </p>
 
@@ -180,7 +180,7 @@ export default function BiohimicheskiyAnalizKroviContent() {
                   className="block rounded-[1.25rem] border border-olive-primary/10 bg-white px-4 py-4 transition-colors hover:border-olive-primary/20 hover:bg-white/90"
                 >
                   <div className="text-base font-medium text-olive-primary">{item.title}</div>
-                  <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                 </Link>
               ))}
             </div>

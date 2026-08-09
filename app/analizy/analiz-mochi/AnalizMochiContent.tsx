@@ -74,7 +74,7 @@ export default function AnalizMochiContent() {
             <div className="max-w-[760px]">
               <Link
                 href={ANALYSES_URL}
-                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary/68 transition-colors hover:text-olive-primary"
+                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary transition-colors hover:text-olive-primary"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 К анализам
@@ -84,11 +84,11 @@ export default function AnalizMochiContent() {
                 Анализ мочи в Самаре
               </h1>
 
-              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-primary/78 sm:text-[18px]">
+              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-text sm:text-[18px]">
                 Общий анализ мочи помогает увидеть воспаление, работу почек и мочевыводящих путей, а также признаки потери белка или крови. В BIORISE результат обычно готов за 1 к.д.
               </p>
 
-              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-primary/74">
+              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-text">
                 Если в результате есть белок, лейкоциты или кровь, врач обычно сопоставляет его с{' '}
                 <Link href={BLOOD_ANALYSIS_URL} className="font-medium text-olive-primary underline underline-offset-4 transition-colors hover:text-olive-light">
                   общим анализом крови
@@ -129,7 +129,7 @@ export default function AnalizMochiContent() {
                     </div>
                     <div>
                       <h2 className="text-lg font-medium text-olive-primary">{item.title}</h2>
-                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                     </div>
                   </div>
                 </article>
@@ -143,7 +143,7 @@ export default function AnalizMochiContent() {
             <h2 className="text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Что обычно смотрят в анализе мочи
             </h2>
-            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-primary/78">
+            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-text">
               <li>Белок и глюкозу.</li>
               <li>Лейкоциты, эритроциты и бактерии.</li>
               <li>Соли, плотность и кислотность.</li>
@@ -153,7 +153,7 @@ export default function AnalizMochiContent() {
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Когда врач назначает
             </h2>
-            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-primary/78">
+            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-text">
               <li>При боли в пояснице, отеках или изменении мочеиспускания.</li>
               <li>Перед чек-апом и плановой проверкой здоровья.</li>
               <li>Когда нужно понять, есть ли воспаление или потеря белка.</li>
@@ -163,7 +163,7 @@ export default function AnalizMochiContent() {
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Как подготовиться
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-5 text-[16px] leading-[1.7] text-olive-text">
               Для общего анализа мочи обычно берут утреннюю порцию в стерильный контейнер. Перед сбором соблюдают обычную гигиену, а о лекарствах и менструации лучше заранее сказать врачу или администратору.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default function AnalizMochiContent() {
               </h2>
             </div>
 
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               Если вам нужен не один анализ, откройте каталог или соберите готовый чек-ап.
             </p>
 
@@ -190,7 +190,7 @@ export default function AnalizMochiContent() {
                   className="block rounded-[1.25rem] border border-olive-primary/10 bg-white px-4 py-4 transition-colors hover:border-olive-primary/20 hover:bg-white/90"
                 >
                   <div className="text-base font-medium text-olive-primary">{item.title}</div>
-                  <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                 </Link>
               ))}
             </div>

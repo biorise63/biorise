@@ -23,7 +23,7 @@ export default function CookieConsentBanner() {
   return (
     <div className="fixed bottom-4 left-4 right-4 z-[95] sm:bottom-6 sm:left-6 sm:right-6">
       <div className="mx-auto flex max-w-md items-center justify-between gap-3 rounded-2xl border border-olive-primary/20 bg-white/95 px-4 py-3 shadow-[0_18px_45px_rgba(34,46,24,0.26)] backdrop-blur">
-        <p className="text-sm text-olive-primary/85 sm:text-[15px]">
+        <p className="text-sm text-olive-text sm:text-[15px]">
           Мы используем cookie
         </p>
         <div className="shrink-0">

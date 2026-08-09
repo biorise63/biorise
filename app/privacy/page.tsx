@@ -37,7 +37,7 @@ export default function PrivacyPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary mb-8 font-light">
             Политика конфиденциальности
           </h1>
-          <div className="prose prose-olive max-w-none text-olive-primary/90">
+          <div className="prose prose-olive max-w-none text-olive-text">
             <div className="space-y-6 text-base leading-relaxed">
               
               <section className="space-y-4">

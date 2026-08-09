@@ -75,7 +75,7 @@ function InfoList({ title, items, variant = 'default' }: { title: string; items?
   return (
     <section className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-5 shadow-premium sm:p-7">
       <h2 className="mb-5 text-2xl font-heading font-light text-olive-primary sm:text-3xl">{title}</h2>
-      <ul className="space-y-3 text-olive-primary/80">
+      <ul className="space-y-3 text-olive-text">
         {items.map((item, index) => (
           <li key={`${title}-${index}`} className="flex gap-3 leading-relaxed">
             <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-olive-primary/10 text-xs font-semibold text-olive-primary">
@@ -94,11 +94,11 @@ function CompositionBlock({ items }: { items?: string[] }) {
 
   return (
     <section className="rounded-[28px] border border-olive-primary/10 bg-[#f4efe6] p-5 shadow-premium sm:p-7">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/55">Состав</p>
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Состав</p>
       <h2 className="mb-5 text-2xl font-heading font-light text-olive-primary sm:text-3xl">Что входит в инфузию</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {items.map((item, index) => (
-          <div key={index} className="rounded-2xl border border-white/70 bg-white/70 p-4 text-sm leading-relaxed text-olive-primary/80">
+          <div key={index} className="rounded-2xl border border-white/70 bg-white/70 p-4 text-sm leading-relaxed text-olive-text">
             {item}
           </div>
         ))}
@@ -195,29 +195,29 @@ export default function InfusionDetailPage({ params }: PageProps) {
                   { name: infusion.title, href: `/kapelnicy/${infusion.slug}/` },
                 ]}
               />
-              <Link href="/kapelnicy/" className="mb-6 inline-flex text-sm font-semibold text-olive-primary/65 transition-colors hover:text-olive-primary">
+              <Link href="/kapelnicy/" className="mb-6 inline-flex text-sm font-semibold text-olive-primary transition-colors hover:text-olive-primary">
                 ← Все капельницы
               </Link>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/55">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary">
                 {infusion.categoryTitle || 'IV-терапия BIORISE'}
               </p>
               <h1 className="max-w-4xl text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl lg:text-6xl">
                 {infusion.title} в Самаре
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-olive-primary/75 sm:text-xl">
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-olive-text sm:text-xl">
                 {infusion.description}
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
                 {infusion.price && (
                   <div className="rounded-2xl bg-white/85 px-5 py-4 shadow-premium">
-                    <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary/50">Стоимость</span>
+                    <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary">Стоимость</span>
                     <strong className="mt-1 block text-2xl text-olive-primary">{infusion.price}</strong>
                   </div>
                 )}
                 {infusion.duration && (
                   <div className="rounded-2xl bg-white/85 px-5 py-4 shadow-premium">
-                    <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary/50">Время процедуры</span>
+                    <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary">Время процедуры</span>
                     <strong className="mt-1 block text-2xl text-olive-primary">{infusion.duration}</strong>
                   </div>
                 )}
@@ -234,7 +234,7 @@ export default function InfusionDetailPage({ params }: PageProps) {
                 {infusion.imageUrl ? (
                   <Image src={infusion.imageUrl} alt={imageAlt} fill className="object-contain p-5" sizes="(max-width: 1024px) 100vw, 520px" priority />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-olive-primary/50">Изображение скоро появится</div>
+                  <div className="flex h-full items-center justify-center text-olive-primary">Изображение скоро появится</div>
                 )}
               </div>
             </div>
@@ -262,8 +262,8 @@ export default function InfusionDetailPage({ params }: PageProps) {
                 'После процедуры врач подсказывает дальнейший курс и контрольные шаги.',
               ].map((item, index) => (
                 <div key={item} className="rounded-2xl bg-olive-primary/5 p-4">
-                  <span className="text-sm font-semibold text-olive-primary/50">0{index + 1}</span>
-                  <p className="mt-2 text-olive-primary/80">{item}</p>
+                  <span className="text-sm font-semibold text-olive-primary">0{index + 1}</span>
+                  <p className="mt-2 text-olive-text">{item}</p>
                 </div>
               ))}
             </div>

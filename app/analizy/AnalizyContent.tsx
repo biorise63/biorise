@@ -280,7 +280,7 @@ export default function AnalizyContent() {
                 <h1 className="text-[40px] font-light leading-[1.05] text-olive-primary sm:text-[44px] lg:text-[48px]">
                   Анализы в Самаре
                 </h1>
-                <p className="mt-5 max-w-[620px] text-[17px] leading-[1.6] text-olive-primary/78 sm:text-[18px]">
+                <p className="mt-5 max-w-[620px] text-[17px] leading-[1.6] text-olive-text sm:text-[18px]">
                   Лабораторные исследования для взрослых и детей. Более 2700 анализов с прозрачными ценами и быстрыми сроками выполнения.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -317,7 +317,7 @@ export default function AnalizyContent() {
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
                     placeholder="Введите название анализа..."
-                    className="w-full border-0 bg-transparent p-0 text-[18px] text-olive-primary outline-none placeholder:text-olive-primary/45"
+                    className="w-full border-0 bg-transparent p-0 text-[18px] text-olive-primary outline-none placeholder:text-olive-primary"
                   />
                 </div>
                 {query ? (
@@ -332,7 +332,7 @@ export default function AnalizyContent() {
               </div>
               {query ? (
                 <div className="mt-4">
-                  <p className="text-sm text-olive-primary/68">
+                  <p className="text-sm text-olive-primary">
                     Найдено {resultsCount} {resultsCount === 1 ? 'позиция' : resultsCount < 5 ? 'позиции' : 'позиций'}.
                   </p>
 
@@ -345,7 +345,7 @@ export default function AnalizyContent() {
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div className="min-w-0">
-                              <p className="text-[11px] uppercase tracking-[0.16em] text-olive-primary/45">
+                              <p className="text-[11px] uppercase tracking-[0.16em] text-olive-primary">
                                 {item.sectionTitle}
                               </p>
                               <p className="mt-1 text-sm leading-relaxed text-olive-primary">
@@ -354,7 +354,7 @@ export default function AnalizyContent() {
                             </div>
                             <div className="shrink-0 text-right">
                               <p className="text-sm font-medium text-olive-primary">{item.price}</p>
-                              <p className="mt-1 text-xs text-olive-primary/55">{item.turnaround}</p>
+                              <p className="mt-1 text-xs text-olive-primary">{item.turnaround}</p>
                             </div>
                           </div>
                           <button
@@ -391,7 +391,7 @@ export default function AnalizyContent() {
                       <SectionIcon name={item.icon} />
                     </div>
                     {item.showCode === false ? null : (
-                      <span className="text-[10px] uppercase tracking-[0.16em] text-olive-primary/45 sm:text-xs">
+                      <span className="text-[10px] uppercase tracking-[0.16em] text-olive-primary sm:text-xs">
                         {item.code}
                       </span>
                     )}
@@ -399,15 +399,15 @@ export default function AnalizyContent() {
                   <h3 className="mt-5 text-[18px] font-medium leading-snug text-olive-primary sm:text-[19px]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[14px] leading-[1.55] text-olive-primary/68 sm:text-[15px]">{item.description}</p>
+                  <p className="mt-3 text-[14px] leading-[1.55] text-olive-primary sm:text-[15px]">{item.description}</p>
                   <div className="mt-auto pt-6">
                     <div className="flex items-end justify-between gap-3">
                       <div>
-                        <p className="text-[10px] uppercase tracking-[0.16em] text-olive-primary/45 sm:text-xs">Срок</p>
-                        <p className="mt-1 text-sm text-olive-primary/72">{item.turnaround}</p>
+                        <p className="text-[10px] uppercase tracking-[0.16em] text-olive-primary sm:text-xs">Срок</p>
+                        <p className="mt-1 text-sm text-olive-text">{item.turnaround}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-[10px] uppercase tracking-[0.16em] text-olive-primary/45 sm:text-xs">Цена</p>
+                        <p className="text-[10px] uppercase tracking-[0.16em] text-olive-primary sm:text-xs">Цена</p>
                         <p className="mt-1 text-[19px] font-medium text-olive-primary sm:text-[20px]">{item.price}</p>
                       </div>
                     </div>
@@ -455,7 +455,7 @@ export default function AnalizyContent() {
                     <span className="text-olive-primary transition-transform duration-200 group-hover:translate-x-1">↗</span>
                   </div>
                   <h3 className="mt-5 text-[20px] font-medium text-olive-primary">{category.title}</h3>
-                  <p className="mt-2 text-sm text-olive-primary/68">{category.count} исследований</p>
+                  <p className="mt-2 text-sm text-olive-primary">{category.count} исследований</p>
                 </button>
               ))}
             </div>
@@ -466,14 +466,14 @@ export default function AnalizyContent() {
               <div>
                 <h2 className="text-[32px] font-light leading-tight text-olive-primary">Каталог анализов</h2>
               </div>
-              <p className="max-w-[420px] text-sm leading-[1.6] text-olive-primary/68 sm:text-right">
+              <p className="max-w-[420px] text-sm leading-[1.6] text-olive-primary sm:text-right">
                 Категории раскрываются отдельно. Если вы используете поиск, таблица покажет только подходящие позиции.
               </p>
             </div>
 
             <div className="mt-8 space-y-4">
               {filteredSections.length === 0 ? (
-                <div className="rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/70 px-6 py-8 text-olive-primary/78">
+                <div className="rounded-[1.5rem] border border-olive-primary/10 bg-beige-background/70 px-6 py-8 text-olive-text">
                   По запросу ничего не найдено. Попробуйте изменить формулировку или убрать часть слов.
                 </div>
               ) : (
@@ -489,7 +489,7 @@ export default function AnalizyContent() {
                       >
                         <div>
                           <h3 className="text-[20px] font-medium text-olive-primary">{section.title}</h3>
-                          <p className="mt-1 text-sm text-olive-primary/68">{section.items.length} позиций</p>
+                          <p className="mt-1 text-sm text-olive-primary">{section.items.length} позиций</p>
                         </div>
                         <span className={`text-olive-primary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
                           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -501,7 +501,7 @@ export default function AnalizyContent() {
                       {isOpen ? (
                         <div className="overflow-x-auto border-t border-olive-primary/10">
                           <table className="min-w-full text-left">
-                            <thead className="bg-beige-background/70 text-xs uppercase tracking-[0.18em] text-olive-primary/45">
+                            <thead className="bg-beige-background/70 text-xs uppercase tracking-[0.18em] text-olive-primary">
                               <tr>
                                 <th className="px-5 py-4 font-medium sm:px-6">Название</th>
                                 <th className="px-5 py-4 font-medium">Срок</th>
@@ -513,10 +513,10 @@ export default function AnalizyContent() {
                               {section.items.map((item) => (
                                 <tr key={`${section.slug}-${item.code}-${item.name}`} className="border-t border-olive-primary/8 align-top">
                                   <td className="px-5 py-4 sm:px-6">
-                                    <div className="text-[11px] uppercase tracking-[0.16em] text-olive-primary/45">Код {item.code}</div>
+                                    <div className="text-[11px] uppercase tracking-[0.16em] text-olive-primary">Код {item.code}</div>
                                     <div className="mt-1 text-[15px] leading-[1.6] text-olive-primary">{item.name}</div>
                                   </td>
-                                  <td className="px-5 py-4 text-sm text-olive-primary/68">{item.turnaround || 'По готовности лаборатории'}</td>
+                                  <td className="px-5 py-4 text-sm text-olive-primary">{item.turnaround || 'По готовности лаборатории'}</td>
                                   <td className="px-5 py-4 text-right text-[15px] font-medium text-olive-primary">{item.price}</td>
                                   <td className="px-5 py-4 text-right sm:px-6">
                                     {item.code === '5' || item.code === '51' ? (
@@ -553,7 +553,7 @@ export default function AnalizyContent() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[720px]">
                 <h2 className="text-[32px] font-light leading-tight text-olive-primary">Чек-ап программы</h2>
-                <p className="mt-4 text-[16px] leading-[1.6] text-olive-primary/78">
+                <p className="mt-4 text-[16px] leading-[1.6] text-olive-text">
                   Если нужен готовый набор исследований, откройте страницу с чек-апами. Там собраны базовые, расширенные, мужские, послеродовые и профильные программы.
                 </p>
               </div>
@@ -577,7 +577,7 @@ export default function AnalizyContent() {
               {analysesFaq.map((item) => (
                 <article key={item.question} className="rounded-[1.5rem] border border-olive-primary/10 bg-white p-6">
                   <h3 className="text-[20px] font-medium leading-snug text-olive-primary">{item.question}</h3>
-                  <p className="mt-3 text-[16px] leading-[1.6] text-olive-primary/78">{item.answer}</p>
+                  <p className="mt-3 text-[16px] leading-[1.6] text-olive-text">{item.answer}</p>
                 </article>
               ))}
             </div>

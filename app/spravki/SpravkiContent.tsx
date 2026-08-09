@@ -140,7 +140,7 @@ export default function SpravkiContent() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading text-olive-primary font-light mb-6">
             Медицинские справки
           </h1>
-          <p className="text-lg md:text-xl text-olive-primary/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-olive-text max-w-3xl mx-auto leading-relaxed">
             Официальное оформление медицинских справок в клинике BIORISE. Быстро, надежно, с соблюдением всех требований законодательства.
           </p>
         </motion.div>
@@ -182,7 +182,7 @@ export default function SpravkiContent() {
                     <h4 className="text-lg font-semibold text-olive-primary mb-2 group-hover:text-olive-light transition-colors">
                       {item.name}
                     </h4>
-                    <p className="text-sm text-olive-primary/70 leading-relaxed">
+                    <p className="text-sm text-olive-text leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -192,7 +192,7 @@ export default function SpravkiContent() {
                     </span>
                   </div>
                   <div className="col-span-6 md:col-span-3 lg:col-span-3 flex items-center justify-center">
-                    <span className="text-base text-olive-primary/80 group-hover:text-olive-primary transition-colors">
+                    <span className="text-base text-olive-text group-hover:text-olive-primary transition-colors">
                       {item.duration}
                     </span>
                   </div>
@@ -213,7 +213,7 @@ export default function SpravkiContent() {
             <h3 className="text-2xl font-heading text-olive-primary mb-4">
               Важная информация
             </h3>
-            <ul className="text-left space-y-3 text-olive-primary/80">
+            <ul className="text-left space-y-3 text-olive-text">
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-olive-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

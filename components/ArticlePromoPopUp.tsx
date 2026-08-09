@@ -124,8 +124,8 @@ export default function ArticlePromoPopUp({ coverImage }: ArticlePromoPopUpProps
                   Скидка 20% на капельницы для спортсменов
                 </h2>
               </div>
-              <div className="flex items-start gap-2 text-olive-primary/80 text-xs sm:text-sm mb-4">
-                <span className="flex shrink-0 w-7 h-7 rounded-lg bg-olive-primary/5 flex items-center justify-center text-olive-primary/80" aria-hidden>
+              <div className="flex items-start gap-2 text-olive-text text-xs sm:text-sm mb-4">
+                <span className="flex shrink-0 w-7 h-7 rounded-lg bg-olive-primary/5 flex items-center justify-center text-olive-text" aria-hidden>
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />

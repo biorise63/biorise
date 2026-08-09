@@ -80,7 +80,7 @@ export function PromotionCard({
       ) : (
         <>
           {description && (
-            <p className="text-sm text-olive-primary/70 mb-4 leading-relaxed">
+            <p className="text-sm text-olive-text mb-4 leading-relaxed">
               {description}
             </p>
           )}
@@ -123,7 +123,7 @@ export function PromotionCard({
               className="mb-4"
             >
               {oldPrice && (
-                <span className="text-sm text-olive-primary/50 line-through mr-2">
+                <span className="text-sm text-olive-primary line-through mr-2">
                   {oldPrice}
                 </span>
               )}

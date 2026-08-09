@@ -109,7 +109,7 @@ export default function BookingForm() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-olive-primary mb-4 font-light">
             ОНЛАЙН ЗАПИСЬ
           </h2>
-          <p className="text-base sm:text-lg text-olive-primary/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-olive-text max-w-2xl mx-auto">
             Оставьте свои данные и наши специалисты перезвонят вам, чтобы подобрать удобную дату и время приёма
           </p>
         </motion.div>

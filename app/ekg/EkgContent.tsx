@@ -105,7 +105,7 @@ export default function EkgContent() {
         <section className="mt-4 overflow-hidden rounded-[2rem] border border-olive-primary/10 bg-gradient-to-br from-beige-background via-white to-beige-background/60">
           <div className="grid gap-8 px-6 py-8 md:grid-cols-[1.04fr_0.96fr] md:px-10 md:py-12 lg:px-12">
             <div className="max-w-[720px]">
-              <div className="inline-flex items-center gap-2 rounded-full border border-olive-primary/12 bg-white/70 px-4 py-2 text-sm font-medium text-olive-primary/76">
+              <div className="inline-flex items-center gap-2 rounded-full border border-olive-primary/12 bg-white/70 px-4 py-2 text-sm font-medium text-olive-text">
                 <HeartPulse className="h-4 w-4" aria-hidden="true" />
                 ЭКГ с расшифровкой - 1100 ₽
               </div>
@@ -114,11 +114,11 @@ export default function EkgContent() {
                 ЭКГ в Самаре: запись онлайн или по телефону.
               </h1>
 
-              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-primary/78 sm:text-[18px]">
+              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-text sm:text-[18px]">
                 Электрокардиограмма помогает оценить ритм сердца, признаки перегрузки и нарушения проводимости. В БИОРАЙЗ исследование проходит по записи, без очередей, с готовой расшифровкой.
               </p>
 
-              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.7] text-olive-primary/70">
+              <p className="mt-4 max-w-[680px] text-[16px] leading-[1.7] text-olive-text">
                 Если нужна более широкая проверка здоровья, ЭКГ можно дополнить <Link href="/analizy/" className="font-medium text-olive-primary underline underline-offset-4">анализами</Link> или включить в плановый <Link href="/chek-apy/" className="font-medium text-olive-primary underline underline-offset-4">чек-ап</Link>.
               </p>
 
@@ -147,17 +147,17 @@ export default function EkgContent() {
               <div className="relative flex h-full flex-col justify-between">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-olive-primary/45">Кардиограмма</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-olive-primary">Кардиограмма</p>
                     <p className="mt-2 text-2xl font-light text-olive-primary">5-10 минут</p>
                   </div>
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-olive-primary text-white">
                     <Stethoscope className="h-7 w-7" aria-hidden="true" />
                   </div>
                 </div>
-                <div className="my-8 h-[180px] text-olive-primary/90">
+                <div className="my-8 h-[180px] text-olive-text">
                   <EkgLine />
                 </div>
-                <div className="grid grid-cols-2 gap-3 text-sm text-olive-primary/75">
+                <div className="grid grid-cols-2 gap-3 text-sm text-olive-text">
                   <div className="rounded-2xl bg-beige-background/70 px-4 py-3">
                     Расшифровка входит в стоимость
                   </div>
@@ -175,13 +175,13 @@ export default function EkgContent() {
             <h2 className="text-[30px] font-light leading-tight text-olive-primary sm:text-[36px]">
               Когда стоит пройти ЭКГ
             </h2>
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/70">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               ЭКГ часто назначают при жалобах со стороны сердца, перед нагрузками или как часть профилактического обследования. При выраженной боли в груди, резкой одышке или обмороке нужно обращаться за неотложной медицинской помощью.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {indications.map((item) => (
-              <div key={item} className="rounded-[1.25rem] border border-olive-primary/10 bg-beige-background/55 px-4 py-4 text-[15px] leading-[1.6] text-olive-primary/78">
+              <div key={item} className="rounded-[1.25rem] border border-olive-primary/10 bg-beige-background/55 px-4 py-4 text-[15px] leading-[1.6] text-olive-text">
                 {item}
               </div>
             ))}
@@ -201,7 +201,7 @@ export default function EkgContent() {
                   <item.icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <h3 className="mt-5 text-xl font-medium leading-snug text-olive-primary">{item.title}</h3>
-                <p className="mt-3 text-sm leading-[1.65] text-olive-primary/70">{item.text}</p>
+                <p className="mt-3 text-sm leading-[1.65] text-olive-text">{item.text}</p>
               </article>
             ))}
           </div>
@@ -234,7 +234,7 @@ export default function EkgContent() {
               className="rounded-[1.5rem] border border-olive-primary/10 bg-white p-5 transition-colors hover:border-olive-primary/22 hover:bg-beige-background/40"
             >
               <div className="text-lg font-medium text-olive-primary">{item.title}</div>
-              <p className="mt-2 text-sm leading-[1.65] text-olive-primary/68">{item.text}</p>
+              <p className="mt-2 text-sm leading-[1.65] text-olive-primary">{item.text}</p>
             </Link>
           ))}
         </section>
@@ -243,7 +243,7 @@ export default function EkgContent() {
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-[24px] font-medium text-olive-primary sm:text-[28px]">Записаться на ЭКГ</h2>
-              <p className="mt-2 text-sm leading-[1.7] text-olive-primary/70">
+              <p className="mt-2 text-sm leading-[1.7] text-olive-text">
                 Выберите удобный способ связи. Администратор подскажет свободное время приема.
               </p>
             </div>

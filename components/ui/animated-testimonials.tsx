@@ -126,10 +126,10 @@ export const AnimatedTestimonials = ({
             <h3 className="text-xl sm:text-2xl font-heading text-olive-primary font-bold mb-2">
               {testimonials[active].name}
             </h3>
-            <p className="text-xs sm:text-sm text-olive-primary/70 mb-4">
+            <p className="text-xs sm:text-sm text-olive-text mb-4">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-base sm:text-lg text-olive-primary/80 mt-4 leading-relaxed">
+            <motion.p className="text-base sm:text-lg text-olive-text mt-4 leading-relaxed">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -159,7 +159,7 @@ export const AnimatedTestimonials = ({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.2 }}
-                className="text-sm text-olive-primary/60 mt-4"
+                className="text-sm text-olive-primary mt-4"
               >
                 {testimonials[active].location}
               </motion.p>

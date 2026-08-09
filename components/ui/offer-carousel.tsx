@@ -445,7 +445,7 @@ function OfferCard({ offer }: { offer: Offer }) {
 
         <div className="absolute bottom-0 left-0 right-0 flex h-[60%] flex-col justify-between rounded-t-[24px] bg-white px-4 pb-5 pt-4 sm:h-[54%] sm:rounded-t-[30px] sm:p-5">
           <div className="space-y-2.5 sm:space-y-3">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-olive-primary/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-olive-primary/70 sm:gap-2 sm:px-3 sm:text-[11px] sm:tracking-[0.14em]">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-olive-primary/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-olive-text sm:gap-2 sm:px-3 sm:text-[11px] sm:tracking-[0.14em]">
               <Tag className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               <span>{offer.tag}</span>
             </div>
@@ -453,7 +453,7 @@ function OfferCard({ offer }: { offer: Offer }) {
               <h3 className="text-[1.12rem] font-semibold leading-[1.1] text-olive-primary sm:text-[1.45rem] sm:leading-tight">
                 {offer.title}
               </h3>
-              <p className="text-[13px] leading-5 text-olive-primary/72 sm:text-sm sm:leading-6">
+              <p className="text-[13px] leading-5 text-olive-text sm:text-sm sm:leading-6">
                 {offer.description}
               </p>
             </div>
@@ -471,7 +471,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 />
               </div>
               <div className="min-w-0">
-                <p className="truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-olive-primary/55 sm:text-xs sm:tracking-[0.14em]">
+                <p className="truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-olive-primary sm:text-xs sm:tracking-[0.14em]">
                   {offer.brandName}
                 </p>
                 <p className="truncate text-[15px] font-semibold text-olive-primary sm:text-base">
@@ -613,7 +613,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
                 'shrink-0 rounded-full border px-3 py-2 text-[13px] font-medium transition-all duration-300 sm:px-4 sm:text-sm',
                 selectedCategory === category.id
                   ? 'border-olive-primary bg-olive-primary text-white shadow-[0_12px_28px_rgba(79,93,60,0.18)]'
-                  : 'border-olive-primary/12 bg-white/75 text-olive-primary/72 hover:border-olive-primary/25 hover:text-olive-primary',
+                  : 'border-olive-primary/12 bg-white/75 text-olive-text hover:border-olive-primary/25 hover:text-olive-primary',
               )}
             >
               {category.name}
@@ -640,7 +640,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
         </div>
 
         <div className="relative z-[1] mt-2 flex items-center justify-center lg:hidden">
-          <p className="text-center text-xs text-olive-primary/55">
+          <p className="text-center text-xs text-olive-primary">
             Листайте карточки свайпом
           </p>
         </div>

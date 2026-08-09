@@ -91,11 +91,11 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-olive-primary/10 blur-3xl" />
             <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/50">Выезд на дом</p>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary">Выезд на дом</p>
                 <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">
                   Капельница в комфортных условиях
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-olive-primary/70 sm:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-olive-text sm:text-base">
                   Врач может приехать к вам домой по Самаре: оценить состояние, уточнить противопоказания и подобрать состав процедуры.
                 </p>
                 <Link

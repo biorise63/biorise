@@ -125,13 +125,13 @@ export default function HomeInfusionsPage() {
 
           <div className="rounded-[32px] border border-olive-primary/10 bg-white/85 p-6 shadow-premium sm:p-8 lg:p-10">
             <div className="max-w-4xl">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary/50">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-olive-primary">
                 Выезд по Самаре
               </p>
               <h1 className="text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl lg:text-6xl">
                 Капельница на дому в Самаре
               </h1>
-              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-olive-primary/78 sm:text-xl">
+              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-olive-text sm:text-xl">
                 Врач приезжает на дом, оценивает состояние и решает, какую капельницу можно поставить дома. Этот формат выбирают при выводе из запоя, детоксе, головной боли, слабости, обезвоживании, восстановлении после болезни и курсе витаминных капельниц.
               </p>
 
@@ -146,19 +146,19 @@ export default function HomeInfusionsPage() {
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl bg-beige-background/80 p-4">
-                  <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary/50">Стоимость выезда</span>
+                  <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary">Стоимость выезда</span>
                   <strong className="mt-2 block text-2xl text-olive-primary">2 500 ₽</strong>
-                  <span className="mt-1 block text-sm text-olive-primary/68">+ стоимость выбранной капельницы</span>
+                  <span className="mt-1 block text-sm text-olive-primary">+ стоимость выбранной капельницы</span>
                 </div>
                 <div className="rounded-2xl bg-beige-background/80 p-4">
-                  <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary/50">Где работаем</span>
+                  <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary">Где работаем</span>
                   <strong className="mt-2 block text-2xl text-olive-primary">Самара</strong>
-                  <span className="mt-1 block text-sm text-olive-primary/68">Выезд по городу после согласования с врачом</span>
+                  <span className="mt-1 block text-sm text-olive-primary">Выезд по городу после согласования с врачом</span>
                 </div>
                 <div className="rounded-2xl bg-beige-background/80 p-4">
-                  <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary/50">Программ в каталоге</span>
+                  <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary">Программ в каталоге</span>
                   <strong className="mt-2 block text-2xl text-olive-primary">более 26</strong>
-                  <span className="mt-1 block text-sm text-olive-primary/68">Ниже собран весь каталог BIORISE с перелинковкой</span>
+                  <span className="mt-1 block text-sm text-olive-primary">Ниже собран весь каталог BIORISE с перелинковкой</span>
                 </div>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function HomeInfusionsPage() {
                 className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-6 shadow-premium"
               >
                 <h2 className="text-2xl font-heading font-light text-olive-primary">{item.title}</h2>
-                <p className="mt-3 text-base leading-relaxed text-olive-primary/75">{item.text}</p>
+                <p className="mt-3 text-base leading-relaxed text-olive-text">{item.text}</p>
               </article>
             ))}
           </div>
@@ -192,8 +192,8 @@ export default function HomeInfusionsPage() {
                 'После процедуры врач объясняет дальнейшие шаги и схему курса.',
               ].map((step, index) => (
                 <div key={step} className="rounded-2xl bg-olive-primary/5 p-4">
-                  <span className="text-sm font-semibold text-olive-primary/50">0{index + 1}</span>
-                  <p className="mt-2 leading-relaxed text-olive-primary/78">{step}</p>
+                  <span className="text-sm font-semibold text-olive-primary">0{index + 1}</span>
+                  <p className="mt-2 leading-relaxed text-olive-text">{step}</p>
                 </div>
               ))}
             </div>
@@ -205,7 +205,7 @@ export default function HomeInfusionsPage() {
             <h2 className="text-3xl font-heading font-light text-olive-primary sm:text-4xl">
               Все капельницы BIORISE с перелинковкой
             </h2>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-olive-primary/75 sm:text-lg">
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-olive-text sm:text-lg">
               Ниже собран полный каталог. Врач на выезде смотрит ваше состояние и говорит, какую программу можно безопасно провести дома. Если вы уже знаете нужную капельницу, откройте её страницу и посмотрите состав, показания и цену.
             </p>
 
@@ -222,7 +222,7 @@ export default function HomeInfusionsPage() {
                         className="rounded-2xl border border-olive-primary/10 bg-beige-background/70 p-5"
                       >
                         <h4 className="text-xl font-heading text-olive-primary">{item.title}</h4>
-                        <p className="mt-2 text-sm leading-relaxed text-olive-primary/75">
+                        <p className="mt-2 text-sm leading-relaxed text-olive-text">
                           {item.description}
                         </p>
                         <div className="mt-4 flex items-center justify-between gap-3">
@@ -231,7 +231,7 @@ export default function HomeInfusionsPage() {
                               <strong className="block text-lg text-olive-primary">{item.price}</strong>
                             )}
                             {item.duration && (
-                              <span className="text-sm text-olive-primary/60">{item.duration}</span>
+                              <span className="text-sm text-olive-primary">{item.duration}</span>
                             )}
                           </div>
                           <Link

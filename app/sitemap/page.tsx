@@ -61,7 +61,7 @@ function SitemapSection({
           <li key={item.href}>
             <Link
               href={item.href}
-              className="inline-flex text-olive-primary/78 underline-offset-4 transition-colors hover:text-olive-primary hover:underline"
+              className="inline-flex text-olive-text underline-offset-4 transition-colors hover:text-olive-primary hover:underline"
             >
               {item.title}
             </Link>
@@ -122,7 +122,7 @@ export default function HtmlSitemapPage() {
             <h1 className="text-3xl font-heading font-light leading-tight text-olive-primary sm:text-4xl md:text-5xl">
               Карта сайта
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-olive-primary/70 sm:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-olive-text sm:text-lg">
               Все основные разделы сайта BIORISE собраны на одной странице:
               услуги, анализы, чек-апы, капельницы и статьи.
             </p>

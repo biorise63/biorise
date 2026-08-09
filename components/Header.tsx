@@ -139,7 +139,7 @@ export default function Header() {
         className={`left-0 right-0 z-[110] border-b border-olive-primary/10 backdrop-blur-sm ${
           useRelativeMobileHeader ? 'relative sm:fixed sm:top-0' : 'fixed top-0'
         }`}
-        style={{ backgroundColor: 'rgba(94, 111, 82, 0.5)' }}
+        style={{ backgroundColor: 'rgba(94, 111, 82, 0.92)' }}
       >
         <div className="container mx-auto h-10 px-4 sm:h-auto sm:px-6 sm:py-2">
           <div className="flex h-full items-center justify-between gap-2 sm:h-auto sm:gap-4">
@@ -462,7 +462,7 @@ export default function Header() {
           >
             <div className="flex items-center justify-between px-4 pb-4 sm:px-6">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary/55">Меню</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Меню</p>
                 <p className="mt-1 text-lg font-medium text-olive-primary">BIORISE</p>
               </div>
               <button

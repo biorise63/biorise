@@ -27,7 +27,7 @@ export default function BioimpedanceContent() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading text-olive-primary mb-6 font-light">
               Биоимпедансный анализ композитного состава тела
             </h1>
-            <p className="text-lg md:text-xl text-olive-primary/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-olive-text max-w-3xl mx-auto leading-relaxed">
               Метод оценки состава тела по электрическому сопротивлению тканей. Аппараты МЕДАСС применяются в клиниках, спортивной медицине и диетологии для быстрой и неинвазивной диагностики.
             </p>
           </motion.div>
@@ -79,7 +79,7 @@ export default function BioimpedanceContent() {
                       <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
                         Принцип работы
                       </h2>
-                      <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                      <p className="text-sm md:text-base text-olive-text font-menu">
                         Как работает диагностика
                       </p>
                     </div>
@@ -145,7 +145,7 @@ export default function BioimpedanceContent() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
                   Что показывает анализ
                 </h2>
-                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                <p className="text-sm md:text-base text-olive-text font-menu">
                   Параметры, которые определяет аппарат МЕДАСС
                 </p>
               </div>
@@ -212,7 +212,7 @@ export default function BioimpedanceContent() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
                   Как проходит процедура
                 </h2>
-                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                <p className="text-sm md:text-base text-olive-text font-menu">
                   Простой и комфортный процесс
                 </p>
               </div>
@@ -279,7 +279,7 @@ export default function BioimpedanceContent() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
                   Подготовка к исследованию
                 </h2>
-                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                <p className="text-sm md:text-base text-olive-text font-menu">
                   Рекомендации для точных результатов
                 </p>
               </div>
@@ -337,7 +337,7 @@ export default function BioimpedanceContent() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
                   Кому особенно полезен
                 </h2>
-                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                <p className="text-sm md:text-base text-olive-text font-menu">
                   Показания к проведению анализа
                 </p>
               </div>
@@ -395,7 +395,7 @@ export default function BioimpedanceContent() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-olive-primary font-light mb-2">
                   Противопоказания
                 </h2>
-                <p className="text-sm md:text-base text-olive-primary/70 font-menu">
+                <p className="text-sm md:text-base text-olive-text font-menu">
                   Когда процедура не рекомендуется
                 </p>
               </div>

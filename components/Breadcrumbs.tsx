@@ -42,7 +42,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       />
       <nav
         aria-label="Хлебные крошки"
-        className="mb-5 text-sm text-olive-primary/60 sm:mb-6"
+        className="mb-5 text-sm text-olive-primary sm:mb-6"
       >
         <ol className={`flex flex-wrap items-center gap-x-2 gap-y-1 ${className}`.trim()}>
           {items.map((item, index) => {
@@ -51,7 +51,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
             return (
               <li key={`${item.href}-${index}`} className="flex items-center gap-2">
                 {isLast ? (
-                  <span aria-current="page" className="font-medium text-olive-primary/80">
+                  <span aria-current="page" className="font-medium text-olive-text">
                     {item.name}
                   </span>
                 ) : (
@@ -62,7 +62,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
                     {item.name}
                   </Link>
                 )}
-                {!isLast && <span className="text-olive-primary/35">/</span>}
+                {!isLast && <span className="text-olive-primary">/</span>}
               </li>
             )
           })}

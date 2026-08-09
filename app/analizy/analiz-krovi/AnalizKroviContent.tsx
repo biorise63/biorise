@@ -65,7 +65,7 @@ export default function AnalizKroviContent() {
             <div className="max-w-[760px]">
               <Link
                 href={ANALYSES_URL}
-                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary/68 transition-colors hover:text-olive-primary"
+                className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary transition-colors hover:text-olive-primary"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 К анализам
@@ -75,7 +75,7 @@ export default function AnalizKroviContent() {
                 Анализ крови в Самаре: виды, цены, запись онлайн или по телефону.
               </h1>
 
-              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-primary/78 sm:text-[18px]">
+              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.65] text-olive-text sm:text-[18px]">
                 Сдать анализ крови можно в BIORISE быстро и без очередей. Результат базового исследования обычно готов за 1 день.
               </p>
 
@@ -108,7 +108,7 @@ export default function AnalizKroviContent() {
                     </div>
                     <div>
                       <h2 className="text-lg font-medium text-olive-primary">{item.title}</h2>
-                      <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                     </div>
                   </div>
                 </article>
@@ -122,7 +122,7 @@ export default function AnalizKroviContent() {
             <h2 className="text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Что обычно смотрят в анализе крови
             </h2>
-            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-primary/78">
+            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-text">
               <li>Гемоглобин и эритроциты.</li>
               <li>Лейкоциты и лейкоцитарную формулу.</li>
               <li>Тромбоциты и СОЭ, если врач их назначает.</li>
@@ -132,7 +132,7 @@ export default function AnalizKroviContent() {
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Когда врач назначает
             </h2>
-            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-primary/78">
+            <ul className="mt-5 space-y-3 text-[16px] leading-[1.7] text-olive-text">
               <li>При усталости, слабости и частых простудах.</li>
               <li>Перед чек-апом и плановой проверкой здоровья.</li>
               <li>Когда нужно оценить воспаление или анемию.</li>
@@ -142,7 +142,7 @@ export default function AnalizKroviContent() {
             <h2 className="mt-10 text-[30px] font-light leading-tight text-olive-primary sm:text-[32px]">
               Как подготовиться
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-5 text-[16px] leading-[1.7] text-olive-text">
               Для общего анализа крови специальная подготовка обычно не нужна. Лучше прийти отдохнувшим, без тяжелой тренировки накануне и с уведомлением о лекарствах, если вы их принимаете.
             </p>
           </div>
@@ -157,7 +157,7 @@ export default function AnalizKroviContent() {
               </h2>
             </div>
 
-            <p className="mt-4 text-[16px] leading-[1.7] text-olive-primary/78">
+            <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
               Записаться можно онлайн или по телефону. Если вам нужен не только общий анализ крови, посмотрите весь каталог и подберите нужный набор исследований.
             </p>
 
@@ -185,7 +185,7 @@ export default function AnalizKroviContent() {
                   className="block rounded-[1.25rem] border border-olive-primary/10 bg-white px-4 py-4 transition-colors hover:border-olive-primary/20 hover:bg-white/90"
                 >
                   <div className="text-base font-medium text-olive-primary">{item.title}</div>
-                  <p className="mt-1 text-sm leading-relaxed text-olive-primary/68">{item.text}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-olive-primary">{item.text}</p>
                 </Link>
               ))}
             </div>
