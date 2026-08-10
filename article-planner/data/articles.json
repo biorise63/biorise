@@ -1338,5 +1338,31 @@
     "source": "chatgpt + codex edit",
     "createdAt": "2026-07-28",
     "updatedAt": "2026-07-28"
+  },
+  {
+    "id": "t-spot-chto-pokazyvaet-analiz-i-kak-chitat-rezultat",
+    "keyword": "анализ т-спот",
+    "secondaryKeywords": [
+      "т-спот тест",
+      "т-спот на туберкулез",
+      "т-спот что это такое"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "T-SPOT: что показывает анализ и как читать результат",
+    "h1": "T-SPOT: как читать результат анализа",
+    "description": "Объясняем, что показывает анализ T-SPOT, как устроен тест и что означают отрицательный, положительный и сомнительный результат.",
+    "url": "/articles/t-spot-chto-pokazyvaet-analiz-i-kak-chitat-rezultat/",
+    "internalLinks": [
+      "/analizy/t-spot/",
+      "/analizy/",
+      "/articles/kakie-testy-na-tuberkulez/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-10. Wordstat: анализ т-спот 2329/мес. Вторая тема (т-спот на туберкулез, 1961/мес) опубликована в Telegram, не на сайте.",
+    "source": "manual",
+    "createdAt": "2026-08-10",
+    "updatedAt": "2026-08-10"
   }
 ]
