@@ -1,7 +1,7 @@
 {
-  "runsCompleted": 3,
+  "runsCompleted": 4,
   "firstRunAt": "2026-08-07",
-  "lastRunAt": "2026-08-09",
+  "lastRunAt": "2026-08-10",
   "rampThreshold": 10,
   "note": "runsCompleted увеличивается только после того, как пользователь подтвердил публикацию и она запушена. Пока runsCompleted < rampThreshold — режим разгона (2-3 статьи/день вперемешку). После — 4 основные + 1-2 вспомогательные."
 }
