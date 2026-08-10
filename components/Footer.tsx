@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-olive-primary text-white py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="mb-4">
               <Logo variant="white" />
@@ -29,6 +29,25 @@ export default function Footer() {
                 Карта сайта
               </a>
             </p>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-heading mb-4">Разделы</h3>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { href: '/kapelnicy', label: 'Капельницы' },
+                { href: '/analizy', label: 'Анализы' },
+                { href: '/chek-apy', label: 'Чек-ап программы' },
+                { href: '/ekg', label: 'ЭКГ' },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center justify-center rounded-xl bg-white/10 px-3 py-3 text-center text-sm text-white/80 leading-tight transition-colors hover:bg-white/15 hover:text-white sm:justify-start sm:text-left"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl font-heading mb-4">Контакты</h3>

@@ -42,12 +42,16 @@ export default function Hero() {
       label: 'Капельницы',
     },
     {
+      href: '/analizy/',
+      label: 'Анализы',
+    },
+    {
       href: '/chek-apy/',
       label: 'Чек-ап программы',
     },
     {
-      href: '/analizy/',
-      label: 'Анализы',
+      href: '/ekg/',
+      label: 'ЭКГ',
     },
   ]
 
@@ -131,12 +135,12 @@ export default function Hero() {
 
           <div className="mb-5 sm:mb-6">
             <div className="border-y-2 border-black/10 py-3 sm:py-4">
-              <div className="grid grid-cols-3 divide-x-2 divide-olive-primary/30 sm:flex sm:items-center sm:justify-start">
+              <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:justify-start sm:gap-0 sm:divide-x-2 sm:divide-olive-primary/30">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex min-h-[44px] min-w-0 items-center justify-center px-1 text-center text-[14px] font-medium leading-[1.15] text-olive-text transition-colors duration-200 hover:text-olive-primary sm:min-h-0 sm:justify-start sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap"
+                    className="flex min-h-[44px] min-w-0 items-center justify-center rounded-xl bg-olive-primary/5 px-2 text-center text-[14px] font-medium leading-[1.15] text-olive-text transition-colors duration-200 hover:text-olive-primary hover:bg-olive-primary/10 sm:min-h-0 sm:justify-start sm:rounded-none sm:bg-transparent sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap sm:hover:bg-transparent"
                   >
                     {link.label}
                   </Link>
