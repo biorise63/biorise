@@ -182,6 +182,7 @@ export const popularAnalyses: PopularAnalysisItem[] = [
     title: 'Витамин D',
     description: 'Актуален при дефицитах, слабости и частых простудах.',
     icon: 'sun',
+    href: '/analizy/vitamin-d/',
   },
   {
     code: '16',

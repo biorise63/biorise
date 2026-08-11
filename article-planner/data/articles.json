@@ -758,8 +758,8 @@
     ],
     "priority": "средний",
     "intent": "информационный",
-    "status": "brief",
-    "published": false,
+    "status": "published",
+    "published": true,
     "title": "Капельница для сердца: что важно проверить до процедуры",
     "h1": "Что врач проверяет перед капельницей для сердца",
     "description": "Разбираем, какие жалобы и обследования врач учитывает перед капельницей для сердца, и почему инфузионную поддержку нельзя выбирать без оценки рисков.",
@@ -780,7 +780,7 @@
     "notes": "Осторожная тема. Делать без медицинских обещаний и без замены кардиологического лечения.",
     "source": "content-map",
     "createdAt": "2026-07-27",
-    "updatedAt": "2026-07-27"
+    "updatedAt": "2026-08-11"
   },
   {
     "id": "kapelnitsa-dlya-pokhudeniya-kakie-analizy-nuzhny",
@@ -1364,5 +1364,56 @@
     "source": "manual",
     "createdAt": "2026-08-10",
     "updatedAt": "2026-08-10"
+  },
+  {
+    "id": "analiz-na-vitamin-d-kogda-i-zachem-sdavat",
+    "keyword": "анализ на витамин д цена",
+    "secondaryKeywords": [
+      "витамин д анализ цена",
+      "сдать анализ на витамин д",
+      "анализ на витамин д самара"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Анализ на витамин Д: когда и зачем его сдавать",
+    "h1": "Анализ на витамин Д: кому и зачем его назначают",
+    "description": "Разбираем, кому обычно назначают анализ на витамин Д, как читать результат и что делать при подтверждённом дефиците.",
+    "url": "/articles/analiz-na-vitamin-d-kogda-i-zachem-sdavat/",
+    "internalLinks": [
+      "/analizy/vitamin-d/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/kapelnicy/vitaminnaya/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-11. Wordstat: анализ на витамин д цена 3564/мес. Одновременно создана отдельная сервисная страница /analizy/vitamin-d/ (её раньше не было).",
+    "source": "manual",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "ekg-chto-pokazyvaet-i-kogda-naznachayut",
+    "keyword": "что показывает экг",
+    "secondaryKeywords": [
+      "экг сердца",
+      "экг что показывает у взрослого"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "ЭКГ: что показывает и когда его назначают",
+    "h1": "Что показывает ЭКГ и когда его назначают",
+    "description": "Объясняем, что измеряет электрокардиография, когда её назначают, что может показать исследование и как часто его стоит делать.",
+    "url": "/articles/ekg-chto-pokazyvaet-i-kogda-naznachayut/",
+    "internalLinks": [
+      "/ekg/",
+      "/chek-apy/",
+      "/analizy/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-11. Wordstat: что показывает экг 3735/мес. Другой угол, чем пост в Telegram (экг расшифровка, 20519/мес) — не пересекается по ключу.",
+    "source": "manual",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
   }
 ]
