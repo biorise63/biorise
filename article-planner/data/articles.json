@@ -1415,5 +1415,102 @@
     "source": "manual",
     "createdAt": "2026-08-11",
     "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "mochevaya-kislota-chto-oznachaet-povyshenny-uroven",
+    "keyword": "анализ крови на мочевую кислоту",
+    "secondaryKeywords": [
+      "анализ на мочевую кислоту",
+      "анализ на мочевую кислоту цена"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Мочевая кислота: что означает повышенный уровень в анализе",
+    "h1": "Мочевая кислота: что означает повышенный уровень в анализе",
+    "description": "Разбираем, зачем врач может назначить анализ на мочевую кислоту, что означает повышенный и пониженный результат и как подготовиться к сдаче.",
+    "url": "/articles/mochevaya-kislota-chto-oznachaet-povyshenny-uroven/",
+    "internalLinks": [
+      "/analizy/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/chek-apy/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-12. Wordstat: анализ крови на мочевую кислоту 3536/мес.",
+    "source": "manual",
+    "createdAt": "2026-08-12",
+    "updatedAt": "2026-08-12"
+  },
+  {
+    "id": "obshchiy-belok-v-krovi-o-chem-govorit-pokazatel",
+    "keyword": "общий анализ белка в крови",
+    "secondaryKeywords": [
+      "анализ общий белок"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Общий белок в крови: о чём говорит этот показатель",
+    "h1": "Общий белок в крови: о чём говорит этот показатель",
+    "description": "Разбираем, что показывает анализ на общий белок в крови, о чём говорит повышенный и пониженный результат и когда его назначают.",
+    "url": "/articles/obshchiy-belok-v-krovi-o-chem-govorit-pokazatel/",
+    "internalLinks": [
+      "/analizy/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/chek-apy/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-12. Wordstat: общий анализ белка в крови 3086/мес.",
+    "source": "manual",
+    "createdAt": "2026-08-12",
+    "updatedAt": "2026-08-12"
+  },
+  {
+    "id": "analiz-na-kreatinin-kak-otsenivayut-rabotu-pochek",
+    "keyword": "анализ крови креатинин у мужчин",
+    "secondaryKeywords": [
+      "креатинин анализ крови"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Анализ на креатинин: как по нему оценивают работу почек",
+    "h1": "Анализ на креатинин: как по нему оценивают работу почек",
+    "description": "Объясняем, что такое креатинин, когда его назначают, о чём говорит повышенный уровень и почему его оценивают вместе со скоростью клубочковой фильтрации.",
+    "url": "/articles/analiz-na-kreatinin-kak-otsenivayut-rabotu-pochek/",
+    "internalLinks": [
+      "/analizy/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/chek-apy/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-12. Wordstat: анализ крови креатинин у мужчин 2618/мес.",
+    "source": "manual",
+    "createdAt": "2026-08-12",
+    "updatedAt": "2026-08-12"
+  },
+  {
+    "id": "ishemicheskaya-bolezn-serdtsa-simptomy",
+    "keyword": "ишемическая болезнь сердца симптомы",
+    "secondaryKeywords": [
+      "ишемическая болезнь сердца симптомы лечение"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Ишемическая болезнь сердца: симптомы, которые нельзя игнорировать",
+    "h1": "Ишемическая болезнь сердца: симптомы, которые нельзя игнорировать",
+    "description": "Разбираем, какие симптомы ишемической болезни сердца важно не пропустить, почему они не всегда очевидны и какое обследование нужно начать с ЭКГ.",
+    "url": "/articles/ishemicheskaya-bolezn-serdtsa-simptomy/",
+    "internalLinks": [
+      "/ekg/",
+      "/analizy/",
+      "/articles/kapelnitsa-dlya-serdtsa-chto-proverit/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-12. Wordstat: ишемическая болезнь сердца симптомы 2808/мес.",
+    "source": "manual",
+    "createdAt": "2026-08-12",
+    "updatedAt": "2026-08-12"
   }
 ]
