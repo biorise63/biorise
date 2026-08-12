@@ -148,7 +148,9 @@ export default function CheckupsContent() {
                   </div>
                   <div className="min-w-0">
                     <h2 className="text-[22px] font-medium leading-snug text-olive-primary sm:text-[24px]">
-                      {program.title}
+                      <Link href={`/chek-apy/${program.slug}/`} className="underline-offset-4 hover:underline">
+                        {program.title}
+                      </Link>
                     </h2>
                     <p className="mt-2 max-w-[700px] text-sm leading-[1.7] text-olive-text sm:text-[15px]">
                       {program.summary}
