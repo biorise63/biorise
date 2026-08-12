@@ -1,6 +1,9 @@
 export type CheckupProgram = {
   slug: string
   title: string
+  // Заголовок H1 (и основа <title>) страницы /chek-apy/<slug>/, подобран под Wordstat
+  // (2026-08-12) — если не задан, используется `${title} в Самаре`.
+  h1?: string
   summary: string
   price?: number
   oldPrice?: number
@@ -12,6 +15,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'zhenskoe-zdorove-bazovyy',
     title: 'Женское здоровье: базовый чек-ап',
+    h1: 'Чек-ап для женщин в Самаре: базовый',
     summary: 'Базовая программа для оценки общего состояния, запасов железа, щитовидной железы, липидного профиля и обмена веществ.',
     price: 3333,
     icon: 'baseline',
@@ -42,6 +46,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'muzhskoe-zdorove-bazovyy',
     title: 'Мужское здоровье: базовый чек-ап',
+    h1: 'Чек-ап для мужчин в Самаре: базовый',
     summary: 'Базовая мужская программа с оценкой крови, биохимии, запасов железа, витаминов, ПСА и гормонального профиля.',
     price: 3333,
     icon: 'male',
@@ -68,6 +73,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'detskiy-bazovyy',
     title: 'Детский чек-ап: базовый',
+    h1: 'Детский чек-ап в Самаре: базовый',
     summary: 'Профиль для оценки общего состояния ребенка, запасов железа, витаминов, микроэлементов, аллергического фона и паразитарных инфекций.',
     price: 4290,
     icon: 'advanced',
@@ -106,6 +112,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'zhenskoe-zdorove-optimal',
     title: 'Женское здоровье Optimal',
+    h1: 'Чек-ап для женщин в Самаре: расширенный',
     summary: 'Расширенный женский чек-ап с терапевтом: железо, щитовидная железа, гормоны, витамины, биохимия и метаболические риски.',
     price: 13990,
     icon: 'vip',
@@ -132,6 +139,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'muzhskoe-zdorove-optimal',
     title: 'Мужское здоровье Optimal',
+    h1: 'Чек-ап для мужчин в Самаре: расширенный',
     summary: 'Расширенный мужской чек-ап с терапевтом: гормоны, ПСА, щитовидная железа, железо, витамины, биохимия и обмен веществ.',
     price: 15860,
     icon: 'male',
@@ -160,6 +168,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'zhenskoe-zdorove-premium',
     title: 'Женское здоровье Premium',
+    h1: 'Чек-ап для женщин в Самаре: Premium',
     summary: 'Премиальная женская программа с онкопрофилем, инфекционным скринингом, гормонами, микроэлементами и приемом терапевта.',
     price: 31990,
     icon: 'vip',
@@ -181,6 +190,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'muzhskoe-zdorove-premium',
     title: 'Мужское здоровье Premium',
+    h1: 'Чек-ап для мужчин в Самаре: Premium',
     summary: 'Премиальная мужская программа с ПСА, онкопрофилем, инфекционным скринингом, гормонами, микроэлементами и терапевтом.',
     price: 31990,
     icon: 'male',
@@ -203,6 +213,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'detskiy-podgotovka-k-shkole',
     title: 'Детский чек-ап: подготовка к школе и саду',
+    h1: 'Детский чек-ап в Самаре: подготовка к школе',
     summary: 'Короткая программа перед школой или детским садом: кровь, моча, глюкоза и базовая проверка на паразитарные инфекции.',
     price: 1490,
     icon: 'advanced',
@@ -217,6 +228,7 @@ export const checkupPrograms: CheckupProgram[] = [
   {
     slug: 'zabota-o-roditelyakh',
     title: 'Чек-ап Забота о родителях',
+    h1: 'Чек-ап для пожилых людей в Самаре - забота о родителях',
     summary: 'Профиль для старшего возраста: биохимия, липидный профиль, витамин D, B12, воспалительные маркеры и углеводный обмен.',
     price: 3999,
     icon: 'age',

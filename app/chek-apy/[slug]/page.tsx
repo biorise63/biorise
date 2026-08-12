@@ -26,6 +26,10 @@ function getProgram(slug: string) {
   return checkupPrograms.find((p) => p.slug === slug) ?? null
 }
 
+function getH1(program: (typeof checkupPrograms)[number]) {
+  return program.h1 || `${program.title} в Самаре`
+}
+
 export function generateStaticParams() {
   return checkupPrograms.map((program) => ({ slug: program.slug }))
 }
@@ -34,7 +38,8 @@ export function generateMetadata({ params }: PageProps) {
   const program = getProgram(params.slug)
   if (!program) return {}
 
-  const title = `${program.title} в Самаре | BIORISE`
+  const h1Text = getH1(program)
+  const title = `${h1Text} | BIORISE`
   const description = `${program.summary} Цена ${formatPrice(program.price ?? 0)} в клинике BIORISE в Самаре.`
 
   return {
@@ -66,15 +71,16 @@ export default function CheckupDetailPage({ params }: PageProps) {
   const program = getProgram(params.slug)
   if (!program) notFound()
 
+  const h1Text = getH1(program)
   const pageUrl = `${SITE_URL}/chek-apy/${program.slug}/`
   const webPageJsonLd = createWebPageJsonLd({
     url: `/chek-apy/${program.slug}/`,
-    name: `${program.title} в Самаре`,
+    name: h1Text,
     description: program.summary,
   })
   const serviceJsonLd = createServiceJsonLd({
     url: `/chek-apy/${program.slug}/`,
-    name: `${program.title} в Самаре`,
+    name: h1Text,
     description: program.summary,
     serviceType: 'Медицинский чек-ап',
     price: program.price ? formatPrice(program.price) : undefined,
@@ -126,7 +132,7 @@ export default function CheckupDetailPage({ params }: PageProps) {
             Чек-ап программа BIORISE
           </p>
           <h1 className="max-w-4xl text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl lg:text-6xl">
-            {program.title} в Самаре
+            {h1Text}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-olive-text sm:text-xl">
             {program.summary}
