@@ -51,6 +51,57 @@ export const metadata: Metadata = {
   },
 }
 
+const steps = [
+  {
+    text: 'Вы оставляете заявку и коротко описываете состояние.',
+    icon: (
+      <path
+        d="M5 6.5A1.5 1.5 0 0 1 6.5 5h2.2a1 1 0 0 1 1 .7l1 3a1 1 0 0 1-.4 1.2l-1.5.9a11 11 0 0 0 4.4 4.4l.9-1.5a1 1 0 0 1 1.2-.4l3 1a1 1 0 0 1 .7 1v2.2A1.5 1.5 0 0 1 17.5 20h-1C10.7 20 5 14.3 5 7.5v-1Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    text: 'Врач уточняет жалобы, противопоказания и решает, нужен ли выезд.',
+    icon: (
+      <path
+        d="M12 3.5c4.7 0 8.5 3 8.5 6.7 0 3.7-3.8 6.7-8.5 6.7-1 0-1.9-.1-2.8-.4L5 18l1-3.4C4.7 13.4 3.5 11.9 3.5 10.2 3.5 6.5 7.3 3.5 12 3.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    text: 'Специалист приезжает домой и подбирает капельницу по состоянию.',
+    icon: (
+      <path
+        d="M4.5 11 12 5l7.5 6M6.5 10v8a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-8"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    text: 'После процедуры врач объясняет дальнейшие шаги и схему курса.',
+    icon: (
+      <>
+        <path
+          d="M8 4.5h8a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1Z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <path d="m9.2 12 1.8 1.8 3.8-3.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </>
+    ),
+  },
+]
+
 const scenarios = [
   {
     title: 'Вывод из запоя и восстановление после алкоголя',
@@ -158,7 +209,7 @@ export default function HomeInfusionsPage() {
                 <div className="rounded-2xl bg-beige-background/80 p-4">
                   <span className="block text-xs uppercase tracking-[0.14em] text-olive-primary">Программ в каталоге</span>
                   <strong className="mt-2 block text-2xl text-olive-primary">более 26</strong>
-                  <span className="mt-1 block text-sm text-olive-primary">Ниже собран весь каталог BIORISE с перелинковкой</span>
+                  <span className="mt-1 block text-sm text-olive-primary">Полный каталог представлен ниже</span>
                 </div>
               </div>
             </div>
@@ -185,15 +236,14 @@ export default function HomeInfusionsPage() {
               Как проходит выезд
             </h2>
             <div className="mt-6 grid gap-4 md:grid-cols-4">
-              {[
-                'Вы оставляете заявку и коротко описываете состояние.',
-                'Врач уточняет жалобы, противопоказания и решает, нужен ли выезд.',
-                'Специалист приезжает домой и подбирает капельницу по состоянию.',
-                'После процедуры врач объясняет дальнейшие шаги и схему курса.',
-              ].map((step, index) => (
-                <div key={step} className="rounded-2xl bg-olive-primary/5 p-4">
-                  <span className="text-sm font-semibold text-olive-primary">0{index + 1}</span>
-                  <p className="mt-2 leading-relaxed text-olive-text">{step}</p>
+              {steps.map((step) => (
+                <div key={step.text} className="rounded-2xl bg-olive-primary/5 p-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-olive-primary shadow-premium">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+                      {step.icon}
+                    </svg>
+                  </span>
+                  <p className="mt-3 leading-relaxed text-olive-text">{step.text}</p>
                 </div>
               ))}
             </div>
@@ -203,7 +253,7 @@ export default function HomeInfusionsPage() {
         <section className="container mx-auto px-4 pt-10 sm:px-6">
           <div className="rounded-[32px] border border-olive-primary/10 bg-white/85 p-6 shadow-premium sm:p-8">
             <h2 className="text-3xl font-heading font-light text-olive-primary sm:text-4xl">
-              Все капельницы BIORISE с перелинковкой
+              Все капельницы BIORISE
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-olive-text sm:text-lg">
               Ниже собран полный каталог. Врач на выезде смотрит ваше состояние и говорит, какую программу можно безопасно провести дома. Если вы уже знаете нужную капельницу, откройте её страницу и посмотрите состав, показания и цену.
