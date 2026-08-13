@@ -1512,5 +1512,55 @@
     "source": "manual",
     "createdAt": "2026-08-12",
     "updatedAt": "2026-08-12"
+  },
+  {
+    "id": "orvi-v-samare-kapelnitsa-vmesto-tabletok",
+    "keyword": "орви самара",
+    "secondaryKeywords": [
+      "лечение орви капельница",
+      "капельница при орви самара"
+    ],
+    "priority": "высокий",
+    "intent": "коммерческий",
+    "status": "published",
+    "published": true,
+    "title": "Лечение ОРВИ в Самаре капельницей: быстрое облегчение без таблеток",
+    "h1": "Лечение ОРВИ в Самаре: капельница вместо таблеток",
+    "description": "Капельница при ОРВИ в Самаре: как она помогает быстрее таблеток при высокой температуре, слабости и обезвоживании, и когда стоит выбрать именно её.",
+    "url": "/articles/orvi-v-samare-kapelnitsa-vmesto-tabletok/",
+    "internalLinks": [
+      "/kapelnicy/",
+      "/analizy/",
+      "/articles/kapelnitsa-pri-orvi-kogda-vrach-rassmatrivaet/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-13. Wordstat: орви самара 62/мес (гео-хвост низкочастотный, ожидаемо). Коммерческая подача: капельница быстрее таблеток в тяжёлых случаях, без обещания вылечить вирус.",
+    "source": "manual",
+    "createdAt": "2026-08-13",
+    "updatedAt": "2026-08-13"
+  },
+  {
+    "id": "gripp-v-samare-kapelnitsa-vmesto-tabletok",
+    "keyword": "грипп самара",
+    "secondaryKeywords": [
+      "капельница при гриппе",
+      "лечение гриппа капельница"
+    ],
+    "priority": "высокий",
+    "intent": "коммерческий",
+    "status": "published",
+    "published": true,
+    "title": "Лечение гриппа в Самаре капельницей: быстрое облегчение без таблеток",
+    "h1": "Лечение гриппа в Самаре: капельница вместо таблеток",
+    "description": "Капельница при гриппе в Самаре: как она помогает быстрее таблеток при высокой температуре, ломоте и обезвоживании, и когда стоит выбрать именно её.",
+    "url": "/articles/gripp-v-samare-kapelnitsa-vmesto-tabletok/",
+    "internalLinks": [
+      "/kapelnicy/",
+      "/analizy/",
+      "/articles/kapelnitsa-pri-orvi-kogda-vrach-rassmatrivaet/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-13. Wordstat: грипп самара 124/мес (гео-хвост низкочастотный, ожидаемо). Та же честная подача, что и у статьи про ОРВИ.",
+    "source": "manual",
+    "createdAt": "2026-08-13",
+    "updatedAt": "2026-08-13"
   }
 ]
