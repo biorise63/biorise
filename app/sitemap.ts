@@ -4,6 +4,7 @@ import type { MetadataRoute } from 'next'
 import { articles } from '@/lib/articles'
 import { getUniqueInfusions } from '@/lib/kapelnicy'
 import { checkupPrograms } from '@/lib/checkups'
+import { spravkiItems } from '@/lib/spravki'
 
 const SITE_URL = 'https://biorise-clinic.ru'
 const APP_DIR = path.join(process.cwd(), 'app')
@@ -118,5 +119,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.78,
   }))
 
-  return [...staticEntries, ...articleEntries, ...infusionEntries, ...checkupEntries]
+  const spravkiEntries: MetadataRoute.Sitemap = spravkiItems.map((item) => ({
+    url: `${SITE_URL}/spravki/${item.slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  return [...staticEntries, ...articleEntries, ...infusionEntries, ...checkupEntries, ...spravkiEntries]
 }

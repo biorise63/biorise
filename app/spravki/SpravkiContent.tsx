@@ -1,119 +1,10 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { useBookingModal } from '@/components/BookingModalProvider'
-
-const spravkiData = [
-  {
-    name: 'Справка № 182н',
-    description: 'Медицинская справка установленной формы',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Форма рецептурного бланка №107-1/у',
-    description: 'Рецептурный бланк для получения лекарственных препаратов',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Справка №086/у',
-    description: 'Медицинское заключение для работы, учебы, водительского удостоверения',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'МЕДИЦИНСКОЕ ЗАКЛЮЧЕНИЕ форма № 315/у',
-    description: 'Медицинское заключение установленной формы',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Справка № 405',
-    description: 'Медицинская справка установленной формы',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'ВРАЧЕБНОЕ ЗАКЛЮЧЕНИЕ форма № 084/у',
-    description: 'Врачебное заключение для различных целей',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Паспорт здоровья Учетная форма № 025 /у-ГС',
-    description: 'Паспорт здоровья для прохождения медицинских осмотров',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Заключение Учетная форма № 001-ГС/у',
-    description: 'Медицинское заключение установленной формы',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Медицинское заключение №1144н о допуске спортсменов спортивной команды к участия в спортивном мероприятии',
-    description: 'Медицинское заключение для участия в спортивных мероприятиях',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Медицинское заключение №1144н о допуске к участию в физкультурных и спортивных мероприятиях (учебно-тренировочных мероприятиях и спортивных соревнованиях), мероприятиях по оценке выполнения нормативов испытаний (тестов) Всероссийского физкультурно-спортивного комплекса "Готов к труду и обороне" (ГТО)',
-    description: 'Медицинское заключение для участия в физкультурных и спортивных мероприятиях, ГТО',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'РЕЦЕПТУРНЫЙ БЛАНК Форма № 148-1/у-88',
-    description: 'Рецептурный бланк для получения лекарственных препаратов',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'СПРАВКА Форма № 095/у',
-    description: 'Справка о временной нетрудоспособности',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'МЕДИЦИНСКАЯ СПРАВКА форма №083/У-89',
-    description: 'Медицинская справка для водителей',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Корешок к медицинской справке 082/у',
-    description: 'Корешок к медицинской справке для выезда за границу',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'ЗАКЛЮЧЕНИЕ по результатам предварительного (периодического) медицинского осмотра (обследования)',
-    description: 'Медицинское заключение по результатам профосмотра',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Карта учета диспансеризации (профилактических медицинских осмотров) Учетная форма № 131/у',
-    description: 'Карта учета диспансеризации и профилактических медицинских осмотров',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'Справка для получения путевки Форма № 070/у-04',
-    description: 'Медицинская справка для получения санаторно-курортной путевки',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-  {
-    name: 'САНАТОРНО-КУРОРТНАЯ КАРТА Форма N 076/у-04',
-    description: 'Санитарно-курортная карта для лечения в санатории',
-    price: '1 000-1 600 ₽',
-    duration: '1-2 дня',
-  },
-]
+import { spravkiItems } from '@/lib/spravki'
 
 export default function SpravkiContent() {
   const { openBookingModal } = useBookingModal()
@@ -170,21 +61,23 @@ export default function SpravkiContent() {
 
             {/* Table Body */}
             <div className="divide-y divide-olive-primary/10">
-              {spravkiData.map((item, index) => (
+              {spravkiItems.map((item, index) => (
                 <motion.div
-                  key={index}
+                  key={item.slug}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
-                  className="group grid grid-cols-12 gap-4 p-6 hover:bg-olive-primary/5 transition-all duration-300 cursor-pointer"
+                  className="group grid grid-cols-12 gap-4 p-6 hover:bg-olive-primary/5 transition-all duration-300"
                 >
                   <div className="col-span-12 md:col-span-6 lg:col-span-7">
-                    <h4 className="text-lg font-semibold text-olive-primary mb-2 group-hover:text-olive-light transition-colors">
-                      {item.name}
-                    </h4>
-                    <p className="text-sm text-olive-text leading-relaxed">
-                      {item.description}
-                    </p>
+                    <Link href={`/spravki/${item.slug}/`} className="block">
+                      <h4 className="text-lg font-semibold text-olive-primary mb-2 group-hover:text-olive-light transition-colors">
+                        {item.name}
+                      </h4>
+                      <p className="text-sm text-olive-text leading-relaxed">
+                        {item.shortDescription}
+                      </p>
+                    </Link>
                   </div>
                   <div className="col-span-6 md:col-span-3 lg:col-span-2 flex items-center justify-center">
                     <span className="text-xl font-bold text-olive-primary group-hover:text-olive-light transition-colors">
