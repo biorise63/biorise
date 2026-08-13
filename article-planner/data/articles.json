@@ -1562,5 +1562,30 @@
     "source": "manual",
     "createdAt": "2026-08-13",
     "updatedAt": "2026-08-13"
+  },
+  {
+    "id": "otravlenie-v-samare-kapelnitsa-vmesto-tabletok",
+    "keyword": "отравление самара",
+    "secondaryKeywords": [
+      "капельница при отравлении",
+      "лечение отравления капельница"
+    ],
+    "priority": "высокий",
+    "intent": "коммерческий",
+    "status": "published",
+    "published": true,
+    "title": "Лечение отравления в Самаре капельницей: быстрое облегчение без таблеток",
+    "h1": "Лечение отравления в Самаре: капельница вместо таблеток",
+    "description": "Капельница при отравлении в Самаре: как она помогает быстрее таблеток при рвоте и обезвоживании, и когда вместо клиники нужна скорая помощь.",
+    "url": "/articles/otravlenie-v-samare-kapelnitsa-vmesto-tabletok/",
+    "internalLinks": [
+      "/analizy/",
+      "/kapelnicy/detoksikatsiya-otravlenie/",
+      "/articles/kapelnitsa-pri-otravlenii-kogda-nuzhna-podderzhka/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-13. Wordstat: отравление самара 145/мес. Та же честная подача, что у ОРВИ/гриппа, плюс обязательный блок про скорую при тяжёлом отравлении.",
+    "source": "manual",
+    "createdAt": "2026-08-13",
+    "updatedAt": "2026-08-13"
   }
 ]
