@@ -1587,5 +1587,81 @@
     "source": "manual",
     "createdAt": "2026-08-13",
     "updatedAt": "2026-08-13"
+  },
+  {
+    "id": "alt-ast-povysheny-chto-znachit",
+    "keyword": "алт крови повышен что значит",
+    "secondaryKeywords": [
+      "аст алт повышена что это значит",
+      "алт и аст повышен что это значит"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "АЛТ и АСТ повышены: что это значит",
+    "h1": "АЛТ и АСТ повышены: что это значит",
+    "description": "Разбираем, что показывают печёночные ферменты АЛТ и АСТ, какие причины приводят к их повышению и что делать, если результат анализа вышел за границы нормы.",
+    "url": "/articles/alt-ast-povysheny-chto-znachit/",
+    "internalLinks": [
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/chek-apy/",
+      "/articles/kapelnitsa-dlya-pecheni-dlya-chego-naznachayut/",
+      "/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-14 (любые 3 информационные статьи, 2-4к/мес, с перелинковкой на главную). Wordstat: «алт крови повышен что значит» 2118/мес (головная фраза «алт повышен что это значит» 5101/мес — слишком высокая, взят более узкий вариант).",
+    "source": "daily-seo",
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14"
+  },
+  {
+    "id": "analiz-na-ttg-i-t4-chto-pokazyvaet",
+    "keyword": "анализ на ттг и т4",
+    "secondaryKeywords": [
+      "анализ на ттг",
+      "анализ на гормоны ттг"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Анализ на ТТГ и Т4: что показывают эти анализы",
+    "h1": "Анализ на ТТГ и Т4: что показывают эти анализы",
+    "description": "Объясняем, что такое ТТГ и Т4, зачем их проверяют вместе, о чём говорит повышенный и пониженный результат и когда стоит обратиться к эндокринологу.",
+    "url": "/articles/analiz-na-ttg-i-t4-chto-pokazyvaet/",
+    "internalLinks": [
+      "/analizy/",
+      "/chek-apy/",
+      "/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-14. Wordstat: «анализ на ттг и т4» 2949/мес (головная фраза «анализ на ттг» 21899/мес — слишком высокая, взят более узкий вариант). Автор boboeva (эндокринолог) по тематике щитовидной железы.",
+    "source": "daily-seo",
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14"
+  },
+  {
+    "id": "analiz-na-vitamin-b12-kogda-naznachayut",
+    "keyword": "анализ на витамин в12",
+    "secondaryKeywords": [
+      "витамин в12 анализ крови",
+      "витамин в12 сдать анализ"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Анализ на витамин B12: когда его назначают",
+    "h1": "Анализ на витамин B12: когда его назначают",
+    "description": "Разбираем, для чего организму нужен витамин B12, какие симптомы говорят о его дефиците и когда врач может назначить анализ и последующую коррекцию.",
+    "url": "/articles/analiz-na-vitamin-b12-kogda-naznachayut/",
+    "internalLinks": [
+      "/analizy/ferritin/",
+      "/analizy/",
+      "/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-14. Wordstat: «анализ на витамин в12» 3099/мес.",
+    "source": "daily-seo",
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14"
   }
 ]
