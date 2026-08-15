@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-07T12:20:10.284Z",
-  "note": "Резерв content-map.json (500+ тем) в этот прогон не проверялся через Wordstat — обогащается по мере продвижения темы из резерва в очередь (экономия квоты).",
+  "note": "Резерв content-map.json (500+ тем) в этот прогон не проверялся через Wordstat — обогащается по мере продвижения темы из резерва в очередь (экономия квоты). Точечно дополнено 2026-08-15: добавлены кластеры для статей, опубликованных 2026-08-08..2026-08-15 через ручные запросы и /daily-seo, которые раньше не попадали в этот файл (wordstatDemand взят из notes в articles.json на момент публикации, lsi не пересобирался).",
   "clusters": [
     {
       "id": "chek-ap-posle-40",
@@ -981,6 +981,290 @@
       "conflictsWith": [
         "sport-silovaya-kak-podbirayut-kapelnitsu"
       ]
+    },
+    {
+      "id": "kakie-testy-na-tuberkulez",
+      "page": "/articles/kakie-testy-na-tuberkulez/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "какой тест на туберкулез",
+      "wordstatDemand": 2229,
+      "lsi": [],
+      "secondaryKeywords": [
+        "тест на туберкулез",
+        "анализ на туберкулез",
+        "диаскинтест",
+        "туберкулиновая проба",
+        "t-spot тест на туберкулез"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "t-spot-chto-pokazyvaet-analiz-i-kak-chitat-rezultat",
+      "page": "/articles/t-spot-chto-pokazyvaet-analiz-i-kak-chitat-rezultat/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "анализ т-спот",
+      "wordstatDemand": 2329,
+      "lsi": [],
+      "secondaryKeywords": [
+        "т-спот тест",
+        "т-спот на туберкулез",
+        "т-спот что это такое"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "analiz-na-vitamin-d-kogda-i-zachem-sdavat",
+      "page": "/articles/analiz-na-vitamin-d-kogda-i-zachem-sdavat/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "анализ на витамин д цена",
+      "wordstatDemand": 3564,
+      "lsi": [],
+      "secondaryKeywords": [
+        "витамин д анализ цена",
+        "сдать анализ на витамин д",
+        "анализ на витамин д самара"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "ekg-chto-pokazyvaet-i-kogda-naznachayut",
+      "page": "/articles/ekg-chto-pokazyvaet-i-kogda-naznachayut/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "что показывает экг",
+      "wordstatDemand": 3735,
+      "lsi": [],
+      "secondaryKeywords": [
+        "экг сердца",
+        "экг что показывает у взрослого"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "mochevaya-kislota-chto-oznachaet-povyshenny-uroven",
+      "page": "/articles/mochevaya-kislota-chto-oznachaet-povyshenny-uroven/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "анализ крови на мочевую кислоту",
+      "wordstatDemand": 3536,
+      "lsi": [],
+      "secondaryKeywords": [
+        "анализ на мочевую кислоту",
+        "анализ на мочевую кислоту цена"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "obshchiy-belok-v-krovi-o-chem-govorit-pokazatel",
+      "page": "/articles/obshchiy-belok-v-krovi-o-chem-govorit-pokazatel/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "общий анализ белка в крови",
+      "wordstatDemand": 3086,
+      "lsi": [],
+      "secondaryKeywords": [
+        "анализ общий белок"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "analiz-na-kreatinin-kak-otsenivayut-rabotu-pochek",
+      "page": "/articles/analiz-na-kreatinin-kak-otsenivayut-rabotu-pochek/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "анализ крови креатинин у мужчин",
+      "wordstatDemand": 2618,
+      "lsi": [],
+      "secondaryKeywords": [
+        "креатинин анализ крови"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "ishemicheskaya-bolezn-serdtsa-simptomy",
+      "page": "/articles/ishemicheskaya-bolezn-serdtsa-simptomy/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "ишемическая болезнь сердца симптомы",
+      "wordstatDemand": 2808,
+      "lsi": [],
+      "secondaryKeywords": [
+        "ишемическая болезнь сердца симптомы лечение"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "orvi-v-samare-kapelnitsa-vmesto-tabletok",
+      "page": "/articles/orvi-v-samare-kapelnitsa-vmesto-tabletok/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "орви самара",
+      "wordstatDemand": 62,
+      "lsi": [],
+      "secondaryKeywords": [
+        "лечение орви капельница",
+        "капельница при орви самара"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "gripp-v-samare-kapelnitsa-vmesto-tabletok",
+      "page": "/articles/gripp-v-samare-kapelnitsa-vmesto-tabletok/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "грипп самара",
+      "wordstatDemand": 124,
+      "lsi": [],
+      "secondaryKeywords": [
+        "капельница при гриппе",
+        "лечение гриппа капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "otravlenie-v-samare-kapelnitsa-vmesto-tabletok",
+      "page": "/articles/otravlenie-v-samare-kapelnitsa-vmesto-tabletok/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "отравление самара",
+      "wordstatDemand": 145,
+      "lsi": [],
+      "secondaryKeywords": [
+        "капельница при отравлении",
+        "лечение отравления капельница"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "alt-ast-povysheny-chto-znachit",
+      "page": "/articles/alt-ast-povysheny-chto-znachit/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "алт крови повышен что значит",
+      "wordstatDemand": 2118,
+      "lsi": [],
+      "secondaryKeywords": [
+        "аст алт повышена что это значит",
+        "алт и аст повышен что это значит"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "analiz-na-ttg-i-t4-chto-pokazyvaet",
+      "page": "/articles/analiz-na-ttg-i-t4-chto-pokazyvaet/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "анализ на ттг и т4",
+      "wordstatDemand": 2949,
+      "lsi": [],
+      "secondaryKeywords": [
+        "анализ на ттг",
+        "анализ на гормоны ттг"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "analiz-na-vitamin-b12-kogda-naznachayut",
+      "page": "/articles/analiz-na-vitamin-b12-kogda-naznachayut/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "анализ на витамин в12",
+      "wordstatDemand": 3099,
+      "lsi": [],
+      "secondaryKeywords": [
+        "витамин в12 анализ крови",
+        "витамин в12 сдать анализ"
+      ],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kapelnitsa-s-magniem-dlya-chego-naznachayut",
+      "page": "/articles/kapelnitsa-s-magniem-dlya-chego-naznachayut/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "капельница с магнием",
+      "wordstatDemand": 1481,
+      "lsi": [],
+      "secondaryKeywords": [],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "srb-analiz-krovi-chto-pokazyvaet",
+      "page": "/articles/srb-analiz-krovi-chto-pokazyvaet/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "срб анализ крови что это показывает",
+      "wordstatDemand": 2884,
+      "lsi": [],
+      "secondaryKeywords": [],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kakie-analizy-sdayut-pered-operatsiey",
+      "page": "/articles/kakie-analizy-sdayut-pered-operatsiey/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "какие анализы сдают перед операцией",
+      "wordstatDemand": 2996,
+      "lsi": [],
+      "secondaryKeywords": [],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "aritmiya-serdtsa-simptomy-i-prichiny",
+      "page": "/articles/aritmiya-serdtsa-simptomy-i-prichiny/",
+      "status": "published",
+      "section": "высокий",
+      "mainKeyword": "аритмия сердца симптомы причины",
+      "wordstatDemand": 1895,
+      "lsi": [],
+      "secondaryKeywords": [],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "kak-chasto-mozhno-delat-massazh",
+      "page": "/articles/kak-chasto-mozhno-delat-massazh/",
+      "status": "published",
+      "section": "средний",
+      "mainKeyword": "как часто можно делать массаж",
+      "wordstatDemand": 3084,
+      "lsi": [],
+      "secondaryKeywords": [],
+      "gsc": null,
+      "conflictsWith": []
+    },
+    {
+      "id": "bioimpedansometriya-chto-eto-takoe",
+      "page": "/articles/bioimpedansometriya-chto-eto-takoe/",
+      "status": "published",
+      "section": "средний",
+      "mainKeyword": "биоимпедансометрия что это такое",
+      "wordstatDemand": 1435,
+      "lsi": [],
+      "secondaryKeywords": [],
+      "gsc": null,
+      "conflictsWith": []
     }
   ],
   "conflicts": [
