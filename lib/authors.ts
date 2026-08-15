@@ -32,6 +32,12 @@ export const authors: Record<string, Author> = {
     role: 'Косметолог-эстетист',
     avatar: '/optimized/doctors/malofeeva.webp',
   },
+  zakharov: {
+    id: 'zakharov',
+    name: 'Захаров Александр Владимирович',
+    role: 'Косметик-эстетист по уходу за телом, массажист',
+    avatar: '/optimized/doctors/zakharov.webp',
+  },
 }
 
 export function getAuthor(authorId?: string): Author | null {
