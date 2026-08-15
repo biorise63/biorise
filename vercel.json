@@ -1,6 +1,19 @@
 {
   "cleanUrls": false,
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "biorise-r4do.vercel.app"
+        }
+      ],
+      "destination": "https://biorise-clinic.ru/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/sitemap",
