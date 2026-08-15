@@ -1792,5 +1792,26 @@
     "source": "daily-seo",
     "createdAt": "2026-08-15",
     "updatedAt": "2026-08-15"
+  },
+  {
+    "id": "detoks-v-samare-kapelnitsa",
+    "keyword": "детокс самара",
+    "secondaryKeywords": [],
+    "priority": "высокий",
+    "intent": "коммерческий",
+    "status": "idea",
+    "published": false,
+    "title": "",
+    "h1": "",
+    "description": "",
+    "url": "/articles/detoks-v-samare-kapelnitsa/",
+    "internalLinks": [
+      "/kapelnicy/detoks-standart/",
+      "/analizy/"
+    ],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-15, забронирована на следующий /daily-seo прогон. Wordstat: детокс самара 123/мес (гео-хвост низкочастотный, тот же паттерн, что у ОРВИ/Грипп/Отравление Самара - честная подача без завышенных обещаний). Title/H1 пришлю на согласование перед написанием, как обычно. Основная услуга для перелинковки - /kapelnicy/detoks-standart/ (Капельница «Детокс»).",
+    "source": "manual",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
   }
 ]
