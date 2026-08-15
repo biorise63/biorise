@@ -1663,5 +1663,134 @@
     "source": "daily-seo",
     "createdAt": "2026-08-14",
     "updatedAt": "2026-08-14"
+  },
+  {
+    "id": "kapelnitsa-s-magniem-dlya-chego-naznachayut",
+    "keyword": "капельница с магнием",
+    "secondaryKeywords": [],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Капельница с магнием: для чего назначают",
+    "h1": "Капельница с магнием: для чего назначают",
+    "description": "Разбираем, для чего организму нужен магний, когда врач может обсуждать капельницу с магнием, какой эффект ожидают и в каких случаях сначала нужны анализы.",
+    "url": "/articles/kapelnitsa-s-magniem-dlya-chego-naznachayut/",
+    "internalLinks": [
+      "/kapelnicy/antistress/",
+      "/analizy/",
+      "/articles/vitaminnye-kapelnitsy/"
+    ],
+    "notes": "Заказана в рамках первого /daily-seo прогона на стандартном темпе (4 основные + 2 вспомогательные), 2026-08-15. Wordstat: «капельница с магнием» 1481/мес. Продолжает серию «капельница с X» (Гептрал, глутатион).",
+    "source": "daily-seo",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": "srb-analiz-krovi-chto-pokazyvaet",
+    "keyword": "срб анализ крови что это показывает",
+    "secondaryKeywords": [],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "СРБ в анализе крови: что показывает этот показатель",
+    "h1": "СРБ в анализе крови: что показывает этот показатель",
+    "description": "Разбираем, что такое С-реактивный белок, зачем его проверяют, о чём говорит повышенный уровень СРБ и как подготовиться к сдаче анализа.",
+    "url": "/articles/srb-analiz-krovi-chto-pokazyvaet/",
+    "internalLinks": [
+      "/chek-apy/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/articles/obshchiy-belok-v-krovi-o-chem-govorit-pokazatel/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-15. Wordstat: «срб анализ крови что это показывает» 2884/мес (головная фраза «срб анализ крови что это» 15748/мес - слишком высокая, взят более узкий вариант).",
+    "source": "daily-seo",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": "kakie-analizy-sdayut-pered-operatsiey",
+    "keyword": "какие анализы сдают перед операцией",
+    "secondaryKeywords": [],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Какие анализы сдают перед операцией",
+    "h1": "Какие анализы сдают перед операцией",
+    "description": "Разбираем, зачем нужно предоперационное обследование, какие анализы и исследования обычно в него входят и сколько действуют результаты.",
+    "url": "/articles/kakie-analizy-sdayut-pered-operatsiey/",
+    "internalLinks": [
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/ekg/",
+      "/chek-apy/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-15. Wordstat: «какие анализы сдают перед операцией» 2996/мес.",
+    "source": "daily-seo",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": "aritmiya-serdtsa-simptomy-i-prichiny",
+    "keyword": "аритмия сердца симптомы причины",
+    "secondaryKeywords": [],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Аритмия сердца: симптомы и причины нарушения ритма",
+    "h1": "Аритмия сердца: симптомы и причины нарушения ритма",
+    "description": "Разбираем, какие симптомы аритмии встречаются чаще всего, какие причины приводят к нарушению сердечного ритма и когда нужно сделать ЭКГ.",
+    "url": "/articles/aritmiya-serdtsa-simptomy-i-prichiny/",
+    "internalLinks": [
+      "/ekg/",
+      "/analizy/",
+      "/articles/ishemicheskaya-bolezn-serdtsa-simptomy/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-15. Wordstat: «аритмия сердца симптомы причины» 1895/мес (по запросу пользователя - менее частотный запрос, чем головная фраза «аритмия сердца симптомы» 4629/мес).",
+    "source": "daily-seo",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": "kak-chasto-mozhno-delat-massazh",
+    "keyword": "как часто можно делать массаж",
+    "secondaryKeywords": [],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Как часто можно делать массаж: рекомендации по частоте",
+    "h1": "Как часто можно делать массаж: рекомендации по частоте",
+    "description": "Разбираем, от чего зависит частота массажа, чем отличается график для расслабляющего, лечебного и антицеллюлитного массажа и когда лучше сделать перерыв.",
+    "url": "/articles/kak-chasto-mozhno-delat-massazh/",
+    "internalLinks": [
+      "/ruchnoy-massazh/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-15, по запросу пользователя заменила статью про БАДы (ключ «как часто можно делать массаж», 3084/мес, перелинковка на /ruchnoy-massazh/). Автор zakharov (косметик-эстетист по уходу за телом, массажист) - добавлен как новый автор в lib/authors.ts и в таблицу авторов daily-seo.md.",
+    "source": "daily-seo",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
+  },
+  {
+    "id": "bioimpedansometriya-chto-eto-takoe",
+    "keyword": "биоимпедансометрия что это такое",
+    "secondaryKeywords": [],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Биоимпедансометрия: что это такое и что показывает",
+    "h1": "Биоимпедансометрия: что это такое и что показывает",
+    "description": "Разбираем, как работает биоимпедансометрия, какие показатели состава тела она измеряет, кому подходит и как подготовиться к исследованию.",
+    "url": "/articles/bioimpedansometriya-chto-eto-takoe/",
+    "internalLinks": [
+      "/bioimpedance/",
+      "/chek-apy/"
+    ],
+    "notes": "Заказана в рамках /daily-seo прогона 2026-08-15. Wordstat: «биоимпедансометрия что это такое» 1435/мес.",
+    "source": "daily-seo",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15"
   }
 ]
