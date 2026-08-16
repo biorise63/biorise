@@ -284,6 +284,10 @@ function parseSections(lines) {
   for (const raw of lines) {
     const line = raw.trim()
     if (!line) continue
+    // Стоящий отдельной строкой номер без текста (артефакт разметки в старых
+    // .txt-файлах, где "01" и текст к нему разделены пустой строкой) - пропускаем,
+    // иначе UI отрисовывает пустой пункт списка с одной только цифрой в кружке.
+    if (/^\d+[.)]?$/.test(line)) continue
     const lower = line.toLowerCase()
     const foundKey = Object.keys(sectionMap).find((k) => lower.startsWith(k))
     if (foundKey) {
@@ -332,11 +336,16 @@ function parseInfusion(entry) {
     'я подтверждаюсь, что ознакомлен',
     'даю согласие',
   ]
+  // Ярлыки вкладок-фильтров со старого сайта ("Стандартные / Антиэйдж / Премиум"),
+  // которые в конце .txt-файла шли после блока "Записаться на приём" и попадали
+  // в последнюю активную секцию (обычно "Эффект") как бессмысленные пункты списка.
+  const tabLabels = new Set(['Стандартные', 'Антиэйдж', 'Премиум'])
   const lines = raw
     .split(/\r?\n/)
     .map((l) => l.trim())
     .filter(Boolean)
     .filter((l) => !blacklist.some((b) => l.toLowerCase().includes(b)))
+    .filter((l) => !tabLabels.has(l))
 
   // краткое описание: берём строго из поля "краткое описание:"
   const shortLine = lines.find((l) => l.toLowerCase().startsWith('краткое описание'))
