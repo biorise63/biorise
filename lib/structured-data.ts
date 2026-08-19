@@ -214,8 +214,8 @@ export function createImageObjectJsonLd({
     contentUrl: absoluteUrl(url),
     name,
     caption: caption || name,
-    creator: { '@id': `${SITE_URL}/#organization` },
-    copyrightHolder: { '@id': `${SITE_URL}/#organization` },
+    creator: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'BIORISE' },
+    copyrightHolder: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'BIORISE' },
     license: `${SITE_URL}/privacy/`,
     acquireLicensePage: `${SITE_URL}/privacy/`,
   }
