@@ -5,7 +5,7 @@ import JsonLd from '@/components/JsonLd'
 import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Капельницы в Самаре — виды и цены | BIORISE',
+  title: 'Виды капельниц в Самаре: цены и состав | BIORISE',
   description:
     'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены, выезд на дом и онлайн-запись.',
   alternates: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: 'ru_RU',
     url: 'https://biorise-clinic.ru/kapelnicy/',
     siteName: 'BIORISE',
-    title: 'Капельницы в Самаре — виды и цены | BIORISE',
+    title: 'Виды капельниц в Самаре: цены и состав | BIORISE',
     description:
       'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены и выезд на дом.',
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Капельницы в Самаре — виды и цены | BIORISE',
+    title: 'Виды капельниц в Самаре: цены и состав | BIORISE',
     description:
       'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены и запись.',
     images: ['https://biorise-clinic.ru/hero-bg.jpg'],
@@ -63,7 +63,7 @@ export default function KapelnicyPage() {
 
   const collectionPageJsonLd = createWebPageJsonLd({
     url: '/kapelnicy/',
-    name: 'Капельницы в Самаре: виды и цены',
+    name: 'Виды капельниц в Самаре: цены и состав',
     description:
       'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены, выезд на дом и онлайн-запись.',
     type: 'CollectionPage',

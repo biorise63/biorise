@@ -85,7 +85,7 @@ export default function KapelnicyPageClient({ categories, menu }: KapelnicyPageC
             ]}
           />
           <h1 className="text-3xl font-heading font-light leading-tight text-olive-primary sm:text-4xl lg:text-5xl">
-            Капельницы в Самаре: виды и цены
+            Виды капельниц в Самаре: цены и состав
           </h1>
           <section className="relative overflow-hidden rounded-[28px] border border-olive-primary/10 bg-white/80 p-5 shadow-premium sm:p-7">
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-olive-primary/10 blur-3xl" />
