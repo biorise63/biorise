@@ -2118,5 +2118,23 @@
     "source": "daily-seo",
     "createdAt": "2026-08-19",
     "updatedAt": "2026-08-19"
+  },
+  {
+    "id": "t-spot-tsena",
+    "keyword": "т-спот цена",
+    "secondaryKeywords": [],
+    "priority": "средний",
+    "intent": "коммерческий",
+    "status": "published",
+    "published": true,
+    "title": "T-SPOT: сколько стоит анализ",
+    "h1": "Сколько стоит анализ T-SPOT",
+    "description": "Разбираем, из чего складывается цена анализа T-SPOT, почему он дороже кожных проб и как узнать актуальную стоимость перед записью.",
+    "url": "/articles/t-spot-tsena/",
+    "internalLinks": ["/analizy/t-spot/", "/articles/kakie-testy-na-tuberkulez/"],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-19, цель - перелинковка на /analizy/t-spot/. Wordstat: 1998/мес. Цена намеренно не зашита в текст (на странице услуги акция до 31 августа), статья отправляет за актуальной ценой на саму страницу анализа.",
+    "source": "manual",
+    "createdAt": "2026-08-19",
+    "updatedAt": "2026-08-19"
   }
 ]
