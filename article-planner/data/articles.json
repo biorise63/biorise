@@ -596,7 +596,6 @@
     ],
     "internalLinks": [
       "/",
-      "/kapelnicy/",
       "/kapelnicy/detoksikatsiya-pechen/",
       "/analizy/",
       "/articles/chek-ap-pecheni/",
@@ -878,7 +877,7 @@
       "FAQ"
     ],
     "internalLinks": [
-      "/kapelnicy/",
+      "/",
       "/kapelnicy/krasota-i-omolozhenie/",
       "/analizy/",
       "/articles/vitaminnye-kapelnitsy/"
@@ -950,7 +949,7 @@
       "FAQ"
     ],
     "internalLinks": [
-      "/kapelnicy/",
+      "/",
       "/articles/vitaminnye-kapelnitsy/",
       "/analizy/",
       "/chek-apy/"
@@ -1529,7 +1528,7 @@
     "description": "Капельница при ОРВИ в Самаре: как она помогает быстрее таблеток при высокой температуре, слабости и обезвоживании, и когда стоит выбрать именно её.",
     "url": "/articles/orvi-v-samare-kapelnitsa-vmesto-tabletok/",
     "internalLinks": [
-      "/kapelnicy/",
+      "/",
       "/analizy/",
       "/articles/kapelnitsa-pri-orvi-kogda-vrach-rassmatrivaet/"
     ],
@@ -1554,7 +1553,7 @@
     "description": "Капельница при гриппе в Самаре: как она помогает быстрее таблеток при высокой температуре, ломоте и обезвоживании, и когда стоит выбрать именно её.",
     "url": "/articles/gripp-v-samare-kapelnitsa-vmesto-tabletok/",
     "internalLinks": [
-      "/kapelnicy/",
+      "/",
       "/analizy/",
       "/articles/kapelnitsa-pri-orvi-kogda-vrach-rassmatrivaet/"
     ],
@@ -2060,7 +2059,7 @@
     "h1": "Для чего назначают капельницу детям",
     "description": "Разбираем, в каких случаях врач может назначить капельницу ребёнку, какие препараты используются и какие анализы нужны заранее.",
     "url": "/articles/dlya-chego-naznachayut-kapelnitsu-detyam/",
-    "internalLinks": ["/kapelnicy/"],
+    "internalLinks": ["/"],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 877/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2078,7 +2077,7 @@
     "h1": "Капельница Рингера: для чего назначают",
     "description": "Разбираем, что такое раствор Рингера, для чего его назначают взрослым и когда врач выбирает именно эту капельницу.",
     "url": "/articles/kapelnitsa-ringera-dlya-chego-naznachayut/",
-    "internalLinks": ["/kapelnicy/"],
+    "internalLinks": ["/"],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 946/мес (узкая формулировка, головной запрос 2252/мес).",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
