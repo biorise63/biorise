@@ -2315,5 +2315,23 @@
     "source": "daily-seo",
     "createdAt": "2026-08-21",
     "updatedAt": "2026-08-21"
+  },
+  {
+    "id": "terzapatid-dlya-pohudeniya",
+    "keyword": "терзапатид для похудения",
+    "secondaryKeywords": [],
+    "priority": "высокий",
+    "intent": "коммерческий",
+    "status": "published",
+    "published": true,
+    "title": "Терзапатид для похудения: что это и как работает",
+    "h1": "Терзапатид для похудения: как действует препарат",
+    "description": "Разбираем, как терзапатид работает при снижении веса, кому его может предложить врач и какие ограничения важно учитывать перед началом курса.",
+    "url": "/articles/terzapatid-dlya-pohudeniya/",
+    "internalLinks": ["/analizy/", "/kapelnicy/terzapatid/", "/"],
+    "notes": "Заказана вручную по запросу пользователя 2026-08-21. Wordstat: 1011/мес. Параллельно создана новая страница каталога /kapelnicy/terzapatid/ (услуга уже была в промо-карусели на главной без своей страницы) - см. data/kapelnicy2/Терзапатид 10 мг.txt.",
+    "source": "manual",
+    "createdAt": "2026-08-21",
+    "updatedAt": "2026-08-21"
   }
 ]
