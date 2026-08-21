@@ -49,7 +49,7 @@ const offers: Offer[] = [
     title: 'Терзапатид 10 мг',
     description: 'Помогает держать аппетит под контролем и снижать вес с врачом.',
     promoCode: '5 500 ₽',
-    href: '/#booking',
+    href: '/kapelnicy/terzapatid/',
     category: 'popular',
     price: '5 500 ₽',
     ...defaultBrand,

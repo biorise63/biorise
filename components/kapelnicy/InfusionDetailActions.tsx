@@ -9,6 +9,7 @@ interface InfusionDetailActionsProps {
 
 export default function InfusionDetailActions({ slug }: InfusionDetailActionsProps) {
   const { openBookingModal } = useBookingModal()
+  const bookingLabel = slug === 'terzapatid' ? 'Записаться на консультацию' : 'Записаться на капельницу'
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row">
@@ -17,7 +18,7 @@ export default function InfusionDetailActions({ slug }: InfusionDetailActionsPro
         onClick={openBookingModal}
         className="inline-flex items-center justify-center rounded-full bg-olive-primary px-6 py-3 text-base font-semibold text-white shadow-premium transition-all hover:-translate-y-0.5 hover:bg-olive-light"
       >
-        Записаться на капельницу
+        {bookingLabel}
       </button>
       <Link
         href="/kapelnicy/"
