@@ -1,14 +1,51 @@
 const fs = require('fs')
 const path = require('path')
-const XLSX = require('xlsx')
 
 const projectRoot = path.resolve(__dirname, '..')
 const csvPath = path.join(projectRoot, 'public', 'docs', 'prajs-analizy.csv')
 const outputPath = path.join(projectRoot, 'data', 'analyses.generated.json')
 
-const workbook = XLSX.readFile(csvPath, { FS: ';', raw: false, codepage: 65001 })
-const sheet = workbook.Sheets[workbook.SheetNames[0]]
-const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' })
+// Читаем CSV построчно вручную (а не через XLSX.readFile) - библиотека XLSX
+// пытается угадывать тип содержимого ячеек и для части строк (26 из 2728)
+// ошибочно распознавала цену как дату Excel (например "1 030,00" превращалось
+// в число 36555.000231481485), из-за чего parsePrice() делил его на 100 и
+// получал неверную цену (366 вместо 1030 для D-димера и т.д.). Ручной парсер
+// всегда отдаёт значения ячеек как обычный текст, что убирает этот класс ошибок.
+function parseCsvLine(line, delimiter = ';') {
+  const cells = []
+  let current = ''
+  let inQuotes = false
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i]
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') {
+          current += '"'
+          i++
+        } else {
+          inQuotes = false
+        }
+      } else {
+        current += ch
+      }
+    } else if (ch === '"') {
+      inQuotes = true
+    } else if (ch === delimiter) {
+      cells.push(current)
+      current = ''
+    } else {
+      current += ch
+    }
+  }
+  cells.push(current)
+  return cells
+}
+
+const rawCsv = fs.readFileSync(csvPath, 'utf-8')
+const rows = rawCsv
+  .split(/\r?\n/)
+  .filter((line) => line.length > 0)
+  .map((line) => parseCsvLine(line))
 
 function cleanText(value) {
   return String(value ?? '')
@@ -27,10 +64,6 @@ function cleanName(value) {
 }
 
 function parsePrice(value) {
-  if (typeof value === 'number' && Number.isFinite(value)) {
-    return value >= 1000 ? Math.round(value / 100) : Math.round(value)
-  }
-
   const normalized = cleanText(value).replace(/\s/g, '').replace(',', '.')
   const parsed = Number(normalized)
   return Number.isFinite(parsed) ? Math.round(parsed) : 0
