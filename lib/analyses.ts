@@ -148,13 +148,13 @@ export const popularAnalyses: PopularAnalysisItem[] = [
     href: '/analizy/analiz-krovi/',
   },
   {
-    code: 'BIOHIM',
+    code: 'БХ-БАЗ',
     title: 'Биохимический анализ крови',
     description: 'Показывает печень, почки, белковый и углеводный обмен.',
     icon: 'biochemistry',
     href: '/analizy/biohimicheskiy-analiz-krovi/',
-    price: 'Уточняйте',
-    turnaround: 'По составу',
+    price: '1 550 ₽',
+    turnaround: '1 к.д.',
     showCode: false,
   },
   {
