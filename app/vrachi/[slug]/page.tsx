@@ -20,8 +20,8 @@ export function generateMetadata({ params }: PageProps) {
   const author = getAuthor(params.slug)
   if (!author) return {}
 
-  const title = `${author.name} — ${author.role} в клинике BIORISE в Самаре`
-  const description = `${author.name}, ${author.role.toLowerCase()} клиники BIORISE в Самаре. ${author.shortBio}. Запись на приём онлайн или по телефону.`
+  const title = author.seoTitle
+  const description = author.seoDescription
 
   return {
     title,
@@ -57,8 +57,8 @@ export default function DoctorPage({ params }: PageProps) {
   const personJsonLd = createDoctorPersonJsonLd(author)
   const webPageJsonLd = createWebPageJsonLd({
     url: `/vrachi/${author.id}/`,
-    name: `${author.name} — ${author.role}`,
-    description: `${author.name}, ${author.role.toLowerCase()} клиники BIORISE в Самаре.`,
+    name: author.seoH1,
+    description: author.seoDescription,
   })
 
   return (

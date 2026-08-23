@@ -50,7 +50,7 @@ export default function DoctorContent({ author }: DoctorContentProps) {
 
             <div className="flex flex-col justify-center">
               <h1 className="text-[32px] font-light leading-[1.1] text-olive-primary sm:text-[38px] lg:text-[44px]">
-                {author.name}
+                {author.seoH1}
               </h1>
               <p className="mt-2 text-lg text-olive-primary">{author.role}</p>
               <p className="mt-1 text-sm text-olive-text">{author.shortBio}</p>
