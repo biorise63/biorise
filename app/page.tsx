@@ -19,7 +19,7 @@ import {
 // import ExitIntentOffersPopup from '@/components/ExitIntentOffersPopup'
 
 export const metadata: Metadata = {
-  title: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
+  title: 'Капельницы в Самаре | Клиника BIORISE',
   description:
     'BIORISE в Самаре: капельницы, анализы и чек-апы под контролем врача. Подбор программы, выезд на дом, цены и онлайн-запись.',
   keywords: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'BIORISE Самара',
   ],
   openGraph: {
-    title: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
+    title: 'Капельницы в Самаре | Клиника BIORISE',
     description:
       'BIORISE в Самаре: капельницы, анализы и чек-апы под контролем врача. Подбор программы, выезд на дом, цены и онлайн-запись.',
     url: 'https://biorise-clinic.ru/',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
+    title: 'Капельницы в Самаре | Клиника BIORISE',
     description:
       'BIORISE в Самаре: капельницы, анализы и чек-апы под контролем врача. Подбор программы, выезд на дом, цены и онлайн-запись.',
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 export default function Home() {
   const pageJsonLd = createWebPageJsonLd({
     url: '/',
-    name: 'Капельницы в Самаре - клиника БИОРАЙЗ | Чек-апы | Анализы',
+    name: 'Капельницы в Самаре | Клиника BIORISE',
     description:
       'BIORISE в Самаре: капельницы, анализы и чек-апы под контролем врача. Подбор программы, выезд на дом, цены и онлайн-запись.',
   })
