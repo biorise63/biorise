@@ -3,6 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +13,7 @@ type Testimonial = {
   designation: string;
   src: string;
   location?: string;
+  href?: string;
 };
 
 export const AnimatedTestimonials = ({
@@ -163,6 +165,21 @@ export const AnimatedTestimonials = ({
               >
                 {testimonials[active].location}
               </motion.p>
+            )}
+            {testimonials[active].href && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.2 }}
+                className="mt-5"
+              >
+                <Link
+                  href={testimonials[active].href!}
+                  className="inline-flex items-center justify-center rounded-full border border-olive-primary/25 px-5 py-2.5 text-sm font-semibold text-olive-primary transition-colors hover:bg-olive-primary/10"
+                >
+                  Подробнее
+                </Link>
+              </motion.div>
             )}
           </motion.div>
           <div className="flex gap-4 pt-6 md:pt-4">

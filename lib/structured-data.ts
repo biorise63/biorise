@@ -275,7 +275,7 @@ export function createDoctorPersonJsonLd(author: {
     name: author.name,
     jobTitle: author.role,
     image: absoluteUrl(author.avatar),
-    url: `${SITE_URL}/#doctors`,
+    url: `${SITE_URL}/vrachi/${author.id}/`,
     worksFor: { '@id': `${SITE_URL}/#organization` },
     affiliation: { '@id': `${SITE_URL}/#medical-clinic` },
   }

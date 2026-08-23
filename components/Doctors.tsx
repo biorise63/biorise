@@ -11,6 +11,7 @@ const doctors = [
     designation: 'Косметолог-эстетист, Мастер лазерной эпиляции',
     src: '/optimized/doctors/malofeeva.webp',
     location: 'Самара, Дыбенко, 27 Б, клиника "Биорайз"',
+    href: '/vrachi/malofeeva/',
   },
   {
     quote: 'Стаж 19 лет',
@@ -18,6 +19,7 @@ const doctors = [
     designation: 'Врач-терапевт',
     src: '/optimized/doctors/potemkina.webp',
     location: 'Самара, Дыбенко, 27 Б, клиника "Биорайз"',
+    href: '/vrachi/potemkina/',
   },
   {
     quote: 'Активно работает с группой пациентов с хроническими заболеваниями (сахарный диабет 1 и 2 типов, диффузный токсический зоб, микроаденома гипофиза, хронический аутоиммунный тиреодит, аденома надпочечников, хроническая надпочечная недостаточность, несахарный диабет).',
@@ -25,6 +27,7 @@ const doctors = [
     designation: 'Врач-эндокринолог',
     src: '/optimized/doctors/boboeva.webp',
     location: 'Самара, Дыбенко, 27 Б, клиника',
+    href: '/vrachi/boboeva/',
   },
   {
     quote: 'Врач интегративной превентивной и антивозрастной медицины.',
@@ -32,6 +35,7 @@ const doctors = [
     designation: 'Врач-диетолог',
     src: '/optimized/doctors/tregubova.webp',
     location: 'Самара, Дыбенко, 27 Б, Клиника "Биорайз"',
+    href: '/vrachi/tregubova/',
   },
   {
     quote: 'Мягкие мануальные техники (ПИР, МФР, грыжи, головные боли). Антицеллюлитный массаж, лимфодренажный массаж. Рефлекторный массаж стоп, баночный массаж.',
@@ -39,6 +43,7 @@ const doctors = [
     designation: 'Косметик эстетист по уходу за телом, Массажист',
     src: '/optimized/doctors/zakharov.webp',
     location: 'Самара, Дыбенко, 27 Б, клиника "Биорайз"',
+    href: '/vrachi/zakharov/',
   },
 ]
 
