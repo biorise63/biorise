@@ -26,12 +26,19 @@ export function generateStaticParams() {
   return getUniqueInfusions().map((infusion) => ({ slug: infusion.slug }))
 }
 
+function truncateAtWord(text: string, maxLength: number) {
+  if (text.length <= maxLength) return text
+  const sliced = text.slice(0, maxLength)
+  const lastSpace = sliced.lastIndexOf(' ')
+  return `${sliced.slice(0, lastSpace > 0 ? lastSpace : maxLength)}...`
+}
+
 export function generateMetadata({ params }: PageProps) {
   const infusion = getInfusionBySlug(params.slug)
   if (!infusion) return {}
 
   const title = `${infusion.title} в Самаре | BIORISE`
-  const description = `${infusion.description.slice(0, 145)}${infusion.description.length > 145 ? '...' : ''}`
+  const description = truncateAtWord(infusion.description, 145)
   const keywords = Array.from(
     new Set(
       [

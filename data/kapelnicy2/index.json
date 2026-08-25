@@ -72,9 +72,9 @@
   {
     "num": 11,
     "category": "Сердце и сосуды",
-    "name": "Капельница для сердца",
+    "name": "Капельница для сосудов",
     "url": "https://biorise.ru/services/kapelnitsa-dlya-serdtsa/",
-    "file": "11. Капельница для сердца.txt"
+    "file": "11. Капельница для сосудов.txt"
   },
   {
     "num": 12,
@@ -194,5 +194,12 @@
     "name": "Терзапатид 10 мг",
     "url": "https://biorise-clinic.ru/kapelnicy/terzapatid/",
     "file": "Терзапатид 10 мг.txt"
+  },
+  {
+    "num": 29,
+    "category": "Сердце и сосуды",
+    "name": "Капельница для сердца",
+    "url": "https://biorise-clinic.ru/kapelnicy/kapelnica-dlya-serdtsa/",
+    "file": "29. Капельница для сердца.txt"
   }
 ]
