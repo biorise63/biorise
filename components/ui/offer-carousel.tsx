@@ -440,7 +440,6 @@ function OfferCard({ offer }: { offer: Offer }) {
             sizes="(max-width: 640px) 180px, 220px"
             className="object-contain scale-[0.86] object-center transition-transform duration-700 group-hover:scale-[0.9] sm:object-contain sm:scale-[0.84] sm:group-hover:scale-[0.88]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/10 to-black/10" />
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 flex h-[60%] flex-col justify-between rounded-t-[24px] bg-white px-4 pb-5 pt-4 sm:h-[54%] sm:rounded-t-[30px] sm:p-5">
