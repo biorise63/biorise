@@ -507,7 +507,6 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
 
     React.useEffect(() => {
       setActiveCardIndex(0)
-      cardRefs.current = []
 
       const container = scrollContainerRef.current
       if (!container) return
