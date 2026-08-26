@@ -69,7 +69,7 @@ export const categoriesConfig = [
   {
     title: 'Энергия и спорт',
     icon: 'bolt',
-    items: ['Капельница Энергия+', 'Спорт силовая', 'Спорт кардио', 'Протеин буст'],
+    items: ['Капельница Энергия+', 'Капельницы для спортсменов', 'Спорт кардио', 'Протеин буст'],
   },
   {
     title: 'Обмен веществ и вес',
@@ -146,7 +146,7 @@ export const nameToSlug: Record<string, string> = {
   'Капельница для сосудов': 'zdorovye-sosudy',
   'Капельница для сердца': 'kapelnica-dlya-serdtsa',
   'Капельница Энергия+': 'energiya',
-  'Спорт силовая': 'sport-silovaya',
+  'Капельницы для спортсменов': 'sport-silovaya',
   'Спорт кардио': 'sport-kardio',
   'Протеин буст': 'protein-bust',
   'Капельница для похудения': 'snizhenie-vesa',
