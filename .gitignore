@@ -29,8 +29,13 @@ yarn-error.log*
 .env
 **/.env
 
-# cloud service account keys (never commit)
+# cloud service account keys and SSH credentials (never commit)
 yc-pipeline/authorized_key.json
+yc-pipeline/vm_ssh_key
+yc-pipeline/vm_ssh_key.pub
+yc-pipeline/*.pem
+yc-pipeline/*_rsa
+yc-pipeline/*_ed25519
 
 # vercel
 .vercel
