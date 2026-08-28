@@ -29,6 +29,9 @@ yarn-error.log*
 .env
 **/.env
 
+# cloud service account keys (never commit)
+yc-pipeline/authorized_key.json
+
 # vercel
 .vercel
 
