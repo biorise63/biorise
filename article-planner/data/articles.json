@@ -1824,7 +1824,10 @@
     "h1": "Натрия хлорид (физраствор) капельница: для чего назначают",
     "description": "Разбираем, что такое раствор натрия хлорида, для чего его назначают внутривенно и чем физраствор отличается от капельниц с другими препаратами.",
     "url": "/articles/natriya-hlorid-kapelnitsa-dlya-chego-naznachayut/",
-    "internalLinks": ["/", "/analizy/"],
+    "internalLinks": [
+      "/",
+      "/analizy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-17, по запросу пользователя перелинковка на главную вместо конкретной услуги. Wordstat: 3107/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-17",
@@ -1842,7 +1845,9 @@
     "h1": "Капельница от давления: когда её назначают",
     "description": "Разбираем, в каких случаях врач может обсуждать капельницу при повышенном давлении, чем она отличается от таблеток и когда вместо капельницы нужна скорая помощь.",
     "url": "/articles/kapelnitsa-ot-davleniya-kogda-naznachayut/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-17, перелинковка на главную по запросу пользователя. Wordstat: 2675/мес. Добавлена оговорка про скорую при давлении выше 200 мм рт.ст., по аналогии с капельницей Гипертонический криз.",
     "source": "daily-seo",
     "createdAt": "2026-08-17",
@@ -1860,7 +1865,9 @@
     "h1": "Сколько стоит поставить капельницу",
     "description": "Разбираем, от чего зависит стоимость капельницы, почему цена отличается в зависимости от состава и формата процедуры, и на что обращать внимание при выборе клиники.",
     "url": "/articles/skolko-stoit-postavit-kapelnitsu/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-17, перелинковка на главную по запросу пользователя. Wordstat: 2161/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-17",
@@ -1878,7 +1885,10 @@
     "h1": "Анализ мочи по Нечипоренко: как правильно собрать",
     "description": "Разбираем, что показывает анализ мочи по Нечипоренко, когда его назначают и как правильно собрать материал, чтобы результат был точным.",
     "url": "/articles/analiz-mochi-po-nechiporenko-kak-sobirat/",
-    "internalLinks": ["/analizy/analiz-mochi/", "/chek-apy/"],
+    "internalLinks": [
+      "/analizy/analiz-mochi/",
+      "/chek-apy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-17. Wordstat: 2764/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-17",
@@ -1896,7 +1906,10 @@
     "h1": "Низкий ферритин: симптомы у женщин",
     "description": "Разбираем, какие симптомы могут говорить о низком ферритине у женщин, почему он снижается и когда стоит проверить запасы железа анализом крови.",
     "url": "/articles/nizkiy-ferritin-simptomy-u-zhenshchin/",
-    "internalLinks": ["/analizy/ferritin/", "/analizy/"],
+    "internalLinks": [
+      "/analizy/ferritin/",
+      "/analizy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-17. Wordstat: 3378/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-17",
@@ -1914,7 +1927,9 @@
     "h1": "Капельница от похмелья на дому: как это работает",
     "description": "Разбираем, как капельница помогает при похмелье, что обычно входит в состав, можно ли делать процедуру дома и когда нужна другая помощь.",
     "url": "/articles/kapelnitsa-ot-pohmelya-na-domu/",
-    "internalLinks": ["/kapelnicy/na-domu/"],
+    "internalLinks": [
+      "/kapelnicy/na-domu/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-18. Wordstat: 2323/мес. По запросу пользователя перелинковка не на главную, а на /kapelnicy/na-domu/.",
     "source": "daily-seo",
     "createdAt": "2026-08-18",
@@ -1932,7 +1947,9 @@
     "h1": "Капельница с глюкозой: для чего назначают",
     "description": "Разбираем, для чего назначают капельницу с глюкозой, чем она отличается от физраствора и в каких случаях врач выбирает именно этот раствор.",
     "url": "/articles/glyukoza-kapelnitsa-dlya-chego-naznachayut/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-18, перелинковка на главную по запросу пользователя (приоритет продвижения). Wordstat: 1142/мес. Ограничение частотности до 3000/мес по явному запросу.",
     "source": "daily-seo",
     "createdAt": "2026-08-18",
@@ -1950,7 +1967,11 @@
     "h1": "Общий анализ мочи: что показывает",
     "description": "Разбираем, что показывает общий анализ мочи, какие показатели в нём оценивают, когда его назначают и как правильно подготовиться к сдаче.",
     "url": "/articles/obshchiy-analiz-mochi-chto-pokazyvaet/",
-    "internalLinks": ["/analizy/", "/chek-apy/", "/analizy/analiz-mochi/"],
+    "internalLinks": [
+      "/analizy/",
+      "/chek-apy/",
+      "/analizy/analiz-mochi/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-18, перелинковка на общую страницу анализов по запросу пользователя. Wordstat: 2758/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-18",
@@ -1968,7 +1989,9 @@
     "h1": "Анализ на аллергены: что нужно знать перед сдачей",
     "description": "Разбираем, что показывает анализ на аллергены, какие виды исследований существуют, от чего зависит цена и как подготовиться к сдаче.",
     "url": "/articles/analiz-na-allergeny-chto-nuzhno-znat/",
-    "internalLinks": ["/analizy/"],
+    "internalLinks": [
+      "/analizy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-18, перелинковка на общую страницу анализов по запросу пользователя. Wordstat: 1657/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-18",
@@ -1986,7 +2009,9 @@
     "h1": "Тахикардия у женщин: симптомы",
     "description": "Разбираем, какие симптомы тахикардии чаще встречаются у женщин, с чем это может быть связано и когда стоит сделать ЭКГ.",
     "url": "/articles/tahikardiya-simptomy-u-zhenshchin/",
-    "internalLinks": ["/ekg/"],
+    "internalLinks": [
+      "/ekg/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-18. Wordstat: 1701/мес. Заменила исходную тему «тахикардия причины» (5708/мес) - превышала лимит 3000/мес по явному запросу пользователя.",
     "source": "daily-seo",
     "createdAt": "2026-08-18",
@@ -2004,7 +2029,9 @@
     "h1": "Полное обследование организма: сколько стоит",
     "description": "Разбираем, от чего зависит стоимость полного обследования организма, что обычно входит в программу и как выбрать подходящий формат.",
     "url": "/articles/polnoe-obsledovanie-organizma-tsena/",
-    "internalLinks": ["/chek-apy/"],
+    "internalLinks": [
+      "/chek-apy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-18. Wordstat: 1038/мес. Заменила исходную тему «диспансеризация в поликлинике что в нее входит» (4562/мес) - превышала лимит 3000/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-18",
@@ -2022,7 +2049,9 @@
     "h1": "Быстрая утомляемость: причины",
     "description": "Разбираем частые причины быстрой утомляемости, какие анализы помогают их найти и когда стоит обратиться к врачу.",
     "url": "/articles/bystraya-utomlyaemost-prichiny/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 1144/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2040,7 +2069,9 @@
     "h1": "Боль в суставах у женщин: причины",
     "description": "Разбираем, какие причины чаще вызывают боль в суставах у женщин, какие анализы и обследования помогают найти источник и когда нужен врач.",
     "url": "/articles/bol-v-sustavah-prichiny-u-zhenshchin/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 2862/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2058,7 +2089,9 @@
     "h1": "Для чего назначают капельницу детям",
     "description": "Разбираем, в каких случаях врач может назначить капельницу ребёнку, какие препараты используются и какие анализы нужны заранее.",
     "url": "/articles/dlya-chego-naznachayut-kapelnitsu-detyam/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 877/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2076,7 +2109,9 @@
     "h1": "Капельница Рингера: для чего назначают",
     "description": "Разбираем, что такое раствор Рингера, для чего его назначают взрослым и когда врач выбирает именно эту капельницу.",
     "url": "/articles/kapelnitsa-ringera-dlya-chego-naznachayut/",
-    "internalLinks": ["/"],
+    "internalLinks": [
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 946/мес (узкая формулировка, головной запрос 2252/мес).",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2094,7 +2129,10 @@
     "h1": "Коагулограмма: что показывает",
     "description": "Разбираем, что показывает коагулограмма, какие показатели в неё входят и когда врач назначает этот анализ.",
     "url": "/articles/koagulogramma-chto-pokazyvaet/",
-    "internalLinks": ["/analizy/", "/chek-apy/"],
+    "internalLinks": [
+      "/analizy/",
+      "/chek-apy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 1370/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2112,7 +2150,9 @@
     "h1": "Д-димер: анализ крови у женщин",
     "description": "Разбираем, что такое анализ на Д-димер, зачем его назначают женщинам и как трактовать результат.",
     "url": "/articles/d-dimer-analiz-krovi-u-zhenshchin/",
-    "internalLinks": ["/analizy/"],
+    "internalLinks": [
+      "/analizy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-19 (6 статей с перелинковкой на главную, /kapelnicy/, /analizy/). Wordstat: 1482/мес. Кросс-ссылка на статью про коагулограмму.",
     "source": "daily-seo",
     "createdAt": "2026-08-19",
@@ -2130,7 +2170,10 @@
     "h1": "Сколько стоит анализ T-SPOT",
     "description": "Разбираем, из чего складывается цена анализа T-SPOT, почему он дороже кожных проб и как узнать актуальную стоимость перед записью.",
     "url": "/articles/t-spot-tsena/",
-    "internalLinks": ["/analizy/t-spot/", "/articles/kakie-testy-na-tuberkulez/"],
+    "internalLinks": [
+      "/analizy/t-spot/",
+      "/articles/kakie-testy-na-tuberkulez/"
+    ],
     "notes": "Заказана вручную по запросу пользователя 2026-08-19, цель - перелинковка на /analizy/t-spot/. Wordstat: 1998/мес. Цена намеренно не зашита в текст (на странице услуги акция до 31 августа), статья отправляет за актуальной ценой на саму страницу анализа.",
     "source": "manual",
     "createdAt": "2026-08-19",
@@ -2148,7 +2191,10 @@
     "h1": "Сухой кашель без температуры: в чём может быть причина",
     "description": "Разбираем частые причины сухого кашля без температуры: от аллергии и раздражения дыхательных путей до состояний, которые требуют осмотра врача.",
     "url": "/articles/suhoy-kashel-bez-temperatury-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-20 (6 случайных медицинских статей, по 1 линку на анализы и на главную в каждой). Wordstat: 1915/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-20",
@@ -2166,7 +2212,10 @@
     "h1": "Вздутие живота после еды: в чём может быть причина",
     "description": "Разбираем, почему после еды возникает вздутие живота: от особенностей питания до состояний пищеварительной системы, которые стоит проверить у врача.",
     "url": "/articles/vzdutie-zhivota-posle-edy-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-20 (6 случайных медицинских статей, по 1 линку на анализы и на главную в каждой). Wordstat: 1762/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-20",
@@ -2184,7 +2233,10 @@
     "h1": "Холодные руки и ноги: в чём может быть причина",
     "description": "Разбираем, почему руки и ноги мёрзнут даже в тепле: от особенностей кровообращения до состояний, которые стоит проверить у врача.",
     "url": "/articles/kholodnye-ruki-i-nogi-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-20 (6 случайных медицинских статей, по 1 линку на анализы и на главную в каждой). Wordstat: 1117/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-20",
@@ -2202,7 +2254,10 @@
     "h1": "Потливость по ночам: в чём может быть причина",
     "description": "Разбираем частые причины ночной потливости: от духоты в спальне до гормональных факторов, которые стоит обсудить с врачом.",
     "url": "/articles/potlivost-po-nocham-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-20 (6 случайных медицинских статей, по 1 линку на анализы и на главную в каждой). Wordstat: 1140/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-20",
@@ -2220,7 +2275,10 @@
     "h1": "Ломота в теле без температуры: в чём может быть причина",
     "description": "Разбираем, почему тело может ломить без температуры: от переутомления и стресса до состояний, которые стоит показать врачу.",
     "url": "/articles/lomota-v-tele-bez-temperatury-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-20 (6 случайных медицинских статей, по 1 линку на анализы и на главную в каждой). Wordstat: 654/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-20",
@@ -2238,7 +2296,10 @@
     "h1": "Скачки давления у женщин: в чём может быть причина",
     "description": "Разбираем, почему у женщин может резко меняться артериальное давление: от гормональных колебаний до состояний, требующих внимания врача.",
     "url": "/articles/skachki-davleniya-prichiny-u-zhenshchin/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-20 (6 случайных медицинских статей, по 1 линку на анализы и на главную в каждой). Wordstat: 452/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-20",
@@ -2256,7 +2317,11 @@
     "h1": "Что такое холтеровское мониторирование ЭКГ",
     "description": "Объясняем, что такое холтер ЭКГ, чем он отличается от обычной кардиограммы и в каких ситуациях врач может назначить суточное мониторирование.",
     "url": "/articles/holter-ekg-chto-eto/",
-    "internalLinks": ["/articles/aritmiya-serdtsa-simptomy-i-prichiny/", "/analizy/", "/chek-apy/"],
+    "internalLinks": [
+      "/articles/aritmiya-serdtsa-simptomy-i-prichiny/",
+      "/analizy/",
+      "/chek-apy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-21. Wordstat: 373/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-21",
@@ -2274,7 +2339,11 @@
     "h1": "Норма холестерина: как читать результат анализа",
     "description": "Разбираем, какие показатели входят в анализ на холестерин, что считается нормой и почему результат важно оценивать не по одной цифре.",
     "url": "/articles/analiz-na-holesterin-norma/",
-    "internalLinks": ["/analizy/", "/chek-apy/", "/articles/ishemicheskaya-bolezn-serdtsa-simptomy/"],
+    "internalLinks": [
+      "/analizy/",
+      "/chek-apy/",
+      "/articles/ishemicheskaya-bolezn-serdtsa-simptomy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-21. Wordstat: 504/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-21",
@@ -2292,7 +2361,11 @@
     "h1": "Когда сдают анализ на пролактин",
     "description": "Разбираем, что такое пролактин, при каких жалобах врач может назначить этот анализ и как правильно подготовиться к сдаче крови.",
     "url": "/articles/analiz-na-prolaktin-kogda-sdavat/",
-    "internalLinks": ["/analizy/", "/articles/analiz-na-ttg-i-t4-chto-pokazyvaet/", "/chek-apy/"],
+    "internalLinks": [
+      "/analizy/",
+      "/articles/analiz-na-ttg-i-t4-chto-pokazyvaet/",
+      "/chek-apy/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-21. Wordstat: 457/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-21",
@@ -2310,7 +2383,12 @@
     "h1": "Какие анализы стоит сдать при выпадении волос",
     "description": "Разбираем, какие анализы помогают найти причину выпадения волос: от дефицита железа до нарушений работы щитовидной железы.",
     "url": "/articles/kakie-analizy-sdat-pri-vypadenii-volos/",
-    "internalLinks": ["/articles/analiz-na-ttg-i-t4-chto-pokazyvaet/", "/articles/analiz-na-vitamin-d-kogda-i-zachem-sdavat/", "/analizy/", "/"],
+    "internalLinks": [
+      "/articles/analiz-na-ttg-i-t4-chto-pokazyvaet/",
+      "/articles/analiz-na-vitamin-d-kogda-i-zachem-sdavat/",
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-21. Wordstat: 5159/мес. По просьбе пользователя добавлена ссылка на главную (анкор капельница) - 3-я из требуемых 3 статей с линком на главную в этом прогоне.",
     "source": "daily-seo",
     "createdAt": "2026-08-21",
@@ -2328,7 +2406,11 @@
     "h1": "Терзапатид для похудения: как действует препарат",
     "description": "Разбираем, как терзапатид работает при снижении веса, кому его может предложить врач и какие ограничения важно учитывать перед началом курса.",
     "url": "/articles/terzapatid-dlya-pohudeniya/",
-    "internalLinks": ["/analizy/", "/kapelnicy/terzapatid/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/kapelnicy/terzapatid/",
+      "/"
+    ],
     "notes": "Заказана вручную по запросу пользователя 2026-08-21. Wordstat: 1011/мес. Параллельно создана новая страница каталога /kapelnicy/terzapatid/ (услуга уже была в промо-карусели на главной без своей страницы) - см. data/kapelnicy2/Терзапатид 10 мг.txt.",
     "source": "manual",
     "createdAt": "2026-08-21",
@@ -2346,7 +2428,10 @@
     "h1": "Почему возникает сухость глаз",
     "description": "Разбираем частые причины сухости глаз: от работы за компьютером до дефицитов и состояний, которые стоит проверить у врача.",
     "url": "/articles/suhost-glaz-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-22 (6 случайных медицинских статей, по 1 линку на анализы и на главную). Wordstat: 1508/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-22",
@@ -2364,7 +2449,10 @@
     "h1": "О чём может говорить тяжесть в правом подреберье",
     "description": "Разбираем частые причины тяжести в правом подреберье: от переедания и погрешностей в питании до состояний, которые нужно проверить у врача.",
     "url": "/articles/tyazhest-v-pravom-podrebere-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-22 (6 случайных медицинских статей, по 1 линку на анализы и на главную). Wordstat: 732/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-22",
@@ -2382,7 +2470,10 @@
     "h1": "Тремор рук у женщин: возможные причины",
     "description": "Разбираем, почему у женщин может дрожать руки: от стресса и недосыпа до состояний, которые важно исключить вместе с врачом.",
     "url": "/articles/tremor-ruk-prichiny-u-zhenshchin/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-22 (6 случайных медицинских статей, по 1 линку на анализы и на главную). Wordstat: 944/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-22",
@@ -2400,7 +2491,10 @@
     "h1": "Почему после еды возникает изжога",
     "description": "Разбираем частые причины изжоги после еды: от переедания и определённых продуктов до состояний желудочно-кишечного тракта.",
     "url": "/articles/izzhoga-posle-edy-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-22 (6 случайных медицинских статей, по 1 линку на анализы и на главную). Wordstat: 1827/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-22",
@@ -2418,7 +2512,10 @@
     "h1": "Учащённое сердцебиение у женщин: когда стоит насторожиться",
     "description": "Разбираем, почему у женщин может учащаться сердцебиение: от стресса и гормональных колебаний до состояний, требующих внимания врача.",
     "url": "/articles/uchashchennoe-serdtsebienie-prichiny-u-zhenshchin/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-22 (6 случайных медицинских статей, по 1 линку на анализы и на главную). Wordstat: 896/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-22",
@@ -2436,7 +2533,10 @@
     "h1": "Что может быть причиной частых головных болей у женщин",
     "description": "Разбираем частые причины головной боли у женщин: от гормональных колебаний и стресса до состояний, которые важно исключить у врача.",
     "url": "/articles/chastye-golovnye-boli-prichiny-u-zhenshchin/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-22 (6 случайных медицинских статей, по 1 линку на анализы и на главную). Wordstat: 693/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-22",
@@ -2454,7 +2554,10 @@
     "h1": "Рацион питания на неделю для похудения: как его составить",
     "description": "Разбираем, из чего складывается рацион питания на неделю для похудения и почему готовые меню из интернета подходят не всем.",
     "url": "/articles/racion-pitaniya-na-nedelyu-dlya-pohudeniya/",
-    "internalLinks": ["/analizy/", "/vrachi/tregubova/"],
+    "internalLinks": [
+      "/analizy/",
+      "/vrachi/tregubova/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-23 (3 статьи по диетологии с линком на страницу врача-диетолога Трегубовой + 3 случайные с линком на главную/анализы). Wordstat: 792/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-23",
@@ -2472,7 +2575,10 @@
     "h1": "Питание после 40 лет: что важно учитывать женщинам",
     "description": "Разбираем, как меняются потребности организма после 40 лет и что стоит учитывать женщинам при построении рациона.",
     "url": "/articles/pitanie-posle-40-let-dlya-zhenshchin/",
-    "internalLinks": ["/analizy/", "/vrachi/tregubova/"],
+    "internalLinks": [
+      "/analizy/",
+      "/vrachi/tregubova/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-23. Wordstat: 616/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-23",
@@ -2490,7 +2596,10 @@
     "h1": "Питание при жировом гепатозе: основные принципы",
     "description": "Разбираем основные принципы питания при жировом гепатозе печени и почему изменение рациона - основа лечения этого состояния.",
     "url": "/articles/pitanie-pri-zhirovom-gepatoze/",
-    "internalLinks": ["/analizy/", "/vrachi/tregubova/"],
+    "internalLinks": [
+      "/analizy/",
+      "/vrachi/tregubova/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-23. Wordstat: 1287/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-23",
@@ -2508,7 +2617,10 @@
     "h1": "Боль в мышцах без видимой причины: что это может быть",
     "description": "Разбираем частые причины боли в мышцах без видимой причины: от переутомления и дефицитов до состояний, которые стоит проверить у врача.",
     "url": "/articles/bol-v-myshtsah-bez-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-23. Wordstat: 935/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-23",
@@ -2526,7 +2638,10 @@
     "h1": "Онемение лица: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины онемения лица: от неудобного положения и стресса до состояний, которые требуют срочного внимания врача.",
     "url": "/articles/onemenie-litsa-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-23. Wordstat: 1240/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-23",
@@ -2544,7 +2659,10 @@
     "h1": "Дрожь в теле: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины дрожи в теле: от стресса и переутомления до состояний, которые важно исключить вместе с врачом.",
     "url": "/articles/drozh-v-tele-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-23. Wordstat: 1762/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-23",
@@ -2562,7 +2680,10 @@
     "h1": "Сухость во рту по ночам: почему это происходит",
     "description": "Разбираем частые причины сухости во рту по ночам: от дыхания через рот и лекарств до состояний, которые стоит проверить у врача.",
     "url": "/articles/suhost-vo-rtu-nochyu-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 694/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2580,7 +2701,10 @@
     "h1": "Учащённое мочеиспускание у женщин: возможные причины",
     "description": "Разбираем частые причины учащённого мочеиспускания у женщин: от питьевого режима до состояний, которые важно проверить у врача.",
     "url": "/articles/uchashchennoe-mocheispuskanie-prichiny-u-zhenshchin/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 539/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2598,7 +2722,10 @@
     "h1": "Зуд стоп: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины зуда стоп: от сухости кожи и грибковых инфекций до состояний, которые стоит проверить у врача.",
     "url": "/articles/zud-stop-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 850/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2616,7 +2743,10 @@
     "h1": "Боль в суставах пальцев рук: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины боли в суставах пальцев рук: от переутомления и возрастных изменений до состояний, которые нужно проверить у врача.",
     "url": "/articles/bol-v-sustavah-palcev-ruk-prichiny/",
-    "internalLinks": ["/analizy/", "/"],
+    "internalLinks": [
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 1091/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2634,7 +2764,10 @@
     "h1": "Питание при синдроме раздражённого кишечника: основные принципы",
     "description": "Разбираем принципы питания при синдроме раздражённого кишечника и почему подбор рациона здесь особенно индивидуален.",
     "url": "/articles/pitanie-pri-sindrome-razdrazhennogo-kishechnika/",
-    "internalLinks": ["/vrachi/tregubova/", "/"],
+    "internalLinks": [
+      "/vrachi/tregubova/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 559/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2652,7 +2785,10 @@
     "h1": "Питание при повышенном давлении: что важно учитывать",
     "description": "Разбираем принципы питания при повышенном давлении: какие продукты стоит ограничить и на что обратить внимание в рационе.",
     "url": "/articles/pitanie-pri-povyshennom-davlenii/",
-    "internalLinks": ["/vrachi/tregubova/", "/"],
+    "internalLinks": [
+      "/vrachi/tregubova/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 365/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2670,7 +2806,10 @@
     "h1": "Правильное питание: с чего начать",
     "description": "Разбираем, с чего реально стоит начинать переход на правильное питание и почему резкие ограничения редко работают долго.",
     "url": "/articles/pravilnoe-pitanie-s-chego-nachat/",
-    "internalLinks": ["/vrachi/tregubova/", "/"],
+    "internalLinks": [
+      "/vrachi/tregubova/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-24. Wordstat: 1755/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-24",
@@ -2688,7 +2827,10 @@
     "h1": "Покалывание в руках: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины покалывания в руках: от неудобной позы и защемления нерва до нарушений кровообращения, которые важно проверить у врача.",
     "url": "/articles/pokalyvanie-v-rukah-prichiny/",
-    "internalLinks": ["/kapelnicy/zdorovye-sosudy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/zdorovye-sosudy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 4313/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2706,7 +2848,10 @@
     "h1": "Сосудистые звездочки на ногах: откуда они берутся",
     "description": "Разбираем частые причины сосудистых звездочек на ногах: от наследственности и гормональных изменений до состояний, которые стоит проверить у врача.",
     "url": "/articles/sosudistye-zvezdochki-na-nogah-prichiny/",
-    "internalLinks": ["/kapelnicy/zdorovye-sosudy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/zdorovye-sosudy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 1003/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2724,7 +2869,10 @@
     "h1": "Боли в сердце: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины боли в сердце: от мышечного напряжения и межрёберной невралгии до состояний, при которых нужна срочная помощь.",
     "url": "/articles/boli-v-serdtse-prichiny/",
-    "internalLinks": ["/kapelnicy/kapelnica-dlya-serdtsa/", "/"],
+    "internalLinks": [
+      "/kapelnicy/kapelnica-dlya-serdtsa/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 2940/мес. Изначальный запрос 'боль в груди причины' (9630/мес) заменён по просьбе пользователя на более узкий.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2742,7 +2890,10 @@
     "h1": "Одышка при физической нагрузке: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины одышки при физической нагрузке: от низкой тренированности до состояний сердца и лёгких, которые важно проверить у врача.",
     "url": "/articles/odyshka-pri-nagruzke-prichiny/",
-    "internalLinks": ["/kapelnicy/kapelnica-dlya-serdtsa/", "/"],
+    "internalLinks": [
+      "/kapelnicy/kapelnica-dlya-serdtsa/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 521/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2760,7 +2911,11 @@
     "h1": "Сильное выпадение волос у женщин: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины сильного выпадения волос у женщин: от дефицита железа и стресса до гормональных изменений, которые важно проверить у врача.",
     "url": "/articles/silnoe-vypadenie-volos-u-zhenshchin-prichiny/",
-    "internalLinks": ["/kapelnicy/gustye-volosy/", "/analizy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/gustye-volosy/",
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 652/мес. Первая статья с перелинковкой на капельницу 'Густые волосы'.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2778,7 +2933,11 @@
     "h1": "Повышенный холестерин у мужчин: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины повышенного холестерина у мужчин: от питания и малоподвижного образа жизни до наследственности, которую важно учитывать вместе с врачом.",
     "url": "/articles/povyshennyy-holesterin-u-muzhchin-prichiny/",
-    "internalLinks": ["/kapelnicy/net-holesterinu/", "/analizy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/net-holesterinu/",
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 1782/мес. Первая статья с перелинковкой на капельницу 'Нет холестерину'.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2796,7 +2955,10 @@
     "h1": "Питание при атрофическом гастрите: основные принципы",
     "description": "Разбираем принципы питания при атрофическом гастрите: как облегчить пищеварение при сниженной кислотности и восполнить дефициты, которые он вызывает.",
     "url": "/articles/pitanie-pri-atroficheskom-gastrite/",
-    "internalLinks": ["/vrachi/tregubova/", "/"],
+    "internalLinks": [
+      "/vrachi/tregubova/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 770/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2814,7 +2976,10 @@
     "h1": "Диета «Стол №9» при диабете 2 типа: что важно учитывать",
     "description": "Разбираем принципы лечебной диеты «Стол №9» при диабете 2 типа: как она влияет на уровень сахара в крови и каких продуктов стоит избегать.",
     "url": "/articles/stol-9-dieta-pri-diabete-2-tipa/",
-    "internalLinks": ["/vrachi/tregubova/", "/"],
+    "internalLinks": [
+      "/vrachi/tregubova/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-25. Wordstat: 2095/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-25",
@@ -2832,7 +2997,11 @@
     "h1": "Низкий гемоглобин у женщин: как это проявляется",
     "description": "Разбираем частые симптомы низкого гемоглобина у женщин: от слабости и бледности до состояний, которые важно проверить анализом крови.",
     "url": "/articles/nizkiy-gemoglobin-u-zhenshchin-simptomy/",
-    "internalLinks": ["/kapelnicy/zhelezo-standart/", "/analizy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/zhelezo-standart/",
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 1 из 3, батч из 14 по популярным капельницам). Wordstat: 3123/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2850,7 +3019,11 @@
     "h1": "Авитаминоз: как проявляется нехватка витаминов",
     "description": "Разбираем частые симптомы авитаминоза: от усталости и ломкости волос до состояний, которые важно проверить анализами.",
     "url": "/articles/avitaminoz-simptomy/",
-    "internalLinks": ["/kapelnicy/vitaminnaya/", "/analizy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/vitaminnaya/",
+      "/analizy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 1 из 3, батч из 14 по популярным капельницам). Wordstat: 625/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2868,7 +3041,10 @@
     "h1": "Холодный пот: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины холодного пота: от стресса и низкого сахара в крови до состояний, при которых нужна срочная помощь.",
     "url": "/articles/holodnyy-pot-prichiny/",
-    "internalLinks": ["/kapelnicy/kapelnica-dlya-serdtsa/", "/"],
+    "internalLinks": [
+      "/kapelnicy/kapelnica-dlya-serdtsa/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 1 из 3, батч из 14 по популярным капельницам). Wordstat: 3401/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2886,7 +3062,10 @@
     "h1": "Тяжесть в ногах: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины тяжести в ногах: от долгого стояния и жары до нарушений кровообращения, которые важно проверить у врача.",
     "url": "/articles/tyazhest-v-nogah-prichiny/",
-    "internalLinks": ["/kapelnicy/zdorovye-sosudy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/zdorovye-sosudy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 1 из 3, батч из 14 по популярным капельницам). Wordstat: 3633/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2904,7 +3083,10 @@
     "h1": "Интоксикация организма: как она проявляется",
     "description": "Разбираем частые симптомы интоксикации организма: от тошноты и слабости до состояний, при которых нужна срочная помощь.",
     "url": "/articles/intoksikatsiya-organizma-simptomy/",
-    "internalLinks": ["/kapelnicy/detoks-standart/", "/"],
+    "internalLinks": [
+      "/kapelnicy/detoks-standart/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 1 из 3, батч из 14 по популярным капельницам). Wordstat: 1246/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2922,7 +3104,10 @@
     "h1": "Трещины в уголках губ: откуда они берутся",
     "description": "Разбираем частые причины трещин в уголках губ: от сухого воздуха и облизывания губ до дефицита железа и витаминов, которые стоит проверить.",
     "url": "/articles/treshchiny-v-ugolkah-gub-prichiny/",
-    "internalLinks": ["/kapelnicy/zhelezo-standart/", "/"],
+    "internalLinks": [
+      "/kapelnicy/zhelezo-standart/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 2 из 3, батч из 14 по популярным капельницам). Wordstat: 1568/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2940,7 +3125,10 @@
     "h1": "Шелушение кожи: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины шелушения кожи: от сухого воздуха и агрессивного ухода до дефицита витаминов, который стоит проверить.",
     "url": "/articles/shelushenie-kozhi-prichiny/",
-    "internalLinks": ["/kapelnicy/vitaminnaya/", "/"],
+    "internalLinks": [
+      "/kapelnicy/vitaminnaya/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 2 из 3, батч из 14 по популярным капельницам). Wordstat: 2082/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2958,7 +3146,10 @@
     "h1": "Боль в левой руке: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины боли в левой руке: от мышечного напряжения до состояний сердца, при которых нужна срочная помощь.",
     "url": "/articles/bol-v-levoy-ruke-prichiny/",
-    "internalLinks": ["/kapelnicy/kapelnica-dlya-serdtsa/", "/"],
+    "internalLinks": [
+      "/kapelnicy/kapelnica-dlya-serdtsa/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 2 из 3, батч из 14 по популярным капельницам). Wordstat: 3754/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2976,7 +3167,10 @@
     "h1": "Отёки ног вечером: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины отёков ног к вечеру: от долгого сидения и соли в питании до состояний, которые важно проверить у врача.",
     "url": "/articles/oteki-nog-vecherom-prichiny/",
-    "internalLinks": ["/kapelnicy/zdorovye-sosudy/", "/"],
+    "internalLinks": [
+      "/kapelnicy/zdorovye-sosudy/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 2 из 3, батч из 14 по популярным капельницам). Wordstat: 1027/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -2994,7 +3188,10 @@
     "h1": "Тяжесть в желудке после еды: какие причины встречаются чаще всего",
     "description": "Разбираем частые причины тяжести в желудке после еды: от переедания и жирной пищи до состояний ЖКТ, которые стоит проверить у врача.",
     "url": "/articles/tyazhest-v-zheludke-posle-edy-prichiny/",
-    "internalLinks": ["/kapelnicy/detoks-standart/", "/"],
+    "internalLinks": [
+      "/kapelnicy/detoks-standart/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 2 из 3, батч из 14 по популярным капельницам). Wordstat: 2387/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -3012,7 +3209,10 @@
     "h1": "Как быстро снять похмелье: что реально помогает",
     "description": "Разбираем, что реально помогает быстрее справиться с похмельем: восполнение жидкости, питание и когда стоит обратиться за медицинской помощью.",
     "url": "/articles/kak-bystro-snyat-pohmele/",
-    "internalLinks": ["/kapelnicy/posle-vecherinki/", "/"],
+    "internalLinks": [
+      "/kapelnicy/posle-vecherinki/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 3 из 3, батч из 14 по популярным капельницам). Wordstat: 2397/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -3030,7 +3230,10 @@
     "h1": "Обезвоживание у взрослых: как его распознать",
     "description": "Разбираем частые симптомы обезвоживания у взрослых: от жажды и сухости во рту до состояний, при которых нужна срочная помощь.",
     "url": "/articles/obezvozhivanie-simptomy-u-vzroslyh/",
-    "internalLinks": ["/kapelnicy/posle-vecherinki/", "/"],
+    "internalLinks": [
+      "/kapelnicy/posle-vecherinki/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 3 из 3, батч из 14 по популярным капельницам). Wordstat: 1946/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -3048,7 +3251,10 @@
     "h1": "Крепатура после тренировки: что это и как облегчить состояние",
     "description": "Разбираем, что такое крепатура после тренировки, почему она возникает и что реально помогает облегчить мышечную боль.",
     "url": "/articles/krepatura-posle-trenirovki/",
-    "internalLinks": ["/kapelnicy/sport-silovaya/", "/"],
+    "internalLinks": [
+      "/kapelnicy/sport-silovaya/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 3 из 3, батч из 14 по популярным капельницам). Wordstat: 518/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
@@ -3066,10 +3272,212 @@
     "h1": "Перетренированность: как её распознать",
     "description": "Разбираем частые симптомы перетренированности: от упадка сил и нарушений сна до снижения результатов, которые важно вовремя заметить.",
     "url": "/articles/peretrenirovannost-simptomy/",
-    "internalLinks": ["/kapelnicy/sport-silovaya/", "/"],
+    "internalLinks": [
+      "/kapelnicy/sport-silovaya/",
+      "/"
+    ],
     "notes": "Заказана в рамках /daily-seo прогона 2026-08-26 (день 3 из 3, батч из 14 по популярным капельницам). Wordstat: 583/мес.",
     "source": "daily-seo",
     "createdAt": "2026-08-26",
     "updatedAt": "2026-08-28"
+  },
+  {
+    "id": "sindrom-bespokoynyh-nog-prichiny",
+    "keyword": "синдром беспокойных ног причины",
+    "secondaryKeywords": [
+      "синдром беспокойных ног причины и лечение",
+      "синдром беспокойных ног симптомы и причины"
+    ],
+    "priority": "высокий",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Синдром беспокойных ног: причины и связь с дефицитом железа",
+    "h1": "Синдром беспокойных ног: почему ноги не дают уснуть",
+    "description": "Разбираем, почему возникает синдром беспокойных ног, как он связан с дефицитом железа и какие анализы помогают найти причину.",
+    "url": "/articles/sindrom-bespokoynyh-nog-prichiny/",
+    "sections": [
+      "Как проявляется",
+      "Почему усиливается вечером и ночью",
+      "Связь с дефицитом железа",
+      "Другие причины",
+      "Что делать самостоятельно",
+      "Когда обращаться к врачу"
+    ],
+    "internalLinks": [
+      "/kapelnicy/zhelezo-standart/",
+      "/analizy/ferritin/",
+      "/chek-apy/diagnostika-defitsita-zheleza/",
+      "/"
+    ],
+    "notes": "Спринт по ссылочному весу капельниц, день 1/7. Wordstat: «синдром беспокойных ног причины» 5366/мес.",
+    "source": "kapelnicyLinkSprint day1 2026-08-29",
+    "createdAt": "2026-08-29",
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "lomkie-nogti-prichiny",
+    "keyword": "ломкие ногти причины",
+    "secondaryKeywords": [
+      "ломкие ногти на руках причина",
+      "причины ломких ногтей лечение"
+    ],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Ломкие ногти: причины и какие дефициты стоит проверить",
+    "h1": "Ломкие ногти: что стоит за постоянными сколами и расслоением",
+    "description": "Разбираем частые причины ломких ногтей - от дефицита железа и белка до внешних факторов, и какие анализы помогают найти причину.",
+    "url": "/articles/lomkie-nogti-prichiny/",
+    "sections": [
+      "Как выглядит проблема",
+      "Дефицит железа",
+      "Нехватка белка и микроэлементов",
+      "Внешние причины",
+      "Заболевания щитовидной железы",
+      "Когда сдать анализы"
+    ],
+    "internalLinks": [
+      "/kapelnicy/zhelezo-standart/",
+      "/analizy/ferritin/",
+      "/chek-apy/diagnostika-defitsita-zheleza/",
+      "/"
+    ],
+    "notes": "Спринт по ссылочному весу капельниц, день 1/7. Wordstat: «ломкие ногти причины» 456/мес.",
+    "source": "kapelnicyLinkSprint day1 2026-08-29",
+    "createdAt": "2026-08-29",
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "zhzhenie-yazyka-prichiny",
+    "keyword": "жжение языка причины",
+    "secondaryKeywords": [
+      "жжение языка причины и лечение",
+      "жжение во рту и на языке причины"
+    ],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Жжение языка: причины и какие дефициты проверить",
+    "h1": "Жжение языка: что стоит за этим неприятным ощущением",
+    "description": "Разбираем частые причины жжения языка - от дефицита витаминов группы B и железа до раздражения и грибковой инфекции, и что с этим делать.",
+    "url": "/articles/zhzhenie-yazyka-prichiny/",
+    "sections": [
+      "Дефицит витаминов группы B",
+      "Дефицит железа",
+      "Грибковая инфекция",
+      "Раздражение и сухость во рту",
+      "Когда проверить питание и анализы"
+    ],
+    "internalLinks": [
+      "/kapelnicy/vitaminnaya/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/analizy/ferritin/",
+      "/"
+    ],
+    "notes": "Спринт по ссылочному весу капельниц, день 1/7. Заменил изначальную тему «заеды в уголках рта» — обнаружили дубль с уже опубликованной treshchiny-v-ugolkah-gub-prichiny. Wordstat: «жжение языка причины» 3304/мес.",
+    "source": "kapelnicyLinkSprint day1 2026-08-29",
+    "createdAt": "2026-08-29",
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "ekstrasistoliya-simptomy",
+    "keyword": "экстрасистолия симптомы",
+    "secondaryKeywords": [
+      "экстрасистолия сердца симптомы",
+      "экстрасистолия причины симптомы"
+    ],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Экстрасистолия: симптомы и когда нужно обследование сердца",
+    "h1": "Экстрасистолия: что означает ощущение \"замирания\" сердца",
+    "description": "Разбираем, что такое экстрасистолия, почему возникает ощущение перебоев в работе сердца и когда это повод для обследования.",
+    "url": "/articles/ekstrasistoliya-simptomy/",
+    "sections": [
+      "Как это ощущается",
+      "Почему возникают единичные экстрасистолы",
+      "Когда связано с заболеванием",
+      "Как подтверждают диагноз",
+      "Когда обращаться к врачу"
+    ],
+    "internalLinks": [
+      "/kapelnicy/kapelnica-dlya-serdtsa/",
+      "/ekg/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/"
+    ],
+    "notes": "Спринт по ссылочному весу капельниц, день 1/7. Wordstat: «экстрасистолия симптомы» 892/мес.",
+    "source": "kapelnicyLinkSprint day1 2026-08-29",
+    "createdAt": "2026-08-29",
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "sudorogi-v-nogah-nochyu-prichiny",
+    "keyword": "судороги в икрах ног ночью причина",
+    "secondaryKeywords": [
+      "судороги в ногах по ночам причины",
+      "ногу свело ночью судорогой в икре причины"
+    ],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Судороги в икрах ног по ночам: причины",
+    "h1": "Судороги в икрах ног по ночам: что вызывает спазмы",
+    "description": "Разбираем частые причины ночных судорог в икрах ног - от дефицита магния и электролитов до проблем с сосудами, и что помогает снизить их частоту.",
+    "url": "/articles/sudorogi-v-nogah-nochyu-prichiny/",
+    "sections": [
+      "Дефицит магния и электролитов",
+      "Проблемы с кровообращением",
+      "Обезвоживание и нагрузка",
+      "Беременность и препараты",
+      "Что помогает снизить частоту"
+    ],
+    "internalLinks": [
+      "/kapelnicy/zdorovye-sosudy/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/"
+    ],
+    "notes": "Спринт по ссылочному весу капельниц, день 1/7. Изначально брали высокочастотный вариант «судороги в ногах ночью причины» (15483/мес) — по просьбе пользователя понизили частотность до <6000, взяли «судороги в икрах ног ночью причина» 1555/мес.",
+    "source": "kapelnicyLinkSprint day1 2026-08-29",
+    "createdAt": "2026-08-29",
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "priznaki-varikoza-na-nogah",
+    "keyword": "признаки варикоза на ногах",
+    "secondaryKeywords": [
+      "признаки варикоза на ногах у женщин",
+      "первые признаки варикоза на ногах"
+    ],
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Признаки варикоза на ногах: на что обратить внимание",
+    "h1": "Признаки варикоза на ногах: с чего начинается болезнь вен",
+    "description": "Разбираем ранние признаки варикозного расширения вен на ногах - от тяжести и отёков до сосудистых звёздочек, и когда обращаться к врачу.",
+    "url": "/articles/priznaki-varikoza-na-nogah/",
+    "sections": [
+      "Тяжесть и усталость к вечеру",
+      "Отёки в области лодыжек",
+      "Сосудистые звёздочки",
+      "Ночные судороги и зуд",
+      "Кто в группе риска",
+      "Когда обращаться к врачу"
+    ],
+    "internalLinks": [
+      "/kapelnicy/zdorovye-sosudy/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/"
+    ],
+    "notes": "Спринт по ссылочному весу капельниц, день 1/7. Wordstat: «признаки варикоза на ногах» 919/мес.",
+    "source": "kapelnicyLinkSprint day1 2026-08-29",
+    "createdAt": "2026-08-29",
+    "updatedAt": "2026-08-29"
   }
 ]
