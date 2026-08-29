@@ -3,5 +3,55 @@
   "firstRunAt": "2026-08-07",
   "lastRunAt": "2026-08-28",
   "rampThreshold": 10,
-  "note": "runsCompleted увеличивается только после того, как пользователь подтвердил публикацию и она запушена. Пока runsCompleted < rampThreshold — режим разгона (2-3 статьи/день вперемешку). После — 4 основные + 1-2 вспомогательные."
+  "note": "runsCompleted увеличивается только после того, как пользователь подтвердил публикацию и она запушена. Пока runsCompleted < rampThreshold — режим разгона (2-3 статьи/день вперемешку). После — 4 основные + 1-2 вспомогательные.",
+  "kapelnicyLinkSprint": {
+    "note": "Пользователь 2026-08-29 попросил: каждый ежедневный прогон /daily-seo на ближайшую неделю должен создавать новые информационные статьи с внутренними ссылками на посадочные страницы капельниц /kapelnicy/<slug>/ (плюс ссылка на главную), чтобы наращивать их внутренний ссылочный вес. Пользователь будет помечать запуски как «/daily-seo 1 день», «2 день» и т.д. — сверяйся с полем currentDay ниже, а не с датой. Приоритет — страницы с нулём или минимумом входящих ссылок (см. zeroLinkPages, посчитано 2026-08-29 через grep по lib/articles.ts). Для каждой темы дня: подобрать симптом/показание, которое естественно ведёт к этой капельнице, проверить частотность через Wordstat (как в обычном шаге 1.2), написать статью по стандартным правилам /daily-seo (H1 не по шаблону, 3-4 внутренние ссылки, FAQ, автор по таблице). После публикации дня — вычеркнуть покрытые slug'и из zeroLinkPages и продвинуть currentDay.",
+      "currentDay": 2,
+      "totalDays": 7,
+      "startedAt": "2026-08-29",
+      "day1": {
+        "date": "2026-08-29",
+        "status": "done",
+        "targetPages": [
+          "zhelezo-standart",
+          "vitaminnaya",
+          "kapelnica-dlya-serdtsa",
+          "zdorovye-sosudy"
+        ],
+        "articles": [
+          "sindrom-bespokoynyh-nog-prichiny",
+          "lomkie-nogti-prichiny",
+          "zhzhenie-yazyka-prichiny",
+          "ekstrasistoliya-simptomy",
+          "sudorogi-v-nogah-nochyu-prichiny",
+          "priznaki-varikoza-na-nogah"
+        ]
+      },
+      "zeroLinkPages": [
+        "postkovid",
+        "gipertonicheskiy-kriz",
+        "predoperatsionnaya",
+        "ginekologicheskaya-protivovospalitelnaya",
+        "sustavnaya-protivovospalitelnaya",
+        "stomatologicheskaya-protivovospalitelnaya",
+        "bronho-legochnaya-protivovospalitelnaya",
+        "laennek",
+        "vosstanovlenie-obonyaniya",
+        "antiklimaks",
+        "podgotovka-k-beremennosti",
+        "dzhetlag",
+        "ayronmen",
+        "zhelezo-2-0",
+        "antiammiak",
+        "zhkt-2"
+      ],
+      "dayPlan": {
+        "2": ["postkovid", "gipertonicheskiy-kriz", "predoperatsionnaya"],
+        "3": ["ginekologicheskaya-protivovospalitelnaya", "sustavnaya-protivovospalitelnaya", "stomatologicheskaya-protivovospalitelnaya"],
+        "4": ["bronho-legochnaya-protivovospalitelnaya", "laennek", "vosstanovlenie-obonyaniya"],
+        "5": ["antiklimaks", "podgotovka-k-beremennosti", "dzhetlag"],
+        "6": ["ayronmen", "zhelezo-2-0", "antiammiak"],
+        "7": ["zhkt-2", "terzapatid", "polovaya-sistema"]
+      }
+  }
 }
