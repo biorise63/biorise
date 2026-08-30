@@ -1,7 +1,7 @@
 {
-  "runsCompleted": 27,
+  "runsCompleted": 28,
   "firstRunAt": "2026-08-07",
-  "lastRunAt": "2026-08-29",
+  "lastRunAt": "2026-08-30",
   "rampThreshold": 10,
   "note": "runsCompleted увеличивается только после того, как пользователь подтвердил публикацию и она запушена. Пока runsCompleted < rampThreshold — режим разгона (2-3 статьи/день вперемешку). После — 4 основные + 1-2 вспомогательные.",
   "kapelnicyLinkSprint": {
@@ -64,7 +64,7 @@
     "startedAt": "2026-08-30",
     "day1": {
       "date": "2026-08-30",
-      "status": "awaiting_confirmation",
+      "status": "done",
       "targetPages": ["zhelezo-standart", "krasota-i-omolozhenie", "muzhskoe-zdorove"],
       "articles": [
         "slabost-i-golovokruzhenie-prichiny",

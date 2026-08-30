@@ -3479,5 +3479,132 @@
     "source": "kapelnicyLinkSprint day1 2026-08-29",
     "createdAt": "2026-08-29",
     "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "slabost-i-golovokruzhenie-prichiny",
+    "keyword": "слабость и головокружение причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Слабость и головокружение: причины",
+    "h1": "Слабость и головокружение: что стоит за этим сочетанием",
+    "description": "Разбираем частые причины слабости и головокружения - от дефицита железа и низкого давления до обезвоживания, и когда нужно обследование.",
+    "url": "/articles/slabost-i-golovokruzhenie-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/zhelezo-standart/",
+      "/analizy/ferritin/",
+      "/analizy/analiz-krovi/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 1/3, посадочная выбрана по спросу в Самаре (железо 540/мес), ключ статьи по РФ без региона (до 4000): 2329/мес.",
+    "source": "samaraDemandSprint day1 2026-08-30",
+    "createdAt": "2026-08-30",
+    "updatedAt": "2026-08-30"
+  },
+  {
+    "id": "zvon-v-ushah-prichiny",
+    "keyword": "звон в ушах и голове причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Звон в ушах и голове: причины появления",
+    "h1": "Звон в ушах и голове: что может вызывать этот звук",
+    "description": "Разбираем частые причины звона в ушах и голове - от дефицита железа и переутомления до проблем со слухом и сосудами, и когда обращаться к врачу.",
+    "url": "/articles/zvon-v-ushah-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/zhelezo-standart/",
+      "/analizy/ferritin/",
+      "/analizy/analiz-krovi/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 1/3, посадочная — железо (Самара 540/мес), ключ по РФ: «звон в ушах и голове причины» 1379/мес (базовая фраза без «и голове» - 8719, превышала потолок 4000).",
+    "source": "samaraDemandSprint day1 2026-08-30",
+    "createdAt": "2026-08-30",
+    "updatedAt": "2026-08-30"
+  },
+  {
+    "id": "meshki-pod-glazami-prichiny",
+    "keyword": "темные круги под глазами причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Тёмные круги и мешки под глазами: причины",
+    "h1": "Тёмные круги под глазами: откуда они берутся",
+    "description": "Разбираем частые причины тёмных кругов и мешков под глазами - от недосыпа и обезвоживания до возрастных изменений, и что реально помогает.",
+    "url": "/articles/meshki-pod-glazami-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/krasota-i-omolozhenie/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 1/3, посадочная — Золушка (Самара 144/мес), ключ по РФ: «темные круги под глазами причины» 2593/мес (базовая «мешки под глазами причины» - 9749, превышала потолок 4000).",
+    "source": "samaraDemandSprint day1 2026-08-30",
+    "createdAt": "2026-08-30",
+    "updatedAt": "2026-08-30"
+  },
+  {
+    "id": "pigmentnye-pyatna-na-litse-prichiny",
+    "keyword": "пигментные пятна на лице причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Пигментные пятна на лице: причины появления",
+    "h1": "Пигментные пятна на лице: с чем связано их появление",
+    "description": "Разбираем частые причины пигментных пятен на лице - от солнца и гормональных изменений до возраста, и что реально помогает их уменьшить.",
+    "url": "/articles/pigmentnye-pyatna-na-litse-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/krasota-i-omolozhenie/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 1/3, посадочная — Золушка (Самара 144/мес), ключ по РФ: 2417/мес.",
+    "source": "samaraDemandSprint day1 2026-08-30",
+    "createdAt": "2026-08-30",
+    "updatedAt": "2026-08-30"
+  },
+  {
+    "id": "potlivost-u-muzhchin-prichiny",
+    "keyword": "сильная потливость у мужчин причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Сильная потливость у мужчин: причины",
+    "h1": "Сильная потливость у мужчин: почему возникает избыточное потоотделение",
+    "description": "Разбираем частые причины сильной потливости у мужчин - от гормонов и веса до заболеваний щитовидной железы, и когда обращаться к врачу.",
+    "url": "/articles/potlivost-u-muzhchin-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/muzhskoe-zdorove/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 1/3, посадочная — для мужчин (Самара 67/мес), ключ по РФ: «сильная потливость у мужчин причины» 1191/мес (базовая фраза - 5310, превышала потолок 4000).",
+    "source": "samaraDemandSprint day1 2026-08-30",
+    "createdAt": "2026-08-30",
+    "updatedAt": "2026-08-30"
+  },
+  {
+    "id": "chastoe-mocheispuskanie-u-muzhchin-prichiny",
+    "keyword": "частое мочеиспускание у мужчин ночью причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Частое мочеиспускание у мужчин ночью: причины",
+    "h1": "Частое мочеиспускание у мужчин ночью: с чем это может быть связано",
+    "description": "Разбираем частые причины учащённого мочеиспускания у мужчин по ночам - от простаты и инфекций до диабета и питьевого режима, и когда обращаться к врачу.",
+    "url": "/articles/chastoe-mocheispuskanie-u-muzhchin-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/muzhskoe-zdorove/",
+      "/analizy/analiz-mochi/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 1/3, посадочная — для мужчин (Самара 67/мес), ключ по РФ: «частое мочеиспускание у мужчин ночью причины» 1189/мес (базовая фраза - 7868, превышала потолок 4000).",
+    "source": "samaraDemandSprint day1 2026-08-30",
+    "createdAt": "2026-08-30",
+    "updatedAt": "2026-08-30"
   }
 ]
