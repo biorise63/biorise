@@ -70,23 +70,39 @@ export default function Hero() {
 
     if (nav.connection?.saveData) return
 
+    const isMobile = window.matchMedia('(max-width: 767px)').matches
     const pickSource = () =>
-      window.matchMedia('(max-width: 767px)').matches
-        ? '/optimized/video/hero-mobile-480p.mp4'
-        : '/optimized/video/hero-desktop-720p.mp4'
+      isMobile ? '/optimized/video/hero-mobile-480p.mp4' : '/optimized/video/hero-desktop-720p.mp4'
 
     const activate = () => {
       setVideoReady(false)
       setVideoSrc(pickSource())
     }
 
-    if ('requestIdleCallback' in window) {
-      const id = window.requestIdleCallback(activate, { timeout: 3000 })
-      return () => window.cancelIdleCallback(id)
+    const scheduleIdle = () => {
+      if ('requestIdleCallback' in window) {
+        const id = window.requestIdleCallback(activate, { timeout: 3000 })
+        return () => window.cancelIdleCallback(id)
+      }
+      const timer = setTimeout(activate, 2500)
+      return () => clearTimeout(timer)
     }
 
-    const timer = setTimeout(activate, 2500)
-    return () => clearTimeout(timer)
+    // На мобильных throttled-соединениях видео конкурирует за пропускную способность
+    // с LCP-картинкой, поэтому ждём полной загрузки страницы, а не только простоя потока.
+    if (isMobile && document.readyState !== 'complete') {
+      const onLoad = () => {
+        cleanup = scheduleIdle()
+      }
+      let cleanup: (() => void) | undefined
+      window.addEventListener('load', onLoad, { once: true })
+      return () => {
+        window.removeEventListener('load', onLoad)
+        cleanup?.()
+      }
+    }
+
+    return scheduleIdle()
   }, [shouldReduceMotion])
 
   return (
@@ -140,6 +156,7 @@ export default function Hero() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    prefetch={link.href === '/analizy/' || link.href === '/kapelnicy/' ? false : undefined}
                     className="flex min-h-[44px] min-w-0 items-center justify-center rounded-xl bg-olive-primary/5 px-2 text-center text-[14px] font-medium leading-[1.15] text-olive-text transition-colors duration-200 hover:text-olive-primary hover:bg-olive-primary/10 sm:min-h-0 sm:justify-start sm:rounded-none sm:bg-transparent sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap sm:hover:bg-transparent"
                   >
                     {link.label}

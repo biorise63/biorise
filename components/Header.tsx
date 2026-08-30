@@ -260,6 +260,7 @@ export default function Header() {
                     </Link>
                     <Link
                       href="/analizy"
+                      prefetch={false}
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
                       Анализы
@@ -481,7 +482,7 @@ export default function Header() {
                   <span className="px-3 pb-2 pt-1 text-sm font-semibold text-olive-primary">Услуги</span>
                   <div className="mt-1 flex flex-col gap-1">
                     <Link href="/kapelnicy" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы</Link>
-                    <Link href="/analizy" onClick={closeMobileMenu} className={mobileLinkClass}>Анализы</Link>
+                    <Link href="/analizy" prefetch={false} onClick={closeMobileMenu} className={mobileLinkClass}>Анализы</Link>
                     <Link href="/ekg" onClick={closeMobileMenu} className={mobileLinkClass}>ЭКГ</Link>
                     <Link href="/chek-apy" onClick={closeMobileMenu} className={mobileLinkClass}>Чек-апы</Link>
                     <Link href="/kapelnicy/na-domu" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы на дому</Link>
