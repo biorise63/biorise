@@ -28,7 +28,7 @@ export default function BookingFormFields({
     address: clinicAddresses[0],
     promoCode: defaultPromoCode,
   })
-  const [consent, setConsent] = useState(true)
+  const [consent, setConsent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isAddressOpen, setIsAddressOpen] = useState(false)
   const addressRef = useRef<HTMLDivElement>(null)
@@ -60,7 +60,7 @@ export default function BookingFormFields({
 
       if (response.ok && result?.success) {
         setFormData({ name: '', phone: '', address: clinicAddresses[0], promoCode: defaultPromoCode })
-        setConsent(true)
+        setConsent(false)
         alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
       } else {
         alert(result?.message || TECH_MESSAGE)

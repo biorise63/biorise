@@ -18,7 +18,7 @@ export default function BookingForm() {
     promoCode: '',
   })
 
-  const [consent, setConsent] = useState(true)
+  const [consent, setConsent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [isAddressOpen, setIsAddressOpen] = useState(false)
@@ -66,7 +66,7 @@ export default function BookingForm() {
           address: clinicAddresses[0],
           promoCode: '',
         })
-        setConsent(true)
+        setConsent(false)
         alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
       } else {
         setSubmitStatus('error')
