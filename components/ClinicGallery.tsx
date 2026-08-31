@@ -18,10 +18,8 @@ const galleryData: GalleryItem[] = [
       'Забор крови оплачивается отдельно - 180 ₽',
     ],
     price: {
-      current: '5 800 ₽',
-      old: '7 900 ₽',
+      current: '6 500 ₽',
     },
-    period: 'до 31 августа 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
@@ -29,7 +27,7 @@ const galleryData: GalleryItem[] = [
       text: 'T-SPOT',
       alt: 'T-SPOT диагностика туберкулезной инфекции в BIORISE Самара',
       pos: 'center 45%',
-      by: 'Скидка до конца августа',
+      by: 'T-SPOT',
     },
   },
   {
