@@ -24,6 +24,15 @@ function isIosSafariBrowser() {
   return isIOSDevice && isSafari
 }
 
+function isNarrowViewport() {
+  if (typeof window === 'undefined') return false
+  // Klientiks widget layout has a hard ~480px min-width and doesn't rescale inside an
+  // iframe (unlike a direct page load, where the mobile browser auto-zooms it to fit) —
+  // below that the "выбрать филиал" step and its "Перейти к записи" button render
+  // outside the visible modal area and can't be tapped.
+  return window.innerWidth < 640
+}
+
 export function useBookingModal() {
   const context = useContext(BookingModalContext)
   if (!context) {
@@ -37,7 +46,9 @@ export function BookingModalProvider({ children }: { children: ReactNode }) {
 
   const openBookingModal = () => {
     // iOS Safari may fail SMS code verification inside iframe due to storage/session restrictions.
-    if (isIosSafariBrowser()) {
+    // Narrow viewports hit a separate issue: the widget doesn't rescale inside the iframe,
+    // so its buttons render past the edge of the modal. Both cases open the widget directly instead.
+    if (isIosSafariBrowser() || isNarrowViewport()) {
       window.location.href = KLIENTIKS_BOOKING_URL
       return
     }
