@@ -22,13 +22,13 @@ export default function DoctorContent({ author }: DoctorContentProps) {
         <Breadcrumbs
           items={[
             { name: 'Главная', href: '/' },
-            { name: 'Врачи', href: '/#doctors' },
+            { name: 'Врачи', href: '/vrachi/' },
             { name: author.name, href: `/vrachi/${author.id}/` },
           ]}
         />
 
         <Link
-          href="/#doctors"
+          href="/vrachi/"
           className="inline-flex items-center gap-2 text-sm font-medium text-olive-primary transition-colors hover:text-olive-primary"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />

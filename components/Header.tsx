@@ -332,7 +332,7 @@ export default function Header() {
               <Link href="/articles" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Статьи
               </Link>
-              <Link href="/#doctors" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
+              <Link href="/vrachi/" className="text-olive-primary hover:text-olive-light transition-colors text-sm lg:text-base">
                 Врачи
               </Link>
               <button
@@ -498,7 +498,7 @@ export default function Header() {
                 <Link href="/#why-us" onClick={closeMobileMenu} className={mobileLinkClass}>О нас</Link>
                 <Link href="/#gallery" onClick={closeMobileMenu} className={mobileLinkClass}>Акции</Link>
                 <Link href="/articles" onClick={closeMobileMenu} className={mobileLinkClass}>Статьи</Link>
-                <Link href="/#doctors" onClick={closeMobileMenu} className={mobileLinkClass}>Врачи</Link>
+                <Link href="/vrachi/" onClick={closeMobileMenu} className={mobileLinkClass}>Врачи</Link>
 
                 <button
                   onClick={() => {
