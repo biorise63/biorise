@@ -3606,5 +3606,134 @@
     "source": "samaraDemandSprint day1 2026-08-30",
     "createdAt": "2026-08-30",
     "updatedAt": "2026-08-30"
+  },
+  {
+    "id": "nizkiy-sahar-v-krovi-simptomy",
+    "keyword": "низкий сахар в крови симптомы",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Низкий сахар в крови: симптомы и причины",
+    "h1": "Низкий сахар в крови: что стоит за этим состоянием",
+    "description": "Разбираем частые симптомы низкого сахара в крови - от дрожи и слабости до потливости, и какие причины за этим стоят.",
+    "url": "/articles/nizkiy-sahar-v-krovi-simptomy/",
+    "internalLinks": [
+      "/kapelnicy/posle-vecherinki/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 2/3, посадочная - с глюкозой/похмелье (Самара 47/мес), ключ по РФ: 1618/мес.",
+    "source": "samaraDemandSprint day2 2026-09-01",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01"
+  },
+  {
+    "id": "toshnota-po-utram-prichiny",
+    "keyword": "тошнота по утрам причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Тошнота по утрам: причины у взрослых",
+    "h1": "Тошнота по утрам: возможные причины",
+    "description": "Разбираем частые причины тошноты по утрам у взрослых - от обезвоживания и низкого сахара до проблем с пищеварением, и когда обращаться к врачу.",
+    "url": "/articles/toshnota-po-utram-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/posle-vecherinki/",
+      "/analizy/analiz-krovi/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 2/3, посадочная - с глюкозой/похмелье, ключ по РФ: 2287/мес.",
+    "source": "samaraDemandSprint day2 2026-09-01",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01"
+  },
+  {
+    "id": "sudorogi-v-rukah-prichiny",
+    "keyword": "судороги в руках причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Судороги в руках: причины",
+    "h1": "Судороги в руках: что вызывает спазм в кисти",
+    "description": "Разбираем частые причины судорог в руках - от дефицита витаминов и магния до переутомления мышц, и когда стоит обратиться к врачу.",
+    "url": "/articles/sudorogi-v-rukah-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/vitaminnaya/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/articles/sudorogi-v-nogah-nochyu-prichiny/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 2/3, посадочная - с витаминами (Самара 36/мес), ключ по РФ: 2846/мес.",
+    "source": "samaraDemandSprint day2 2026-09-01",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01"
+  },
+  {
+    "id": "belye-pyatna-na-nogtyah-prichiny",
+    "keyword": "белые пятна на ногтях причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Белые пятна на ногтях: причины",
+    "h1": "Белые пятна на ногтях: что они означают",
+    "description": "Разбираем частые причины белых пятен на ногтях - от дефицита цинка и травм до грибковой инфекции, и когда стоит обратиться к врачу.",
+    "url": "/articles/belye-pyatna-na-nogtyah-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/vitaminnaya/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/articles/lomkie-nogti-prichiny/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 2/3, посадочная - с витаминами, ключ по РФ: 2561/мес.",
+    "source": "samaraDemandSprint day2 2026-09-01",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01"
+  },
+  {
+    "id": "rastyazhenie-myshts-simptomy",
+    "keyword": "растяжение мышц симптомы",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Растяжение мышц: симптомы и что делать",
+    "h1": "Растяжение мышц: как распознать и что делать",
+    "description": "Разбираем симптомы растяжения мышц - как отличить его от обычной крепатуры, и что помогает быстрее восстановиться после тренировки.",
+    "url": "/articles/rastyazhenie-myshts-simptomy/",
+    "internalLinks": [
+      "/kapelnicy/sport-silovaya/",
+      "/articles/krepatura-posle-trenirovki/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 2/3, посадочная - для спортсменов (Самара 31/мес), ключ по РФ: 2098/мес.",
+    "source": "samaraDemandSprint day2 2026-09-01",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01"
+  },
+  {
+    "id": "myshechnye-spazmy-prichiny",
+    "keyword": "мышечные спазмы причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Мышечные спазмы: причины",
+    "h1": "Мышечные спазмы: почему сводит мышцы",
+    "description": "Разбираем частые причины мышечных спазмов - от дефицита электролитов до перегрузки во время тренировок, и что помогает их снизить.",
+    "url": "/articles/myshechnye-spazmy-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/sport-silovaya/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/articles/sudorogi-v-nogah-nochyu-prichiny/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 2/3, посадочная - для спортсменов, ключ по РФ: 733/мес.",
+    "source": "samaraDemandSprint day2 2026-09-01",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01"
   }
 ]
