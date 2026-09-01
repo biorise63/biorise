@@ -215,23 +215,23 @@ export default function InfusionDetailPage({ params }: PageProps) {
                 {infusion.description}
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-2">
+              <div className="mt-7 flex gap-1.5 sm:gap-2">
                 {infusion.price && (
-                  <div className="rounded-xl bg-white/85 px-4 py-2.5 shadow-premium">
-                    <span className="block text-[10px] uppercase tracking-[0.1em] text-olive-primary">Стоимость</span>
-                    <strong className="mt-0.5 block text-base text-olive-primary">{infusion.price}</strong>
+                  <div className="min-w-0 flex-1 rounded-xl bg-white/85 px-2.5 py-2 text-center shadow-premium sm:flex-initial sm:px-4 sm:py-2.5 sm:text-left">
+                    <span className="block truncate text-[8px] uppercase tracking-[0.04em] text-olive-primary sm:text-[10px] sm:tracking-[0.1em]">Стоимость</span>
+                    <strong className="mt-0.5 block text-sm text-olive-primary sm:text-base">{infusion.price}</strong>
                   </div>
                 )}
                 {infusion.duration && (
-                  <div className="rounded-xl bg-white/85 px-4 py-2.5 shadow-premium">
-                    <span className="block text-[10px] uppercase tracking-[0.1em] text-olive-primary">Время процедуры</span>
-                    <strong className="mt-0.5 block text-base text-olive-primary">{infusion.duration}</strong>
+                  <div className="min-w-0 flex-1 rounded-xl bg-white/85 px-2.5 py-2 text-center shadow-premium sm:flex-initial sm:px-4 sm:py-2.5 sm:text-left">
+                    <span className="block truncate text-[8px] uppercase tracking-[0.04em] text-olive-primary sm:text-[10px] sm:tracking-[0.1em]">Время процедуры</span>
+                    <strong className="mt-0.5 block text-sm text-olive-primary sm:text-base">{infusion.duration}</strong>
                   </div>
                 )}
                 {infusion.dosage && (
-                  <div className="rounded-xl bg-white/85 px-4 py-2.5 shadow-premium">
-                    <span className="block text-[10px] uppercase tracking-[0.1em] text-olive-primary">Дозировка</span>
-                    <strong className="mt-0.5 block text-base text-olive-primary">{infusion.dosage}</strong>
+                  <div className="min-w-0 flex-1 rounded-xl bg-white/85 px-2.5 py-2 text-center shadow-premium sm:flex-initial sm:px-4 sm:py-2.5 sm:text-left">
+                    <span className="block truncate text-[8px] uppercase tracking-[0.04em] text-olive-primary sm:text-[10px] sm:tracking-[0.1em]">Дозировка</span>
+                    <strong className="mt-0.5 block text-sm text-olive-primary sm:text-base">{infusion.dosage}</strong>
                   </div>
                 )}
               </div>
