@@ -6,6 +6,71 @@ import { CircularGallery, GalleryItem } from './ui/circular-gallery'
 
 const galleryData: GalleryItem[] = [
   {
+    common: 'Капельницы — скидка до 15%',
+    subtitle: 'Специальная цена на популярные капельницы',
+    description:
+      'Скидка действует на капельницы «Железо 1», «Снижение веса» и «Иммуносуппорт». Можно выбрать курс из 3 процедур по специальной цене.',
+    prizes: [
+      { place: 'Железо 1', text: '4 250 ₽' },
+      { place: 'Снижение веса', text: '4 165 ₽' },
+      { place: 'Иммуносуппорт', text: '3 825 ₽' },
+    ],
+    period: 'до 30 сентября 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/optimized/promo/gallery/promo-kapelnicy-skidka.webp',
+      text: 'Капельницы со скидкой',
+      alt: 'Скидка до 15% на капельницы в BIORISE Самара',
+      pos: 'center 40%',
+      by: 'Скидка до 15%',
+    },
+  },
+  {
+    common: 'Комплексный чек-ап',
+    subtitle: '72 показателя за один визит',
+    description:
+      'Одним комплексом сразу оцениваем ключевые показатели организма.',
+    features: [
+      'Кровь',
+      'Моча',
+      'Биохимия',
+      'Гормоны',
+      'Витамины',
+      'Микро- и макроэлементы',
+      'Расшифровка результатов врачом - в подарок',
+    ],
+    price: {
+      current: '5 990 ₽',
+    },
+    period: 'до 30 сентября 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/optimized/promo/gallery/promo-kompleksny-chekap.webp',
+      text: 'Комплексный чек-ап',
+      alt: 'Комплексный чек-ап на 72 показателя в BIORISE Самара',
+      pos: 'center 40%',
+      by: '72 показателя',
+    },
+  },
+  {
+    common: 'БАДы — 3 по цене 2',
+    subtitle: 'Выберите любые 3 продукта - платите за 2',
+    description:
+      'Выберите любые 3 подходящих продукта и оплатите только 2.',
+    period: 'до 30 сентября 2026',
+    buttonText: 'Записаться',
+    buttonHref: '#booking',
+    photo: {
+      url: '/optimized/promo/gallery/promo-bady-3po2.webp',
+      text: 'БАДы 3 по цене 2',
+      alt: 'Акция 3 БАДа по цене 2 в BIORISE Самара',
+      pos: 'center 45%',
+      by: '3 по цене 2',
+    },
+  },
+  {
     common: 'T-SPOT',
     subtitle: 'Диагностика туберкулезной инфекции',
     description:
