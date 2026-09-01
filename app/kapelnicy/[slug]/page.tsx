@@ -236,6 +236,16 @@ export default function InfusionDetailPage({ params }: PageProps) {
                 )}
               </div>
 
+              {infusion.crossLink && (
+                <Link
+                  href={infusion.crossLink.href}
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-olive-primary underline decoration-olive-primary/40 underline-offset-4 transition-colors hover:text-olive-light hover:decoration-olive-light"
+                >
+                  Перейти к «{infusion.crossLink.text}»
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
+
               <div className="mt-8">
                 <InfusionDetailActions slug={infusion.slug} />
               </div>

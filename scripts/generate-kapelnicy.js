@@ -161,6 +161,17 @@ const descriptionOverrides = {
 // вещества, чтобы обосновать цену для более дорогих/специфичных капельниц.
 const dosageOverrides = {
   'Капельница Феринжект': '500 мг',
+  'Капельница с железом': '200 мг',
+}
+
+// Быстрая ссылка-переход на карточке (опционально) - для случаев, когда
+// человек мог попасть не на ту капельницу (напр. по запросу "капельница
+// железа" на дорогой Феринжект вместо базового "Железо стандарт").
+const crossLinkOverrides = {
+  'Капельница Феринжект': {
+    text: 'Капельница с железом (200 мг) - 5 000 ₽',
+    href: '/kapelnicy/zhelezo-standart/',
+  },
 }
 
 const fixedPrices = {
@@ -337,6 +348,7 @@ function parseInfusion(entry) {
       price: priceInfo.price,
       duration: priceInfo.duration,
       dosage: dosageOverrides[displayName],
+      crossLink: crossLinkOverrides[displayName],
     }
   }
 
@@ -398,6 +410,7 @@ function parseInfusion(entry) {
     price: priceInfo.price,
     duration: priceInfo.duration,
     dosage: dosageOverrides[displayName],
+    crossLink: crossLinkOverrides[displayName],
     imageUrl,
     details,
     ...sections,

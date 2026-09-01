@@ -10,6 +10,10 @@ export type InfusionItem = {
   price?: string
   duration?: string
   dosage?: string
+  crossLink?: {
+    text: string
+    href: string
+  }
   imageUrl?: string
   details?: string
   indications?: string[]
