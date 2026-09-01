@@ -172,6 +172,10 @@ const crossLinkOverrides = {
     text: 'Капельница с железом (200 мг) - 5 000 ₽',
     href: '/kapelnicy/zhelezo-standart/',
   },
+  'Капельница с железом': {
+    text: 'Капельница Феринжект (500 мг) - 9 000 ₽',
+    href: '/kapelnicy/zhelezo-2-0/',
+  },
 }
 
 const fixedPrices = {

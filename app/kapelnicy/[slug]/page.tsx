@@ -239,10 +239,10 @@ export default function InfusionDetailPage({ params }: PageProps) {
               {infusion.crossLink && (
                 <Link
                   href={infusion.crossLink.href}
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-olive-primary underline decoration-olive-primary/40 underline-offset-4 transition-colors hover:text-olive-light hover:decoration-olive-light"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-dashed border-olive-primary/50 bg-beige-background px-5 py-2.5 text-sm font-medium text-olive-primary transition-all hover:-translate-y-0.5 hover:border-olive-primary hover:bg-beige-background/70"
                 >
-                  Перейти к «{infusion.crossLink.text}»
-                  <span aria-hidden="true">→</span>
+                  {infusion.crossLink.text}
+                  <span aria-hidden="true" className="text-base font-bold">→</span>
                 </Link>
               )}
 
