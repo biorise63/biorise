@@ -242,7 +242,10 @@ export default function InfusionDetailPage({ params }: PageProps) {
                   className="mt-4 inline-flex items-center gap-2 rounded-full border border-dashed border-olive-primary/50 bg-beige-background px-5 py-2.5 text-sm font-medium text-olive-primary transition-all hover:-translate-y-0.5 hover:border-olive-primary hover:bg-beige-background/70"
                 >
                   {infusion.crossLink.text}
-                  <span aria-hidden="true" className="text-base font-bold">→</span>
+                  <span className="relative inline-flex h-5 w-5 flex-shrink-0 items-center justify-center">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-olive-primary/40" />
+                    <span aria-hidden="true" className="relative text-base font-bold">→</span>
+                  </span>
                 </Link>
               )}
 
