@@ -19,7 +19,9 @@ const galleryData: GalleryItem[] = [
     ],
     price: {
       current: '6 500 ₽',
+      old: '7 900 ₽',
     },
+    period: 'до 30 сентября 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
@@ -27,7 +29,7 @@ const galleryData: GalleryItem[] = [
       text: 'T-SPOT',
       alt: 'T-SPOT диагностика туберкулезной инфекции в BIORISE Самара',
       pos: 'center 45%',
-      by: 'T-SPOT',
+      by: 'Скидка до конца сентября',
     },
   },
   {
@@ -214,52 +216,6 @@ const galleryData: GalleryItem[] = [
       alt: 'Чек-ап Женское здоровье Optimal в BIORISE Самара',
       pos: 'center 42%',
       by: 'Женский чек-ап',
-    },
-  },
-  {
-    common: 'ЖЕНСКОЕ И МУЖСКОЕ ЗДОРОВЬЕ',
-    subtitle: 'Базовый чекап для контроля организма',
-    description:
-      'Здоровье — это не когда «ничего не болит», а когда всё под контролем.',
-    features: [
-      'Расширенный анализ крови',
-      'Проверка гормонального фона',
-      'Витамины и микроэлементы',
-      'Оценка общего состояния организма',
-    ],
-    price: {
-      current: '3 333 ₽',
-      old: '8 565 ₽',
-    },
-    period: 'до 30 сентября 2026',
-    buttonText: 'Записаться',
-    buttonHref: '#booking',
-    photo: {
-      url: '/optimized/promo/promo-checkup-man-woman.webp',
-      text: 'Женское и мужское здоровье',
-      by: 'Выгода — 5 232 ₽',
-    },
-  },
-  {
-    common: 'ПАРНОЕ ПОСЕЩЕНИЕ — ЗАБОТА ВДВОЁМ',
-    subtitle: 'Женский + мужской чекап',
-    features: [
-      'Расширенный анализ крови',
-      'Проверка гормонального фона',
-      'Витамины и микроэлементы',
-      'Оценка общего состояния организма',
-    ],
-    price: {
-      current: '5 555 ₽',
-      old: '17 130 ₽',
-    },
-    period: 'до 30 сентября 2026',
-    buttonText: 'Записаться',
-    buttonHref: '#booking',
-    photo: {
-      url: '/optimized/promo/promo-couple-checkup.webp',
-      text: 'Парное посещение',
-      by: 'Выгода — 11 575 ₽',
     },
   },
 ]

@@ -6,9 +6,9 @@ import TSpotContent from './TSpotContent'
 import { createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'T-spot в Самаре | 6500 ₽ в клинике Биорайз',
+  title: 'T-SPOT в Самаре | 6500 вместо 7900 | акция до 30.09',
   description:
-    'Сдать анализ T-SPOT в Самаре в клинике BIORISE: диагностика туберкулёзной инфекции без Манту и Диаскинтеста. Цена 6 500 ₽. Запись онлайн или по телефону.',
+    'Сдать анализ T-SPOT в Самаре в клинике BIORISE: диагностика туберкулёзной инфекции без Манту и Диаскинтеста. Акция до 30 сентября - 6 500 ₽ вместо 7 900 ₽. Запись онлайн или по телефону.',
   keywords: [
     't-spot самара',
     't spot самара',
@@ -21,8 +21,9 @@ export const metadata: Metadata = {
     canonical: 'https://biorise-clinic.ru/analizy/t-spot/',
   },
   openGraph: {
-    title: 'T-spot в Самаре | 6500 ₽ в клинике Биорайз',
-    description: 'Диагностика туберкулёзной инфекции без кожных проб. Цена 6 500 ₽.',
+    title: 'T-SPOT в Самаре | 6500 вместо 7900 | акция до 30.09',
+    description:
+      'Диагностика туберкулёзной инфекции без кожных проб. Акция до 30 сентября - 6 500 ₽ вместо 7 900 ₽.',
     url: 'https://biorise-clinic.ru/analizy/t-spot/',
     siteName: 'BIORISE',
     locale: 'ru_RU',
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'T-spot в Самаре | 6500 ₽',
-    description: 'Диагностика туберкулёзной инфекции без Манту и Диаскинтеста.',
+    title: 'T-SPOT в Самаре | 6500 вместо 7900 | акция до 30.09',
+    description: 'Диагностика туберкулёзной инфекции без Манту и Диаскинтеста. Акция до 30 сентября.',
   },
   robots: {
     index: true,
@@ -45,7 +46,7 @@ export default function TSpotPage() {
     url: '/analizy/t-spot/',
     name: 'T-spot в Самаре',
     description:
-      'Диагностика туберкулёзной инфекции T-SPOT в BIORISE: без Манту и Диаскинтеста, для взрослых и детей по назначению врача.',
+      'Диагностика туберкулёзной инфекции T-SPOT в BIORISE: без Манту и Диаскинтеста, для взрослых и детей по назначению врача. Акция до 30 сентября.',
   })
   const serviceJsonLd = createServiceJsonLd({
     url: '/analizy/t-spot/',
@@ -53,6 +54,7 @@ export default function TSpotPage() {
     description: 'Диагностика туберкулёзной инфекции без кожных проб, по назначению врача.',
     serviceType: 'Лабораторная диагностика',
     price: '6500 ₽',
+    priceValidUntil: '2026-09-30',
   })
 
   return (

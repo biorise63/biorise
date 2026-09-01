@@ -193,7 +193,7 @@ export const popularAnalyses: PopularAnalysisItem[] = [
   {
     code: 'TSPOT',
     title: 'T-SPOT',
-    description: 'Диагностика туберкулёзной инфекции без кожных проб.',
+    description: 'Диагностика туберкулёзной инфекции без кожных проб. Акция до 30 сентября.',
     icon: 'immunity',
     href: '/analizy/t-spot/',
     price: '6 500 ₽',
