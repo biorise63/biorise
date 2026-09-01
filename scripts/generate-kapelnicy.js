@@ -157,6 +157,12 @@ const descriptionOverrides = {
     'Капельница ЖКТ 2 применяется при остром холецистите, гастрите и язвенной болезни под наблюдением врача. При острой боли в животе, рвоте или подозрении на осложнения нужна неотложная помощь, а не запись на приём.',
 }
 
+// Третий бейдж на карточке (опционально) - конкретная дозировка действующего
+// вещества, чтобы обосновать цену для более дорогих/специфичных капельниц.
+const dosageOverrides = {
+  'Капельница Феринжект': '500 мг',
+}
+
 const fixedPrices = {
   'Айронмен': { price: '9 500 ₽', duration: '60 мин' },
   'Анти-климакс': { price: '5 000 ₽', duration: '60 мин' },
@@ -330,6 +336,7 @@ function parseInfusion(entry) {
       description: descriptionOverrides[displayName] || 'Описание скоро будет',
       price: priceInfo.price,
       duration: priceInfo.duration,
+      dosage: dosageOverrides[displayName],
     }
   }
 
@@ -390,6 +397,7 @@ function parseInfusion(entry) {
     description: desc,
     price: priceInfo.price,
     duration: priceInfo.duration,
+    dosage: dosageOverrides[displayName],
     imageUrl,
     details,
     ...sections,

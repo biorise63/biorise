@@ -215,17 +215,23 @@ export default function InfusionDetailPage({ params }: PageProps) {
                 {infusion.description}
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-2">
                 {infusion.price && (
-                  <div className="rounded-2xl bg-white/85 px-5 py-4 shadow-premium">
-                    <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary">Стоимость</span>
-                    <strong className="mt-1 block text-2xl text-olive-primary">{infusion.price}</strong>
+                  <div className="rounded-xl bg-white/85 px-4 py-2.5 shadow-premium">
+                    <span className="block text-[10px] uppercase tracking-[0.1em] text-olive-primary">Стоимость</span>
+                    <strong className="mt-0.5 block text-base text-olive-primary">{infusion.price}</strong>
                   </div>
                 )}
                 {infusion.duration && (
-                  <div className="rounded-2xl bg-white/85 px-5 py-4 shadow-premium">
-                    <span className="block text-xs uppercase tracking-[0.12em] text-olive-primary">Время процедуры</span>
-                    <strong className="mt-1 block text-2xl text-olive-primary">{infusion.duration}</strong>
+                  <div className="rounded-xl bg-white/85 px-4 py-2.5 shadow-premium">
+                    <span className="block text-[10px] uppercase tracking-[0.1em] text-olive-primary">Время процедуры</span>
+                    <strong className="mt-0.5 block text-base text-olive-primary">{infusion.duration}</strong>
+                  </div>
+                )}
+                {infusion.dosage && (
+                  <div className="rounded-xl bg-white/85 px-4 py-2.5 shadow-premium">
+                    <span className="block text-[10px] uppercase tracking-[0.1em] text-olive-primary">Дозировка</span>
+                    <strong className="mt-0.5 block text-base text-olive-primary">{infusion.dosage}</strong>
                   </div>
                 )}
               </div>

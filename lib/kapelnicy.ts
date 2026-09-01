@@ -9,6 +9,7 @@ export type InfusionItem = {
   description: string
   price?: string
   duration?: string
+  dosage?: string
   imageUrl?: string
   details?: string
   indications?: string[]
