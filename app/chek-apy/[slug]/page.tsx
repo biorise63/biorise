@@ -138,6 +138,12 @@ export default function CheckupDetailPage({ params }: PageProps) {
             {program.summary}
           </p>
 
+          {program.description && (
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-olive-text">
+              {program.description}
+            </p>
+          )}
+
           {program.price && (
             <div className="mt-7 flex flex-wrap gap-3">
               <div className="rounded-2xl bg-white/85 px-5 py-4 shadow-premium">
