@@ -3735,5 +3735,137 @@
     "source": "samaraDemandSprint day2 2026-09-01",
     "createdAt": "2026-09-01",
     "updatedAt": "2026-09-01"
+  },
+  {
+    "id": "otek-kvinke-prichiny",
+    "keyword": "отек квинке причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Отёк Квинке: причины",
+    "h1": "Отёк Квинке: что вызывает это состояние",
+    "description": "Разбираем частые причины отёка Квинке - от пищевой и лекарственной аллергии до укусов насекомых, и почему это состояние требует срочной оценки врача.",
+    "url": "/articles/otek-kvinke-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/antigistaminnaya/",
+      "/analizy/analiz-krovi/",
+      "/articles/analiz-na-allergeny-chto-nuzhno-znat/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 3/3, посадочная - при аллергии, ключ по РФ: 561/мес.",
+    "source": "samaraDemandSprint day3 2026-09-03",
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-03"
+  },
+  {
+    "id": "syp-na-tele-u-vzroslogo-prichiny",
+    "keyword": "сыпь на теле у взрослого причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Сыпь на теле у взрослого: причины",
+    "h1": "Сыпь на теле у взрослого: о чём она может говорить",
+    "description": "Разбираем частые причины сыпи на теле у взрослых - от аллергии и реакции на лекарства до инфекций и стресса, и когда стоит показаться врачу.",
+    "url": "/articles/syp-na-tele-u-vzroslogo-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/antigistaminnaya/",
+      "/analizy/analiz-krovi/",
+      "/articles/analiz-na-allergeny-chto-nuzhno-znat/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 3/3, посадочная - при аллергии, ключ по РФ: 613/мес.",
+    "source": "samaraDemandSprint day3 2026-09-03",
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-03"
+  },
+  {
+    "id": "nepriyatnyy-zapah-izo-rta-prichiny",
+    "keyword": "неприятный запах изо рта причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Неприятный запах изо рта: причины",
+    "h1": "Неприятный запах изо рта: откуда он берётся",
+    "description": "Разбираем частые причины неприятного запаха изо рта - от стоматологических проблем до нарушений работы ЖКТ и печени, и когда стоит пройти обследование.",
+    "url": "/articles/nepriyatnyy-zapah-izo-rta-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/detoks-standart/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/articles/chek-ap-pecheni/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 3/3, посадочная - детокс, ключ по РФ: 2622/мес.",
+    "source": "samaraDemandSprint day3 2026-09-03",
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-03"
+  },
+  {
+    "id": "zheltyy-nalet-na-yazyke-prichiny",
+    "keyword": "желтый налет на языке причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Жёлтый налёт на языке: причины",
+    "h1": "Жёлтый налёт на языке: о чём он говорит",
+    "description": "Разбираем частые причины жёлтого налёта на языке - от обезвоживания и погрешностей в питании до проблем с печенью и желчным пузырём.",
+    "url": "/articles/zheltyy-nalet-na-yazyke-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/detoks-standart/",
+      "/analizy/biohimicheskiy-analiz-krovi/",
+      "/articles/kapelnitsa-dlya-pecheni-dlya-chego-naznachayut/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 3/3, посадочная - детокс, ключ по РФ: 3123/мес.",
+    "source": "samaraDemandSprint day3 2026-09-03",
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-03"
+  },
+  {
+    "id": "toksikoz-pri-beremennosti-prichiny",
+    "keyword": "токсикоз при беременности причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Токсикоз при беременности: причины",
+    "h1": "Токсикоз при беременности: почему он возникает",
+    "description": "Разбираем частые причины токсикоза при беременности - от гормональной перестройки до индивидуальной чувствительности, и когда это состояние требует внимания врача.",
+    "url": "/articles/toksikoz-pri-beremennosti-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/mame-mozhno/",
+      "/analizy/analiz-krovi/",
+      "/articles/kapelnitsa-pri-beremennosti-kogda-rassmatrivayut/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 3/3, посадочная - при беременности, ключ по РФ: 147/мес.",
+    "source": "samaraDemandSprint day3 2026-09-03",
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-03"
+  },
+  {
+    "id": "oteki-pri-beremennosti-prichiny",
+    "keyword": "отеки при беременности причины",
+    "priority": "средний",
+    "intent": "информационный",
+    "status": "published",
+    "published": true,
+    "title": "Отёки при беременности: причины",
+    "h1": "Отёки при беременности: с чем они связаны",
+    "description": "Разбираем частые причины отёков при беременности - от естественной задержки жидкости до состояний, требующих внимания врача, и как отличить одно от другого.",
+    "url": "/articles/oteki-pri-beremennosti-prichiny/",
+    "internalLinks": [
+      "/kapelnicy/mame-mozhno/",
+      "/analizy/analiz-mochi/",
+      "/articles/kapelnitsa-pri-beremennosti-kogda-rassmatrivayut/",
+      "/"
+    ],
+    "notes": "samaraDemandSprint день 3/3, посадочная - при беременности, ключ по РФ: 164/мес.",
+    "source": "samaraDemandSprint day3 2026-09-03",
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-03"
   }
 ]

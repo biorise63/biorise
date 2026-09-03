@@ -1,7 +1,7 @@
 {
-  "runsCompleted": 29,
+  "runsCompleted": 30,
   "firstRunAt": "2026-08-07",
-  "lastRunAt": "2026-09-01",
+  "lastRunAt": "2026-09-03",
   "rampThreshold": 10,
   "note": "runsCompleted увеличивается только после того, как пользователь подтвердил публикацию и она запушена. Пока runsCompleted < rampThreshold — режим разгона (2-3 статьи/день вперемешку). После — 4 основные + 1-2 вспомогательные.",
   "kapelnicyLinkSprint": {
@@ -105,11 +105,29 @@
         "myshechnye-spazmy-prichiny": 733
       }
     },
-    "dayPlan": {
-      "3": {
-        "targetPages": ["antigistaminnaya", "detoks-standart", "mame-mozhno"],
-        "note": "при аллергии, детокс, при беременности — как явно указал пользователь"
+    "day3": {
+      "date": "2026-09-03",
+      "status": "done",
+      "targetPages": ["antigistaminnaya", "detoks-standart", "mame-mozhno"],
+      "articles": [
+        "otek-kvinke-prichiny",
+        "syp-na-tele-u-vzroslogo-prichiny",
+        "nepriyatnyy-zapah-izo-rta-prichiny",
+        "zheltyy-nalet-na-yazyke-prichiny",
+        "toksikoz-pri-beremennosti-prichiny",
+        "oteki-pri-beremennosti-prichiny"
+      ],
+      "wordstatNationalVerified": {
+        "otek-kvinke-prichiny": 561,
+        "syp-na-tele-u-vzroslogo-prichiny": 613,
+        "nepriyatnyy-zapah-izo-rta-prichiny": 2622,
+        "zheltyy-nalet-na-yazyke-prichiny": 3123,
+        "toksikoz-pri-beremennosti-prichiny": 147,
+        "oteki-pri-beremennosti-prichiny": 164
       }
-    }
+    },
+    "status": "completed",
+    "completedAt": "2026-09-03",
+    "completedNote": "Спринт из 3 дней / 18 статей завершён. Если понадобится продолжать перелинковку капельниц по спросу - досчитать sourceTable по оставшимся ~27 капельницам (не проверялись по Самаре из-за лимита Wordstat) и открыть новый спринт."
   }
 }
