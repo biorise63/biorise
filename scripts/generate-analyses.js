@@ -119,6 +119,13 @@ for (const row of rows) {
     priceValue,
   }
 
+  // Раздел 27 в исходном прайсе - экологические исследования почвы и воды
+  // (это услуги референс-лаборатории, не относящиеся к клинике BIORISE вообще,
+  // попали в CSV вместе со всем остальным прайсом при выгрузке) - пропускаем.
+  if (/^27\./.test(currentSection) || item.section.toLowerCase().includes('качества воды и почвы')) {
+    continue
+  }
+
   const dedupeKey = `${item.section}|${item.subsection}|${item.code}|${item.name}|${item.price}|${item.biomaterial}`
   if (seen.has(dedupeKey)) continue
   seen.add(dedupeKey)
