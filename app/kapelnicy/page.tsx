@@ -5,9 +5,9 @@ import JsonLd from '@/components/JsonLd'
 import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Виды капельниц в Самаре: цены и состав | BIORISE',
+  title: 'Каталог капельниц в Самаре: 49 программ и состав | BIORISE',
   description:
-    'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены, выезд на дом и онлайн-запись.',
+    'Полный каталог капельниц BIORISE в Самаре: 49 программ по категориям, состав, показания и цены. Подбор врачом, выезд на дом и онлайн-запись.',
   alternates: {
     canonical: 'https://biorise-clinic.ru/kapelnicy/',
   },
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     locale: 'ru_RU',
     url: 'https://biorise-clinic.ru/kapelnicy/',
     siteName: 'BIORISE',
-    title: 'Виды капельниц в Самаре: цены и состав | BIORISE',
+    title: 'Каталог капельниц в Самаре: 49 программ и состав | BIORISE',
     description:
-      'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены и выезд на дом.',
+      'Полный каталог капельниц BIORISE в Самаре: 49 программ по категориям, состав, показания и цены. Подбор врачом и выезд на дом.',
     images: [
       {
         url: 'https://biorise-clinic.ru/hero-bg.jpg',
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Виды капельниц в Самаре: цены и состав | BIORISE',
+    title: 'Каталог капельниц в Самаре: 49 программ и состав | BIORISE',
     description:
-      'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены и запись.',
+      'Полный каталог капельниц BIORISE в Самаре: 49 программ по категориям, состав, показания и цены. Подбор врачом и онлайн-запись.',
     images: ['https://biorise-clinic.ru/hero-bg.jpg'],
   },
   robots: {
@@ -65,7 +65,7 @@ export default function KapelnicyPage() {
     url: '/kapelnicy/',
     name: 'Виды капельниц в Самаре: цены и состав',
     description:
-      'Капельницы BIORISE в Самаре: витаминные, восстановительные и детокс-программы. Подбор врачом, цены, выезд на дом и онлайн-запись.',
+      'Полный каталог капельниц BIORISE в Самаре: 49 программ по категориям, состав, показания и цены. Подбор врачом, выезд на дом и онлайн-запись.',
     type: 'CollectionPage',
   })
   const itemListJsonLd = createItemListJsonLd({
