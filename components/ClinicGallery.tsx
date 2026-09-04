@@ -44,8 +44,8 @@ const galleryData: GalleryItem[] = [
       current: '5 990 ₽',
     },
     period: 'до 30 сентября 2026',
-    buttonText: 'Записаться',
-    buttonHref: '#booking',
+    buttonText: 'Подробнее',
+    buttonHref: '/akcii/kompleksnyy-chek-ap-72-pokazatelya/',
     photo: {
       url: '/optimized/promo/gallery/promo-kompleksny-chekap.webp',
       text: 'Комплексный чек-ап',
