@@ -9,7 +9,7 @@ import { createFaqJsonLd, createServiceJsonLd, createWebPageJsonLd } from '@/lib
 export const metadata: Metadata = {
   title: 'Анализ мочи в Самаре | Клиника БИОРАЙЗ',
   description:
-    'Сдать общий анализ мочи в BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
+    'Сдать общий анализ мочи в Самаре в клинике BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
   keywords: ['анализ мочи самара', 'общий анализ мочи', 'сдать анализ мочи', 'биорайз самара'],
   alternates: {
     canonical: 'https://biorise-clinic.ru/analizy/analiz-mochi/',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Анализ мочи в Самаре | Клиника БИОРАЙЗ',
     description:
-      'Сдать общий анализ мочи в BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
+      'Сдать общий анализ мочи в Самаре в клинике BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
     url: 'https://biorise-clinic.ru/analizy/analiz-mochi/',
     siteName: 'BIORISE',
     locale: 'ru_RU',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Анализ мочи в Самаре | Клиника БИОРАЙЗ',
     description:
-      'Сдать общий анализ мочи в BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
+      'Сдать общий анализ мочи в Самаре в клинике BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
   },
   robots: {
     index: true,
@@ -40,7 +40,7 @@ export default function UrineAnalysisPage() {
     url: '/analizy/analiz-mochi/',
     name: 'Анализ мочи в Самаре',
     description:
-      'Сдать общий анализ мочи в BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
+      'Сдать общий анализ мочи в Самаре в клинике BIORISE можно без очередей. Результат обычно готов за 1 к.д., запись онлайн или по телефону.',
   })
   const serviceJsonLd = createServiceJsonLd({
     url: '/analizy/analiz-mochi/',
