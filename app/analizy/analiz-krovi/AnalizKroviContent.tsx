@@ -4,6 +4,20 @@ import Link from 'next/link'
 import { useBookingModal } from '@/components/BookingModalProvider'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowLeft, CalendarDays, Clock3, FlaskConical, PhoneCall } from 'lucide-react'
+import ReferenceRangeTable from '@/components/analizy/ReferenceRangeTable'
+import AnalysisFaq from '@/components/analizy/AnalysisFaq'
+import { faqItems } from './faq'
+
+const referenceRows = [
+  { parameter: 'Гемоглобин, мужчины', range: '130–160 г/л' },
+  { parameter: 'Гемоглобин, женщины', range: '120–150 г/л' },
+  { parameter: 'Эритроциты, мужчины', range: '4,0–5,5 × 10¹²/л' },
+  { parameter: 'Эритроциты, женщины', range: '3,5–5,0 × 10¹²/л' },
+  { parameter: 'Лейкоциты', range: '4,0–9,0 × 10⁹/л' },
+  { parameter: 'Тромбоциты', range: '150–400 × 10⁹/л' },
+  { parameter: 'СОЭ, мужчины', range: 'до 10 мм/ч' },
+  { parameter: 'СОЭ, женщины', range: 'до 15 мм/ч' },
+]
 
 const PHONE_HREF = 'tel:+79967499747'
 const ANALYSES_URL = '/analizy/'
@@ -191,6 +205,12 @@ export default function AnalizKroviContent() {
             </div>
           </div>
         </section>
+
+        <ReferenceRangeTable
+          rows={referenceRows}
+          note="Референсные значения могут немного отличаться в зависимости от лаборатории и используемого оборудования - ориентируйтесь на диапазон, указанный в бланке результата."
+        />
+        <AnalysisFaq items={faqItems} />
       </div>
     </div>
   )

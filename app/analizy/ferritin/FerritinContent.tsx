@@ -5,6 +5,14 @@ import { useBookingModal } from '@/components/BookingModalProvider'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowLeft, CalendarDays, Clock3, FlaskConical, PhoneCall, ShieldCheck } from 'lucide-react'
 import { allAnalyses } from '@/lib/analyses'
+import ReferenceRangeTable from '@/components/analizy/ReferenceRangeTable'
+import AnalysisFaq from '@/components/analizy/AnalysisFaq'
+import { faqItems } from './faq'
+
+const referenceRows = [
+  { parameter: 'Мужчины', range: '20–250 нг/мл' },
+  { parameter: 'Женщины', range: '10–120 нг/мл' },
+]
 
 const PHONE_HREF = 'tel:+79967499747'
 const ANALYSES_URL = '/analizy/'
@@ -249,6 +257,12 @@ export default function FerritinContent() {
             </div>
           </div>
         </section>
+
+        <ReferenceRangeTable
+          rows={referenceRows}
+          note="Референсные значения могут немного отличаться в зависимости от лаборатории и используемых реагентов - ориентируйтесь на диапазон, указанный в бланке результата."
+        />
+        <AnalysisFaq items={faqItems} />
       </div>
     </div>
   )

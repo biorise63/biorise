@@ -4,6 +4,15 @@ import Link from 'next/link'
 import { useBookingModal } from '@/components/BookingModalProvider'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowLeft, CalendarDays, Clock3, PhoneCall, ShieldCheck, Sparkles } from 'lucide-react'
+import ReferenceRangeTable from '@/components/analizy/ReferenceRangeTable'
+import AnalysisFaq from '@/components/analizy/AnalysisFaq'
+import { faqItems } from './faq'
+
+const referenceRows = [
+  { parameter: 'Отрицательный', range: 'Данных за туберкулёзную инфекцию не получено' },
+  { parameter: 'Положительный', range: 'Есть данные за туберкулёзную инфекцию - нужна консультация врача' },
+  { parameter: 'Сомнительный (неопределённый)', range: 'Требуется повторное исследование по решению врача' },
+]
 
 const PHONE_HREF = 'tel:+79967499747'
 const ANALYSES_URL = '/analizy/'
@@ -237,6 +246,14 @@ export default function TSpotContent() {
             </div>
           </div>
         </section>
+
+        <ReferenceRangeTable
+          title="Как читать результат"
+          columnLabels={['Результат', 'Что означает']}
+          rows={referenceRows}
+          note="Интерпретацию результата всегда даёт врач с учётом клинической картины и других обследований."
+        />
+        <AnalysisFaq items={faqItems} />
       </div>
     </div>
   )

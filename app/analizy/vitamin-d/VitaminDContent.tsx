@@ -5,6 +5,9 @@ import { useBookingModal } from '@/components/BookingModalProvider'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowLeft, CalendarDays, Clock3, FlaskConical, PhoneCall, ShieldCheck } from 'lucide-react'
 import { allAnalyses } from '@/lib/analyses'
+import ReferenceRangeTable from '@/components/analizy/ReferenceRangeTable'
+import AnalysisFaq from '@/components/analizy/AnalysisFaq'
+import { faqItems } from './faq'
 
 const PHONE_HREF = 'tel:+79967499747'
 const ANALYSES_URL = '/analizy/'
@@ -14,6 +17,13 @@ const VITAMIN_DRIP_URL = '/kapelnicy/vitaminnaya/'
 const VITAMIN_D_ARTICLE_URL = '/articles/analiz-na-vitamin-d-kogda-i-zachem-sdavat/'
 
 const vitaminDAnalysis = allAnalyses.find((item) => item.code === '928')
+
+const referenceRows = [
+  { parameter: 'Дефицит', range: 'менее 20 нг/мл' },
+  { parameter: 'Недостаточность', range: '20–29 нг/мл' },
+  { parameter: 'Норма', range: '30–100 нг/мл' },
+  { parameter: 'Избыток', range: 'более 100 нг/мл' },
+]
 
 const facts = [
   {
@@ -238,6 +248,12 @@ export default function VitaminDContent() {
             </div>
           </div>
         </section>
+
+        <ReferenceRangeTable
+          rows={referenceRows}
+          note="Пороговые значения приведены по распространённой классификации и могут немного отличаться между лабораториями - ориентируйтесь на диапазон, указанный в бланке результата."
+        />
+        <AnalysisFaq items={faqItems} />
       </div>
     </div>
   )

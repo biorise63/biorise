@@ -3,6 +3,7 @@ import JsonLd from '@/components/JsonLd'
 import PromoContent from './PromoContent'
 import { promos, getPromoBySlug } from '@/lib/promos'
 import {
+  createFaqJsonLd,
   createServiceJsonLd,
   createWebPageJsonLd,
   medicalClinicJsonLd,
@@ -66,18 +67,7 @@ export default function PromoPage({ params }: PageProps) {
     price: formatPrice(promo.price),
     priceValidUntil: promo.validUntilIso,
   })
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: promo.faq.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  }
+  const faqJsonLd = createFaqJsonLd(promo.faq)
 
   return (
     <>

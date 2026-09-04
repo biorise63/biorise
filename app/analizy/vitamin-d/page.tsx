@@ -3,7 +3,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
 import VitaminDContent from './VitaminDContent'
-import { createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
+import { faqItems } from './faq'
+import { createFaqJsonLd, createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Витамин Д Самара | Анализ на витамин Д | Клиника БИОРАЙЗ',
@@ -55,10 +56,11 @@ export default function VitaminDPage() {
     serviceType: 'Лабораторная диагностика',
     price: '2 065 ₽',
   })
+  const faqJsonLd = createFaqJsonLd(faqItems)
 
   return (
     <main className="min-h-screen bg-white">
-      <JsonLd data={[webPageJsonLd, serviceJsonLd]} />
+      <JsonLd data={[webPageJsonLd, serviceJsonLd, faqJsonLd]} />
       <Header />
       <VitaminDContent />
       <Footer />

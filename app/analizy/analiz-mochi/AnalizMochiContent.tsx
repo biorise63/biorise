@@ -5,6 +5,22 @@ import { useBookingModal } from '@/components/BookingModalProvider'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowLeft, CalendarDays, Clock3, FlaskConical, PhoneCall } from 'lucide-react'
 import { allAnalyses } from '@/lib/analyses'
+import ReferenceRangeTable from '@/components/analizy/ReferenceRangeTable'
+import AnalysisFaq from '@/components/analizy/AnalysisFaq'
+import { faqItems } from './faq'
+
+const referenceRows = [
+  { parameter: 'Цвет', range: 'соломенно-жёлтый' },
+  { parameter: 'Прозрачность', range: 'прозрачная' },
+  { parameter: 'Плотность', range: '1,010–1,025' },
+  { parameter: 'pH', range: '5,0–7,0' },
+  { parameter: 'Белок', range: 'отсутствует или следы' },
+  { parameter: 'Глюкоза', range: 'отсутствует' },
+  { parameter: 'Лейкоциты, мужчины', range: '0–3 в поле зрения' },
+  { parameter: 'Лейкоциты, женщины', range: '0–6 в поле зрения' },
+  { parameter: 'Эритроциты', range: '0–2 в поле зрения' },
+  { parameter: 'Бактерии, соли', range: 'отсутствуют' },
+]
 
 const PHONE_HREF = 'tel:+79967499747'
 const ANALYSES_URL = '/analizy/'
@@ -196,6 +212,12 @@ export default function AnalizMochiContent() {
             </div>
           </div>
         </section>
+
+        <ReferenceRangeTable
+          rows={referenceRows}
+          note="Референсные значения приведены для взрослых и могут отличаться в зависимости от лаборатории - ориентируйтесь на диапазон, указанный в бланке результата."
+        />
+        <AnalysisFaq items={faqItems} />
       </div>
     </div>
   )

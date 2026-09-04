@@ -4,6 +4,21 @@ import Link from 'next/link'
 import { useBookingModal } from '@/components/BookingModalProvider'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowLeft, BookOpen, Clock3, FlaskConical, PhoneCall, ShieldCheck } from 'lucide-react'
+import ReferenceRangeTable from '@/components/analizy/ReferenceRangeTable'
+import AnalysisFaq from '@/components/analizy/AnalysisFaq'
+import { faqItems } from './faq'
+
+const referenceRows = [
+  { parameter: 'Глюкоза', range: '3,3–5,5 ммоль/л' },
+  { parameter: 'Общий белок', range: '64–83 г/л' },
+  { parameter: 'АЛТ, мужчины', range: 'до 41 Ед/л' },
+  { parameter: 'АЛТ, женщины', range: 'до 33 Ед/л' },
+  { parameter: 'АСТ, мужчины', range: 'до 40 Ед/л' },
+  { parameter: 'АСТ, женщины', range: 'до 32 Ед/л' },
+  { parameter: 'Креатинин, мужчины', range: '62–115 мкмоль/л' },
+  { parameter: 'Креатинин, женщины', range: '53–97 мкмоль/л' },
+  { parameter: 'Общий холестерин', range: 'до 5,2 ммоль/л' },
+]
 
 const PHONE_HREF = 'tel:+79967499747'
 const ANALYSES_URL = '/analizy/'
@@ -186,6 +201,12 @@ export default function BiohimicheskiyAnalizKroviContent() {
             </div>
           </div>
         </section>
+
+        <ReferenceRangeTable
+          rows={referenceRows}
+          note="Референсные значения приведены для взрослых и могут отличаться в зависимости от лаборатории и используемого оборудования - ориентируйтесь на диапазон, указанный в бланке результата."
+        />
+        <AnalysisFaq items={faqItems} />
       </div>
     </div>
   )

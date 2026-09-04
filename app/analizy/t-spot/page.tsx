@@ -3,7 +3,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
 import TSpotContent from './TSpotContent'
-import { createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
+import { faqItems } from './faq'
+import { createFaqJsonLd, createServiceJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'T-SPOT в Самаре | 6500 вместо 7900 | акция до 30.09',
@@ -56,10 +57,11 @@ export default function TSpotPage() {
     price: '6500 ₽',
     priceValidUntil: '2026-09-30',
   })
+  const faqJsonLd = createFaqJsonLd(faqItems)
 
   return (
     <main className="min-h-screen bg-white">
-      <JsonLd data={[webPageJsonLd, serviceJsonLd]} />
+      <JsonLd data={[webPageJsonLd, serviceJsonLd, faqJsonLd]} />
       <Header />
       <TSpotContent />
       <Footer />
