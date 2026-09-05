@@ -138,8 +138,23 @@ def build():
             house_call, telemed, appointment, online_schedule, internal_doctor_id,
         ) = row
 
+        # Сайт не даёт отдельной страницы записи под каждую услугу - все офферы
+        # одного врача в одной клинике (разные капельницы/анализы) ведут на
+        # одну и ту же /vrachi/<id>/, и разные клиники одного врача тоже делят
+        # общий URL. По документации Яндекса "Одинаковый URL может быть только
+        # у офферов с одинаковым group_id" (сам тег group_id нигде не показан
+        # в официальном примере схемы; вместо него FAQ прямо рекомендует
+        # "добавить уникальные параметры, например UTM-метки"). Различаем
+        # офферы clinic_id и service_id в query-строке - страница остаётся той
+        # же самой, меняется только техническая уникальность URL в фиде.
+        service_id_for_url = service_id_by_name.get(service_name, service_name)
+        offer_url = (
+            f'{booking_url}?clinic={clinic_id}&service={service_id_for_url}'
+            if booking_url else booking_url
+        )
+
         offer_el = SubElement(offers_el, 'offer', {'id': f'offer_{i}'})
-        sub(offer_el, 'url', booking_url)
+        sub(offer_el, 'url', offer_url)
         sub(offer_el, 'oms', to_bool_str(oms))
         sub(offer_el, 'online_schedule', to_bool_str(online_schedule))
         sub(offer_el, 'appointment', to_bool_str(appointment))
