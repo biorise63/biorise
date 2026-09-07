@@ -1,6 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import {
+  Check,
+  FlaskConical,
+  ListChecks,
+  ShieldAlert,
+  ShieldCheck,
+  Sparkles,
+  TrendingUp,
+} from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -76,18 +85,45 @@ export function generateMetadata({ params }: PageProps) {
   }
 }
 
-function InfoList({ title, items, variant = 'default' }: { title: string; items?: string[]; variant?: 'default' | 'numbered' }) {
+function SectionIcon({ icon: Icon }: { icon: typeof Sparkles }) {
+  return (
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-olive-primary/10 text-olive-primary">
+      <Icon className="h-5 w-5" aria-hidden="true" />
+    </div>
+  )
+}
+
+function InfoList({
+  title,
+  items,
+  variant = 'default',
+  icon,
+}: {
+  title: string
+  items?: string[]
+  variant?: 'default' | 'numbered'
+  icon: typeof Sparkles
+}) {
   if (!items?.length) return null
 
   return (
-    <section className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-5 shadow-premium sm:p-7">
-      <h2 className="mb-5 text-2xl font-heading font-light text-olive-primary sm:text-3xl">{title}</h2>
-      <ul className="space-y-3 text-olive-text">
+    <section className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-6 shadow-premium sm:p-8">
+      <div className="mb-6 flex items-center gap-3">
+        <SectionIcon icon={icon} />
+        <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">{title}</h2>
+      </div>
+      <ul className="space-y-4 text-olive-text">
         {items.map((item, index) => (
           <li key={`${title}-${index}`} className="flex gap-3 leading-relaxed">
-            <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-olive-primary/10 text-xs font-semibold text-olive-primary">
-              {variant === 'numbered' ? index + 1 : '•'}
-            </span>
+            {variant === 'numbered' ? (
+              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-olive-primary/10 text-xs font-semibold text-olive-primary">
+                {index + 1}
+              </span>
+            ) : (
+              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-olive-primary text-white">
+                <Check className="h-3.5 w-3.5" aria-hidden="true" strokeWidth={3} />
+              </span>
+            )}
             <span>{item.replace(/^\d+\s*[.)]?\s*/, '').trim()}</span>
           </li>
         ))}
@@ -100,13 +136,24 @@ function CompositionBlock({ items }: { items?: string[] }) {
   if (!items?.length) return null
 
   return (
-    <section className="rounded-[28px] border border-olive-primary/10 bg-[#f4efe6] p-5 shadow-premium sm:p-7">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Состав</p>
-      <h2 className="mb-5 text-2xl font-heading font-light text-olive-primary sm:text-3xl">Что входит в инфузию</h2>
+    <section className="rounded-[28px] border border-olive-primary/10 bg-[#f4efe6] p-6 shadow-premium sm:p-8">
+      <div className="mb-6 flex items-center gap-3">
+        <SectionIcon icon={FlaskConical} />
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Состав</p>
+          <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">Что входит в инфузию</h2>
+        </div>
+      </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {items.map((item, index) => (
-          <div key={index} className="rounded-2xl border border-white/70 bg-white/70 p-4 text-sm leading-relaxed text-olive-text">
-            {item}
+          <div
+            key={index}
+            className="flex items-start gap-3 rounded-2xl border border-white/70 bg-white/70 p-4 text-sm leading-relaxed text-olive-text"
+          >
+            <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-olive-primary/15 text-olive-primary">
+              <Check className="h-3 w-3" aria-hidden="true" strokeWidth={3} />
+            </span>
+            <span>{item}</span>
           </div>
         ))}
       </div>
@@ -252,6 +299,11 @@ export default function InfusionDetailPage({ params }: PageProps) {
               <div className="mt-8">
                 <InfusionDetailActions slug={infusion.slug} />
               </div>
+
+              <p className="mt-4 flex items-center gap-2 text-sm text-olive-primary/70">
+                <ShieldCheck className="h-4 w-4 shrink-0" aria-hidden="true" />
+                Только сертифицированные препараты
+              </p>
             </div>
 
             <div className="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/70 p-5 shadow-premium">
@@ -268,8 +320,8 @@ export default function InfusionDetailPage({ params }: PageProps) {
         </section>
 
         <section className="container mx-auto grid gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-2">
-          <InfoList title="Когда может подойти" items={infusion.indications} />
-          <InfoList title="Какой эффект ожидают" items={infusion.effect} variant="numbered" />
+          <InfoList title="Когда может подойти" items={infusion.indications} icon={Sparkles} />
+          <InfoList title="Какой эффект ожидают" items={infusion.effect} variant="numbered" icon={TrendingUp} />
         </section>
 
         <section className="container mx-auto px-4 pb-12 sm:px-6">
@@ -277,9 +329,12 @@ export default function InfusionDetailPage({ params }: PageProps) {
         </section>
 
         <section className="container mx-auto grid gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
-          <InfoList title="Противопоказания" items={infusion.contraindications} />
-          <section className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-5 shadow-premium sm:p-7">
-            <h2 className="mb-4 text-2xl font-heading font-light text-olive-primary sm:text-3xl">Как проходит процедура</h2>
+          <InfoList title="Противопоказания" items={infusion.contraindications} icon={ShieldAlert} />
+          <section className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-6 shadow-premium sm:p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <SectionIcon icon={ListChecks} />
+              <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">Как проходит процедура</h2>
+            </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 'Врач уточняет жалобы, анамнез и возможные ограничения.',
