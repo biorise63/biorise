@@ -81,6 +81,12 @@ export const medicalClinicJsonLd = {
       opens: '08:00',
       closes: '15:00',
     },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '08:00',
+      closes: '15:00',
+    },
   ],
 }
 
