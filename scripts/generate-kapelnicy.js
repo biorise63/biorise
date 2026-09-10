@@ -55,7 +55,7 @@ const nameToSlug = {
   'Капельница Восстановление обоняния': 'vosstanovlenie-obonyaniya',
   'Капельница ЖКТ 1': 'zhkt-1',
   'Капельница ЖКТ 2': 'zhkt-2',
-  'Терзапатид 10 мг': 'terzapatid',
+  'Тирзепатид': 'terzapatid',
 }
 
 // для новых уникальных карточек фото берём от базового slug
@@ -162,6 +162,20 @@ const descriptionOverrides = {
 const dosageOverrides = {
   'Капельница Феринжект': '500 мг',
   'Капельница с железом': '200 мг',
+  'Тирзепатид': '2,5-15 мг',
+}
+
+// Полная разбивка цены по дозировкам (см. Клиентикс, сверено 2026-09-11) - рендерится
+// отдельной таблицей на странице капельницы вместо одной фиксированной цены/дозы.
+const dosagePricingOverrides = {
+  'Тирзепатид': [
+    { dosage: '2,5 мг', price: '5 000 ₽' },
+    { dosage: '5 мг', price: '7 000 ₽' },
+    { dosage: '7,5 мг', price: '8 500 ₽' },
+    { dosage: '10 мг', price: '10 000 ₽' },
+    { dosage: '12,5 мг', price: '11 500 ₽' },
+    { dosage: '15 мг', price: '12 500 ₽' },
+  ],
 }
 
 // Быстрая ссылка-переход на карточке (опционально) - для случаев, когда
@@ -217,7 +231,7 @@ const fixedPrices = {
   'Маме можно': { price: '3 900 ₽', duration: '60 мин' },
   'Мужское здоровье': { price: '5 000 ₽', duration: '60 мин' },
   'Мультивитаминная': { price: '7 500 ₽', duration: '60 мин' },
-  'Нет холестерину': { price: '3 500 ₽', duration: '60 мин' },
+  'Нет холестерину': { price: '4 500 ₽', duration: '60 мин' },
   'Подготовка к беременности': { price: '4 300 ₽', duration: '60 мин' },
   'Половая система': { price: '4 300 ₽', duration: '60 мин' },
   'После вечеринки': { price: '4 900 ₽', duration: '60 мин' },
@@ -231,7 +245,7 @@ const fixedPrices = {
   'Стоматологическая противоспалительная': { price: '4 500 ₽', duration: '60 мин' },
   'Суставная противоспалительная': { price: '4 300 ₽', duration: '60 мин' },
   'Энергия +': { price: '3 900 ₽', duration: '60 мин' },
-  'Терзапатид 10 мг': { price: '5 500 ₽', duration: '15 мин' },
+  'Тирзепатид': { price: 'от 5 000 ₽', duration: '15 мин' },
 }
 
 const sectionMap = {
@@ -352,6 +366,7 @@ function parseInfusion(entry) {
       price: priceInfo.price,
       duration: priceInfo.duration,
       dosage: dosageOverrides[displayName],
+      dosagePricing: dosagePricingOverrides[displayName],
       crossLink: crossLinkOverrides[displayName],
     }
   }
@@ -414,6 +429,7 @@ function parseInfusion(entry) {
     price: priceInfo.price,
     duration: priceInfo.duration,
     dosage: dosageOverrides[displayName],
+    dosagePricing: dosagePricingOverrides[displayName],
     crossLink: crossLinkOverrides[displayName],
     imageUrl,
     details,

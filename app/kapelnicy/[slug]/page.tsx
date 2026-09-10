@@ -8,6 +8,7 @@ import {
   ShieldAlert,
   ShieldCheck,
   Sparkles,
+  Tag,
   TrendingUp,
 } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -161,6 +162,43 @@ function CompositionBlock({ items }: { items?: string[] }) {
   )
 }
 
+function DosagePricingTable({ items }: { items?: { dosage: string; price: string }[] }) {
+  if (!items?.length) return null
+
+  return (
+    <section className="rounded-[28px] border border-olive-primary/10 bg-white/85 p-6 shadow-premium sm:p-8">
+      <div className="mb-6 flex items-center gap-3">
+        <SectionIcon icon={Tag} />
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive-primary">Дозировка и цена</p>
+          <h2 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">Варианты дозировки</h2>
+        </div>
+      </div>
+      <div className="overflow-hidden rounded-2xl border border-olive-primary/10">
+        <table className="w-full text-left text-sm">
+          <thead>
+            <tr className="bg-olive-primary/5 text-olive-primary">
+              <th className="px-4 py-3 font-semibold sm:px-6">Дозировка</th>
+              <th className="px-4 py-3 font-semibold sm:px-6">Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((row, index) => (
+              <tr key={row.dosage} className={index % 2 === 0 ? 'bg-white' : 'bg-beige-background/60'}>
+                <td className="px-4 py-3 text-olive-text sm:px-6">{row.dosage}</td>
+                <td className="px-4 py-3 font-semibold text-olive-primary sm:px-6">{row.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-4 text-sm text-olive-text/80">
+        Точную дозировку подбирает врач на очной консультации с учётом веса, целей и переносимости препарата.
+      </p>
+    </section>
+  )
+}
+
 function RelatedLinks({ currentSlug }: { currentSlug: string }) {
   const related = getUniqueInfusions().filter((item) => item.slug !== currentSlug).slice(0, 4)
 
@@ -206,14 +244,22 @@ export default function InfusionDetailPage({ params }: PageProps) {
     provider: {
       '@id': 'https://biorise-clinic.ru/#medical-clinic',
     },
-    offers: infusion.price
-      ? {
+    offers: infusion.dosagePricing?.length
+      ? infusion.dosagePricing.map((tier) => ({
           '@type': 'Offer',
+          name: `${infusion.title}, ${tier.dosage}`,
           priceCurrency: 'RUB',
-          price: infusion.price.replace(/[^\d]/g, ''),
+          price: tier.price.replace(/[^\d]/g, ''),
           availability: 'https://schema.org/InStock',
-        }
-      : undefined,
+        }))
+      : infusion.price
+        ? {
+            '@type': 'Offer',
+            priceCurrency: 'RUB',
+            price: infusion.price.replace(/[^\d]/g, ''),
+            availability: 'https://schema.org/InStock',
+          }
+        : undefined,
   }
   const imageObjectJsonLd = infusion.imageUrl
     ? createImageObjectJsonLd({
@@ -318,6 +364,12 @@ export default function InfusionDetailPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {infusion.dosagePricing && (
+          <section className="container mx-auto px-4 pb-12 sm:px-6">
+            <DosagePricingTable items={infusion.dosagePricing} />
+          </section>
+        )}
 
         <section className="container mx-auto grid gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-2">
           <InfoList title="Когда может подойти" items={infusion.indications} icon={Sparkles} />

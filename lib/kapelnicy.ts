@@ -10,6 +10,7 @@ export type InfusionItem = {
   price?: string
   duration?: string
   dosage?: string
+  dosagePricing?: { dosage: string; price: string }[]
   crossLink?: {
     text: string
     href: string
@@ -79,7 +80,7 @@ export const categoriesConfig = [
   {
     title: 'Обмен веществ и вес',
     icon: 'scale',
-    items: ['Капельница для похудения', 'Капельница при диабете', 'Терзапатид 10 мг'],
+    items: ['Капельница для похудения', 'Капельница при диабете', 'Тирзепатид'],
   },
   {
     title: 'Красота и Anti-Age',
@@ -185,7 +186,7 @@ export const nameToSlug: Record<string, string> = {
   'Капельница Восстановление обоняния': 'vosstanovlenie-obonyaniya',
   'Капельница ЖКТ 1': 'zhkt-1',
   'Капельница ЖКТ 2': 'zhkt-2',
-  'Терзапатид 10 мг': 'terzapatid',
+  'Тирзепатид': 'terzapatid',
 }
 
 export const slugify = (text: string) =>
