@@ -14,30 +14,19 @@ interface ClinicAddress {
   phone: string
 }
 
-const clinics: ClinicAddress[] = [
-  {
-    id: '1',
-    address: 'г. Самара ул. Дыбенко 27Б',
-    hours: 'Будни: 8:00 - 19:00, сб: 8:00 - 15:00, вс: 8:00 - 15:00',
-    phone: '+7 996 749 9747',
-  },
-  {
-    id: '2',
-    address: 'г. Самара ул. Стара Загора 48',
-    hours: 'Будни: 8:00 - 19:00, сб: 8:00 - 15:00, вс: выходной',
-    phone: '+7 901 940 7027',
-  },
-]
+const clinic: ClinicAddress = {
+  id: '1',
+  address: 'г. Самара ул. Дыбенко 27Б',
+  hours: 'Будни: 8:00 - 19:00, сб: 8:00 - 15:00, вс: 8:00 - 15:00',
+  phone: '+7 996 749 9747',
+}
 
 export default function Header() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
-  const [selectedClinic, setSelectedClinic] = useState<ClinicAddress | null>(clinics[0] ?? null)
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const scrollPositionRef = useRef(0)
-  const dropdownRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
   const { openBookingModal } = useBookingModal()
   const isHomePage = pathname === '/'
@@ -54,9 +43,6 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false)
-      }
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false)
       }
@@ -64,11 +50,6 @@ export default function Header() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
-
-  const handleClinicSelect = (clinic: ClinicAddress) => {
-    setSelectedClinic(clinic)
-    setIsDropdownOpen(false)
-  }
 
   const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false)
@@ -82,7 +63,6 @@ export default function Header() {
     if (!isMobileMenuOpen || typeof window === 'undefined') return
 
     scrollPositionRef.current = window.scrollY
-    setIsDropdownOpen(false)
     setIsServicesOpen(false)
 
     document.body.classList.add('menu-open')
@@ -147,65 +127,35 @@ export default function Header() {
                 <span className="text-white font-menu font-medium text-xs sm:text-sm">Самара</span>
               </div>
 
-              {/* Clinic Address Dropdown */}
-              <div className="relative flex-shrink-0" ref={dropdownRef}>
-                <button
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex min-w-0 items-center gap-1 text-white transition-colors hover:text-white/80 font-menu text-xs sm:gap-2 sm:text-sm"
-                >
-                  <span className="hidden sm:inline text-white/80">Адреса клиник:</span>
-                  <span className="max-w-[165px] truncate text-xs font-medium text-white sm:max-w-none sm:text-sm">
-                    {selectedClinic ? selectedClinic.address : 'Выбрать адрес'}
-                  </span>
-                  <svg
-                    className={`w-3 h-3 sm:w-4 sm:h-4 text-white transition-transform flex-shrink-0 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {/* Dropdown Menu */}
-                {isDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-premium border border-olive-primary/10 min-w-[280px] sm:min-w-[300px] max-w-[90vw] z-50">
-                    {clinics.map((clinic) => (
-                      <button
-                        key={clinic.id}
-                        onClick={() => handleClinicSelect(clinic)}
-                        className="w-full text-left px-4 py-3 hover:bg-beige-background transition-colors border-b border-olive-primary/5 last:border-b-0 text-sm sm:text-base"
-                      >
-                        <div className="text-olive-primary font-medium">{clinic.address}</div>
-                      </button>
-                    ))}
-                  </div>
-                )}
+              {/* Clinic Address */}
+              <div className="flex min-w-0 items-center gap-1 text-white font-menu text-xs sm:gap-2 sm:text-sm">
+                <span className="hidden sm:inline text-white/80">Адрес клиники:</span>
+                <span className="max-w-[165px] truncate text-xs font-medium text-white sm:max-w-none sm:text-sm">
+                  {clinic.address}
+                </span>
               </div>
 
-              {/* Selected Clinic Info - Show on all devices */}
-              {selectedClinic && (
-                <div className="flex min-w-0 items-center gap-2 sm:gap-4 lg:gap-6">
-                  {/* Hours - Hidden on mobile */}
-                  <div className="hidden sm:flex items-center gap-2">
-                    <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-xs sm:text-sm text-white/80">{selectedClinic.hours}</span>
-                  </div>
-
-                  {/* Phone - Show on all devices */}
-                  <a
-                    href={`tel:${selectedClinic.phone.replace(/\s/g, '').replace(/[()]/g, '')}`}
-                    className="flex flex-shrink-0 items-center gap-1 text-white transition-colors hover:text-white/80 font-semibold cursor-pointer sm:gap-2"
-                  >
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <span className="whitespace-nowrap text-xs sm:text-sm md:text-base">{selectedClinic.phone}</span>
-                  </a>
+              {/* Clinic Info - Show on all devices */}
+              <div className="flex min-w-0 items-center gap-2 sm:gap-4 lg:gap-6">
+                {/* Hours - Hidden on mobile */}
+                <div className="hidden sm:flex items-center gap-2">
+                  <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-xs sm:text-sm text-white/80">{clinic.hours}</span>
                 </div>
-              )}
+
+                {/* Phone - Show on all devices */}
+                <a
+                  href={`tel:${clinic.phone.replace(/\s/g, '').replace(/[()]/g, '')}`}
+                  className="flex flex-shrink-0 items-center gap-1 text-white transition-colors hover:text-white/80 font-semibold cursor-pointer sm:gap-2"
+                >
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span className="whitespace-nowrap text-xs sm:text-sm md:text-base">{clinic.phone}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

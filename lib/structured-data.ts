@@ -32,12 +32,6 @@ export const organizationJsonLd = {
     {
       '@type': 'PostalAddress',
       addressLocality: 'Самара',
-      streetAddress: 'ул. Стара Загора, 48',
-      addressCountry: 'RU',
-    },
-    {
-      '@type': 'PostalAddress',
-      addressLocality: 'Самара',
       streetAddress: 'ул. Молодежная, 18',
       addressCountry: 'RU',
     },

@@ -5,7 +5,6 @@ import { useState, useRef, useEffect } from 'react'
 
 const clinicAddresses = [
   'г. Самара ул. Дыбенко 27Б',
-  'г. Самара ул. Стара Загора 48',
   'г. Самара ул. Молодежная 18',
 ]
 
