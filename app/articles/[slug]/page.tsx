@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
-import { FileText } from 'lucide-react'
+import { FileText, Quote } from 'lucide-react'
 import JsonLd from '@/components/JsonLd'
 import { articles, getArticleBySlug } from '@/lib/articles'
 import { formatArticleDate } from '@/lib/format-date'
@@ -165,6 +165,7 @@ type ContentBlock =
   | { type: 'h3'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'ordered-list'; items: string[] }
+  | { type: 'blockquote'; text: string }
   | { type: 'paragraph'; text: string }
 
 function parseContentBlocks(content: string[]): ContentBlock[] {
@@ -182,6 +183,12 @@ function parseContentBlocks(content: string[]): ContentBlock[] {
 
     if (/^###\s/.test(line)) {
       blocks.push({ type: 'h3', text: line.replace(/^###\s+/, '') })
+      index += 1
+      continue
+    }
+
+    if (/^>\s/.test(line)) {
+      blocks.push({ type: 'blockquote', text: line.replace(/^>\s+/, '') })
       index += 1
       continue
     }
@@ -477,6 +484,20 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                         <li key={`${idx}-${itemIndex}`}>{renderInlineContent(item)}</li>
                       ))}
                     </ul>
+                  )
+                }
+
+                if (block.type === 'blockquote') {
+                  return (
+                    <blockquote
+                      key={idx}
+                      className="my-6 flex items-start gap-4 rounded-2xl bg-olive-primary/5 px-5 py-4 text-olive-primary sm:px-6"
+                    >
+                      <Quote className="mt-0.5 h-6 w-6 shrink-0 fill-olive-primary/15 text-olive-primary" strokeWidth={1.8} aria-hidden="true" />
+                      <p className="m-0 text-base font-medium leading-relaxed sm:text-[17px]">
+                        {renderInlineContent(block.text)}
+                      </p>
+                    </blockquote>
                   )
                 }
 
