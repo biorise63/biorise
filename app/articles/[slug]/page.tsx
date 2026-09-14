@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { FileText, Quote } from 'lucide-react'
+import ArticleViewCounter from '@/components/ArticleViewCounter'
 import JsonLd from '@/components/JsonLd'
 import { articles, getArticleBySlug } from '@/lib/articles'
 import { formatArticleDate } from '@/lib/format-date'
@@ -406,6 +407,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt)}</time>
               <span aria-hidden="true">•</span>
               <span>4–6 мин</span>
+              <ArticleViewCounter slug={article.slug} />
               {!author && (
                 <>
                   <span aria-hidden="true">•</span>
