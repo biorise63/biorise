@@ -149,21 +149,17 @@ export default function Hero() {
             Капельницы в Самаре
           </h1>
 
-          <div className="mb-5 sm:mb-6">
-            <div className="border-y-2 border-black/10 py-3 sm:py-4">
-              <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:justify-start sm:gap-0 sm:divide-x-2 sm:divide-olive-primary/30">
-                {quickLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    prefetch={link.href === '/analizy/' || link.href === '/kapelnicy/' ? false : undefined}
-                    className="flex min-h-[44px] min-w-0 items-center justify-center rounded-xl bg-olive-primary/5 px-2 text-center text-[14px] font-medium leading-[1.15] text-olive-text transition-colors duration-200 hover:text-olive-primary hover:bg-olive-primary/10 sm:min-h-0 sm:justify-start sm:rounded-none sm:bg-transparent sm:px-4 sm:py-0 sm:text-[16px] sm:leading-normal sm:whitespace-nowrap sm:hover:bg-transparent"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <div className="mb-6 flex flex-wrap gap-2 sm:mb-8 sm:gap-3">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch={link.href === '/analizy/' || link.href === '/kapelnicy/' ? false : undefined}
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-black/10 bg-white/50 px-4 py-2.5 text-center text-sm font-medium leading-[1.15] text-olive-primary backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/75 hover:shadow-premium sm:px-5 sm:text-base"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           <p
