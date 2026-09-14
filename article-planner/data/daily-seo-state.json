@@ -1,60 +1,84 @@
 {
-  "runsCompleted": 30,
+  "runsCompleted": 32,
   "firstRunAt": "2026-08-07",
-  "lastRunAt": "2026-09-03",
+  "lastRunAt": "2026-09-15",
   "rampThreshold": 10,
   "note": "runsCompleted увеличивается только после того, как пользователь подтвердил публикацию и она запушена. Пока runsCompleted < rampThreshold — режим разгона (2-3 статьи/день вперемешку). После — 4 основные + 1-2 вспомогательные.",
   "kapelnicyLinkSprint": {
     "note": "Пользователь 2026-08-29 попросил: каждый ежедневный прогон /daily-seo на ближайшую неделю должен создавать новые информационные статьи с внутренними ссылками на посадочные страницы капельниц /kapelnicy/<slug>/ (плюс ссылка на главную), чтобы наращивать их внутренний ссылочный вес. Пользователь будет помечать запуски как «/daily-seo 1 день», «2 день» и т.д. — сверяйся с полем currentDay ниже, а не с датой. Приоритет — страницы с нулём или минимумом входящих ссылок (см. zeroLinkPages, посчитано 2026-08-29 через grep по lib/articles.ts). Для каждой темы дня: подобрать симптом/показание, которое естественно ведёт к этой капельнице, проверить частотность через Wordstat (как в обычном шаге 1.2), написать статью по стандартным правилам /daily-seo (H1 не по шаблону, 3-4 внутренние ссылки, FAQ, автор по таблице). После публикации дня — вычеркнуть покрытые slug'и из zeroLinkPages и продвинуть currentDay.",
-      "currentDay": 2,
-      "totalDays": 7,
-      "startedAt": "2026-08-29",
-      "day1": {
-        "date": "2026-08-29",
-        "status": "done",
-        "targetPages": [
-          "zhelezo-standart",
-          "vitaminnaya",
-          "kapelnica-dlya-serdtsa",
-          "zdorovye-sosudy"
-        ],
-        "articles": [
-          "sindrom-bespokoynyh-nog-prichiny",
-          "lomkie-nogti-prichiny",
-          "zhzhenie-yazyka-prichiny",
-          "ekstrasistoliya-simptomy",
-          "sudorogi-v-nogah-nochyu-prichiny",
-          "priznaki-varikoza-na-nogah"
-        ]
-      },
-      "zeroLinkPages": [
+    "currentDay": 2,
+    "totalDays": 7,
+    "startedAt": "2026-08-29",
+    "day1": {
+      "date": "2026-08-29",
+      "status": "done",
+      "targetPages": [
+        "zhelezo-standart",
+        "vitaminnaya",
+        "kapelnica-dlya-serdtsa",
+        "zdorovye-sosudy"
+      ],
+      "articles": [
+        "sindrom-bespokoynyh-nog-prichiny",
+        "lomkie-nogti-prichiny",
+        "zhzhenie-yazyka-prichiny",
+        "ekstrasistoliya-simptomy",
+        "sudorogi-v-nogah-nochyu-prichiny",
+        "priznaki-varikoza-na-nogah"
+      ]
+    },
+    "zeroLinkPages": [
+      "postkovid",
+      "gipertonicheskiy-kriz",
+      "predoperatsionnaya",
+      "ginekologicheskaya-protivovospalitelnaya",
+      "sustavnaya-protivovospalitelnaya",
+      "stomatologicheskaya-protivovospalitelnaya",
+      "bronho-legochnaya-protivovospalitelnaya",
+      "laennek",
+      "vosstanovlenie-obonyaniya",
+      "antiklimaks",
+      "podgotovka-k-beremennosti",
+      "dzhetlag",
+      "ayronmen",
+      "zhelezo-2-0",
+      "antiammiak",
+      "zhkt-2"
+    ],
+    "dayPlan": {
+      "2": [
         "postkovid",
         "gipertonicheskiy-kriz",
-        "predoperatsionnaya",
+        "predoperatsionnaya"
+      ],
+      "3": [
         "ginekologicheskaya-protivovospalitelnaya",
         "sustavnaya-protivovospalitelnaya",
-        "stomatologicheskaya-protivovospalitelnaya",
+        "stomatologicheskaya-protivovospalitelnaya"
+      ],
+      "4": [
         "bronho-legochnaya-protivovospalitelnaya",
         "laennek",
-        "vosstanovlenie-obonyaniya",
+        "vosstanovlenie-obonyaniya"
+      ],
+      "5": [
         "antiklimaks",
         "podgotovka-k-beremennosti",
-        "dzhetlag",
+        "dzhetlag"
+      ],
+      "6": [
         "ayronmen",
         "zhelezo-2-0",
-        "antiammiak",
-        "zhkt-2"
+        "antiammiak"
       ],
-      "dayPlan": {
-        "2": ["postkovid", "gipertonicheskiy-kriz", "predoperatsionnaya"],
-        "3": ["ginekologicheskaya-protivovospalitelnaya", "sustavnaya-protivovospalitelnaya", "stomatologicheskaya-protivovospalitelnaya"],
-        "4": ["bronho-legochnaya-protivovospalitelnaya", "laennek", "vosstanovlenie-obonyaniya"],
-        "5": ["antiklimaks", "podgotovka-k-beremennosti", "dzhetlag"],
-        "6": ["ayronmen", "zhelezo-2-0", "antiammiak"],
-        "7": ["zhkt-2", "terzapatid", "polovaya-sistema"]
-      },
-      "supersededBy": "samaraDemandSprint",
-      "supersededNote": "Пользователь 2026-08-30 жёстко поправил: приоритизировать нужно не страницы с нулём ссылок, а страницы с реальным спросом в Самаре (см. samaraDemandSprint ниже). Этот dayPlan (дни 2-7 по нулевому спросу) больше не выполняется автоматически — используй его только если пользователь явно попросит вернуться к добивке zero-link страниц после того, как закроется список samaraDemandSprint."
+      "7": [
+        "zhkt-2",
+        "terzapatid",
+        "polovaya-sistema"
+      ]
+    },
+    "supersededBy": "samaraDemandSprint",
+    "supersededNote": "Пользователь 2026-08-30 жёстко поправил: приоритизировать нужно не страницы с нулём ссылок, а страницы с реальным спросом в Самаре (см. samaraDemandSprint ниже). Этот dayPlan (дни 2-7 по нулевому спросу) больше не выполняется автоматически — используй его только если пользователь явно попросит вернуться к добивке zero-link страниц после того, как закроется список samaraDemandSprint."
   },
   "samaraDemandSprint": {
     "note": "Запущено 2026-08-30 по прямому требованию пользователя. ВАЖНОЕ ПРАВИЛО (пользователь дважды жёстко поправил 2026-08-30, второй раз матом — не путать снова): ПОСАДОЧНЫЕ СТРАНИЦЫ для перелинковки выбираются по спросу в Самаре (см. sourceTable ниже, regions=51). Но САМИ СТАТЬИ (конкретный симптом/ключевик, вокруг которого пишется текст) должны таргетироваться по ОБЩЕРОССИЙСКОЙ частотности Wordstat БЕЗ фильтра региона, с потолком до 4000/мес — Самара для выбора темы статьи не используется вообще, только для выбора целевой посадочной. Первая попытка дня 1 ошибочно проверяла темы статей по Самаре (получились те же цифры 20-124), пользователь это отверг. Финальные темы дня 1 перепроверены по РФ без региона — см. wordstatNationalVerified. Каждый день = 3 капельницы (по таблице Самары) × 2 статьи (ключ до 4000 по РФ) = 6 статей. Каждая статья — свежий, ещё не занятый симптом/показание (проверять полнотекстовым поиском по lib/articles.ts, НЕ только по slug!).",
@@ -65,7 +89,11 @@
     "day1": {
       "date": "2026-08-30",
       "status": "done",
-      "targetPages": ["zhelezo-standart", "krasota-i-omolozhenie", "muzhskoe-zdorove"],
+      "targetPages": [
+        "zhelezo-standart",
+        "krasota-i-omolozhenie",
+        "muzhskoe-zdorove"
+      ],
       "articles": [
         "slabost-i-golovokruzhenie-prichiny",
         "zvon-v-ushah-prichiny",
@@ -87,7 +115,11 @@
     "day2": {
       "date": "2026-09-01",
       "status": "done",
-      "targetPages": ["posle-vecherinki", "vitaminnaya", "sport-silovaya"],
+      "targetPages": [
+        "posle-vecherinki",
+        "vitaminnaya",
+        "sport-silovaya"
+      ],
       "articles": [
         "nizkiy-sahar-v-krovi-simptomy",
         "toshnota-po-utram-prichiny",
@@ -108,7 +140,11 @@
     "day3": {
       "date": "2026-09-03",
       "status": "done",
-      "targetPages": ["antigistaminnaya", "detoks-standart", "mame-mozhno"],
+      "targetPages": [
+        "antigistaminnaya",
+        "detoks-standart",
+        "mame-mozhno"
+      ],
       "articles": [
         "otek-kvinke-prichiny",
         "syp-na-tele-u-vzroslogo-prichiny",
