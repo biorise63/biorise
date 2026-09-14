@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Card, CardContent } from "./card"
 import { Badge } from "./badge"
-import { CheckCircle, Clock, Circle, ArrowUpRight } from "lucide-react"
+import { CheckCircle, Clock, Circle, ArrowUpRight, Eye } from "lucide-react"
 import { formatArticleDate } from "@/lib/format-date"
 
 export interface TimelineItem {
@@ -17,6 +17,7 @@ export interface TimelineItem {
   status?: "completed" | "current" | "upcoming"
   category?: string
   href?: string
+  slug?: string
 }
 
 export interface TimelineProps {
@@ -64,6 +65,23 @@ const getStatusIcon = (status: TimelineItem["status"]) => {
 }
 
 export function Timeline({ items, className }: TimelineProps) {
+  const [views, setViews] = React.useState<Record<string, number>>({})
+
+  React.useEffect(() => {
+    // Один запрос на всю страницу вместо отдельного на каждую карточку -
+    // бэкенд отдаёт все счётчики разом (см. booking_api.py, GET /api/views).
+    fetch('/api/views')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data && typeof data === 'object') {
+          setViews(data)
+        }
+      })
+      .catch(() => {
+        // счётчики недоступны - молча оставляем карточки без иконки глаза
+      })
+  }, [])
+
   if (!items || items.length === 0) {
     return (
       <div className={cn("mx-auto w-full max-w-4xl px-4 py-8 sm:px-6", className)}>
@@ -133,6 +151,15 @@ export function Timeline({ items, className }: TimelineProps) {
                             <span className="h-1 w-1 rounded-full bg-muted-foreground" aria-hidden="true" />
                           )}
                           {item.date && <time dateTime={item.date}>{formatArticleDate(item.date)}</time>}
+                          {item.slug && typeof views[item.slug] === "number" && (
+                            <>
+                              <span className="h-1 w-1 rounded-full bg-muted-foreground" aria-hidden="true" />
+                              <span className="inline-flex items-center gap-1">
+                                <Eye className="h-3.5 w-3.5" aria-hidden="true" />
+                                {views[item.slug].toLocaleString("ru-RU")}
+                              </span>
+                            </>
+                          )}
                         </div>
                       </div>
 

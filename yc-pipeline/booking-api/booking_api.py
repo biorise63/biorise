@@ -165,6 +165,12 @@ class Handler(BaseHTTPRequestHandler):
         if self.path.rstrip('/') == '/api/online-booking/health':
             return self._send_json(200, {'ok': True})
 
+        # Без слага - отдать все счётчики разом (используется на /articles/,
+        # чтобы не делать по отдельному запросу на каждую карточку статьи).
+        if self.path.rstrip('/') == '/api/views':
+            with VIEWS_LOCK:
+                return self._send_json(200, _load_views())
+
         views_match = SLUG_RE.match(self.path)
         if views_match:
             slug = views_match.group(1)

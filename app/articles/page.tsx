@@ -51,6 +51,7 @@ export default function ArticlesPage() {
     category: article.tags[0] || 'BIORISE',
     status: index === 0 ? 'current' : 'completed',
     href: `/articles/${article.slug}/`,
+    slug: article.slug,
   }))
 
   return (
