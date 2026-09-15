@@ -11,5 +11,55 @@ Disallow: /*?focus=
 Clean-param: focus /kapelnicy/
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&from /
 
+# AI-обучающие и массовые скрейпинг-боты - не поисковые краулеры, индексацию
+# в Google/Яндексе не трогают (это отдельные user-agent'ы от Googlebot/YandexBot).
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
 Host: biorise-clinic.ru
 Sitemap: https://biorise-clinic.ru/sitemap.xml
