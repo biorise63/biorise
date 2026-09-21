@@ -5,6 +5,7 @@ import { articles } from '@/lib/articles'
 import { getUniqueInfusions } from '@/lib/kapelnicy'
 import { checkupPrograms } from '@/lib/checkups'
 import { spravkiItems } from '@/lib/spravki'
+import { weightLossPrograms } from '@/lib/weightLossPrograms'
 import { getAllAuthors } from '@/lib/authors'
 
 const SITE_URL = 'https://biorise-clinic.ru'
@@ -23,6 +24,7 @@ const routeConfig: Record<
   '/analizy/': { priority: 0.9, changeFrequency: 'weekly' },
   '/ekg/': { priority: 0.85, changeFrequency: 'weekly' },
   '/chek-apy/': { priority: 0.88, changeFrequency: 'weekly' },
+  '/pohudenie/': { priority: 0.88, changeFrequency: 'weekly' },
   '/bady/': { priority: 0.85, changeFrequency: 'weekly' },
   '/articles/': { priority: 0.85, changeFrequency: 'weekly' },
   '/sitemap/': { priority: 0.65, changeFrequency: 'weekly' },
@@ -120,6 +122,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.78,
   }))
 
+  const weightLossEntries: MetadataRoute.Sitemap = weightLossPrograms.map((program) => ({
+    url: `${SITE_URL}/pohudenie/${program.slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  }))
+
   const spravkiEntries: MetadataRoute.Sitemap = spravkiItems.map((item) => ({
     url: `${SITE_URL}/spravki/${item.slug}/`,
     lastModified: now,
@@ -139,6 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articleEntries,
     ...infusionEntries,
     ...checkupEntries,
+    ...weightLossEntries,
     ...spravkiEntries,
     ...doctorEntries,
   ]
