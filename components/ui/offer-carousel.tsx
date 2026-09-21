@@ -42,19 +42,6 @@ const defaultBrand = {
 
 const offers: Offer[] = [
   {
-    id: 'terzapatid',
-    imageSrc: '/optimized/promo-transparent/promo-terzapatid-cutout.webp',
-    imageAlt: 'Терзапатид 10 мг',
-    tag: 'Популярное',
-    title: 'Терзапатид 10 мг',
-    description: 'Помогает держать аппетит под контролем и снижать вес с врачом.',
-    promoCode: '5 500 ₽',
-    href: '/kapelnicy/terzapatid/',
-    category: 'popular',
-    price: '5 500 ₽',
-    ...defaultBrand,
-  },
-  {
     id: 'vitamin-d-shot',
     imageSrc: '/optimized/promo-transparent/cards/promo-vitamin-d-shot-card.webp',
     imageAlt: 'Витамин D 300 000 МЕ',

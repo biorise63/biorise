@@ -21,7 +21,6 @@ export function getSeoImageAlt(title: string) {
     return `${rawTitle} BIORISE Самара`
   }
 
-  if (text.includes('терзапатид')) return 'Терзапатид для снижения веса BIORISE Самара'
   if (text.includes('витамин d')) return 'Укол витамина D BIORISE Самара'
   if (text.includes('желез')) return 'Капельница железа BIORISE Самара'
   if (text.includes('золуш') || text.includes('красота') || text.includes('омолож')) {

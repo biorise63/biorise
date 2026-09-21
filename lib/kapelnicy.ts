@@ -80,7 +80,7 @@ export const categoriesConfig = [
   {
     title: 'Обмен веществ и вес',
     icon: 'scale',
-    items: ['Капельница для похудения', 'Капельница при диабете', 'Тирзепатид'],
+    items: ['Капельница для похудения', 'Капельница при диабете'],
   },
   {
     title: 'Красота и Anti-Age',
@@ -186,7 +186,6 @@ export const nameToSlug: Record<string, string> = {
   'Капельница Восстановление обоняния': 'vosstanovlenie-obonyaniya',
   'Капельница ЖКТ 1': 'zhkt-1',
   'Капельница ЖКТ 2': 'zhkt-2',
-  'Тирзепатид': 'terzapatid',
 }
 
 export const slugify = (text: string) =>
