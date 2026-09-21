@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T09:44:36.729Z",
+  "generatedAt": "2026-09-21T08:40:02.479Z",
   "analyses": [
     {
       "code": "1515",
@@ -5628,8 +5628,8 @@
       "subsection": "Биохимия мочи (суточная экскреция)",
       "biomaterial": "Моча",
       "turnaround": "до 7 к.д.",
-      "price": "6 290 ₽",
-      "priceValue": 6290
+      "price": "10 650 ₽",
+      "priceValue": 10650
     },
     {
       "code": "ЛМС",
