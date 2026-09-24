@@ -16,8 +16,8 @@ Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&from /
 User-agent: GPTBot
 Disallow: /
 
-User-agent: ChatGPT-User
-Disallow: /
+# ChatGPT-User - не обучающий бот, а живой fetch по прямой просьбе
+# пользователя в чате (аналог Claude-User ниже) - разрешён намеренно.
 
 User-agent: CCBot
 Disallow: /
