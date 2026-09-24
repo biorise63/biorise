@@ -234,6 +234,12 @@ export default function Header() {
                       Программы для похудения
                     </Link>
                     <Link
+                      href="/programmy"
+                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
+                    >
+                      Комплексные программы
+                    </Link>
+                    <Link
                       href="/kapelnicy/na-domu"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -442,6 +448,7 @@ export default function Header() {
                     <Link href="/ekg" onClick={closeMobileMenu} className={mobileLinkClass}>ЭКГ</Link>
                     <Link href="/chek-apy" onClick={closeMobileMenu} className={mobileLinkClass}>Чек-апы</Link>
                     <Link href="/pohudenie" onClick={closeMobileMenu} className={mobileLinkClass}>Программы для похудения</Link>
+                    <Link href="/programmy" onClick={closeMobileMenu} className={mobileLinkClass}>Комплексные программы</Link>
                     <Link href="/kapelnicy/na-domu" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы на дому</Link>
                     <Link href="/bioimpedance" onClick={closeMobileMenu} className={mobileLinkClass}>Биоимпедансный анализ</Link>
                     <Link href="/bady" onClick={closeMobileMenu} className={mobileLinkClass}>БАДЫ</Link>
