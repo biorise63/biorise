@@ -110,6 +110,19 @@ function SectionIcon({ name, className = 'h-5 w-5' }: { name: string; className?
           <path d="M13.2 10.8 18 6m0 0v4.2M18 6h-4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       )
+    case 'heart':
+      return (
+        <svg {...props}>
+          <path
+            d="M4 10.5a4.5 4.5 0 0 1 7.8-3 .46.46 0 0 0 .67 0A4.5 4.5 0 0 1 20.3 10.5c0 1.9-1.2 3.3-2.5 4.5l-4.5 4.3a1.6 1.6 0 0 1-2.4 0L6.5 15c-1.2-1.2-2.5-2.6-2.5-4.5Z"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path d="M4.9 12.2h5.1l.4-.8 1.6 3.6 1.6-5.6 1.2 2.8h4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
     default:
       return null
   }
