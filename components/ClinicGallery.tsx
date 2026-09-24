@@ -135,7 +135,7 @@ const galleryData: GalleryItem[] = [
       'Аллергии и паразитарные инфекции',
     ],
     price: {
-      current: '4 290 ₽',
+      current: '5 490 ₽',
       old: '7 175 ₽',
     },
     period: 'до 30 сентября 2026',
