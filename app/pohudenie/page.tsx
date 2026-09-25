@@ -31,7 +31,7 @@ function formatPrice(value: number) {
 export default function WeightLossProgramsPage() {
   const webPageJsonLd = createWebPageJsonLd({
     url: '/pohudenie/',
-    name: 'Программы для похудения в Самаре',
+    name: 'Похудение в Самаре: 3 эффективные программы BIORISE',
     description:
       'Три программы снижения веса под контролем врача в клинике BIORISE в Самаре: чек-ап, капельницы, пептидная терапия.',
     type: 'CollectionPage',
@@ -58,7 +58,7 @@ export default function WeightLossProgramsPage() {
             ]}
           />
           <h1 className="mt-4 max-w-3xl text-4xl font-heading font-light leading-tight text-olive-primary sm:text-5xl">
-            Программы для похудения в Самаре
+            Похудение в Самаре: 3 эффективные программы BIORISE
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-olive-text sm:text-xl">
             Три программы снижения веса под контролем врача: диагностика, капельницы, пептидная терапия
