@@ -38,12 +38,12 @@ const galleryData: GalleryItem[] = [
       'Гормоны',
       'Витамины',
       'Микро- и макроэлементы',
-      'Расшифровка результатов врачом - в подарок',
+      'Расшифровка с терапевтом или диетологом - в подарок',
     ],
     price: {
       current: '5 990 ₽',
     },
-    period: 'до 30 сентября 2026',
+    period: 'до 31 октября 2026',
     buttonText: 'Подробнее',
     buttonHref: '/akcii/kompleksnyy-chek-ap-72-pokazatelya/',
     photo: {
