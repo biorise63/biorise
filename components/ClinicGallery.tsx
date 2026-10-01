@@ -86,7 +86,7 @@ const galleryData: GalleryItem[] = [
       current: '6 500 ₽',
       old: '7 900 ₽',
     },
-    period: 'до 30 сентября 2026',
+    period: 'до 31 октября 2026',
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
@@ -94,7 +94,7 @@ const galleryData: GalleryItem[] = [
       text: 'T-SPOT',
       alt: 'T-SPOT диагностика туберкулезной инфекции в BIORISE Самара',
       pos: 'center 45%',
-      by: 'Скидка до конца сентября',
+      by: 'Скидка до конца октября',
     },
   },
   {

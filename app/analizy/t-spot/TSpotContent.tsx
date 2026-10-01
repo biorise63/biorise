@@ -34,7 +34,7 @@ const facts = [
   {
     icon: CalendarDays,
     title: 'Цена по акции',
-    text: '6 500 ₽ вместо 7 900 ₽, до 30 сентября.',
+    text: '6 500 ₽ вместо 7 900 ₽, до 31 октября.',
   },
 ]
 
@@ -94,7 +94,7 @@ export default function TSpotContent() {
               </Link>
 
               <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-olive-primary/10 px-4 py-1.5 text-xs font-medium text-olive-primary">
-                Акция до 30 сентября 2026
+                Акция до 31 октября 2026
               </div>
 
               <h1 className="mt-4 text-[38px] font-light leading-[1.05] text-olive-primary sm:text-[42px] lg:text-[48px]">
@@ -106,7 +106,7 @@ export default function TSpotContent() {
               </p>
 
               <p className="mt-4 max-w-[680px] text-[16px] leading-[1.65] text-olive-text">
-                До 30 сентября анализ можно сдать по акционной цене{' '}
+                До 31 октября анализ можно сдать по акционной цене{' '}
                 <span className="font-medium text-olive-primary">6 500 ₽</span> вместо{' '}
                 <span className="line-through text-olive-primary">7 900 ₽</span>. Забор крови оплачивается отдельно, 180 ₽.
               </p>
@@ -199,7 +199,7 @@ export default function TSpotContent() {
             </div>
 
             <p className="mt-4 text-[16px] leading-[1.7] text-olive-text">
-              Записаться на T-SPOT можно онлайн или по телефону. Акционная цена действует до 30 сентября 2026 года.
+              Записаться на T-SPOT можно онлайн или по телефону. Акционная цена действует до 31 октября 2026 года.
             </p>
 
             <div className="mt-6 space-y-3">
