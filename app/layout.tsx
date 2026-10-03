@@ -51,20 +51,24 @@ export default function RootLayout({
           <CookieConsentBanner />
         </BookingModalProvider>
 
-        {/* Яндекс.Метрика - невидимый счетчик */}
+        {/* Яндекс.Метрика - невидимый счетчик. На зеркале biorise-clinics.ru
+            (намеренно закрытом от индексации, см. yc-pipeline/nginx/biorise-clinics-mirror.conf)
+            работает отдельный счётчик 113363172, чтобы не смешивать трафик мёртвого
+            домена со статистикой основного сайта. */}
         <Script
           id="yandex-metrika"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
+              var __ymCounterId = (window.location.hostname === 'biorise-clinics.ru') ? 113363172 : 106878489;
               (function(m,e,t,r,i,k,a){
                   m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
                   m[i].l=1*new Date();
                   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
                   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-              })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106878489', 'ym');
+              })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=' + __ymCounterId, 'ym');
 
-              ym(106878489, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+              ym(__ymCounterId, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
             `,
           }}
         />
