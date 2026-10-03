@@ -24,11 +24,23 @@ MAX API требует российский корневой сертифика�
 ReadWritePaths=/opt/biorise-booking-api из systemd-юнита, остальная файловая
 система у сервиса read-only). Запись защищена threading.Lock, потому что
 ThreadingHTTPServer обрабатывает запросы в отдельных потоках.
+
+Также здесь живёт /api/direct-tracker/* - закрытый учёт звонков/записей с
+рекламного номера Яндекс Директа для администратора клиники (см. ТЗ в чате
+2026-10-03). Страница /direct-tracker/ и этот API-префикс закрыты Basic
+Auth на уровне nginx (см. yc-pipeline/nginx/biorise-clinic.conf), сюда
+долетают уже только авторизованные запросы - здесь это не перепроверяется.
+Данные хранятся в SQLite (direct-tracker.db рядом со скриптом), а не в
+Supabase/Vercel KV, потому что сайт больше не на Vercel, а SQLite ничего
+не добавляет к зависимостям (stdlib) и для ручного ввода одной клиники
+десятки/сотни записей в месяц - более чем достаточный масштаб.
 """
 
+import datetime
 import json
 import os
 import re
+import sqlite3
 import threading
 import urllib.error
 import urllib.request
@@ -44,6 +56,133 @@ MAX_API_URL = 'https://platform-api2.max.ru/messages'
 VIEWS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'views.json')
 VIEWS_LOCK = threading.Lock()
 SLUG_RE = re.compile(r'^/api/views/([a-z0-9-]{1,200})/?$')
+
+DT_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'direct-tracker.db')
+DT_LOCK = threading.Lock()
+DT_VISIT_RE = re.compile(r'^/api/direct-tracker/records/(\d+)/?$')
+DT_STATUSES = {'call', 'booked', 'came', 'no_show', 'cancelled'}
+
+
+def dt_get_conn():
+    conn = sqlite3.connect(DT_DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute('PRAGMA foreign_keys = ON')
+    return conn
+
+
+def dt_init_db():
+    with dt_get_conn() as conn:
+        conn.execute(
+            '''CREATE TABLE IF NOT EXISTS patients (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                phone TEXT UNIQUE NOT NULL
+            )'''
+        )
+        conn.execute(
+            '''CREATE TABLE IF NOT EXISTS visits (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                patient_id INTEGER NOT NULL REFERENCES patients(id) ON DELETE CASCADE,
+                call_at TEXT,
+                booking_at TEXT,
+                service TEXT,
+                amount REAL,
+                status TEXT NOT NULL,
+                comment TEXT,
+                created_at TEXT NOT NULL
+            )'''
+        )
+
+
+def dt_normalize_phone(raw: str) -> str | None:
+    digits = re.sub(r'\D', '', raw or '')
+    if len(digits) == 11 and digits[0] in ('7', '8'):
+        digits = '7' + digits[1:]
+    elif len(digits) == 10:
+        digits = '7' + digits
+    else:
+        return None
+    return '+' + digits
+
+
+def dt_list_records() -> list[dict]:
+    with DT_LOCK, dt_get_conn() as conn:
+        patients = conn.execute('SELECT id, phone FROM patients').fetchall()
+        visits = conn.execute(
+            'SELECT id, patient_id, call_at, booking_at, service, amount, status, comment, created_at '
+            'FROM visits ORDER BY created_at ASC'
+        ).fetchall()
+
+    visits_by_patient: dict[int, list[dict]] = {}
+    for v in visits:
+        visits_by_patient.setdefault(v['patient_id'], []).append(dict(v))
+
+    return [
+        {'id': p['id'], 'phone': p['phone'], 'visits': visits_by_patient.get(p['id'], [])}
+        for p in patients
+        if visits_by_patient.get(p['id'])
+    ]
+
+
+def dt_add_visit(data: dict) -> dict:
+    phone = dt_normalize_phone(data.get('phone', ''))
+    if not phone:
+        raise ValueError('Некорректный номер телефона')
+
+    status = data.get('status') or 'call'
+    if status not in DT_STATUSES:
+        raise ValueError('Некорректный статус')
+
+    amount = data.get('amount')
+    try:
+        amount = float(amount) if amount not in (None, '') else None
+    except (TypeError, ValueError):
+        raise ValueError('Некорректная сумма')
+
+    now_iso = datetime.datetime.now().isoformat(timespec='seconds')
+
+    with DT_LOCK, dt_get_conn() as conn:
+        row = conn.execute('SELECT id FROM patients WHERE phone = ?', (phone,)).fetchone()
+        if row:
+            patient_id = row['id']
+        else:
+            cur = conn.execute('INSERT INTO patients (phone) VALUES (?)', (phone,))
+            patient_id = cur.lastrowid
+
+        cur = conn.execute(
+            'INSERT INTO visits (patient_id, call_at, booking_at, service, amount, status, comment, created_at) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            (
+                patient_id,
+                (data.get('callAt') or None),
+                (data.get('bookingAt') or None),
+                (str(data.get('service') or '').strip()[:200] or None),
+                amount,
+                status,
+                (str(data.get('comment') or '').strip()[:1000] or None),
+                now_iso,
+            ),
+        )
+        visit_id = cur.lastrowid
+
+    return {'id': visit_id, 'patientId': patient_id, 'phone': phone}
+
+
+def dt_delete_visit(visit_id: int) -> bool:
+    with DT_LOCK, dt_get_conn() as conn:
+        row = conn.execute('SELECT patient_id FROM visits WHERE id = ?', (visit_id,)).fetchone()
+        if not row:
+            return False
+        patient_id = row['patient_id']
+        conn.execute('DELETE FROM visits WHERE id = ?', (visit_id,))
+        remaining = conn.execute(
+            'SELECT COUNT(*) AS c FROM visits WHERE patient_id = ?', (patient_id,)
+        ).fetchone()['c']
+        if remaining == 0:
+            conn.execute('DELETE FROM patients WHERE id = ?', (patient_id,))
+    return True
+
+
+dt_init_db()
 
 
 def _load_views() -> dict:
@@ -136,6 +275,19 @@ class Handler(BaseHTTPRequestHandler):
             slug = views_match.group(1)
             return self._send_json(200, {'slug': slug, 'count': increment_view(slug)})
 
+        if self.path.rstrip('/') == '/api/direct-tracker/records':
+            length = int(self.headers.get('Content-Length', 0))
+            raw = self.rfile.read(length) if length else b'{}'
+            try:
+                data = json.loads(raw.decode('utf-8'))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                return self._send_json(400, {'success': False, 'message': 'Некорректный JSON'})
+            try:
+                result = dt_add_visit(data)
+            except ValueError as e:
+                return self._send_json(400, {'success': False, 'message': str(e)})
+            return self._send_json(200, {'success': True, **result})
+
         if self.path.rstrip('/') != '/api/online-booking':
             return self._send_json(404, {'success': False, 'message': 'Not found'})
 
@@ -175,6 +327,20 @@ class Handler(BaseHTTPRequestHandler):
         if views_match:
             slug = views_match.group(1)
             return self._send_json(200, {'slug': slug, 'count': get_view(slug)})
+
+        if self.path.rstrip('/') == '/api/direct-tracker/records':
+            return self._send_json(200, {'patients': dt_list_records()})
+
+        return self._send_json(404, {'success': False, 'message': 'Not found'})
+
+    def do_DELETE(self):
+        visit_match = DT_VISIT_RE.match(self.path)
+        if visit_match:
+            visit_id = int(visit_match.group(1))
+            ok = dt_delete_visit(visit_id)
+            if not ok:
+                return self._send_json(404, {'success': False, 'message': 'Запись не найдена'})
+            return self._send_json(200, {'success': True})
 
         return self._send_json(404, {'success': False, 'message': 'Not found'})
 

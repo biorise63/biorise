@@ -41,6 +41,7 @@ const routeConfig: Record<
 
 const excludedPaths = new Set([
   '/yandex_ff70510bc15914e1/',
+  '/direct-tracker/',
 ])
 
 function normalizeRoute(routePath: string) {
