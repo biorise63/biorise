@@ -260,6 +260,30 @@ export default function DirectTrackerContent() {
     }
   }
 
+  function updateVisitLocal(visitId: number, patch: Partial<Visit>) {
+    setPatients((prev) =>
+      prev?.map((p) => ({
+        ...p,
+        visits: p.visits.map((v) => (v.id === visitId ? { ...v, ...patch } : v)),
+      })) ?? prev
+    )
+  }
+
+  async function handleUpdateVisit(visitId: number, patch: { status?: VisitStatus; comment?: string }) {
+    updateVisitLocal(visitId, patch)
+    try {
+      const res = await fetch(`/api/direct-tracker/records/${visitId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(patch),
+      })
+      if (!res.ok) throw new Error()
+    } catch {
+      window.alert('Не удалось сохранить изменение, попробуйте ещё раз.')
+      await loadRecords()
+    }
+  }
+
   async function handleDeleteVisit(visitId: number) {
     if (!window.confirm('Удалить эту запись безвозвратно?')) return
     try {
@@ -492,12 +516,30 @@ export default function DirectTrackerContent() {
                                   <td className="py-1.5 pr-3">{formatDateTime(v.booking_at)}</td>
                                   <td className="py-1.5 pr-3">{v.service || '—'}</td>
                                   <td className="py-1.5 pr-3">{v.amount ? formatMoney(v.amount) : '—'}</td>
-                                  <td className="py-1.5 pr-3">
-                                    <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${STATUS_COLORS[v.status]}`}>
-                                      {STATUS_LABELS[v.status]}
-                                    </span>
+                                  <td className="py-1.5 pr-3" onClick={(e) => e.stopPropagation()}>
+                                    <select
+                                      value={v.status}
+                                      onChange={(e) => handleUpdateVisit(v.id, { status: e.target.value as VisitStatus })}
+                                      className={`rounded-full border-0 px-2 py-0.5 text-[11px] font-medium ${STATUS_COLORS[v.status]}`}
+                                    >
+                                      {(Object.keys(STATUS_LABELS) as VisitStatus[]).map((s) => (
+                                        <option key={s} value={s}>{STATUS_LABELS[s]}</option>
+                                      ))}
+                                    </select>
                                   </td>
-                                  <td className="py-1.5 pr-3 max-w-[220px] truncate" title={v.comment || ''}>{v.comment || '—'}</td>
+                                  <td className="py-1.5 pr-3" onClick={(e) => e.stopPropagation()}>
+                                    <input
+                                      type="text"
+                                      defaultValue={v.comment || ''}
+                                      onBlur={(e) => {
+                                        if (e.target.value !== (v.comment || '')) {
+                                          handleUpdateVisit(v.id, { comment: e.target.value })
+                                        }
+                                      }}
+                                      placeholder="Добавить комментарий"
+                                      className="w-full max-w-[220px] rounded-md border border-transparent bg-transparent px-1 py-0.5 text-xs transition-colors hover:border-olive-primary/20 focus:border-olive-primary/30 focus:bg-white focus:outline-none"
+                                    />
+                                  </td>
                                   <td className="py-1.5">
                                     <button
                                       onClick={(e) => { e.stopPropagation(); handleDeleteVisit(v.id) }}

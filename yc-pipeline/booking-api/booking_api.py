@@ -167,6 +167,30 @@ def dt_add_visit(data: dict) -> dict:
     return {'id': visit_id, 'patientId': patient_id, 'phone': phone}
 
 
+def dt_update_visit(visit_id: int, data: dict) -> bool:
+    fields = []
+    values = []
+
+    if 'status' in data:
+        status = data['status']
+        if status not in DT_STATUSES:
+            raise ValueError('Некорректный статус')
+        fields.append('status = ?')
+        values.append(status)
+
+    if 'comment' in data:
+        fields.append('comment = ?')
+        values.append(str(data['comment'] or '').strip()[:1000] or None)
+
+    if not fields:
+        raise ValueError('Нечего обновлять')
+
+    values.append(visit_id)
+    with DT_LOCK, dt_get_conn() as conn:
+        cur = conn.execute(f'UPDATE visits SET {", ".join(fields)} WHERE id = ?', values)
+        return cur.rowcount > 0
+
+
 def dt_delete_visit(visit_id: int) -> bool:
     with DT_LOCK, dt_get_conn() as conn:
         row = conn.execute('SELECT patient_id FROM visits WHERE id = ?', (visit_id,)).fetchone()
@@ -330,6 +354,26 @@ class Handler(BaseHTTPRequestHandler):
 
         if self.path.rstrip('/') == '/api/direct-tracker/records':
             return self._send_json(200, {'patients': dt_list_records()})
+
+        return self._send_json(404, {'success': False, 'message': 'Not found'})
+
+    def do_PATCH(self):
+        visit_match = DT_VISIT_RE.match(self.path)
+        if visit_match:
+            visit_id = int(visit_match.group(1))
+            length = int(self.headers.get('Content-Length', 0))
+            raw = self.rfile.read(length) if length else b'{}'
+            try:
+                data = json.loads(raw.decode('utf-8'))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                return self._send_json(400, {'success': False, 'message': 'Некорректный JSON'})
+            try:
+                ok = dt_update_visit(visit_id, data)
+            except ValueError as e:
+                return self._send_json(400, {'success': False, 'message': str(e)})
+            if not ok:
+                return self._send_json(404, {'success': False, 'message': 'Запись не найдена'})
+            return self._send_json(200, {'success': True})
 
         return self._send_json(404, {'success': False, 'message': 'Not found'})
 
