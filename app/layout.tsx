@@ -5,6 +5,7 @@ import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import { BookingModalProvider } from '@/components/BookingModalProvider'
 import FloatingCallButton from '@/components/FloatingCallButton'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
+import MirrorPhoneSwap from '@/components/MirrorPhoneSwap'
 
 export const metadata: Metadata = {
   title: 'BIORISE - Клиника капельниц в Самаре',
@@ -50,6 +51,7 @@ export default function RootLayout({
           <FloatingCallButton />
           <CookieConsentBanner />
         </BookingModalProvider>
+        <MirrorPhoneSwap />
 
         {/* Яндекс.Метрика - невидимый счетчик. На зеркале biorise-clinics.ru
             (намеренно закрытом от индексации, см. yc-pipeline/nginx/biorise-clinics-mirror.conf)
