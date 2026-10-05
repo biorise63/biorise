@@ -139,7 +139,10 @@ function ChannelSelect({
         <span className="text-xs text-olive-primary/40">▾</span>
       </button>
       {open && (
-        <div className="absolute z-10 mt-1 max-h-72 w-full overflow-y-auto rounded-lg border border-olive-primary/15 bg-white py-1 shadow-premium">
+        <div
+          data-lenis-prevent
+          className="absolute z-10 mt-1 max-h-72 w-full overflow-y-auto rounded-lg border border-olive-primary/15 bg-white py-1 shadow-premium"
+        >
           {options.map((c) => (
             <button
               key={c || 'all'}
@@ -251,7 +254,7 @@ function periodEnd(period: Period, customTo: string): Date | null {
 const emptyForm = {
   phoneDigits: '',
   phoneLine: 'direct_902' as VisitSource,
-  channel: 'site2' as VisitChannel,
+  channel: 'site2' as VisitChannel | '',
   callAt: '',
   bookingAt: '',
   service: '',
@@ -408,9 +411,10 @@ export default function DirectTrackerContent() {
       ...f,
       phoneLine: line,
       // 902 - это всегда и только "Сайт2", без ручного выбора. При
-      // переключении на 996 канал сбрасывается на "Сайт" по умолчанию,
-      // чтобы случайно не отправить "Сайт2" с обычным номером.
-      channel: line === 'direct_902' ? 'site2' : 'site',
+      // переключении на 996 канал сбрасывается на "не выбрано" - админ
+      // может оставить так, если не знает, откуда пришёл пациент, а не
+      // гадать и отправлять что-то наугад.
+      channel: line === 'direct_902' ? 'site2' : '',
     }))
   }
 
@@ -435,7 +439,7 @@ export default function DirectTrackerContent() {
           status: form.status,
           comment: form.comment,
           source: form.phoneLine,
-          channel: form.channel,
+          channel: form.channel || null,
         }),
       })
       const data = await res.json()
@@ -798,6 +802,7 @@ export default function DirectTrackerContent() {
           onClick={() => setModalOpen(false)}
         >
           <div
+            data-lenis-prevent
             className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-premium"
             onClick={(e) => e.stopPropagation()}
             onKeyDown={handleModalKeyDown}
@@ -863,9 +868,9 @@ export default function DirectTrackerContent() {
                 ) : (
                   <ChannelSelect
                     value={form.channel}
-                    onChange={(c) => c && setForm((f) => ({ ...f, channel: c }))}
-                    options={CHANNEL_OPTIONS}
-                    placeholder="Выберите источник"
+                    onChange={(c) => setForm((f) => ({ ...f, channel: c }))}
+                    options={['', ...CHANNEL_OPTIONS]}
+                    placeholder="Источник неизвестен"
                   />
                 )}
               </div>
