@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import DirectTrackerContent from './DirectTrackerContent'
 
 export const metadata: Metadata = {
-  title: 'Учёт заявок с Директа',
+  title: 'Учёт заявок +7 902 295-19-76',
   robots: {
     index: false,
     follow: false,
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 }
 
 export default function DirectTrackerPage() {
-  return <DirectTrackerContent />
+  return <DirectTrackerContent pageTitle="Учет заявок +7 902 295-19-76" sourceLine="direct_902" />
 }

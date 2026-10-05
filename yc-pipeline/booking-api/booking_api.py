@@ -61,6 +61,15 @@ DT_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'direct-tr
 DT_LOCK = threading.Lock()
 DT_VISIT_RE = re.compile(r'^/api/direct-tracker/records/(\d+)/?$')
 DT_STATUSES = {'call', 'booked', 'came', 'no_show', 'cancelled'}
+# Через какой номер прошёл именно этот звонок - 'direct_902' = рекламный
+# номер Яндекс Директа, 'organic_996' = номер на основном сайте. У пациента
+# отдельно хранится original_source - источник САМОГО ПЕРВОГО обращения,
+# он выставляется один раз при создании пациента и больше не меняется:
+# если человек изначально пришёл с рекламы (902), а через месяц без
+# рекламы позвонил на обычный номер (996), выручка с этого повторного
+# визита всё равно должна считаться в пользу рекламы, которая его
+# привела изначально (first-touch атрибуция).
+DT_SOURCES = {'direct_902', 'organic_996'}
 
 
 def dt_get_conn():
@@ -75,7 +84,8 @@ def dt_init_db():
         conn.execute(
             '''CREATE TABLE IF NOT EXISTS patients (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                phone TEXT UNIQUE NOT NULL
+                phone TEXT UNIQUE NOT NULL,
+                original_source TEXT
             )'''
         )
         conn.execute(
@@ -88,9 +98,22 @@ def dt_init_db():
                 amount REAL,
                 status TEXT NOT NULL,
                 comment TEXT,
-                created_at TEXT NOT NULL
+                created_at TEXT NOT NULL,
+                source TEXT
             )'''
         )
+        # ALTER TABLE ... ADD COLUMN для баз, созданных до появления source/
+        # original_source - CREATE TABLE IF NOT EXISTS их не добавит, если
+        # таблица уже существует. Повторный запуск безопасен (просто поймает
+        # "duplicate column").
+        for stmt in (
+            'ALTER TABLE patients ADD COLUMN original_source TEXT',
+            'ALTER TABLE visits ADD COLUMN source TEXT',
+        ):
+            try:
+                conn.execute(stmt)
+            except sqlite3.OperationalError:
+                pass
 
 
 def dt_normalize_phone(raw: str) -> str | None:
@@ -106,9 +129,9 @@ def dt_normalize_phone(raw: str) -> str | None:
 
 def dt_list_records() -> list[dict]:
     with DT_LOCK, dt_get_conn() as conn:
-        patients = conn.execute('SELECT id, phone FROM patients').fetchall()
+        patients = conn.execute('SELECT id, phone, original_source FROM patients').fetchall()
         visits = conn.execute(
-            'SELECT id, patient_id, call_at, booking_at, service, amount, status, comment, created_at '
+            'SELECT id, patient_id, call_at, booking_at, service, amount, status, comment, created_at, source '
             'FROM visits ORDER BY created_at ASC'
         ).fetchall()
 
@@ -117,7 +140,12 @@ def dt_list_records() -> list[dict]:
         visits_by_patient.setdefault(v['patient_id'], []).append(dict(v))
 
     return [
-        {'id': p['id'], 'phone': p['phone'], 'visits': visits_by_patient.get(p['id'], [])}
+        {
+            'id': p['id'],
+            'phone': p['phone'],
+            'originalSource': p['original_source'],
+            'visits': visits_by_patient.get(p['id'], []),
+        }
         for p in patients
         if visits_by_patient.get(p['id'])
     ]
@@ -138,6 +166,10 @@ def dt_add_visit(data: dict) -> dict:
     except (TypeError, ValueError):
         raise ValueError('Некорректная сумма')
 
+    source = data.get('source')
+    if source is not None and source not in DT_SOURCES:
+        raise ValueError('Некорректный источник')
+
     now_iso = datetime.datetime.now().isoformat(timespec='seconds')
 
     with DT_LOCK, dt_get_conn() as conn:
@@ -145,12 +177,16 @@ def dt_add_visit(data: dict) -> dict:
         if row:
             patient_id = row['id']
         else:
-            cur = conn.execute('INSERT INTO patients (phone) VALUES (?)', (phone,))
+            # original_source фиксируется один раз, по источнику самого
+            # первого обращения этого номера - дальше не меняется.
+            cur = conn.execute(
+                'INSERT INTO patients (phone, original_source) VALUES (?, ?)', (phone, source)
+            )
             patient_id = cur.lastrowid
 
         cur = conn.execute(
-            'INSERT INTO visits (patient_id, call_at, booking_at, service, amount, status, comment, created_at) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            'INSERT INTO visits (patient_id, call_at, booking_at, service, amount, status, comment, created_at, source) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (
                 patient_id,
                 (data.get('callAt') or None),
@@ -160,6 +196,7 @@ def dt_add_visit(data: dict) -> dict:
                 status,
                 (str(data.get('comment') or '').strip()[:1000] or None),
                 now_iso,
+                source,
             ),
         )
         visit_id = cur.lastrowid

@@ -3,6 +3,7 @@ Allow: /
 
 Disallow: /api/
 Disallow: /direct-tracker/
+Disallow: /direct-tracker-996/
 Disallow: /_next/webpack-hmr
 Disallow: /*?*
 Disallow: /*utm_*

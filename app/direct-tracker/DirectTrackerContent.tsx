@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useMemo, useState } from 'react'
 
 type VisitStatus = 'call' | 'booked' | 'came' | 'no_show' | 'cancelled'
+type VisitSource = 'direct_902' | 'organic_996'
 
 type Visit = {
   id: number
@@ -14,12 +15,24 @@ type Visit = {
   status: VisitStatus
   comment: string | null
   created_at: string
+  source: VisitSource | null
 }
 
 type Patient = {
   id: number
   phone: string
+  originalSource: VisitSource | null
   visits: Visit[]
+}
+
+const SOURCE_LABELS: Record<VisitSource, string> = {
+  direct_902: 'Директ (902)',
+  organic_996: 'Основной номер (996)',
+}
+
+const SOURCE_COLORS: Record<VisitSource, string> = {
+  direct_902: 'bg-[#E6D8C3] text-[#6F5A2E]',
+  organic_996: 'bg-[#D8E0E6] text-[#38546F]',
 }
 
 const STATUS_LABELS: Record<VisitStatus, string> = {
@@ -111,7 +124,13 @@ const emptyForm = {
   comment: '',
 }
 
-export default function DirectTrackerContent() {
+export default function DirectTrackerContent({
+  pageTitle,
+  sourceLine,
+}: {
+  pageTitle: string
+  sourceLine: VisitSource
+}) {
   const [patients, setPatients] = useState<Patient[] | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
@@ -207,7 +226,23 @@ export default function DirectTrackerContent() {
     const bookedCount = allVisits.filter((v) => v.booking_at).length
     const camePatients = new Set(allVisits.filter((v) => v.status === 'came').map((v) => v.patientId)).size
 
-    return { totalCalls, uniquePatients, repeatPatients, totalAmount, avgCheck, bookedCount, camePatients }
+    // Выручка/звонки по source визита - "сколько реально позвонило на эту
+    // линию". bySource ниже - другое: сколько принёс КАЖДЫЙ исходный
+    // источник с учётом всех последующих визитов пациента, даже через
+    // другую линию (first-touch).
+    const bySource: Record<VisitSource, { calls: number; amount: number }> = {
+      direct_902: { calls: 0, amount: 0 },
+      organic_996: { calls: 0, amount: 0 },
+    }
+    for (const p of filtered) {
+      if (!p.originalSource) continue
+      for (const v of p.visits) {
+        bySource[p.originalSource].calls += 1
+        bySource[p.originalSource].amount += v.amount || 0
+      }
+    }
+
+    return { totalCalls, uniquePatients, repeatPatients, totalAmount, avgCheck, bookedCount, camePatients, bySource }
   }, [filtered])
 
   function patientTotal(p: Patient) {
@@ -244,6 +279,7 @@ export default function DirectTrackerContent() {
           amount: form.amount,
           status: form.status,
           comment: form.comment,
+          source: sourceLine,
         }),
       })
       const data = await res.json()
@@ -297,7 +333,7 @@ export default function DirectTrackerContent() {
 
   function exportCsv() {
     const rows = [
-      ['Телефон', 'Дата первого звонка', 'Дата последнего звонка', 'Количество обращений', 'Услуги', 'Общая сумма', 'История обращений', 'Комментарии'],
+      ['Телефон', 'Первый источник', 'Дата первого звонка', 'Дата последнего звонка', 'Количество обращений', 'Услуги', 'Общая сумма', 'История обращений', 'Комментарии'],
     ]
     for (const p of filtered) {
       const first = p.visits[0]
@@ -308,6 +344,7 @@ export default function DirectTrackerContent() {
       const comments = p.visits.map((v) => v.comment).filter(Boolean).join(' | ')
       rows.push([
         formatPhone(p.phone),
+        p.originalSource ? SOURCE_LABELS[p.originalSource] : '—',
         formatDateTime(first.call_at),
         formatDateTime(last.call_at),
         String(p.visits.length),
@@ -334,7 +371,7 @@ export default function DirectTrackerContent() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <h1 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">
-            Учёт заявок с Яндекс Директа
+            {pageTitle}
           </h1>
           <button
             onClick={openAddModal}
@@ -364,6 +401,26 @@ export default function DirectTrackerContent() {
             <div key={label as string} className="rounded-2xl border border-olive-primary/10 bg-white/85 p-4 shadow-premium">
               <div className="text-xs text-olive-primary/60">{label}</div>
               <div className="mt-1 text-xl font-heading font-light text-olive-primary">{value}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Выручка по источнику первого обращения (first-touch) - если
+            пациент изначально пришёл с рекламы, но потом позвонил на
+            другой номер, выручка с этого визита всё равно считается
+            здесь в пользу рекламы, которая его привела. */}
+        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {(Object.keys(SOURCE_LABELS) as VisitSource[]).map((s) => (
+            <div key={s} className="rounded-2xl border border-olive-primary/10 bg-white/85 p-4 shadow-premium">
+              <div className="flex items-center gap-2 text-xs text-olive-primary/60">
+                <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${SOURCE_COLORS[s]}`}>
+                  {SOURCE_LABELS[s]}
+                </span>
+                <span>выручка с учётом повторных обращений</span>
+              </div>
+              <div className="mt-1 text-xl font-heading font-light text-olive-primary">
+                {formatMoney(stats.bySource[s].amount)} <span className="text-sm text-olive-primary/50">· {stats.bySource[s].calls} обращений</span>
+              </div>
             </div>
           ))}
         </div>
@@ -481,7 +538,14 @@ export default function DirectTrackerContent() {
                       onClick={() => setExpandedPatientId(isOpen ? null : p.id)}
                       className="cursor-pointer border-b border-olive-primary/5 transition-colors hover:bg-olive-primary/5"
                     >
-                      <td className="px-4 py-3 font-medium text-olive-primary">{formatPhone(p.phone)}</td>
+                      <td className="px-4 py-3 font-medium text-olive-primary">
+                        <div>{formatPhone(p.phone)}</div>
+                        {p.originalSource && (
+                          <span className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${SOURCE_COLORS[p.originalSource]}`}>
+                            {SOURCE_LABELS[p.originalSource]}
+                          </span>
+                        )}
+                      </td>
                       <td className="px-4 py-3">{formatDateTime(p.visits[0].call_at)}</td>
                       <td className="px-4 py-3">{formatDateTime(last.call_at)}</td>
                       <td className="px-4 py-3">{p.visits.length}</td>
@@ -592,6 +656,9 @@ export default function DirectTrackerContent() {
                 {existingPatientMatch && (
                   <p className="mt-1 text-xs text-olive-primary/70">
                     Этот номер уже есть в базе: {existingPatientMatch.visits.length} обращени{existingPatientMatch.visits.length === 1 ? 'е' : 'й'}, последнее - {formatDateTime(existingPatientMatch.visits[existingPatientMatch.visits.length - 1].call_at)}
+                    {existingPatientMatch.originalSource && (
+                      <> · первый источник: {SOURCE_LABELS[existingPatientMatch.originalSource]}</>
+                    )}
                   </p>
                 )}
               </div>
