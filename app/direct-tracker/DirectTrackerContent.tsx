@@ -385,6 +385,18 @@ export default function DirectTrackerContent() {
     return Array.from(set).join(', ') || '—'
   }
 
+  // Enter сохраняет запись, кроме как в textarea (там Enter - перенос
+  // строки) и на кнопках (у них Enter уже переключает/выбирает сам по
+  // себе - иначе выбор в ChannelSelect или смена номера дёргали бы
+  // сохранение формы следом).
+  function handleModalKeyDown(e: React.KeyboardEvent) {
+    if (e.key !== 'Enter') return
+    const tag = (e.target as HTMLElement).tagName
+    if (tag === 'TEXTAREA' || tag === 'BUTTON') return
+    e.preventDefault()
+    handleSave()
+  }
+
   function openAddModal() {
     setForm({ ...emptyForm, callAt: toLocalInputValue(new Date()) })
     setSaveError(null)
@@ -403,6 +415,7 @@ export default function DirectTrackerContent() {
   }
 
   async function handleSave() {
+    if (saving) return
     if (form.phoneDigits.length !== 10) {
       setSaveError('Укажите номер телефона полностью (10 цифр после +7)')
       return
@@ -787,6 +800,7 @@ export default function DirectTrackerContent() {
           <div
             className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-premium"
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={handleModalKeyDown}
           >
             <h2 className="mb-4 text-xl font-heading font-light text-olive-primary">Новая запись</h2>
 
