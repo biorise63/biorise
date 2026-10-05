@@ -70,6 +70,17 @@ DT_STATUSES = {'call', 'booked', 'came', 'no_show', 'cancelled'}
 # визита всё равно должна считаться в пользу рекламы, которая его
 # привела изначально (first-touch атрибуция).
 DT_SOURCES = {'direct_902', 'organic_996'}
+# Маркетинговый канал, через который реально пришёл пациент - отдельная
+# ось от source (номера телефона). 'site2' жёстко привязан к номеру 902:
+# если позвонили на рекламный номер, канал всегда 'site2' и не может быть
+# другим (это проверяется и на фронте, и здесь на бэке). Для 996 admin
+# выбирает канал вручную из остальных вариантов. originalChannel у
+# пациента, как и originalSource, фиксируется один раз по первому
+# обращению и работает по тому же принципу first-touch атрибуции.
+DT_CHANNELS = {
+    'site', 'site2', 'instagram', 'vk', 'telegram',
+    'yandex_maps', '2gis', 'google_maps', 'prodoctorov',
+}
 
 
 def dt_get_conn():
@@ -109,6 +120,8 @@ def dt_init_db():
         for stmt in (
             'ALTER TABLE patients ADD COLUMN original_source TEXT',
             'ALTER TABLE visits ADD COLUMN source TEXT',
+            'ALTER TABLE patients ADD COLUMN original_channel TEXT',
+            'ALTER TABLE visits ADD COLUMN channel TEXT',
         ):
             try:
                 conn.execute(stmt)
@@ -129,9 +142,11 @@ def dt_normalize_phone(raw: str) -> str | None:
 
 def dt_list_records() -> list[dict]:
     with DT_LOCK, dt_get_conn() as conn:
-        patients = conn.execute('SELECT id, phone, original_source FROM patients').fetchall()
+        patients = conn.execute(
+            'SELECT id, phone, original_source, original_channel FROM patients'
+        ).fetchall()
         visits = conn.execute(
-            'SELECT id, patient_id, call_at, booking_at, service, amount, status, comment, created_at, source '
+            'SELECT id, patient_id, call_at, booking_at, service, amount, status, comment, created_at, source, channel '
             'FROM visits ORDER BY created_at ASC'
         ).fetchall()
 
@@ -144,6 +159,7 @@ def dt_list_records() -> list[dict]:
             'id': p['id'],
             'phone': p['phone'],
             'originalSource': p['original_source'],
+            'originalChannel': p['original_channel'],
             'visits': visits_by_patient.get(p['id'], []),
         }
         for p in patients
@@ -170,6 +186,17 @@ def dt_add_visit(data: dict) -> dict:
     if source is not None and source not in DT_SOURCES:
         raise ValueError('Некорректный источник')
 
+    channel = data.get('channel')
+    if channel is not None and channel not in DT_CHANNELS:
+        raise ValueError('Некорректный канал')
+    # Жёсткое правило, а не просто подсказка на фронте: звонок на 902 -
+    # это всегда и только 'site2', подменяем/проверяем здесь тоже, чтобы
+    # нельзя было обойти блокировку поля прямым запросом к API.
+    if source == 'direct_902':
+        channel = 'site2'
+    elif channel == 'site2':
+        raise ValueError('Канал "Сайт2" применяется только для номера 902')
+
     now_iso = datetime.datetime.now().isoformat(timespec='seconds')
 
     with DT_LOCK, dt_get_conn() as conn:
@@ -177,16 +204,17 @@ def dt_add_visit(data: dict) -> dict:
         if row:
             patient_id = row['id']
         else:
-            # original_source фиксируется один раз, по источнику самого
-            # первого обращения этого номера - дальше не меняется.
+            # original_source/original_channel фиксируются один раз, по
+            # самому первому обращению этого номера - дальше не меняются.
             cur = conn.execute(
-                'INSERT INTO patients (phone, original_source) VALUES (?, ?)', (phone, source)
+                'INSERT INTO patients (phone, original_source, original_channel) VALUES (?, ?, ?)',
+                (phone, source, channel),
             )
             patient_id = cur.lastrowid
 
         cur = conn.execute(
-            'INSERT INTO visits (patient_id, call_at, booking_at, service, amount, status, comment, created_at, source) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'INSERT INTO visits (patient_id, call_at, booking_at, service, amount, status, comment, created_at, source, channel) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (
                 patient_id,
                 (data.get('callAt') or None),
@@ -197,6 +225,7 @@ def dt_add_visit(data: dict) -> dict:
                 (str(data.get('comment') or '').strip()[:1000] or None),
                 now_iso,
                 source,
+                channel,
             ),
         )
         visit_id = cur.lastrowid

@@ -1,9 +1,29 @@
 'use client'
 
-import { Fragment, useEffect, useMemo, useState } from 'react'
+import { ComponentType, Fragment, SVGProps, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  GoogleMapsIcon,
+  InstagramIcon,
+  ProdoctorovIcon,
+  SiteIcon,
+  TelegramIcon,
+  TwoGisIcon,
+  VkIcon,
+  YandexMapsIcon,
+} from '@/components/icons/ChannelIcons'
 
 type VisitStatus = 'call' | 'booked' | 'came' | 'no_show' | 'cancelled'
 type VisitSource = 'direct_902' | 'organic_996'
+type VisitChannel =
+  | 'site'
+  | 'site2'
+  | 'instagram'
+  | 'vk'
+  | 'telegram'
+  | 'yandex_maps'
+  | '2gis'
+  | 'google_maps'
+  | 'prodoctorov'
 
 type Visit = {
   id: number
@@ -16,23 +36,137 @@ type Visit = {
   comment: string | null
   created_at: string
   source: VisitSource | null
+  channel: VisitChannel | null
 }
 
 type Patient = {
   id: number
   phone: string
   originalSource: VisitSource | null
+  originalChannel: VisitChannel | null
   visits: Visit[]
 }
 
-const SOURCE_LABELS: Record<VisitSource, string> = {
-  direct_902: 'Директ (902)',
-  organic_996: 'Основной номер (996)',
+const PHONE_LINE_LABELS: Record<VisitSource, string> = {
+  direct_902: '+7 902 295-19-76 (Директ)',
+  organic_996: '+7 996 749 97 47 (основной)',
 }
 
-const SOURCE_COLORS: Record<VisitSource, string> = {
-  direct_902: 'bg-[#E6D8C3] text-[#6F5A2E]',
-  organic_996: 'bg-[#D8E0E6] text-[#38546F]',
+// Порядок - как попросили: Сайт, Инстаграм, ВК, Телеграм, Яндекс карты,
+// 2ГИС, Гугл карты, Продокторов. 'site2' в список выбора не входит - он
+// только автоматический, для номера 902.
+const CHANNEL_OPTIONS: VisitChannel[] = [
+  'site', 'instagram', 'vk', 'telegram', 'yandex_maps', '2gis', 'google_maps', 'prodoctorov',
+]
+
+const CHANNEL_LABELS: Record<VisitChannel, string> = {
+  site: 'Сайт',
+  site2: 'Сайт2',
+  instagram: 'Инстаграм',
+  vk: 'ВК',
+  telegram: 'Телеграм',
+  yandex_maps: 'Яндекс Карты',
+  '2gis': '2ГИС',
+  google_maps: 'Гугл Карты',
+  prodoctorov: 'Продокторов',
+}
+
+const CHANNEL_ICONS: Record<VisitChannel, ComponentType<SVGProps<SVGSVGElement>>> = {
+  site: SiteIcon,
+  site2: SiteIcon,
+  instagram: InstagramIcon,
+  vk: VkIcon,
+  telegram: TelegramIcon,
+  yandex_maps: YandexMapsIcon,
+  '2gis': TwoGisIcon,
+  google_maps: GoogleMapsIcon,
+  prodoctorov: ProdoctorovIcon,
+}
+
+function ChannelBadge({ channel }: { channel: VisitChannel }) {
+  const Icon = CHANNEL_ICONS[channel]
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-olive-primary/10 bg-white px-2 py-0.5 text-[11px] font-medium text-olive-text">
+      <Icon className="h-3.5 w-3.5 shrink-0" />
+      {CHANNEL_LABELS[channel]}
+    </span>
+  )
+}
+
+// Нативный <select>/<option> не умеет показывать SVG внутри опций -
+// браузер рендерит там только текст. Поэтому для выбора источника
+// (где явно просили фирменные иконки) сделан свой выпадающий список.
+function ChannelSelect({
+  value,
+  onChange,
+  options,
+  placeholder,
+}: {
+  value: VisitChannel | ''
+  onChange: (c: VisitChannel | '') => void
+  options: (VisitChannel | '')[]
+  placeholder: string
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function onOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onOutside)
+    return () => document.removeEventListener('mousedown', onOutside)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-center justify-between gap-2 rounded-lg border border-olive-primary/20 bg-white px-3 py-2 text-left text-sm"
+      >
+        {value ? (
+          <span className="flex items-center gap-2">
+            {(() => {
+              const Icon = CHANNEL_ICONS[value]
+              return <Icon className="h-4 w-4 shrink-0" />
+            })()}
+            {CHANNEL_LABELS[value]}
+          </span>
+        ) : (
+          <span className="text-olive-primary/50">{placeholder}</span>
+        )}
+        <span className="text-xs text-olive-primary/40">▾</span>
+      </button>
+      {open && (
+        <div className="absolute z-10 mt-1 max-h-72 w-full overflow-y-auto rounded-lg border border-olive-primary/15 bg-white py-1 shadow-premium">
+          {options.map((c) => (
+            <button
+              key={c || 'all'}
+              type="button"
+              onClick={() => {
+                onChange(c)
+                setOpen(false)
+              }}
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-olive-primary/5"
+            >
+              {c ? (
+                <>
+                  {(() => {
+                    const Icon = CHANNEL_ICONS[c]
+                    return <Icon className="h-4 w-4 shrink-0" />
+                  })()}
+                  {CHANNEL_LABELS[c]}
+                </>
+              ) : (
+                <span className="text-olive-primary/60">{placeholder}</span>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 }
 
 const STATUS_LABELS: Record<VisitStatus, string> = {
@@ -116,6 +250,8 @@ function periodEnd(period: Period, customTo: string): Date | null {
 
 const emptyForm = {
   phoneDigits: '',
+  phoneLine: 'direct_902' as VisitSource,
+  channel: 'site2' as VisitChannel,
   callAt: '',
   bookingAt: '',
   service: '',
@@ -124,13 +260,7 @@ const emptyForm = {
   comment: '',
 }
 
-export default function DirectTrackerContent({
-  pageTitle,
-  sourceLine,
-}: {
-  pageTitle: string
-  sourceLine: VisitSource
-}) {
+export default function DirectTrackerContent() {
   const [patients, setPatients] = useState<Patient[] | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
@@ -140,6 +270,7 @@ export default function DirectTrackerContent({
   const [searchPhone, setSearchPhone] = useState('')
   const [serviceFilter, setServiceFilter] = useState('')
   const [statusFilter, setStatusFilter] = useState<VisitStatus | ''>('')
+  const [channelFilter, setChannelFilter] = useState<VisitChannel | ''>('')
 
   const [expandedPatientId, setExpandedPatientId] = useState<number | null>(null)
   const [modalOpen, setModalOpen] = useState(false)
@@ -192,6 +323,7 @@ export default function DirectTrackerContent({
       const visits = p.visits.filter((v) => {
         if (serviceFilter && v.service !== serviceFilter) return false
         if (statusFilter && v.status !== statusFilter) return false
+        if (channelFilter && v.channel !== channelFilter) return false
         const ref = v.call_at || v.created_at
         const refDate = ref ? new Date(ref) : null
         if (start && (!refDate || refDate < start)) return false
@@ -213,7 +345,7 @@ export default function DirectTrackerContent({
     })
 
     return result
-  }, [patients, period, customFrom, customTo, searchPhone, serviceFilter, statusFilter])
+  }, [patients, period, customFrom, customTo, searchPhone, serviceFilter, statusFilter, channelFilter])
 
   const stats = useMemo(() => {
     const allVisits = filtered.flatMap((p) => p.visits.map((v) => ({ ...v, patientId: p.id })))
@@ -226,23 +358,22 @@ export default function DirectTrackerContent({
     const bookedCount = allVisits.filter((v) => v.booking_at).length
     const camePatients = new Set(allVisits.filter((v) => v.status === 'came').map((v) => v.patientId)).size
 
-    // Выручка/звонки по source визита - "сколько реально позвонило на эту
-    // линию". bySource ниже - другое: сколько принёс КАЖДЫЙ исходный
-    // источник с учётом всех последующих визитов пациента, даже через
-    // другую линию (first-touch).
-    const bySource: Record<VisitSource, { calls: number; amount: number }> = {
-      direct_902: { calls: 0, amount: 0 },
-      organic_996: { calls: 0, amount: 0 },
-    }
+    // Выручка/обращения по originalChannel пациента - канал, который
+    // привёл его изначально, с учётом ВСЕХ последующих визитов, даже
+    // через другой номер/канал (first-touch атрибуция).
+    const byChannel: Partial<Record<VisitChannel, { calls: number; amount: number }>> = {}
     for (const p of filtered) {
-      if (!p.originalSource) continue
+      if (!p.originalChannel) continue
+      const bucket = (byChannel[p.originalChannel] ??= { calls: 0, amount: 0 })
       for (const v of p.visits) {
-        bySource[p.originalSource].calls += 1
-        bySource[p.originalSource].amount += v.amount || 0
+        bucket.calls += 1
+        bucket.amount += v.amount || 0
       }
     }
+    const byChannelSorted = (Object.entries(byChannel) as [VisitChannel, { calls: number; amount: number }][])
+      .sort((a, b) => b[1].amount - a[1].amount)
 
-    return { totalCalls, uniquePatients, repeatPatients, totalAmount, avgCheck, bookedCount, camePatients, bySource }
+    return { totalCalls, uniquePatients, repeatPatients, totalAmount, avgCheck, bookedCount, camePatients, byChannelSorted }
   }, [filtered])
 
   function patientTotal(p: Patient) {
@@ -258,6 +389,17 @@ export default function DirectTrackerContent({
     setForm({ ...emptyForm, callAt: toLocalInputValue(new Date()) })
     setSaveError(null)
     setModalOpen(true)
+  }
+
+  function handlePhoneLineChange(line: VisitSource) {
+    setForm((f) => ({
+      ...f,
+      phoneLine: line,
+      // 902 - это всегда и только "Сайт2", без ручного выбора. При
+      // переключении на 996 канал сбрасывается на "Сайт" по умолчанию,
+      // чтобы случайно не отправить "Сайт2" с обычным номером.
+      channel: line === 'direct_902' ? 'site2' : 'site',
+    }))
   }
 
   async function handleSave() {
@@ -279,7 +421,8 @@ export default function DirectTrackerContent({
           amount: form.amount,
           status: form.status,
           comment: form.comment,
-          source: sourceLine,
+          source: form.phoneLine,
+          channel: form.channel,
         }),
       })
       const data = await res.json()
@@ -344,7 +487,7 @@ export default function DirectTrackerContent({
       const comments = p.visits.map((v) => v.comment).filter(Boolean).join(' | ')
       rows.push([
         formatPhone(p.phone),
-        p.originalSource ? SOURCE_LABELS[p.originalSource] : '—',
+        p.originalChannel ? CHANNEL_LABELS[p.originalChannel] : '—',
         formatDateTime(first.call_at),
         formatDateTime(last.call_at),
         String(p.visits.length),
@@ -371,7 +514,7 @@ export default function DirectTrackerContent({
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <h1 className="text-2xl font-heading font-light text-olive-primary sm:text-3xl">
-            {pageTitle}
+            Учёт заявок
           </h1>
           <button
             onClick={openAddModal}
@@ -406,24 +549,23 @@ export default function DirectTrackerContent({
         </div>
 
         {/* Выручка по источнику первого обращения (first-touch) - если
-            пациент изначально пришёл с рекламы, но потом позвонил на
-            другой номер, выручка с этого визита всё равно считается
-            здесь в пользу рекламы, которая его привела. */}
-        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {(Object.keys(SOURCE_LABELS) as VisitSource[]).map((s) => (
-            <div key={s} className="rounded-2xl border border-olive-primary/10 bg-white/85 p-4 shadow-premium">
-              <div className="flex items-center gap-2 text-xs text-olive-primary/60">
-                <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${SOURCE_COLORS[s]}`}>
-                  {SOURCE_LABELS[s]}
-                </span>
-                <span>выручка с учётом повторных обращений</span>
-              </div>
-              <div className="mt-1 text-xl font-heading font-light text-olive-primary">
-                {formatMoney(stats.bySource[s].amount)} <span className="text-sm text-olive-primary/50">· {stats.bySource[s].calls} обращений</span>
-              </div>
+            пациент изначально пришёл с рекламы или из соцсети, но потом
+            позвонил на другой номер, выручка с этого визита всё равно
+            считается здесь в пользу канала, который его привёл. */}
+        {stats.byChannelSorted.length > 0 && (
+          <div className="mb-6 overflow-x-auto rounded-2xl border border-olive-primary/10 bg-white/85 p-4 shadow-premium">
+            <div className="mb-3 text-xs text-olive-primary/60">Выручка по источнику первого обращения (с учётом повторных визитов)</div>
+            <div className="flex flex-wrap gap-2">
+              {stats.byChannelSorted.map(([channel, data]) => (
+                <div key={channel} className="flex items-center gap-2 rounded-xl border border-olive-primary/10 bg-beige-background/50 px-3 py-2">
+                  <ChannelBadge channel={channel} />
+                  <span className="text-sm font-medium text-olive-primary">{formatMoney(data.amount)}</span>
+                  <span className="text-xs text-olive-primary/50">· {data.calls} обращ.</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
 
         {/* Панель фильтров */}
         <div className="mb-4 flex flex-wrap items-end gap-3 rounded-2xl border border-olive-primary/10 bg-white/70 p-4">
@@ -499,6 +641,15 @@ export default function DirectTrackerContent({
               ))}
             </select>
           </div>
+          <div className="w-44">
+            <label className="mb-1 block text-xs text-olive-primary/70">Источник</label>
+            <ChannelSelect
+              value={channelFilter}
+              onChange={setChannelFilter}
+              options={['', ...CHANNEL_OPTIONS, 'site2']}
+              placeholder="Все источники"
+            />
+          </div>
           <button
             onClick={exportCsv}
             className="rounded-lg border border-olive-primary/30 bg-white px-4 py-2 text-sm font-medium text-olive-primary transition-colors hover:bg-olive-primary/10"
@@ -540,10 +691,10 @@ export default function DirectTrackerContent({
                     >
                       <td className="px-4 py-3 font-medium text-olive-primary">
                         <div>{formatPhone(p.phone)}</div>
-                        {p.originalSource && (
-                          <span className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${SOURCE_COLORS[p.originalSource]}`}>
-                            {SOURCE_LABELS[p.originalSource]}
-                          </span>
+                        {p.originalChannel && (
+                          <div className="mt-1">
+                            <ChannelBadge channel={p.originalChannel} />
+                          </div>
                         )}
                       </td>
                       <td className="px-4 py-3">{formatDateTime(p.visits[0].call_at)}</td>
@@ -654,12 +805,54 @@ export default function DirectTrackerContent({
                   />
                 </div>
                 {existingPatientMatch && (
-                  <p className="mt-1 text-xs text-olive-primary/70">
-                    Этот номер уже есть в базе: {existingPatientMatch.visits.length} обращени{existingPatientMatch.visits.length === 1 ? 'е' : 'й'}, последнее - {formatDateTime(existingPatientMatch.visits[existingPatientMatch.visits.length - 1].call_at)}
-                    {existingPatientMatch.originalSource && (
-                      <> · первый источник: {SOURCE_LABELS[existingPatientMatch.originalSource]}</>
+                  <p className="mt-1 flex flex-wrap items-center gap-1 text-xs text-olive-primary/70">
+                    <span>
+                      Этот номер уже есть в базе: {existingPatientMatch.visits.length} обращени{existingPatientMatch.visits.length === 1 ? 'е' : 'й'}, последнее - {formatDateTime(existingPatientMatch.visits[existingPatientMatch.visits.length - 1].call_at)}
+                    </span>
+                    {existingPatientMatch.originalChannel && (
+                      <>
+                        <span>· первый источник:</span>
+                        <ChannelBadge channel={existingPatientMatch.originalChannel} />
+                      </>
                     )}
                   </p>
+                )}
+              </div>
+
+              <div>
+                <label className="mb-1 block text-xs text-olive-primary/70">На какой номер позвонили</label>
+                <div className="flex gap-2">
+                  {(Object.keys(PHONE_LINE_LABELS) as VisitSource[]).map((line) => (
+                    <button
+                      key={line}
+                      type="button"
+                      onClick={() => handlePhoneLineChange(line)}
+                      className={`flex-1 rounded-lg border px-3 py-2 text-left text-xs font-medium transition-colors ${
+                        form.phoneLine === line
+                          ? 'border-olive-primary bg-olive-primary/10 text-olive-primary'
+                          : 'border-olive-primary/20 text-olive-text hover:bg-olive-primary/5'
+                      }`}
+                    >
+                      {PHONE_LINE_LABELS[line]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="mb-1 block text-xs text-olive-primary/70">Источник</label>
+                {form.phoneLine === 'direct_902' ? (
+                  <div className="flex items-center gap-2 rounded-lg border border-olive-primary/10 bg-beige-background/60 px-3 py-2 text-sm text-olive-primary/70">
+                    <ChannelBadge channel="site2" />
+                    <span className="text-xs">определяется автоматически для номера 902</span>
+                  </div>
+                ) : (
+                  <ChannelSelect
+                    value={form.channel}
+                    onChange={(c) => c && setForm((f) => ({ ...f, channel: c }))}
+                    options={CHANNEL_OPTIONS}
+                    placeholder="Выберите источник"
+                  />
                 )}
               </div>
 
