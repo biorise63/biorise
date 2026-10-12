@@ -97,7 +97,7 @@ DOCTORS = {
         'specialty': 'эндокринолог',
         'experience_years': None,
         'bio': 'Врач-эндокринолог. Основные направления: ожирение, гипотиреоз, сахарный диабет, НАЖБП, железодефицитная анемия.',
-        'avatar': '/optimized/doctors/gaylis.webp',
+        'avatar': '/optimized/doctors/gaylis-2.webp',
         'base_service': ('Первичный приём эндокринолога', 2800),
     },
     'tregubova': {

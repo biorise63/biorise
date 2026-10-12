@@ -34,7 +34,7 @@ const doctors = [
     quote: 'Ожирение, гипотиреоз, сахарный диабет, НАЖБП, железодефицитная анемия и андрогенный дефицит.',
     name: 'Гайлис Алёна Алексеевна',
     designation: 'Врач-эндокринолог',
-    src: '/optimized/doctors/gaylis.webp',
+    src: '/optimized/doctors/gaylis-2.webp',
     location: 'Самара, Дыбенко, 27 Б, клиника "Биорайз"',
     href: '/vrachi/gaylis/',
   },
