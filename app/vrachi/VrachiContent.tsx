@@ -43,7 +43,7 @@ export default function VrachiContent({ authors }: VrachiContentProps) {
                   alt={author.name}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className={`object-cover ${author.id === 'gaylis' ? 'object-[center_30%]' : ''}`}
                 />
               </div>
 

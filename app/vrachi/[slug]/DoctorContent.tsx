@@ -43,7 +43,7 @@ export default function DoctorContent({ author }: DoctorContentProps) {
                 alt={author.name}
                 fill
                 sizes="(max-width: 768px) 90vw, 360px"
-                className="object-cover"
+                className={`object-cover ${author.id === 'gaylis' ? 'object-[center_30%]' : ''}`}
                 priority
               />
             </div>
