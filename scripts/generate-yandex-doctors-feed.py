@@ -91,6 +91,15 @@ DOCTORS = {
         'avatar': '/optimized/doctors/boboeva.webp',
         'base_service': ('Первичный приём эндокринолога', 2800),
     },
+
+    'gaylis': {
+        'name': 'Гайлис Алёна Алексеевна',
+        'specialty': 'эндокринолог',
+        'experience_years': None,
+        'bio': 'Врач-эндокринолог. Основные направления: ожирение, гипотиреоз, сахарный диабет, НАЖБП, железодефицитная анемия.',
+        'avatar': '/optimized/doctors/gaylis.webp',
+        'base_service': ('Первичный приём эндокринолога', 2800),
+    },
     'tregubova': {
         'name': 'Трегубова Лиана Игоревна',
         'specialty': 'диетолог',

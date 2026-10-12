@@ -117,11 +117,13 @@ def build():
     services_ws = wb['Услуги']
     services_el = SubElement(shop, 'services')
     service_id_by_name = {}
+    service_ids = set()
     for row in services_ws.iter_rows(min_row=2, values_only=True):
         if not row[0]:
             continue
         name, _unused, description, internal_id = row
         service_id_by_name[name] = internal_id
+        service_ids.add(str(internal_id))
         service_el = SubElement(services_el, 'service', {'id': str(internal_id)})
         sub(service_el, 'name', name)
         sub(service_el, 'description', description)
@@ -147,7 +149,8 @@ def build():
         # "добавить уникальные параметры, например UTM-метки"). Различаем
         # офферы clinic_id и service_id в query-строке - страница остаётся той
         # же самой, меняется только техническая уникальность URL в фиде.
-        service_id_for_url = service_id_by_name.get(service_name, service_name)
+        doctor_base_service_id = f'base_{doctor_id}'
+        service_id_for_url = doctor_base_service_id if doctor_base_service_id in service_ids else service_id_by_name.get(service_name, service_name)
         offer_url = (
             f'{booking_url}?clinic={clinic_id}&service={service_id_for_url}'
             if booking_url else booking_url
@@ -164,7 +167,7 @@ def build():
             sub(price_el, 'base_price', int(price))
             sub(price_el, 'currency', 'RUB')
 
-        service_id = service_id_by_name.get(service_name)
+        service_id = service_id_for_url if service_id_for_url in service_ids else service_id_by_name.get(service_name)
         if service_id:
             SubElement(offer_el, 'service', {'id': str(service_id)})
 
@@ -181,7 +184,7 @@ def build():
     indent(tree, space='  ')
     tree.write(YML_PATH, encoding='utf-8', xml_declaration=True)
     print(f'Готово: {YML_PATH}')
-    print(f'Докторов: {len(doctors_seen)}, клиник: {clinics_ws.max_row - 1}, услуг: {len(service_id_by_name)}, офферов: {len(rows)}')
+    print(f'Докторов: {len(doctors_seen)}, клиник: {clinics_ws.max_row - 1}, услуг: {len(service_ids)}, офферов: {len(rows)}')
 
 
 if __name__ == '__main__':
