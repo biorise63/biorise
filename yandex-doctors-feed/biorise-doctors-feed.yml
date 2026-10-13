@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<shop version="2.0" date="2026-10-12 23:00">
+<shop version="2.0" date="2026-10-13 11:24">
   <name>BIORISE</name>
   <company>ООО «МК Клиники Будущего»</company>
   <url>https://biorise-clinic.ru</url>
@@ -11,12 +11,6 @@
       <description>Ведёт приём как врач-терапевт со стажем 19 лет.</description>
       <picture>https://biorise-clinic.ru/optimized/doctors/potemkina.webp</picture>
       <experience_years>19</experience_years>
-    </doctor>
-    <doctor id="boboeva">
-      <internal_id>boboeva</internal_id>
-      <name>Бобоева Наталья</name>
-      <description>Врач-эндокринолог. Работает с хроническими эндокринными заболеваниями.</description>
-      <picture>https://biorise-clinic.ru/optimized/doctors/boboeva.webp</picture>
     </doctor>
     <doctor id="gaylis">
       <internal_id>gaylis</internal_id>
@@ -47,11 +41,6 @@
       <name>Первичный приём терапевта</name>
       <description>Первичный приём терапевта</description>
       <internal_id>base_potemkina</internal_id>
-    </service>
-    <service id="base_boboeva">
-      <name>Первичный приём эндокринолога</name>
-      <description>Первичный приём эндокринолога</description>
-      <internal_id>base_boboeva</internal_id>
     </service>
     <service id="base_gaylis">
       <name>Первичный приём эндокринолога</name>
@@ -87,27 +76,6 @@
       </clinic>
     </offer>
     <offer id="offer_2">
-      <url>https://biorise-clinic.ru/vrachi/boboeva/?clinic=clinic_dybenko&amp;service=base_boboeva</url>
-      <oms>false</oms>
-      <online_schedule>false</online_schedule>
-      <appointment>true</appointment>
-      <price>
-        <base_price>2800</base_price>
-        <currency>RUB</currency>
-      </price>
-      <service id="base_boboeva" />
-      <clinic id="clinic_dybenko">
-        <doctor id="boboeva">
-          <speciality>эндокринолог</speciality>
-          <children_appointment>false</children_appointment>
-          <adult_appointment>true</adult_appointment>
-          <house_call>false</house_call>
-          <telemed>false</telemed>
-          <is_base_service>true</is_base_service>
-        </doctor>
-      </clinic>
-    </offer>
-    <offer id="offer_3">
       <url>https://biorise-clinic.ru/vrachi/gaylis/?clinic=clinic_dybenko&amp;service=base_gaylis</url>
       <oms>false</oms>
       <online_schedule>false</online_schedule>
@@ -128,7 +96,7 @@
         </doctor>
       </clinic>
     </offer>
-    <offer id="offer_4">
+    <offer id="offer_3">
       <url>https://biorise-clinic.ru/vrachi/tregubova/?clinic=clinic_dybenko&amp;service=base_tregubova</url>
       <oms>false</oms>
       <online_schedule>false</online_schedule>

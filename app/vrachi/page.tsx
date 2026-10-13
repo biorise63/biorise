@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
 import VrachiContent from './VrachiContent'
-import { getAllAuthors } from '@/lib/authors'
+import { getAllDoctors } from '@/lib/authors'
 import { createItemListJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 const SITE_URL = 'https://biorise-clinic.ru'
@@ -11,7 +11,7 @@ const SITE_URL = 'https://biorise-clinic.ru'
 export const metadata: Metadata = {
   title: 'Врачи клиники BIORISE в Самаре | BIORISE',
   description:
-    'Врачи и специалисты клиники BIORISE в Самаре: терапевт, эндокринологи, диетолог, косметолог-эстетист и массажист. Опыт, специализация, запись на приём.',
+    'Врачи и специалисты клиники BIORISE в Самаре: терапевт, эндокринолог, диетолог и массажист. Опыт, специализация, запись на приём.',
   keywords: [
     'врачи биорайз',
     'врачи клиники самара',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Врачи клиники BIORISE в Самаре',
     description:
-      'Терапевт, эндокринологи, диетолог, косметолог-эстетист и массажист клиники BIORISE в Самаре.',
+      'Терапевт, эндокринолог, диетолог и массажист клиники BIORISE в Самаре.',
     url: `${SITE_URL}/vrachi/`,
     siteName: 'BIORISE',
     locale: 'ru_RU',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 }
 
 export default function VrachiPage() {
-  const authors = getAllAuthors()
+  const authors = getAllDoctors()
 
   const webPageJsonLd = createWebPageJsonLd({
     url: '/vrachi/',

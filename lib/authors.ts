@@ -120,6 +120,17 @@ export function getAuthor(authorId?: string): Author | null {
   return authors[authorId] || null
 }
 
+const hiddenDoctorIds = new Set(['boboeva', 'malofeeva'])
+
 export function getAllAuthors(): Author[] {
   return Object.values(authors)
+}
+
+export function getDoctor(authorId?: string): Author | null {
+  if (!authorId || hiddenDoctorIds.has(authorId)) return null
+  return getAuthor(authorId)
+}
+
+export function getAllDoctors(): Author[] {
+  return getAllAuthors().filter((author) => !hiddenDoctorIds.has(author.id))
 }

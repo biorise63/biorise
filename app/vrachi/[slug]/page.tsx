@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
 import DoctorContent from './DoctorContent'
-import { getAllAuthors, getAuthor } from '@/lib/authors'
+import { getAllDoctors, getDoctor } from '@/lib/authors'
 import { createDoctorPersonJsonLd, createWebPageJsonLd } from '@/lib/structured-data'
 
 interface PageProps {
@@ -13,11 +13,11 @@ interface PageProps {
 const SITE_URL = 'https://biorise-clinic.ru'
 
 export function generateStaticParams() {
-  return getAllAuthors().map((author) => ({ slug: author.id }))
+  return getAllDoctors().map((author) => ({ slug: author.id }))
 }
 
 export function generateMetadata({ params }: PageProps) {
-  const author = getAuthor(params.slug)
+  const author = getDoctor(params.slug)
   if (!author) return {}
 
   const title = author.seoTitle
@@ -51,7 +51,7 @@ export function generateMetadata({ params }: PageProps) {
 }
 
 export default function DoctorPage({ params }: PageProps) {
-  const author = getAuthor(params.slug)
+  const author = getDoctor(params.slug)
   if (!author) notFound()
 
   const personJsonLd = createDoctorPersonJsonLd(author)
