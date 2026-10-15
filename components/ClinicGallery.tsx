@@ -25,7 +25,7 @@ const galleryData: GalleryItem[] = [
     buttonText: 'Записаться',
     buttonHref: '#booking',
     photo: {
-      url: '/optimized/promo/promo-pink-october.webp',
+      url: '/optimized/promo/promo-pink-october-background.webp',
       text: 'Розовый октябрь',
       alt: 'Розовый октябрь: онкологический чек-ап для женщин в BIORISE Самара',
       pos: 'center',
