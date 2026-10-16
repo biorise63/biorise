@@ -32,9 +32,6 @@ const mainPages = [
   { href: '/bady/', title: 'БАДы' },
   { href: '/bioimpedance/', title: 'Биоимпедансный анализ' },
   { href: '/spravki/', title: 'Медицинские справки' },
-  { href: '/ruchnoy-massazh/', title: 'Ручной массаж' },
-  { href: '/apparatnyy-massazh/', title: 'Аппаратный массаж' },
-  { href: '/lazernaya-epilyatsiya/', title: 'Лазерная эпиляция' },
 ]
 
 const analysisPages = [

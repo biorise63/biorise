@@ -252,24 +252,6 @@ export default function Header() {
                       БАДЫ
                     </Link>
                     <Link
-                      href="/apparatnyy-massazh"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
-                    >
-                      Аппаратный массаж
-                    </Link>
-                    <Link
-                      href="/ruchnoy-massazh"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
-                    >
-                      Ручной массаж
-                    </Link>
-                    <Link
-                      href="/lazernaya-epilyatsiya"
-                      className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
-                    >
-                      Лазерная эпиляция
-                    </Link>
-                    <Link
                       href="/bioimpedance"
                       className="block px-4 py-2 text-sm text-olive-primary hover:bg-beige-background rounded-lg transition-colors"
                     >
@@ -452,9 +434,6 @@ export default function Header() {
                     <Link href="/kapelnicy/na-domu" onClick={closeMobileMenu} className={mobileLinkClass}>Капельницы на дому</Link>
                     <Link href="/bioimpedance" onClick={closeMobileMenu} className={mobileLinkClass}>Биоимпедансный анализ</Link>
                     <Link href="/bady" onClick={closeMobileMenu} className={mobileLinkClass}>БАДЫ</Link>
-                    <Link href="/apparatnyy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Аппаратный массаж</Link>
-                    <Link href="/ruchnoy-massazh" onClick={closeMobileMenu} className={mobileLinkClass}>Ручной массаж</Link>
-                    <Link href="/lazernaya-epilyatsiya" onClick={closeMobileMenu} className={mobileLinkClass}>Лазерная эпиляция</Link>
                     <Link href="/spravki" onClick={closeMobileMenu} className={mobileLinkClass}>Справки</Link>
                   </div>
                 </div>

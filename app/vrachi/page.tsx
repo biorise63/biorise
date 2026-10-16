@@ -11,14 +11,13 @@ const SITE_URL = 'https://biorise-clinic.ru'
 export const metadata: Metadata = {
   title: 'Врачи клиники BIORISE в Самаре | BIORISE',
   description:
-    'Врачи и специалисты клиники BIORISE в Самаре: терапевт, эндокринолог, диетолог и массажист. Опыт, специализация, запись на приём.',
+    'Врачи клиники BIORISE в Самаре: терапевт, эндокринолог и диетолог. Опыт, специализация, запись на приём.',
   keywords: [
     'врачи биорайз',
     'врачи клиники самара',
     'терапевт самара',
     'эндокринолог самара',
     'диетолог самара',
-    'косметолог самара',
   ],
   alternates: {
     canonical: `${SITE_URL}/vrachi/`,
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Врачи клиники BIORISE в Самаре',
     description:
-      'Терапевт, эндокринолог, диетолог и массажист клиники BIORISE в Самаре.',
+      'Терапевт, эндокринолог и диетолог клиники BIORISE в Самаре.',
     url: `${SITE_URL}/vrachi/`,
     siteName: 'BIORISE',
     locale: 'ru_RU',
